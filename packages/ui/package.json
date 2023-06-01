@@ -16,5 +16,9 @@
     "react": "^17.0.2",
     "tsconfig": "*",
     "typescript": "^4.5.2"
+  },
+  "dependencies": {
+    "clsx": "^1.2.1",
+    "framer-motion": "^10.12.16"
   }
 }
