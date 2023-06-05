@@ -1,0 +1,219 @@
+[
+  {
+    "name": "Fundación INECO",
+    "description": "Desarrollando y exportando conocimiento neurocientifico al mundo desde Argentina.",
+    "link": "http://www.fundacionineco.org/",
+    "type": "web",
+    "image": "logo-ineco.jpg"
+  },
+  {
+    "name": "Fundaleu",
+    "description": "Fundaleu fue creada en el año 1956 para combatir la leucemia.",
+    "link": "https://www.fundaleu.org/",
+    "type": "web",
+    "image": "logo-fundaleu.jpg"
+  },
+  {
+    "name": "Sostén Asociación Civil",
+    "description": "Asociación Civil Sostén brinda apoyo, orientación y asesoramiento a personas con cáncer.",
+    "link": "http://sosten.org.ar/",
+    "type": "web",
+    "image": "logo-sosten.jpg"
+  },
+  {
+    "name": "Fundacion Articular",
+    "description": "Ciencia y comunidad mutuamente comprometidas con el bienestar de la humanidad.",
+    "link": "http://www.xn--fundacinarticular-myb.org/",
+    "type": "web",
+    "image": "logo-articular.jpg"
+  },
+  {
+    "name": "Proyecto Acerca",
+    "description": "Aprende más sobre los ensayos clínicos por el proyecto ACERCA.",
+    "link": "http://acercacomunidad.com/",
+    "type": "web",
+    "image": "logo-acerca.jpg"
+  },
+  {
+    "name": "ALMA",
+    "description": "ALMA está formada por pacientes y familiares con diagnóstico de Leucemia Mieloide Crónica.",
+    "link": "http://www.asociacionalma.org.ar/",
+    "type": "web",
+    "image": "logo-alma.jpg"
+  },
+  {
+    "name": "AEPSO",
+    "description": "Asociación Civil para el Enfermo de Psoriasis, es una organización sin fines de lucro creada en el 2005 por personas con psoriasis y artritis psoriásica para ayudar a las personas que también la padecen y sus familiares.",
+    "link": "http://www.aepso.org/",
+    "type": "web",
+    "image": "logo-aepso.jpg"
+  },
+  {
+    "name": "Linfomas Argentina",
+    "description": "Linfomas Argentina es una asociación civil sin fines de lucro de pacientes y familiares con linfoma, mielofibrosis y síndromes mielodisplásicos.",
+    "link": "http://www.linfomasargentina.org/home.php",
+    "type": "web",
+    "image": "logo-linfomas.jpg"
+  },
+  {
+    "name": "EMA",
+    "description": "EMA (Esclerosis Múltiple Argentina) es una asociación civil sin fines de lucro, el objetivo principal estaba centrado en la divulgación de la enfermedad a la vez que comenzaban a organizarse los primeros grupos de apoyo para las personas con EM.",
+    "link": "http://www.ema.org.ar/",
+    "type": "web",
+    "image": "logo-ema.jpg"
+  },
+  {
+    "name": "AMA",
+    "description": "AMA tiene como misión difundir sobre la MPS, informando sobre su diagnóstico, tratamientos y formas de obtener los mismos.",
+    "link": "https://es-la.facebook.com/AMA-Asociacion-de-Mucopolisacaridosis-Argentina-779050348847526/",
+    "type": "facebook",
+    "image": "logo-ama.jpg"
+  },
+  {
+    "name": "Fundación Argentina de Mieloma",
+    "description": "Somos una organización que procura asistencia a personas que conviven con Mieloma y a sus seres queridos.",
+    "link": "http://www.mieloma.org.ar/",
+    "type": "web",
+    "image": "logo-mieloma.jpg"
+  },
+  {
+    "name": "Fundación Lupus Córdoba",
+    "description": "Queremos realizar una correcta difusión, de la enfermedad, para lograr la prevención y promoción de la salud en torno al LUPUS.",
+    "link": "https://www.facebook.com/LupusCordoba/",
+    "type": "facebook",
+    "image": "logo-lupus.jpg"
+  },
+  {
+    "name": "TEAMD",
+    "description": "En teamd nos comprometemos a acompañarte en tu aprendizaje diario sobre la diabetes.",
+    "link": "https://www.teamd.com.ar/",
+    "type": "web",
+    "image": "logo-teamd.jpg"
+  },
+  {
+    "name": "A.L.M.A",
+    "description": "Su misión es difundir el conocimiento de la enfermedad y bregar por una mejor calidad de vida para las personas con demencia y sus familias.",
+    "link": "https://www.alma-alzheimer.org.ar/es/",
+    "type": "web",
+    "image": "logo-alma2.jpg"
+  },
+  {
+    "name": "Donde Quiero Estar",
+    "description": "Mundo Cáncer es una iniciativa de la Fundación Donde Quiero Estar, que busca brindar de forma integral información accesible, confiable y segura para la población en general.",
+    "link": "https://mundocancer.com/",
+    "type": "web",
+    "image": "logo-donde.png"
+  },
+  {
+    "name": "Voces Diabetes Colombia",
+    "description": "Somos una entidad sin ánimo de lucro que trabaja decididamente por la prevención de la diabetes y sus complicaciones en el país.",
+    "link": "https://diabetescolombia.com/",
+    "type": "web",
+    "image": "logo-voces.jpg"
+  },
+  {
+    "name": "ALCEM",
+    "description": "Somos una organización civil sin fines de lucro, que trabaja en todo el territorio argentino en defensa de los derechos de las personas con EM",
+    "link": "https://www.alcem.org.ar/",
+    "type": "web",
+    "image": "logo-alcem.jpg"
+  },
+  {
+    "name": "CIMA",
+    "description": "Fundación CIMA es una organización que se dedica a luchar contra el cáncer de mama.",
+    "link": "https://www.cimafundacion.org/",
+    "type": "web",
+    "image": "logo-cima.jpg"
+  },
+  {
+    "name": "Fundación de Investigaciones Metabólicas",
+    "description": "Somos una institución comprometida con la salud de nuestros pacientes. En los últimos 20 años, hemos participado en más de 120 protocolos de investigación para nuevos fármacos en pacientes ambulatorios.",
+    "link": "http://www.fim-fundacion.org.ar/",
+    "type": "web",
+    "image": "logo-fim.jpg"
+  },
+  {
+    "name": "Movimiento Ayuda Cáncer de Mama",
+    "description": "Fundada el 25 de febrero de 1997 por María Cecilia Palacios quién transitó la enfermedad y sintió la necesidad de alentar a otras mujeres y ayudarlas a pasar los diferentes momentos de la enfermedad y de los tratamientos.",
+    "link": "http://www.macma.org.ar/",
+    "type": "web",
+    "image": "logo-macma.jpg"
+  },
+  {
+    "name": "Fundación para el Estudio, la Prevención y el Tratamiento de la Enfermedad Vascular Aterosclerótica.",
+    "description": "FEPREVA es una organización dedicada al estudio, la prevención y el tratamiento de las enfermedades crónicas de mayor prevalencia, siendo una organización de vanguardia en la atención, docencia e investigación clínica.",
+    "link": "http://www.fepreva.org/investigacion_clinica.php",
+    "type": "web",
+    "image": "logo-fepreva.jpg"
+  },
+  {
+    "name": "Federación Mexicana de Enfermedades Raras.",
+    "description": "FEMEXER es una alianza no gubernamental y totalmente voluntaria de organizaciones de pacientes, dirigida exclusívamente por pacientes y familiares; representamos a más de 85 organizaciones de pacientes de enfermedades raras en México, con lo que damos cobertura a casi 500 enfermedades raras (EERR) entre la población de nuestro país.",
+    "link": "http://www.femexer.org/",
+    "type": "web",
+    "image": "logo-femexer.png"
+  },
+  {
+    "name": "Corporación Esclerosis Múltiple Chile.",
+    "description": "Somos una Organización sin fines de lucro, trabajamos para difundir, educar y apoyar a personas diagnosticadas con Esclerosis Múltiple y sus familias en Chile.",
+    "link": "https://www.esclerosismultiplechile.cl/",
+    "type": "web",
+    "image": "logo-emc.png"
+  },
+  {
+    "name": "UCEM",
+    "description": "Somos una asociación sin fines de lucro fundada en 2009. Nuestro objetivo es brindar servicios integrales a las personas que viven con Esclerosis Múltiple y sus familias para mejorar su calidad de vida y facilitar su plena integración social y laboral, salvaguardando su entereza moral, emocional y física.",
+    "link": "https://ucemmexico.org/",
+    "type": "web",
+    "image": "logo-ucem.png"
+  },
+  {
+    "name": "FEMMEX",
+    "description": "Federación de asociaciones de esclerosis múltiple y de esclerosis lateral amiotrófica. Tiene miembros asociados de toda la República Mexicana.",
+    "link": "https://www.facebook.com/femmexorg",
+    "type": "facebook",
+    "image": "logo-femmex.png"
+  },
+  {
+    "name": "ALEM",
+    "description": "Fundada en 1997 en Medellín Colombia, Su objeto social está encaminado a promover la salud aún en la enfermedad, participar en investigación y Educación y difusión sobre la Esclerosis Múltiple entre personal de salud y comunidad.",
+    "link": "https://www.alem-colombia.org/",
+    "type": "web",
+    "image": "logo-alem.jpg"
+  },
+  {
+    "name": "ARES",
+    "description": "ARES a través de su Centro de Rehabilitación atiende a personas con Esclerosis Múltiple, Esclerosis Lateral Amiotrófica y otros padecimientos, brindamos terapias de rehabilitación física, hidroterapia, atención psicológica, terapia ocupacional y pláticas con especialistas.",
+    "link": "http://www.asrem.org.mx/",
+    "type": "web",
+    "image": "logo-ares.png"
+  },
+  {
+    "name": "ASOCOEM",
+    "description": "ASOCOEM es una organización sin fines de lucro que ayuda a pacientes y familiares de Esclerosis Múltiple, a tener una mejor calidad de vida.",
+    "link": "https://www.facebook.com/asocoem",
+    "type": "facebook",
+    "image": "logo-asocoem.png"
+  },
+  {
+    "name": "FUNDEM",
+    "description": "Somos una entidad sin ánimo de lucro que dedica sus esfuerzos al mejoramiento de la calidad de vida y bienestar de personas que han sido diagnosticadas con enfermedades crónicas de alto costo y huérfanas, con nuestra gestión no solo apoyamos al paciente y su entorno familiar, sino que también impactamos de manera positiva al SGSSS (Sistema de seguridad social en salud) de Colombia.",
+    "link": "https://fundem-co.org/",
+    "type": "web",
+    "image": "logo-fundem.png"
+  },
+  {
+    "name": "Esclerosis Múltiple del Golfo",
+    "description": "Institución Altruista, que proporciona atención médica integral a personas con esclerosis múltiple y familia.",
+    "link": "https://www.facebook.com/esclerosismultipledelgolfo.ac",
+    "type": "facebook",
+    "image": "logo-golfo.jpg"
+  },
+  {
+    "name": "GUAMEM",
+    "description": "Constituida el 12 de noviembre de 1999 por un grupo de personas con Esclerosis Múltiple y sus familiares, con el objetivo de ofrecer orientación, información, asesoría y apoyo. Atendemos a personas de 28 de los 46 municipios de estado de Guanajuato - México.",
+    "link": "https://www.facebook.com/Guamem/",
+    "type": "facebook",
+    "image": "logo-guamem.png"
+  }
+]
