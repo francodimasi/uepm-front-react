@@ -1,12 +1,13 @@
-import { Header } from "ui";
 import { Layout } from '../../components/core/layout/Layout';
-import { Reviews } from './components/Reviews';
+import { PartnersGrid } from "./components/PartnersGrid";
+import { PartnersSummary } from "./components/PartnersSummary";
+import partners from '../../public/partners/partners-mock.json'
 
 export default function Page() {
   return (
     <Layout>
-      {/* <Header text="Partners" /> */}
-      <Reviews />
+      <PartnersSummary />
+      <PartnersGrid partners={partners}/>
     </Layout>
   );
 }
