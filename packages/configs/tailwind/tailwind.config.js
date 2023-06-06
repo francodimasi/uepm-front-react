@@ -7,6 +7,17 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    colors: {
+      primary: "#00a393",
+      secondary: {
+        DEFAULT: "#00ddc8",
+        strong: "#04625c",
+      },
+      tertiary: "#ceff67",
+      light: "#fcfcfc",
+      dark: "#020001",
+      transparent: "transparent",
+    },
     extend: {},
   },
 };
