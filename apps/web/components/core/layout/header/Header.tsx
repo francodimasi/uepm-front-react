@@ -3,6 +3,7 @@ import React from "react";
 import { Container } from "ui/core/container";
 import { NavLinks } from "./NavLinks";
 import { Logo } from "ui/core/logo";
+import { Button } from "ui/core/Button";
 
 const links = [
   { label: "Home", href: "/" },
@@ -17,14 +18,14 @@ export const Header = () => {
         <Container className="relative z-50 flex justify-between py-8">
           <div className="relative z-10 flex items-center gap-16">
             <Link href="/" aria-label="Home">
-              <Logo className="h-10 w-auto" />
+              <Logo className="h-10 w-auto flex" />
             </Link>
             <div className="hidden lg:flex lg:gap-10">
               <NavLinks links={links} />
             </div>
           </div>
-          {/* <div className="flex items-center gap-6">
-            <Popover className="lg:hidden">
+          <div className="flex items-center gap-6">
+            {/* <Popover className="lg:hidden">
               {({ open }) => (
                 <>
                   <Popover.Button
@@ -86,14 +87,11 @@ export const Header = () => {
                   </AnimatePresence>
                 </>
               )}
-            </Popover>
-            <Button href="/login" variant="outline" className="hidden lg:block">
-              Log in
+            </Popover> */}
+            <Button className="hidden lg:block">
+              I'm a physician
             </Button>
-            <Button href="#" className="hidden lg:block">
-              Download
-            </Button>
-          </div> */}
+          </div>
         </Container>
       </nav>
     </header>
