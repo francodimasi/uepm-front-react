@@ -39,9 +39,6 @@ export const getOptions = (lng = fallbackLang) => {
     load: "languageOnly",
     ns: namespace,
     debug: false,
-    react: {
-      useSuspense: false, // Definir necesidad de uso <Suspense>
-    },
     interpolation: {
       escapeValue: false,
     },
