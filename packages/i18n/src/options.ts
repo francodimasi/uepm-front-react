@@ -1,17 +1,19 @@
-import i18next from 'i18next';
-import LanguageDetector from 'i18next-browser-languagedetector';
-import Backend from 'i18next-chained-backend';
-import HttpApi from 'i18next-http-backend';
-import { initReactI18next } from 'react-i18next';
-import LocalStorageBackend from 'i18next-localstorage-backend';
+import LocalStorageBackend from "i18next-localstorage-backend";
+import HttpApi from "i18next-http-backend";
+import { InitOptions } from "i18next";
 
 /**
  * @todo replace translation paths
-*/
-const LOCAL_TRANSLATIONS_PATH = 'locales/{{lng}}/translation.json';
+ */
+const LOCAL_TRANSLATIONS_PATH = "locales/{{lng}}/translation.json";
 const EXTERNAL_TRANSLATIONS_PATH = `https://trialtech-qa.ams3.digitaloceanspaces.com/translations/{{lng}}.json`;
 
-export const initi18nWithOptions = (cached: boolean) => {
+const cached = false;
+const fallbackLang = 'en';
+export const runsOnServerSide = typeof window === 'undefined';
+export const namespace = "translation";
+
+export const getOptions = (lng = fallbackLang) => {
   const backends = [LocalStorageBackend, HttpApi];
   const backendOptions = [
     {
@@ -27,13 +29,15 @@ export const initi18nWithOptions = (cached: boolean) => {
     backendOptions.shift();
   }
 
-  const i18nOptions: any = {
+  const i18nOptions: InitOptions = {
     backend: {
       backends,
       backendOptions,
     },
-    fallbackLng: 'en',
-    load: 'languageOnly',
+    fallbackLng: fallbackLang,
+    lng,
+    load: "languageOnly",
+    ns: namespace,
     debug: false,
     react: {
       useSuspense: false, // Definir necesidad de uso <Suspense>
@@ -43,9 +47,5 @@ export const initi18nWithOptions = (cached: boolean) => {
     },
   };
 
-  i18next.init(i18nOptions);
+  return i18nOptions;
 };
-
-i18next.use(Backend).use(LanguageDetector).use(initReactI18next);
-
-export const i18n = i18next;
