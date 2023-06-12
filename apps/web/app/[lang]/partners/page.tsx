@@ -1,7 +1,8 @@
-import { Header } from "ui";
-import { Layout } from '../../../components/core/layout/Layout';
+import { Layout } from '@components/core/layout/Layout';
+import { SwitchLanguage } from "@components/core/layout/language/SwitchLanguage";
 import { useServerTranslation } from "i18n";
-import { SwitchLanguage } from "../../../components/core/layout/language/SwitchLanguage";
+import { Header } from "ui";
+
 
 export default async function Page({ params: { lang } }) {
 
