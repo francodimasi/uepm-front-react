@@ -6,7 +6,7 @@ import {
   AxiosProviderProps,
   AxiosProviderValue,
   HttpErrorResponse,
-} from "./types";
+} from "../types";
 
 const getTimeZone = (): string => {
   const offset = new Date().getTimezoneOffset();
