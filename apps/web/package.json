@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "i18n": "*",
+    "rest": "*",
     "i18next-resources-to-backend": "^1.1.4",
     "negotiator": "^0.6.3",
     "next": "^13.4.1",

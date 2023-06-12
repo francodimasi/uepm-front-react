@@ -1,4 +1,4 @@
 module.exports = {
   reactStrictMode: true,
-  transpilePackages: ["ui", "i18n"],
+  transpilePackages: ["ui", "i18n", "rest"],
 };
