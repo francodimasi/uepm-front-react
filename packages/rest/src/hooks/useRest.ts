@@ -1,25 +1,8 @@
-import { AxiosHeaders, AxiosRequestHeaders } from "axios";
-import { useContext } from "react";
-import { AxiosContext } from "../context/context";
-import { ParseHeaderProps, RequestParams } from "../types";
-
-const parseHeaders = (
-  props: ParseHeaderProps
-): AxiosRequestHeaders | undefined => {
-  const { customToken, token, headers: customHeaders } = props;
-  const bearer = `Bearer ${token}`;
-  let headers: AxiosRequestHeaders | undefined = new AxiosHeaders(
-    customHeaders
-  );
-
-  if (customToken) headers.setAuthorization(customToken);
-  else if (token) headers.setAuthorization(bearer);
-
-  return headers;
-};
+import { useFetch } from "./useFetch";
+import { RequestParams } from "../types";
+import { parseHeaders } from "../utils";
 
 export const useRest = (token?: string) => {
-  const { axios } = useContext(AxiosContext);
   
   const post = <T, K>(
     url: string,
@@ -32,11 +15,11 @@ export const useRest = (token?: string) => {
       headers: customHeaders,
     });
 
-    return axios.post(url, data, { headers });
+    return useFetch({ url, method: "POST", headers, data });
   };
 
   const get = <T>(url: string, params?: RequestParams): Promise<T> => {
-    let headers: AxiosRequestHeaders | undefined;
+    let headers: Headers = new Headers();
     if (params) {
       const { headers: customHeaders, customToken } = params;
       headers = parseHeaders({
@@ -46,7 +29,7 @@ export const useRest = (token?: string) => {
       });
     }
 
-    return axios.get(url, { headers });
+    return useFetch({ url, method: "GET", headers });
   };
 
   const put = <T, K>(
@@ -60,11 +43,11 @@ export const useRest = (token?: string) => {
       headers: customHeaders,
     });
 
-    return axios.put(url, data, { headers });
+    return useFetch({ url, method: "PUT", headers, data });
   };
 
   const _delete = <T>(url: string, params?: RequestParams): Promise<T> => {
-    let headers: AxiosRequestHeaders | undefined;
+    let headers: Headers = new Headers();
     if (params) {
       const { headers: customHeaders, customToken } = params;
       headers = parseHeaders({
@@ -74,12 +57,12 @@ export const useRest = (token?: string) => {
       });
     }
 
-    return axios.delete(url, { headers });
+    return useFetch({ url, method: "DELETE", headers });
   };
 
   return {
-    post,
     get,
+    post,
     put,
     delete: _delete,
   };
