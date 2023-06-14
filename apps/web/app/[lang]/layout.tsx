@@ -1,6 +1,6 @@
 import { dir } from "i18next";
 import "ui/styles.css";
-import { Providers } from "../../core/Providers";
+import { Providers } from "@core/Providers";
 
 export default function RootLayout({
   children,

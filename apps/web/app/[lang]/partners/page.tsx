@@ -24,7 +24,7 @@ export default async function Page({ params: { lang } }) {
       <p>{t('partners')}</p>
       <SwitchLanguage />
       {
-        sites && sites.page.map((site, index) => (
+        sites?.page.map((site, index) => (
           <p key={index} >{site.name}</p>
         ))
       }

@@ -1,4 +1,3 @@
-import { AxiosHeaders, AxiosRequestHeaders } from "axios";
 import { ParseHeaderProps } from "./types";
 
 export const getUserTimeZone = (): string => {

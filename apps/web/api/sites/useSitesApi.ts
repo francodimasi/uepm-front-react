@@ -6,7 +6,7 @@ export const useSitesApi = () => {
     const { get } = useRest();
     
     const getAllSites = async () => {
-        return get<any>(`${BASE_URL}/patients/me`)
+        return get<any>(`${BASE_URL}/sites`)
     }
 
     return {
