@@ -1,11 +1,12 @@
+import { BASE_URL } from "@core/constants";
 import { useRest } from "rest"
 
 export const useSitesApi = () => {
     
     const { get } = useRest();
     
-    const getAllSites = () => {
-        return get<any>('sites')
+    const getAllSites = async () => {
+        return get<any>(`${BASE_URL}/patients/me`)
     }
 
     return {
