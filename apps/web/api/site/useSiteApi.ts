@@ -1,13 +1,14 @@
-import { BASE_URL } from "@core/constants";
+import { ENDPOINTS } from "@api/endpoints.conts";
+import { PageResponse } from "@core/types";
 import { useRest } from "rest";
 import { Site, SitesParams } from "./site.types";
-import { PageResponse } from "@core/types";
 
-export const useSiteApi = () => {
+export const useSite = () => {
   const { get } = useRest();
 
   const getAllSites = async () => {
-    return get<PageResponse<Site>>(`${BASE_URL}/sites`);
+    const response = await get<PageResponse<Site>>(ENDPOINTS.SITES);
+    return response.page;
   };
 
   const getSites = async (params: SitesParams = { verified: true, page: 1}) => {
@@ -18,15 +19,16 @@ export const useSiteApi = () => {
         queryParams += `&query=${query}`;
     }
 
-    return get<PageResponse<Site>>(`${BASE_URL}/sites${queryParams}`);
+    const response = await get<PageResponse<Site>>(`${ENDPOINTS.SITES}${queryParams}`);
+    return response.page;
   };
 
   const getSiteById = (id: number) => {
-    return get<Site>(`${BASE_URL}/sites/${id}`);
+    return get<Site>(`${ENDPOINTS.SITES}/${id}`);
   };
 
   const getSiteByName = (name: string) => {
-    return get<Site>(`${BASE_URL}/sites/${name}`);
+    return get<Site>(`${ENDPOINTS.SITES}/${name}`);
   };
 
   return {
