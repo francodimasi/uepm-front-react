@@ -6,7 +6,7 @@ import { ENDPOINTS } from "@api/endpoints.conts";
 export const useCountry = () => {
   const { get } = useRest();
 
-  const getCountries = async (): Promise<Country[]> => {
+  const getCountries = async () => {
     const result = await get<PageResponse<Country>>(ENDPOINTS.COUNTRIES);
     return result.page;
   };
