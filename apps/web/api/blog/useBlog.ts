@@ -5,8 +5,8 @@ import {
   BlogPost,
   BlogPostParams,
   VotePostRequest,
-} from "./blog.types";
-import { BlogAuthor } from "./author.types";
+} from "./types/blog.types";
+import { BlogAuthor } from "./types/author.types";
 
 export const useBlog = () => {
   const { get, post } = useRest();
