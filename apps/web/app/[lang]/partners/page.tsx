@@ -1,4 +1,4 @@
-import { useSitesApi } from '@api/sites/useSitesApi';
+import { useSiteApi } from '@api/site/useSiteApi';
 import { Layout } from '@components/core/layout/Layout';
 import { SwitchLanguage } from "@components/core/layout/language/SwitchLanguage";
 import { errorResponseHandler } from '@core/error-handler';
@@ -8,7 +8,7 @@ import { Header } from "ui";
 export default async function Page({ params: { lang } }) {
 
   const { t } = await useServerTranslation(lang)
-  const { getAllSites } = useSitesApi();
+  const { getAllSites } = useSiteApi();
   let sites;
 
   try{
