@@ -15,7 +15,7 @@ export default function Page({ params }) {
 
   const loadSites = async () => {
     try {
-      await getSites({query: "mar"});
+      await getSites();
     } catch (e) {
       errorResponseHandler(e);
     }
