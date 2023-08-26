@@ -1,0 +1,90 @@
+/* 
+* Font variables 
+*/
+
+:root {
+  /* Archia */
+  --font-archia: "Archia";
+  --font-archia-bold: "Archia Bold";
+  --font-archia-light: "Archia Light";
+  --font-archia-medium: "Archia Medium";
+  --font-archia-semibold: "Archia SemiBold";
+  --font-archia-thin: "Archia Thin";
+
+  /* Manrope */
+  --font-manrope: "Manrope";
+  --font-manrope-bold: "Manrope Bold";
+  --font-manrope-extrabold: "Manrope ExtraBold";
+  --font-manrope-extralight: "Manrope ExtraLight";
+  --font-manrope-light: "Manrope Light";
+  --font-manrope-medium: "Manrope Medium";
+  --font-manrope-semibold: "Manrope Semibold";
+
+}
+/* Add Archia font family */
+
+@font-face {
+  font-family: "Archia";
+  src: url("/fonts/Archia/Archia-Regular.otf");
+}
+
+@font-face {
+  font-family: "Archia Bold";
+  src: url("/fonts/Archia/Archia-Bold.otf");
+}
+
+@font-face {
+  font-family: "Archia Light";
+  src: url("/fonts/Archia/Archia-Light.otf");
+}
+
+@font-face {
+  font-family: "Archia Medium";
+  src: url("/fonts/Archia/Archia-Medium.otf");
+}
+
+@font-face {
+  font-family: "Archia SemiBold";
+  src: url("/fonts/Archia/Archia-SemiBold.otf");
+}
+
+@font-face {
+  font-family: "Archia Thin";
+  src: url("/fonts/Archia/Archia-Thin.otf");
+}
+
+/* Add Manrope font family */
+@font-face {
+  font-family: "Manrope";
+  src: url("/fonts/Manrope/Manrope-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Manrope Bold";
+  src: url("/fonts/Manrope/Manrope-Bold.ttf");
+}
+
+@font-face {
+  font-family: "Manrope ExtraBold";
+  src: url("/fonts/Manrope/Manrope-ExtraBold.ttf");
+}
+
+@font-face {
+  font-family: "Manrope ExtraLight";
+  src: url("/fonts/Manrope/Manrope-ExtraLight.ttf");
+}
+
+@font-face {
+  font-family: "Manrope Light";
+  src: url("/fonts/Manrope/Manrope-Light.ttf");
+}
+
+@font-face {
+  font-family: "Manrope Medium";
+  src: url("/fonts/Manrope/Manrope-Medium.ttf");
+}
+
+@font-face {
+  font-family: "Manrope SemiBold";
+  src: url("/fonts/Manrope/Manrope-SemiBold.otf");
+}

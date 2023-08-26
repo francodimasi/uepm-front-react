@@ -1,6 +1,5 @@
-
 export default function Home() {
   return (
-    <>HOME</>
+    <span>HOME</span>
   )
 }
