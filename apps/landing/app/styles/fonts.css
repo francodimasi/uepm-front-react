@@ -1,26 +1,3 @@
-/* 
-* Font variables 
-*/
-
-:root {
-  /* Archia */
-  --font-archia: "Archia";
-  --font-archia-bold: "Archia Bold";
-  --font-archia-light: "Archia Light";
-  --font-archia-medium: "Archia Medium";
-  --font-archia-semibold: "Archia SemiBold";
-  --font-archia-thin: "Archia Thin";
-
-  /* Manrope */
-  --font-manrope: "Manrope";
-  --font-manrope-bold: "Manrope Bold";
-  --font-manrope-extrabold: "Manrope ExtraBold";
-  --font-manrope-extralight: "Manrope ExtraLight";
-  --font-manrope-light: "Manrope Light";
-  --font-manrope-medium: "Manrope Medium";
-  --font-manrope-semibold: "Manrope Semibold";
-
-}
 /* Add Archia font family */
 
 @font-face {
