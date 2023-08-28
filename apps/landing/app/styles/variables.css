@@ -1,0 +1,43 @@
+:root {
+  /* 
+  * Font variables 
+  */
+
+  /* Archia */
+  --font-archia: "Archia";
+  --font-archia-bold: "Archia Bold";
+  --font-archia-light: "Archia Light";
+  --font-archia-medium: "Archia Medium";
+  --font-archia-semibold: "Archia SemiBold";
+  --font-archia-thin: "Archia Thin";
+
+  /* Manrope */
+  --font-manrope: "Manrope";
+  --font-manrope-bold: "Manrope Bold";
+  --font-manrope-extrabold: "Manrope ExtraBold";
+  --font-manrope-extralight: "Manrope ExtraLight";
+  --font-manrope-light: "Manrope Light";
+  --font-manrope-medium: "Manrope Medium";
+  --font-manrope-semibold: "Manrope Semibold";
+
+  /* 
+  * Color variables
+  */
+
+  --color-primary: #00A393;
+  --color-primary-light: #CEFF67;
+  --color-primary-dark: #04625C;
+  --color-secondary: #00DDC8;
+
+  --color-black: #020001;
+  --color-white: #FCFCFC;
+
+  --color-gray-light: #F0F0F0;
+  --color-gray-medium: #D9D9D9;
+  --color-gray-dark: #7A7A7A;
+
+  --color-error: #FF0F3A;
+  --color-alert: #F99232;
+  --color-success: #49CD4F;
+
+}
