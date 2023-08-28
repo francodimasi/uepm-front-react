@@ -10,15 +10,20 @@ module.exports = {
   darkMode: "class",
   theme: {
     colors: {
-      primary: "#00a393",
-      secondary: {
-        DEFAULT: "#00ddc8",
-        strong: "#04625c",
-      },
-      tertiary: "#ceff67",
-      light: "#fcfcfc",
+      primary: "#00A393",
+      "primary-light": "#CEFF67",
+      "primary-dark": "#04625C",
+      secondary: "#00DDC8",
+      light: "#FCFCFC",
       dark: "#020001",
+      error: "#FF0F3A",
+      alert: "#F99232",
+      success: "#49CD4F",
       transparent: "transparent",
+    },
+    fontFamily: {
+      sans: ['Manrope'],
+      serif: ['Archia']
     },
     extend: {},
   },
