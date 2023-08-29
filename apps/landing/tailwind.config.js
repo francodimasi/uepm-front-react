@@ -22,9 +22,13 @@ module.exports = {
       transparent: "transparent",
     },
     fontFamily: {
-      sans: ['Manrope'],
-      serif: ['Archia']
+      sans: 'Manrope',
+      serif: 'Archia'
     },
-    extend: {},
+    extend: {
+      borderWidth: {
+        '1': '1px'
+      }
+    },
   },
 };
