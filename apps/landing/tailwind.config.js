@@ -22,13 +22,25 @@ module.exports = {
       transparent: "transparent",
     },
     fontFamily: {
-      sans: 'Manrope',
-      serif: 'Archia'
+      sans: "Manrope",
+      serif: "Archia",
+    },
+    container:{
+      center: true
+    },
+    screens: {
+      '2xl': '1280px',
     },
     extend: {
       borderWidth: {
-        '1': '1px'
-      }
+        1: "1px",
+      },
+      backgroundImage: {
+        cover: "url('/images/bg/bg-cover.svg')",
+      },
+      fontSize: {
+        "4rem": ["4rem", "4.5rem"],
+      },
     },
   },
 };
