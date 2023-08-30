@@ -1,4 +1,5 @@
 import { Cover } from "./components/cover/Cover";
+import { Features } from "./components/features/Features";
 import { Header } from "./components/shared/header/Header";
 
 export default function Home() {
@@ -6,6 +7,7 @@ export default function Home() {
     <>
       <Header />
       <Cover />
+      <Features />
     </>
   );
 }
