@@ -26,7 +26,7 @@ export const Cover = () => {
 
   return (
     <section
-      className="bg-dark bg-cover h-screen relative overflow-hidden pt-28 flex items-center"
+      className="bg-dark bg-cover bg-coverPage h-screen relative overflow-hidden pt-28 flex items-center"
       ref={containerRef}
     >
         <div className="container mx-auto z-20 relative">
