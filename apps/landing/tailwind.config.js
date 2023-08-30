@@ -28,21 +28,23 @@ module.exports = {
       sans: "Manrope",
       serif: "Archia",
     },
-    container:{
-      center: true
+    container: {
+      center: true,
     },
     screens: {
-      '2xl': '1280px',
+      "2xl": "1280px",
     },
     extend: {
       borderWidth: {
         1: "1px",
       },
       backgroundImage: {
-        cover: "url('/images/bg/bg-cover.svg')",
+        coverPage: "url('/images/bg/bg-cover.svg')",
+        resources: "url('/images/bg/bg-resources.png')",
       },
       fontSize: {
         "4rem": ["4rem", "4.5rem"],
+        "2.5rem": ["2.5rem", "2.5rem"],
       },
     },
   },
