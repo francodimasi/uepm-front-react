@@ -19,6 +19,9 @@ module.exports = {
       error: "#FF0F3A",
       alert: "#F99232",
       success: "#49CD4F",
+      "gray-light": "#F0F0F0",
+      "gray-medium": "#D9D9D9",
+      "gray-dark": "#7A7A7A",
       transparent: "transparent",
     },
     fontFamily: {
