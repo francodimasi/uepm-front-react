@@ -31,10 +31,10 @@ module.exports = {
     container: {
       center: true,
     },
-    screens: {
-      "2xl": "1280px",
-    },
     extend: {
+      screens: {
+        "2xl": "1280px",
+      },
       borderWidth: {
         1: "1px",
       },
@@ -44,6 +44,7 @@ module.exports = {
       },
       fontSize: {
         "4rem": ["4rem", "4.5rem"],
+        "2rem": ["2rem", "2.5rem"],
         "2.5rem": ["2.5rem", "2.5rem"],
       },
     },

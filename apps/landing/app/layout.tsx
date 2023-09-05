@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "ui/styles.css";
 import "./styles/globals.css";
+import StyledComponentsRegistry from "./core/StyledComponentsRegistry";
 
 export const metadata: Metadata = {
   title: "Trialtech",
@@ -15,7 +16,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <StyledComponentsRegistry>
+        <body>{children}</body>
+      </StyledComponentsRegistry>
     </html>
   );
 }
