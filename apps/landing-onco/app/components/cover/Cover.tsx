@@ -26,17 +26,17 @@ export const Cover = () => {
 
   return (
     <section
-      className="bg-dark bg-cover bg-coverPage h-screen relative overflow-hidden pt-28 flex items-center"
+      className="bg-light bg-cover bg-coverPage h-screen relative overflow-hidden pt-28 flex items-center"
       ref={containerRef}
     >
         <div className="container mx-auto z-20 relative">
           <div className="grid grid-cols-11">
             <div className="col-span-8">
-              <h1 className="font-serif font-medium text-light text-4rem mb-14">
+              <h1 className="font-serif font-medium text-4rem mb-14">
                 Innovación y tecnología para revolucionar el reclutamiento de
                 pacientes en Latinoamérica
               </h1>
-              <span className="font-sans text-light mb-8 block">
+              <span className="font-sans mb-8 block">
                 Nuestras soluciones combinan análisis de datos, comunicación
                 especializada y gestión humanizada de pacientes en un entorno
                 tecnológico moderno y seguro. <b>¡Trabajemos juntos!</b>
