@@ -7,8 +7,8 @@ import innovation from "public/images/resources/innovation.svg";
 import realTime from "public/images/resources/real-time.svg";
 import catchment from "public/images/resources/catchment.svg";
 import bgResources from "public/images/bg/bg-resources.png";
-import { ResourceItem } from "../types/resource.type";
-import { Resource } from "./Resource";
+import { ResourceItem } from "./types/resource.type";
+import { Resource } from "./components/Resource";
 import Image from "next/image";
 
 const resources: ResourceItem[] = [
@@ -52,14 +52,14 @@ const resources: ResourceItem[] = [
 
 export function Resources() {
   return (
-    <section className="bg-dark relative py-28">
-      <div className="absolute w-full -top-1/2 opacity-70">
+    <section className="bg-light relative py-28 overflow-hidden">
+      <div className="absolute w-full -top-1/2 opacity-70 mix-blend-hard-light opacity-20">
         <Image className="w-full" src={bgResources} alt="Background" />
       </div>
-      <div className="container relative z-10">
+      <div className="container mx-auto px-4 relative z-10">
         <div className="grid grid-cols-11">
           <div className="col-span-7">
-            <h2 className="font-serif font-medium text-light text-2.5rem mb-20">
+            <h2 className="font-serif font-medium text-2.5rem mb-20">
               La efectividad y precisión de nuestras soluciones integrales nos
               convierten en la empresa líder en la región.
             </h2>
