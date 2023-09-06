@@ -11,9 +11,11 @@ module.exports = {
   theme: {
     colors: {
       primary: "#00A393",
-      "primary-light": "#CEFF67",
+      "primary-light": "#00DDC8",
       "primary-dark": "#04625C",
-      secondary: "#00DDC8",
+      secondary: "#CEFF67",
+      tertiary: "#C49EF2",
+      "tertiary-light": "#DAB5FF",
       light: "#FCFCFC",
       dark: "#020001",
       error: "#FF0F3A",
