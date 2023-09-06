@@ -56,7 +56,7 @@ export function Resources() {
       <div className="absolute w-full -top-1/2 opacity-70 mix-blend-hard-light opacity-20">
         <Image className="w-full" src={bgResources} alt="Background" />
       </div>
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container relative z-10">
         <div className="grid grid-cols-11">
           <div className="col-span-7">
             <h2 className="font-serif font-medium text-2.5rem mb-20">

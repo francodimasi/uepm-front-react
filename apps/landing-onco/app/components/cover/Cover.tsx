@@ -30,10 +30,10 @@ export const Cover = () => {
       ref={containerRef}
     >
       <div className="bg-cover bg-coverPage absolute h-full w-full top-0 left-0 opacity-50"></div>
-      <div className="container px-4 mx-auto z-20 relative">
+      <div className="container z-20 relative">
         <div className="grid grid-cols-11">
-          <div className="col-span-8">
-            <h1 className="font-serif font-medium text-4rem mb-14">
+          <div className="col-span-11 lg:col-span-8">
+            <h1 className="font-serif font-medium mb-14 text-4xl md:text-5xl lg:text-4rem">
               Innovación y tecnología para revolucionar el reclutamiento de
               pacientes en Latinoamérica
             </h1>
