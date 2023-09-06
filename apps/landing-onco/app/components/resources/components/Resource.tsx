@@ -18,8 +18,8 @@ export const Resource = ({ name, icon, description }: ResourceItem) => {
       onMouseMove={onMouseMove}
       className="group relative backdrop-blur"
     >
-      <div className="bg-dark absolute w-full h-full opacity-30 top-0 left-0"></div>
-      <div className="relative z-10 p-8">
+      <div className="bg-light absolute w-full h-full opacity-30 top-0 left-0"></div>
+      <div className="relative z-10 p-8 w-full h-full">
         <ResourcePattern mouseX={mouseX} mouseY={mouseY} />
         <Image
           src={icon}
@@ -27,8 +27,8 @@ export const Resource = ({ name, icon, description }: ResourceItem) => {
           width={48}
           className="opacity-90 group-hover:opacity-100 transition-opacity duration-200"
         />
-        <h4 className="text-light text-2xl font-semibold my-4">{name}</h4>
-        <p className="text-light">{description}</p>
+        <h4 className="text-2xl font-semibold my-4">{name}</h4>
+        <p>{description}</p>
       </div>
     </div>
   );

@@ -13,9 +13,9 @@ export const LandingButton = ({
     onClick 
 }: PropsWithChildren<LoadingButtonProps>) => {
     return (
-        <button className="flex items-center bg-primary-light font-bold py-5 px-6 hover:bg-light" onClick={onClick}>
+        <button className="flex text-light items-center bg-primary font-bold py-5 px-6 hover:bg-primary-dark transition-all" onClick={onClick}>
             {children}
-            <Image className="ml-5" src={arrow} alt="arrow"></Image>
+            <Image className="ml-5 brightness-[100]" src={arrow} alt="arrow"></Image>
         </button>
     )
 }
