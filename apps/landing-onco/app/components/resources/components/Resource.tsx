@@ -19,7 +19,7 @@ export const Resource = ({ name, icon, description }: ResourceItem) => {
       className="group relative backdrop-blur"
     >
       <div className="bg-light absolute w-full h-full opacity-30 top-0 left-0"></div>
-      <div className="relative z-10 p-8">
+      <div className="relative z-10 p-8 w-full h-full">
         <ResourcePattern mouseX={mouseX} mouseY={mouseY} />
         <Image
           src={icon}

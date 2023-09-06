@@ -52,20 +52,17 @@ const resources: ResourceItem[] = [
 
 export function Resources() {
   return (
-    <section className="bg-light relative py-28 overflow-hidden">
-      <div className="absolute w-full -top-1/2 opacity-70 mix-blend-hard-light opacity-20">
-        <Image className="w-full" src={bgResources} alt="Background" />
-      </div>
+    <section className="bg-light relative py-12 lg:py-28 overflow-hidden">
       <div className="container relative z-10">
         <div className="grid grid-cols-11">
-          <div className="col-span-7">
-            <h2 className="font-serif font-medium text-2.5rem mb-20">
+          <div className="col-span-11 lg:col-span-7">
+            <h2 className="font-serif font-medium mb-20 text-2xl sm:text-3xl md:text-4xl lg:text-2.5rem">
               La efectividad y precisión de nuestras soluciones integrales nos
               convierten en la empresa líder en la región.
             </h2>
           </div>
         </div>
-        <div className="grid grid-cols-3 gap-6 dark">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 dark">
           {resources.map((resource, index) => (
             <Resource key={index} {...resource} />
           ))}
