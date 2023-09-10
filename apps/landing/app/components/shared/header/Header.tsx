@@ -90,5 +90,3 @@ export const Header = () => {
     </header>
   );
 };
-
-const StyledMenu = styled.div``;
