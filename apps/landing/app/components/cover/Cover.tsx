@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import { LandingButton } from "../shared/button/LandingButton";
 import { Molecules } from "./components/Molecules";
 import { mouseParallax } from "@/app/utils/animations/MouseParallax";
+import { H1 } from "ui";
 
 export const Cover = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -31,11 +32,11 @@ export const Cover = () => {
     >
         <div className="container mx-auto z-20 relative">
           <div className="grid grid-cols-11">
-            <div className="col-span-8">
-              <h1 className="font-serif font-medium text-light text-4rem mb-14">
+            <div className="col-span-11 lg:col-span-8">
+              <H1 className="text-light">
                 Innovación y tecnología para revolucionar el reclutamiento de
                 pacientes en Latinoamérica
-              </h1>
+              </H1>
               <span className="font-sans text-light mb-8 block">
                 Nuestras soluciones combinan análisis de datos, comunicación
                 especializada y gestión humanizada de pacientes en un entorno
