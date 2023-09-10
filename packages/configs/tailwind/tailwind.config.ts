@@ -43,8 +43,9 @@ const tailwindDefaultConfig: Config = {
         1: "1px",
       },
       fontSize: {
-        "4rem": ["4rem", "4.5rem"],
+        "2rem": ["2rem", "2.5rem"],
         "2.5rem": ["2.5rem", "2.5rem"],
+        "4rem": ["4rem", "4.5rem"],
       },
     },
   },

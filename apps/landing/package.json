@@ -23,7 +23,8 @@
     "styled-components": "^6.0.7",
     "tsconfig": "*",
     "typescript": "5.2.2",
-    "ui": "*"
+    "ui": "*",
+    "utils": "*"
   },
   "devDependencies": {
     "@types/styled-components": "^5.1.26",
