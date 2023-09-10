@@ -9,7 +9,7 @@ export const Molecules = forwardRef<any, any>((props, ref) => {
     <div className="h-full w-full absolute top-0 -right-6 overflow-hidden">
       <Image
         ref={ref}
-        className="absolute top-0 right-0 w-5/12"
+        className="absolute top-0 right-0  w-7/12 xl:w-5/12"
         src={elipses}
         alt="elipses"
       />

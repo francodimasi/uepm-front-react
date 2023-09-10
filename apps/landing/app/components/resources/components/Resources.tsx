@@ -52,7 +52,7 @@ const resources: ResourceItem[] = [
 
 export function Resources() {
   return (
-    <section className="bg-dark relative py-28">
+    <section className="bg-dark relative py-28 overflow-hidden">
       <div className="absolute w-full -top-1/2 opacity-70">
         <Image className="w-full" src={bgResources} alt="Background" />
       </div>
