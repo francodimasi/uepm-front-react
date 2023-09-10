@@ -5,4 +5,5 @@ export type MenuItemProps = {
 export type MenuProps = {
   links: MenuItemProps[];
   opened?: boolean;
+  breakpoint?: string;
 };

@@ -1,17 +1,23 @@
 "use client";
 
-import Image from "next/image";
-import Link from "next/link";
-import { useMemo, useEffect, useState, useCallback } from "react";
 import cx from "classnames";
+import Image from "next/image";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { styled } from "styled-components";
+import { isMobile } from "utils";
 
-import logo from "public/images/trialtech-logo.svg";
+import close from "public/images/icons/close.svg";
 import menu from "public/images/icons/menu.svg";
+import logo from "public/images/trialtech-logo.svg";
 import { MenuDesktop } from "./menu/MenuDesktop";
+import { MenuMobile } from "./menu/MenuMobile";
+
+const mobileBreakpoint = "lg";
 
 export const Header = () => {
   const [minimized, setMinimized] = useState<boolean>(false);
+  const [opened, setOpened] = useState<boolean>(false);
+  const scrollBreakpoint = isMobile() ? 50 : 150;
   const links = useMemo(() => {
     return [
       { title: "Dónde operamos", url: "" },
@@ -23,7 +29,7 @@ export const Header = () => {
   }, []);
 
   const headerClasses = cx(
-    "group fixed top-0 left-0 w-full z-[9999] transition-all px-4 lg:px-0",
+    "group fixed top-0 left-0 w-full z-[9999] transition-all",
     {
       "py-4 bg-opacity-70 backdrop-blur": minimized,
       "py-4 lg:py-12": !minimized,
@@ -31,7 +37,7 @@ export const Header = () => {
   );
 
   const bgHeaderClasses = cx(
-    "bg-dark transition-opacity absolute top-0 left-0 w-full h-full",
+    "bg-dark transition-opacity ease-in-out absolute top-0 left-0 w-full h-full",
     {
       "opacity-0": !minimized,
       "opacity-70": minimized,
@@ -49,10 +55,12 @@ export const Header = () => {
     (event: Event) => {
       const target = event.target as Document;
       const scrollTop = target.scrollingElement?.scrollTop ?? 0;
-      setMinimized(scrollTop > 150);
+      setMinimized(scrollTop > scrollBreakpoint);
     },
     [minimized]
   );
+
+  const handleOpened = useCallback(() => setOpened((opened) => !opened), []);
 
   return (
     <header className={headerClasses}>
@@ -65,16 +73,19 @@ export const Header = () => {
             width={160}
             alt="Trialtech logo"
           />
-          <button className="lg:hidden relative z-10">
-            <Image
-              src={menu}
-              width={24}
-              alt="Menu"
-            />
-          </button>
+          <div>
+            <button className={`${mobileBreakpoint}:hidden relative z-10`} onClick={handleOpened}>
+              <Image src={opened ? close : menu} width={24} alt="Menu" />
+            </button>
 
-          <MenuDesktop links={links}></MenuDesktop>
+            <div className={`hidden ${mobileBreakpoint}:block`}>
+              <MenuDesktop links={links}></MenuDesktop>
+            </div>
+          </div>
         </nav>
+      </div>
+      <div className={`${mobileBreakpoint}:hidden`}>
+        <MenuMobile links={links} opened={opened} breakpoint={mobileBreakpoint}></MenuMobile>
       </div>
     </header>
   );
