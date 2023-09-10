@@ -1,4 +1,1 @@
-import { isMobile } from "./window";
-module.exports = {
-    isMobile
-}
+export * from "./window";

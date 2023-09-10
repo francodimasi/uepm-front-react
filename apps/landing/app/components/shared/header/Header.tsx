@@ -3,7 +3,6 @@
 import cx from "classnames";
 import Image from "next/image";
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { styled } from "styled-components";
 import { isMobile } from "utils";
 
 import close from "public/images/icons/close.svg";
