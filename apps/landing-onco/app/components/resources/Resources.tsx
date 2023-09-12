@@ -10,6 +10,7 @@ import bgResources from "public/images/bg/bg-resources.png";
 import { ResourceItem } from "./types/resource.type";
 import { Resource } from "./components/Resource";
 import Image from "next/image";
+import { H2 } from "ui";
 
 const resources: ResourceItem[] = [
   {
@@ -56,10 +57,10 @@ export function Resources() {
       <div className="container relative z-10">
         <div className="grid grid-cols-11">
           <div className="col-span-11 lg:col-span-7">
-            <h2 className="font-serif font-medium mb-20 text-2xl sm:text-3xl md:text-4xl lg:text-2.5rem">
+            <H2>
               La efectividad y precisión de nuestras soluciones integrales nos
               convierten en la empresa líder en la región.
-            </h2>
+            </H2>
           </div>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 dark">

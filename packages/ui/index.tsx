@@ -1,5 +1,8 @@
 import * as React from "react";
 
+export * from './core/constants/breakpoints';
+export * from './core/StyledComponentsRegistry'
+
 // component exports
 export * from "./Button";
 export * from "./Header";

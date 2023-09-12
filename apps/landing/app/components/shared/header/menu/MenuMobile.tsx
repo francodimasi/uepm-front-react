@@ -5,8 +5,8 @@ import { MenuProps } from "./Menu.types";
 
 export const MenuMobile = ({ links, opened, breakpoint }: MenuProps) => {
 
-  const menuClasses = cx('left-full transition-transform', {
-    '-translate-x-full': opened
+  const menuClasses = cx('right-full transition-transform', {
+    'translate-x-full': opened
   });
 
   useEffect(() => {
@@ -21,7 +21,7 @@ export const MenuMobile = ({ links, opened, breakpoint }: MenuProps) => {
   }, [opened])
 
   return (
-    <div className={`bg-dark bg-coverPage bg-cover fixed h-screen w-screen top-0 ${menuClasses}`}>
+    <div className={`bg-dark bg-menu bg-cover fixed h-screen w-screen top-0 ${menuClasses}`}>
       <div className="container h-full py-4">
         <div className="h-full flex flex-col">
           <ul className="pt-40 flex-1">

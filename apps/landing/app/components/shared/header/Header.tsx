@@ -77,7 +77,7 @@ export const Header = () => {
               <Image src={opened ? close : menu} width={24} alt="Menu" />
             </button>
 
-            <div className={`hidden ${mobileBreakpoint}:block`}>
+            <div className={`${mobileBreakpoint}:block hidden`}>
               <MenuDesktop links={links}></MenuDesktop>
             </div>
           </div>
