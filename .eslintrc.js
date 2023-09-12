@@ -7,4 +7,7 @@ module.exports = {
       rootDir: ["apps/*/"],
     },
   },
+  rules: {
+    "react/display-name": 'off'
+  }
 };

@@ -5,17 +5,17 @@ import { useClientTranslation } from "i18n";
 import { Header } from "ui";
 import { Layout } from "../../components/core/layout/Layout";
 import { SwitchLanguage } from "../../components/core/layout/language/SwitchLanguage";
-import { useSiteApi } from "@api/site/useSiteApi";
 import { errorResponseHandler } from "@core/error-handler";
+import { useSite } from "@api/site/useSite";
 
 export default function Page({ params }) {
   const { lang } = params;
   const { t } = useClientTranslation(lang);
-  const { getSites } = useSiteApi();
+  const { getSites } = useSite();
 
   const loadSites = async () => {
     try {
-      await getSites({query: "mar"});
+      await getSites();
     } catch (e) {
       errorResponseHandler(e);
     }
