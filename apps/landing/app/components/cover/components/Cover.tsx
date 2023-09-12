@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { LandingButton } from "../shared/button/LandingButton";
-import { Molecules } from "./components/Molecules";
+import { LandingButton } from "../../shared/button/LandingButton";
+import { Molecules } from "./Molecules";
 import { mouseParallax } from "@/app/utils/animations/MouseParallax";
 import { H1 } from "ui";
 
@@ -27,7 +27,7 @@ export const Cover = () => {
 
   return (
     <section
-      className="bg-dark bg-cover bg-coverPage h-screen relative overflow-hidden pt-28 flex items-center"
+      className="bg-dark bg-cover bg-cover-page-mobile md:bg-cover-page h-screen relative overflow-hidden pt-28 flex items-center"
       ref={containerRef}
     >
         <div className="container mx-auto z-20 relative">
@@ -50,7 +50,7 @@ export const Cover = () => {
             </div>
           </div>
         </div>
-        <Molecules ref={moleculesRef} />
+        <Molecules className="hidden md:block" ref={moleculesRef} />
     </section>
   );
 };

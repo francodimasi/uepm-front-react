@@ -27,23 +27,25 @@ export const ResourcesContainer = () => {
     return (
       <Swiper
         modules={[Pagination]}
-        spaceBetween={50}
+        spaceBetween={16}
         slidesPerView={1.25}
         slidesPerGroup={1}
         pagination={{
-            clickable: true,
-            enabled: true,
-            bulletActiveClass: "swiper-pagination-bullet-active !bg-primary",
+          clickable: true,
+          enabled: true,
+          bulletClass: "swiper-pagination-bullet !top-1 !relative",
+          bulletActiveClass: "swiper-pagination-bullet-active",
         }}
         breakpoints={{
-            [BREAKPOINTS.md]: {
-                slidesPerView: 2,
-                slidesPerGroup: 2
+          [BREAKPOINTS.md]: {
+            slidesPerView: 2,
+            slidesPerGroup: 2,
           },
         }}
+        className="!pb-8"
       >
         {RESOURCES.map((resource, index) => (
-          <SwiperSlide key={index}>
+          <SwiperSlide className="!h-auto" key={index}>
             <Resource {...resource} />
           </SwiperSlide>
         ))}

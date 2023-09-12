@@ -1,17 +1,13 @@
 "use client";
 import Image from "next/image";
 import bgResources from "public/images/bg/bg-resources.png";
-import { useEffect, useState } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { BREAKPOINTS, H2 } from "ui";
-import { RESOURCES } from "../constants/resources.const";
-import { Resource } from "./Resource";
+import { H2 } from "ui";
 import { ResourcesContainer } from "./ResourcesContainer";
 
 export function Resources() {
   return (
-    <section className="bg-dark relative py-28 overflow-hidden">
-      <div className="absolute w-full -top-1/2 opacity-70">
+    <section className="bg-dark bg-cover bg-cover-page md:bg-resources-mobile relative py-20 md:py-28 overflow-hidden">
+      <div className="hidden md:block absolute w-full -top-1/2 opacity-70">
         <Image className="w-full" src={bgResources} alt="Background" />
       </div>
       <div className="container relative z-10">
