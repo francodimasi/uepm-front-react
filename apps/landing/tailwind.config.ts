@@ -6,7 +6,7 @@ const config: Partial<Config> = {
   theme: {
     extend: {
       backgroundImage: {
-        "cover-page": "url('/images/bg/bg-cover.png')",
+        "cover-page": "url('/images/bg/bg-cover.svg')",
         "cover-page-mobile": "url('/images/bg/bg-cover-mobile.png')",
         resources: "url('/images/bg/bg-resources.png')",
         "resources-mobile": "url('/images/bg/bg-resources-mobile.png')",
