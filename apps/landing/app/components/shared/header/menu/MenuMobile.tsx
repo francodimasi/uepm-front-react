@@ -5,8 +5,8 @@ import { MenuProps } from "./Menu.types";
 
 export const MenuMobile = ({ links, opened, breakpoint }: MenuProps) => {
 
-  const menuClasses = cx('left-full transition-transform', {
-    '-translate-x-full': opened
+  const menuClasses = cx('right-full transition-transform', {
+    'translate-x-full': opened
   });
 
   useEffect(() => {
