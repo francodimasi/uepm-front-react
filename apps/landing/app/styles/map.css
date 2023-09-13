@@ -1,0 +1,10 @@
+
+.map-marker{
+  @apply cursor-pointer fill-light;
+}
+.map-marker-selected {
+  @apply fill-primary;
+  filter: drop-shadow(0px 0px 6px var(--color-primary));
+  mix-blend-mode: lighten;
+  position: relative;
+}
