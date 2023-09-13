@@ -1,10 +1,14 @@
-import React from 'react';
-// import { ReactComponent as Logo } from "../assets/map.svg";
+"use client";
 
-export const Map = () => {
-    return(
-        <>
-            
-        </>
-    )
-}
+import React from "react";
+import { SvgLoader, SvgProxy } from "react-svgmt";
+
+export const Map = ({ className }: React.HTMLAttributes<HTMLDivElement>) => {
+  return (
+    <div className={`${className}`}>
+      <SvgLoader path="images/sites/map.svg">
+
+      </SvgLoader>
+    </div>
+  );
+};
