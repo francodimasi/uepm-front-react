@@ -6,7 +6,7 @@ import { ResourcesContainer } from "./ResourcesContainer";
 
 export function Resources() {
   return (
-    <section className="bg-cover bg-cover-page md:bg-resources-mobile relative py-20 md:py-28 overflow-hidden">
+    <section className="bg-cover bg-cover-page md:bg-none relative py-20 md:py-28">
       <div className="md:block hidden absolute w-full -top-1/2 opacity-70">
         <Image className="w-full" src={bgResources} alt="Background" />
       </div>
