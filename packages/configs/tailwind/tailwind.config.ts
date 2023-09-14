@@ -38,6 +38,7 @@ const tailwindDefaultConfig: Config = {
     extend: {
       screens: {
         "2xl": "1280px",
+        'hmd': {'raw': '(min-height: 667px)'}
       },
       borderWidth: {
         1: "1px",
