@@ -6,6 +6,7 @@ import { Molecules } from "./components/Molecules";
 import { mouseParallax } from "@/app/utils/animations/MouseParallax";
 import { H1 } from "ui";
 import { openUrl } from "utils";
+import { LINKS } from "@/app/constants/links.const";
 
 export const Cover = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -28,11 +29,11 @@ export const Cover = () => {
 
   return (
     <section
-      className="bg-light h-screen relative overflow-hidden pt-20 hmd:pt-28 flex items-center"
+      className="h-screen relative overflow-hidden flex items-center"
       ref={containerRef}
     >
       <div className="bg-cover bg-coverPage absolute h-full w-full top-0 left-0 opacity-50"></div>
-      <div className="container z-20 relative">
+      <div className="container z-20 relative pt-20 hmd:pt-28">
         <div className="grid grid-cols-11">
           <div className="col-span-11 lg:col-span-8">
             <H1>
@@ -45,7 +46,7 @@ export const Cover = () => {
               evolución en cada instancia del proceso.
             </span>
             <LandingButton
-              onClick={() => openUrl('https://www.google.com')}
+              onClick={() => openUrl(LINKS.oncoLogin)}
             >
               Comenzar a usar
             </LandingButton>

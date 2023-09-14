@@ -45,7 +45,7 @@ const resources: ResourceItem[] = [
 
 export function Resources() {
   return (
-    <section className="bg-light relative py-12 lg:py-28 overflow-hidden">
+    <section className="relative py-12 lg:py-28 overflow-hidden">
       <div className="container relative z-10">
         <div className="grid grid-cols-11">
           <div className="col-span-11 lg:col-span-7">
