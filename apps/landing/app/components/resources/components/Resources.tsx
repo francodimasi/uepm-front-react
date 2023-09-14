@@ -10,7 +10,7 @@ export function Resources() {
       <div className="md:block hidden absolute w-full -top-1/2 opacity-70">
         <Image className="w-full" src={bgResources} alt="Background" />
       </div>
-      <div className="container relative z-10">
+      <div className="container relative z-40">
         <div className="grid grid-cols-11">
           <div className="col-span-11 lg:col-span-7">
             <H2 className="text-light mb-20">

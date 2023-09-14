@@ -1,10 +1,9 @@
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
+import { Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { BREAKPOINTS } from "ui";
 import { RESOURCES } from "../constants/resources.const";
 import { Resource } from "./Resource";
-import { Pagination } from "swiper/modules";
-import { styled } from "styled-components";
 
 export const ResourcesContainer = () => {
   const [showSwiper, setShowSwiper] = useState<boolean>(false);
