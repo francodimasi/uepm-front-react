@@ -1,11 +1,12 @@
 "use client";
 
-import automatization from "public/images/resources/automatization.svg";
-import catchment from "public/images/resources/catchment.svg";
-import innovation from "public/images/resources/innovation.svg";
-import patient from "public/images/resources/patient.svg";
-import precision from "public/images/resources/precision.svg";
-import realTime from "public/images/resources/real-time.svg";
+import money from "public/images/resources/money.png";
+import tap from "public/images/resources/tap.png";
+import efficiency from "public/images/resources/efficiency.png";
+import team from "public/images/resources/team.png";
+import personalData from "public/images/resources/personal-data.png";
+import chat from "public/images/resources/chat.png";
+
 import { H2 } from "ui";
 import { Resource } from "./components/Resource";
 import { ResourceItem } from "./types/resource.type";
@@ -15,31 +16,37 @@ const resources: ResourceItem[] = [
     name: "Honorarios",
     description:
       "Si los pacientes referidos son randomizados, se retribuirá el tiempo y dedicación destinado a buscar y derivar al paciente a un ensayo.",
-    icon: patient,
+    icon: money,
   },
   {
     name: "Privacidad de datos",
     description:
       "Nuestra plataforma es un entorno electrónico seguro: los datos personales e información de contacto de los pacientes solo será compartida con el investigador médico.",
-    icon: innovation,
+    icon: personalData,
   },
   {
     name: "Gestión integral",
     description:
       "En una misma plataforma es posible: referir y monitorear, en tiempo real, la evolución del paciente, contactarse con el investigador y cobrar honorarios.",
-    icon: precision,
+    icon: team,
   },
   {
     name: "Seguimiento en tiempo real",
     description:
       "Se podrá monitorear el avance del paciente en el estudio en tiempo real.",
-    icon: catchment,
+    icon: efficiency,
   },
   {
     name: "Chat: comunicación directa",
     description:
       "A través de nuestra plataforma, médicos e investigadores pueden contactarse sin intermediarios en un entorno seguro.",
-    icon: realTime,
+    icon: chat,
+  },
+  {
+    name: "Estudios para cada paciente",
+    description:
+      "Contamos con una gran variedad de opciones de ensayos que se adaptan a la condición de cada paciente.",
+    icon: tap,
   },
 ];
 
