@@ -14,8 +14,9 @@ export const Header = () => {
   const [headerButton, setHeaderButton] = useState<boolean>(false);
 
   const headerClasses = cx(
-    "group fixed top-0 left-0 w-full z-[9999] transition-all",
+    "group fixed top-0 left-0 w-full z-[9999]",
     {
+      "transition-all": !isMobile(),
       "py-4 bg-opacity-70 backdrop-blur": minimized,
       "py-4 lg:py-12": !minimized,
     }
@@ -28,6 +29,7 @@ export const Header = () => {
       "opacity-70": minimized,
     }
   );
+
   const headerButtonClasses = cx(
     "transition-all",
     {

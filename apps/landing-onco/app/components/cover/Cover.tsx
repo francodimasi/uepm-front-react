@@ -37,7 +37,7 @@ export const Cover = () => {
         <div className="grid grid-cols-11">
           <div className="col-span-11 lg:col-span-8">
             <H1>
-              La primera plataforma para oncólogos en Latinoamérica que conecta
+              La primera plataforma para oncólogos que conecta
               pacientes con investigadores médicos
             </H1>
             <span className="font-sans mb-8 block">
@@ -53,7 +53,7 @@ export const Cover = () => {
           </div>
         </div>
       </div>
-      <div className="mix-blend-overlay">
+      <div className="hidden lg:block mix-blend-overlay">
         <Molecules ref={moleculesRef} />
       </div>
     </section>
