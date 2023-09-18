@@ -29,7 +29,7 @@ export const MenuMobile = ({ links, opened, breakpoint }: MenuProps) => {
               <li key={index}>
                 <Link
                   href={link.url}
-                  className="block text-2rem text-light font-sans my-6"
+                  className="block text-3xl text-light font-sans my-6"
                 >
                   {link.title}
                 </Link>
