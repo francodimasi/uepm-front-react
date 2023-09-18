@@ -17,6 +17,7 @@ export const SiteSwiper = () => {
         swiper.slideTo(SITES.indexOf(current));
       }
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selected]);
   return (
     <Swiper

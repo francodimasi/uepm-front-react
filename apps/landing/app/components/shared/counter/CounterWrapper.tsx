@@ -1,11 +1,12 @@
+"use client";
+
 import { useCallback, useContext, useMemo } from "react";
+import { SitesContext } from "../../sites/SitesProvider";
 import { Site } from "../../sites/constants/sites.const";
 import { Counter } from "./Counter";
 import { CounterItem } from "./types/counter.type";
-import { SitesContext } from "../../sites/SitesProvider";
 
 export const CounterWrapper = ({
-  id,
   name,
   cities,
   clinics,
@@ -13,24 +14,27 @@ export const CounterWrapper = ({
   specialties,
 }: Site) => {
   const { selected } = useContext(SitesContext);
-  const counterData: CounterItem[] = [
-    {
-      label: "Especialistas",
-      value: specialists,
-    },
-    {
-      label: "Sedes Clínicas",
-      value: clinics,
-    },
-    {
-      label: "Ciudades",
-      value: cities,
-    },
-    {
-      label: "Especialidades",
-      value: specialties,
-    },
-  ];
+  const counterData: CounterItem[] = useMemo(
+    () => [
+      {
+        label: "Especialistas",
+        value: specialists,
+      },
+      {
+        label: "Sedes Clínicas",
+        value: clinics,
+      },
+      {
+        label: "Ciudades",
+        value: cities,
+      },
+      {
+        label: "Especialidades",
+        value: specialties,
+      },
+    ],
+    [cities, clinics, specialists, specialties]
+  );
 
   const CounterList = useCallback(
     () => (
@@ -45,6 +49,7 @@ export const CounterWrapper = ({
         </div>
       </>
     ),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     [selected]
   );
 

@@ -18,7 +18,7 @@ export const MenuMobile = ({ links, opened, breakpoint }: MenuProps) => {
       document.body.classList.remove('overflow-hidden');
       document.body.classList.remove(`${breakpoint}:overflow-visible`);
     }
-  }, [opened])
+  }, [opened, breakpoint])
 
   return (
     <div className={`bg-dark bg-menu bg-cover fixed h-screen w-screen top-0 ${menuClasses}`}>
