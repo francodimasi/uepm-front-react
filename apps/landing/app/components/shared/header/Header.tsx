@@ -42,12 +42,13 @@ export const Header = () => {
       "opacity-70": minimized,
     }
   );
-
+  
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleScroll = useCallback(
@@ -56,6 +57,7 @@ export const Header = () => {
       const scrollTop = target.scrollingElement?.scrollTop ?? 0;
       setMinimized(scrollTop > scrollBreakpoint);
     },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     [minimized]
   );
 
