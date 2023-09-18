@@ -32,20 +32,19 @@ export const CounterWrapper = ({
     },
   ];
 
-  const CounterList = useCallback(
-    () => (
-      <>
-        <h3 className="text-light font-bold text-base sm:text-2xl">{name}</h3>
-        <div className="grid  grid-cols-2 sm:grid-cols-4 mt-2.5 sm:mt-10">
-          {counterData.map((item, index) => (
-            <div key={index} className="my-5 sm:my-0 col-span-1">
-              <Counter {...item} />
-            </div>
-          ))}
-        </div>
-      </>
-    ),
-    [selected]
+  console.log(counterData);
+
+  const CounterList = () => (
+    <>
+      <h3 className="text-light font-bold text-base sm:text-2xl">{name}</h3>
+      <div className="grid  grid-cols-2 sm:grid-cols-4 mt-2.5 sm:mt-10">
+        {counterData.map((item, index) => (
+          <div key={index} className="my-5 sm:my-0 col-span-1">
+            <Counter {...item} />
+          </div>
+        ))}
+      </div>
+    </>
   );
 
   return <CounterList />;
