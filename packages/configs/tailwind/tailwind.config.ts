@@ -36,9 +36,6 @@ const tailwindDefaultConfig: Config = {
       padding: "1rem",
     },
     extend: {
-      screens: {
-        "2xl": "1280px",
-      },
       borderWidth: {
         1: "1px",
       },
