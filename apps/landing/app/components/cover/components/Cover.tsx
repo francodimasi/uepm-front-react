@@ -44,6 +44,7 @@ export const Cover = () => {
               </span>
               <LandingButton
                 onClick={() => console.warn("@todo: add functionality")}
+                className="w-full sm:w-auto"
               >
                 Contáctanos ahora
               </LandingButton>
