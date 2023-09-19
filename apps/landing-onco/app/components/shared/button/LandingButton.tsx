@@ -15,6 +15,7 @@ export const LandingButton = ({
   children,
   size = "regular",
   icon = true,
+  className,
   onClick,
 }: PropsWithChildren<LoadingButtonProps> &
   React.HTMLAttributes<HTMLButtonElement>) => {
@@ -26,7 +27,7 @@ export const LandingButton = ({
 
   return (
     <button
-      className={`${sizeClasses} flex text-light items-center bg-primary font-bold hover:bg-primary-dark transition-all`}
+      className={`${sizeClasses} flex text-light items-center justify-between bg-primary font-bold hover:bg-primary-dark transition-all ${className}`}
       onClick={onClick}
     >
       <span>{children}</span>
