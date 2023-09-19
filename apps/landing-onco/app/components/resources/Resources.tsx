@@ -56,7 +56,7 @@ export function Resources() {
     <section className="bg-light relative py-12 lg:py-28 overflow-hidden">
       <div className="container relative z-10">
         <div className="grid grid-cols-11">
-          <div className="col-span-11 lg:col-span-7">
+          <div className="col-span-11 lg:col-span-7 mb-14">
             <H2>
               La efectividad y precisión de nuestras soluciones integrales nos
               convierten en la empresa líder en la región.
