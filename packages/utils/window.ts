@@ -17,3 +17,7 @@ export const isMobile = function () {
   }
   return check;
 };
+
+export const openUrl = (url: string, target = "_self") => {
+  window.open(url, target, "noreferrer");
+}

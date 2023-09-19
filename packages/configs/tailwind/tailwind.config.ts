@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 const tailwindDefaultConfig: Config = {
@@ -36,6 +35,9 @@ const tailwindDefaultConfig: Config = {
       padding: "1rem",
     },
     extend: {
+      screens: {
+        hmd: { raw: "(min-height: 668px)" },
+      },
       borderWidth: {
         1: "1px",
       },
