@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 const tailwindDefaultConfig: Config = {
@@ -37,16 +36,15 @@ const tailwindDefaultConfig: Config = {
     },
     extend: {
       screens: {
-        "2xl": "1280px",
-        'hmd': {'raw': '(min-height: 668px)'}
+        hmd: { raw: "(min-height: 668px)" },
       },
       borderWidth: {
         1: "1px",
       },
       fontSize: {
-        "2rem": ["2rem", "2.5rem"],
-        "2.5rem": ["2.5rem", "2.5rem"],
-        "4rem": ["4rem", "4.5rem"],
+        "3xl": ["2rem", "2.5rem"],
+        "4xl": ["2.5rem", "2.5rem"],
+        "6xl": ["4rem", "4.5rem"],
       },
     },
   },
