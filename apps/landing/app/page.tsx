@@ -1,4 +1,4 @@
-import { Cover } from "./components/cover/components/Cover"
+import { Cover } from "./components/cover/Cover"
 import { Resources } from "./components/resources/components/Resources";
 import { Header } from "./components/shared/header/Header";
 import { Sites } from "./components/sites/components/Sites";
