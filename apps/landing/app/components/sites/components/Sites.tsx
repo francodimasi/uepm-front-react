@@ -8,7 +8,7 @@ import { SiteSwiper } from "./SiteSwiper";
 export const Sites = () => {
   return (
     <SitesProvider>
-      <section className="relative">
+      <section className="relative pb-10 md:pb-24 lg:pb-80 nb:pb-48 xl:pb-80">
         
         <Map />
 
