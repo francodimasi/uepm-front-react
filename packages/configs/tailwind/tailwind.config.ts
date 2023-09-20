@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+const defaultTheme = require('tailwindcss/defaultTheme')
 
 const tailwindDefaultConfig: Config = {
   content: [
@@ -37,7 +38,6 @@ const tailwindDefaultConfig: Config = {
     extend: {
       screens: {
         hmd: { raw: "(min-height: 668px)" },
-        nb: "1366px"
       },
       borderWidth: {
         1: "1px",

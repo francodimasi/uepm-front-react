@@ -11,6 +11,7 @@ const config: Partial<Config> = {
         resources: "url('/images/bg/bg-resources.png')",
         "resources-mobile": "url('/images/bg/bg-resources-mobile.png')",
         menu: "url('/images/bg/bg-menu.png')",
+        medic: "url('/images/medic-network/medic.png')",
       }
     },
   },

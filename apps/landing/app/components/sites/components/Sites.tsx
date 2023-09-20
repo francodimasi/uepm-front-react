@@ -8,14 +8,13 @@ import { SiteSwiper } from "./SiteSwiper";
 export const Sites = () => {
   return (
     <SitesProvider>
-      <section className="relative pb-10 md:pb-24 lg:pb-80 nb:pb-48 xl:pb-80">
-        
+      <section className="relative pt-32 pb-16 lg:pb-60 xl:pb-32 2xl:pb-80 ">
         <Map />
 
         <div className="container relative grid grid-cols-12 z-20">
           <div className="hidden md:block col-span-6 invisible"></div>
           <div className="col-span-12 md:col-span-6">
-            <H2 className="text-light mb-16 mt-16 md:mt-0 xl:mt-12">
+            <H2 className="text-light mb-16 md:mt-0 xl:mt-12">
               De Latinoamérica para Latinoamérica
             </H2>
             <p className="text-light mb-10 sm:mb-16">
