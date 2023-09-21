@@ -2,7 +2,7 @@
 import { useCountUp } from "use-count-up";
 import { CounterItem } from "./types/counter.type";
 
-export const Counter = ({ label, value }: CounterItem) => {
+export const Counter = ({ label, value, symbol }: CounterItem) => {
   const { value: counter } = useCountUp({
     isCounting: true,
     end: value,
@@ -13,9 +13,9 @@ export const Counter = ({ label, value }: CounterItem) => {
     <div>
           <div>
             <span
-              className="text-primary font-serif text-7xl font-medium relative right-1 mb-4 block"
+              className="text-primary font-serif text-7xl font-medium relative right-1 mb-2 block"
             >
-              {counter}
+              {counter}{symbol}
             </span>
           </div>
       <div className="text-light text-xs font-bold uppercase">{label}</div>
