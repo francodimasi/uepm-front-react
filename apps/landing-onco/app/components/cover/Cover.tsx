@@ -47,7 +47,7 @@ export const Cover = () => {
             </span>
             <LandingButton
               className="w-full sm:w-auto"
-              onClick={() => {}} // openUrl(LINKS.oncoLogin)
+              onClick={() => openUrl(LINKS.oncoLogin)}
             >
               Comenzar a usar
             </LandingButton>

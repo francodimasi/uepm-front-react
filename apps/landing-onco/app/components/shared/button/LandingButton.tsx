@@ -6,8 +6,9 @@ import Image from "next/image";
 import cx from "classnames";
 
 type LoadingButtonProps = {
-  onClick: () => void;
+  onClick?: () => void;
   size?: "small" | "regular" | "large";
+  outlined?: boolean;
   icon?: boolean;
 };
 
@@ -15,6 +16,7 @@ export const LandingButton = ({
   children,
   size = "regular",
   icon = true,
+  outlined = false,
   className,
   onClick,
 }: PropsWithChildren<LoadingButtonProps> &
@@ -25,13 +27,33 @@ export const LandingButton = ({
     "py-6 px-7": size === "large",
   });
 
+  const customStyles = cx({
+    "border-2 border-light bg-transparent hover:bg-light hover:text-dark":
+      outlined,
+  });
+
+  const iconStyles = cx({
+    "group-hover:brightness-0": outlined,
+  });
+
   return (
     <button
-      className={`${sizeClasses} flex text-light items-center justify-between bg-primary font-bold hover:bg-primary-dark transition-all ${className}`}
+      className={`table group ${sizeClasses} text-light bg-primary font-bold hover:bg-primary-dark transition-all ${customStyles} ${className}`}
       onClick={onClick}
     >
-      <span>{children}</span>
-      {icon && <Image className="ml-5 brightness-[100]" src={arrow} alt="arrow"></Image>}
+      <div className="flex items-center justify-between">
+        <span>{children}</span>
+        <div className="pl-5">
+          {icon && (
+            <Image
+              className={`block brightness-[100] transition-all min-w-[22px] ${iconStyles}`}
+              src={arrow}
+              alt="arrow"
+              width={22}
+            ></Image>
+          )}
+        </div>
+      </div>
     </button>
   );
 };
