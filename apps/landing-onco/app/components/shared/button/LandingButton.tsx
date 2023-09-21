@@ -43,16 +43,16 @@ export const LandingButton = ({
     >
       <div className="flex items-center justify-between">
         <span>{children}</span>
-        <div className="pl-5">
-          {icon && (
+        {icon && (
+          <div className="pl-5">
             <Image
               className={`block brightness-[100] transition-all min-w-[22px] ${iconStyles}`}
               src={arrow}
               alt="arrow"
               width={22}
             ></Image>
-          )}
-        </div>
+          </div>
+        )}
       </div>
     </button>
   );
