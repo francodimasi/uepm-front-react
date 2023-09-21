@@ -12,7 +12,7 @@ export const ContactInput = ({ label, name, type, className }: ContactInputProps
     <div className={`${className}`}>
       <div className="uppercase text-xs mb-1 h-4">{label}</div>
       <input
-        className="border-2 border-dark py-2 px-3 w-full outline-primary"
+        className="border-2 border-primary-dark py-2 px-3 w-full outline-primary"
         type={type}
         name={name}
       />
