@@ -4,6 +4,7 @@ import { openUrl } from "utils";
 import { LandingButton } from "../shared/button/LandingButton";
 import { LINKS } from "@/app/constants/links.const";
 
+
 export const ClinicalSearch = () => {
   return (
     <section>

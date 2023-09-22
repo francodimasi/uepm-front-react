@@ -4,6 +4,7 @@ import { openUrl } from "utils";
 import { LandingButton } from "../shared/button/LandingButton";
 import { LINKS } from "@/app/constants/links.const";
 
+
 export const ClinicalSearch = () => {
   return (
     <section>
@@ -16,7 +17,6 @@ export const ClinicalSearch = () => {
           <div className="col-span-3 mt-8 lg:mt-0 flex lg:justify-end items-center">
             <LandingButton
               className="w-full sm:w-auto"
-              outlined={true}
               onClick={() => openUrl(LINKS.oncoLogin)}
             >
               Un&nbsp;Ensayo&nbsp;Para&nbsp;Mí

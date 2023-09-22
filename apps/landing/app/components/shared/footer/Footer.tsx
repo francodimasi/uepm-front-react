@@ -32,8 +32,8 @@ export const Footer = ({ logo }: PropsWithChildren<FooterProps>) => {
         <div>
           <Image src={logo} width={160} alt="Trialtech logo" />
           <div className="block sm:flex mt-9">
-            {links.map(({ title, url }) => (
-              <Link className="block mr-6 mt-2 sm:mt-0 sm:mr-4" href={url}>
+            {links.map(({ title, url }, index) => (
+              <Link key={index} className="block mr-6 mt-2 sm:mt-0 sm:mr-4" href={url}>
                 {title}
               </Link>
             ))}
@@ -41,8 +41,8 @@ export const Footer = ({ logo }: PropsWithChildren<FooterProps>) => {
         </div>
         <div className="flex flex-col justify-between sm:block">
           <div className="invert flex sm:justify-end">
-            {social.map(({ icon, alt }) => (
-              <Image className="mr-8 sm:mr-0 sm:ml-4" src={icon} alt={alt} />
+            {social.map(({ icon, alt }, index) => (
+              <Image key={index} className="mr-8 sm:mr-0 sm:ml-4" src={icon} alt={alt} />
             ))}
           </div>
           <div className="flex flex-col justify-end mt-16 sm:items-end sm:flex-row sm:justify-end sm:mt-5">
