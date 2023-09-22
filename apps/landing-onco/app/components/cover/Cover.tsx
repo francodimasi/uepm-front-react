@@ -35,8 +35,8 @@ export const Cover = () => {
       <div className="bg-cover bg-coverPage absolute h-full w-full top-0 left-0 opacity-50"></div>
       <div className="container z-20 relative pt-20 hmd:pt-28">
         <div className="grid grid-cols-11">
-          <div className="col-span-11 lg:col-span-8">
-            <H1>
+          <div className="col-span-11 lg:col-span-11 xl:col-span-9">
+            <H1 className="hsm:mb-4 hsm:text-3xl">
               Plataforma exclusiva para oncólogos: encuentre ensayos clínicos y
               refiera pacientes de forma simple, accesible y segura.
             </H1>
@@ -46,7 +46,7 @@ export const Cover = () => {
               evolución en cada instancia del proceso.
             </span>
             <LandingButton
-              className="w-full sm:w-auto"
+              className="w-full sm:w-64"
               onClick={() => openUrl('#contact')}
             >
               Registrarme

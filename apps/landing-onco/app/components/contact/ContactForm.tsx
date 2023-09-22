@@ -81,7 +81,7 @@ export const ContactForm = ({ onSend }: ContactFormProps) => {
         />
       </div>
       <div className={inputClasses}></div>
-      <div className={`${inputClasses} mt-2`}>
+      <div className={`col-span-2 md:col-span-1 xl:col-span-2 2xl:col-span-1 mt-2`}>
         <LandingButton type="submit" className="w-full" onClick={() => {}}>
           Quiero que me contacten
         </LandingButton>

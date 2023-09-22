@@ -20,7 +20,7 @@ export const Contact = () => {
           </div>
         </div>
         <div className="grid grid-cols-12">
-          <div className="col-span-12 md:col-span-8 lg:col-span-6 sm:pr-20">
+          <div className="col-span-12 lg:col-span-6 lg:pr-20">
             {sent ? (
               <div className="p-8 sm:p-20 bg-gradient-to-br bg- border-primary border-2">
                 <p className="text-2xl">
@@ -34,7 +34,7 @@ export const Contact = () => {
           </div>
         </div>
       </div>
-      <div className="sm:absolute top-0 right-0 h-[50vh] sm:h-full bg-medic bg-cover bg-center w-full sm:w-2/6 lg:w-1/2"></div>
+      <div className="hidden lg:block sm:absolute top-0 right-0 h-[50vh] sm:h-full bg-medic bg-cover bg-center w-full sm:w-2/6 lg:w-1/2"></div>
     </section>
   );
 };
