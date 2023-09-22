@@ -37,8 +37,8 @@ export const Cover = () => {
         <div className="grid grid-cols-11">
           <div className="col-span-11 lg:col-span-8">
             <H1>
-              La primera plataforma para oncólogos que conecta pacientes con
-              investigadores médicos
+              Plataforma exclusiva para oncólogos: encuentre ensayos clínicos y
+              refiera pacientes de forma simple, accesible y segura.
             </H1>
             <span className="font-sans mb-8 block w-full md:w-3/5">
               Un espacio para buscar ensayos clínicos, conectar con los
@@ -47,9 +47,9 @@ export const Cover = () => {
             </span>
             <LandingButton
               className="w-full sm:w-auto"
-              onClick={() => openUrl(LINKS.oncoLogin)}
+              onClick={() => openUrl('#contact')}
             >
-              Comenzar a usar
+              Registrarme
             </LandingButton>
           </div>
         </div>

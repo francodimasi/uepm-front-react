@@ -12,8 +12,10 @@ export default function Home() {
       <Header />
       <Cover />
       <Resources />
-      <ClinicalSearch />
+      {/* <ClinicalSearch /> */}
+      <div id="contact">
       <Contact />
+      </div>
       <Footer logo={logo}/>
     </>
   );

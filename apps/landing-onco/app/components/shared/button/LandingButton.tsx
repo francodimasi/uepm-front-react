@@ -10,6 +10,7 @@ type LoadingButtonProps = {
   size?: "small" | "regular" | "large";
   outlined?: boolean;
   icon?: boolean;
+  type?: 'button' | 'reset' | 'submit';
 };
 
 export const LandingButton = ({
@@ -17,6 +18,7 @@ export const LandingButton = ({
   size = "regular",
   icon = true,
   outlined = false,
+  type = 'button',
   className,
   onClick,
 }: PropsWithChildren<LoadingButtonProps> &
@@ -40,6 +42,7 @@ export const LandingButton = ({
     <button
       className={`table group ${sizeClasses} text-light bg-primary font-bold hover:bg-primary-dark transition-all ${customStyles} ${className}`}
       onClick={onClick}
+      type={type}
     >
       <div className="flex items-center justify-between">
         <span>{children}</span>

@@ -80,9 +80,9 @@ export const Header = () => {
               <LandingButton
                 size="small"
                 icon={false}
-                onClick={() => openUrl(LINKS.oncoLogin)}
+                onClick={() => openUrl('#contact')}
               >
-                Ingresar
+                Registrarme
               </LandingButton>
             </div>
         </nav>

@@ -12,11 +12,9 @@ type FooterProps = {
 export const Footer = ({ logo }: PropsWithChildren<FooterProps>) => {
   const links = useMemo(() => {
     return [
-      { title: "Dónde operamos", url: "" },
-      { title: "Casos de éxito", url: "" },
-      { title: "Productos", url: "" },
-      { title: "Contacto", url: "" },
-      { title: "UEPM", url: "" },
+      { title: "Quiénes somos", url: "" },
+      { title: "Un Ensayo para Mí", url: "" },
+      { title: "UEPM investigadores", url: "" },
     ];
   }, []);
 
