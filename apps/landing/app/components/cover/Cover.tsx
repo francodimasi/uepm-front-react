@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 import { LandingButton } from "../shared/button/LandingButton";
 import { Molecules } from "./components/Molecules";
-import { mouseParallax } from "@/app/utils/animations/MouseParallax";
+import { mouseParallax } from "@utils/animations/MouseParallax";
 import { H1 } from "ui";
 
 export const Cover = () => {

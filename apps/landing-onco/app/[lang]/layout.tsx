@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "ui/styles.css";
-import "./styles/globals.css";
+import "@styles/globals.css";
 
 export const metadata: Metadata = {
   title: "Trialtech",

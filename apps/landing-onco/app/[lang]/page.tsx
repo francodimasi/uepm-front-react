@@ -1,0 +1,20 @@
+import { Contact } from "@components/contact/Contact";
+import { Cover } from "@components/cover/Cover";
+import { Resources } from "@components/resources/Resources";
+import { Header } from "@components/shared/header/Header";
+import logo from "public/images/uepm-onco-logo.svg";
+import { Footer } from "ui";
+
+export default function Home() {
+  return (
+    <>
+      <Header />
+      <Cover />
+      <Resources />
+      <div id="contact">
+      <Contact />
+      </div>
+      <Footer logo={logo}/>
+    </>
+  );
+}
