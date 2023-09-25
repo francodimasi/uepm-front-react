@@ -10,46 +10,46 @@ import chat from "public/images/resources/chat.png";
 import { H2 } from "ui";
 import { Resource } from "./components/Resource";
 import { ResourceItem } from "./types/resource.type";
-
-const resources: ResourceItem[] = [
-  {
-    name: "Honorarios",
-    description:
-      "Referir a un paciente es un trabajo que requiere tiempo y dedicación por eso será retribuido directamente desde nuestra plataforma.",
-    icon: money,
-  },
-  {
-    name: "Privacidad de datos",
-    description:
-      "Nuestra plataforma es un entorno digital seguro: los datos personales e información de contacto de los pacientes solo será compartida con el investigador que usted elija.",
-    icon: personalData,
-  },
-  {
-    name: "Gestión Integral",
-    description:
-      "En una misma plataforma es posible: referir y seguir el estatus del paciente, contactarse con el investigador y cobrar honorarios.",
-    icon: team,
-  },
-  {
-    name: "Seguimiento en tiempo real",
-    description:
-      "Siga el estatus del paciente referido al estudio en tiempo real.",
-    icon: efficiency,
-  },
-  {
-    name: "Chat: comunicación directa",
-    description:
-      "A través de nuestra plataforma, oncólogos e investigadores pueden contactarse sin intermediarios en un entorno seguro.",
-    icon: chat,
-  },
-  {
-    name: "Estudios para cada paciente",
-    description: "Descubra ensayos clínicos con reclutamiento activo y, utilizando nuestros filtros altamente específicos, encuentre el indicado para su paciente.",
-    icon: tap,
-  },
-];
+import { useContext } from "react";
+import { LanguageContext, useClientTranslation } from "i18n";
 
 export function Resources() {
+  const { lang } = useContext(LanguageContext)
+  const { t } = useClientTranslation(lang, {keyPrefix: "resources"});
+
+  const resources: ResourceItem[] = [
+    {
+      name: t('cards.fees.name'),
+      description: t('cards.fees.description'),
+      icon: money,
+    },
+    {
+      name: t('cards.dataPrivacy.name'),
+      description: t('cards.dataPrivacy.description'),
+      icon: personalData,
+    },
+    {
+      name: t('cards.comprehensiveManagement.name'),
+      description: t('cards.comprehensiveManagement.description'),
+      icon: team,
+    },
+    {
+      name: t('cards.realTimeTracking.name'),
+      description: t('cards.realTimeTracking.description'),
+      icon: efficiency,
+    },
+    {
+      name: t('cards.chatDirectCommunication.name'),
+      description: t('cards.chatDirectCommunication.description'),
+      icon: chat,
+    },
+    {
+      name: t('cards.studiesForEveryPatient.name'),
+      description: t('cards.studiesForEveryPatient.description'),
+      icon: tap,
+    },
+  ];
+
   return (
     <section className="relative py-12 lg:py-28 overflow-hidden">
       {/* <div className="absolute top-0 left-0 w-full h-full bg-success-cases bg-bottom bg-no-repeat bg-[length:100%_auto] opacity-10"></div> */}
@@ -57,8 +57,7 @@ export function Resources() {
         <div className="grid grid-cols-11">
           <div className="col-span-11 lg:col-span-6 mb-14">
             <H2>
-              Conectamos oncólogos y a sus pacientes con ensayos clínicos de
-              forma simple, accesible y segura.
+              {t('title')}
             </H2>
           </div>
         </div>
