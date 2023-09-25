@@ -40,14 +40,13 @@ export const Cover = () => {
               Plataforma exclusiva para oncólogos: encuentre ensayos clínicos y
               refiera pacientes de forma simple, accesible y segura.
             </H1>
-            <span className="font-sans mb-8 block w-full md:w-3/5">
-              Un espacio para buscar ensayos clínicos, conectar con los
-              investigadores médicos, derivar pacientes y monitorear su
-              evolución en cada instancia del proceso.
+            <span className="font-sans sm:text-2xl mb-8 block w-full md:w-3/5">
+              Descubra ensayos clínicos, refiera pacientes y haga un seguimiento
+              del progreso en tiempo real.
             </span>
             <LandingButton
               className="w-full sm:w-64"
-              onClick={() => openUrl('#contact')}
+              onClick={() => openUrl("#contact")}
             >
               Registrarme
             </LandingButton>

@@ -55,7 +55,7 @@ export function Resources() {
       {/* <div className="absolute top-0 left-0 w-full h-full bg-success-cases bg-bottom bg-no-repeat bg-[length:100%_auto] opacity-10"></div> */}
       <div className="container relative z-10">
         <div className="grid grid-cols-11">
-          <div className="col-span-11 lg:col-span-7 mb-14">
+          <div className="col-span-11 lg:col-span-6 mb-14">
             <H2>
               Conectamos oncólogos y a sus pacientes con ensayos clínicos de
               forma simple, accesible y segura.

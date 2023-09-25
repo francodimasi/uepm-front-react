@@ -12,9 +12,9 @@ type FooterProps = {
 export const Footer = ({ logo }: PropsWithChildren<FooterProps>) => {
   const links = useMemo(() => {
     return [
-      { title: "Quiénes somos", url: "" },
-      { title: "Un Ensayo para Mí", url: "" },
-      { title: "UEPM investigadores", url: "" },
+      { title: "Quiénes somos", url: "https://www.unensayoparami.org/noticias-medicas/un-ensayo-para-mi-buscador-ensayos-clinicos" },
+      { title: "Un Ensayo para Mí", url: "https://www.unensayoparami.org" },
+      { title: "UEPM investigadores", url: "https://app.trialtech.es/auth/login" },
     ];
   }, []);
 
