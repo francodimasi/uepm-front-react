@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { dir } from "i18next";
 import "ui/styles.css";
 import "@styles/globals.css";
 
@@ -10,11 +11,14 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
+  params,
 }: {
   children: React.ReactNode;
+  params: { lang: string };
 }) {
+  const { lang } = params;
   return (
-    <html lang="en">
+    <html lang={lang} dir={dir(lang)}>
       <body className="bg-light">{children}</body>
     </html>
   );
