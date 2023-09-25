@@ -1,4 +1,7 @@
 {
-    "home": "This is the Home page",
-    "partners": "This is the Partners page"
+    "cover": {
+        "title": "Exclusive Platform for Oncologists: Find Clinical Trials and Refer Patients Easily, Accessibly, and Securely.",
+        "subtitle": "Discover clinical trials, refer patients, and track progress in real-time.",
+        "button": "Sign Up"
+    }
 }

@@ -5,13 +5,13 @@ import { Resources } from "@components/resources/Resources";
 import { Header } from "@components/shared/header/Header";
 import logo from "public/images/uepm-onco-logo.svg";
 import { Footer } from "ui";
-import { useClientTranslation } from "i18n";
+import { LanguageProvider, useClientTranslation } from "i18n";
 
 export default function Page({ params }: { params: any }) {
   const { lang } = params;
   const { t } = useClientTranslation(lang);
   return (
-    <>
+    <LanguageProvider lang={lang}>
       <Header />
       <Cover />
       <Resources />
@@ -19,6 +19,6 @@ export default function Page({ params }: { params: any }) {
         <Contact />
       </div>
       <Footer logo={logo} />
-    </>
+    </LanguageProvider>
   );
 }

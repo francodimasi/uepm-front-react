@@ -1,4 +1,7 @@
 {
-    "home": "Esta es la página Home",
-    "partners": "Esa es la página Partners"
+    "cover": {
+        "title": "Plataforma exclusiva para oncólogos: encuentre ensayos clínicos y refiera pacientes de forma simple, accesible y segura.",
+        "subtitle": "Descubra ensayos clínicos, refiera pacientes y haga un seguimiento del progreso en tiempo real.",
+        "button": "Registrarme"
+    }
 }
