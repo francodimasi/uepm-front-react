@@ -6,7 +6,6 @@ import cx from "classnames";
 import { useCallback, useEffect, useState } from "react";
 import { isMobile, openUrl } from "utils";
 import { LandingButton } from "../button/LandingButton";
-import { LINKS } from "@/app/constants/links.const";
 
 export const Header = () => {
   const scrollBreakpoint = isMobile() ? 0 : 150;
@@ -14,9 +13,8 @@ export const Header = () => {
   const [headerButton, setHeaderButton] = useState<boolean>(false);
 
   const headerClasses = cx(
-    "group fixed top-0 left-0 w-full z-[9999]",
+    "group fixed top-0 left-0 w-full z-[9999] md:transition-all",
     {
-      "transition-all": !isMobile(),
       "py-4 bg-opacity-70 backdrop-blur": minimized,
       "py-4 lg:py-12": !minimized,
     }
@@ -80,9 +78,9 @@ export const Header = () => {
               <LandingButton
                 size="small"
                 icon={false}
-                onClick={() => openUrl(LINKS.oncoLogin)}
+                onClick={() => openUrl('#contact')}
               >
-                Ingresar
+                Registrarme
               </LandingButton>
             </div>
         </nav>

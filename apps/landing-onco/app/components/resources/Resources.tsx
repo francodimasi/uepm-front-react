@@ -15,37 +15,36 @@ const resources: ResourceItem[] = [
   {
     name: "Honorarios",
     description:
-      "Si los pacientes referidos son randomizados, se retribuirá el tiempo y dedicación destinado a buscar y derivar al paciente a un ensayo.",
+      "Referir a un paciente es un trabajo que requiere tiempo y dedicación por eso será retribuido directamente desde nuestra plataforma.",
     icon: money,
   },
   {
     name: "Privacidad de datos",
     description:
-      "Nuestra plataforma es un entorno electrónico seguro: los datos personales e información de contacto de los pacientes solo será compartida con el investigador médico.",
+      "Nuestra plataforma es un entorno digital seguro: los datos personales e información de contacto de los pacientes solo será compartida con el investigador que usted elija.",
     icon: personalData,
   },
   {
-    name: "Gestión integral",
+    name: "Gestión Integral",
     description:
-      "En una misma plataforma es posible: referir y monitorear, en tiempo real, la evolución del paciente, contactarse con el investigador y cobrar honorarios.",
+      "En una misma plataforma es posible: referir y seguir el estatus del paciente, contactarse con el investigador y cobrar honorarios.",
     icon: team,
   },
   {
     name: "Seguimiento en tiempo real",
     description:
-      "Se podrá monitorear el avance del paciente en el estudio en tiempo real.",
+      "Siga el estatus del paciente referido al estudio en tiempo real.",
     icon: efficiency,
   },
   {
     name: "Chat: comunicación directa",
     description:
-      "A través de nuestra plataforma, médicos e investigadores pueden contactarse sin intermediarios en un entorno seguro.",
+      "A través de nuestra plataforma, oncólogos e investigadores pueden contactarse sin intermediarios en un entorno seguro.",
     icon: chat,
   },
   {
     name: "Estudios para cada paciente",
-    description:
-      "Contamos con una gran variedad de opciones de ensayos que se adaptan a la condición de cada paciente.",
+    description: "Descubra ensayos clínicos con reclutamiento activo y, utilizando nuestros filtros altamente específicos, encuentre el indicado para su paciente.",
     icon: tap,
   },
 ];
@@ -53,11 +52,12 @@ const resources: ResourceItem[] = [
 export function Resources() {
   return (
     <section className="relative py-12 lg:py-28 overflow-hidden">
+      {/* <div className="absolute top-0 left-0 w-full h-full bg-success-cases bg-bottom bg-no-repeat bg-[length:100%_auto] opacity-10"></div> */}
       <div className="container relative z-10">
         <div className="grid grid-cols-11">
-          <div className="col-span-11 lg:col-span-7">
+          <div className="col-span-11 lg:col-span-6 mb-14">
             <H2>
-              Conectamos pacientes y oncólogos con investigadores médicos de
+              Conectamos oncólogos y a sus pacientes con ensayos clínicos de
               forma simple, accesible y segura.
             </H2>
           </div>
