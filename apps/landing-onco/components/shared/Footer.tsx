@@ -1,20 +1,23 @@
 import Image from "next/image";
 import Link from "next/link";
-import { PropsWithChildren, useMemo } from "react";
+import { PropsWithChildren, useContext, useMemo } from "react";
 import linkedin from "ui/assets/icons/linkedin.svg";
 import instagram from "ui/assets/icons/instagram.svg";
 import facebook from "ui/assets/icons/facebook.svg";
+import { LanguageContext, useClientTranslation } from "i18n";
 
 type FooterProps = {
   logo: string;
 };
 
 export const Footer = ({ logo }: PropsWithChildren<FooterProps>) => {
+  const { lang } = useContext(LanguageContext)
+  const { t } = useClientTranslation(lang, {keyPrefix: "footer"});
   const links = useMemo(() => {
     return [
-      { title: "Quiénes somos", url: "https://www.unensayoparami.org/noticias-medicas/un-ensayo-para-mi-buscador-ensayos-clinicos" },
-      { title: "Un Ensayo para Mí", url: "https://www.unensayoparami.org" },
-      { title: "UEPM investigadores", url: "https://app.trialtech.es/auth/login" },
+      { title: t('whoWeAre'), url: "https://www.unensayoparami.org/noticias-medicas/un-ensayo-para-mi-buscador-ensayos-clinicos" },
+      { title: t('uepm'), url: "https://www.unensayoparami.org" },
+      { title: t('researchers'), url: "https://app.trialtech.es/auth/login" },
     ];
   }, []);
 
@@ -46,9 +49,9 @@ export const Footer = ({ logo }: PropsWithChildren<FooterProps>) => {
             ))}
           </div>
           <div className="flex flex-col justify-end mt-16 sm:items-end sm:flex-row sm:justify-end sm:mt-5">
-            <Link href="">Términos y condiciones</Link>
+            <Link href="">{t('terms')}</Link>
             <Link className="mt-2 sm:mt-0 sm:ml-4" href="">
-              Política de privacidad
+              {t('policy')}
             </Link>
           </div>
         </div>

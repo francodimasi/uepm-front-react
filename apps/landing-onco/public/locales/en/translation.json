@@ -2,7 +2,7 @@
   "cover": {
     "title": "Exclusive Platform for Oncologists: Find Clinical Trials and Refer Patients Simply, Accessibly, and Securely.",
     "subtitle": "Discover clinical trials, refer patients, and track progress in real time.",
-    "button": "Register Now"
+    "button": "Register"
   },
   "resources": {
     "title": "We Connect Oncologists and Their Patients with Clinical Trials Simply, Accessibly, and Securely.",
@@ -32,5 +32,24 @@
         "description": "Discover clinical trials with active recruitment, and using our highly specific filters, find the right one for your patient."
       }
     }
+  },
+  "contact": {
+    "title": "Sign up to receive news about our exclusive platform",
+    "thanks": "Thank you for registering! You will find important information in your email inbox.",
+    "inputs": {
+      "name": "Name",
+      "lastName": "Last Name",
+      "speciality": "Specialty",
+      "email": "Email",
+      "whatsapp": "WhatsApp",
+      "button": "Contact Me"
+    }
+  },
+  "footer": {
+    "whoWeAre": "Who We Are",
+    "uepm": "Un Ensayo para Mí",
+    "researchers": "UEPM Researchers",
+    "terms": "Terms and Conditions",
+    "policy": "Privacy Policy"
   }
 }
