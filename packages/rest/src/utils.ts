@@ -10,10 +10,10 @@ export const getUserTimeZone = (): string => {
 export const parseHeaders = (props: ParseHeaderProps): Headers => {
   const { customToken, token, headers: customHeaders } = props;
   const bearer = `Bearer ${token}`;
-  let headers: Headers = { ...customHeaders };
+  let headers = { ...customHeaders };
 
-  if (customToken) headers.set("Authorization", customToken);
-  else if (token) headers.set("Authorization", bearer);
+  const authorization = customToken ? customToken : token ? token : "";
+  headers = {...headers, "Authorization": authorization};
 
   return headers;
 };
