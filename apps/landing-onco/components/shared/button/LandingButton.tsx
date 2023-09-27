@@ -11,6 +11,7 @@ type LoadingButtonProps = {
   outlined?: boolean;
   icon?: boolean;
   type?: 'button' | 'reset' | 'submit';
+  disabled?: boolean;
 };
 
 export const LandingButton = ({
@@ -19,6 +20,7 @@ export const LandingButton = ({
   icon = true,
   outlined = false,
   type = 'button',
+  disabled = false,
   className,
   onClick,
 }: PropsWithChildren<LoadingButtonProps> &
@@ -42,6 +44,7 @@ export const LandingButton = ({
     <button
       className={`table group ${sizeClasses} text-light bg-primary font-bold hover:bg-primary-dark transition-all disabled:opacity-20 ${customStyles} ${className}`}
       onClick={onClick}
+      disabled={disabled}
       type={type}
     >
       <div className="flex items-center justify-between">

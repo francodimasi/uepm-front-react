@@ -4,14 +4,19 @@ import { Controller, useForm } from "react-hook-form";
 import { LandingButton } from "../shared/button/LandingButton";
 import { ContactInput } from "./ContactInput";
 import { ContactRequest } from "./contact.type";
+import { useContext } from "react";
+import { LanguageContext, useClientTranslation } from "i18n";
 import { useContact } from "@/app/api/useContact";
 
 type ContactFormProps = {
-  onSend: (sent: boolean) => void; 
+  onSend: (sent: boolean) => void;
 }
 export const ContactForm = ({ onSend }: ContactFormProps) => {
 
+  const { lang } = useContext(LanguageContext)
+  const { t } = useClientTranslation(lang, { keyPrefix: "contact.inputs" });
   const { sendContact } = useContact();
+
   const { handleSubmit, control, reset, formState: { isValid } } = useForm<ContactRequest>({
     defaultValues: {
       nombre: "",
@@ -26,7 +31,7 @@ export const ContactForm = ({ onSend }: ContactFormProps) => {
     await sendContact(data);
     reset();
     onSend(true);
-  }; 
+  };
 
   const inputClasses = "col-span-2 sm:col-span-1";
 
@@ -38,7 +43,7 @@ export const ContactForm = ({ onSend }: ContactFormProps) => {
           control={control}
           rules={{ required: true }}
           render={({ field }) => (
-            <ContactInput label="Nombre" type="text" {...field} />
+            <ContactInput label={t('name')} type="text" {...field} />
           )}
         />
       </div>
@@ -48,7 +53,7 @@ export const ContactForm = ({ onSend }: ContactFormProps) => {
           control={control}
           rules={{ required: true }}
           render={({ field }) => (
-            <ContactInput label="Apellido" type="text" {...field} />
+            <ContactInput label={t('lastName')} type="text" {...field} />
           )}
         />{" "}
       </div>
@@ -58,7 +63,7 @@ export const ContactForm = ({ onSend }: ContactFormProps) => {
           control={control}
           rules={{ required: true }}
           render={({ field }) => (
-            <ContactInput label="Especialidad" type="tel" {...field} />
+            <ContactInput label={t('speciality')} type="tel" {...field} />
           )}
         />
       </div>
@@ -68,7 +73,7 @@ export const ContactForm = ({ onSend }: ContactFormProps) => {
           control={control}
           rules={{ required: true }}
           render={({ field }) => (
-            <ContactInput label="E-mail" type="email" {...field} />
+            <ContactInput label={t('email')} type="email" {...field} />
           )}
         />
       </div>
@@ -78,14 +83,14 @@ export const ContactForm = ({ onSend }: ContactFormProps) => {
           control={control}
           rules={{ required: true }}
           render={({ field }) => (
-            <ContactInput label="Whatsapp" type="text" {...field}/>
+            <ContactInput label={t('whatsapp')} type="text" {...field} />
           )}
         />
       </div>
       <div className={inputClasses}></div>
       <div className={`col-span-2 md:col-span-1 xl:col-span-2 2xl:col-span-1 mt-2`}>
-        <LandingButton type="submit" className="w-full" onClick={() => {}}>
-          Quiero que me contacten
+        <LandingButton type="submit" className="w-full" disabled={!isValid} onClick={() => { }}>
+          {t('button')}
         </LandingButton>
       </div>
     </form>
