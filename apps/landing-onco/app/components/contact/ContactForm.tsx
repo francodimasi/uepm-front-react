@@ -4,12 +4,14 @@ import { Controller, useForm } from "react-hook-form";
 import { LandingButton } from "../shared/button/LandingButton";
 import { ContactInput } from "./ContactInput";
 import { ContactRequest } from "./contact.type";
+import { useContact } from "@/app/api/useContact";
 
 type ContactFormProps = {
   onSend: (sent: boolean) => void; 
 }
 export const ContactForm = ({ onSend }: ContactFormProps) => {
 
+  const { sendContact } = useContact();
   const { handleSubmit, control, reset, formState: { isValid } } = useForm<ContactRequest>({
     defaultValues: {
       nombre: "",
@@ -20,8 +22,8 @@ export const ContactForm = ({ onSend }: ContactFormProps) => {
     },
   });
 
-  const onSubmit = (data: ContactRequest) => {
-    console.log(data);
+  const onSubmit = async (data: ContactRequest) => {
+    await sendContact(data);
     reset();
     onSend(true);
   }; 

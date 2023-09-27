@@ -40,7 +40,7 @@ export const LandingButton = ({
 
   return (
     <button
-      className={`table group ${sizeClasses} text-light bg-primary font-bold hover:bg-primary-dark transition-all ${customStyles} ${className}`}
+      className={`table group ${sizeClasses} text-light bg-primary font-bold hover:bg-primary-dark transition-all disabled:opacity-20 ${customStyles} ${className}`}
       onClick={onClick}
       type={type}
     >
