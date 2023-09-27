@@ -32,5 +32,17 @@
         "description": "Descubra ensayos clínicos con reclutamiento activo y, utilizando nuestros filtros altamente específicos, encuentre el indicado para su paciente."
       }
     }
+  },
+  "contact": {
+    "title": " Regístrese para recibir noticias sobre nuestra plataforma exclusiva",
+    "thanks": "¡Muchas gracias por registrarse! En su casilla de mail encontrará información importante.",
+    "inputs": {
+      "name": "Nombre",
+      "lastName": "Apellido",
+      "speciality": "Especialidad",
+      "email": "E-mail",
+      "whatsapp": "Whatsapp",
+      "button": "Quiero que me contacten"
+    }
   }
 }
