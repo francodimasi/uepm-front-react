@@ -6,6 +6,7 @@ import { ContactInput } from "./ContactInput";
 import { ContactRequest } from "./contact.type";
 import { useContext } from "react";
 import { LanguageContext, useClientTranslation } from "i18n";
+import { useContact } from "@/app/api/useContact";
 
 type ContactFormProps = {
   onSend: (sent: boolean) => void;
@@ -14,6 +15,7 @@ export const ContactForm = ({ onSend }: ContactFormProps) => {
 
   const { lang } = useContext(LanguageContext)
   const { t } = useClientTranslation(lang, { keyPrefix: "contact.inputs" });
+  const { sendContact } = useContact();
 
   const { handleSubmit, control, reset, formState: { isValid } } = useForm<ContactRequest>({
     defaultValues: {
@@ -25,8 +27,8 @@ export const ContactForm = ({ onSend }: ContactFormProps) => {
     },
   });
 
-  const onSubmit = (data: ContactRequest) => {
-    console.log(data);
+  const onSubmit = async (data: ContactRequest) => {
+    await sendContact(data);
     reset();
     onSend(true);
   };
