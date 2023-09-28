@@ -3,8 +3,8 @@
 import { useEffect, useRef } from "react";
 import { LandingButton } from "../shared/button/LandingButton";
 import { Molecules } from "./components/Molecules";
-import { mouseParallax } from "@utils/animations/MouseParallax";
 import { H1 } from "ui";
+import { mouseParallax } from "@app/utils/animations/MouseParallax";
 
 export const Cover = () => {
   const containerRef = useRef<HTMLDivElement>(null);
