@@ -2,6 +2,8 @@
   "private": true,
   "scripts": {
     "build": "turbo run build",
+    "build:landing": "turbo run build --filter=./apps/landing",
+    "build:onco": "turbo run build --filter=./apps/landing-onco",
     "dev": "turbo run dev",
     "dev:landing": "turbo run dev --filter=./apps/landing",
     "dev:onco": "turbo run dev --filter=./apps/landing-onco",

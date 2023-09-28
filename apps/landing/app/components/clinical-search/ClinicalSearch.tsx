@@ -7,7 +7,7 @@ import { LINKS } from "@app/constants/links.const";
 
 export const ClinicalSearch = () => {
   return (
-    <section className="py-32">
+    <section className="pb-32">
       <div className="container xl:px-28 2xl:px-48">
         <div className="lg:grid grid-cols-12 p-8 sm:p-16 bg-gradient-to-br to-primary from-primary-dark">
           <p className="text-light text-2xl col-span-9">
