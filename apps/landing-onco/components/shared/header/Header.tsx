@@ -5,7 +5,7 @@ import logo from "public/images/uepm-onco-logo.svg";
 import cx from "classnames";
 import { useCallback, useEffect, useState } from "react";
 import { isMobile, openUrl } from "utils";
-import { LandingButton } from "../button/LandingButton";
+import { LandingButton } from "ui";
 
 export const Header = () => {
   const scrollBreakpoint = isMobile() ? 0 : 150;

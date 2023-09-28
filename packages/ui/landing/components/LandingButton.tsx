@@ -12,6 +12,7 @@ type LoadingButtonProps = {
   icon?: boolean;
   type?: 'button' | 'reset' | 'submit';
   disabled?: boolean;
+  color?: 'primary' | 'secondary'
 };
 
 export const LandingButton = ({
@@ -21,6 +22,7 @@ export const LandingButton = ({
   outlined = false,
   type = 'button',
   disabled = false,
+  color = 'primary',
   className,
   onClick,
 }: PropsWithChildren<LoadingButtonProps> &
@@ -32,17 +34,23 @@ export const LandingButton = ({
   });
 
   const customStyles = cx({
-    "border-2 border-light bg-transparent hover:bg-light hover:text-dark":
+    "border-2 border-light bg-transparent text-light hover:bg-light hover:text-dark":
       outlined,
   });
 
   const iconStyles = cx({
     "group-hover:brightness-0": outlined,
+    "brightness-[100]": color === 'primary',
   });
+
+  const colorStyles = cx({
+    "bg-primary hover:bg-primary-dark text-light": color === 'primary' && !outlined,
+    "bg-secondary hover:bg-light": color === 'secondary' && !outlined,
+  })
 
   return (
     <button
-      className={`table group ${sizeClasses} text-light bg-primary font-bold hover:bg-primary-dark transition-all disabled:opacity-20 ${customStyles} ${className}`}
+      className={`table group ${sizeClasses} ${colorStyles} font-bold transition-all disabled:opacity-20 disabled:pointer-events-none ${customStyles} ${className}`}
       onClick={onClick}
       disabled={disabled}
       type={type}
@@ -52,7 +60,7 @@ export const LandingButton = ({
         {icon && (
           <div className="pl-5">
             <Image
-              className={`block brightness-[100] transition-all min-w-[22px] ${iconStyles}`}
+              className={`block transition-all min-w-[22px] ${iconStyles}`}
               src={arrow}
               alt="arrow"
               width={22}

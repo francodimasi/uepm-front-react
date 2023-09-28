@@ -1,7 +1,7 @@
 "use client";
 
 import { Controller, useForm } from "react-hook-form";
-import { LandingButton } from "../shared/button/LandingButton";
+import { LandingButton } from "ui";
 import { ContactInput } from "./ContactInput";
 import { ContactRequest } from "./contact.type";
 import { useContext } from "react";

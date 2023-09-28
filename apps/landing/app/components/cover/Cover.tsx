@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { LandingButton } from "../shared/button/LandingButton";
+import { LandingButton } from "ui";
 import { Molecules } from "./components/Molecules";
 import { H1 } from "ui";
 import { mouseParallax } from "@app/utils/animations/MouseParallax";
@@ -44,6 +44,7 @@ export const Cover = () => {
               tecnológico moderno y seguro. <b>¡Trabajemos juntos!</b>
             </span>
             <LandingButton
+              color="secondary"
               onClick={() => console.warn("@todo: add functionality")}
               className="w-full sm:w-auto"
             >
