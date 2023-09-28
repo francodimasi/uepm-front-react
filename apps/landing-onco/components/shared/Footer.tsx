@@ -45,7 +45,7 @@ export const Footer = ({ logo }: PropsWithChildren<FooterProps>) => {
         <div className="flex flex-col justify-between sm:block">
           <div className="invert flex sm:justify-end">
             {social.map(({ icon, alt }, index) => (
-              <Image key={index} className="mr-8 sm:mr-0 sm:ml-4" src={icon} alt={alt} />
+              <Image key={index} className="mr-8 sm:mr-0 sm:ml-4 cursor-pointer" src={icon} alt={alt} />
             ))}
           </div>
           <div className="flex flex-col justify-end mt-16 sm:items-end sm:flex-row sm:justify-end sm:mt-5">

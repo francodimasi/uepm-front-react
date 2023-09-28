@@ -1,20 +1,19 @@
 import Image from "next/image";
 import Link from "next/link";
-import { PropsWithChildren, useMemo } from "react";
-import linkedin from "ui/assets/icons/linkedin.svg";
-import instagram from "ui/assets/icons/instagram.svg";
+import { useMemo } from "react";
 import facebook from "ui/assets/icons/facebook.svg";
+import instagram from "ui/assets/icons/instagram.svg";
+import linkedin from "ui/assets/icons/linkedin.svg";
+import logo from "public/images/trialtech-logo.svg";
 
-type FooterProps = {
-  logo: string;
-};
-
-export const Footer = ({ logo }: PropsWithChildren<FooterProps>) => {
+export const Footer = () => {
   const links = useMemo(() => {
     return [
-      { title: "Quiénes somos", url: "" },
-      { title: "Un Ensayo para Mí", url: "" },
-      { title: "UEPM investigadores", url: "" },
+      { title: "Dónde operamos", url: "" },
+      { title: "Casos de éxito", url: "" },
+      { title: "Productos", url: "" },
+      { title: "Contacto", url: "" },
+      { title: "UEPM", url: "" },
     ];
   }, []);
 
@@ -31,21 +30,21 @@ export const Footer = ({ logo }: PropsWithChildren<FooterProps>) => {
       <div className="container flex justify-between items-end">
         <div>
           <Image src={logo} width={160} alt="Trialtech logo" />
-          <div className="block sm:flex mt-9">
+          <div className="block md:flex mt-9">
             {links.map(({ title, url }, index) => (
-              <Link key={index} className="block mr-6 mt-2 sm:mt-0 sm:mr-4" href={url}>
+              <Link key={index} className="block mr-6 mt-2 sm:mt-0 sm:mr-4 text-light" href={url}>
                 {title}
               </Link>
             ))}
           </div>
         </div>
         <div className="flex flex-col justify-between sm:block">
-          <div className="invert flex sm:justify-end">
+          <div className="flex sm:justify-end">
             {social.map(({ icon, alt }, index) => (
-              <Image key={index} className="mr-8 sm:mr-0 sm:ml-4" src={icon} alt={alt} />
+              <Image key={index} className="mr-8 sm:mr-0 sm:ml-4 cursor-pointer" src={icon} alt={alt} />
             ))}
           </div>
-          <div className="flex flex-col justify-end mt-16 sm:items-end sm:flex-row sm:justify-end sm:mt-5">
+          <div className="flex flex-col justify-end mt-16 sm:items-end lg:flex-row sm:mt-5 text-light">
             <Link href="">Términos y condiciones</Link>
             <Link className="mt-2 sm:mt-0 sm:ml-4" href="">
               Política de privacidad
