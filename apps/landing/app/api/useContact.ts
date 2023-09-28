@@ -3,7 +3,7 @@ import dayjs from "dayjs";
 import { ContactRequest } from "@app/components/contact/contact.type";
 
 const mondayApiKey = process.env.NEXT_PUBLIC_MONDAY_API_KEY;
-const groupId = "grupo_nuevo";
+const groupId = "grupo_nuevo17439";
 const boardId = "5210496844";
 
 export const useContact = () => {
@@ -12,16 +12,14 @@ export const useContact = () => {
   const sendContact = ({
     apellido,
     email,
-    especialidad,
     nombre,
-    whatsapp,
+    telefono,
   }: ContactRequest) => {
     const date = dayjs().format("YYYY-MM-DD");
     const fullName = `${nombre} ${apellido}`;
     const item = {
       texto8: email,
-      texto0: whatsapp,
-      texto: especialidad,
+      texto0: telefono,
       date,
     };
 

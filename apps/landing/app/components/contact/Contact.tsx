@@ -2,8 +2,12 @@
 
 import { H2 } from "ui";
 import { ContactForm } from "./ContactForm";
+import { useState } from "react";
 
 export const Contact = () => {
+
+  const [sent, setSent] = useState(false);
+
   return (
     <section>
       <div className="container">
@@ -30,7 +34,15 @@ export const Contact = () => {
           </div>
 
           <div className="col-span-12 lg:col-span-6">
-            <ContactForm onSend={() => {}} />
+            {sent ? (
+              <div className="p-8 sm:p-20 bg-gradient-to-br bg- border-primary border-2">
+                <p className="text-2xl text-light">
+                  ¡Muchas gracias por registrarse! En su casilla de mail encontrará información importante.
+                </p>
+              </div>
+            ) : (
+              <ContactForm onSend={setSent} />
+            )}
           </div>
         </div>
       </div>

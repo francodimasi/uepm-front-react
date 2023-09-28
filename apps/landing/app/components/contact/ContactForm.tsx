@@ -72,7 +72,6 @@ export const ContactForm = ({ onSend }: ContactFormProps) => {
           <Controller
             name="telefono"
             control={control}
-            rules={{ required: true }}
             render={({ field }) => (
               <ContactInput label="Telefono (Opcional)" type="tel" {...field} />
             )}
