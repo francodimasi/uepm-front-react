@@ -9,6 +9,7 @@ const config: Partial<Config> = {
         "cover-page": "url('/images/bg/bg-cover.svg')",
         "cover-page-mobile": "url('/images/bg/bg-cover-mobile.png')",
         resources: "url('/images/bg/bg-resources.png')",
+        footer: "url('/images/bg/bg-footer.png')",
         "resources-mobile": "url('/images/bg/bg-resources-mobile.png')",
         "success-cases": "url('/images/bg/bg-success-cases.png')",
         menu: "url('/images/bg/bg-menu.png')",

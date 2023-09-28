@@ -1,7 +1,7 @@
 "use client";
 
 import { openUrl } from "utils";
-import { LandingButton } from "../shared/button/LandingButton";
+import { LandingButton } from "ui";
 import { LINKS } from "@constants/links.const";
 
 

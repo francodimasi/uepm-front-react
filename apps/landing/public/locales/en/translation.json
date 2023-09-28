@@ -1,0 +1,55 @@
+{
+  "cover": {
+    "title": "Exclusive Platform for Oncologists: Find Clinical Trials and Refer Patients Simply, Accessibly, and Securely.",
+    "subtitle": "Discover clinical trials, refer patients, and track progress in real time.",
+    "button": "Register"
+  },
+  "resources": {
+    "title": "We Connect Oncologists and Their Patients with Clinical Trials Simply, Accessibly, and Securely.",
+    "cards": {
+      "fees": {
+        "name": "Fees",
+        "description": "Referring a patient is a time-consuming and dedicated effort, which will be compensated directly through our platform."
+      },
+      "dataPrivacy": {
+        "name": "Data Privacy",
+        "description": "Our platform is a secure digital environment: patients' personal data and contact information will only be shared with the chosen researcher."
+      },
+      "comprehensiveManagement": {
+        "name": "Comprehensive Management",
+        "description": "On a single platform, you can refer and track the patient's status, communicate with the researcher, and receive compensation for your efforts."
+      },
+      "realTimeTracking": {
+        "name": "Real-time Tracking",
+        "description": "Monitor the status of the patient referred to the study in real time."
+      },
+      "chatDirectCommunication": {
+        "name": "Chat: Direct Communication",
+        "description": "Through our platform, oncologists and researchers can communicate directly in a secure environment without intermediaries."
+      },
+      "studiesForEveryPatient": {
+        "name": "Studies for Every Patient",
+        "description": "Discover clinical trials with active recruitment, and using our highly specific filters, find the right one for your patient."
+      }
+    }
+  },
+  "contact": {
+    "title": "Sign up to receive news about our exclusive platform",
+    "thanks": "Thank you for registering! You will find important information in your email inbox.",
+    "inputs": {
+      "name": "Name",
+      "lastName": "Last Name",
+      "speciality": "Specialty",
+      "email": "Email",
+      "whatsapp": "WhatsApp",
+      "button": "Contact Me"
+    }
+  },
+  "footer": {
+    "whoWeAre": "Who We Are",
+    "uepm": "Un Ensayo para Mí",
+    "researchers": "UEPM Researchers",
+    "terms": "Terms and Conditions",
+    "policy": "Privacy Policy"
+  }
+}

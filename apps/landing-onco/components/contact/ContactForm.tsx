@@ -1,7 +1,7 @@
 "use client";
 
 import { Controller, useForm } from "react-hook-form";
-import { LandingButton } from "../shared/button/LandingButton";
+import { LandingButton } from "ui";
 import { ContactInput } from "./ContactInput";
 import { ContactRequest } from "./contact.type";
 import { useContext } from "react";
@@ -63,7 +63,7 @@ export const ContactForm = ({ onSend }: ContactFormProps) => {
           control={control}
           rules={{ required: true }}
           render={({ field }) => (
-            <ContactInput label={t('speciality')} type="tel" {...field} />
+            <ContactInput label={t('speciality')} type="text" {...field} />
           )}
         />
       </div>
@@ -83,7 +83,7 @@ export const ContactForm = ({ onSend }: ContactFormProps) => {
           control={control}
           rules={{ required: true }}
           render={({ field }) => (
-            <ContactInput label={t('whatsapp')} type="text" {...field} />
+            <ContactInput label={t('whatsapp')} type="tel" {...field} />
           )}
         />
       </div>
