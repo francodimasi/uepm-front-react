@@ -63,7 +63,7 @@ export const ContactForm = ({ onSend }: ContactFormProps) => {
           control={control}
           rules={{ required: true }}
           render={({ field }) => (
-            <ContactInput label={t('speciality')} type="tel" {...field} />
+            <ContactInput label={t('speciality')} type="text" {...field} />
           )}
         />
       </div>
@@ -83,7 +83,7 @@ export const ContactForm = ({ onSend }: ContactFormProps) => {
           control={control}
           rules={{ required: true }}
           render={({ field }) => (
-            <ContactInput label={t('whatsapp')} type="text" {...field} />
+            <ContactInput label={t('whatsapp')} type="tel" {...field} />
           )}
         />
       </div>
