@@ -23,9 +23,11 @@
     "react-svgmt": "^2.0.2",
     "styled-components": "^6.0.7",
     "swiper": "^10.2.0",
+    "dayjs": "^1.11.10",
     "tsconfig": "*",
     "typescript": "5.2.2",
     "ui": "*",
+    "rest": "*",
     "use-count-up": "^3.0.1",
     "utils": "*"
   },

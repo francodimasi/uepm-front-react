@@ -37,7 +37,6 @@ export const useContact = () => {
             }
         `.replace(/(\r\n|\n|\r)/gm, "");
 
-    console.log(query);
     return post("https://api.monday.com/v2", {
       customToken: mondayApiKey,
       data: {
