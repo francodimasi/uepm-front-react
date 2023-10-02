@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { dir } from "i18next";
 import "ui/styles.css";
 import "@styles/globals.css";
+import { Analytics } from '@vercel/analytics/react';
 
 export const metadata: Metadata = {
   title: "Trialtech",
@@ -19,7 +20,10 @@ export default function RootLayout({
   const { lang } = params;
   return (
     <html lang={lang} dir={dir(lang)}>
-      <body className="bg-light">{children}</body>
+      <body className="bg-light">
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }
