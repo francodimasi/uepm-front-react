@@ -50,6 +50,11 @@
     "uepm": "Un Ensayo para Mí",
     "researchers": "UEPM Researchers",
     "terms": "Terms and Conditions",
-    "policy": "Privacy Policy"
+    "policy": "Privacy Policy",
+    "language": "Select language:"
+  },
+  "language": {
+    "en": "English",
+    "es": "Espanish"
   }
 }
