@@ -1,12 +1,18 @@
 import Image from "next/image";
 import Link from "next/link";
-import { useMemo } from "react";
+import { useContext, useMemo } from "react";
 import facebook from "ui/assets/icons/facebook.svg";
 import instagram from "ui/assets/icons/instagram.svg";
 import linkedin from "ui/assets/icons/linkedin.svg";
 import logo from "public/images/trialtech-logo.svg";
+import { SwitchLanguage } from "ui";
+import { Language, LanguageContext, useClientTranslation } from "i18n";
 
 export const Footer = () => {
+  const { lang } = useContext(LanguageContext)
+  const { t } = useClientTranslation(lang, { keyPrefix: "footer" });
+  const { t: tlang } = useClientTranslation(lang, { keyPrefix: "language" });
+
   const links = useMemo(() => {
     return [
       { title: "Dónde operamos", url: "" },
@@ -25,9 +31,21 @@ export const Footer = () => {
     ];
   }, []);
 
+  const languages: Language[] = useMemo(() => ([
+    {
+      iso: "en",
+      name: tlang('en')
+    },
+    {
+      iso: "es",
+      name: tlang('es')
+    }
+  ]), [])
+
   return (
     <footer className="py-20">
-      <div className="container flex justify-between items-end">
+      <div className="container">
+        <div className="flex justify-between items-end">
         <div>
           <Image src={logo} width={160} alt="Trialtech logo" />
           <div className="block md:flex mt-9">
@@ -50,6 +68,11 @@ export const Footer = () => {
               Política de privacidad
             </Link>
           </div>
+        </div>
+        </div>
+        <div className="flex mt-6">
+        <span className="mr-2 text-light">{t('language')}</span>
+          <SwitchLanguage className="text-light" languages={languages} />
         </div>
       </div>
     </footer>

@@ -1,3 +1,5 @@
+"use client";
+import { LanguageProvider } from "i18n";
 import { ClinicalSearch } from "./components/clinical-search/ClinicalSearch";
 import { Contact } from "./components/contact/Contact";
 import { Cover } from "./components/cover/Cover"
@@ -9,9 +11,10 @@ import { Sites } from "./components/sites/components/Sites";
 import { Sponsors } from "./components/sponsors/Sponsors";
 import { SuccessCases } from "./components/success-cases/SuccessCases";
 
-export default function Home() {
+export default function Home({ params }: { params: any }) {
+  const { lang } = params;
   return (
-    <>
+    <LanguageProvider lang={lang}>
       <Header />
       <Cover />
       <Resources />
@@ -27,6 +30,6 @@ export default function Home() {
           <Footer />
         </div>
       </div>
-    </>
+    </LanguageProvider>
   );
 }
