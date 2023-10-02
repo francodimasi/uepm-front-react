@@ -3,18 +3,19 @@
 import { Language, LanguageContext, useLanguage } from "i18n";
 import { useContext } from "react";
 type SwitchLanguageProps = {
-    languages: Language[]
+    languages: Language[],
+    className?: string;
 }
-export const SwitchLanguage = ({ languages }: SwitchLanguageProps) => {
+export const SwitchLanguage = ({ languages, className = "" }: SwitchLanguageProps) => {
 
     const { changeLanguage } = useLanguage();
     const { lang } = useContext(LanguageContext)
 
     return (
-        <select onChange={(e) => changeLanguage(e.target.value)} value={lang}>
+        <select className={`bg-transparent ${className}`} onChange={(e) => changeLanguage(e.target.value)} value={lang}>
             {
                 languages.map((lang, index) => (
-                    <option key={index} value={lang.iso}>{lang.name}</option>
+                    <option className="text-dark" key={index} value={lang.iso}>{lang.name}</option>
                 ))
             }
         </select>
