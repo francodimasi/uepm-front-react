@@ -12,7 +12,9 @@
     "@types/node": "20.5.6",
     "@types/react": "18.2.21",
     "@types/react-dom": "18.2.7",
+    "@vercel/analytics": "^1.0.2",
     "classnames": "^2.3.2",
+    "dayjs": "^1.11.10",
     "eslint": "8.48.0",
     "eslint-config-custom": "*",
     "framer-motion": "^10.16.2",
@@ -21,18 +23,19 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-svgmt": "^2.0.2",
-    "styled-components": "^6.0.7",
+    "rest": "*",
     "swiper": "^10.2.0",
-    "dayjs": "^1.11.10",
     "tsconfig": "*",
     "typescript": "5.2.2",
     "ui": "*",
-    "rest": "*",
     "use-count-up": "^3.0.1",
-    "utils": "*"
+    "utils": "*",
+    "negotiator": "^0.6.3",
+    "react-cookies": "^0.1.1"
+
   },
   "devDependencies": {
-    "@types/styled-components": "^5.1.26",
+    "@types/js-cookie": "^3.0.3",
     "autoprefixer": "^10.4.15",
     "postcss": "^8.4.28",
     "tailwindcss": "^3.3.3"

@@ -1,6 +1,6 @@
 import { useRest } from "rest";
 import dayjs from "dayjs";
-import { ContactRequest } from "@app/components/contact/contact.type";
+import { ContactRequest } from "@components/contact/contact.type";
 
 const mondayApiKey = process.env.NEXT_PUBLIC_MONDAY_API_KEY;
 const groupId = "grupo_nuevo17439";

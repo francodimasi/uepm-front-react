@@ -1,9 +1,10 @@
+import { Analytics } from '@vercel/analytics/react';
+import { dir } from "i18next";
 import type { Metadata } from "next";
 import "ui/styles.css";
 import "@styles/globals.css";
-import "swiper/css";
 import "swiper/swiper-bundle.css";
-import { StyledComponentsRegistry } from "ui";
+
 
 export const metadata: Metadata = {
   title: "Trialtech",
@@ -13,13 +14,18 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
+  params
 }: {
   children: React.ReactNode;
+  params: { lang: string };
 }) {
+
+  const { lang } = params;
   return (
-    <html lang="en">
+    <html lang={lang} dir={dir(lang)}>
       <body>
-        <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
+        {children}
+        <Analytics />
       </body>
     </html>
   );
