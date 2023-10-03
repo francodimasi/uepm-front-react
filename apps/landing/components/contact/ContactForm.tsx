@@ -6,7 +6,7 @@ import { ContactInput } from "./ContactInput";
 import { ContactRequest } from "./contact.type";
 import { useContext } from "react";
 import { LanguageContext, useClientTranslation } from "i18n";
-import { useContact } from "@app/api/useContact";
+import { useContact } from "@api/useContact";
 
 type ContactFormProps = {
   onSend: (sent: boolean) => void;

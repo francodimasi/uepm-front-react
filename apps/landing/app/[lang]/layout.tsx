@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "ui/styles.css";
-import "./styles/globals.css";
+import "@styles/globals.css";
 import "swiper/css";
 import "swiper/swiper-bundle.css";
 import { StyledComponentsRegistry } from "ui";

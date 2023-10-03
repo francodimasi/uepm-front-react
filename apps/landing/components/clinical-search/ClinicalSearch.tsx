@@ -2,7 +2,7 @@
 
 import { openUrl } from "utils";
 import { LandingButton } from "ui";
-import { LINKS } from "@app/constants/links.const";
+import { LINKS } from "@constants/links.const";
 
 
 export const ClinicalSearch = () => {
