@@ -5,31 +5,31 @@
     "button": "Contáctanos ahora"
   },
   "resources": {
-    "title": "Conectamos oncólogos y a sus pacientes con ensayos clínicos de forma simple, accesible y segura.",
+    "title": "La efectividad y precisión de nuestras soluciones integrales nos convierten en la empresa líder en la región.",
     "cards": {
-      "fees": {
-        "name": "Honorarios",
-        "description": "Referir a un paciente es un trabajo que requiere tiempo y dedicación por eso será retribuido directamente desde nuestra plataforma."
+      "patient": {
+        "name": "Patient Centricity",
+        "description": "Nos aseguramos de tener en cuenta las necesidades y de abordar nuestras estrategias desde su perspectiva."
       },
-      "dataPrivacy": {
-        "name": "Privacidad de datos",
-        "description": "Nuestra plataforma es un entorno digital seguro: los datos personales e información de contacto de los pacientes solo será compartida con el investigador que usted elija."
+      "innovation": {
+        "name": "Innovación tecnológica",
+        "description": "Aceleramos el reclutamiento de pacientes gracias a soluciones tecnológicas completamente innovadoras."
       },
-      "comprehensiveManagement": {
-        "name": "Gestión Integral",
-        "description": "En una misma plataforma es posible: referir y seguir el estatus del paciente, contactarse con el investigador y cobrar honorarios."
+      "precision": {
+        "name": "Precisión y eficiencia",
+        "description": "Nuestro enfoque tecnológico garantiza la efectividad y la calidad de nuestro reclutamiento."
       },
-      "realTimeTracking": {
+      "catchment": {
+        "name": "Captación selectiva",
+        "description": "Nuestra gestión y análisis de datos nos permite una captación y selección precisa y efectiva de pacientes reduciendo la tasa de falla."
+      },
+      "realTime": {
         "name": "Seguimiento en tiempo real",
-        "description": "Siga el estatus del paciente referido al estudio en tiempo real."
+        "description": "Registramos, supervisamos y analizamos métricas de capacitación y gestión de pacientes en tiempo real, lo que nos permite ser reactivos y estratégicos."
       },
-      "chatDirectCommunication": {
-        "name": "Chat: comunicación directa",
-        "description": "A través de nuestra plataforma, oncólogos e investigadores pueden contactarse sin intermediarios en un entorno seguro."
-      },
-      "studiesForEveryPatient": {
-        "name": "Estudios para cada paciente",
-        "description": "Descubra ensayos clínicos con reclutamiento activo y, utilizando nuestros filtros altamente específicos, encuentre el indicado para su paciente."
+      "automatization": {
+        "name": "Automatización y rapidez",
+        "description": "Optimizamos nuestros procesos e implementamos novedosas herramientas digitales para ahorrar tiempos y costes."
       }
     }
   },
