@@ -1,12 +1,16 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useContext, useEffect, useRef } from "react";
 import { LandingButton } from "ui";
 import { Molecules } from "./components/Molecules";
 import { H1 } from "ui";
 import { mouseParallax } from "@utils/animations/MouseParallax";
+import { LanguageContext, useClientTranslation } from "i18n";
 
 export const Cover = () => {
+  const { lang } = useContext(LanguageContext)
+  const { t } = useClientTranslation(lang, { keyPrefix: "cover" });
+
   const containerRef = useRef<HTMLDivElement>(null);
   const moleculesRef = useRef<HTMLDivElement>(null);
 
@@ -35,20 +39,15 @@ export const Cover = () => {
         <div className="grid grid-cols-11">
           <div className="col-span-11 lg:col-span-8">
             <H1 className="text-light">
-              Innovación y tecnología para revolucionar el reclutamiento de
-              pacientes en Latinoamérica
+              {t('title')}
             </H1>
-            <span className="font-sans text-light mb-8 block md:w-4/5">
-              Nuestras soluciones combinan análisis de datos, comunicación
-              especializada y gestión humanizada de pacientes en un entorno
-              tecnológico moderno y seguro. <b>¡Trabajemos juntos!</b>
-            </span>
+            <span dangerouslySetInnerHTML={{__html: t('subtitle') as string}}  className="font-sans text-light mb-8 block md:w-4/5"></span>
             <LandingButton
               color="secondary"
               onClick={() => console.warn("@todo: add functionality")}
               className="w-full sm:w-auto"
             >
-              Contáctanos ahora
+              {t('button')}
             </LandingButton>
           </div>
         </div>
