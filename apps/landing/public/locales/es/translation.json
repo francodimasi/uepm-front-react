@@ -1,4 +1,14 @@
 {
+  "common": {
+    "countries": {
+      "argentina": "Argentina",
+      "brasil": "Brasil",
+      "chile": "Chile",
+      "peru": "Perú",
+      "colombila": "Colombia",
+      "mexico": "Mexico"
+    }
+  },
   "cover": {
     "title": "Innovación y tecnología para revolucionar el reclutamiento de pacientes en Latinoamérica",
     "subtitle": "Nuestras soluciones combinan análisis de datos, comunicación especializada y gestión humanizada de pacientes en un entorno tecnológico moderno y seguro. <b>¡Trabajemos juntos!</b>",
@@ -31,6 +41,16 @@
         "name": "Automatización y rapidez",
         "description": "Optimizamos nuestros procesos e implementamos novedosas herramientas digitales para ahorrar tiempos y costes."
       }
+    }
+  },
+  "sites": {
+    "title": "De Latinoamérica para Latinoamérica",
+    "subtitle": "Comprender la heterogeneidad cultural de la región, las características del sistema de salud y los desafíos de los pacientes en cada país es clave para la efectividad de nuestro trabajo.",
+    "counter": {
+      "specialists": "Especialistas",
+      "clinics": "Sedes Clínicas",
+      "cities": "Ciudades",
+      "specialities": "Especialidades"
     }
   },
   "contact": {

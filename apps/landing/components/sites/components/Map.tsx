@@ -3,11 +3,12 @@
 import React, { useContext } from "react";
 import { SvgLoader, SvgProxy } from "react-svgmt";
 import { SitesContext } from "../SitesProvider";
-import { SITES } from "../constants/sites.const";
 import cx from "classnames";
+import { useSites } from "../hooks/useSites";
 
 export const Map = ({ className }: React.HTMLAttributes<HTMLDivElement>) => {
   const { selected, setSelected } = useContext(SitesContext);
+  const { sites } = useSites();
 
   const classes = cx("px-4 pr-4 w-full z-30 right-1/2 -top-8", [
     "2xl:w-1/3", //2xl
@@ -19,7 +20,7 @@ export const Map = ({ className }: React.HTMLAttributes<HTMLDivElement>) => {
   return (
     <div className={`${classes} ${className}`}>
       <SvgLoader path="images/sites/map.svg">
-        {SITES.map(({ id }, index) => (
+        {sites.map(({ id }, index) => (
           <SvgProxy
             key={index}
             onClick={() => setSelected(id)}

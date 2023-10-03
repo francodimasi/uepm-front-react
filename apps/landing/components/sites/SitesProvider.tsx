@@ -1,10 +1,11 @@
 import { PropsWithChildren, createContext, useState } from "react";
-import { SITES } from "./constants/sites.const";
+import { useSites } from "./hooks/useSites";
 
 export const SitesContext = createContext({} as any);
 
 export const SitesProvider = ({ children }: PropsWithChildren) => {
-  const [selected, setSelected] = useState(SITES[0].id);
+  const { sites } = useSites();
+  const [selected, setSelected] = useState(sites[0].id);
 
   const value = {
     selected,

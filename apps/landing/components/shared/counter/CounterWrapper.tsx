@@ -2,38 +2,42 @@
 
 import { useCallback, useContext, useMemo } from "react";
 import { SitesContext } from "../../sites/SitesProvider";
-import { Site } from "../../sites/constants/sites.const";
 import { Counter } from "./Counter";
 import { CounterItem } from "./types/counter.type";
+import { Site } from "@components/sites/types/sites.type";
+import { LanguageContext, useClientTranslation } from "i18n";
 
 export const CounterWrapper = ({
   name,
   cities,
   clinics,
   specialists,
-  specialties,
+  specialities,
 }: Site) => {
   const { selected } = useContext(SitesContext);
+  const { lang } = useContext(LanguageContext);
+  const { t } = useClientTranslation(lang, { keyPrefix: "sites.counter" });
+
   const counterData: CounterItem[] = useMemo(
     () => [
       {
-        label: "Especialistas",
+        label: t("specialists"),
         value: specialists,
       },
       {
-        label: "Sedes Clínicas",
+        label: t("clinics"),
         value: clinics,
       },
       {
-        label: "Ciudades",
+        label: t("cities"),
         value: cities,
       },
       {
-        label: "Especialidades",
-        value: specialties,
+        label: t("specialities"),
+        value: specialities,
       },
     ],
-    [cities, clinics, specialists, specialties]
+    [cities, clinics, specialists, specialities]
   );
 
   const CounterList = useCallback(
