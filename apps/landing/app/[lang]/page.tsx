@@ -10,6 +10,7 @@ import { Header } from "@components/shared/header/Header";
 import { Sites } from "@components/sites/components/Sites";
 import { Sponsors } from "@components/sponsors/Sponsors";
 import { SuccessCases } from "@components/success-cases/SuccessCases";
+import { Innovation } from "@components/innovation/Innovation";
 
 export default function Home({ params }: { params: any }) {
   const { lang } = params;
@@ -20,6 +21,7 @@ export default function Home({ params }: { params: any }) {
       <Resources />
       <Sites />
       <SuccessCases />
+      <Innovation />
       <MedicNetwork />
       <Sponsors />
       <div className="relative">
