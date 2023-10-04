@@ -2,6 +2,7 @@ import cx from "classnames";
 import Link from "next/link";
 import { useEffect } from "react";
 import { MenuProps } from "./Menu.types";
+import { LanguageSelector } from "./LanguageSelector";
 
 export const MenuMobile = ({ links, opened, breakpoint }: MenuProps) => {
 
@@ -10,7 +11,7 @@ export const MenuMobile = ({ links, opened, breakpoint }: MenuProps) => {
   });
 
   useEffect(() => {
-    if(opened){
+    if (opened) {
       document.body.classList.add('overflow-hidden');
       document.body.classList.add(`${breakpoint}:overflow-visible`);
     }
@@ -37,9 +38,7 @@ export const MenuMobile = ({ links, opened, breakpoint }: MenuProps) => {
             ))}
           </ul>
 
-          <div className="table self-start text-light px-5 py-3 border-light border-solid border-1 text-xs uppercase hover:bg-light hover:text-dark cursor-pointer">
-            ENG
-          </div>
+          <LanguageSelector />
         </div>
       </div>
     </div>

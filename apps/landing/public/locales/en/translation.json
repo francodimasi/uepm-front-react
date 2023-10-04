@@ -1,55 +1,114 @@
 {
+  "common": {
+    "countries": {
+      "argentina": "Argentina",
+      "brasil": "Brazil",
+      "chile": "Chile",
+      "peru": "Peru",
+      "colombila": "Colombia",
+      "mexico": "Mexico"
+    },
+    "languages": {
+      "en": "English",
+      "es": "Spanish"
+    }
+  },
+  "menu": {
+    "whereWeWork": "Where We Operate",
+    "successCases": "Success Cases",
+    "products": "Products",
+    "contact": "Contact",
+    "uepm": "UEPM"
+  },
   "cover": {
-    "title": "Exclusive Platform for Oncologists: Find Clinical Trials and Refer Patients Simply, Accessibly, and Securely.",
-    "subtitle": "Discover clinical trials, refer patients, and track progress in real time.",
-    "button": "Register"
+    "title": "Innovation and Technology to Revolutionize Patient Recruitment in Latin America",
+    "subtitle": "Our solutions combine data analysis, specialized communication, and humanized patient management in a modern and secure technological environment. <b>Let's work together!</b>",
+    "button": "Contact Us Now"
   },
   "resources": {
-    "title": "We Connect Oncologists and Their Patients with Clinical Trials Simply, Accessibly, and Securely.",
+    "title": "The effectiveness and precision of our comprehensive solutions make us the leading company in the region.",
     "cards": {
-      "fees": {
-        "name": "Fees",
-        "description": "Referring a patient is a time-consuming and dedicated effort, which will be compensated directly through our platform."
+      "patient": {
+        "name": "Patient Centricity",
+        "description": "We make sure to consider the needs and address our strategies from their perspective."
       },
-      "dataPrivacy": {
-        "name": "Data Privacy",
-        "description": "Our platform is a secure digital environment: patients' personal data and contact information will only be shared with the chosen researcher."
+      "innovation": {
+        "name": "Technological Innovation",
+        "description": "We accelerate patient recruitment thanks to completely innovative technological solutions."
       },
-      "comprehensiveManagement": {
-        "name": "Comprehensive Management",
-        "description": "On a single platform, you can refer and track the patient's status, communicate with the researcher, and receive compensation for your efforts."
+      "precision": {
+        "name": "Precision and Efficiency",
+        "description": "Our technological approach guarantees the effectiveness and quality of our recruitment."
       },
-      "realTimeTracking": {
-        "name": "Real-time Tracking",
-        "description": "Monitor the status of the patient referred to the study in real time."
+      "catchment": {
+        "name": "Selective Recruitment",
+        "description": "Our management and data analysis allow us to have a precise and effective recruitment of patients, reducing the failure rate."
       },
-      "chatDirectCommunication": {
-        "name": "Chat: Direct Communication",
-        "description": "Through our platform, oncologists and researchers can communicate directly in a secure environment without intermediaries."
+      "realTime": {
+        "name": "Real-time Monitoring",
+        "description": "We record, monitor, and analyze training and patient management metrics in real-time, allowing us to be reactive and strategic."
       },
-      "studiesForEveryPatient": {
-        "name": "Studies for Every Patient",
-        "description": "Discover clinical trials with active recruitment, and using our highly specific filters, find the right one for your patient."
+      "automatization": {
+        "name": "Automation and Speed",
+        "description": "We optimize our processes and implement innovative digital tools to save time and costs."
       }
     }
   },
+  "sites": {
+    "title": "From Latin America to Latin America",
+    "subtitle": "Understanding the cultural heterogeneity of the region, the characteristics of the healthcare system, and the challenges of patients in each country is key to the effectiveness of our work.",
+    "counter": {
+      "specialists": "Specialists",
+      "clinics": "Clinical Sites",
+      "cities": "Cities",
+      "specialities": "Specialties"
+    }
+  },
+  "successCases": {
+    "title": "Some Success Cases",
+    "cases": {
+      "esclerosis": {
+        "title": "RR Multiple Sclerosis",
+        "text": "We contributed 50% of the target country in just 7 months of active campaign.",
+        "label": "Guatemala 7 months"
+      },
+      "crohn": {
+        "title": "Crohn's Disease",
+        "text": "We contributed 75% of the target country in just 11 months of active campaign.",
+        "label": "Mexico 11 months"
+      },
+      "esquizofrenia": {
+        "title": "Schizophrenia",
+        "text": "We contributed 68% of the target country in just 5 months of active campaign.",
+        "label": "Latam 5 months"
+      }
+    }
+  },
+  "medicalNetwork": {
+    "title": "Network of Referring Doctors",
+    "description": "We have a network of medical specialists in different therapeutic areas interested in offering their patients the opportunity to participate in clinical trials. These professionals, previously informed about the available research protocols, have the possibility to refer potential candidates through our secure electronic platforms and access real-time patient follow-up at each stage of the protocol."
+  },
+  "sponsors": {
+    "title": "They Choose Us"
+  },
+  "clinicalSearch": {
+    "text": "Discover the first and only online clinical trial search engine with user-friendly language for Latin America.",
+    "button": "A Trial For Me"
+  },
   "contact": {
-    "title": "Sign up to receive news about our exclusive platform",
-    "thanks": "Thank you for registering! You will find important information in your email inbox.",
+    "title": "Contact Information",
+    "thanks": "Thank you very much for registering! In your email inbox, you will find important information.",
     "inputs": {
       "name": "Name",
       "lastName": "Last Name",
-      "speciality": "Specialty",
-      "email": "Email",
-      "whatsapp": "WhatsApp",
-      "button": "Contact Me"
+      "email": "E-mail",
+      "phone": "Phone (Optional)",
+      "button": "I want to be contacted"
     }
   },
   "footer": {
-    "whoWeAre": "Who We Are",
-    "uepm": "Un Ensayo para Mí",
-    "researchers": "UEPM Researchers",
     "terms": "Terms and Conditions",
-    "policy": "Privacy Policy"
+    "policy": "Privacy Policy",
+    "language": "Select Language:"
   }
 }
