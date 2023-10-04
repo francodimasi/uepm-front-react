@@ -2,15 +2,15 @@
 
 import cx from "classnames";
 import Image from "next/image";
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { isMobile } from "utils";
 
+import { useMenu } from "@hooks/useMenu";
 import close from "public/images/icons/close.svg";
 import menu from "public/images/icons/menu.svg";
 import logo from "public/images/trialtech-logo.svg";
 import { MenuDesktop } from "./menu/MenuDesktop";
 import { MenuMobile } from "./menu/MenuMobile";
-import { useMenu } from "@hooks/useMenu";
 
 const mobileBreakpoint = "lg";
 

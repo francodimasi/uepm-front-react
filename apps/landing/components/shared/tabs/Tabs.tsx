@@ -3,6 +3,7 @@ import { Swiper as SwiperType } from "swiper/types";
 import { TabsButtons } from "./TabsButtons";
 import { TabItem } from "./tabs.type";
 import { useCallback, useMemo, useState } from "react";
+import { EffectFade } from "swiper/modules";
 
 type TabsProps = {
     items: TabItem[];
@@ -32,16 +33,21 @@ export const Tabs = ({ items }: TabsProps) => {
         <>
             <TabsButtons selected={selected} items={buttonItems} onChange={swipeTo} />
             <Swiper
+                modules={[EffectFade]}
                 spaceBetween={0}
                 slidesPerView={1}
                 slidesPerGroup={1}
                 className="!pb-8"
                 onSwiper={setSwiper}
+                effect="fade"
+                fadeEffect={{
+                    crossFade: true
+                }}
             >
                 {contentItems.map((content, index) => (
                     <SwiperSlide className="!h-auto" key={index}>
                         <>
-                            <div className="text-light p-32">
+                            <div className="py-16">
                                 {content}
                             </div>
                         </>
