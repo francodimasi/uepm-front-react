@@ -53,6 +53,26 @@
       "specialities": "Especialidades"
     }
   },
+  "successCases": {
+    "title": "Algunos casos de éxito",
+    "cases": {
+      "esclerosis": {
+        "title": "Esclerosis Múltiple RR",
+        "text": "Aportamos el 50% del target país en solo 7 meses de campaña activa.",
+        "label": "Guatemala 7 meses"
+      },
+      "crohn": {
+        "title": "Crohn",
+        "text": "Aportamos el 75% del target país en solo 11 meses de campaña activa.",
+        "label": "Meximo 11 meses"
+      },
+      "esquizofrenia": {
+        "title": "Esquizofrenia",
+        "text": "Aportamos el 68% del target país en solo 5 meses de campaña activa.",
+        "label": "Latam 5 meses"
+      }
+    }
+  },
   "contact": {
     "title": " Regístrese para recibir noticias sobre nuestra plataforma exclusiva",
     "thanks": "¡Muchas gracias por registrarse! En su casilla de mail encontrará información importante.",

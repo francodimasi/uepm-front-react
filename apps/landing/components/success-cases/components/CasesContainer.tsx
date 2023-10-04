@@ -1,39 +1,15 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext, useMemo } from "react";
 import { Pagination } from "swiper/modules";
 import { BREAKPOINTS } from "ui";
 import { CaseCard, CaseCardProps } from "./CaseCard";
 import { Swiper, SwiperSlide } from "swiper/react";
-
-const cases: CaseCardProps[] = [
-  {
-    title: "Esclerosis Múltiple RR",
-    text: "Aportamos el 50% del target país en solo 7 meses de campaña activa.",
-    label: "Guatemala 7 meses",
-    value: 50,
-  },
-  {
-    title: "Crohn",
-    text: "Aportamos el 75% del target país en solo 11 meses de campaña activa.",
-    label: "Meximo 11 meses",
-    value: 75,
-  },
-  {
-    title: "Esquizofrenia",
-    text: "Aportamos el 68% del target país en solo 5 meses de campaña activa.",
-    label: "Latam 5 meses",
-    value: 68,
-  },
-  {
-    title: "Esclerosis Múltiple RR",
-    text: "Aportamos el 92% del target país en solo 12 meses de campaña activa.",
-    label: "Argentina 12 meses",
-    value: 92,
-  },
-];
+import { LanguageContext, useClientTranslation } from "i18n";
 
 export const CasesContainer = () => {
+  const { lang } = useContext(LanguageContext)
+  const { t } = useClientTranslation(lang, { keyPrefix: "successCases.cases" });
   const [showSwiper, setShowSwiper] = useState<boolean>(false);
 
   const switchSlider = () => {
@@ -49,6 +25,33 @@ export const CasesContainer = () => {
       window.removeEventListener("resize", switchSlider);
     };
   }, []);
+
+  const cases: CaseCardProps[] = useMemo(() => ([
+    {
+      title: t('esclerosis.title'),
+      text:  t('esclerosis.text'),
+      label:  t('esclerosis.label'),
+      value: 50,
+    },
+    {
+      title: t('crohn.title'),
+      text:  t('crohn.text'),
+      label:  t('crohn.label'),
+      value: 75,
+    },
+    {
+      title: t('esquizofrenia.title'),
+      text:  t('esquizofrenia.text'),
+      label:  t('esquizofrenia.label'),
+      value: 68,
+    },
+    {
+      title: t('esclerosis.title'),
+      text:  t('esclerosis.text'),
+      label:  t('esclerosis.label'),
+      value: 92,
+    },
+  ]), []);
 
   const SwiperContainer = () => {
     return (
