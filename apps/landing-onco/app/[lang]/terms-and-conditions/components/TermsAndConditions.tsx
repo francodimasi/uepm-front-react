@@ -111,7 +111,7 @@ export const TermsAndConditions = () => {
                             sitio, utilizando medios automáticos (como harvesting bots, robots, arañas o scrapers) sin nuestro permiso
                             previo.</p>
                         <p>No realizará ingeniería inversa ni descompilará ningún aspecto o contenido del sitio.</p>
-                        <p>No publicará comunicaciones comerciales no autorizadas (como correo no deseado, "spam") en nuestro sitio.</p>
+                        <p>No publicará comunicaciones comerciales no autorizadas (como correo no deseado, &quot;spam&quot;) en nuestro sitio.</p>
                         <h2>RESPONSABILIDAD SOBRE LOS CONTENIDOS</h2>
                         <p>UN ENSAYO PARA MI o sus integrantes, NO serán responsables en modo alguno por los contenidos, las
                             manifestaciones, opiniones, comentarios, e información volcada en el sitio.</p>
