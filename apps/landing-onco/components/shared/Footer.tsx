@@ -1,18 +1,13 @@
+import { Language, LanguageContext, useClientTranslation } from "i18n";
 import Image from "next/image";
 import Link from "next/link";
-import { PropsWithChildren, useContext, useMemo } from "react";
-import linkedin from "ui/assets/icons/linkedin.svg";
-import instagram from "ui/assets/icons/instagram.svg";
-import facebook from "ui/assets/icons/facebook.svg";
-import { Language, LanguageContext, useClientTranslation } from "i18n";
+import logo from "public/images/uepm-onco-logo.svg";
+import { useContext, useMemo } from "react";
 import { SwitchLanguage } from "ui";
+import instagram from "ui/assets/icons/instagram.svg";
+import linkedin from "ui/assets/icons/linkedin.svg";
 
-type FooterProps = {
-  logo: string;
-};
-
-
-export const Footer = ({ logo }: PropsWithChildren<FooterProps>) => {
+export const Footer = () => {
   const { lang } = useContext(LanguageContext)
   const { t } = useClientTranslation(lang, { keyPrefix: "footer" });
   const { t: tlang } = useClientTranslation(lang, { keyPrefix: "language" });
@@ -26,9 +21,8 @@ export const Footer = ({ logo }: PropsWithChildren<FooterProps>) => {
 
   const social = useMemo(() => {
     return [
-      { icon: linkedin, alt: "Linkedin" },
-      { icon: instagram, alt: "Instagram" },
-      { icon: facebook, alt: "Facebook" },
+      { icon: linkedin, alt: "Linkedin", url: "https://www.linkedin.com/company/unensayoparami/mycompany/" },
+      { icon: instagram, alt: "Instagram", url: "https://www.instagram.com/unensayoparami_onco" },
     ];
   }, []);
 
@@ -59,13 +53,15 @@ export const Footer = ({ logo }: PropsWithChildren<FooterProps>) => {
           </div>
           <div className="flex flex-col justify-between sm:block">
             <div className="invert flex sm:justify-end">
-              {social.map(({ icon, alt }, index) => (
-                <Image key={index} className="mr-8 sm:mr-0 sm:ml-4 cursor-pointer" src={icon} alt={alt} />
+              {social.map(({ icon, alt, url }, index) => (
+                <Link key={index} href={url} target="_blank">
+                  <Image className="mr-8 sm:mr-0 sm:ml-4 cursor-pointer" src={icon} alt={alt} />
+                </Link>
               ))}
             </div>
             <div className="flex flex-col justify-end mt-16 sm:items-end sm:flex-row sm:justify-end sm:mt-5">
-              <Link href="">{t('terms')}</Link>
-              <Link className="mt-2 sm:mt-0 sm:ml-4" href="">
+              <Link href="/terms-and-conditions" target="_blank">{t('terms')}</Link>
+              <Link href="/privacy-and-policy" target="_blank" className="mt-2 sm:mt-0 sm:ml-4">
                 {t('policy')}
               </Link>
             </div>

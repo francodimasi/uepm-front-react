@@ -1,10 +1,9 @@
 "use client";
-import { Contact } from "@components/contact/Contact";
-import { Cover } from "@components/cover/Cover";
-import { Resources } from "@components/resources/Resources";
 import { Footer } from "@components/shared/Footer";
 import { Header } from "@components/shared/header/Header";
 import { LanguageProvider } from "i18n";
+import { TermsAndConditions } from "./components/TermsAndConditions";
+
 
 export default function Page({ params }: { params: any }) {
   const { lang } = params;
@@ -12,11 +11,7 @@ export default function Page({ params }: { params: any }) {
   return (
     <LanguageProvider lang={lang}>
       <Header />
-      <Cover />
-      <Resources />
-      <div id="contact">
-        <Contact />
-      </div>
+      <TermsAndConditions />
       <Footer />
     </LanguageProvider>
   );
