@@ -4,24 +4,29 @@ import { UnEnsayoParaMi } from "./components/UnEnsayoParaMi"
 import { UnEnsayoParaMiOnco } from "./components/UnEnsayoParaMiOnco"
 import { ManagementPortal } from "./components/ManagementPortal"
 import { EDiary } from "./components/EDiary"
+import { LanguageContext, useClientTranslation } from "i18n"
+import { useContext } from "react"
 
 export const Innovation = () => {
 
+    const { lang } = useContext(LanguageContext)
+    const { t } = useClientTranslation(lang, { keyPrefix: "innovation" });
+
     const items: TabItem[] = [
         {
-            name: "Un Ensayo Para Mí",
+            name: t('uepm.title'),
             content: <UnEnsayoParaMi />
         },
         {
-            name: "Un Ensayo Para Mí Onco",
+            name: t('uepmOnco.title'),
             content: <UnEnsayoParaMiOnco />
         },
         {
-            name: "Management Portal",
+            name: t('managementPortal.title'),
             content: <ManagementPortal />
         },
         {
-            name: "e-Diary",
+            name: t('ediary.title'),
             content: <EDiary />
         },
     ]

@@ -7,7 +7,7 @@ import cx from "classnames";
 
 type LoadingButtonProps = {
   onClick?: () => void;
-  size?: "small" | "regular" | "large";
+  size?: "small" | "regular" | "medium" | "large";
   outlined?: boolean;
   icon?: boolean;
   type?: 'button' | 'reset' | 'submit';
@@ -29,6 +29,7 @@ export const LandingButton = ({
   React.HTMLAttributes<HTMLButtonElement>) => {
   const sizeClasses = cx({
     "py-2 px-3": size === "small",
+    "py-4 px-5": size === "medium",
     "py-5 px-6": size === "regular",
     "py-6 px-7": size === "large",
   });
