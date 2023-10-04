@@ -21,6 +21,7 @@ export const ClinicalSearch = () => {
           <div className="col-span-3 mt-8 lg:mt-0 flex lg:justify-end items-center">
             <LandingButton
               outlined
+              color='light'
               className="w-full sm:w-auto whitespace-nowrap"
               onClick={() => openUrl(LINKS.oncoLogin)}
             >

@@ -19,7 +19,7 @@ export const UnEnsayoParaMi = () => {
                     </div>
                     <div>
                         <span className="block font-bold mb-9">¿Quieres saber más de nuestros productos?</span>
-                        <LandingButton className="table">Ver más</LandingButton>
+                        <LandingButton outlined={true} className="table">Ver más</LandingButton>
                     </div>
                 </div>
             </div>
