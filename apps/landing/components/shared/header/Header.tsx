@@ -10,6 +10,7 @@ import menu from "public/images/icons/menu.svg";
 import logo from "public/images/trialtech-logo.svg";
 import { MenuDesktop } from "./menu/MenuDesktop";
 import { MenuMobile } from "./menu/MenuMobile";
+import { useMenu } from "@hooks/useMenu";
 
 const mobileBreakpoint = "lg";
 
@@ -17,15 +18,7 @@ export const Header = () => {
   const [minimized, setMinimized] = useState<boolean>(false);
   const [opened, setOpened] = useState<boolean>(false);
   const scrollBreakpoint = isMobile() ? 50 : 150;
-  const links = useMemo(() => {
-    return [
-      { title: "Dónde operamos", url: "" },
-      { title: "Casos de éxito", url: "" },
-      { title: "Productos", url: "" },
-      { title: "Contacto", url: "" },
-      { title: "UEPM", url: "" },
-    ];
-  }, []);
+  const { links } = useMenu();
 
   const headerClasses = cx(
     "group fixed top-0 left-0 w-full z-[9999] transition-all",

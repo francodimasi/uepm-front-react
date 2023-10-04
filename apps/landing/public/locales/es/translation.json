@@ -13,6 +13,13 @@
       "es": "Español"
     }
   },
+  "menu": {
+    "whereWeWork": "Dónde operamos",
+    "successCases": "Casos de éxito",
+    "products": "Productos",
+    "contact": "Contacto",
+    "uepm": "UEPM"
+  },
   "cover": {
     "title": "Innovación y tecnología para revolucionar el reclutamiento de pacientes en Latinoamérica",
     "subtitle": "Nuestras soluciones combinan análisis de datos, comunicación especializada y gestión humanizada de pacientes en un entorno tecnológico moderno y seguro. <b>¡Trabajemos juntos!</b>",
@@ -100,10 +107,8 @@
     }
   },
   "footer": {
-    "whoWeAre": "Quiénes somos",
-    "uepm": "Un Ensayo para Mí",
-    "researchers": "UEPM investigadores",
     "terms": "Términos y condiciones",
-    "policy": "Política de privacidad"
+    "policy": "Política de privacidad",
+    "language": "Seleccionar idioma:"
   }
 }
