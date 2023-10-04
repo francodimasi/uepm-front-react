@@ -43,7 +43,7 @@ export const ContactForm = ({ onSend }: ContactFormProps) => {
             control={control}
             rules={{ required: true }}
             render={({ field }) => (
-              <ContactInput label="Nombre" type="text" {...field} />
+              <ContactInput label={t('name')} type="text" {...field} />
             )}
           />
         </div>
@@ -53,7 +53,7 @@ export const ContactForm = ({ onSend }: ContactFormProps) => {
             control={control}
             rules={{ required: true }}
             render={({ field }) => (
-              <ContactInput label="Apellido" type="text" {...field} />
+              <ContactInput label={t('lastName')} type="text" {...field} />
             )}
           />{" "}
         </div>
@@ -64,7 +64,7 @@ export const ContactForm = ({ onSend }: ContactFormProps) => {
             control={control}
             rules={{ required: true }}
             render={({ field }) => (
-              <ContactInput label="E-mail" type="email" {...field} />
+              <ContactInput label={t('email')} type="email" {...field} />
             )}
           />
         </div>
@@ -73,14 +73,14 @@ export const ContactForm = ({ onSend }: ContactFormProps) => {
             name="telefono"
             control={control}
             render={({ field }) => (
-              <ContactInput label="Telefono (Opcional)" type="tel" {...field} />
+              <ContactInput label={t('phone')} type="tel" {...field} />
             )}
           />
         </div>
       </div>
       <div className="mt-4 flex justify-end">
         <LandingButton type="submit" className="" color="secondary" disabled={!isValid} onClick={() => { }}>
-          Quiero que me contacten
+          {t('button')}
         </LandingButton>
       </div>
     </form>

@@ -7,6 +7,10 @@
       "peru": "Perú",
       "colombila": "Colombia",
       "mexico": "Mexico"
+    },
+    "languages": {
+      "en": "Inglés",
+      "es": "Español"
     }
   },
   "cover": {
@@ -85,14 +89,13 @@
     "button": "Un Ensayo Para Mí"
   },
   "contact": {
-    "title": " Regístrese para recibir noticias sobre nuestra plataforma exclusiva",
+    "title": "Datos de contacto",
     "thanks": "¡Muchas gracias por registrarse! En su casilla de mail encontrará información importante.",
     "inputs": {
       "name": "Nombre",
       "lastName": "Apellido",
-      "speciality": "Especialidad",
       "email": "E-mail",
-      "whatsapp": "Whatsapp",
+      "phone": "Telefono (Opcional)",
       "button": "Quiero que me contacten"
     }
   },

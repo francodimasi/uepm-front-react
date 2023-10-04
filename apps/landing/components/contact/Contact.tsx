@@ -2,10 +2,13 @@
 
 import { H2 } from "ui";
 import { ContactForm } from "./ContactForm";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { LanguageContext, useClientTranslation } from "i18n";
 
 export const Contact = () => {
 
+  const { lang } = useContext(LanguageContext)
+  const { t } = useClientTranslation(lang, { keyPrefix: "contact" });
   const [sent, setSent] = useState(false);
 
   return (
@@ -13,7 +16,7 @@ export const Contact = () => {
       <div className="container">
         <div className="grid grid-cols-11">
           <div className="col-span-11 lg:col-span-5">
-            <H2 className="text-light">Datos de contacto</H2>
+            <H2 className="text-light">{t('title')}</H2>
           </div>
         </div>
 
@@ -37,7 +40,7 @@ export const Contact = () => {
             {sent ? (
               <div className="p-8 sm:p-20 bg-gradient-to-br bg- border-primary border-2">
                 <p className="text-2xl text-light">
-                  ¡Muchas gracias por registrarse! En su casilla de mail encontrará información importante.
+                  {t('thanks')}
                 </p>
               </div>
             ) : (
