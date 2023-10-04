@@ -1,55 +1,114 @@
 {
+  "common": {
+    "countries": {
+      "argentina": "Argentina",
+      "brasil": "Brasil",
+      "chile": "Chile",
+      "peru": "Perú",
+      "colombila": "Colombia",
+      "mexico": "Mexico"
+    },
+    "languages": {
+      "en": "Inglés",
+      "es": "Español"
+    }
+  },
+  "menu": {
+    "whereWeWork": "Dónde operamos",
+    "successCases": "Casos de éxito",
+    "products": "Productos",
+    "contact": "Contacto",
+    "uepm": "UEPM"
+  },
   "cover": {
-    "title": "Plataforma exclusiva para oncólogos: encuentre ensayos clínicos y refiera pacientes de forma simple, accesible y segura.",
-    "subtitle": "Descubra ensayos clínicos, refiera pacientes y haga un seguimiento del progreso en tiempo real.",
-    "button": "Registrarme"
+    "title": "Innovación y tecnología para revolucionar el reclutamiento de pacientes en Latinoamérica",
+    "subtitle": "Nuestras soluciones combinan análisis de datos, comunicación especializada y gestión humanizada de pacientes en un entorno tecnológico moderno y seguro. <b>¡Trabajemos juntos!</b>",
+    "button": "Contáctanos ahora"
   },
   "resources": {
-    "title": "Conectamos oncólogos y a sus pacientes con ensayos clínicos de forma simple, accesible y segura.",
+    "title": "La efectividad y precisión de nuestras soluciones integrales nos convierten en la empresa líder en la región.",
     "cards": {
-      "fees": {
-        "name": "Honorarios",
-        "description": "Referir a un paciente es un trabajo que requiere tiempo y dedicación por eso será retribuido directamente desde nuestra plataforma."
+      "patient": {
+        "name": "Patient Centricity",
+        "description": "Nos aseguramos de tener en cuenta las necesidades y de abordar nuestras estrategias desde su perspectiva."
       },
-      "dataPrivacy": {
-        "name": "Privacidad de datos",
-        "description": "Nuestra plataforma es un entorno digital seguro: los datos personales e información de contacto de los pacientes solo será compartida con el investigador que usted elija."
+      "innovation": {
+        "name": "Innovación tecnológica",
+        "description": "Aceleramos el reclutamiento de pacientes gracias a soluciones tecnológicas completamente innovadoras."
       },
-      "comprehensiveManagement": {
-        "name": "Gestión Integral",
-        "description": "En una misma plataforma es posible: referir y seguir el estatus del paciente, contactarse con el investigador y cobrar honorarios."
+      "precision": {
+        "name": "Precisión y eficiencia",
+        "description": "Nuestro enfoque tecnológico garantiza la efectividad y la calidad de nuestro reclutamiento."
       },
-      "realTimeTracking": {
+      "catchment": {
+        "name": "Captación selectiva",
+        "description": "Nuestra gestión y análisis de datos nos permite una captación y selección precisa y efectiva de pacientes reduciendo la tasa de falla."
+      },
+      "realTime": {
         "name": "Seguimiento en tiempo real",
-        "description": "Siga el estatus del paciente referido al estudio en tiempo real."
+        "description": "Registramos, supervisamos y analizamos métricas de capacitación y gestión de pacientes en tiempo real, lo que nos permite ser reactivos y estratégicos."
       },
-      "chatDirectCommunication": {
-        "name": "Chat: comunicación directa",
-        "description": "A través de nuestra plataforma, oncólogos e investigadores pueden contactarse sin intermediarios en un entorno seguro."
-      },
-      "studiesForEveryPatient": {
-        "name": "Estudios para cada paciente",
-        "description": "Descubra ensayos clínicos con reclutamiento activo y, utilizando nuestros filtros altamente específicos, encuentre el indicado para su paciente."
+      "automatization": {
+        "name": "Automatización y rapidez",
+        "description": "Optimizamos nuestros procesos e implementamos novedosas herramientas digitales para ahorrar tiempos y costes."
       }
     }
   },
+  "sites": {
+    "title": "De Latinoamérica para Latinoamérica",
+    "subtitle": "Comprender la heterogeneidad cultural de la región, las características del sistema de salud y los desafíos de los pacientes en cada país es clave para la efectividad de nuestro trabajo.",
+    "counter": {
+      "specialists": "Especialistas",
+      "clinics": "Sedes Clínicas",
+      "cities": "Ciudades",
+      "specialities": "Especialidades"
+    }
+  },
+  "successCases": {
+    "title": "Algunos casos de éxito",
+    "cases": {
+      "esclerosis": {
+        "title": "Esclerosis Múltiple RR",
+        "text": "Aportamos el 50% del target país en solo 7 meses de campaña activa.",
+        "label": "Guatemala 7 meses"
+      },
+      "crohn": {
+        "title": "Crohn",
+        "text": "Aportamos el 75% del target país en solo 11 meses de campaña activa.",
+        "label": "Meximo 11 meses"
+      },
+      "esquizofrenia": {
+        "title": "Esquizofrenia",
+        "text": "Aportamos el 68% del target país en solo 5 meses de campaña activa.",
+        "label": "Latam 5 meses"
+      }
+    }
+  },
+  "medicalNetwork": {
+    "title": "Red de médicos referentes",
+    "description": "Contamos con una red de médicos especialistas en diferentes áreas terapéuticas interesados en brindarles a sus pacientes la oportunidad de participar de ensayos clínicos. Estos profesionales, previamente informados acerca de los protocolos de investigación disponibles, tienen la posibilidad de derivar potenciales candidatos a través de nuestras plataformas electrónicas seguras y acceder a un seguimiento del paciente en cada instancia del protocolo en tiempo real."
+  },
+  "sponsors": {
+    "title": "Nos eligen"
+  },
+  "clinicalSearch": {
+    "text": "Descubre el primer y único buscador online de ensayos clínicos con lenguaje amigable para Latinoamérica.",
+    "button": "Un Ensayo Para Mí"
+  },
   "contact": {
-    "title": " Regístrese para recibir noticias sobre nuestra plataforma exclusiva",
+    "title": "Datos de contacto",
     "thanks": "¡Muchas gracias por registrarse! En su casilla de mail encontrará información importante.",
     "inputs": {
       "name": "Nombre",
       "lastName": "Apellido",
-      "speciality": "Especialidad",
       "email": "E-mail",
-      "whatsapp": "Whatsapp",
+      "phone": "Telefono (Opcional)",
       "button": "Quiero que me contacten"
     }
   },
   "footer": {
-    "whoWeAre": "Quiénes somos",
-    "uepm": "Un Ensayo para Mí",
-    "researchers": "UEPM investigadores",
     "terms": "Términos y condiciones",
-    "policy": "Política de privacidad"
+    "policy": "Política de privacidad",
+    "language": "Seleccionar idioma:"
   }
 }
