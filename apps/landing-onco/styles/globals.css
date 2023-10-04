@@ -10,3 +10,10 @@
   padding: 0;
   margin: 0;
 }
+
+.document p{
+  @apply mb-4
+}
+.document h2{
+  @apply font-bold mb-6 mt-20 text-xl
+}
