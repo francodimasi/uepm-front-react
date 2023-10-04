@@ -1,7 +1,7 @@
 "use client"
 
 import Image from "next/image"
-import { useMemo } from "react"
+import { useMemo, useContext } from "react"
 import { SwiperSlide, Swiper } from "swiper/react"
 import { BREAKPOINTS, H2 } from "ui"
 import boehringer from "public/images/sponsors/boehringer.svg";
@@ -11,15 +11,19 @@ import iqvia from "public/images/sponsors/iqvia.svg";
 import lilly from "public/images/sponsors/lilly.svg";
 import roche from "public/images/sponsors/roche.svg";
 import { Autoplay } from 'swiper/modules';
+import { LanguageContext, useClientTranslation } from "i18n"
 
 export const Sponsors = () => {
+    const { lang } = useContext(LanguageContext)
+    const { t } = useClientTranslation(lang, { keyPrefix: "sponsors" });
+
     const sponsors = useMemo(() => {
         return [boehringer, bristol, lilly, covance, roche, iqvia]
     }, [])
     return (
         <section className="py-24">
             <div className="container">
-                <H2 className="text-light mb-24">Nos eligen</H2>
+                <H2 className="text-light mb-24">{t('title')}</H2>
                 <Swiper
                     modules={[Autoplay]}
                     spaceBetween={16}

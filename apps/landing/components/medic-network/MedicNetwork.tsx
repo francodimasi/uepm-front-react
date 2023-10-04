@@ -1,21 +1,20 @@
 import { H2 } from "ui";
+import { useContext } from 'react';
+import { LanguageContext, useClientTranslation } from "i18n";
 
 export const MedicNetwork = () => {
+
+  const { lang } = useContext(LanguageContext)
+  const { t } = useClientTranslation(lang, { keyPrefix: "medicalNetwork" });
+
   return (
     <section className="bg-light relative">
       <div className="container py-16 sm:py-60">
         <div className="grid grid-cols-12">
           <div className="col-span-12 md:col-span-8 lg:col-span-6 sm:pr-20">
-            <H2 className="pb-12">Red de médicos referentes</H2>
+            <H2 className="pb-12">{t('title')}</H2>
             <p>
-              Contamos con una red de médicos especialistas en diferentes áreas
-              terapéuticas interesados en brindarles a sus pacientes la
-              oportunidad de participar de ensayos clínicos. Estos
-              profesionales, previamente informados acerca de los protocolos de
-              investigación disponibles, tienen la posibilidad de derivar
-              potenciales candidatos a través de nuestras plataformas
-              electrónicas seguras y acceder a un seguimiento del paciente en
-              cada instancia del protocolo en tiempo real.
+              {t('description')}
             </p>
           </div>
         </div>

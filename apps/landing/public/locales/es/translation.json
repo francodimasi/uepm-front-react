@@ -73,6 +73,13 @@
       }
     }
   },
+  "medicalNetwork": {
+    "title": "Red de médicos referentes",
+    "description": "Contamos con una red de médicos especialistas en diferentes áreas terapéuticas interesados en brindarles a sus pacientes la oportunidad de participar de ensayos clínicos. Estos profesionales, previamente informados acerca de los protocolos de investigación disponibles, tienen la posibilidad de derivar potenciales candidatos a través de nuestras plataformas electrónicas seguras y acceder a un seguimiento del paciente en cada instancia del protocolo en tiempo real."
+  },
+  "sponsors": {
+    "title": "Nos eligen"
+  },
   "contact": {
     "title": " Regístrese para recibir noticias sobre nuestra plataforma exclusiva",
     "thanks": "¡Muchas gracias por registrarse! En su casilla de mail encontrará información importante.",
