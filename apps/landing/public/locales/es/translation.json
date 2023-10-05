@@ -107,6 +107,9 @@
     }
   },
   "innovation": {
+    "title": "Innovación tecnológica para el reclutamiento de pacientes",
+    "label": "Nuestros Productos",
+    "description": "Desarrollamos plataformas y herramientas tecnológicas de vanguardia para captar pacientes de manera precisa, efectiva y segura:",
     "uepm": {
       "title": "Un Ensayo Para Mí",
       "content": {
