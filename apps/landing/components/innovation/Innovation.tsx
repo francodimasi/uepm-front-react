@@ -37,12 +37,12 @@ export const Innovation = () => {
             <section className="pt-28 relative">
                 <div className="absolute w-full h-full top-0 left-0 bg-innovation bg-cover opacity-60"></div>
                 <div className="container relative z-10">
-                    <div className="grid grid-cols-12 mb-28">
-                        <div className="col-span-6">
-                            <span className="block text-light uppercase mb-6"></span>
-                            <H2 className="text-light">{t('title')}</H2>
+                    <div className="grid grid-cols-2 mb-16 md:mb-28">
+                        <div className="col-span-2 lg:col-span-1">
+                            <span className="block text-light uppercase mb-6">{t('label')}</span>
+                            <H2 className="text-light mb-8 lg:mb-0">{t('title')}</H2>
                         </div>
-                        <div className="col-span-6 flex items-end pl-28">
+                        <div className="col-span-2 lg:col-span-1 flex items-end lg:pl-16 2xl:pl-28">
                             <p className="text-light">
                                 {t('description')}
                             </p>
