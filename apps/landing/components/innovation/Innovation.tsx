@@ -34,7 +34,7 @@ export const Innovation = () => {
 
     return (
         <>
-            <section className="pt-28 relative">
+            <section className="pt-28 relative overflow-hidden">
                 <div className="absolute w-full h-full top-0 left-0 bg-innovation bg-cover opacity-60"></div>
                 <div className="container relative z-10">
                     <div className="grid grid-cols-2 mb-16 md:mb-28">

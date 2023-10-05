@@ -15,6 +15,8 @@ import { Innovation } from "@components/innovation/Innovation";
 export default function Home({ params }: { params: any }) {
   const { lang } = params;
   return (
+    <>
+    
     <LanguageProvider lang={lang}>
       <Header />
       <Cover />
@@ -33,5 +35,6 @@ export default function Home({ params }: { params: any }) {
         </div>
       </div>
     </LanguageProvider>
+    </>
   );
 }
