@@ -147,6 +147,37 @@
       }
     }
   },
+  "proposal": {
+    "title": "Desarrollamos propuestas tecnológicas de alto nivel para afrontar estos retos",
+    "culture": {
+      "title": "Idioma y cultura",
+      "content": {
+        "text": "Nuestras estrategias de comunicación tienen en cuenta no solo el perfil clínico del paciente sino las características culturales propias de cada país de la región: idioma, costumbres, modismos y dialectos.",
+        "textBold": "Nos enfocamos en una comunicación humana, ética, empática, diversa, inclusiva y efectiva."
+      }
+    },
+    "normative": {
+      "title": "Contexto normativo",
+      "content": {
+        "text": "Nuestras estrategias de comunicación tienen en cuenta no solo el perfil clínico del paciente sino las características culturales propias de cada país de la región: idioma, costumbres, modismos y dialectos.",
+        "textBold": "Nos enfocamos en una comunicación humana, ética, empática, diversa, inclusiva y efectiva."
+      }
+    },
+    "sanitary": {
+      "title": "Sistemas sanitarios",
+      "content": {
+        "text": "Nuestras estrategias de comunicación tienen en cuenta no solo el perfil clínico del paciente sino las características culturales propias de cada país de la región: idioma, costumbres, modismos y dialectos.",
+        "textBold": "Nos enfocamos en una comunicación humana, ética, empática, diversa, inclusiva y efectiva."
+      }
+    },
+    "teams": {
+      "title": "Equipos multidisciplinarios y multiculturales",
+      "content": {
+        "text": "Nuestras estrategias de comunicación tienen en cuenta no solo el perfil clínico del paciente sino las características culturales propias de cada país de la región: idioma, costumbres, modismos y dialectos.",
+        "textBold": "Nos enfocamos en una comunicación humana, ética, empática, diversa, inclusiva y efectiva."
+      }
+    }
+  },
   "footer": {
     "terms": "Términos y condiciones",
     "policy": "Política de privacidad",
