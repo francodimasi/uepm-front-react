@@ -7,12 +7,12 @@ import cx from "classnames";
 
 type LoadingButtonProps = {
   onClick?: () => void;
-  size?: "small" | "regular" | "large";
+  size?: "small" | "regular" | "medium" | "large";
   outlined?: boolean;
   icon?: boolean;
   type?: 'button' | 'reset' | 'submit';
   disabled?: boolean;
-  color?: 'primary' | 'secondary'
+  color?: 'primary' | 'secondary' | 'light'
 };
 
 export const LandingButton = ({
@@ -29,23 +29,22 @@ export const LandingButton = ({
   React.HTMLAttributes<HTMLButtonElement>) => {
   const sizeClasses = cx({
     "py-2 px-3": size === "small",
+    "py-4 px-5": size === "medium",
     "py-5 px-6": size === "regular",
     "py-6 px-7": size === "large",
   });
 
   const customStyles = cx({
-    "border-2 border-light bg-transparent text-light hover:bg-light hover:text-dark":
+    "border-2 bg-transparent text-light":
       outlined,
-  });
-
-  const iconStyles = cx({
-    "group-hover:brightness-0": outlined,
-    "brightness-[100]": color === 'primary',
   });
 
   const colorStyles = cx({
     "bg-primary hover:bg-primary-dark text-light": color === 'primary' && !outlined,
     "bg-secondary hover:bg-light": color === 'secondary' && !outlined,
+    "hover:bg-primary border-primary text-primary hover:text-light": color === 'primary' && outlined,
+    "hover:bg-secondary border-secondary text-secondary hover:text-dark": color === 'secondary' && outlined,
+    "hover:bg-light border-light text-light hover:text-dark": color === 'light' && outlined,
   })
 
   return (
@@ -58,14 +57,7 @@ export const LandingButton = ({
       <div className="flex items-center justify-between">
         <span>{children}</span>
         {icon && (
-          <div className="pl-5">
-            <Image
-              className={`block transition-all min-w-[22px] ${iconStyles}`}
-              src={arrow}
-              alt="arrow"
-              width={22}
-            ></Image>
-          </div>
+          <span className={`pl-5 material-icons`}>east</span>
         )}
       </div>
     </button>

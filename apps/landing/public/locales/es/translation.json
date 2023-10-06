@@ -106,6 +106,47 @@
       "button": "Quiero que me contacten"
     }
   },
+  "innovation": {
+    "title": "Innovación tecnológica para el reclutamiento de pacientes",
+    "label": "Nuestros Productos",
+    "description": "Desarrollamos plataformas y herramientas tecnológicas de vanguardia para captar pacientes de manera precisa, efectiva y segura:",
+    "uepm": {
+      "title": "Un Ensayo Para Mí",
+      "content": {
+        "title": "Un Ensayo para Mí",
+        "text": "Soluciones 360° para vincular de manera estratégica a todos los actores involucrados en la investigación clínica para acelerar de manera efectiva el reclutamiento de pacientes.Ofrece estrategias de captación y gestión digital de pacientes, además de soporte a los investigadores médicos y a los equipos involucrados en cada Centro de Investigación. A través de su buscador online, facilita el acceso de los pacientes a los ensayos clínicos ofreciendo información simple y confiable.",
+        "helper": "¿Quieres saber más de nuestros productos?",
+        "button": "Ver más"
+      }
+    },
+    "uepmOnco": {
+      "title": "Un Ensayo Para Mí Onco",
+      "content": {
+        "title": "Un Ensayo Para Mí Onco",
+        "text": "Soluciones 360° para vincular de manera estratégica a todos los actores involucrados en la investigación clínica para acelerar de manera efectiva el reclutamiento de pacientes.Ofrece estrategias de captación y gestión digital de pacientes, además de soporte a los investigadores médicos y a los equipos involucrados en cada Centro de Investigación. A través de su buscador online, facilita el acceso de los pacientes a los ensayos clínicos ofreciendo información simple y confiable.",
+        "helper": "¿Quieres saber más de nuestros productos?",
+        "button": "Ver más"
+      }
+    },
+    "managementPortal": {
+      "title": "Management Portal",
+      "content": {
+        "title": "Management Portal",
+        "text": "Soluciones 360° para vincular de manera estratégica a todos los actores involucrados en la investigación clínica para acelerar de manera efectiva el reclutamiento de pacientes.Ofrece estrategias de captación y gestión digital de pacientes, además de soporte a los investigadores médicos y a los equipos involucrados en cada Centro de Investigación. A través de su buscador online, facilita el acceso de los pacientes a los ensayos clínicos ofreciendo información simple y confiable.",
+        "helper": "¿Quieres saber más de nuestros productos?",
+        "button": "Ver más"
+      }
+    },
+    "ediary": {
+      "title": "e-Diary",
+      "content": {
+        "title": "e-Diary",
+        "text": "Soluciones 360° para vincular de manera estratégica a todos los actores involucrados en la investigación clínica para acelerar de manera efectiva el reclutamiento de pacientes.Ofrece estrategias de captación y gestión digital de pacientes, además de soporte a los investigadores médicos y a los equipos involucrados en cada Centro de Investigación. A través de su buscador online, facilita el acceso de los pacientes a los ensayos clínicos ofreciendo información simple y confiable.",
+        "helper": "¿Quieres saber más de nuestros productos?",
+        "button": "Ver más"
+      }
+    }
+  },
   "footer": {
     "terms": "Términos y condiciones",
     "policy": "Política de privacidad",

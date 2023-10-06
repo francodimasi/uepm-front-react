@@ -12,6 +12,7 @@ const config: Partial<Config> = {
         footer: "url('/images/bg/bg-footer.png')",
         "resources-mobile": "url('/images/bg/bg-resources-mobile.png')",
         "success-cases": "url('/images/bg/bg-success-cases.png')",
+        "innovation": "url('/images/bg/bg-innovation.svg')",
         menu: "url('/images/bg/bg-menu.png')",
         medic: "url('/images/medic-network/medic.png')",
       }
