@@ -12,11 +12,9 @@ export const AccordionItem = ({ item, onSelect, selected }: AccordionItemProps) 
     const [height, setHeight] = useState(0)
     const ref = useRef<HTMLDivElement>(null)
 
-    const maxHeight = selected ? `${height}px` : "0px";
-
     const selectedClasses = useMemo(() => {
         return classNames(
-            "overflow-hidden transition-all",
+            "overflow-hidden",
             { 'max-h-[0px]': !selected && height > 0 }
         );
     }, [height, selected])
@@ -30,9 +28,9 @@ export const AccordionItem = ({ item, onSelect, selected }: AccordionItemProps) 
         if (!!ref.current?.clientHeight && ref.current?.clientHeight > 0) {
             setTimeout(() => {
                 loadElementHeight();
-            }, 0)
+            }, 100)
         }
-    }, [ref.current])
+    }, [ref.current?.clientHeight])
 
 
     return (
@@ -41,10 +39,15 @@ export const AccordionItem = ({ item, onSelect, selected }: AccordionItemProps) 
                 onClick={() => onSelect()}
                 className={`group py-6 border-t-2 transition-all cursor-pointer border-light flex-1 px-6 hover:border-secondary ${selected ? "border-secondary" : ""}`}
             >
-                <span className={`text-light text-lg md:text-xl xl:text-2xl font-bold transition-all group-hover:text-secondary ${selected ? "text-secondary" : ""}`}>{name}</span>
+                <div className={`flex justify-between items-center text-light  group-hover:text-secondary ${selected ? "text-secondary" : ""}`}>
+                    <span className={`text-lg md:text-xl xl:text-2xl font-bold transition-all`}>{name}</span>
+                    <span className="material-icons">
+                        {selected ? 'expand_less' : 'expand_more'}
+                    </span>
+                </div>
             </div>
             <div className="container">
-                <div className={`${selectedClasses}`} style={{ maxHeight }} ref={ref}>
+                <div className={`${selectedClasses}`} ref={ref}>
                     <div className="pt-4 pb-14">
                         {content}
                     </div>
