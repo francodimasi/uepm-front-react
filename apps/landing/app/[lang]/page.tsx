@@ -11,6 +11,7 @@ import { Sites } from "@components/sites/components/Sites";
 import { Sponsors } from "@components/sponsors/Sponsors";
 import { SuccessCases } from "@components/success-cases/SuccessCases";
 import { Innovation } from "@components/innovation/Innovation";
+import { Proposal } from "@components/proposal/Proposal";
 
 export default function Home({ params }: { params: any }) {
   const { lang } = params;
@@ -22,6 +23,7 @@ export default function Home({ params }: { params: any }) {
         <Cover />
         <Resources />
         <Sites />
+        <Proposal />
         <SuccessCases />
         <Innovation />
         <MedicNetwork />
