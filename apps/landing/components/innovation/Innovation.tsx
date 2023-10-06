@@ -5,13 +5,30 @@ import { UnEnsayoParaMiOnco } from "./components/UnEnsayoParaMiOnco"
 import { ManagementPortal } from "./components/ManagementPortal"
 import { EDiary } from "./components/EDiary"
 import { LanguageContext, useClientTranslation } from "i18n"
-import { useContext } from "react"
-import { H2 } from "ui"
+import { useContext, useEffect, useState } from "react"
+import { BREAKPOINTS, H2 } from "ui"
+import { Accordion } from "@components/shared/accordion/Accordion"
 
 export const Innovation = () => {
 
     const { lang } = useContext(LanguageContext)
     const { t } = useClientTranslation(lang, { keyPrefix: "innovation" });
+
+    const [showAccordion, setShowAccordion] = useState<boolean>(false);
+
+    const switchContainer = () => {
+        const { clientWidth } = document.body;
+        setShowAccordion(clientWidth < BREAKPOINTS.sm);
+    };
+
+    useEffect(() => {
+        switchContainer();
+        window.addEventListener("resize", switchContainer);
+
+        return () => {
+            window.removeEventListener("resize", switchContainer);
+        };
+    }, []);
 
     const items: TabItem[] = [
         {
@@ -48,7 +65,9 @@ export const Innovation = () => {
                             </p>
                         </div>
                     </div>
-                    <Tabs items={items} />
+                </div>
+                <div className="relative z-10">
+                    {showAccordion ? <Accordion items={items} /> : <div className="container"><Tabs items={items} /></div>}
                 </div>
             </section>
         </>

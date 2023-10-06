@@ -16,25 +16,25 @@ export default function Home({ params }: { params: any }) {
   const { lang } = params;
   return (
     <>
-    
-    <LanguageProvider lang={lang}>
-      <Header />
-      <Cover />
-      <Resources />
-      <Sites />
-      <SuccessCases />
-      <Innovation />
-      <MedicNetwork />
-      <Sponsors />
-      <div className="relative">
-        <div className="absolute left-o top-0 w-full h-full bg-footer bg-cover opacity-60"></div>
-        <div className="relative z-20">
-          <ClinicalSearch />
-          <Contact />
-          <Footer />
+
+      <LanguageProvider lang={lang}>
+        <Header />
+        <Cover />
+        <Resources />
+        <Sites />
+        <SuccessCases />
+        <Innovation />
+        <MedicNetwork />
+        <Sponsors />
+        <div className="relative">
+          <div className="absolute left-o top-0 w-full h-full bg-footer bg-cover opacity-60"></div>
+          <div className="relative z-20">
+            <ClinicalSearch />
+            <Contact />
+            <Footer />
+          </div>
         </div>
-      </div>
-    </LanguageProvider>
+      </LanguageProvider>
     </>
   );
 }
