@@ -27,7 +27,8 @@
     "rest": "*",
     "tsconfig": "*",
     "typescript": "5.2.2",
-    "ui": "*"
+    "ui": "*",
+    "i18n": "*"
   },
   "devDependencies": {
     "@types/js-cookie": "^3.0.3",
