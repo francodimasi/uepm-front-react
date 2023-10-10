@@ -99,7 +99,7 @@ export const ContactForm = ({ onSend }: ContactFormProps) => {
       </div>
 
       <div className="mt-4 flex justify-end">
-        <LandingButton type="submit" color="secondary" disabled={!isValid || loading} onClick={() => { }}>
+        <LandingButton type="submit" className="w-full sm:w-auto" color="secondary" disabled={!isValid || loading} onClick={() => { }}>
           {t('button')}
         </LandingButton>
       </div>
