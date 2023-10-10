@@ -30,23 +30,23 @@
     "cards": {
       "patient": {
         "name": "Patient Centricity",
-        "description": "We make sure to consider the needs and address our strategies from their perspective."
+        "description": "We ensure to consider the needs and address our strategies from their perspective."
       },
       "innovation": {
         "name": "Technological Innovation",
-        "description": "We accelerate patient recruitment thanks to completely innovative technological solutions."
+        "description": "We accelerate patient recruitment through completely innovative technological solutions."
       },
       "precision": {
         "name": "Precision and Efficiency",
         "description": "Our technological approach guarantees the effectiveness and quality of our recruitment."
       },
       "catchment": {
-        "name": "Selective Recruitment",
-        "description": "Our management and data analysis allow us to have a precise and effective recruitment of patients, reducing the failure rate."
+        "name": "Selective Catchment",
+        "description": "Our data management and analysis enable precise and effective patient catchment and selection, reducing the failure rate."
       },
       "realTime": {
-        "name": "Real-time Monitoring",
-        "description": "We record, monitor, and analyze training and patient management metrics in real-time, allowing us to be reactive and strategic."
+        "name": "Real-Time Monitoring",
+        "description": "We record, monitor, and analyze training and patient management metrics in real time, allowing us to be reactive and strategic."
       },
       "automatization": {
         "name": "Automation and Speed",
@@ -59,7 +59,7 @@
     "subtitle": "Understanding the cultural heterogeneity of the region, the characteristics of the healthcare system, and the challenges of patients in each country is key to the effectiveness of our work.",
     "counter": {
       "specialists": "Specialists",
-      "clinics": "Clinical Sites",
+      "clinics": "Clinical Centers",
       "cities": "Cities",
       "specialities": "Specialties"
     }
@@ -68,7 +68,7 @@
     "title": "Some Success Cases",
     "cases": {
       "esclerosis": {
-        "title": "RR Multiple Sclerosis",
+        "title": "Multiple Sclerosis RR",
         "text": "We contributed 50% of the target country in just 7 months of active campaign.",
         "label": "Guatemala 7 months"
       },
@@ -85,8 +85,8 @@
     }
   },
   "medicalNetwork": {
-    "title": "Network of Referring Doctors",
-    "description": "We have a network of medical specialists in different therapeutic areas interested in offering their patients the opportunity to participate in clinical trials. These professionals, previously informed about the available research protocols, have the possibility to refer potential candidates through our secure electronic platforms and access real-time patient follow-up at each stage of the protocol."
+    "title": "Network of Referring Physicians",
+    "description": "We have a network of medical specialists in different therapeutic areas interested in offering their patients the opportunity to participate in clinical trials. These professionals, informed in advance about available research protocols, have the possibility to refer potential candidates through our secure electronic platforms and access real-time patient follow-up at every stage of the protocol."
   },
   "sponsors": {
     "title": "They Choose Us"
@@ -97,13 +97,85 @@
   },
   "contact": {
     "title": "Contact Information",
-    "thanks": "Thank you very much for registering! In your email inbox, you will find important information.",
+    "thanks": "Thank you very much for registering! You will find important information in your inbox.",
     "inputs": {
       "name": "Name",
       "lastName": "Last Name",
       "email": "E-mail",
       "phone": "Phone (Optional)",
       "button": "I want to be contacted"
+    }
+  },
+  "innovation": {
+    "title": "Technological Innovation for Patient Recruitment",
+    "label": "Our Products",
+    "description": "We develop cutting-edge technological platforms and tools to capture patients accurately, effectively, and securely:",
+    "uepm": {
+      "title": "A Trial For Me",
+      "content": {
+        "title": "A Trial For Me",
+        "text": "360° solutions to strategically connect all stakeholders involved in clinical research to effectively accelerate patient recruitment. It offers strategies for digital patient acquisition and management, as well as support for medical researchers and teams involved in each Research Center. Through its online search engine, it facilitates patients' access to clinical trials by providing simple and reliable information.",
+        "helper": "Do you want to know more about our products?",
+        "button": "See More"
+      }
+    },
+    "uepmOnco": {
+      "title": "A Trial For Me Onco",
+      "content": {
+        "title": "A Trial For Me Onco",
+        "text": "360° solutions to strategically connect all stakeholders involved in clinical research to effectively accelerate patient recruitment. It offers strategies for digital patient acquisition and management, as well as support for medical researchers and teams involved in each Research Center. Through its online search engine, it facilitates patients' access to clinical trials by providing simple and reliable information.",
+        "helper": "Do you want to know more about our products?",
+        "button": "See More"
+      }
+    },
+    "managementPortal": {
+      "title": "Management Portal",
+      "content": {
+        "title": "Management Portal",
+        "text": "360° solutions to strategically connect all stakeholders involved in clinical research to effectively accelerate patient recruitment. It offers strategies for digital patient acquisition and management, as well as support for medical researchers and teams involved in each Research Center. Through its online search engine, it facilitates patients' access to clinical trials by providing simple and reliable information.",
+        "helper": "Do you want to know more about our products?",
+        "button": "See More"
+      }
+    },
+    "ediary": {
+      "title": "e-Diary",
+      "content": {
+        "title": "e-Diary",
+        "text": "360° solutions to strategically connect all stakeholders involved in clinical research to effectively accelerate patient recruitment. It offers strategies for digital patient acquisition and management, as well as support for medical researchers and teams involved in each Research Center. Through its online search engine, it facilitates patients' access to clinical trials by providing simple and reliable information.",
+        "helper": "Do you want to know more about our products?",
+        "button": "See More"
+      }
+    }
+  },
+  "proposal": {
+    "title": "We Develop High-Level Technological Proposals to Face These Challenges",
+    "culture": {
+      "title": "Language and Culture",
+      "content": {
+        "text": "Our communication strategies take into account not only the patient's clinical profile but also the cultural characteristics specific to each country in the region: language, customs, idioms, and dialects.",
+        "textBold": "We focus on human, ethical, empathetic, diverse, inclusive, and effective communication."
+      }
+    },
+    "normative": {
+      "title": "Normative Context",
+      "content": {
+        "text": "Our communication strategies take into account not only the patient's clinical profile but also the cultural characteristics specific to each country in the region: language, customs, idioms, and dialects.",
+        "textBold": "We focus on human, ethical, empathetic, diverse, inclusive, and effective communication."
+      }
+    },
+    "sanitary": {
+      "title": "Healthcare Systems",
+      "content": {
+        "text": "Our communication strategies take into account not only the patient's clinical profile but also the cultural characteristics specific to each country in the region: language, customs, idioms, and dialects.",
+        "textBold": "We focus on human, ethical, empathetic, diverse, inclusive, and effective communication."
+      }
+    },
+    "teams": {
+      "title": "Multidisciplinary and Multicultural Teams",
+      "content": {
+        "text": "Our communication strategies take into account not only the patient's clinical profile but also the cultural characteristics specific to each country in the region: language, customs, idioms, and dialects.",
+        "textBold": "We focus on human, ethical, empathetic, diverse, inclusive, and effective communication."
+      }
     }
   },
   "footer": {
