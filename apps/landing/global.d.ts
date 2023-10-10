@@ -4,3 +4,4 @@ declare module "react-svgmt" {
 }
 
 declare module "react-cookies";
+declare module "react-google-recaptcha"
