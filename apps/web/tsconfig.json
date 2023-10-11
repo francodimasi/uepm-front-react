@@ -4,10 +4,7 @@
     "plugins": [{ "name": "next" }],
     "baseUrl": ".",
     "paths": {
-      "@*": ["app/[lang]/*"],
-      "@core/*": ["core/*"],
-      "@components/*": ["components/*"],
-      "@api/*": ["api/*"],
+      "@*": ["./*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
