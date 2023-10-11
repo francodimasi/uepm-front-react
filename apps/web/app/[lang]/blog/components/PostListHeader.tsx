@@ -1,5 +1,11 @@
+import { PostSearch } from "./PostSearch"
+import { PostTabs } from "./PostTabs"
+
 export const PostListHeader = () => {
     return (
-        <>Post List Header</>
+       <div className="flex justify-between">
+        <PostTabs />
+        <PostSearch />
+       </div>
     )
 }
