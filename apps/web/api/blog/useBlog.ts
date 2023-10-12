@@ -47,7 +47,7 @@ export const useBlog = () => {
   };
 
   const getAllPosts = async (
-    params: Pick<BlogPostParams, "page" | "categories" | "tags">
+    params: Pick<BlogPostParams, "page" | "categories" | "tags" | "per_page">
   ) => {
     const defaultParams = {
       context: "embed",

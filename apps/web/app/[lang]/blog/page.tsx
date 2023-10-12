@@ -16,12 +16,12 @@ export default function Page({ params }) {
     <Layout>
       <div className="container">
         <div className="grid grid-cols-12">
-        <section className="col-span-8">
+        <section className="col-span-9 pr-16">
           <PostListHeader />
           <PostList />
           <Pagination />
         </section>
-        <aside className="col-span-4">
+        <aside className="col-span-3 pl-16">
           <SuggestedPost />
           <TrendingTopics />
         </aside>
