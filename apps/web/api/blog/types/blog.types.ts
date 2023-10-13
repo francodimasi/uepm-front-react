@@ -158,7 +158,9 @@ export type BlogPostParams = {
   per_page: number;
   status: string;
   context: string;
-  categories?: string[];
+  categories?: number[];
   tags?: string[];
 }
+
+export type BlogPostFilterParams =  Pick<BlogPostParams, "page" | "categories" | "tags" | "per_page">
 

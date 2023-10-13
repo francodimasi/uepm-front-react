@@ -1,9 +1,7 @@
 import { FetchParams, HttpErrorResponse } from "../types";
-import { getUserTimeZone } from "../utils";
 
 const defaultHeaders = {
   "Content-Type": "application/json",
-  "User-Timezone": getUserTimeZone(),
 };
 
 export const useFetch = async (params: FetchParams) => {
@@ -23,5 +21,5 @@ export const useFetch = async (params: FetchParams) => {
     return Promise.reject(err);
   }
 
-  return result.json();
+  return Promise.resolve(result.json());
 };
