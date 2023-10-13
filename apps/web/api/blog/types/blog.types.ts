@@ -162,3 +162,5 @@ export type BlogPostParams = {
   tags?: string[];
 }
 
+export type BlogPostFilterParams =  Pick<BlogPostParams, "page" | "categories" | "tags" | "per_page">
+

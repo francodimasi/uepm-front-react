@@ -4,16 +4,23 @@ import { useBlog } from "@api/blog/useBlog";
 import { useMemo } from "react";
 import { useQuery } from 'react-query';
 import { useBlogParser } from "../hooks/useBlogParser";
-import { PostItem } from "./PostItem";
+import { PostItem, PostItemPropsSize } from "./PostItem";
+import { BlogPostFilterParams } from "@api/blog/types/blog.types";
 
-export const PostList = () => {
+type PostListProps = {
+    size?: PostItemPropsSize,
+    queryKey: string;
+    filter: BlogPostFilterParams
+}
+
+export const PostList = ({ filter, queryKey, size }: PostListProps) => {
 
     const { getPostList } = useBlog();
     const { postToPostItem } = useBlogParser();
 
     const { data } = useQuery({
-        queryKey: 'blog_post_list',
-        queryFn: () => getPostList({ page: 1, per_page: 6, categories: [37] })
+        queryKey,
+        queryFn: () => getPostList(filter)
     })
 
     const postItems = useMemo(() => {
@@ -24,9 +31,11 @@ export const PostList = () => {
 
     return (
         <>
-            <div className="py-12">
+            <div className={size === 'vertical' ? 'flex justify-between' : ''}>
                 {postItems.map((postItem) => (
-                    <PostItem {...postItem} />
+                    <div className={size === 'vertical' ? 'flex-1 mr-6 last:mr-0' : ''}>
+                        <PostItem size={size} {...postItem} />
+                    </div>
                 ))}
             </div>
         </>

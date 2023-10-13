@@ -3,6 +3,7 @@ import dayjs from "dayjs";
 import Image from "next/image";
 import { useCallback, useMemo } from "react";
 
+export type PostItemPropsSize = "small" | "large" | "vertical";
 export type PostItemProps = {
     category: string;
     title: string;
@@ -10,7 +11,7 @@ export type PostItemProps = {
     content: string;
     image: string;
     slug: string;
-    size?: "small" | "large" | "vertical"
+    size?: PostItemPropsSize;
 }
 export const PostItem = ({ category, content, date, image, size = "large", title }: PostItemProps) => {
 

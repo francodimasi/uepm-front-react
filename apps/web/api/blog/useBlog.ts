@@ -3,6 +3,7 @@ import { useRest } from "rest";
 import {
   BlogCategoryTag,
   BlogPost,
+  BlogPostFilterParams,
   BlogPostParams,
   VotePostRequest,
 } from "./types/blog.types";
@@ -47,7 +48,7 @@ export const useBlog = () => {
   };
 
   const getPostList = async (
-    params: Pick<BlogPostParams, "page" | "categories" | "tags" | "per_page">
+    params: BlogPostFilterParams
   ) => {
     const defaultParams = {
       context: "embed",
