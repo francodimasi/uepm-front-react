@@ -1,11 +1,13 @@
 export type YoastHeadJson = {
   title: string;
+  description: string;
   robots: YoastRobots;
   og_locale: string;
   og_type: string;
   og_title: string;
   og_url: string;
   og_site_name: string;
+  og_description: string;
   twitter_card: string;
   schema: YoastSchema;
 };

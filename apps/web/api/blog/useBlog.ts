@@ -46,7 +46,7 @@ export const useBlog = () => {
     return response;
   };
 
-  const getAllPosts = async (
+  const getPostList = async (
     params: Pick<BlogPostParams, "page" | "categories" | "tags" | "per_page">
   ) => {
     const defaultParams = {
@@ -57,11 +57,13 @@ export const useBlog = () => {
 
     const allParams: BlogPostParams = { ...defaultParams, ...params };
     let queryParams = "?";
+    const keys = Object.keys(allParams);
 
-    Object.keys(allParams).forEach((key) => {
+    keys.forEach((key, index) => {
       if (allParams[key]) {
-        let query = `${key}=${allParams[key]}&`;
-        queryParams += query;
+        const and = index < keys.length -1 ? "&" : '';
+        let query = `${key}=${allParams[key]}`;
+        queryParams += `${query}${and}`;
       }
     });
 
@@ -72,12 +74,13 @@ export const useBlog = () => {
     return response;
   };
 
+
   return {
     getCategories,
     getTags,
     getOnePost,
     ratePost,
-    getAllPosts,
-    getAuthorName,
+    getPostList,
+    getAuthorName
   };
 };

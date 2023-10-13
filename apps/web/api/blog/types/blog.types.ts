@@ -158,7 +158,7 @@ export type BlogPostParams = {
   per_page: number;
   status: string;
   context: string;
-  categories?: string[];
+  categories?: number[];
   tags?: string[];
 }
 
