@@ -21,7 +21,9 @@
     "react-intl": "^6.4.3",
     "react-query": "^3.39.3",
     "rest": "*",
-    "ui": "*"
+    "swiper": "^10.3.1",
+    "ui": "*",
+    "zustand": "^4.4.3"
   },
   "devDependencies": {
     "@types/js-cookie": "^3.0.3",
