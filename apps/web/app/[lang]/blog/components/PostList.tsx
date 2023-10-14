@@ -1,7 +1,7 @@
 "use client";
 
 import { useBlog } from "@api/blog/useBlog";
-import { useMemo } from "react";
+import { useEffect, useMemo } from "react";
 import { useQuery } from 'react-query';
 import { useBlogParser } from "../hooks/useBlogParser";
 import { PostItem, PostItemPropsSize } from "./PostItem";
@@ -18,10 +18,15 @@ export const PostList = ({ filter, queryKey, size }: PostListProps) => {
     const { getPostList } = useBlog();
     const { postToPostItem } = useBlogParser();
 
-    const { data } = useQuery({
+    const { data, refetch } = useQuery({
         queryKey,
-        queryFn: () => getPostList(filter)
+        queryFn: () => getPostList(filter),
+
     })
+
+    useEffect(() => {
+        refetch();
+    }, [filter])
 
     const postItems = useMemo(() => {
         const items = data?.map(post => postToPostItem(post)) ?? []
@@ -33,7 +38,7 @@ export const PostList = ({ filter, queryKey, size }: PostListProps) => {
         <>
             <div className={size === 'vertical' ? 'flex justify-between' : ''}>
                 {postItems.map((postItem) => (
-                    <div className={size === 'vertical' ? 'flex-1 mr-6 last:mr-0' : ''}>
+                    <div className={size === 'vertical' ? 'flex-1 mr-6 last:mr-0' : ''} key={postItem.slug}>
                         <PostItem size={size} {...postItem} />
                     </div>
                 ))}

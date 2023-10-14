@@ -1,6 +1,7 @@
 import { dir } from "i18next";
 import "ui/styles.css";
 import "@styles/globals.css";
+import "swiper/swiper-bundle.css";
 import { Providers } from "@core/Providers";
 import dayjs from "dayjs";
 

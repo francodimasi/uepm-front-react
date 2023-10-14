@@ -1,5 +1,7 @@
 export const PostSearch = () => {
     return (
-        <>Post Search</>
+        <div className="">
+            <>Post Search</>
+        </div>
     )
 }
