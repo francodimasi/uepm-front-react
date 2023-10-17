@@ -7,7 +7,7 @@ export const PostListHeader = () => {
 
             <PostTabs />
 
-            <div className="w-24 pl-8">
+            <div className="w-24">
                 <PostSearch />
             </div>
         </div>

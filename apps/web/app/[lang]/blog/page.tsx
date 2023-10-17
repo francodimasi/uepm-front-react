@@ -17,7 +17,7 @@ export default function Page({ params }) {
     <Layout>
       <div className="container">
         <div className="grid grid-cols-12">
-          <section className="col-span-9 pr-16">
+          <section className="col-span-9 pr-16 py-12">
             <MainPostList />
           </section>
           <aside className="col-span-3 pl-16">

@@ -18,15 +18,11 @@ export const PostList = ({ filter, queryKey, size }: PostListProps) => {
     const { getPostList } = useBlog();
     const { postToPostItem } = useBlogParser();
 
-    const { data, refetch } = useQuery({
-        queryKey,
+    const { data } = useQuery({
+        queryKey: [queryKey, filter],
         queryFn: () => getPostList(filter),
 
     })
-
-    useEffect(() => {
-        refetch();
-    }, [filter])
 
     const postItems = useMemo(() => {
         const items = data?.map(post => postToPostItem(post)) ?? []
