@@ -1,6 +1,6 @@
 {
   "cover": {
-    "title": "Exclusive Platform for Oncologists: Find Clinical Trials and Refer Patients Simply, Accessibly, and Securely.",
+    "title": "Exclusive Platform for Oncologists: Find Clinical Trials and Refer Patient.",
     "subtitle": "Discover clinical trials, refer patients, and track progress in real time.",
     "button": "Register"
   },
@@ -9,11 +9,11 @@
     "cards": {
       "fees": {
         "name": "Fees",
-        "description": "Referring a patient is a time-consuming and dedicated effort, which will be compensated directly through our platform."
+        "description": "Referring a patient is a time-consuming task, which will be compensated directly through our platform."
       },
       "dataPrivacy": {
         "name": "Data Privacy",
-        "description": "Our platform is a secure digital environment: patients' personal data and contact information will only be shared with the chosen researcher."
+        "description": "Our platform is a secure digital environment: patients' personal data and contact information will only be shared with the researcher."
       },
       "comprehensiveManagement": {
         "name": "Comprehensive Management",
@@ -21,7 +21,7 @@
       },
       "realTimeTracking": {
         "name": "Real-time Tracking",
-        "description": "Monitor the status of the patient referred to the study in real time."
+        "description": "Monitor the status of the patient referred to a study in real time."
       },
       "chatDirectCommunication": {
         "name": "Chat: Direct Communication",
