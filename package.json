@@ -1,0 +1,28 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "turbo run build",
+    "build:web": "turbo run build --filter=./apps/web",
+    "build:landing": "turbo run build --filter=./apps/landing",
+    "build:onco": "turbo run build --filter=./apps/landing-onco",
+    "dev": "turbo run dev",
+    "dev:web": "turbo run dev --filter=./apps/web",
+    "dev:landing": "turbo run dev --filter=./apps/landing",
+    "dev:onco": "turbo run dev --filter=./apps/landing-onco",
+    "lint": "turbo run lint",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+  },
+  "devDependencies": {
+    "@turbo/gen": "^1.9.7",
+    "eslint": "^7.32.0",
+    "eslint-config-custom": "*",
+    "prettier": "^2.5.1",
+    "turbo": "^1.9.7"
+  },
+  "name": "uepm-web",
+  "packageManager": "yarn@1.22.19",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ]
+}

@@ -1,0 +1,18 @@
+@import url('./variables.css');
+@import url('./fonts.css');
+@import url('./swiper.css');
+@import url('./map.css');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  @apply bg-dark;
+}

@@ -1,0 +1,42 @@
+{
+  "name": "web",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --port 3000",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "clsx": "^1.2.1",
+    "dayjs": "^1.11.10",
+    "i18n": "*",
+    "i18next-resources-to-backend": "^1.1.4",
+    "negotiator": "^0.6.3",
+    "next": "^13.4.1",
+    "react": "^18.2.0",
+    "react-cookies": "^0.1.1",
+    "react-detect-click-outside": "^1.1.7",
+    "react-dom": "^18.2.0",
+    "react-intl": "^6.4.3",
+    "react-query": "^3.39.3",
+    "rest": "*",
+    "swiper": "^10.3.1",
+    "ui": "*",
+    "zustand": "^4.4.3"
+  },
+  "devDependencies": {
+    "@types/js-cookie": "^3.0.3",
+    "@types/node": "^17.0.12",
+    "@types/react": "^18.0.22",
+    "@types/react-dom": "^18.0.7",
+    "autoprefixer": "^10.4.14",
+    "encoding": "^0.1.13",
+    "eslint-config-custom": "*",
+    "postcss": "^8.4.24",
+    "tailwindcss": "^3.3.2",
+    "tsconfig": "*",
+    "typescript": "^4.5.3"
+  }
+}

@@ -1,0 +1,3 @@
+.swiper-pagination-bullet {
+  @apply !bg-light;
+}

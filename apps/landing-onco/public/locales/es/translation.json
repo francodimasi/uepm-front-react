@@ -1,0 +1,60 @@
+{
+  "cover": {
+    "title": "Plataforma exclusiva para oncólogos: encuentre ensayos clínicos y refiera pacientes de forma simple, accesible y segura.",
+    "subtitle": "Descubra ensayos clínicos, refiera pacientes y haga un seguimiento del progreso en tiempo real.",
+    "button": "Registrarme"
+  },
+  "resources": {
+    "title": "Conectamos oncólogos y a sus pacientes con ensayos clínicos de forma simple, accesible y segura.",
+    "cards": {
+      "fees": {
+        "name": "Honorarios",
+        "description": "Referir a un paciente es un trabajo que requiere tiempo y dedicación por eso será retribuido directamente desde nuestra plataforma."
+      },
+      "dataPrivacy": {
+        "name": "Privacidad de datos",
+        "description": "Nuestra plataforma es un entorno digital seguro: los datos personales e información de contacto de los pacientes solo será compartida con el investigador que usted elija."
+      },
+      "comprehensiveManagement": {
+        "name": "Gestión Integral",
+        "description": "En una misma plataforma es posible: referir y seguir el estatus del paciente, contactarse con el investigador y cobrar honorarios."
+      },
+      "realTimeTracking": {
+        "name": "Seguimiento en tiempo real",
+        "description": "Siga el estatus del paciente referido al estudio en tiempo real."
+      },
+      "chatDirectCommunication": {
+        "name": "Chat: comunicación directa",
+        "description": "A través de nuestra plataforma, oncólogos e investigadores pueden contactarse sin intermediarios en un entorno seguro."
+      },
+      "studiesForEveryPatient": {
+        "name": "Estudios para cada paciente",
+        "description": "Descubra ensayos clínicos con reclutamiento activo y, utilizando nuestros filtros altamente específicos, encuentre el indicado para su paciente."
+      }
+    }
+  },
+  "contact": {
+    "title": " Regístrese para recibir noticias sobre nuestra plataforma exclusiva",
+    "thanks": "¡Muchas gracias por registrarse! En su casilla de mail encontrará información importante.",
+    "inputs": {
+      "name": "Nombre",
+      "lastName": "Apellido",
+      "speciality": "Especialidad",
+      "email": "E-mail",
+      "whatsapp": "Whatsapp",
+      "button": "Quiero que me contacten"
+    }
+  },
+  "footer": {
+    "whoWeAre": "Quiénes somos",
+    "uepm": "Un Ensayo para Mí",
+    "researchers": "UEPM investigadores",
+    "terms": "Términos y condiciones",
+    "policy": "Política de privacidad",
+    "language": "Seleccionar idioma:"
+  },
+  "language": {
+    "en": "Inglés",
+    "es": "Español"
+  }
+}
