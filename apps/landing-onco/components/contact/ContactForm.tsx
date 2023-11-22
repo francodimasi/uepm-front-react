@@ -7,23 +7,27 @@ import { ContactRequest } from "./contact.type";
 import { useCallback, useContext, useState } from "react";
 import { LanguageContext, useClientTranslation } from "i18n";
 import { useContact } from "@api/useContact";
-import ReCAPTCHA from "react-google-recaptcha"
+import ReCAPTCHA from "react-google-recaptcha";
 
 const recaptchaKey = process.env.NEXT_PUBLIC_RECAPTCHA_API_KEY;
 
 type ContactFormProps = {
   onSend: (sent: boolean) => void;
-}
+};
 export const ContactForm = ({ onSend }: ContactFormProps) => {
-
-  const { lang } = useContext(LanguageContext)
+  const { lang } = useContext(LanguageContext);
   const { t } = useClientTranslation(lang, { keyPrefix: "contact.inputs" });
   const { sendContact } = useContact();
 
-  const [loading, setLoading] = useState(false)
-  const [data, setData] = useState<ContactRequest | null>()
+  const [loading, setLoading] = useState(false);
+  const [data, setData] = useState<ContactRequest | null>();
 
-  const { handleSubmit, control, reset, formState: { isValid } } = useForm<ContactRequest>({
+  const {
+    handleSubmit,
+    control,
+    reset,
+    formState: { isValid },
+  } = useForm<ContactRequest>({
     defaultValues: {
       nombre: "",
       apellido: "",
@@ -40,7 +44,7 @@ export const ContactForm = ({ onSend }: ContactFormProps) => {
     reset();
     onSend(true);
     setLoading(false);
-  }, [data])
+  }, [data]);
 
   const onSubmit = async (data: ContactRequest) => {
     setLoading(true);
@@ -51,7 +55,10 @@ export const ContactForm = ({ onSend }: ContactFormProps) => {
 
   return (
     <>
-      <form onSubmit={handleSubmit(onSubmit)} className="grid grid-cols-2 gap-4">
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        className="grid grid-cols-2 gap-4"
+      >
         <div className={inputClasses}>
           <Controller
             name="nombre"
@@ -59,7 +66,7 @@ export const ContactForm = ({ onSend }: ContactFormProps) => {
             disabled={loading}
             rules={{ required: true }}
             render={({ field }) => (
-              <ContactInput label={t('name')} type="text" {...field} />
+              <ContactInput label={t("name")} type="text" {...field} />
             )}
           />
         </div>
@@ -70,7 +77,7 @@ export const ContactForm = ({ onSend }: ContactFormProps) => {
             disabled={loading}
             rules={{ required: true }}
             render={({ field }) => (
-              <ContactInput label={t('lastName')} type="text" {...field} />
+              <ContactInput label={t("lastName")} type="text" {...field} />
             )}
           />{" "}
         </div>
@@ -81,7 +88,7 @@ export const ContactForm = ({ onSend }: ContactFormProps) => {
             disabled={loading}
             rules={{ required: true }}
             render={({ field }) => (
-              <ContactInput label={t('speciality')} type="text" {...field} />
+              <ContactInput label={t("speciality")} type="text" {...field} />
             )}
           />
         </div>
@@ -92,7 +99,7 @@ export const ContactForm = ({ onSend }: ContactFormProps) => {
             disabled={loading}
             rules={{ required: true }}
             render={({ field }) => (
-              <ContactInput label={t('email')} type="email" {...field} />
+              <ContactInput label={t("email")} type="email" {...field} />
             )}
           />
         </div>
@@ -103,19 +110,30 @@ export const ContactForm = ({ onSend }: ContactFormProps) => {
             disabled={loading}
             rules={{ required: true }}
             render={({ field }) => (
-              <ContactInput label={t('whatsapp')} type="tel" {...field} />
+              <ContactInput label={t("whatsapp")} type="tel" {...field} />
             )}
           />
         </div>
         <div className={inputClasses}></div>
-        <div className={`col-span-2 md:col-span-1 xl:col-span-2 2xl:col-span-1 mt-2`}>
-          <LandingButton type="submit" className="w-full" disabled={!isValid || loading} onClick={() => { }}>
-            {t('button')}
+        <div
+          className={`col-span-2 md:col-span-1 xl:col-span-2 2xl:col-span-1 mt-2`}
+        >
+          <LandingButton
+            type="submit"
+            className="w-full"
+            disabled={!isValid || loading}
+            onClick={() => {}}
+          >
+            {t("button")}
           </LandingButton>
         </div>
       </form>
       <div className="flex mt-6 w-full">
-        {loading ? <ReCAPTCHA sitekey={recaptchaKey} onChange={recaptchaVerification} /> : <></>}
+        {loading ? (
+          <ReCAPTCHA sitekey={recaptchaKey} onChange={recaptchaVerification} />
+        ) : (
+          <></>
+        )}
       </div>
     </>
   );

@@ -7,12 +7,9 @@ import { SitesContext } from "../SitesProvider";
 import { useSites } from "../hooks/useSites";
 
 export const SiteSwiper = () => {
-
   const [swiper, setSwiper] = useState<SwiperType>();
   const { selected } = useContext(SitesContext);
   const { sites } = useSites();
-
-  
 
   useEffect(() => {
     if (swiper) {

@@ -4,7 +4,6 @@ import { openUrl } from "utils";
 import { LandingButton } from "ui";
 import { LINKS } from "@constants/links.const";
 
-
 export const ClinicalSearch = () => {
   return (
     <section>

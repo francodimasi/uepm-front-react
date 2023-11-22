@@ -10,9 +10,9 @@ type LoadingButtonProps = {
   size?: "small" | "regular" | "medium" | "large";
   outlined?: boolean;
   icon?: boolean;
-  type?: 'button' | 'reset' | 'submit';
+  type?: "button" | "reset" | "submit";
   disabled?: boolean;
-  color?: 'primary' | 'secondary' | 'light'
+  color?: "primary" | "secondary" | "light";
 };
 
 export const LandingButton = ({
@@ -20,9 +20,9 @@ export const LandingButton = ({
   size = "regular",
   icon = true,
   outlined = false,
-  type = 'button',
+  type = "button",
   disabled = false,
-  color = 'primary',
+  color = "primary",
   className,
   onClick,
 }: PropsWithChildren<LoadingButtonProps> &
@@ -35,17 +35,20 @@ export const LandingButton = ({
   });
 
   const customStyles = cx({
-    "border-2 bg-transparent text-light":
-      outlined,
+    "border-2 bg-transparent text-light": outlined,
   });
 
   const colorStyles = cx({
-    "bg-primary hover:bg-primary-dark text-light": color === 'primary' && !outlined,
-    "bg-secondary hover:bg-light": color === 'secondary' && !outlined,
-    "hover:bg-primary border-primary text-primary hover:text-light": color === 'primary' && outlined,
-    "hover:bg-secondary border-secondary text-secondary hover:text-dark": color === 'secondary' && outlined,
-    "hover:bg-light border-light text-light hover:text-dark": color === 'light' && outlined,
-  })
+    "bg-primary hover:bg-primary-dark text-light":
+      color === "primary" && !outlined,
+    "bg-secondary hover:bg-light": color === "secondary" && !outlined,
+    "hover:bg-primary border-primary text-primary hover:text-light":
+      color === "primary" && outlined,
+    "hover:bg-secondary border-secondary text-secondary hover:text-dark":
+      color === "secondary" && outlined,
+    "hover:bg-light border-light text-light hover:text-dark":
+      color === "light" && outlined,
+  });
 
   return (
     <button
@@ -56,9 +59,7 @@ export const LandingButton = ({
     >
       <div className="flex items-center justify-between">
         <span>{children}</span>
-        {icon && (
-          <span className={`pl-5 material-icons`}>east</span>
-        )}
+        {icon && <span className={`pl-5 material-icons`}>east</span>}
       </div>
     </button>
   );

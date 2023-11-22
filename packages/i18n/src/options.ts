@@ -9,8 +9,8 @@ const LOCAL_TRANSLATIONS_PATH = "locales/{{lng}}/translation.json";
 const EXTERNAL_TRANSLATIONS_PATH = `https://trialtech-qa.ams3.digitaloceanspaces.com/translations/{{lng}}.json`;
 
 const cached = false;
-const fallbackLang = 'en';
-export const runsOnServerSide = typeof window === 'undefined';
+const fallbackLang = "en";
+export const runsOnServerSide = typeof window === "undefined";
 export const namespace = "translation";
 
 export const getOptions = (lng = fallbackLang) => {

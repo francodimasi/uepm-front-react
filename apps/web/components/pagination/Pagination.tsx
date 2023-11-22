@@ -1,5 +1,3 @@
 export const Pagination = () => {
-    return (
-        <>Pagination</>
-    )
-}
+  return <>Pagination</>;
+};

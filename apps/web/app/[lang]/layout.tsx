@@ -13,8 +13,8 @@ export default function RootLayout({
   params: { lang: string };
 }) {
   const { lang } = params;
-  dayjs.locale(lang)
-  
+  dayjs.locale(lang);
+
   return (
     <html lang={lang} dir={dir(lang)}>
       <body>

@@ -5,7 +5,10 @@ import { baseStyles, variantStyles } from "./Button.const";
 import { ButtonProps } from "./Button.types";
 
 export const Button = forwardRef<any, ButtonProps>(
-  ({ variant = "solid", color = "primary", className, href, ...props }, ref) => {
+  (
+    { variant = "solid", color = "primary", className, href, ...props },
+    ref
+  ) => {
     className = clsx(
       baseStyles[variant],
       variantStyles[variant][color],

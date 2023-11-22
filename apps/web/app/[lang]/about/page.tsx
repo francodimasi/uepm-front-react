@@ -1,4 +1,4 @@
-import { Header } from "ui";
+import { Header } from "ui/core/header";
 import { Layout } from "../../../components/core/layout/Layout";
 
 export default function Page() {

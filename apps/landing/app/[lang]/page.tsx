@@ -2,7 +2,7 @@
 import { LanguageProvider } from "i18n";
 import { ClinicalSearch } from "@components/clinical-search/ClinicalSearch";
 import { Contact } from "@components/contact/Contact";
-import { Cover } from "@components/cover/Cover"
+import { Cover } from "@components/cover/Cover";
 import { MedicNetwork } from "@components/medic-network/MedicNetwork";
 import { Resources } from "@components/resources/components/Resources";
 import { Footer } from "@components/shared/footer/Footer";
@@ -16,27 +16,24 @@ import { Proposal } from "@components/proposal/Proposal";
 export default function Home({ params }: { params: any }) {
   const { lang } = params;
   return (
-    <>
-
-      <LanguageProvider lang={lang}>
-        <Header />
-        <Cover />
-        <Resources />
-        <Sites />
-        <Proposal />
-        <SuccessCases />
-        <Innovation />
-        <MedicNetwork />
-        <Sponsors />
-        <div className="relative">
-          <div className="absolute left-o top-0 w-full h-full bg-footer bg-cover opacity-60"></div>
-          <div className="relative z-20">
-            <ClinicalSearch />
-            <Contact />
-            <Footer />
-          </div>
+    <LanguageProvider lang={lang}>
+      <Header />
+      <Cover />
+      <Resources />
+      <Sites />
+      <Proposal />
+      <SuccessCases />
+      <Innovation />
+      <MedicNetwork />
+      <Sponsors />
+      <div className="relative">
+        <div className="absolute left-o top-0 w-full h-full bg-footer bg-cover opacity-60"></div>
+        <div className="relative z-20">
+          <ClinicalSearch />
+          <Contact />
+          <Footer />
         </div>
-      </LanguageProvider>
-    </>
+      </div>
+    </LanguageProvider>
   );
 }

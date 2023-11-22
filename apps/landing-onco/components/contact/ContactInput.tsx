@@ -14,7 +14,7 @@ export const ContactInput = forwardRef<any, ContactInputProps>(
       <div className={`${className}`}>
         <div className="uppercase text-xs mb-1 h-4">{label}</div>
         <input
-        ref={ref}
+          ref={ref}
           className="border-2 border-primary-dark py-2 px-3 w-full outline-primary bg-transparent"
           type={type}
           name={name}

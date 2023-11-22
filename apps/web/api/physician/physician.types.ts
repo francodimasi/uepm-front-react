@@ -4,7 +4,7 @@ export type Physician = {
   first_name: string;
   id: number;
   last_name: string;
-  specializations: string[]
+  specializations: string[];
   verified: boolean;
 };
 

@@ -1,5 +1,3 @@
 export const TrendingTopics = () => {
-    return (
-        <>Trending Topics</>
-    )
-}
+  return <>Trending Topics</>;
+};

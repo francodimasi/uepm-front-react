@@ -7,40 +7,43 @@ import { ContactRequest } from "./contact.type";
 import { useCallback, useContext, useState } from "react";
 import { LanguageContext, useClientTranslation } from "i18n";
 import { useContact } from "@api/useContact";
-import ReCAPTCHA from "react-google-recaptcha"
+import ReCAPTCHA from "react-google-recaptcha";
 
 const recaptchaKey = process.env.NEXT_PUBLIC_RECAPTCHA_API_KEY;
 
 type ContactFormProps = {
   onSend: (sent: boolean) => void;
-}
+};
 export const ContactForm = ({ onSend }: ContactFormProps) => {
-
-  const { lang } = useContext(LanguageContext)
+  const { lang } = useContext(LanguageContext);
   const { t } = useClientTranslation(lang, { keyPrefix: "contact.inputs" });
   const { sendContact } = useContact();
 
-  const [loading, setLoading] = useState(false)
-  const [data, setData] = useState<ContactRequest | null>()
+  const [loading, setLoading] = useState(false);
+  const [data, setData] = useState<ContactRequest | null>();
 
-  const { handleSubmit, control, reset, formState: { isValid } } = useForm<ContactRequest>({
+  const {
+    handleSubmit,
+    control,
+    reset,
+    formState: { isValid },
+  } = useForm<ContactRequest>({
     defaultValues: {
       nombre: "",
       apellido: "",
       email: "",
-      telefono: ""
+      telefono: "",
     },
   });
 
-
   const recaptchaVerification = useCallback(async () => {
-    if(data){
+    if (data) {
       await sendContact(data);
     }
     reset();
     onSend(true);
     setLoading(false);
-  }, [data])
+  }, [data]);
 
   const onSubmit = async (data: ContactRequest) => {
     setLoading(true);
@@ -59,7 +62,7 @@ export const ContactForm = ({ onSend }: ContactFormProps) => {
             rules={{ required: true }}
             disabled={loading}
             render={({ field }) => (
-              <ContactInput label={t('name')} type="text" {...field} />
+              <ContactInput label={t("name")} type="text" {...field} />
             )}
           />
         </div>
@@ -70,7 +73,7 @@ export const ContactForm = ({ onSend }: ContactFormProps) => {
             rules={{ required: true }}
             disabled={loading}
             render={({ field }) => (
-              <ContactInput label={t('lastName')} type="text" {...field} />
+              <ContactInput label={t("lastName")} type="text" {...field} />
             )}
           />{" "}
         </div>
@@ -82,7 +85,7 @@ export const ContactForm = ({ onSend }: ContactFormProps) => {
             rules={{ required: true }}
             disabled={loading}
             render={({ field }) => (
-              <ContactInput label={t('email')} type="email" {...field} />
+              <ContactInput label={t("email")} type="email" {...field} />
             )}
           />
         </div>
@@ -92,19 +95,29 @@ export const ContactForm = ({ onSend }: ContactFormProps) => {
             control={control}
             disabled={loading}
             render={({ field }) => (
-              <ContactInput label={t('phone')} type="tel" {...field} />
+              <ContactInput label={t("phone")} type="tel" {...field} />
             )}
           />
         </div>
       </div>
 
       <div className="mt-4 flex justify-end">
-        <LandingButton type="submit" className="w-full sm:w-auto" color="secondary" disabled={!isValid || loading} onClick={() => { }}>
-          {t('button')}
+        <LandingButton
+          type="submit"
+          className="w-full sm:w-auto"
+          color="secondary"
+          disabled={!isValid || loading}
+          onClick={() => {}}
+        >
+          {t("button")}
         </LandingButton>
       </div>
       <div className="flex justify-end mt-6">
-        {loading ? <ReCAPTCHA sitekey={recaptchaKey} onChange={recaptchaVerification} /> : <></>}
+        {loading ? (
+          <ReCAPTCHA sitekey={recaptchaKey} onChange={recaptchaVerification} />
+        ) : (
+          <></>
+        )}
       </div>
     </form>
   );

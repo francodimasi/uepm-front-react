@@ -11,5 +11,5 @@ export const ENDPOINTS = {
     POSTS: `${BLOG_BASE_URL}/posts`,
     VOTE: `${BLOG_BASE_URL}/vote`,
     USERS: `${BLOG_BASE_URL}/users`,
-  }
+  },
 };

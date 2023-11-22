@@ -16,8 +16,6 @@ export const queryClient = new QueryClient({
 
 export const Providers = ({ children }) => {
   return (
-    <QueryClientProvider client={queryClient}>
-      {children}
-    </QueryClientProvider>
-  )
+    <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
+  );
 };

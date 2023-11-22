@@ -17,7 +17,7 @@ export const useFetch = async (params: FetchParams) => {
     const err: HttpErrorResponse = {
       status,
       message,
-    }; 
+    };
     return Promise.reject(err);
   }
 
