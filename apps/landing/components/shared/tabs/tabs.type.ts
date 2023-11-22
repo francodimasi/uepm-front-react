@@ -1,4 +1,4 @@
 export type TabItem = {
-    name: string;
-    content: React.ReactNode
-}
+  name: string;
+  content: React.ReactNode;
+};

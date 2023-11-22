@@ -2,7 +2,7 @@ import { createInstance } from "i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
 import Backend from "i18next-chained-backend";
 import { initReactI18next } from "react-i18next/initReactI18next";
-import resourcesToBackend from 'i18next-resources-to-backend'
+import resourcesToBackend from "i18next-resources-to-backend";
 import { getOptions, namespace } from "./options";
 
 const initI18next = async (lng: string) => {
@@ -10,7 +10,11 @@ const initI18next = async (lng: string) => {
   await i18nInstance
     .use(Backend)
     .use(LanguageDetector)
-    .use(resourcesToBackend((lng: string) => import(`/public/locales/${lng}/${namespace}.json`)))
+    .use(
+      resourcesToBackend(
+        (lng: string) => import(`/public/locales/${lng}/${namespace}.json`)
+      )
+    )
     .use(initReactI18next)
     .init(getOptions(lng));
   return i18nInstance;

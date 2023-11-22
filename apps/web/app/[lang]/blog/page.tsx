@@ -1,18 +1,11 @@
 "use client";
 
 import { Layout } from "@components/core/layout/Layout";
-import { Header } from "ui";
-import { PostListHeader } from "./components/PostListHeader";
-import { PostList } from "./components/PostList";
-import { Pagination } from "@components/pagination/Pagination";
 import { SuggestedPost } from "./components/SuggestedPost";
 import { TrendingTopics } from "./components/TrendingTopics";
 import { MainPostList } from "./components/MainPostList";
 
 export default function Page({ params }) {
-
-
-
   return (
     <Layout>
       <div className="container">

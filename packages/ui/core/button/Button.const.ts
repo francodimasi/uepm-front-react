@@ -1,4 +1,4 @@
-import { Background, Text } from "../constants/colorStyles";
+import { Background, Text } from "../../constants/colorStyles";
 
 export const baseStyles = {
   solid:

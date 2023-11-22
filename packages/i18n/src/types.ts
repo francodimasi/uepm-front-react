@@ -1,12 +1,12 @@
-import { PropsWithChildren } from "react"
+import { PropsWithChildren } from "react";
 
 export type LanguageProviderValue = {
-    lang: string
-}
+  lang: string;
+};
 
 export type LanguageProviderProps = PropsWithChildren & LanguageProviderValue;
 
 export type Language = {
-    iso: string;
-    name: string;
-}
+  iso: string;
+  name: string;
+};

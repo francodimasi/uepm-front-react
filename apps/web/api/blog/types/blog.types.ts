@@ -147,7 +147,7 @@ type BlogPostEmbeddedTermList = BlogPostEmbeddedTerm[];
 export type VotePostRequest = {
   id: number;
   type: number;
-}
+};
 
 /**
  * All posts
@@ -160,7 +160,9 @@ export type BlogPostParams = {
   context: string;
   categories?: number[];
   tags?: string[];
-}
+};
 
-export type BlogPostFilterParams =  Pick<BlogPostParams, "page" | "categories" | "tags" | "per_page">
-
+export type BlogPostFilterParams = Pick<
+  BlogPostParams,
+  "page" | "categories" | "tags" | "per_page"
+>;

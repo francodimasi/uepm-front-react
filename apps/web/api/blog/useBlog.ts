@@ -47,9 +47,7 @@ export const useBlog = () => {
     return response;
   };
 
-  const getPostList = async (
-    params: BlogPostFilterParams
-  ) => {
+  const getPostList = async (params: BlogPostFilterParams) => {
     const defaultParams = {
       context: "embed",
       status: "publish",
@@ -62,7 +60,7 @@ export const useBlog = () => {
 
     keys.forEach((key, index) => {
       if (allParams[key]) {
-        const and = index < keys.length -1 ? "&" : '';
+        const and = index < keys.length - 1 ? "&" : "";
         let query = `${key}=${allParams[key]}`;
         queryParams += `${query}${and}`;
       }
@@ -75,13 +73,12 @@ export const useBlog = () => {
     return response;
   };
 
-
   return {
     getCategories,
     getTags,
     getOnePost,
     ratePost,
     getPostList,
-    getAuthorName
+    getAuthorName,
   };
 };

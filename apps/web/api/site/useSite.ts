@@ -11,15 +11,19 @@ export const useSite = () => {
     return response.page;
   };
 
-  const getSites = async (params: SitesParams = { verified: true, page: 1}) => {
+  const getSites = async (
+    params: SitesParams = { verified: true, page: 1 }
+  ) => {
     const { verified = true, page = 1, query } = params;
 
     let queryParams = `?verified=${verified}&page=${page}`;
     if (query) {
-        queryParams += `&query=${query}`;
+      queryParams += `&query=${query}`;
     }
 
-    const response = await get<PageResponse<Site>>(`${ENDPOINTS.SITES}${queryParams}`);
+    const response = await get<PageResponse<Site>>(
+      `${ENDPOINTS.SITES}${queryParams}`
+    );
     return response.page;
   };
 
@@ -35,6 +39,6 @@ export const useSite = () => {
     getAllSites,
     getSites,
     getSiteById,
-    getSiteByName
+    getSiteByName,
   };
 };

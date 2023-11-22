@@ -4,7 +4,7 @@ export type CaseCardProps = {
   label: string;
   title: string;
   text: string;
-}
+};
 export const CaseCard = ({ title, text, value, label }: CaseCardProps) => {
   return (
     <div className="bg-dark bg-opacity-60 backdrop-blur p-8 text-light">

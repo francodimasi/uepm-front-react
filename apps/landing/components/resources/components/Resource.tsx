@@ -27,7 +27,9 @@ export const Resource = ({ name, icon, description }: ResourceItem) => {
           width={48}
           className="opacity-90 group-hover:opacity-100 transition-opacity duration-200"
         />
-        <h4 className="text-light text-base md:text-2xl font-semibold my-4">{name}</h4>
+        <h4 className="text-light text-base md:text-2xl font-semibold my-4">
+          {name}
+        </h4>
         <p className="text-light">{description}</p>
       </div>
     </div>

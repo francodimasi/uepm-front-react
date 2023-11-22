@@ -10,7 +10,7 @@ export type SitesParams = {
 
 export type Site = {
   address: string;
-  category: string; 
+  category: string;
   country: Country;
   description: string;
   email: string;

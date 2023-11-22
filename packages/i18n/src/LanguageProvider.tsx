@@ -6,6 +6,8 @@ export const LanguageContext = createContext({} as LanguageProviderValue);
 
 export const LanguageProvider = ({ children, lang }: LanguageProviderProps) => {
   return (
-    <LanguageContext.Provider value={{lang}}>{children}</LanguageContext.Provider>
+    <LanguageContext.Provider value={{ lang }}>
+      {children}
+    </LanguageContext.Provider>
   );
 };

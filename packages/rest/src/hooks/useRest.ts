@@ -3,7 +3,6 @@ import { RequestParams } from "../types";
 import { parseHeaders } from "../utils";
 
 export const useRest = (token?: string) => {
-  
   const post = <T, K>(
     url: string,
     params: { data: K } & RequestParams

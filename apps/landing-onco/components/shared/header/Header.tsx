@@ -28,13 +28,10 @@ export const Header = () => {
     }
   );
 
-  const headerButtonClasses = cx(
-    "transition-all",
-    {
-      "opacity-0": !headerButton,
-      "opacity-100": headerButton,
-    }
-  );
+  const headerButtonClasses = cx("transition-all", {
+    "opacity-0": !headerButton,
+    "opacity-100": headerButton,
+  });
 
   const loadPosition = (target: Document) => {
     const scrollTop = target.scrollingElement?.scrollTop ?? 0;
@@ -44,7 +41,7 @@ export const Header = () => {
   const handleHeaderButton = (target: Document) => {
     const scrollTop = target.scrollingElement?.scrollTop ?? 0;
     setHeaderButton(scrollTop > screen.height / 2);
-  }
+  };
 
   useEffect(() => {
     loadPosition(document);
@@ -74,15 +71,15 @@ export const Header = () => {
             width={180}
             alt="Trialtech logo"
           />
-            <div className={headerButtonClasses}>
-              <LandingButton
-                size="small"
-                icon={false}
-                onClick={() => openUrl('#contact')}
-              >
-                Registrarme
-              </LandingButton>
-            </div>
+          <div className={headerButtonClasses}>
+            <LandingButton
+              size="small"
+              icon={false}
+              onClick={() => openUrl("#contact")}
+            >
+              Registrarme
+            </LandingButton>
+          </div>
         </nav>
       </div>
     </header>

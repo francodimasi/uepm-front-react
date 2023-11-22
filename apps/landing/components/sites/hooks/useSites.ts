@@ -61,6 +61,6 @@ export const useSites = () => {
   );
 
   return {
-    sites
-  }
+    sites,
+  };
 };

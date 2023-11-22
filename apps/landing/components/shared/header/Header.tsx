@@ -35,7 +35,7 @@ export const Header = () => {
       "opacity-70": minimized,
     }
   );
-  
+
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
     return () => {
@@ -68,7 +68,10 @@ export const Header = () => {
             alt="Trialtech logo"
           />
           <div>
-            <button className={`${mobileBreakpoint}:hidden relative z-10`} onClick={handleOpened}>
+            <button
+              className={`${mobileBreakpoint}:hidden relative z-10`}
+              onClick={handleOpened}
+            >
               <Image src={opened ? close : menu} width={24} alt="Menu" />
             </button>
 
@@ -79,7 +82,11 @@ export const Header = () => {
         </nav>
       </div>
       <div className={`${mobileBreakpoint}:hidden`}>
-        <MenuMobile links={links} opened={opened} breakpoint={mobileBreakpoint}></MenuMobile>
+        <MenuMobile
+          links={links}
+          opened={opened}
+          breakpoint={mobileBreakpoint}
+        ></MenuMobile>
       </div>
     </header>
   );

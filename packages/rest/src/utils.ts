@@ -13,7 +13,7 @@ export const parseHeaders = (props: ParseHeaderProps): Headers => {
   let headers = { ...customHeaders };
 
   const authorization = customToken ? customToken : token ? token : "";
-  headers = {...headers, "Authorization": authorization};
+  headers = { ...headers, Authorization: authorization };
 
   return headers;
 };

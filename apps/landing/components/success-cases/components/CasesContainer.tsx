@@ -8,7 +8,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { LanguageContext, useClientTranslation } from "i18n";
 
 export const CasesContainer = () => {
-  const { lang } = useContext(LanguageContext)
+  const { lang } = useContext(LanguageContext);
   const { t } = useClientTranslation(lang, { keyPrefix: "successCases.cases" });
   const [showSwiper, setShowSwiper] = useState<boolean>(false);
 
@@ -26,32 +26,35 @@ export const CasesContainer = () => {
     };
   }, []);
 
-  const cases: CaseCardProps[] = useMemo(() => ([
-    {
-      title: t('esclerosis.title'),
-      text:  t('esclerosis.text'),
-      label:  t('esclerosis.label'),
-      value: 50,
-    },
-    {
-      title: t('crohn.title'),
-      text:  t('crohn.text'),
-      label:  t('crohn.label'),
-      value: 75,
-    },
-    {
-      title: t('esquizofrenia.title'),
-      text:  t('esquizofrenia.text'),
-      label:  t('esquizofrenia.label'),
-      value: 68,
-    },
-    {
-      title: t('esclerosis.title'),
-      text:  t('esclerosis.text'),
-      label:  t('esclerosis.label'),
-      value: 92,
-    },
-  ]), []);
+  const cases: CaseCardProps[] = useMemo(
+    () => [
+      {
+        title: t("esclerosis.title"),
+        text: t("esclerosis.text"),
+        label: t("esclerosis.label"),
+        value: 50,
+      },
+      {
+        title: t("crohn.title"),
+        text: t("crohn.text"),
+        label: t("crohn.label"),
+        value: 75,
+      },
+      {
+        title: t("esquizofrenia.title"),
+        text: t("esquizofrenia.text"),
+        label: t("esquizofrenia.label"),
+        value: 68,
+      },
+      {
+        title: t("esclerosis.title"),
+        text: t("esclerosis.text"),
+        label: t("esclerosis.label"),
+        value: 92,
+      },
+    ],
+    []
+  );
 
   const SwiperContainer = () => {
     return (

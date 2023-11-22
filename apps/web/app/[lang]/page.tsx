@@ -2,7 +2,7 @@
 
 import { useLayoutEffect } from "react";
 import { useClientTranslation } from "i18n";
-import { Header } from "ui";
+import { Header } from "ui/core/header";
 import { Layout } from "../../components/core/layout/Layout";
 import { SwitchLanguage } from "../../components/core/layout/language/SwitchLanguage";
 import { errorResponseHandler } from "@core/error-handler";

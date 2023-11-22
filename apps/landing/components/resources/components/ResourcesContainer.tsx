@@ -15,9 +15,9 @@ import { ResourceItem } from "../types/resource.type";
 import { LanguageContext, useClientTranslation } from "i18n";
 
 export const ResourcesContainer = () => {
-  const { lang } = useContext(LanguageContext)
+  const { lang } = useContext(LanguageContext);
   const { t } = useClientTranslation(lang, { keyPrefix: "resources" });
-  
+
   const [showSwiper, setShowSwiper] = useState<boolean>(false);
 
   const switchSlider = () => {
@@ -36,33 +36,33 @@ export const ResourcesContainer = () => {
 
   const resources: ResourceItem[] = [
     {
-      name: t('cards.patient.name'),
-      description: t('cards.patient.description'),
+      name: t("cards.patient.name"),
+      description: t("cards.patient.description"),
       icon: patient,
     },
     {
-      name: t('cards.innovation.name'),
-      description: t('cards.innovation.description'),
+      name: t("cards.innovation.name"),
+      description: t("cards.innovation.description"),
       icon: innovation,
     },
     {
-      name: t('cards.precision.name'),
-      description: t('cards.precision.description'),
+      name: t("cards.precision.name"),
+      description: t("cards.precision.description"),
       icon: precision,
     },
     {
-      name: t('cards.catchment.name'),
-      description: t('cards.catchment.description'),
+      name: t("cards.catchment.name"),
+      description: t("cards.catchment.description"),
       icon: catchment,
     },
     {
-      name: t('cards.realTime.name'),
-      description: t('cards.realTime.description'),
+      name: t("cards.realTime.name"),
+      description: t("cards.realTime.description"),
       icon: realTime,
     },
     {
-      name: t('cards.automatization.name'),
-      description: t('cards.automatization.description'),
+      name: t("cards.automatization.name"),
+      description: t("cards.automatization.description"),
       icon: automatization,
     },
   ];
