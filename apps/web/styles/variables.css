@@ -20,6 +20,16 @@
   --font-manrope-medium: "Manrope Medium";
   --font-manrope-semibold: "Manrope Semibold";
 
+  /* DMSans */
+  --font-DMSans: "DMSans";
+  --font-DMSans-bold: "DMSans Bold";
+  --font-DMSans-extrabold: "DMSans ExtraBold";
+  --font-DMSans-extralight: "DMSans ExtraLight";
+  --font-DMSans-light: "DMSans Light";
+  --font-DMSans-medium: "DMSans Medium";
+  --font-DMSans-semibold: "DMSans Semibold";
+
+
   /* 
   * Color variables
   */

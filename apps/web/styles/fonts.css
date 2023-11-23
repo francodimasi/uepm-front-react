@@ -78,3 +78,47 @@
   font-weight: 600;
   src: url("/fonts/Manrope/Manrope-SemiBold.ttf");
 }
+
+
+/* Add DMSans font family */
+@font-face {
+  font-family: "DMSans";
+  font-weight: 400;
+  src: url("/fonts/DMSans/DMSans-Regular.ttf");
+}
+
+@font-face {
+  font-family: "DMSans";
+  font-weight: 700;
+  src: url("/fonts/DMSans/DMSans-Bold.ttf");
+}
+
+@font-face {
+  font-family: "DMSans";
+  font-weight: 800;
+  src: url("/fonts/DMSans/DMSans-ExtraBold.ttf");
+}
+
+@font-face {
+  font-family: "DMSans";
+  font-weight: 200;
+  src: url("/fonts/DMSans/DMSans-ExtraLight.ttf");
+}
+
+@font-face {
+  font-family: "DMSans";
+  font-weight: 300;
+  src: url("/fonts/DMSans/DMSans-Light.ttf");
+}
+
+@font-face {
+  font-family: "DMSans";
+  font-weight: 500;
+  src: url("/fonts/DMSans/DMSans-Medium.ttf");
+}
+
+@font-face {
+  font-family: "DMSans";
+  font-weight: 600;
+  src: url("/fonts/DMSans/DMSans-SemiBold.ttf");
+}
