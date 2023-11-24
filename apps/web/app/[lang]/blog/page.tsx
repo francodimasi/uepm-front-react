@@ -13,7 +13,7 @@ export default function Page({ params }) {
           <section className="col-span-9 pr-16 py-12">
             <MainPostList />
           </section>
-          <aside className="col-span-3 pl-16">
+          <aside className="col-span-3 flex-col justify-start items-start gap-8 inline-flex">
             <SuggestedPost />
             <TrendingTopics />
           </aside>
