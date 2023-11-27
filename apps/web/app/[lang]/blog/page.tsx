@@ -5,6 +5,9 @@ import { SuggestedPost } from "./components/SuggestedPost";
 import { TrendingTopics } from "./components/TrendingTopics";
 import { MainPostList } from "./components/MainPostList";
 
+const MOCK_TAGS = ["Cáncer", "Artritis Psoriásica", "Cáncer de cabeza", "Cáncer de cabeza y cuello",
+ "Cáncer de esófago", "Cáncer de cuello", "Cáncer de piel", "Alzheimer", "Síndrome de Dunning Krugger"]
+
 export default function Page({ params }) {
   return (
     <Layout>
@@ -15,7 +18,7 @@ export default function Page({ params }) {
           </section>
           <aside className="col-span-3 flex-col justify-start items-start gap-8 inline-flex">
             <SuggestedPost />
-            <TrendingTopics />
+            <TrendingTopics tags={MOCK_TAGS} />
           </aside>
         </div>
       </div>
