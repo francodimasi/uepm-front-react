@@ -1,6 +1,6 @@
 import { Tag } from "ui";
 
-export const TrendingTopics = ({tags}: {tags: string[]}) => {
+export const TrendingTopics = ({tags}: {tags: {id: number, text: string}[]}) => {
 
   return (
     <div className="flex-col justify-start items-start gap-8 flex">
@@ -9,8 +9,8 @@ export const TrendingTopics = ({tags}: {tags: string[]}) => {
         Temas más buscados
       </div>
       <div className="flex flex-row flex-wrap gap-2">
-        {tags.map((tag, index) => (
-          <Tag text={tag} key={index} className="lowercase rounded-md bg-gray-light px-2 py-2 text-sm" />
+        {tags.map((tag) => (
+          <Tag text={tag.text} key={tag.id} className="lowercase rounded-md bg-gray-light px-2 py-2 text-sm" />
         ))}
       </div>
     </div>
