@@ -21,7 +21,7 @@ export default async function Page({ params: { lang } }) {
       <Header text="Partners" />
       <p>{t("partners")}</p>
       <SwitchLanguage />
-      {sites?.page.map((site, index) => (
+      {sites?.map((site, index) => (
         <p key={index}>{site.name}</p>
       ))}
     </Layout>

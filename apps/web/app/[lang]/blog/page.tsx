@@ -40,13 +40,3 @@ async function getTags() {
   return newTags
 }
 
-// Return a list of `params` to populate the [lang] dynamic segment
-export async function generateStaticParams() {
-  return [
-    //Should read available languages from i18n configuration
-    { lang: "es" },
-    { lang: "en" },
-    { lang: "pg" },
-    { lang: "fr" },
-  ];
-}
