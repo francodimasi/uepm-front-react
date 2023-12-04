@@ -20,6 +20,25 @@
   --font-manrope-medium: "Manrope Medium";
   --font-manrope-semibold: "Manrope Semibold";
 
+  /* DMSans */
+  --font-DMSans: "DMSans";
+  --font-DMSans-bold: "DMSans Bold";
+  --font-DMSans-extrabold: "DMSans ExtraBold";
+  --font-DMSans-extralight: "DMSans ExtraLight";
+  --font-DMSans-light: "DMSans Light";
+  --font-DMSans-medium: "DMSans Medium";
+  --font-DMSans-semibold: "DMSans Semibold";
+
+    /* Lexend */
+    --font-Lexend: "Lexend";
+    --font-Lexend-bold: "Lexend Bold";
+    --font-Lexend-extrabold: "Lexend ExtraBold";
+    --font-Lexend-extralight: "Lexend ExtraLight";
+    --font-Lexend-light: "Lexend Light";
+    --font-Lexend-medium: "Lexend Medium";
+    --font-Lexend-semibold: "Lexend Semibold";
+  
+
   /* 
   * Color variables
   */

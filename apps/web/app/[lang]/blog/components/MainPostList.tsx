@@ -1,3 +1,5 @@
+"use client";
+
 import { Pagination } from "@components/pagination/Pagination";
 import { useBlogStore } from "@store/useBlogStore";
 import { PostList } from "./PostList";

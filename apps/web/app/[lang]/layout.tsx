@@ -23,3 +23,12 @@ export default function RootLayout({
     </html>
   );
 }
+
+// Return a list of `params` to populate the [lang] dynamic segment
+export async function generateStaticParams() {
+  return [
+    //Languages not listed here will be dinamycally generated on request time
+    { lang: "es" },
+    { lang: "en" }
+  ];
+}
