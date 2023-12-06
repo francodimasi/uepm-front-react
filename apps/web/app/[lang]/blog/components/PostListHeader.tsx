@@ -2,7 +2,7 @@ import { PostSearch } from "./PostSearch";
 import { PostTabs } from "./PostTabs";
 
 
-export const PostListHeader = ({posts, categoriesToID, selectedCategory, setSelectedCategory}) => {
+export const PostListHeader = ({posts, categoriesToID, selectedCategory, setSelectedCategory, setSelectedPage}) => {
 
   const allCategories = getPostsAllCategories(posts)
 
@@ -15,7 +15,7 @@ export const PostListHeader = ({posts, categoriesToID, selectedCategory, setSele
 
   return (
     <div className="m-w-full">
-      <PostTabs tabItems={tabItems} selectedCategory={selectedCategory} onChange={setSelectedCategory}/>
+      <PostTabs tabItems={tabItems} selectedCategory={selectedCategory} setSelectedPage={setSelectedPage} setSelectedCategory={setSelectedCategory}/>
       <div className="w-24">
         <PostSearch />
       </div>

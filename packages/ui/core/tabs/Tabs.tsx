@@ -22,7 +22,7 @@ export const Tabs = ({ items, selected, onChange }: TabsProps) => {
     >
       {items?.map(({ name, id }, index) => (
         <SwiperSlide
-          key={index}
+          key={id}
           className={`cursor-pointer ${
             id === selected ? "border-b-2" : "border-b-1 border-gray-medium"
           } hover:border-b-2`}

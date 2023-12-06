@@ -4,7 +4,6 @@ import { Layout } from "@components/core/layout/Layout";
 import { SuggestedPost } from "./components/SuggestedPost";
 import { TrendingTopics } from "./components/TrendingTopics";
 import { MainPostList } from "./components/MainPostList";
-import { PostsProps } from "./types";
 
 
 export default async function Page({ params }) {
@@ -33,7 +32,7 @@ async function getTags() {
   const res = await fetch(
     ENDPOINTS.BLOG.TAGS,
     {
-      next: { revalidate: 10 },// 60*60 = 1 hour
+      next: { revalidate: 30 },// 60*60 = 1 hour
     }
   );
   const data = await res.json()
@@ -48,7 +47,7 @@ async function getPosts(){
   const res = await fetch(
     ENDPOINTS.BLOG.POSTS+"?context=embed&status=publish",
     {
-      next: { revalidate: 10 },// 60*60 = 1 hour
+      next: { revalidate: 60 },// 60*60 = 1 hour
     }
   );
   const data = await res.json()
