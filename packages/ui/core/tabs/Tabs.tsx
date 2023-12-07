@@ -1,6 +1,8 @@
 "use client";
 
 import { Swiper, SwiperSlide } from "swiper/react";
+import Link from "next/link";
+
 
 export type TabItem = {
   name: string;
@@ -10,27 +12,27 @@ export type TabItem = {
 export type TabsProps = {
   items: TabItem[];
   selected: number;
-  onChange: (id: number) => void;
 };
-export const Tabs = ({ items, selected, onChange }: TabsProps) => {
+export const Tabs = ({ items, selected }: TabsProps) => {
   return (
     <Swiper
-      spaceBetween={0}
       slidesPerView={5.5}
       slidesPerGroup={1}
       resistanceRatio={1000}
+      spaceBetween= {40}
+      className="w-100 border-b border-b-gray-light justify-center items-center inline-flex"
     >
       {items?.map(({ name, id }, index) => (
         <SwiperSlide
-          key={index}
-          className={`cursor-pointer ${
-            id === selected ? "border-b-2" : "border-b-1 border-gray-medium"
-          } hover:border-b-2`}
-          onClick={() => onChange(id)}
+          key={id}
+          className={`font-['DMSans'] ${
+            id === selected ? "border-b-2 border-black font-bold" : "cursor-pointer font-light"
+          } self-stretch justify-center items-center gap-2 flex`}
         >
-          <div className="text-center whitespace-nowrap p-4">{name}</div>
+          <Link href={`/blog/${id}/1`} className="text-center text-dark text-base  ms-1 leading-none">{name}</Link>
         </SwiperSlide>
       ))}
+      
     </Swiper>
   );
 };

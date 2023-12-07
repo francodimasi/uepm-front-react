@@ -1,29 +1,26 @@
-"use client";
-
-import { BlogCategoryTag } from "@api/blog/types/blog.types";
-import { useBlog } from "@api/blog/useBlog";
-import { useBlogStore } from "@store/useBlogStore";
-import { useMemo } from "react";
-import { useQuery } from "react-query";
+import { BlogCategory, BlogCategoryTag } from "@api/blog/types/blog.types";
 import { Tabs } from "ui";
 
-export const PostTabs = () => {
-  const { category, setCategory } = useBlogStore();
-  const { getCategories } = useBlog();
+type PostTabs = {
+  category: BlogCategory,
+  categories: BlogCategory[]
+};
 
-  const loadCategory = (data: BlogCategoryTag[]) => {
-    setCategory(data[0].id);
-  };
+export const PostTabs = ({category, categories} : PostTabs) => {
+  // const { category, setCategory } = useBlogStore();
+  // const { getCategories } = useBlog();
 
-  const { data } = useQuery({
-    queryKey: "post_categories",
-    queryFn: getCategories,
-    onSuccess: loadCategory,
-  });
+  // const loadCategory = (data: BlogCategoryTag[]) => {
+  //   setCategory(data[0].id);
+  // };
 
-  const tabItems = useMemo(() => {
-    return data?.map(({ name, id }) => ({ name, id })) ?? [];
-  }, [data]);
+  // const { data } = useQuery({
+  //   queryKey: "post_categories",
+  //   queryFn: getCategories,
+  //   onSuccess: loadCategory,
+  // });
 
-  return <Tabs items={tabItems} selected={category} onChange={setCategory} />;
+  const tabItems = categories?.map(({ name, id }) => ({ name, id })) ?? [];
+  
+  return <Tabs items={tabItems} selected={category.id} />;
 };

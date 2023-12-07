@@ -1,36 +1,17 @@
 "use client";
 
-import { useBlog } from "@api/blog/useBlog";
-import { useEffect, useMemo } from "react";
-import { useQuery } from "react-query";
-import { useBlogParser } from "../hooks/useBlogParser";
-import { PostItem, PostItemPropsSize } from "./PostItem";
-import { BlogPostFilterParams } from "@api/blog/types/blog.types";
+import { PostItem, PostItemPropsSize, PostItemProps } from "./PostItem";
 
 type PostListProps = {
   size?: PostItemPropsSize;
-  queryKey: string;
-  filter: BlogPostFilterParams;
+  posts: PostItemProps[]
 };
 
-export const PostList = ({ filter, queryKey, size }: PostListProps) => {
-  const { getPostList } = useBlog();
-  const { postToPostItem } = useBlogParser();
-
-  const { data } = useQuery({
-    queryKey: [queryKey, filter],
-    queryFn: () => getPostList(filter),
-  });
-
-  const postItems = useMemo(() => {
-    const items = data?.map((post) => postToPostItem(post)) ?? [];
-    return items;
-  }, [data]);
-
+export const PostList = ({size, posts}: PostListProps) => {
   return (
     <>
-      <div className={size === "vertical" ? "flex justify-between" : ""}>
-        {postItems.map((postItem) => (
+      <div className={size === "vertical" ? "flex justify-between" : (size === 'small' ? "h-96 flex-col justify-start items-start gap-4 inline-flex" : "")}>
+        {posts?.map((postItem) => (
           <div
             className={size === "vertical" ? "flex-1 mr-6 last:mr-0" : ""}
             key={postItem.slug}

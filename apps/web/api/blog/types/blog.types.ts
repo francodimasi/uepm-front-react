@@ -64,7 +64,7 @@ export type BlogPost = {
   template: string;
   format: string;
   meta: any[];
-  categories: number[];
+  category: string[];
   tags: number[];
   yoast_head: string;
   yoast_head_json: YoastHeadJson;
@@ -166,3 +166,10 @@ export type BlogPostFilterParams = Pick<
   BlogPostParams,
   "page" | "categories" | "tags" | "per_page"
 >;
+
+export type BlogCategory = {
+  id: number;
+  name: string;
+  slug: string;
+  count: number;
+};

@@ -1,19 +1,21 @@
-"use client";
+import { PostList,  } from "./PostList";
+import { PostItemProps } from "./PostItem";
 
-import { PostList } from "./PostList";
+type SuggestedPostProps = {
+  posts: PostItemProps[]
+};
 
-export const SuggestedPost = () => {
+export const SuggestedPost = ({ posts }: SuggestedPostProps) => {
   return (
-    <div className="flex-col justify-start items-start gap-8 inline-flex">
+    <div className="flex-col justify-start items-start gap-8 flex">
+    <div className="text-2xl font-semibold font-['Lexend'] leading-7 text-primary">
+        {/*@todo i18nPending translation*/}
+        Selección del editor
+    </div>
       {/*@todo Pending translation*/}
-      <div
-        className="text-teal-600 text-2xl font-semibold font-['Lexend'] leading-7 text-primary">
-        Seleccion del Editor
-      </div>
       <PostList
-        queryKey="blog_suggested_posts"
-        filter={{ page: 1, per_page: 3, categories: [37] }}
-        size="small"
+        posts = {posts}
+        size = "small"
       />
     </div>
   );

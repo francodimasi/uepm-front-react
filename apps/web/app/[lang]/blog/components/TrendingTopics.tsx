@@ -8,11 +8,13 @@ export const TrendingTopics = ({tags}: {tags: {id: number, text: string}[]}) => 
         {/*@todo i18nPending translation*/}
         Temas más buscados
       </div>
-      <div className="flex flex-row flex-wrap gap-2">
-        {tags.map((tag) => (
-          <Tag text={tag.text} key={tag.id} className="lowercase rounded-md bg-gray-light px-2 py-2 text-sm" />
-        ))}
-      </div>
+      <div className=" relative overflow-hidden">
+        <ul className=" flex flex-row flex-wrap justify-between -ml-px">
+          {tags.map((tag) => (
+            <Tag text={tag.text} key={tag.id} className=" text-sm lowercase" />
+          ))}
+        </ul>
+      </div>      
     </div>
   );
 };

@@ -16,11 +16,11 @@ export const PostSearch = () => {
     <form
       ref={ref}
       onSubmit={handleSubmit}
-      className="h-full flex items-center justify-end border-b-1 border-gray-medium"
+      className="w-24 py-1 px-3 mb-0 border-b border-b-gray-light justify-center items-center inline-flex"
     >
       {open ? (
         <>
-          <button className="relative z-30 p-4 cursor-pointer" type="submit">
+          <button className="w-6 h-6 relative cursor-pointer z-40 py-3" type="submit">
             <span className="material-icons block">search</span>
           </button>
           <PostSearchInput open={open} />
@@ -28,7 +28,7 @@ export const PostSearch = () => {
       ) : (
         <>
           <div
-            className="relative z-30 p-4 cursor-pointer"
+            className="w-6 h-6 relative cursor-pointer"
             onClick={() => setOpen(true)}
           >
             <span className="material-icons block">search</span>
