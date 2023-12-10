@@ -11,6 +11,10 @@ type MainPostList = {
   categories: BlogCategory[]
 };
 
+function handlePagination() : void {
+  console.log('entro en el metodo')
+}
+
 export const MainPostList = ({ posts, category, categories }: MainPostList) => {
   //const { category } = useBlogStore();
 
@@ -23,7 +27,7 @@ export const MainPostList = ({ posts, category, categories }: MainPostList) => {
             <PostList
               posts = {posts}
             />
-            <Pagination />
+            <Pagination onPageChange={handlePagination}/>
           </>
         )}
       </div>
