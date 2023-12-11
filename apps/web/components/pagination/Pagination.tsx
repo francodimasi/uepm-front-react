@@ -5,6 +5,7 @@ import RightArrow from "public/images/RightArrow.svg"
 import Link from "next/link";
 
 
+
 type PagintationParams = {
   mainPath: string
   actualPage: number
