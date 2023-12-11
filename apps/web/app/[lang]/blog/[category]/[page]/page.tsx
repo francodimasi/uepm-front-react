@@ -1,4 +1,3 @@
-import { ENDPOINTS } from "@api/endpoints.conts";
 import { Layout } from "@components/core/layout/Layout";
 import { SuggestedPost } from "../../components/SuggestedPost";
 import { TrendingTopics } from "../../components/TrendingTopics";
@@ -6,26 +5,24 @@ import { MainPostList } from "../../components/MainPostList";
 import { notFound } from "next/navigation";
 import {
   BlogCategory,
-  BlogPost,
-  BlogPostFilterParams,
-  BlogPostParams,
 } from "../../../../../api/blog/types/blog.types";
-import { blogParser } from "../../hooks/useBlogParser";
+import { getCategories, getPostList, getTags } from "@api/blog/requests";
+
+const POSTS_PER_PAGE = 10
 
 export default async function Page({
   params,
 }: {
   params: { category: string; page: string };
 }) {
+  const categoryId = params.category ? params.category : "37"; //"Ciencia"
 
   const newTags = await getTags();
-
-  const categoryId = params.category ? params.category : "37";
-
+  
   const suggestedPosts = await getPostList({
     page: 1,
     per_page: 3,
-    categories: [1],
+    categories: [1], //"General"
   });
 
   const categories = await getCategories();
@@ -39,10 +36,11 @@ export default async function Page({
 
   const mainPosts = await getPostList({
     page: Number(params.page),
-    per_page: 10,
+    per_page: POSTS_PER_PAGE,
     categories: [categoryObj.id],
   });
 
+  //TODO: Show a "no posts" message instead of a 404 page  
   if(mainPosts.length === 0) {
     return notFound();
   }
@@ -68,76 +66,11 @@ export default async function Page({
   );
 }
 
-async function getTags() {
-  const res = await fetch(ENDPOINTS.BLOG.TAGS, {
-    next: { revalidate: 7200 }, // 60*60*2= 2 hour
-  });
-  const data = await res.json();
-  const newTags: { id: number; text: string }[] = data.map(
-    (tag: { id: any; name: any }) => {
-      return { id: tag.id, text: tag.name };
-    }
-  );
-  return newTags;
-}
-
-async function getPostList(params: BlogPostFilterParams) {
-  const { postToPostItem } = blogParser();
-  const defaultParams = {
-    context: "embed",
-    status: "publish",
-    per_page: 3,
-  };
-
-  const allParams: BlogPostParams = { ...defaultParams, ...params };
-  let queryParams = "?";
-  const keys = Object.keys(allParams);
-
-  keys.forEach((key, index) => {
-    if (allParams[key]) {
-      const and = index < keys.length - 1 ? "&" : "";
-      let query = `${key}=${allParams[key]}`;
-      queryParams += `${query}${and}`;
-    }
-  });
-
-  const res = await fetch(`${ENDPOINTS.BLOG.POSTS}${queryParams}`, {
-    next: { revalidate: 7200 }, // 2 hour
-  });
-
-  if (!res.ok) {
-    return []
-  }
-
-  const data = await res.json();
-
-  const items = data?.map((post: BlogPost) => postToPostItem(post)) ?? [];
-  return items;
-}
-
-async function getCategories() {
-  const response = await fetch(ENDPOINTS.BLOG.CATEGORIES);
-  const data = await response.json();
-  const categoryToId = data.map(
-    (category: { name: any; id: any; slug: any, count: number }): BlogCategory => {
-      return {
-        name: category.name,
-        id: category.id,
-        slug: category.slug,
-        count: category.count
-      };
-    }
-  );
-  return categoryToId;
-}
-
 export async function generateStaticParams() {
-  // const posts = await getAllPost()
   const categories = await getCategories();
-  const postsPerPage = 10;
   const _return = []
   categories.forEach(async (category) => {
-    const pages = Math.ceil(category.count / postsPerPage);
+    const pages = Math.ceil(category.count / POSTS_PER_PAGE);
     for (let i = 1 ; i <= pages; i++) {
       _return.push(
         {

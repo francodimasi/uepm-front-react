@@ -3,6 +3,7 @@ import LeftArrow from "public/images/LeftArrow.svg"
 import RightArrow from "public/images/RightArrow.svg"
 
 
+
 type PagintationParams = {
   handlePagination: Function
 };
