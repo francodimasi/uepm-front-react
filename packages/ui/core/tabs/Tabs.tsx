@@ -12,8 +12,9 @@ export type TabItem = {
 export type TabsProps = {
   items: TabItem[];
   selected: number;
+  onChange: (id: number) => void;
 };
-export const Tabs = ({ items, selected }: TabsProps) => {
+export const Tabs = ({ items, selected, onChange }: TabsProps) => {
   return (
     <Swiper
       slidesPerView={5.5}
@@ -28,8 +29,9 @@ export const Tabs = ({ items, selected }: TabsProps) => {
           className={`font-['DMSans'] grow ${
             id === selected ? "border-b-2 border-black font-bold" : " font-light hover:font-normal hover:border-b-1 hover:border-gray-dark"
           } `}
+          onClick={() => onChange(id)}
         >
-          <Link href={`/blog/${id}/1`} className="text-center text-dark text-base  ms-1 leading-none w-full">{name}</Link>
+          <div className="text-center text-dark text-base  ms-1 leading-none w-full">{name}</div>
         </SwiperSlide>
       ))}
       

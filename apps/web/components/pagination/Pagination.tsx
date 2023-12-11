@@ -1,18 +1,20 @@
+'use client';
+
 import Image from "next/image";
 import clsx from "clsx";
 import LeftArrow from "public/images/LeftArrow.svg"
 import RightArrow from "public/images/RightArrow.svg"
 import Link from "next/link";
-
+import { Dispatch, SetStateAction } from "react";
 
 
 type PagintationParams = {
-  mainPath: string
   actualPage: number
   pagesCount: number
+  onChange: (id: number) => void;
 };
 
-export const Pagination = ({mainPath, actualPage, pagesCount} : PagintationParams) => {
+export const Pagination = ({actualPage, pagesCount, onChange} : PagintationParams) => {
   const pageRangeDisplayed = 6;
   const isPreviousDisabled = actualPage === 1;
   const isNextDisabled = actualPage === pagesCount;
@@ -81,8 +83,8 @@ export const Pagination = ({mainPath, actualPage, pagesCount} : PagintationParam
         <ul className='h-7 justify-start items-center gap-3 inline-flex'>
         { 
           paginationList.map((pageInfo) => (
-              <li key={pageInfo.page} className=" w-6 h-7 p-2 border-b-2  border-transparent justify-end items-center gap-2 inline-flex font-normal cursor-pointer hover:font-bold  hover:border-b-1 hover:border-gray-medium">
-                <Link href={`${mainPath}/${pageInfo.page}`} className=" text-right text-dark text-base font-['DMSans'] leading-normal">{pageInfo.page}</Link>
+              <li key={pageInfo.page} onClick={() => onChange(pageInfo.page)} className=" w-6 h-7 p-2 border-b-2  border-transparent justify-end items-center gap-2 inline-flex font-normal cursor-pointer hover:font-bold  hover:border-b-1 hover:border-gray-medium">
+                <div className=" text-right text-dark text-base font-['DMSans'] leading-normal">{pageInfo.page}</div>
               </li>
             )
           )

@@ -24,7 +24,7 @@ export const getCategories = async () => {
     return categories;
   }
 
-export const getTags = async () => {
+export const getTrandingTopics = async () => {
     const res = await fetch(ENDPOINTS.BLOG.TAGS, {
       next: { revalidate: 7200 }, // 60*60*2 = 2 hour
     });
