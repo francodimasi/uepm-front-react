@@ -22,5 +22,5 @@ export const PostTabs = ({category, categories} : PostTabs) => {
 
   const tabItems = categories?.map(({ name, id }) => ({ name, id })) ?? [];
   
-  return <Tabs items={tabItems} selected={category.id} />;
+  return <Tabs items={tabItems} selected={category.id}/>;
 };

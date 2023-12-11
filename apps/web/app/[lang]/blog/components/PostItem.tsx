@@ -61,9 +61,7 @@ export const PostItem = ({
   });
 
   const mainContent = clsx({
-    "h-24 flex-col justify-between items-start inline-flex ps-4 pb-4": size === "small",
-    "": size === "large",
-    "": size === "vertical",
+    "h-24 flex-col justify-between items-start inline-flex ps-4 pb-4": size === "small"
   });
 
   return (
@@ -74,9 +72,9 @@ export const PostItem = ({
           <Image
             src={image}
             fill
+            sizes="100%"
             alt={title}
-            objectFit="cover"
-            className="absolute inset-0 h-full w-full"
+            className="absolute inset-0 h-full w-full object-cover"
           />
         </div>
         <div className={mainContent}>

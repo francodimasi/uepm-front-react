@@ -25,11 +25,11 @@ export const Tabs = ({ items, selected }: TabsProps) => {
       {items?.map(({ name, id }, index) => (
         <SwiperSlide
           key={id}
-          className={`font-['DMSans'] ${
-            id === selected ? "border-b-2 border-black font-bold" : "cursor-pointer font-light"
-          } self-stretch justify-center items-center gap-2 flex`}
+          className={`font-['DMSans'] grow ${
+            id === selected ? "border-b-2 border-black font-bold" : " font-light hover:font-normal hover:border-b-1 hover:border-gray-dark"
+          } `}
         >
-          <Link href={`/blog/${id}/1`} className="text-center text-dark text-base  ms-1 leading-none">{name}</Link>
+          <Link href={`/blog/${id}/1`} className="text-center text-dark text-base  ms-1 leading-none w-full">{name}</Link>
         </SwiperSlide>
       ))}
       
