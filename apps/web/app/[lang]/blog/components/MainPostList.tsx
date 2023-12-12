@@ -10,12 +10,13 @@ import { PostList } from "./PostList";
 
 type MainPostList = {
   categories: BlogCategory[]
+  category?: number,
+  itemsPerPage?: number
 };
 
-export const MainPostList = ({categories} : MainPostList) => {
-  const perPage = 5
+export const MainPostList = ({categories, category: categoryParam, itemsPerPage = 5} : MainPostList) => {
 
-  const [category, setCategory] = useState(37);  
+  const [category, setCategory] = useState(categoryParam ? categoryParam : 37);  
   const [page, setPage] = useState(1);
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -26,7 +27,7 @@ export const MainPostList = ({categories} : MainPostList) => {
       const posts = await getPostList({
         page,
         categories:[category],
-        per_page: perPage
+        per_page: itemsPerPage
       })
       setPosts(posts)
       setLoading(false)
@@ -35,13 +36,23 @@ export const MainPostList = ({categories} : MainPostList) => {
     fetchData()
   }, [category, page]);
   
-  const pageCount = Math.ceil(categories.find((c) => c.id === category).count / perPage) 
+  const pageCount = Math.ceil(categories.find((c) => c.id === category).count / itemsPerPage) 
   return (
     <div className="relative">
-      <PostListHeader  category={category}  setCategory={setCategory} categories={categories} setPage={setPage}/>
+      {
+        categoryParam ? (
+          <div className="text-black text-4xl font-semibold font-['Lexend'] leading-10 text-center w-100 border-b-1 border-b-gray-medium pb-5">
+            {
+              categories.find((cat) => cat.id === categoryParam).name
+            }
+          </div>
+        ) : (
+          <PostListHeader  category={category}  setCategory={setCategory} categories={categories} setPage={setPage}/>
+        )
+      }
       {
         loading ? (
-          <PostListSkeleton entries={perPage} />
+          <PostListSkeleton entries={itemsPerPage} />
         ) : (
           <PostList
             size="large"
