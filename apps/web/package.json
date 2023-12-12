@@ -21,6 +21,7 @@
     "react-detect-click-outside": "^1.1.7",
     "react-dom": "^18.2.0",
     "react-intl": "^6.4.3",
+    "react-paginate": "^8.2.0",
     "react-query": "^3.39.3",
     "rest": "*",
     "swiper": "^10.3.1",

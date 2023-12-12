@@ -31,7 +31,7 @@ export const Tabs = ({ items, selected, onChange }: TabsProps) => {
           } `}
           onClick={() => onChange(id)}
         >
-          <div className="text-center text-dark text-base  ms-1 leading-none w-full">{name}</div>
+          <div className="text-center text-dark text-base  ms-1 leading-none w-full whitespace-nowrap">{name}</div>
         </SwiperSlide>
       ))}
       
