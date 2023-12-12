@@ -4,8 +4,8 @@ import Link from "next/link";
 import logo from "public/images/uepm-onco-logo.svg";
 import { useContext, useMemo } from "react";
 import { SwitchLanguage } from "ui";
-import instagram from "ui/assets/icons/instagram.svg";
-import linkedin from "ui/assets/icons/linkedin.svg";
+import instagram from "ui/assets/icons/social/instagram-dark.svg";
+import linkedin from "ui/assets/icons/social/linkedin-dark.svg";
 
 export const Footer = () => {
   const { lang } = useContext(LanguageContext);
