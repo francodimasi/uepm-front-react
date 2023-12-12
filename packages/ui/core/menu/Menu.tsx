@@ -45,9 +45,9 @@ export const Menu: React.FC<MenuProps> = ({ className, children, items }) => {
                       y: -32,
                       transition: { duration: 0.2 },
                     }}
-                    className="absolute inset-x-0 top-0 z-0 origin-top rounded-b-2xl bg-light px-6 pb-6 pt-32 shadow-2xl shadow-dark/20"
+                    className="absolute inset-x-0 top-0 z-0 origin-top rounded-b-2xl bg-light px-6 pb-6 pt-24 shadow-2xl shadow-dark/20"
                   >
-                    <div className="flex flex-col space-y-4">
+                    <div className="flex flex-col space-y-4 pb-8">
                       {items.map((item: MenuItem, index: number) => (
                         <MenuLink key={index} href={item.href}>
                           {item.label}

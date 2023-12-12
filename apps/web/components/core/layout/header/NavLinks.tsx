@@ -14,6 +14,7 @@ export const NavLinks: React.FC<NavLinksProps> = ({ links }) => {
       {links.map(({ label, href }, index) => (
         <NavLink
           key={`header-link-${index}`}
+          className="text-base font-normal leading-4 font-['DMSans']"
           label={label}
           href={href}
           hovered={hovered === index}
