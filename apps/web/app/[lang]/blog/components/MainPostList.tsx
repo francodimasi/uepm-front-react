@@ -37,24 +37,22 @@ export const MainPostList = ({categories} : MainPostList) => {
   
   const pageCount = Math.ceil(categories.find((c) => c.id === category).count / perPage) 
   return (
-    <>
-      <div className="relative">
-        <PostListHeader  category={category}  setCategory={setCategory} categories={categories} setPage={setPage}/>
-        {
-          loading ? (
-            <PostListSkeleton entries={perPage} />
-          ) : (
-            <PostList
-              size="large"
-              posts = {posts}
-            />
-          )
-        }
-        <div className="mt-5">
-          <Pagination actualPage={page} pagesCount={pageCount} setPage={setPage}/>
-        </div>
-        
+    <div className="relative">
+      <PostListHeader  category={category}  setCategory={setCategory} categories={categories} setPage={setPage}/>
+      {
+        loading ? (
+          <PostListSkeleton entries={perPage} />
+        ) : (
+          <PostList
+            size="large"
+            posts = {posts}
+          />
+        )
+      }
+      <div className="mt-5 ">
+        <Pagination actualPage={page} pagesCount={pageCount} setPage={setPage}/>
       </div>
-    </>
+      
+    </div>
   );
 };
