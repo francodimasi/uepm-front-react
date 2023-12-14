@@ -126,7 +126,14 @@ type BlogPostEmbeddedFeaturedMedia = {
   slug: string;
   type: string;
   link: string;
+  alt_text: string;
+  media_details: BlogPostEmbeddedFeaturedMediaDetails;
 };
+
+type BlogPostEmbeddedFeaturedMediaDetails = {
+  width: number;
+  height: number;
+}
 type BlogPostEmbeddedTerm = {
   id: number;
   link: string;
@@ -157,12 +164,14 @@ export type BlogPostParams = {
   page: number;
   per_page: number;
   status: string;
-  context: string;
+  context?: string;
   categories?: number[];
   tags?: string[];
+  order?: string;
+  _embed?: 1
 };
 
 export type BlogPostFilterParams = Pick<
   BlogPostParams,
-  "page" | "categories" | "tags" | "per_page"
+  "page" | "categories" | "tags" | "per_page" | "order" | "context" | "_embed"
 >;

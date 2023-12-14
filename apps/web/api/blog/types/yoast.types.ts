@@ -9,6 +9,7 @@ export type YoastHeadJson = {
   og_site_name: string;
   og_description: string;
   twitter_card: string;
+  twitter_misc: YoastTwitterMisc;
   schema: YoastSchema;
 };
 
@@ -53,3 +54,8 @@ type YoastSchemaGraphAction = {
   };
   "query-input": string;
 };
+
+type YoastTwitterMisc = {
+  "Escrito por": string;
+  "Tiempo de lectura": string;
+}

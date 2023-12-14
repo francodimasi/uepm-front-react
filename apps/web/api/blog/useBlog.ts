@@ -18,13 +18,22 @@ export const useBlog = () => {
   };
 
   const getTags = async () => {
-    const response = await get<BlogCategoryTag[]>(ENDPOINTS.BLOG.TAGS);
-    return response;
+    const res = await fetch(
+      ENDPOINTS.BLOG.TAGS,
+      {
+        next: { revalidate: 3600 },// 60*60 = 1 hour
+      }
+    );
+    const data = await res.json()
+    const newTags: {id: number, text: string}[] = data.map( (tag) => {
+      return {id: tag.id, text: tag.name} 
+    })
+    return newTags
   };
 
   const getOnePost = async (slug: string) => {
     const response = await get<BlogPost[]>(
-      `${ENDPOINTS.BLOG.POSTS}?slug=${slug}&_embed=1`
+      `${ENDPOINTS.BLOG.POSTS}?slug=${slug}&_embed=1&context=view`
     );
     const post = response[0];
     return post;
@@ -66,7 +75,7 @@ export const useBlog = () => {
       }
     });
 
-    const response = await get<BlogPost[]>(
+        const response = await get<BlogPost[]>(
       `${ENDPOINTS.BLOG.POSTS}${queryParams}`
     );
 

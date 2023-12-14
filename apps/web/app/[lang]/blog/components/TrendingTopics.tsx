@@ -1,5 +1,6 @@
 import { Tag } from "ui";
 
+//TODO: the prop should be named something like topics, not tags 
 export const TrendingTopics = ({tags}: {tags: {id: number, text: string}[]}) => {
 
   return (
