@@ -1,21 +1,62 @@
 import { useBlog } from "@api/blog/useBlog";
 import { Layout } from "@components/core/layout/Layout";
 
-import { SuggestedPost } from "../../components/SuggestedPost";
-import { TrendingTopics } from "../../components/TrendingTopics";
 import ArticleTags from "./components/ArticleTags";
 import Title from "./components/Title";
 import Highlights from "./components/Highlights";
 import Recommended from "./components/Recommended";
 import { ENDPOINTS } from "@api/endpoints.conts";
+import { BlogPost, BlogPostFilterParams } from "@api/blog/types/blog.types";
+
+
+const getRecommendedPosts = async function (
+        tagName:string, 
+        getPostList: (params: BlogPostFilterParams) => Promise<BlogPost[]>,
+        getTagID:  (tagName: string) => Promise<number> ) {
+    
+    const getPostsParams : BlogPostFilterParams = { 
+        per_page: 4, 
+        page: 1, 
+        context: "view", 
+        order: "desc", 
+        _embed: 1 
+    }
+    
+    if (tagName) {
+        const tagID = await getTagID(tagName)
+        getPostsParams.tags=  [tagID]  
+    }
+    
+    const recommendedPosts = await getPostList(getPostsParams)
+    return recommendedPosts
+}
+
+
+const getNextPost = async function(
+    //TODO: have to fetch next cronological post, this code gets the absolute newest one
+    currentPost : BlogPost, 
+    getPostsFn: (params: BlogPostFilterParams) => Promise<BlogPost[]> 
+    ) {
+        const nextPost = await getPostsFn({ _embed: 1, context: "view", page: 1, per_page: 1, categories: currentPost.categories, order: "desc" })
+        if (nextPost.length === 0) {
+            return null 
+        }
+
+        return nextPost[0]
+}
+
 
 export default async function Article({ params }: { params: { slug: string } }) {
     const { slug } = params;
 
-    const { getOnePost, getTags } = useBlog()
+    const { getOnePost, getPostList, getTagID, getTags } = useBlog()
+
     const postBlog = await getOnePost(slug)
     const tagName = postBlog.tags[0]
-
+    const recommendedPosts = await getRecommendedPosts(tagName, getPostList, getTagID)
+    const nextPost = await getNextPost(postBlog, getPostList)
+    const tags = await getTags()
+    
     return <Layout>
                 <div className="container mb-10">
                     <div className="grid grid-cols-12 px-10">
@@ -29,10 +70,10 @@ export default async function Article({ params }: { params: { slug: string } }) 
                             </div>
                         </section>
                         <aside className="col-span-3 flex-col justify-start items-start gap-8 inline-flex">
-                            <Highlights mainPost={postBlog}/>
+                            <Highlights nextPost={nextPost} newTags={tags}/>
                         </aside>    
                     </div>
-                    <Recommended tagName={tagName}/>
+                    <Recommended tag={tagName} posts={recommendedPosts}/>
                 </div>
             </Layout>
 }
