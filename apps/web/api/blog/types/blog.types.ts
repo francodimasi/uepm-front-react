@@ -65,7 +65,7 @@ export type BlogPost = {
   format: string;
   meta: any[];
   categories: number[];
-  tags: number[];
+  tags: string[];
   yoast_head: string;
   yoast_head_json: YoastHeadJson;
   featured_image_src: string;
@@ -166,7 +166,7 @@ export type BlogPostParams = {
   status: string;
   context?: string;
   categories?: number[];
-  tags?: string[];
+  tags?: number[];
   order?: string;
   _embed?: 1
 };

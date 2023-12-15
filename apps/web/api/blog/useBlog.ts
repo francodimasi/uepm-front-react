@@ -82,6 +82,18 @@ export const useBlog = () => {
     return response;
   };
 
+  const getTagID = async (tagName : string) => {
+    const res = await fetch(
+      `${ENDPOINTS.BLOG.TAGS}?search=${tagName}&orderby=name`,
+      {
+        next: { revalidate: 86400 },// 1 day (should never change though)
+      }
+    );
+    const data = await res.json()
+    const id:number= data[0].id
+    return id
+  }
+
   return {
     getCategories,
     getTags,
@@ -89,5 +101,6 @@ export const useBlog = () => {
     ratePost,
     getPostList,
     getAuthorName,
+    getTagID,
   };
 };

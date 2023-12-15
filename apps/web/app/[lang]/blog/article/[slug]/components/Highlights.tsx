@@ -24,11 +24,11 @@ export default async function Highlights( {mainPost} : {mainPost: BlogPost}) {
     const newTags = await getTags()
     const nextPost = await getNextPost(mainPost, getPostList, getOnePost)
     
-    return  <aside className="col-span-3 flex-col justify-start items-start gap-8 inline-flex">
+    return <>
                 <SuggestedPost />
                 <Interesting blogPost={nextPost}/>
                 <TrendingTopics tags={newTags} />
-            </aside>
+            </>
 
 
 }

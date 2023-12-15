@@ -1,88 +1,46 @@
+import { BlogPostFilterParams } from "@api/blog/types/blog.types"
 import { useBlog } from "@api/blog/useBlog"
+import Image from "next/image"
 
-export default async function Recommended({tag} : {tag:string}) {
+export default async function Recommended({tagName} : {tagName:string}) {
 
-    const {getPostList} = useBlog()
+    const {getPostList, getTagID} = useBlog()
+    const getPostsParams : BlogPostFilterParams = { 
+        per_page: 4, 
+        page: 1, 
+        context: "view", 
+        order: "desc", 
+        _embed: 1 
+    }
 
-    // const nextPosts = await getPostList({ 
-    //     per_page: 4, 
-    //     page: 1, 
-    //     context: "view", 
-    //     order: "desc", 
-    //     tags: [tag],   //Tags need to be ID! Same with "categories"
-    //     _embed: 1 
-    // })
+    if (tagName) {
+        const tagID = await getTagID(tagName)
+        getPostsParams.tags=  [tagID]  
+    }
 
-    return <div className="w-[1280px] h-[343px] flex-col justify-start items-start gap-8 inline-flex">
-    <div className="self-stretch justify-between items-center inline-flex">
-        <div className="w-[222px] text-black text-2xl font-semibold font-['Lexend'] leading-7">Más sobre el tema</div>
-        <div className="text-black text-base font-bold font-['DM Sans'] leading-none">Ver más →</div>
-    </div>
-    <div className="justify-start items-start gap-6 inline-flex">
-        <div className="w-[302px] flex-col justify-start items-start gap-4 inline-flex">
-            <div className="self-stretch h-[190px] bg-stone-200 flex-col justify-center items-center flex">
-                <img className="self-stretch grow shrink basis-0" src="https://via.placeholder.com/302x190" />
-            </div>
-            <div className="self-stretch h-[88px] flex-col justify-start items-start gap-2 flex">
-                <div className="self-stretch h-[88px] flex-col justify-start items-start gap-3 flex">
-                    <div className="self-stretch h-[68px] flex-col justify-start items-start gap-1 flex">
-                        <div className="py-1 rounded-[100px] justify-end items-center gap-2 inline-flex">
-                            <div className="text-teal-800 text-xs font-medium font-['DM Sans'] uppercase leading-none tracking-tight">Esclerosis</div>
-                        </div>
-                        <div className="self-stretch text-black text-base font-semibold font-['Lexend'] leading-normal">Lorem ipsum dolor sit, consectetur adipiscing elit</div>
-                    </div>
-                    <div className="self-stretch text-black text-xs font-normal font-['DM Sans'] uppercase leading-normal">23 DE SEPTIEMBRE, 2023</div>
+    const nextPosts = await getPostList(getPostsParams)
+
+    return <div className="w-full flex-col justify-start items-start gap-8 inline-flex">
+                <div className="flex justify-between items-center self-stretch">
+                    <div className="text-dark text-2xl font-semibold font-['Lexend'] leading-7">Más sobre el tema</div>
+                    <div className="text-dark text-base font-bold font-['DMSans'] leading-none">Ver más →</div>
+                </div>
+                <div className="flex gap-6">
+                    { nextPosts.map( (post) => { 
+                        return <div key={post.id} className="pb-6 border-b border-gray-medium flex-col justify-start items-start gap-8 inline-flex">
+                                    <Image 
+                                        src={post._embedded["wp:featuredmedia"][0].link} 
+                                        alt={post._embedded["wp:featuredmedia"][0].alt_text}
+                                        width={post._embedded["wp:featuredmedia"][0].media_details.width}
+                                        height={post._embedded["wp:featuredmedia"][0].media_details.height}
+                                    />
+                                    <div className="self-stretch flex-col justify-start items-start gap-2 flex">
+                                        <div className="self-stretch text-dark text-xs font-normal font-['DMSans'] uppercase leading-none tracking-tight">{post.tags}</div>
+                                        <div className="self-stretch text-dark text-base font-semibold font-['Lexend'] leading-normal">{post.title.rendered}</div>
+                                        <div className="self-stretch text-dark text-xs font-normal font-['DMSans'] uppercase leading-normal">{post.date}</div>
+                                    </div>
+                                </div>
+                    })}
                 </div>
             </div>
-        </div>
-        <div className="w-[302px] flex-col justify-start items-start gap-4 inline-flex">
-            <div className="self-stretch h-[190px] bg-stone-200 flex-col justify-center items-center flex">
-                <img className="self-stretch grow shrink basis-0" src="https://via.placeholder.com/302x190" />
-            </div>
-            <div className="self-stretch h-[88px] flex-col justify-start items-start gap-2 flex">
-                <div className="self-stretch h-[88px] flex-col justify-start items-start gap-3 flex">
-                    <div className="self-stretch h-[68px] flex-col justify-start items-start gap-1 flex">
-                        <div className="py-1 rounded-[100px] justify-end items-center gap-2 inline-flex">
-                            <div className="text-teal-800 text-xs font-medium font-['DM Sans'] uppercase leading-none tracking-tight">Esclerosis</div>
-                        </div>
-                        <div className="self-stretch text-black text-base font-semibold font-['Lexend'] leading-normal">Lorem ipsum dolor sit, consectetur adipiscing elit</div>
-                    </div>
-                    <div className="self-stretch text-black text-xs font-normal font-['DM Sans'] uppercase leading-normal">23 DE SEPTIEMBRE, 2023</div>
-                </div>
-            </div>
-        </div>
-        <div className="w-[302px] flex-col justify-start items-start gap-4 inline-flex">
-            <div className="self-stretch h-[190px] bg-stone-200 flex-col justify-center items-center flex">
-                <img className="self-stretch grow shrink basis-0" src="https://via.placeholder.com/302x190" />
-            </div>
-            <div className="self-stretch h-[88px] flex-col justify-start items-start gap-2 flex">
-                <div className="self-stretch h-[88px] flex-col justify-start items-start gap-3 flex">
-                    <div className="self-stretch h-[68px] flex-col justify-start items-start gap-1 flex">
-                        <div className="py-1 rounded-[100px] justify-end items-center gap-2 inline-flex">
-                            <div className="text-teal-800 text-xs font-medium font-['DM Sans'] uppercase leading-none tracking-tight">Esclerosis</div>
-                        </div>
-                        <div className="self-stretch text-black text-base font-semibold font-['Lexend'] leading-normal">Lorem ipsum dolor sit, consectetur adipiscing elit</div>
-                    </div>
-                    <div className="self-stretch text-black text-xs font-normal font-['DM Sans'] uppercase leading-normal">23 DE SEPTIEMBRE, 2023</div>
-                </div>
-            </div>
-        </div>
-        <div className="w-[302px] flex-col justify-start items-start gap-4 inline-flex">
-            <div className="self-stretch h-[190px] bg-stone-200 flex-col justify-center items-center flex">
-                <img className="self-stretch grow shrink basis-0" src="https://via.placeholder.com/302x190" />
-            </div>
-            <div className="self-stretch h-[88px] flex-col justify-start items-start gap-2 flex">
-                <div className="self-stretch h-[88px] flex-col justify-start items-start gap-3 flex">
-                    <div className="self-stretch h-[68px] flex-col justify-start items-start gap-1 flex">
-                        <div className="py-1 rounded-[100px] justify-end items-center gap-2 inline-flex">
-                            <div className="text-teal-800 text-xs font-medium font-['DM Sans'] uppercase leading-none tracking-tight">Esclerosis</div>
-                        </div>
-                        <div className="self-stretch text-black text-base font-semibold font-['Lexend'] leading-normal">Lorem ipsum dolor sit, consectetur adipiscing elit</div>
-                    </div>
-                    <div className="self-stretch text-black text-xs font-normal font-['DM Sans'] uppercase leading-normal">23 DE SEPTIEMBRE, 2023</div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 }
