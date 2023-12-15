@@ -58,18 +58,18 @@ export default async function Article({ params }: { params: { slug: string } }) 
     const tags = await getTags()
     
     return <Layout>
-                <div className="container mb-10">
-                    <div className="grid grid-cols-12 px-10">
-                        <section className="col-span-12 pr-16">
+                <div className="container px-4 lg:px-10">
+                    <div className="grid grid-cols-1 lg:grid-cols-12">
+                        <section className="col-span-1 lg:col-span-12">
                             <Title title={postBlog.title.rendered} date={postBlog.date} readingTime={postBlog.yoast_head_json.twitter_misc["Tiempo de lectura"]}/>
                         </section>
-                        <section className="col-span-9 pr-16">
-                            <div>
+                        <section className="col-span-1 lg:col-span-9">
+                            <div className="mt-10 lg:mr-32">
                                 <div dangerouslySetInnerHTML={{__html: postBlog.content.rendered}} />
                                 <ArticleTags articleTags={postBlog.tags}/>
                             </div>
                         </section>
-                        <aside className="col-span-3 flex-col justify-start items-start gap-8 inline-flex">
+                        <aside className="col-span-1 lg:col-span-3 flex-col justify-start items-start gap-8 hidden lg:inline-flex">
                             <Highlights nextPost={nextPost} newTags={tags}/>
                         </aside>    
                     </div>

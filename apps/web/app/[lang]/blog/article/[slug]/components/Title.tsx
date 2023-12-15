@@ -21,8 +21,8 @@ export default function Title({title,date, readingTime} : {title:string, date:st
                     </div>
                 </div>
             </div>
-            <div className="h-full flex-col justify-start items-start gap-12 flex">
-                <div className="self-stretch text-dark text-[56px] font-semibold font-['Lexend'] leading-[64px]">{title}</div>
+            <div className="h-full flex-col justify-start items-start gap-2 flex">
+                <div className="self-stretch text-dark lg:text-[56px] font-semibold font-['Lexend']">{title}</div>
                 <div className="justify-start items-center gap-4 inline-flex">
                     <div className="text-dark text-xs font-normal font-['DMSans'] uppercase leading-normal">{dayjs(date).format("d [de] MMMM, YYYY")}</div>
                     <div className="w-[5px] h-[5px] bg-black rounded-full"><Image src={Ellipsis} alt="Ellipsis"></Image></div>
