@@ -1,7 +1,8 @@
 "use client";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import Link from "next/link";
+import clsx from "clsx";
+
 
 
 export type TabItem = {
@@ -13,15 +14,26 @@ export type TabsProps = {
   items: TabItem[];
   selected: number;
   onChange: (id: number) => void;
+  classes?: string
 };
-export const Tabs = ({ items, selected, onChange }: TabsProps) => {
+export const Tabs = ({ items, selected, onChange, classes}: TabsProps) => {
   return (
     <Swiper
       slidesPerView={5.5}
       slidesPerGroup={1}
       resistanceRatio={1000}
       spaceBetween= {40}
-      className="w-100 border-b border-b-gray-light justify-center items-center inline-flex"
+      className={clsx(classes, "w-100 border-b border-b-gray-light justify-center items-center inline-flex")}
+      breakpoints={{
+        // when window width is >= 640px
+        0: {
+          slidesPerView: 0,
+        },
+        // when window width is >= 768px
+        640: {
+          slidesPerView: 5.5
+        },
+      }}
     >
       {items?.map(({ name, id }, index) => (
         <SwiperSlide

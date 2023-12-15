@@ -17,16 +17,11 @@ export default async function Page({
     notFound()
   }
 
-  const suggestedPosts = await getPostList({
-    page: 1,
-    per_page: 3,
-    categories: [1],
-  });
   return (
     <Layout>
       <div className="container">
         <div className="grid grid-cols-12">
-          <section className="col-span-12 pr-16 py-12">
+          <section className="col-span-12 pr-8 py-12">
             <MainPostList categories={categories} category={Number(params.category)} itemsPerPage={10}/>
           </section>
         </div>
@@ -52,4 +47,4 @@ export default async function Page({
 //     }
 //   });
 //   return _return;
-// }
+// }  

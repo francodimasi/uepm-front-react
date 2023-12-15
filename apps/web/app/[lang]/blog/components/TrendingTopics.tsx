@@ -4,7 +4,7 @@ export const TrendingTopics = ({tags}: {tags: {id: number, text: string}[]}) => 
 
   return (
     <div className="flex-col justify-start items-start gap-8 flex">
-      <div className="text-2xl font-semibold font-['Lexend'] leading-7 text-primary">
+      <div className="text-2xl font-mediu font-['Lexend'] leading-7 text-primary self-center sm:self-start">
         {/*@todo i18nPending translation*/}
         Temas más buscados
       </div>

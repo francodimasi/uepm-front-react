@@ -7,6 +7,7 @@ import {getPostList } from "@api/blog/requests";
 import { BlogCategory } from "@api/blog/types/blog.types";
 import { PostListSkeleton } from "./PostListSkeleton";
 import { PostList } from "./PostList";
+import { Button } from "ui/core/button";
 
 type MainPostList = {
   categories: BlogCategory[]
@@ -36,14 +37,17 @@ export const MainPostList = ({categories, category: categoryParam, itemsPerPage 
     fetchData()
   }, [category, page]);
   
+
   const pageCount = Math.ceil(categories.find((c) => c.id === category).count / itemsPerPage) 
+  const categoryObj = categories.find((cat) => cat.id === category)
+
   return (
     <div className="relative">
       {
         categoryParam ? (
           <div className="text-black text-4xl font-semibold font-['Lexend'] leading-10 text-center w-100 border-b-1 border-b-gray-medium pb-5">
             {
-              categories.find((cat) => cat.id === categoryParam).name
+              categoryObj.name
             }
           </div>
         ) : (
@@ -52,7 +56,7 @@ export const MainPostList = ({categories, category: categoryParam, itemsPerPage 
       }
       {
         loading ? (
-          <PostListSkeleton entries={itemsPerPage} />
+          <PostListSkeleton entries={itemsPerPage}/>
         ) : (
           <PostList
             size="large"
@@ -60,8 +64,20 @@ export const MainPostList = ({categories, category: categoryParam, itemsPerPage 
           />
         )
       }
-      <div className="mt-5 ">
-        <Pagination actualPage={page} pagesCount={pageCount} setPage={setPage}/>
+      <div className="mt-5 text-center">
+        {
+          pageCount > 1 && ( 
+            <>
+            {
+              categoryParam ? (
+                <Pagination actualPage={page} pagesCount={pageCount} setPage={setPage} />
+              ) : (
+                <Button href={`/blog/${categoryObj.id}`}>Ver mas artículos</Button>
+              )
+            }
+            </>
+          )
+        }
       </div>
       
     </div>

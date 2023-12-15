@@ -1269,10 +1269,10 @@
   dependencies:
     client-only "^0.0.1"
 
-"@heroicons/react@^1.0.6":
-  version "1.0.6"
-  resolved "https://registry.npmjs.org/@heroicons/react/-/react-1.0.6.tgz"
-  integrity sha512-JJCXydOFWMDpCP4q13iEplA503MQO3xLoZiKum+955ZCtHINWnx26CUxVxxFQu/uLb4LW3ge15ZpzIkXKkJ8oQ==
+"@heroicons/react@^2.0.18":
+  version "2.0.18"
+  resolved "https://registry.npmjs.org/@heroicons/react/-/react-2.0.18.tgz"
+  integrity sha512-7TyMjRrZZMBPa+/5Y8lN0iyvUU/01PeMGX2+RE7cQWpEUIcb4QotzUObFkJDejj/HUH4qjP/eQ0gzzKs2f+6Yw==
 
 "@humanwhocodes/config-array@^0.11.10":
   version "0.11.11"
@@ -5899,6 +5899,7 @@ wcwidth@^1.0.1:
     react-detect-click-outside "^1.1.7"
     react-dom "^18.2.0"
     react-intl "^6.4.3"
+    react-paginate "^8.2.0"
     react-query "^3.39.3"
     rest "*"
     swiper "^10.3.1"
