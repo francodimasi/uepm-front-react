@@ -8,4 +8,6 @@ export type SocialNetwork = {
 
 export type SocialProps = PropsWithClassName & {
   networks?: SocialNetwork[];
+  color?: "light" | "dark";
+  size?: "sm" | "md" | "lg";
 };

@@ -1,22 +1,48 @@
+import facebookDark from "ui/assets/icons/social/facebook-dark.svg";
+import instagramDark from "ui/assets/icons/social/instagram-dark.svg";
+import linkedinDark from "ui/assets/icons/social/linkedin-dark.svg";
+import facebookLight from "ui/assets/icons/social/facebook-light.svg";
+import instagramLight from "ui/assets/icons/social/instagram-light.svg";
+import linkedinLight from "ui/assets/icons/social/linkedin-light.svg";
 import { SocialNetwork } from "./Social.types";
-import facebook from "ui/assets/icons/social/facebook-light.svg";
-import instagram from "ui/assets/icons/social/instagram-light.svg";
-import linkedin from "ui/assets/icons/social/linkedin-light.svg";
 
-export const DEFAULT_NETWORKS: SocialNetwork[] = [
-  {
-    icon: linkedin,
-    alt: "Linkedin",
-    link: "https://www.linkedin.com/company/unensayoparami/mycompany/",
-  },
-  {
-    icon: instagram,
-    alt: "Instagram",
-    link: "https://www.instagram.com/unensayoparami",
-  },
-  {
-    icon: facebook,
-    alt: "Facebook",
-    link: "https://www.facebook.com/unensayoparami.org",
-  },
-];
+export type DefaultNetworks = {
+  [key: string]: SocialNetwork[];
+};
+
+export const DEFAULT_NETWORKS: DefaultNetworks = {
+  light: [
+    {
+      icon: linkedinLight,
+      alt: "Linkedin",
+      link: "https://www.linkedin.com/company/unensayoparami/mycompany/",
+    },
+    {
+      icon: instagramLight,
+      alt: "Instagram",
+      link: "https://www.instagram.com/unensayoparami",
+    },
+    {
+      icon: facebookLight,
+      alt: "Facebook",
+      link: "https://www.facebook.com/unensayoparami.org",
+    },
+  ],
+  dark: [
+    {
+      icon: linkedinDark,
+      alt: "Linkedin",
+      link: "https://www.linkedin.com/company/unensayoparami/mycompany/",
+    },
+    {
+      icon: instagramDark,
+      alt: "Instagram",
+      link: "https://www.instagram.com/unensayoparami",
+    },
+    {
+      icon: facebookDark,
+      alt: "Facebook",
+      link: "https://www.facebook.com/unensayoparami.org",
+    },
+  ],
+};
