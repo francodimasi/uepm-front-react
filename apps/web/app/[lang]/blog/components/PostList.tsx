@@ -1,7 +1,7 @@
 'use client';
 
 import { useBlog } from '@api/blog/useBlog';
-import { useEffect, useMemo } from 'react';
+import { useMemo } from 'react';
 import { useQuery } from 'react-query';
 import { useBlogParser } from '../hooks/useBlogParser';
 import { PostItem, PostItemPropsSize } from './PostItem';

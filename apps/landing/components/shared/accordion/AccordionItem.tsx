@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import { TabItem } from '../tabs/tabs.type';
-import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 
 type AccordionItemProps = {
   selected: boolean;
@@ -49,7 +49,9 @@ export const AccordionItem = ({
           }`}
         >
           <span
-            className={`text-lg md:text-xl xl:text-2xl font-bold transition-all`}
+            className={
+              'text-lg md:text-xl xl:text-2xl font-bold transition-all'
+            }
           >
             {name}
           </span>
