@@ -1,17 +1,8 @@
 'use client';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { TabsProps } from './Tabs.types';
 
-export type TabItem = {
-  name: string;
-  id: number;
-};
-
-export type TabsProps = {
-  items: TabItem[];
-  selected: number;
-  onChange: (id: number) => void;
-};
 export const Tabs = ({ items, selected, onChange }: TabsProps) => {
   return (
     <Swiper

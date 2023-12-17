@@ -7,7 +7,7 @@ import clsx from 'clsx';
 export const Social: React.FC<SocialProps> = ({
   networks,
   color = 'light',
-  className,
+  className = 'p-1',
   size = 'md',
 }) => {
   const nets = networks ?? DEFAULT_NETWORKS[color];

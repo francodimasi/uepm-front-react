@@ -1,8 +1,6 @@
 'use client';
 
 import { PropsWithChildren } from 'react';
-import arrow from 'public/images/icons/arrow.svg';
-import Image from 'next/image';
 import cx from 'classnames';
 
 type LoadingButtonProps = {
@@ -59,7 +57,7 @@ export const LandingButton = ({
     >
       <div className="flex items-center justify-between">
         <span>{children}</span>
-        {icon && <span className={`pl-5 material-icons`}>east</span>}
+        {icon && <span className={'pl-5 material-icons'}>east</span>}
       </div>
     </button>
   );

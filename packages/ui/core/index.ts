@@ -1,2 +1,2 @@
-export * from './tabs/Tabs';
+export * from './tabs';
 export * from './tag';

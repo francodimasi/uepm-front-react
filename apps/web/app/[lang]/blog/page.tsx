@@ -4,7 +4,7 @@ import { SuggestedPost } from './components/SuggestedPost';
 import { TrendingTopics } from './components/TrendingTopics';
 import { MainPostList } from './components/MainPostList';
 
-export default async function Page({ params }) {
+export default async function Page() {
   const newTags = await getTags();
 
   return (

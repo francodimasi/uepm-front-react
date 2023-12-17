@@ -1,6 +1,5 @@
 import clsx from 'clsx';
 import dayjs from 'dayjs';
-import Image from 'next/image';
 import { useCallback, useMemo } from 'react';
 
 export type PostItemPropsSize = 'small' | 'large' | 'vertical';
