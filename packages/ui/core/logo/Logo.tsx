@@ -1,6 +1,6 @@
-import Image from "next/image";
-import { LogoProps } from "./Logo.types";
-import { getLogo } from "./utils";
+import Image from 'next/image';
+import { LogoProps } from './Logo.types';
+import { getLogo } from './utils';
 
 export const Logo: React.FC<LogoProps> = ({
   className,

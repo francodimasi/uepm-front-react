@@ -1,6 +1,6 @@
-import { ENDPOINTS } from "@api/endpoints.conts";
-import { PageResponse } from "@core/types";
-import { useRest } from "rest";
+import { ENDPOINTS } from '@api/endpoints.conts';
+import { PageResponse } from '@core/types';
+import { useRest } from 'rest';
 
 export const usePartner = () => {
   const { get } = useRest();

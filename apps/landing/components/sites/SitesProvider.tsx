@@ -1,5 +1,5 @@
-import { PropsWithChildren, createContext, useState } from "react";
-import { useSites } from "./hooks/useSites";
+import { PropsWithChildren, createContext, useState } from 'react';
+import { useSites } from './hooks/useSites';
 
 export const SitesContext = createContext({} as any);
 

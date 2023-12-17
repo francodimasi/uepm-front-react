@@ -1,6 +1,6 @@
-import Link from "next/link";
-import { Popover } from "@headlessui/react";
-import { MenuLinkProps } from "./Menu.types";
+import Link from 'next/link';
+import { Popover } from '@headlessui/react';
+import { MenuLinkProps } from './Menu.types';
 
 export const MenuLink: React.FC<MenuLinkProps> = ({
   className,

@@ -1,5 +1,5 @@
-import Link from "next/link";
-import { FooterSectionLinkProps } from "./FooterSection.types";
+import Link from 'next/link';
+import { FooterSectionLinkProps } from './FooterSection.types';
 
 export const FooterSectionLink: React.FC<FooterSectionLinkProps> = ({
   label,

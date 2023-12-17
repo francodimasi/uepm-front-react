@@ -1,5 +1,5 @@
-import { BlogPostLinks } from "./blog.types";
-import { YoastHeadJson } from "./yoast.types";
+import { BlogPostLinks } from './blog.types';
+import { YoastHeadJson } from './yoast.types';
 
 export type BlogAuthor = {
   /**
@@ -11,7 +11,7 @@ export type BlogAuthor = {
   description: string;
   link: string;
   slug: string;
-  "avatar-urls": BlogAuthorAvatar;
+  'avatar-urls': BlogAuthorAvatar;
   meta: any[];
   yoast_head: string;
   yoast_head_json: YoastHeadJson;

@@ -1,5 +1,5 @@
-import { FooterSectionProps } from "./FooterSection.types";
-import { FooterSectionLink } from "./FooterSectionLink";
+import { FooterSectionProps } from './FooterSection.types';
+import { FooterSectionLink } from './FooterSectionLink';
 
 export const FooterSection: React.FC<FooterSectionProps> = ({
   title,

@@ -1,7 +1,7 @@
-import { FetchParams, HttpErrorResponse } from "../types";
+import { FetchParams, HttpErrorResponse } from '../types';
 
 const defaultHeaders = {
-  "Content-Type": "application/json",
+  'Content-Type': 'application/json',
 };
 
 export const useFetch = async (params: FetchParams) => {

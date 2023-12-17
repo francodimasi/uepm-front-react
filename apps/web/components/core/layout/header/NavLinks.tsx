@@ -1,6 +1,6 @@
-"use client";
-import { useState } from "react";
-import { NavLink } from "ui/core/navigation";
+'use client';
+import { useState } from 'react';
+import { NavLink } from 'ui/core/navigation';
 
 type NavLinksProps = {
   links: { label: string; href: string }[];

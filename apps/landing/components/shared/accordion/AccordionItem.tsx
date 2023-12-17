@@ -1,6 +1,6 @@
-import classNames from "classnames";
-import { TabItem } from "../tabs/tabs.type";
-import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
+import classNames from 'classnames';
+import { TabItem } from '../tabs/tabs.type';
+import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 
 type AccordionItemProps = {
   selected: boolean;
@@ -17,13 +17,13 @@ export const AccordionItem = ({
   const ref = useRef<HTMLDivElement>(null);
 
   const selectedClasses = useMemo(() => {
-    return classNames("overflow-hidden", {
-      "max-h-[0px]": !selected && height > 0,
+    return classNames('overflow-hidden', {
+      'max-h-[0px]': !selected && height > 0,
     });
   }, [height, selected]);
 
   const loadElementHeight = () => {
-    console.log("height", height);
+    console.log('height', height);
     setHeight(ref.current?.clientHeight ?? 0);
   };
 
@@ -40,12 +40,12 @@ export const AccordionItem = ({
       <div
         onClick={() => onSelect()}
         className={`group py-6 border-t-2 transition-all cursor-pointer border-light flex-1 px-6 hover:border-secondary ${
-          selected ? "border-secondary" : ""
+          selected ? 'border-secondary' : ''
         }`}
       >
         <div
           className={`flex justify-between items-center text-light  group-hover:text-secondary ${
-            selected ? "text-secondary" : ""
+            selected ? 'text-secondary' : ''
           }`}
         >
           <span
@@ -54,7 +54,7 @@ export const AccordionItem = ({
             {name}
           </span>
           <span className="material-icons">
-            {selected ? "expand_less" : "expand_more"}
+            {selected ? 'expand_less' : 'expand_more'}
           </span>
         </div>
       </div>

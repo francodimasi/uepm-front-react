@@ -1,7 +1,7 @@
-import { ENDPOINTS } from "@api/endpoints.conts";
-import { PageResponse } from "@core/types";
-import { useRest } from "rest";
-import { Site, SitesParams } from "./site.types";
+import { ENDPOINTS } from '@api/endpoints.conts';
+import { PageResponse } from '@core/types';
+import { useRest } from 'rest';
+import { Site, SitesParams } from './site.types';
 
 export const useSite = () => {
   const { get } = useRest();
@@ -12,7 +12,7 @@ export const useSite = () => {
   };
 
   const getSites = async (
-    params: SitesParams = { verified: true, page: 1 }
+    params: SitesParams = { verified: true, page: 1 },
   ) => {
     const { verified = true, page = 1, query } = params;
 
@@ -22,7 +22,7 @@ export const useSite = () => {
     }
 
     const response = await get<PageResponse<Site>>(
-      `${ENDPOINTS.SITES}${queryParams}`
+      `${ENDPOINTS.SITES}${queryParams}`,
     );
     return response.page;
   };

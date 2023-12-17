@@ -1,9 +1,9 @@
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Swiper as SwiperType } from "swiper/types";
-import { TabsButtons } from "./TabsButtons";
-import { TabItem } from "./tabs.type";
-import { useCallback, useMemo, useState } from "react";
-import { EffectFade } from "swiper/modules";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper as SwiperType } from 'swiper/types';
+import { TabsButtons } from './TabsButtons';
+import { TabItem } from './tabs.type';
+import { useCallback, useMemo, useState } from 'react';
+import { EffectFade } from 'swiper/modules';
 
 type TabsProps = {
   items: TabItem[];
@@ -20,7 +20,7 @@ export const Tabs = ({ items }: TabsProps) => {
         swiper.slideTo(index);
       }
     },
-    [swiper]
+    [swiper],
   );
 
   const buttonItems = useMemo(() => {

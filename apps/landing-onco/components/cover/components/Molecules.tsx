@@ -1,8 +1,8 @@
-"use client";
-import { forwardRef } from "react";
+'use client';
+import { forwardRef } from 'react';
 
-import Image from "next/image";
-import elipses from "public/images/cover/elipses.png";
+import Image from 'next/image';
+import elipses from 'public/images/cover/elipses.png';
 
 export const Molecules = forwardRef<any, any>((props, ref) => {
   return (

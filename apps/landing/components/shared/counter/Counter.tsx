@@ -1,6 +1,6 @@
-"use client";
-import { useCountUp } from "use-count-up";
-import { CounterItem } from "./types/counter.type";
+'use client';
+import { useCountUp } from 'use-count-up';
+import { CounterItem } from './types/counter.type';
 
 export const Counter = ({ label, value, symbol }: CounterItem) => {
   const { value: counter } = useCountUp({

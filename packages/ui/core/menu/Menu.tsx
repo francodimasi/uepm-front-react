@@ -1,14 +1,14 @@
-"use client";
-import clsx from "clsx";
-import { Popover } from "@headlessui/react";
-import { AnimatePresence, motion } from "framer-motion";
-import { MenuProps, MenuItem } from "./Menu.types";
-import { MenuLink } from "./MenuLink";
-import { CloseIcon, MenuIcon } from "../icons";
+'use client';
+import clsx from 'clsx';
+import { Popover } from '@headlessui/react';
+import { AnimatePresence, motion } from 'framer-motion';
+import { MenuProps, MenuItem } from './Menu.types';
+import { MenuLink } from './MenuLink';
+import { CloseIcon, MenuIcon } from '../icons';
 
 export const Menu: React.FC<MenuProps> = ({ className, children, items }) => {
   return (
-    <div className={clsx("flex items-center gap-6", className)}>
+    <div className={clsx('flex items-center gap-6', className)}>
       <Popover className="lg:hidden">
         {({ open }) => (
           <>

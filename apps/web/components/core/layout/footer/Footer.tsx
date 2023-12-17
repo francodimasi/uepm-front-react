@@ -1,32 +1,32 @@
-"use client";
- 
-import Link from "next/link";
-import React from "react";
-import { Logo } from "ui/core/logo";
-import { FooterSection } from "./section";
-import { FooterSectionLinkProps } from "./section/FooterSection.types";
-import { Social } from "ui/core/social/Social";
-import { PrivacyPolicy, Terms } from "./t&c";
-import useTailwindBreakpoints from "ui/hooks/useTailwindBreakpoints";
+'use client';
+
+import Link from 'next/link';
+import React from 'react';
+import { Logo } from 'ui/core/logo';
+import { FooterSection } from './section';
+import { FooterSectionLinkProps } from './section/FooterSection.types';
+import { Social } from 'ui/core/social/Social';
+import { PrivacyPolicy, Terms } from './t&c';
+import useTailwindBreakpoints from 'ui/hooks/useTailwindBreakpoints';
 
 const patientLinks: FooterSectionLinkProps[] = [
-  { label: "Sponsors", link: "" },
-  { label: "Physicians", link: "" },
+  { label: 'Sponsors', link: '' },
+  { label: 'Physicians', link: '' },
 ];
 const aboutUsLinks: FooterSectionLinkProps[] = [
-  { label: "Our mission", link: "" },
-  { label: "The team", link: "" },
-  { label: "FAQs", link: "" },
+  { label: 'Our mission', link: '' },
+  { label: 'The team', link: '' },
+  { label: 'FAQs', link: '' },
 ];
 const newsLinks: FooterSectionLinkProps[] = [
-  { label: "Last news", link: "" },
-  { label: "Science", link: "" },
-  { label: "Studies", link: "" },
+  { label: 'Last news', link: '' },
+  { label: 'Science', link: '' },
+  { label: 'Studies', link: '' },
 ];
 const productsLinks: FooterSectionLinkProps[] = [
-  { label: "UEPM Patients", link: "" },
-  { label: "UEPM Onco", link: "" },
-  { label: "UEPM Physicians", link: "" },
+  { label: 'UEPM Patients', link: '' },
+  { label: 'UEPM Onco', link: '' },
+  { label: 'UEPM Physicians', link: '' },
 ];
 
 export const Footer: React.FC = () => {
@@ -70,7 +70,9 @@ export const Footer: React.FC = () => {
       ) : (
         <div className="grid grid-cols-2 px-4 py-2 sm:px-20 sm:py-8">
           <div className="flex flex-row justify-start items-center">
-            <div className="ms-2 me-4 p-2 text-light border border-solid">Language selector</div>
+            <div className="ms-2 me-4 p-2 text-light border border-solid">
+              Language selector
+            </div>
             <Terms className="mr-2" />
             <PrivacyPolicy />
           </div>

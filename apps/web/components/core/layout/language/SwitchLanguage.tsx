@@ -1,6 +1,6 @@
-"use client";
+'use client';
 
-import { useLanguage } from "i18n";
+import { useLanguage } from 'i18n';
 
 export const SwitchLanguage = () => {
   const { changeLanguage } = useLanguage();
@@ -8,10 +8,10 @@ export const SwitchLanguage = () => {
     <>
       <ul>
         <li>
-          <button onClick={() => changeLanguage("es")}>Switch to ES</button>
+          <button onClick={() => changeLanguage('es')}>Switch to ES</button>
         </li>
         <li>
-          <button onClick={() => changeLanguage("en")}>Switch to EN</button>
+          <button onClick={() => changeLanguage('en')}>Switch to EN</button>
         </li>
       </ul>
     </>

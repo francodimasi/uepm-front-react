@@ -1,10 +1,10 @@
-import { gsap, Power2 } from "gsap";
+import { gsap, Power2 } from 'gsap';
 
 export const mouseParallax = (
   e: MouseEvent,
   containerRef: HTMLDivElement,
   targetRef: HTMLDivElement,
-  movement: number
+  movement: number,
 ) => {
   const locationX = e.pageX;
   const LocationY = e.pageY;

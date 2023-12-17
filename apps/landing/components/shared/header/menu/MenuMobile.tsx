@@ -1,21 +1,21 @@
-"use client";
-import cx from "classnames";
-import Link from "next/link";
-import { useEffect } from "react";
-import { MenuProps } from "./Menu.types";
-import { LanguageSelector } from "./LanguageSelector";
+'use client';
+import cx from 'classnames';
+import Link from 'next/link';
+import { useEffect } from 'react';
+import { MenuProps } from './Menu.types';
+import { LanguageSelector } from './LanguageSelector';
 
 export const MenuMobile = ({ links, opened, breakpoint }: MenuProps) => {
-  const menuClasses = cx("right-full transition-transform", {
-    "translate-x-full": opened,
+  const menuClasses = cx('right-full transition-transform', {
+    'translate-x-full': opened,
   });
 
   useEffect(() => {
     if (opened) {
-      document.body.classList.add("overflow-hidden");
+      document.body.classList.add('overflow-hidden');
       document.body.classList.add(`${breakpoint}:overflow-visible`);
     } else {
-      document.body.classList.remove("overflow-hidden");
+      document.body.classList.remove('overflow-hidden');
       document.body.classList.remove(`${breakpoint}:overflow-visible`);
     }
   }, [opened, breakpoint]);

@@ -1,5 +1,5 @@
-import { PostSearch } from "./PostSearch";
-import { PostTabs } from "./PostTabs";
+import { PostSearch } from './PostSearch';
+import { PostTabs } from './PostTabs';
 
 export const PostListHeader = () => {
   return (

@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import { Pagination } from "@components/pagination/Pagination";
-import { useBlogStore } from "@store/useBlogStore";
-import { PostList } from "./PostList";
-import { PostListHeader } from "./PostListHeader";
+import { Pagination } from '@components/pagination/Pagination';
+import { useBlogStore } from '@store/useBlogStore';
+import { PostList } from './PostList';
+import { PostListHeader } from './PostListHeader';
 
 export const MainPostList = () => {
   const { category } = useBlogStore();

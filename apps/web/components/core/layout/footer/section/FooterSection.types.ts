@@ -1,4 +1,4 @@
-import { PropsWithClassName } from "ui/types/core";
+import { PropsWithClassName } from 'ui/types/core';
 
 export type FooterSectionLinkProps = PropsWithClassName & {
   label: string;
