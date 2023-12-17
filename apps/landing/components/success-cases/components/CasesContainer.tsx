@@ -1,15 +1,15 @@
-"use client";
+'use client';
 
-import { useEffect, useState, useContext, useMemo } from "react";
-import { Pagination } from "swiper/modules";
-import { BREAKPOINTS } from "ui";
-import { CaseCard, CaseCardProps } from "./CaseCard";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { LanguageContext, useClientTranslation } from "i18n";
+import { useEffect, useState, useContext, useMemo } from 'react';
+import { Pagination } from 'swiper/modules';
+import { BREAKPOINTS } from 'ui';
+import { CaseCard, CaseCardProps } from './CaseCard';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { LanguageContext, useClientTranslation } from 'i18n';
 
 export const CasesContainer = () => {
   const { lang } = useContext(LanguageContext);
-  const { t } = useClientTranslation(lang, { keyPrefix: "successCases.cases" });
+  const { t } = useClientTranslation(lang, { keyPrefix: 'successCases.cases' });
   const [showSwiper, setShowSwiper] = useState<boolean>(false);
 
   const switchSlider = () => {
@@ -19,41 +19,41 @@ export const CasesContainer = () => {
 
   useEffect(() => {
     switchSlider();
-    window.addEventListener("resize", switchSlider);
+    window.addEventListener('resize', switchSlider);
 
     return () => {
-      window.removeEventListener("resize", switchSlider);
+      window.removeEventListener('resize', switchSlider);
     };
   }, []);
 
   const cases: CaseCardProps[] = useMemo(
     () => [
       {
-        title: t("esclerosis.title"),
-        text: t("esclerosis.text"),
-        label: t("esclerosis.label"),
+        title: t('esclerosis.title'),
+        text: t('esclerosis.text'),
+        label: t('esclerosis.label'),
         value: 50,
       },
       {
-        title: t("crohn.title"),
-        text: t("crohn.text"),
-        label: t("crohn.label"),
+        title: t('crohn.title'),
+        text: t('crohn.text'),
+        label: t('crohn.label'),
         value: 75,
       },
       {
-        title: t("esquizofrenia.title"),
-        text: t("esquizofrenia.text"),
-        label: t("esquizofrenia.label"),
+        title: t('esquizofrenia.title'),
+        text: t('esquizofrenia.text'),
+        label: t('esquizofrenia.label'),
         value: 68,
       },
       {
-        title: t("esclerosis.title"),
-        text: t("esclerosis.text"),
-        label: t("esclerosis.label"),
+        title: t('esclerosis.title'),
+        text: t('esclerosis.text'),
+        label: t('esclerosis.label'),
         value: 92,
       },
     ],
-    []
+    [],
   );
 
   const SwiperContainer = () => {
@@ -66,8 +66,8 @@ export const CasesContainer = () => {
         pagination={{
           clickable: true,
           enabled: true,
-          bulletClass: "swiper-pagination-bullet !top-1 !relative",
-          bulletActiveClass: "swiper-pagination-bullet-active",
+          bulletClass: 'swiper-pagination-bullet !top-1 !relative',
+          bulletActiveClass: 'swiper-pagination-bullet-active',
         }}
         breakpoints={{
           [BREAKPOINTS.md]: {

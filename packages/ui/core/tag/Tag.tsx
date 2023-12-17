@@ -1,5 +1,5 @@
-import { TagProps } from "./Tag.types";
-import clsx from "clsx";
+import { TagProps } from './Tag.types';
+import clsx from 'clsx';
 
 export const Tag: React.FC<TagProps> = ({
   text,
@@ -10,7 +10,7 @@ export const Tag: React.FC<TagProps> = ({
     <div
       className={clsx(
         "text-black text-base font-normal font-['DMSans'] leading-none p-1",
-        className
+        className,
       )}
       onClick={onClickHandler}
     >

@@ -1,16 +1,16 @@
-"use client";
+'use client';
 
-import { useState, useEffect, useMemo } from "react";
-import { MEDIA_BREAKPOINTS } from "../constants";
+import { useState, useEffect, useMemo } from 'react';
+import { MEDIA_BREAKPOINTS } from '../constants';
 
 const useTailwindBreakpoints = (): {
   currentBreakpoint: string;
   isMobile: boolean;
 } => {
-  const [currentBreakpoint, setCurrentBreakpoint] = useState<string>("sm");
+  const [currentBreakpoint, setCurrentBreakpoint] = useState<string>('sm');
 
   const isMobile = useMemo(() => {
-    return currentBreakpoint === "xs" || currentBreakpoint === "sm";
+    return currentBreakpoint === 'xs' || currentBreakpoint === 'sm';
   }, [currentBreakpoint]);
 
   useEffect(() => {
@@ -25,10 +25,10 @@ const useTailwindBreakpoints = (): {
 
     updateBreakpoint();
 
-    window.addEventListener("resize", updateBreakpoint);
+    window.addEventListener('resize', updateBreakpoint);
 
     return () => {
-      window.removeEventListener("resize", updateBreakpoint);
+      window.removeEventListener('resize', updateBreakpoint);
     };
   }, []);
 

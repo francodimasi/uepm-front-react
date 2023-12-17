@@ -1,6 +1,6 @@
-"use client";
-import { createContext } from "react";
-import { LanguageProviderProps, LanguageProviderValue } from "./types";
+'use client';
+import { createContext } from 'react';
+import { LanguageProviderProps, LanguageProviderValue } from './types';
 
 export const LanguageContext = createContext({} as LanguageProviderValue);
 

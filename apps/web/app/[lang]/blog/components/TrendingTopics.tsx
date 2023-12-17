@@ -1,7 +1,10 @@
-import { Tag } from "ui";
+import { Tag } from 'ui';
 
-export const TrendingTopics = ({tags}: {tags: {id: number, text: string}[]}) => {
-
+export const TrendingTopics = ({
+  tags,
+}: {
+  tags: { id: number; text: string }[];
+}) => {
   return (
     <div className="flex-col justify-start items-start gap-8 flex">
       <div className="text-2xl font-semibold font-['Lexend'] leading-7 text-primary">
@@ -10,7 +13,11 @@ export const TrendingTopics = ({tags}: {tags: {id: number, text: string}[]}) => 
       </div>
       <div className="flex flex-row flex-wrap gap-2">
         {tags.map((tag) => (
-          <Tag text={tag.text} key={tag.id} className="lowercase rounded-md bg-gray-light px-2 py-2 text-sm" />
+          <Tag
+            text={tag.text}
+            key={tag.id}
+            className="lowercase rounded-md bg-gray-light px-2 py-2 text-sm"
+          />
         ))}
       </div>
     </div>

@@ -1,11 +1,11 @@
-"use client";
+'use client';
 
-import { useCallback, useContext, useMemo } from "react";
-import { SitesContext } from "../../sites/SitesProvider";
-import { Counter } from "./Counter";
-import { CounterItem } from "./types/counter.type";
-import { Site } from "@components/sites/types/sites.type";
-import { LanguageContext, useClientTranslation } from "i18n";
+import { useCallback, useContext, useMemo } from 'react';
+import { SitesContext } from '../../sites/SitesProvider';
+import { Counter } from './Counter';
+import { CounterItem } from './types/counter.type';
+import { Site } from '@components/sites/types/sites.type';
+import { LanguageContext, useClientTranslation } from 'i18n';
 
 export const CounterWrapper = ({
   name,
@@ -16,28 +16,28 @@ export const CounterWrapper = ({
 }: Site) => {
   const { selected } = useContext(SitesContext);
   const { lang } = useContext(LanguageContext);
-  const { t } = useClientTranslation(lang, { keyPrefix: "sites.counter" });
+  const { t } = useClientTranslation(lang, { keyPrefix: 'sites.counter' });
 
   const counterData: CounterItem[] = useMemo(
     () => [
       {
-        label: t("specialists"),
+        label: t('specialists'),
         value: specialists,
       },
       {
-        label: t("clinics"),
+        label: t('clinics'),
         value: clinics,
       },
       {
-        label: t("cities"),
+        label: t('cities'),
         value: cities,
       },
       {
-        label: t("specialities"),
+        label: t('specialities'),
         value: specialities,
       },
     ],
-    [cities, clinics, specialists, specialities]
+    [cities, clinics, specialists, specialities],
   );
 
   const CounterList = useCallback(
@@ -54,7 +54,7 @@ export const CounterWrapper = ({
       </>
     ),
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [selected]
+    [selected],
   );
 
   return <CounterList />;

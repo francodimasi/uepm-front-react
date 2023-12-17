@@ -33,7 +33,7 @@ export const PrivacyAndPolicy = () => {
             </p>
             <h2>AUTORIZACIÓN</h2>
             <p>
-              {" "}
+              {' '}
               Al utilizar el sitio o proporcionarnos información personal, usted
               está aceptando los términos de uso descriptos en
               www.unensayoparami.org y prácticas descriptas en esta Política de
@@ -75,7 +75,7 @@ export const PrivacyAndPolicy = () => {
               Los usuarios de UN ENSAYO PARA MÍ deberán hacer uso responsable de
               su cuenta y los servicios provistos por UN ENSAYO PARA MÍ. En
               cualquier momento, Ud. podrá solicitar la baja como usuario y la
-              eliminación de su cuenta.{" "}
+              eliminación de su cuenta.{' '}
             </p>
             <h2>COOKIES</h2>
             <p>
@@ -127,7 +127,7 @@ export const PrivacyAndPolicy = () => {
             <p>
               UN ENSAYO PARA MI procederá a destruir aquellos datos que hayan
               dejado de ser necesarios o pertinentes a los fines para los cuales
-              hubiesen sido recolectados.{" "}
+              hubiesen sido recolectados.{' '}
             </p>
             <h2>USO DE LOS DATOS PERSONALES</h2>
             <p>
@@ -249,7 +249,7 @@ export const PrivacyAndPolicy = () => {
               disposiciones contenidas en cualquier eventual consentimiento
               expreso que Usted nos otorgue por separado, relativo al
               procesamiento de sus datos con fines específicos, como puede ser
-              el que solicite al momento de acceder a un ensayo o campaña.{" "}
+              el que solicite al momento de acceder a un ensayo o campaña.{' '}
             </p>
             <p>
               Esta Política de Privacidad podrá ser modificada por UN ENSAYO

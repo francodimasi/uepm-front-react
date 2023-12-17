@@ -1,9 +1,9 @@
-import { dir } from "i18next";
-import "ui/styles.css";
-import "@styles/globals.css";
-import "swiper/swiper-bundle.css";
-import { Providers } from "@core/Providers";
-import dayjs from "dayjs";
+import { dir } from 'i18next';
+import 'ui/styles.css';
+import '@styles/globals.css';
+import 'swiper/swiper-bundle.css';
+import { Providers } from '@core/Providers';
+import dayjs from 'dayjs';
 
 export default function RootLayout({
   children,
@@ -28,7 +28,7 @@ export default function RootLayout({
 export async function generateStaticParams() {
   return [
     //Languages not listed here will be dinamycally generated on request time
-    { lang: "es" },
-    { lang: "en" }
+    { lang: 'es' },
+    { lang: 'en' },
   ];
 }

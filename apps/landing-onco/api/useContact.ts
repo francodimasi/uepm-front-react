@@ -1,10 +1,10 @@
-import { useRest } from "rest";
-import dayjs from "dayjs";
-import { ContactRequest } from "@components/contact/contact.type";
+import { useRest } from 'rest';
+import dayjs from 'dayjs';
+import { ContactRequest } from '@components/contact/contact.type';
 
 const mondayApiKey = process.env.NEXT_PUBLIC_MONDAY_API_KEY;
-const groupId = "grupo_nuevo";
-const boardId = "5210496844";
+const groupId = 'grupo_nuevo';
+const boardId = '5210496844';
 
 export const useContact = () => {
   const { post } = useRest();
@@ -16,7 +16,7 @@ export const useContact = () => {
     nombre,
     whatsapp,
   }: ContactRequest) => {
-    const date = dayjs().format("YYYY-MM-DD");
+    const date = dayjs().format('YYYY-MM-DD');
     const fullName = `${nombre} ${apellido}`;
     const item = {
       texto8: email,
@@ -35,9 +35,9 @@ export const useContact = () => {
                 ) 
                 { id }
             }
-        `.replace(/(\r\n|\n|\r)/gm, "");
+        `.replace(/(\r\n|\n|\r)/gm, '');
 
-    return post("https://api.monday.com/v2", {
+    return post('https://api.monday.com/v2', {
       customToken: mondayApiKey,
       data: {
         query,

@@ -1,6 +1,6 @@
-"use client";
+'use client';
 
-import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 export type TabItem = {
   name: string;
@@ -24,7 +24,7 @@ export const Tabs = ({ items, selected, onChange }: TabsProps) => {
         <SwiperSlide
           key={index}
           className={`cursor-pointer ${
-            id === selected ? "border-b-2" : "border-b-1 border-gray-medium"
+            id === selected ? 'border-b-2' : 'border-b-1 border-gray-medium'
           } hover:border-b-2`}
           onClick={() => onChange(id)}
         >

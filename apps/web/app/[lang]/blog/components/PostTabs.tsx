@@ -1,11 +1,11 @@
-"use client";
+'use client';
 
-import { BlogCategoryTag } from "@api/blog/types/blog.types";
-import { useBlog } from "@api/blog/useBlog";
-import { useBlogStore } from "@store/useBlogStore";
-import { useMemo } from "react";
-import { useQuery } from "react-query";
-import { Tabs } from "ui";
+import { BlogCategoryTag } from '@api/blog/types/blog.types';
+import { useBlog } from '@api/blog/useBlog';
+import { useBlogStore } from '@store/useBlogStore';
+import { useMemo } from 'react';
+import { useQuery } from 'react-query';
+import { Tabs } from 'ui';
 
 export const PostTabs = () => {
   const { category, setCategory } = useBlogStore();
@@ -16,7 +16,7 @@ export const PostTabs = () => {
   };
 
   const { data } = useQuery({
-    queryKey: "post_categories",
+    queryKey: 'post_categories',
     queryFn: getCategories,
     onSuccess: loadCategory,
   });

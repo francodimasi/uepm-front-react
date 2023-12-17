@@ -1,17 +1,17 @@
-import LocalStorageBackend from "i18next-localstorage-backend";
-import HttpApi from "i18next-http-backend";
-import { InitOptions } from "i18next";
+import LocalStorageBackend from 'i18next-localstorage-backend';
+import HttpApi from 'i18next-http-backend';
+import { InitOptions } from 'i18next';
 
 /**
  * @todo replace translation paths
  */
-const LOCAL_TRANSLATIONS_PATH = "locales/{{lng}}/translation.json";
+const LOCAL_TRANSLATIONS_PATH = 'locales/{{lng}}/translation.json';
 const EXTERNAL_TRANSLATIONS_PATH = `https://trialtech-qa.ams3.digitaloceanspaces.com/translations/{{lng}}.json`;
 
 const cached = false;
-const fallbackLang = "en";
-export const runsOnServerSide = typeof window === "undefined";
-export const namespace = "translation";
+const fallbackLang = 'en';
+export const runsOnServerSide = typeof window === 'undefined';
+export const namespace = 'translation';
 
 export const getOptions = (lng = fallbackLang) => {
   const backends = [LocalStorageBackend, HttpApi];
@@ -36,7 +36,7 @@ export const getOptions = (lng = fallbackLang) => {
     },
     fallbackLng: fallbackLang,
     lng,
-    load: "languageOnly",
+    load: 'languageOnly',
     ns: namespace,
     debug: false,
     interpolation: {

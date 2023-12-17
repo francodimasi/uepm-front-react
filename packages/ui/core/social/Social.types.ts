@@ -1,4 +1,4 @@
-import { PropsWithClassName } from "../../types/core";
+import { PropsWithClassName } from '../../types/core';
 
 export type SocialNetwork = {
   icon: string;
@@ -8,6 +8,6 @@ export type SocialNetwork = {
 
 export type SocialProps = PropsWithClassName & {
   networks?: SocialNetwork[];
-  color?: "light" | "dark";
-  size?: "sm" | "md" | "lg";
+  color?: 'light' | 'dark';
+  size?: 'sm' | 'md' | 'lg';
 };

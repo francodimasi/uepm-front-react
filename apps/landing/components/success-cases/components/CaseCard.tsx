@@ -1,4 +1,4 @@
-import { Counter } from "../../shared/counter/Counter";
+import { Counter } from '../../shared/counter/Counter';
 export type CaseCardProps = {
   value: number;
   label: string;

@@ -1,10 +1,10 @@
-import { useContext, useEffect, useState } from "react";
-import { EffectFade } from "swiper/modules";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Swiper as SwiperType } from "swiper/types";
-import { CounterWrapper } from "../../shared/counter/CounterWrapper";
-import { SitesContext } from "../SitesProvider";
-import { useSites } from "../hooks/useSites";
+import { useContext, useEffect, useState } from 'react';
+import { EffectFade } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper as SwiperType } from 'swiper/types';
+import { CounterWrapper } from '../../shared/counter/CounterWrapper';
+import { SitesContext } from '../SitesProvider';
+import { useSites } from '../hooks/useSites';
 
 export const SiteSwiper = () => {
   const [swiper, setSwiper] = useState<SwiperType>();

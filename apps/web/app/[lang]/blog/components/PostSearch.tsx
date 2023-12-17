@@ -1,6 +1,6 @@
-import { useCallback, useState } from "react";
-import { PostSearchInput } from "./PostSearchInput";
-import { useDetectClickOutside } from "react-detect-click-outside";
+import { useCallback, useState } from 'react';
+import { PostSearchInput } from './PostSearchInput';
+import { useDetectClickOutside } from 'react-detect-click-outside';
 
 export const PostSearch = () => {
   const [open, setOpen] = useState(false);
@@ -9,7 +9,7 @@ export const PostSearch = () => {
   const handleSubmit = useCallback((e: any) => {
     e.preventDefault();
     /**@todo add search funcionality */
-    console.log("search");
+    console.log('search');
   }, []);
 
   return (

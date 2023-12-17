@@ -1,7 +1,7 @@
-import { useMotionValue } from "framer-motion";
-import { ResourceItem } from "../types/resource.type";
-import Image from "next/image";
-import { ResourcePattern } from "./ResourcePattern";
+import { useMotionValue } from 'framer-motion';
+import { ResourceItem } from '../types/resource.type';
+import Image from 'next/image';
+import { ResourcePattern } from './ResourcePattern';
 
 export const Resource = ({ name, icon, description }: ResourceItem) => {
   let mouseX = useMotionValue(0);

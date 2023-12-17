@@ -1,13 +1,12 @@
-"use client";
+'use client';
 
-import { PostList } from "./PostList";
+import { PostList } from './PostList';
 
 export const SuggestedPost = () => {
   return (
     <div className="flex-col justify-start items-start gap-8 inline-flex">
       {/*@todo Pending translation*/}
-      <div
-        className="text-teal-600 text-2xl font-semibold font-['Lexend'] leading-7 text-primary">
+      <div className="text-teal-600 text-2xl font-semibold font-['Lexend'] leading-7 text-primary">
         Seleccion del Editor
       </div>
       <PostList

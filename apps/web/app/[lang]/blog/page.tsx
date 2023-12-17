@@ -1,13 +1,11 @@
-
-import { ENDPOINTS } from "@api/endpoints.conts";
-import { Layout } from "@components/core/layout/Layout";
-import { SuggestedPost } from "./components/SuggestedPost";
-import { TrendingTopics } from "./components/TrendingTopics";
-import { MainPostList } from "./components/MainPostList";
-
+import { ENDPOINTS } from '@api/endpoints.conts';
+import { Layout } from '@components/core/layout/Layout';
+import { SuggestedPost } from './components/SuggestedPost';
+import { TrendingTopics } from './components/TrendingTopics';
+import { MainPostList } from './components/MainPostList';
 
 export default async function Page({ params }) {
-  const newTags = await getTags()
+  const newTags = await getTags();
 
   return (
     <Layout>
@@ -27,16 +25,12 @@ export default async function Page({ params }) {
 }
 
 async function getTags() {
-  const res = await fetch(
-    ENDPOINTS.BLOG.TAGS,
-    {
-      next: { revalidate: 3600 },// 60*60 = 1 hour
-    }
-  );
-  const data = await res.json()
-  const newTags: {id: number, text: string}[] = data.map( (tag) => {
-    return {id: tag.id, text: tag.name} 
-  })
-  return newTags
+  const res = await fetch(ENDPOINTS.BLOG.TAGS, {
+    next: { revalidate: 3600 }, // 60*60 = 1 hour
+  });
+  const data = await res.json();
+  const newTags: { id: number; text: string }[] = data.map((tag) => {
+    return { id: tag.id, text: tag.name };
+  });
+  return newTags;
 }
-

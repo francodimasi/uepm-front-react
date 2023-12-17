@@ -1,16 +1,16 @@
-import Link from "next/link";
-import { Logo } from "ui/core/logo";
-import { Menu } from "ui/core/menu";
-import { Social } from "ui/core/social";
-import { NavLinks } from ".";
+import Link from 'next/link';
+import { Logo } from 'ui/core/logo';
+import { Menu } from 'ui/core/menu';
+import { Social } from 'ui/core/social';
+import { NavLinks } from '.';
 
 const links = [
-  { label: "Patients", href: "/" },
-  { label: "Sponsors", href: "/partners" },
-  { label: "Physicians", href: "/" },
-  { label: "About us", href: "/about" },
-  { label: "Blog", href: "/blog" },
-  { label: "Products", href: "/" },
+  { label: 'Patients', href: '/' },
+  { label: 'Sponsors', href: '/partners' },
+  { label: 'Physicians', href: '/' },
+  { label: 'About us', href: '/about' },
+  { label: 'Blog', href: '/blog' },
+  { label: 'Products', href: '/' },
 ];
 
 export const Header = () => {
