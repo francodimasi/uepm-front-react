@@ -2,13 +2,7 @@
   "private": true,
   "scripts": {
     "build": "turbo run build",
-    "build:web": "turbo run build --filter=./apps/web",
-    "build:landing": "turbo run build --filter=./apps/landing",
-    "build:onco": "turbo run build --filter=./apps/landing-onco",
     "dev": "turbo run dev",
-    "dev:web": "turbo run dev --filter=./apps/web",
-    "dev:landing": "turbo run dev --filter=./apps/landing",
-    "dev:onco": "turbo run dev --filter=./apps/landing-onco",
     "lint": "turbo run lint&&turbo run lint --filter=./apps/web",
     "format": "prettier --write \"**/*.{js,ts,tsx,md}\""
   },
