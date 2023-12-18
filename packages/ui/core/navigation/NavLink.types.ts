@@ -1,4 +1,4 @@
-import { PropsWithClassName } from "../../types/core";
+import { PropsWithClassName } from '../../types/core';
 
 export type NavLinkProps = PropsWithClassName & {
   label: string;

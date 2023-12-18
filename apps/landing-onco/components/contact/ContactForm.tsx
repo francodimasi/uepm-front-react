@@ -1,13 +1,13 @@
-"use client";
+'use client';
 
-import { Controller, useForm } from "react-hook-form";
-import { LandingButton } from "ui";
-import { ContactInput } from "./ContactInput";
-import { ContactRequest } from "./contact.type";
-import { useCallback, useContext, useState } from "react";
-import { LanguageContext, useClientTranslation } from "i18n";
-import { useContact } from "@api/useContact";
-import ReCAPTCHA from "react-google-recaptcha";
+import { Controller, useForm } from 'react-hook-form';
+import { LandingButton } from 'ui';
+import { ContactInput } from './ContactInput';
+import { ContactRequest } from './contact.type';
+import { useCallback, useContext, useState } from 'react';
+import { LanguageContext, useClientTranslation } from 'i18n';
+import { useContact } from '@api/useContact';
+import ReCAPTCHA from 'react-google-recaptcha';
 
 const recaptchaKey = process.env.NEXT_PUBLIC_RECAPTCHA_API_KEY;
 
@@ -16,7 +16,7 @@ type ContactFormProps = {
 };
 export const ContactForm = ({ onSend }: ContactFormProps) => {
   const { lang } = useContext(LanguageContext);
-  const { t } = useClientTranslation(lang, { keyPrefix: "contact.inputs" });
+  const { t } = useClientTranslation(lang, { keyPrefix: 'contact.inputs' });
   const { sendContact } = useContact();
 
   const [loading, setLoading] = useState(false);
@@ -29,11 +29,11 @@ export const ContactForm = ({ onSend }: ContactFormProps) => {
     formState: { isValid },
   } = useForm<ContactRequest>({
     defaultValues: {
-      nombre: "",
-      apellido: "",
-      email: "",
-      whatsapp: "",
-      especialidad: "",
+      nombre: '',
+      apellido: '',
+      email: '',
+      whatsapp: '',
+      especialidad: '',
     },
   });
 
@@ -51,7 +51,7 @@ export const ContactForm = ({ onSend }: ContactFormProps) => {
     setData(data);
   };
 
-  const inputClasses = "col-span-2 sm:col-span-1";
+  const inputClasses = 'col-span-2 sm:col-span-1';
 
   return (
     <>
@@ -66,7 +66,7 @@ export const ContactForm = ({ onSend }: ContactFormProps) => {
             disabled={loading}
             rules={{ required: true }}
             render={({ field }) => (
-              <ContactInput label={t("name")} type="text" {...field} />
+              <ContactInput label={t('name')} type="text" {...field} />
             )}
           />
         </div>
@@ -77,9 +77,9 @@ export const ContactForm = ({ onSend }: ContactFormProps) => {
             disabled={loading}
             rules={{ required: true }}
             render={({ field }) => (
-              <ContactInput label={t("lastName")} type="text" {...field} />
+              <ContactInput label={t('lastName')} type="text" {...field} />
             )}
-          />{" "}
+          />{' '}
         </div>
         <div className={inputClasses}>
           <Controller
@@ -88,7 +88,7 @@ export const ContactForm = ({ onSend }: ContactFormProps) => {
             disabled={loading}
             rules={{ required: true }}
             render={({ field }) => (
-              <ContactInput label={t("speciality")} type="text" {...field} />
+              <ContactInput label={t('speciality')} type="text" {...field} />
             )}
           />
         </div>
@@ -99,7 +99,7 @@ export const ContactForm = ({ onSend }: ContactFormProps) => {
             disabled={loading}
             rules={{ required: true }}
             render={({ field }) => (
-              <ContactInput label={t("email")} type="email" {...field} />
+              <ContactInput label={t('email')} type="email" {...field} />
             )}
           />
         </div>
@@ -110,7 +110,7 @@ export const ContactForm = ({ onSend }: ContactFormProps) => {
             disabled={loading}
             rules={{ required: true }}
             render={({ field }) => (
-              <ContactInput label={t("whatsapp")} type="tel" {...field} />
+              <ContactInput label={t('whatsapp')} type="tel" {...field} />
             )}
           />
         </div>
@@ -124,7 +124,7 @@ export const ContactForm = ({ onSend }: ContactFormProps) => {
             disabled={!isValid || loading}
             onClick={() => {}}
           >
-            {t("button")}
+            {t('button')}
           </LandingButton>
         </div>
       </form>

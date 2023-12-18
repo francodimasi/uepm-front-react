@@ -1,17 +1,8 @@
-"use client";
+'use client';
 
-import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { TabsProps } from './Tabs.types';
 
-export type TabItem = {
-  name: string;
-  id: number;
-};
-
-export type TabsProps = {
-  items: TabItem[];
-  selected: number;
-  onChange: (id: number) => void;
-};
 export const Tabs = ({ items, selected, onChange }: TabsProps) => {
   return (
     <Swiper
@@ -24,7 +15,7 @@ export const Tabs = ({ items, selected, onChange }: TabsProps) => {
         <SwiperSlide
           key={index}
           className={`cursor-pointer ${
-            id === selected ? "border-b-2" : "border-b-1 border-gray-medium"
+            id === selected ? 'border-b-2' : 'border-b-1 border-gray-medium'
           } hover:border-b-2`}
           onClick={() => onChange(id)}
         >

@@ -1,25 +1,25 @@
-import Image from "next/image";
-import Link from "next/link";
-import { useContext, useMemo } from "react";
-import facebook from "ui/assets/icons/social/facebook-dark.svg";
-import instagram from "ui/assets/icons/social/instagram-dark.svg";
-import linkedin from "ui/assets/icons/social/linkedin-dark.svg";
-import logo from "public/images/trialtech-logo.svg";
-import { SwitchLanguage } from "ui";
-import { Language, LanguageContext, useClientTranslation } from "i18n";
-import { useMenu } from "@hooks/useMenu";
+import Image from 'next/image';
+import Link from 'next/link';
+import { useContext, useMemo } from 'react';
+import facebook from 'ui/assets/icons/social/facebook-light.svg';
+import instagram from 'ui/assets/icons/social/instagram-light.svg';
+import linkedin from 'ui/assets/icons/social/linkedin-light.svg';
+import logo from 'public/images/trialtech-logo.svg';
+import { SwitchLanguage } from 'ui';
+import { Language, LanguageContext, useClientTranslation } from 'i18n';
+import { useMenu } from '@hooks/useMenu';
 
 export const Footer = () => {
   const { lang } = useContext(LanguageContext);
-  const { t } = useClientTranslation(lang, { keyPrefix: "footer" });
+  const { t } = useClientTranslation(lang, { keyPrefix: 'footer' });
 
   const { links, languages } = useMenu();
 
   const social = useMemo(() => {
     return [
-      { icon: linkedin, alt: "Linkedin" },
-      { icon: instagram, alt: "Instagram" },
-      { icon: facebook, alt: "Facebook" },
+      { icon: linkedin, alt: 'Linkedin' },
+      { icon: instagram, alt: 'Instagram' },
+      { icon: facebook, alt: 'Facebook' },
     ];
   }, []);
 
@@ -53,15 +53,15 @@ export const Footer = () => {
               ))}
             </div>
             <div className="flex flex-col justify-end mt-16 sm:items-end lg:flex-row sm:mt-5 text-light">
-              <Link href="">{t("terms")}</Link>
+              <Link href="">{t('terms')}</Link>
               <Link className="mt-2 sm:mt-0 sm:ml-4" href="">
-                {t("policy")}
+                {t('policy')}
               </Link>
             </div>
           </div>
         </div>
         <div className="flex mt-6">
-          <span className="mr-2 text-light">{t("language")}</span>
+          <span className="mr-2 text-light">{t('language')}</span>
           <SwitchLanguage className="text-light" languages={languages} />
         </div>
       </div>

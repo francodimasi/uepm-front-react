@@ -1,5 +1,5 @@
-import { type } from "os";
-import { forwardRef } from "react";
+import { type } from 'os';
+import { forwardRef } from 'react';
 
 type ContactInputProps = {
   label: string;
@@ -22,5 +22,5 @@ export const ContactInput = forwardRef<any, ContactInputProps>(
         />
       </div>
     );
-  }
+  },
 );

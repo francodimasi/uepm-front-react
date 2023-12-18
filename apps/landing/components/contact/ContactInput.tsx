@@ -1,4 +1,4 @@
-import { forwardRef } from "react";
+import { forwardRef } from 'react';
 
 type ContactInputProps = {
   label: string;
@@ -21,5 +21,5 @@ export const ContactInput = forwardRef<any, ContactInputProps>(
         />
       </div>
     );
-  }
+  },
 );

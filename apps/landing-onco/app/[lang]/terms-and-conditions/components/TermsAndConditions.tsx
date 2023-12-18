@@ -22,7 +22,7 @@ export const TermsAndConditions = () => {
               atentamente los “Términos de uso”, los cuales describen las
               modalidades y condiciones -conforme lo establecido en la normativa
               vigente en la República Argentina- aplicables a la navegación y/o
-              uso y/o suscripción al presente sitio.{" "}
+              uso y/o suscripción al presente sitio.{' '}
             </p>
             <p>
               Definiciones. A lo largo de estos “Términos de uso”, las palabras
@@ -112,7 +112,7 @@ export const TermsAndConditions = () => {
               por los Centros de Investigación, y/o visitantes en nuestro sitio.
               Cualquier información o material enviado por los usuarios
               representa sus propios puntos de vista y de ningún modo UN ENSAYO
-              PARA MI resulta abarcado por dichas posturas.{" "}
+              PARA MI resulta abarcado por dichas posturas.{' '}
             </p>
             <p>
               UN ENSAYO PARA MI no garantiza la veracidad de la información
@@ -306,7 +306,7 @@ export const TermsAndConditions = () => {
             <p>
               Manifestaciones o acciones de los usuarios. Cada usuario será
               exclusivo responsable por el contenido que vierta o las acciones
-              que lleve adelante dentro del marco del sitio.{" "}
+              que lleve adelante dentro del marco del sitio.{' '}
             </p>
             <p>
               Usted acuerda y garantiza que no enviará contenido que viole o
@@ -387,7 +387,7 @@ export const TermsAndConditions = () => {
             <p>
               UN ENSAYO PARA MI tiene el derecho pero no la obligación de
               eliminar o editar contenido de usuario, pero no revisa
-              regularmente el contenido de usuario.{" "}
+              regularmente el contenido de usuario.{' '}
             </p>
             <p>
               Limitación a la responsabilidad. El sitio no será responsable de
@@ -462,7 +462,7 @@ export const TermsAndConditions = () => {
             <p>
               El uso de este sitio Web no está autorizado en aquellas
               jurisdicciones en que no se satisfagan todas las provisiones de
-              los presentes Términos de uso.{" "}
+              los presentes Términos de uso.{' '}
             </p>
             <p>
               Un Ensayo para Mí cumple lo establecido en la Ley Federal de

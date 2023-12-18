@@ -1,13 +1,13 @@
-import { ENDPOINTS } from "@api/endpoints.conts";
-import { useRest } from "rest";
+import { ENDPOINTS } from '@api/endpoints.conts';
+import { useRest } from 'rest';
 import {
   BlogCategoryTag,
   BlogPost,
   BlogPostFilterParams,
   BlogPostParams,
   VotePostRequest,
-} from "./types/blog.types";
-import { BlogAuthor } from "./types/author.types";
+} from './types/blog.types';
+import { BlogAuthor } from './types/author.types';
 
 export const useBlog = () => {
   const { get, post } = useRest();
@@ -47,7 +47,7 @@ export const useBlog = () => {
       `${ENDPOINTS.BLOG.VOTE}`,
       {
         data: req,
-      }
+      },
     );
   };
 
@@ -58,25 +58,25 @@ export const useBlog = () => {
 
   const getPostList = async (params: BlogPostFilterParams) => {
     const defaultParams = {
-      context: "embed",
-      status: "publish",
+      context: 'embed',
+      status: 'publish',
       per_page: 3,
     };
 
     const allParams: BlogPostParams = { ...defaultParams, ...params };
-    let queryParams = "?";
+    let queryParams = '?';
     const keys = Object.keys(allParams);
 
     keys.forEach((key, index) => {
       if (allParams[key]) {
-        const and = index < keys.length - 1 ? "&" : "";
+        const and = index < keys.length - 1 ? '&' : '';
         let query = `${key}=${allParams[key]}`;
         queryParams += `${query}${and}`;
       }
     });
 
-        const response = await get<BlogPost[]>(
-      `${ENDPOINTS.BLOG.POSTS}${queryParams}`
+    const response = await get<BlogPost[]>(
+      `${ENDPOINTS.BLOG.POSTS}${queryParams}`,
     );
 
     return response;

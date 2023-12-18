@@ -1,4 +1,4 @@
-import { BASE_URL, BLOG_BASE_URL } from "@core/constants";
+import { BASE_URL, BLOG_BASE_URL } from '@core/constants';
 
 export const ENDPOINTS = {
   SITES: `${BASE_URL}/sites`,

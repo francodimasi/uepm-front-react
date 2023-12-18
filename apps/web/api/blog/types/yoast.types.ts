@@ -16,43 +16,43 @@ export type YoastHeadJson = {
 type YoastRobots = {
   index: string;
   follow: string;
-  "max-snippet": string;
-  "max-image-preview": string;
-  "max-video-preview": string;
+  'max-snippet': string;
+  'max-image-preview': string;
+  'max-video-preview': string;
 };
 
 type YoastSchema = {
-  "@context": string;
-  "@graph": YoastSchemaGraph[];
+  '@context': string;
+  '@graph': YoastSchemaGraph[];
 };
 
 type YoastSchemaGraph = {
-  "@type": string;
-  "@id": string;
+  '@type': string;
+  '@id': string;
   url?: string;
   name?: string;
   description?: string;
-  isPartOf?: { "@id": string };
-  breadcrumb?: { "@id": string };
+  isPartOf?: { '@id': string };
+  breadcrumb?: { '@id': string };
   inLanguage?: string;
   itemListElement?: YoastSchemaGraphElement[];
   potentialAction?: YoastSchemaGraphAction[];
 };
 
 type YoastSchemaGraphElement = {
-  "@type": string;
+  '@type': string;
   position: number;
   name: string;
   item?: string;
 };
 
 type YoastSchemaGraphAction = {
-  "@type": string;
+  '@type': string;
   target: {
-    "@type": string;
+    '@type': string;
     urlTemplate: string;
   };
-  "query-input": string;
+  'query-input': string;
 };
 
 type YoastTwitterMisc = {

@@ -1,15 +1,15 @@
-"use client";
-import { useEffect, useState } from "react";
+'use client';
+import { useEffect, useState } from 'react';
 
 export const useLanguage = () => {
-  const [path, setPath] = useState<string>("");
-  const [pathname, setPathname] = useState<string>("");
+  const [path, setPath] = useState<string>('');
+  const [pathname, setPathname] = useState<string>('');
 
   const changeLanguage = (lang: string) => {
-    const splited = pathname.split("/");
+    const splited = pathname.split('/');
     if (lang === splited[1]) return;
     splited.splice(0, 2);
-    const path = `/${[lang, ...splited].join("/")}`;
+    const path = `/${[lang, ...splited].join('/')}`;
     setPath(path);
   };
 

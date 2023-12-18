@@ -1,4 +1,4 @@
-import { motion, useMotionTemplate } from "framer-motion";
+import { motion, useMotionTemplate } from 'framer-motion';
 
 export const ResourcePattern = ({ mouseX, mouseY }: any) => {
   let maskImage = useMotionTemplate`radial-gradient(350px at ${mouseX}px ${mouseY}px, white, transparent)`;

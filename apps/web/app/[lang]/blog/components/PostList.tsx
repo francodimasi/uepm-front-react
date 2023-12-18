@@ -1,11 +1,11 @@
-"use client";
+'use client';
 
-import { useBlog } from "@api/blog/useBlog";
-import { useEffect, useMemo } from "react";
-import { useQuery } from "react-query";
-import { useBlogParser } from "../hooks/useBlogParser";
-import { PostItem, PostItemPropsSize } from "./PostItem";
-import { BlogPostFilterParams } from "@api/blog/types/blog.types";
+import { useBlog } from '@api/blog/useBlog';
+import { useMemo } from 'react';
+import { useQuery } from 'react-query';
+import { useBlogParser } from '../hooks/useBlogParser';
+import { PostItem, PostItemPropsSize } from './PostItem';
+import { BlogPostFilterParams } from '@api/blog/types/blog.types';
 
 type PostListProps = {
   size?: PostItemPropsSize;
@@ -29,10 +29,10 @@ export const PostList = ({ filter, queryKey, size }: PostListProps) => {
 
   return (
     <>
-      <div className={size === "vertical" ? "flex justify-between" : ""}>
+      <div className={size === 'vertical' ? 'flex justify-between' : ''}>
         {postItems.map((postItem) => (
           <div
-            className={size === "vertical" ? "flex-1 mr-6 last:mr-0" : ""}
+            className={size === 'vertical' ? 'flex-1 mr-6 last:mr-0' : ''}
             key={postItem.slug}
           >
             <PostItem size={size} {...postItem} />

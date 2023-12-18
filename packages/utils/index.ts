@@ -1,2 +1,2 @@
-export * from "./window";
-export * from "./numbers";
+export * from './window';
+export * from './numbers';

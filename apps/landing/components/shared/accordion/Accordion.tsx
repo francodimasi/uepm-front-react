@@ -1,6 +1,6 @@
-import { useState } from "react";
-import { TabItem } from "../tabs/tabs.type";
-import { AccordionItem } from "./AccordionItem";
+import { useState } from 'react';
+import { TabItem } from '../tabs/tabs.type';
+import { AccordionItem } from './AccordionItem';
 
 type AccordionProps = {
   items: TabItem[];

@@ -1,4 +1,4 @@
-import { HttpErrorResponse } from "rest";
+import { HttpErrorResponse } from 'rest';
 
 export const errorResponseHandler = (err: HttpErrorResponse) => {
   const { status, message } = err;
@@ -7,7 +7,7 @@ export const errorResponseHandler = (err: HttpErrorResponse) => {
       /**
        * @todo create function to handle 401 errors
        */
-      console.log("Error 401: Unauthorized");
+      console.log('Error 401: Unauthorized');
       return Promise.reject(err);
     default:
       return Promise.reject(err);
