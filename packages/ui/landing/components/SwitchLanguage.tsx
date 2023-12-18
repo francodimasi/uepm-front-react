@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import { Language, LanguageContext, useLanguage } from "i18n";
-import { useContext } from "react";
+import { Language, LanguageContext, useLanguage } from 'i18n';
+import { useContext } from 'react';
 type SwitchLanguageProps = {
   languages: Language[];
   className?: string;
@@ -9,7 +9,7 @@ type SwitchLanguageProps = {
 };
 export const SwitchLanguage = ({
   languages,
-  className = "",
+  className = '',
   iso,
 }: SwitchLanguageProps) => {
   const { changeLanguage } = useLanguage();

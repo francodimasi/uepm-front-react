@@ -1,5 +1,5 @@
-import { useMenu } from "@hooks/useMenu";
-import { SwitchLanguage } from "ui";
+import { useMenu } from '@hooks/useMenu';
+import { SwitchLanguage } from 'ui';
 
 export const LanguageSelector = () => {
   const { languages } = useMenu();

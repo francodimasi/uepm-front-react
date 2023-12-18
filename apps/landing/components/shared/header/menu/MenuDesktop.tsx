@@ -1,6 +1,6 @@
-import Link from "next/link";
-import { LanguageSelector } from "./LanguageSelector";
-import { MenuProps } from "./Menu.types";
+import Link from 'next/link';
+import { LanguageSelector } from './LanguageSelector';
+import { MenuProps } from './Menu.types';
 
 export const MenuDesktop = ({ links }: MenuProps) => {
   return (

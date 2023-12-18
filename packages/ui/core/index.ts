@@ -1,3 +1,3 @@
-export * from "./tabs/Tabs";
-export * from "./tag";
-export * from "./select";
+export * from './tabs';
+export * from './tag';
+export * from './select';

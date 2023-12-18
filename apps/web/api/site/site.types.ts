@@ -1,6 +1,6 @@
-import { Country } from "@api/country/country.types";
-import { Physician } from "@api/physician/physician.types";
-import { StudyInSite } from "@api/study/study-sites.types";
+import { Country } from '@api/country/country.types';
+import { Physician } from '@api/physician/physician.types';
+import { StudyInSite } from '@api/study/study-sites.types';
 
 export type SitesParams = {
   verified?: boolean;

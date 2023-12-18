@@ -1,24 +1,24 @@
-import { Language, LanguageContext, useClientTranslation } from "i18n";
-import Image from "next/image";
-import Link from "next/link";
-import logo from "public/images/uepm-onco-logo.svg";
-import { useContext, useMemo } from "react";
-import { SwitchLanguage } from "ui";
-import instagram from "ui/assets/icons/instagram.svg";
-import linkedin from "ui/assets/icons/linkedin.svg";
+import { Language, LanguageContext, useClientTranslation } from 'i18n';
+import Image from 'next/image';
+import Link from 'next/link';
+import logo from 'public/images/uepm-onco-logo.svg';
+import { useContext, useMemo } from 'react';
+import { SwitchLanguage } from 'ui';
+import instagram from 'ui/assets/icons/social/instagram-light.svg';
+import linkedin from 'ui/assets/icons/social/linkedin-light.svg';
 
 export const Footer = () => {
   const { lang } = useContext(LanguageContext);
-  const { t } = useClientTranslation(lang, { keyPrefix: "footer" });
-  const { t: tlang } = useClientTranslation(lang, { keyPrefix: "language" });
+  const { t } = useClientTranslation(lang, { keyPrefix: 'footer' });
+  const { t: tlang } = useClientTranslation(lang, { keyPrefix: 'language' });
   const links = useMemo(() => {
     return [
       {
-        title: t("whoWeAre"),
-        url: "https://www.unensayoparami.org/noticias-medicas/un-ensayo-para-mi-buscador-ensayos-clinicos",
+        title: t('whoWeAre'),
+        url: 'https://www.unensayoparami.org/noticias-medicas/un-ensayo-para-mi-buscador-ensayos-clinicos',
       },
-      { title: t("uepm"), url: "https://www.unensayoparami.org" },
-      { title: t("researchers"), url: "https://app.trialtech.es/auth/login" },
+      { title: t('uepm'), url: 'https://www.unensayoparami.org' },
+      { title: t('researchers'), url: 'https://app.trialtech.es/auth/login' },
     ];
   }, []);
 
@@ -26,13 +26,13 @@ export const Footer = () => {
     return [
       {
         icon: linkedin,
-        alt: "Linkedin",
-        url: "https://www.linkedin.com/company/unensayoparami/mycompany/",
+        alt: 'Linkedin',
+        url: 'https://www.linkedin.com/company/unensayoparami/mycompany/',
       },
       {
         icon: instagram,
-        alt: "Instagram",
-        url: "https://www.instagram.com/unensayoparami_onco",
+        alt: 'Instagram',
+        url: 'https://www.instagram.com/unensayoparami_onco',
       },
     ];
   }, []);
@@ -40,15 +40,15 @@ export const Footer = () => {
   const languages: Language[] = useMemo(
     () => [
       {
-        iso: "en",
-        name: tlang("en"),
+        iso: 'en',
+        name: tlang('en'),
       },
       {
-        iso: "es",
-        name: tlang("es"),
+        iso: 'es',
+        name: tlang('es'),
       },
     ],
-    []
+    [],
   );
 
   return (
@@ -83,20 +83,20 @@ export const Footer = () => {
             </div>
             <div className="flex flex-col justify-end mt-16 sm:items-end sm:flex-row sm:justify-end sm:mt-5">
               <Link href="/terms-and-conditions" target="_blank">
-                {t("terms")}
+                {t('terms')}
               </Link>
               <Link
                 href="/privacy-and-policy"
                 target="_blank"
                 className="mt-2 sm:mt-0 sm:ml-4"
               >
-                {t("policy")}
+                {t('policy')}
               </Link>
             </div>
           </div>
         </div>
         <div className="flex mt-6">
-          <span className="mr-2">{t("language")}</span>
+          <span className="mr-2">{t('language')}</span>
           <SwitchLanguage languages={languages} />
         </div>
       </div>

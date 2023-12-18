@@ -1,7 +1,7 @@
-import { useRest } from "rest";
-import { Country } from "./country.types";
-import { PageResponse } from "@core/types";
-import { ENDPOINTS } from "@api/endpoints.conts";
+import { useRest } from 'rest';
+import { Country } from './country.types';
+import { PageResponse } from '@core/types';
+import { ENDPOINTS } from '@api/endpoints.conts';
 
 export const useCountry = () => {
   const { get } = useRest();

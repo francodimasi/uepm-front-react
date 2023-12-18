@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import { PostItemProps } from "./PostItem";
 import { useEffect, useState } from "react";

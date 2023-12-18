@@ -1,4 +1,5 @@
 'use client';
+'use client';
 
 import { Pagination } from "@components/pagination/Pagination";
 import { PostListHeader } from "./PostListHeader";

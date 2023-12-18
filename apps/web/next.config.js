@@ -1,6 +1,6 @@
 module.exports = {
   reactStrictMode: true,
-  transpilePackages: ["ui", "i18n", "rest"],
+  transpilePackages: ['ui', 'i18n', 'rest'],
   images: {
     remotePatterns: [
       {

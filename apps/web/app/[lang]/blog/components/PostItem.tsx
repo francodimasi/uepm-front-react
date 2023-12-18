@@ -1,7 +1,6 @@
-import clsx from "clsx";
-import dayjs from "dayjs";
-import Image from "next/image";
-import { useCallback, useMemo } from "react";
+import clsx from 'clsx';
+import dayjs from 'dayjs';
+import { useCallback, useMemo } from 'react';
 
 export type PostItemPropsSize = "small" | "large" | "vertical" | "bigger";
 export type PostItemProps = {
@@ -18,7 +17,7 @@ export const PostItem = ({
   content,
   date,
   image,
-  size = "large",
+  size = 'large',
   title,
 }: PostItemProps) => {
   const Title = useCallback(() => {
@@ -43,7 +42,7 @@ export const PostItem = ({
   }, [title, size]);
 
   const formatedDate = useMemo(() => {
-    return dayjs(date).format("d [de] MMMM, YYYY");
+    return dayjs(date).format('d [de] MMMM, YYYY');
   }, [date]);
 
   const containerClasses = clsx("", {

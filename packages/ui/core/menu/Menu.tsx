@@ -1,14 +1,14 @@
-"use client";
-import clsx from "clsx";
-import { Popover } from "@headlessui/react";
-import { AnimatePresence, motion } from "framer-motion";
-import { MenuProps, MenuItem } from "./Menu.types";
-import { MenuLink } from "./MenuLink";
-import { ChevronUpIcon, MenuIcon } from "../icons";
+'use client';
+import clsx from 'clsx';
+import { Popover } from '@headlessui/react';
+import { AnimatePresence, motion } from 'framer-motion';
+import { MenuProps, MenuItem } from './Menu.types';
+import { MenuLink } from './MenuLink';
+import { CloseIcon, MenuIcon } from '../icons';
 
 export const Menu: React.FC<MenuProps> = ({ className, children, items }) => {
   return (
-    <div className={clsx("flex items-center gap-6", className)}>
+    <div className={clsx('flex items-center gap-6', className)}>
       <Popover className="lg:hidden">
         {({ open }) => (
           <>
@@ -18,7 +18,7 @@ export const Menu: React.FC<MenuProps> = ({ className, children, items }) => {
             >
               {({ open }) =>
                 open ? (
-                  <ChevronUpIcon className="h-6 w-6" />
+                  <CloseIcon className="h-6 w-6" />
                 ) : (
                   <MenuIcon className="h-6 w-6" />
                 )
@@ -45,9 +45,9 @@ export const Menu: React.FC<MenuProps> = ({ className, children, items }) => {
                       y: -32,
                       transition: { duration: 0.2 },
                     }}
-                    className="absolute inset-x-0 top-0 z-0 origin-top rounded-b-2xl bg-light px-6 pb-6 pt-32 shadow-2xl shadow-dark/20"
+                    className="absolute inset-x-0 top-0 z-0 origin-top bg-light px-6 pb-6 pt-24 shadow-2xl shadow-dark/20 h-screen"
                   >
-                    <div className="flex flex-col space-y-4">
+                    <div className="flex flex-col space-y-4 pb-8">
                       {items.map((item: MenuItem, index: number) => (
                         <MenuLink key={index} href={item.href}>
                           {item.label}

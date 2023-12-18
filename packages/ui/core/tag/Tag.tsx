@@ -1,5 +1,5 @@
-import { TagProps } from "./Tag.types";
-import clsx from "clsx";
+import { TagProps } from './Tag.types';
+import clsx from 'clsx';
 
 export const Tag: React.FC<TagProps> = ({
   text,

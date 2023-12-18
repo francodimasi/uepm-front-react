@@ -10,7 +10,7 @@ Please include a list with the tickets involved in this pull request :pray:
 
 # Screenshots
 
-If you think a screenshot would be helpful to show this change, please attach it here :grin: 
+If you think a screenshot would be helpful to show this change, please attach it here :grin:
 
 ## Type of change
 
@@ -22,7 +22,7 @@ If you think a screenshot would be helpful to show this change, please attach it
 
 ## Apps affected by this change
 
-- [X] Web
+- [x] Web
 - [ ] Landing
 - [ ] Management portal
 
@@ -36,5 +36,5 @@ If you think a screenshot would be helpful to show this change, please attach it
 # Checklist:
 
 - [ ] I have performed a self-review of my own code :innocent:
-- [ ] My code is clean  and it follows the guidelines of this project :nail_care:
+- [ ] My code is clean and it follows the guidelines of this project :nail_care:
 - [ ] My changes don't generate new warnings :ok_hand:

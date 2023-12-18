@@ -1,6 +1,6 @@
-"use client";
+'use client';
 
-import { QueryClient, QueryClientProvider } from "react-query";
+import { QueryClient, QueryClientProvider } from 'react-query';
 
 const defaultStaleTime = 1000 * 60 * 60 * 1;
 export const queryClient = new QueryClient({

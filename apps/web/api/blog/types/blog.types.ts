@@ -1,4 +1,4 @@
-import { YoastHeadJson } from "./yoast.types";
+import { YoastHeadJson } from './yoast.types';
 
 /**
  * Categories and Tags
@@ -26,7 +26,7 @@ type BlogLinks = {
   self: BlogLinkHref[];
   collection: BlogLinkHref[];
   about: BlogLinkHref[];
-  "wp:post_type": BlogLinkHref[];
+  'wp:post_type': BlogLinkHref[];
   curies: BlogLinkCurry[];
 };
 
@@ -87,11 +87,11 @@ export type BlogPostLinks = {
   about?: BlogPostHref[];
   author?: BlogPostHref[];
   replies?: BlogPostHref[];
-  "version-history"?: BlogPostHref[];
-  "predecessor-version"?: BlogPostHref[];
-  "wp:featuredmedia"?: BlogPostHref[];
-  "wp:attachment"?: BlogPostHref[];
-  "wp:term"?: BlogPostHref[];
+  'version-history'?: BlogPostHref[];
+  'predecessor-version'?: BlogPostHref[];
+  'wp:featuredmedia'?: BlogPostHref[];
+  'wp:attachment'?: BlogPostHref[];
+  'wp:term'?: BlogPostHref[];
   curies?: BlogPostHref[];
 };
 
@@ -104,8 +104,8 @@ type BlogPostHref = {
 
 type BlogPostEmbedded = {
   author: BlogPostEmbeddedAuthor[];
-  "wp:featuredmedia": BlogPostEmbeddedFeaturedMedia[];
-  "wp:term": BlogPostEmbeddedTermList[];
+  'wp:featuredmedia': BlogPostEmbeddedFeaturedMedia[];
+  'wp:term': BlogPostEmbeddedTermList[];
 };
 
 type BlogPostEmbeddedAuthor = {
@@ -164,7 +164,7 @@ export type BlogPostParams = {
 
 export type BlogPostFilterParams = Pick<
   BlogPostParams,
-  "page" | "categories" | "tags" | "per_page"
+  'page' | 'categories' | 'tags' | 'per_page'
 >;
 
 export type BlogCategory = {
