@@ -62,7 +62,7 @@ export const PostItem = ({
   
   const contentClasses = clsx({
     hidden: size === "small" ,
-    "hidden sm:block sm:mt-3 text-dark text-base font-normal font-['DMSans'] leading-normal line-clamp-2": size === "large",
+    "hidden sm:block sm:mt-3 text-dark text-base font-normal font-['DMSans'] leading-normal line-clamp-2 md:line-clamp-3": size === "large",
     "hidden sm:block  sm:mt-3 text-dark text-base font-normal font-['DMSans'] leading-normal line-clamp-2 ": size === "vertical",
     "mt-3 text-dark font-normal font-['DMSans'] leading-normal line-clamp-2  sm:line-clamp-3 mb-5": size === "bigger",
   });
@@ -91,7 +91,7 @@ export const PostItem = ({
             <div className=" text-primary-dark text-sm font-medium font-['DMSans'] uppercase leading-none tracking-normal">
               {(size !== "small" && size !== "vertical") ? (
                 <ul className="list-none -ms-2">
-                  {category.map((key, index) => (
+                  {category.slice(0,3).map((key, index) => (
                     <li className=" first:border-l-0 inline px-2 py-0 border-l border-l-primary-dark"
                       key={index} >
                       {key}

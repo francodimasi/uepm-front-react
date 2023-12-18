@@ -5,22 +5,21 @@ import { PostListHeader } from "./PostListHeader";
 import { useState, useEffect } from "react";
 import {getPostList } from "@api/blog/requests";
 import { BlogCategory } from "@api/blog/types/blog.types";
-import { PostListSkeleton } from "./PostListSkeleton";
-import { PostList } from "./PostList";
+import { MainPostListSkeleton } from "./MainPostListSkeleton";
 import { Button } from "ui/core/button";
+import { PostItem } from "./PostItem";
 
 type MainPostList = {
   categories: BlogCategory[]
-  category?: number,
+  category: number,
   itemsPerPage?: number
 };
 
 export const MainPostList = ({categories, category: categoryParam, itemsPerPage = 5} : MainPostList) => {
-
-  const [category, setCategory] = useState(categoryParam ? categoryParam : 37);  
+  const [category, setCategory] = useState(categoryParam);  
   const [page, setPage] = useState(1);
   const [posts, setPosts] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     setLoading(true)
@@ -43,25 +42,26 @@ export const MainPostList = ({categories, category: categoryParam, itemsPerPage 
 
   return (
     <div className="relative">
-      {
-        categoryParam ? (
-          <div className="text-black text-4xl font-semibold font-['Lexend'] leading-10 text-center w-100 border-b-1 border-b-gray-medium pb-5">
-            {
-              categoryObj.name
-            }
-          </div>
-        ) : (
-          <PostListHeader  category={category}  setCategory={setCategory} categories={categories} setPage={setPage}/>
-        )
-      }
+      <div className="text-black text-4xl font-semibold font-['Lexend'] leading-10 text-center w-100 border-b-1 border-b-gray-medium pb-5 mb-5">
+        {
+          categoryObj.name
+        }
+      </div>
       {
         loading ? (
-          <PostListSkeleton entries={itemsPerPage}/>
+          <MainPostListSkeleton entries={itemsPerPage}/>
         ) : (
-          <PostList
-            size="large"
-            posts = {posts}
-          />
+          <>
+            <div className="flex flex-col">
+              {
+                posts.map((postItem) => ( 
+                  <div key={postItem.slug} className="border-b border-gray-medium mb-6 pb-6 sm:pb-10">
+                    <PostItem size='large' {...postItem} />
+                  </div>
+                ))
+              }
+            </div>
+          </>
         )
       }
       <div className="mt-5 text-center">

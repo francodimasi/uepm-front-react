@@ -24,7 +24,7 @@ export const getCategories = async () => {
     return categories;
   }
 
-export const getTrandingTopics = async () => {
+export const getTrendingTopics = async () => {
     const res = await fetch(ENDPOINTS.BLOG.TAGS, {
       next: { revalidate: 7200 }, // 60*60*2 = 2 hour
     });
@@ -37,7 +37,7 @@ export const getTrandingTopics = async () => {
     return newTags;
   }
 
-export const getPostList = async (params: BlogPostFilterParams) => {
+export const getPostList = async (params: BlogPostFilterParams) => {    
     const { postToPostItem } = blogParser();
     const defaultParams = {
       context: "embed",

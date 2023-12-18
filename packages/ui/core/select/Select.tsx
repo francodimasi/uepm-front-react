@@ -8,10 +8,9 @@ import clsx from "clsx";
 //color
 //tamaño
 export const Select = ({ items, selected, onChange, label }: SelectProp) => {
-  console.log(selected)
   const selectedItem =  items.find((item) => item.id === selected) 
   return (
-    <Listbox value={selectedItem} onChange={(selected) => {onChange(selected.id)}}>
+    <Listbox value={selectedItem} onChange={(selectedItem) => {selectedItem.id !== selected && onChange(selectedItem.id)}}>
       {({ open }) => (
         <>
           {

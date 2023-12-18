@@ -1,28 +1,28 @@
 'use client';
 
-import { Pagination } from "@components/pagination/Pagination";
 import { PostListHeader } from "./PostListHeader";
 import { useState, useEffect } from "react";
-import {getPostList } from "@api/blog/requests";
+import { getPostList } from "@api/blog/requests";
 import { BlogCategory } from "@api/blog/types/blog.types";
 import { BlogFrontPageSkeleton } from "./BlogFrontPageSkeleton";
-import { PostList } from "./PostList";
 import { PostItem, PostItemProps } from "./PostItem";
 import { Button } from "ui/core/button";
+import { PostListHeaderSkeleton } from "./PostListHeaderSkeleton";
 
 type BlogFrontPage = {
   categories: BlogCategory[]
   posts: PostItemProps[]
+  defaultCategoryId: Number
 };
 
-export const BlogFrontPage = ({categories, posts: postsParam} : BlogFrontPage) => {
-  const defaultCategory = categories.find((category) => category.slug === "general")
+export const BlogFrontPage = ({categories, posts: postsParam, defaultCategoryId} : BlogFrontPage) => {
+  const defaultCategory = categories.find((category) => category.id === defaultCategoryId)
   const [category, setCategory] = useState(defaultCategory.id);  
   const [posts, setPosts] = useState(postsParam);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
+  const [loadingHeader, setLoadingHeader] = useState(true);
 
   useEffect(() => {
-    setLoading(true)
     const fetchData = async () => {
       const posts = await getPostList({
         page: 1,
@@ -36,9 +36,19 @@ export const BlogFrontPage = ({categories, posts: postsParam} : BlogFrontPage) =
     fetchData()
   }, [category]);
   
+  useEffect(() => {
+    setLoadingHeader(false)
+  }, []);
+
   return (
     <div className="relative">
-      <PostListHeader  category={category}  setCategory={setCategory} categories={categories}/>
+      {
+        loadingHeader ? (
+          <PostListHeaderSkeleton />
+        ) : ( 
+          <PostListHeader  category={category}  setCategory={setCategory} categories={categories}/>
+        )
+      }
       {
         loading ? (
           <BlogFrontPageSkeleton/>
@@ -55,7 +65,7 @@ export const BlogFrontPage = ({categories, posts: postsParam} : BlogFrontPage) =
                   <div className="sm:h-64 pb-6 border-b border-gray-medium sm:mb-5 sm:mt-0 sm:pb-0">
                     <PostItem size="large"  {...posts[0]} />
                   </div>
-                  <div className="py-6 sm:py-0 sm:h-56 border-b border-gray-medium sm:my-5">
+                  <div className="py-6 sm:py-0 sm:h-64 border-b border-gray-medium sm:my-5">
                     <PostItem size="large"  {...posts[5]} />
                   </div>
                   <div className="py-6 sm:py-0  sm:h-64 border-b border-gray-medium sm:my-5">

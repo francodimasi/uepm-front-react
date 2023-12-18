@@ -4,7 +4,7 @@ import { TrendingTopics } from "./../components/TrendingTopics";
 import { MainPostList } from "./../components/MainPostList";
 import { notFound } from "next/navigation";
 import { BlogCategory } from "../../../../api/blog/types/blog.types";
-import { getPostList, getTrandingTopics, getCategories } from "@api/blog/requests";
+import { getPostList, getTrendingTopics, getCategories } from "@api/blog/requests";
 
 export default async function Page({
   params,
