@@ -1,43 +1,52 @@
-import { useBlog } from "@api/blog/useBlog";
-import { Layout } from "@components/core/layout/Layout";
+import { useBlog } from '@api/blog/useBlog';
+import { Layout } from '@components/core/layout/Layout';
 
-import ArticleTags from "./components/ArticleTags";
-import Title from "./components/Title";
-import Highlights from "./components/Highlights";
-import Recommended from "./components/Recommended";
-import { ENDPOINTS } from "@api/endpoints.conts";
-import { BlogPost, BlogPostFilterParams } from "@api/blog/types/blog.types";
+import { ArticleTags } from './components/ArticleTags';
+import { Title } from './components/Title';
+import { Highlights } from './components/Highlights';
+import { Recommended } from './components/Recommended';
+import { ENDPOINTS } from '@api/endpoints.conts';
+import { BlogPost, BlogPostFilterParams } from '@api/blog/types/blog.types';
+import { ArticleProps } from './Article.types';
 
+const DAY_IN_SECONDS  = 86400
 
 const getRecommendedPosts = async function (
         tagName:string, 
-        getPostList: (params: BlogPostFilterParams) => Promise<BlogPost[]>,
-        getTagID:  (tagName: string) => Promise<number> ) {
+        getPostListFn: Function, //(params: BlogPostFilterParams) => Promise<BlogPost[]>
+        getTagIDFn:  Function) { //(tagName: string) => Promise<number> ) {
     
     const getPostsParams : BlogPostFilterParams = { 
         per_page: 4, 
         page: 1, 
-        context: "view", 
-        order: "desc", 
-        _embed: 1 
+        context: 'view', 
+        order: 'desc', 
     }
     
     if (tagName) {
-        const tagID = await getTagID(tagName)
-        getPostsParams.tags=  [tagID]  
+        const tagID = await getTagIDFn(tagName)
+        getPostsParams.tags = [tagID]  
     }
     
-    const recommendedPosts = await getPostList(getPostsParams)
+    const recommendedPosts = await getPostListFn(getPostsParams)
     return recommendedPosts
 }
 
-
+// Gets next cronological post from the same category as current post 
 const getNextPost = async function(
-    //TODO: have to fetch next cronological post, this code gets the absolute newest one
     currentPost : BlogPost, 
-    getPostsFn: (params: BlogPostFilterParams) => Promise<BlogPost[]> 
+    getPostsFn: Function //(params: BlogPostFilterParams) => Promise<BlogPost[]> 
     ) {
-        const nextPost = await getPostsFn({ _embed: 1, context: "view", page: 1, per_page: 1, categories: currentPost.categories, order: "desc" })
+        const nextPost = await getPostsFn(
+            { 
+                context: 'view', 
+                page: 1, 
+                per_page: 1, 
+                categories: currentPost.categories, 
+                order: 'desc',
+                before: currentPost.date
+            })
+        
         if (nextPost.length === 0) {
             return null 
         }
@@ -46,8 +55,8 @@ const getNextPost = async function(
 }
 
 
-export default async function Article({ params }: { params: { slug: string } }) {
-    const { slug } = params;
+const Article : React.FC<ArticleProps> = async ({ params }) => {
+    const { slug } = params
 
     const { getOnePost, getPostList, getTagID, getTags } = useBlog()
 
@@ -57,11 +66,12 @@ export default async function Article({ params }: { params: { slug: string } }) 
     const nextPost = await getNextPost(postBlog, getPostList)
     const tags = await getTags()
     
+
     return <Layout>
                 <div className="container px-4 lg:px-10">
                     <div className="grid grid-cols-1 lg:grid-cols-12">
                         <section className="col-span-1 lg:col-span-12">
-                            <Title title={postBlog.title.rendered} date={postBlog.date} readingTime={postBlog.yoast_head_json.twitter_misc["Tiempo de lectura"]}/>
+                            <Title title={postBlog.title.rendered} date={postBlog.date} readingTime={postBlog.yoast_head_json.twitter_misc['Tiempo de lectura']}/>
                         </section>
                         <section className="col-span-1 lg:col-span-9">
                             <div className="mt-10 lg:mr-32">
@@ -79,18 +89,14 @@ export default async function Article({ params }: { params: { slug: string } }) 
 }
 
 
-
 //TODO: check if wordpress rate limits these requests, seeing some Socket closed errors during build
 //TODO: this may take a long time to build, maybe generate fewer static posts? 
 export async function generateStaticParams() {
-    let queryParams = "?"
-    queryParams += "_fields=slug" //we only care about 'slug' here
-    queryParams += "&status=publish"
-    queryParams += "&per_page=100"  //maximum allowed
-    queryParams += "&order=desc"
+    //Grab only the slug field for the 100 most recent posts
+    const queryParams = '?_fields=slug&status=publish&per_page=100&order=desc'
 
     const response = await fetch (`${ENDPOINTS.BLOG.POSTS}${queryParams}`,{
-        next: { revalidate: 86400 },// 1 day
+        next: { revalidate: DAY_IN_SECONDS },
     })
     const data = await response.json()
     const postSlugs = data.map((post) => {
@@ -98,3 +104,6 @@ export async function generateStaticParams() {
     });
     return postSlugs
 }
+
+
+export default Article;

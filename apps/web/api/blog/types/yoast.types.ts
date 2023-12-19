@@ -56,6 +56,6 @@ type YoastSchemaGraphAction = {
 };
 
 type YoastTwitterMisc = {
-  "Escrito por": string;
-  "Tiempo de lectura": string;
+  'Escrito por': string;
+  'Tiempo de lectura': string;
 }

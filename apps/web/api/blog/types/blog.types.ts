@@ -168,10 +168,10 @@ export type BlogPostParams = {
   categories?: number[];
   tags?: number[];
   order?: string;
-  _embed?: 1
+  before?: string
 };
 
 export type BlogPostFilterParams = Pick<
   BlogPostParams,
-  "page" | "categories" | "tags" | "per_page" | "order" | "context" | "_embed"
+  'page' | 'categories' | 'tags' | 'per_page' | 'order' | 'context' | 'before'
 >;

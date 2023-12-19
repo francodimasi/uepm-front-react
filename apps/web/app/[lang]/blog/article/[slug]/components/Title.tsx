@@ -1,12 +1,13 @@
-import ShareIcon from "public/images/search-normal.svg"
-import Ellipsis from "public/images/Ellipse 1.svg"
 import dayjs from 'dayjs'
-import LeftArrow from "public/images/Arrow 1.svg"
+import ShareIcon from 'public/images/search-normal.svg'
+import Ellipsis from 'public/images/Ellipse 1.svg'
+import LeftArrow from 'public/images/Arrow 1.svg'
 import Image from 'next/image'
 import Link from 'next/link'
+import { TitleProps } from '../Article.types'
 
 
-export default function Title({title,date, readingTime} : {title:string, date:string, readingTime: string}) {
+export const Title: React.FC<TitleProps> = ({title,date, readingTime} ) => {
     return  <div className="w-full h-full flex-col justify-start items-start gap-4 inline-flex">
             <div className="self-stretch justify-between items-center inline-flex">
                 {/* TODO: this link needs to consider locale */}
@@ -24,7 +25,7 @@ export default function Title({title,date, readingTime} : {title:string, date:st
             <div className="h-full flex-col justify-start items-start gap-2 flex">
                 <div className="self-stretch text-dark lg:text-[56px] font-semibold font-['Lexend']">{title}</div>
                 <div className="justify-start items-center gap-4 inline-flex">
-                    <div className="text-dark text-xs font-normal font-['DMSans'] uppercase leading-normal">{dayjs(date).format("d [de] MMMM, YYYY")}</div>
+                    <div className="text-dark text-xs font-normal font-['DMSans'] uppercase leading-normal">{dayjs(date).format('d [de] MMMM, YYYY')}</div>
                     <div className="w-[5px] h-[5px] bg-black rounded-full"><Image src={Ellipsis} alt="Ellipsis"></Image></div>
                     <div className="text-dark text-xs font-normal font-['DMSans'] uppercase leading-normal">{readingTime} de lectura</div>
                 </div>

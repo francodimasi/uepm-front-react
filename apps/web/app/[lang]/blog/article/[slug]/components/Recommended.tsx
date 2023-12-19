@@ -1,9 +1,9 @@
-import { BlogPost, BlogPostFilterParams } from "@api/blog/types/blog.types"
-import Image from "next/image"
-import Link from "next/link"
+import Image from 'next/image'
+import Link from 'next/link'
+import { RecommendedProps } from '../Article.types'
 
 
-export default async function Recommended({posts, tag} : {posts: BlogPost[], tag: string}) {
+export const Recommended : React.FC<RecommendedProps>= ({posts, tag} ) => {
     return <div className="w-full flex-col justify-start items-start gap-8 inline-flex">
                 <div className="flex justify-between items-center self-stretch">
                     <div className="text-primary text-2xl font-semibold font-['Lexend'] leading-7">Más sobre el tema</div>
@@ -15,14 +15,16 @@ export default async function Recommended({posts, tag} : {posts: BlogPost[], tag
                 <div className="flex flex-col lg:flex-row gap-6">
                     { posts.map( (post) => { 
                         return <div key={post.id} className="grid grid-cols-3 lg:flex lg:flex-col pb-6 border-b border-gray-medium justify-start items-start gap-8">
-                                    <Image className="col-span-1"
-                                        src={post._embedded["wp:featuredmedia"][0].link} 
-                                        alt={post._embedded["wp:featuredmedia"][0].alt_text}
-                                        width={post._embedded["wp:featuredmedia"][0].media_details.width}
-                                        height={post._embedded["wp:featuredmedia"][0].media_details.height}
-                                    />
+                                    {/* Need a generic image for posts without thumbnail? */}
+                                    <div className="relative w-[85px] h-[100px] lg:w-[302px] lg:h-[190px]">
+                                        <Image className="col-span-1 object-contain"
+                                            src={post.thumbnail_image_src}
+                                            alt={post.title.rendered}
+                                            fill={true}
+                                        />
+                                    </div>
                                     <div className="col-span-2 col-start-2 lg:flex lg:flex-col self-stretch justify-start items-start gap-2">
-                                        <div className="self-stretch text-primary text-xs font-normal font-['DMSans'] uppercase leading-none tracking-tight">{post.tags.join(" | ")}</div>
+                                        <div className="self-stretch text-primary text-xs font-normal font-['DMSans'] uppercase leading-none tracking-tight">{post.tags.join(' | ')}</div>
                                         {/* TODO: review locale in link */}
                                         <Link href={`/en/blog/article/${post.slug}`}>
                                             <div className="overflow-ellipsis self-stretch text-dark text-base font-semibold font-['Lexend'] leading-normal">{post.title.rendered}</div>
