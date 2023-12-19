@@ -1,11 +1,11 @@
 import { PostItemSkeleton } from './PostItemSkeleton';
 
-type MainPostListSkeleton = {
+type MainPostListSkeletonParam = {
     entries: number
   };
 
 
-export const MainPostListSkeleton = ({entries} : MainPostListSkeleton) => {
+export const MainPostListSkeleton = ({entries} : MainPostListSkeletonParam) => {
   return (
     <div className=''>
       {

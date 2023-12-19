@@ -1,7 +1,4 @@
-import ImagePlaceholder from "public/images/ImagePlaceholder.svg";
-import Image from "next/image";
-import clsx from "clsx";
-import { PostItemSkeleton } from "./PostItemSkeleton";
+import { PostItemSkeleton } from './PostItemSkeleton';
 
 export const SuggestedPostSkeleton = () => {
 

@@ -1,23 +1,19 @@
 'use client';
-'use client';
 
-import { Pagination } from "@components/pagination/Pagination";
-import { PostListHeader } from "./PostListHeader";
-import { useState, useEffect } from "react";
-import {getPostList } from "@api/blog/requests";
-import { BlogCategory } from "@api/blog/types/blog.types";
-import { MainPostListSkeleton } from "./MainPostListSkeleton";
-import { Button } from "ui/core/button";
-import { PostItem } from "./PostItem";
+import { Pagination } from '@components/pagination/Pagination';
+import { useState, useEffect } from 'react';
+import {getPostList } from '@api/blog/requests';
+import { BlogCategory } from '@api/blog/types/blog.types';
+import { MainPostListSkeleton } from './MainPostListSkeleton';
+import { PostItem } from './PostItem';
 
-type MainPostList = {
+type MainPostListParam = {
   categories: BlogCategory[]
   category: number,
   itemsPerPage?: number
 };
 
-export const MainPostList = ({categories, category: categoryParam, itemsPerPage = 5} : MainPostList) => {
-  const [category, setCategory] = useState(categoryParam);  
+export const MainPostList = ({categories, category, itemsPerPage = 5} : MainPostListParam) => {
   const [page, setPage] = useState(1);
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -35,7 +31,7 @@ export const MainPostList = ({categories, category: categoryParam, itemsPerPage 
     }
 
     fetchData()
-  }, [category, page]);
+  }, [page]);
   
 
   const pageCount = Math.ceil(categories.find((c) => c.id === category).count / itemsPerPage) 
@@ -68,15 +64,7 @@ export const MainPostList = ({categories, category: categoryParam, itemsPerPage 
       <div className="mt-5 text-center">
         {
           pageCount > 1 && ( 
-            <>
-            {
-              categoryParam ? (
-                <Pagination actualPage={page} pagesCount={pageCount} setPage={setPage} />
-              ) : (
-                <Button href={`/blog/${categoryObj.id}`}>Ver mas artículos</Button>
-              )
-            }
-            </>
+            <Pagination actualPage={page} pagesCount={pageCount} setPage={setPage} />
           )
         }
       </div>

@@ -1,7 +1,7 @@
 'use client';
 
-import { Swiper, SwiperSlide } from "swiper/react";
-import clsx from "clsx";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import clsx from 'clsx';
 
 
 
@@ -13,24 +13,25 @@ export type TabItem = {
 export type TabsProps = {
   items: TabItem[];
   selected: number;
+  // eslint-disable-next-line no-unused-vars
   onChange: (id: number) => void;
   classes?: string
 };
 export const Tabs = ({ items, selected, onChange, classes}: TabsProps) => {
   return (
     <Swiper
-      slidesPerView={5.5}
+      slidesPerView={4}
       slidesPerGroup={1}
       resistanceRatio={1000}
-      spaceBetween= {40}
-      className={clsx(classes, "w-100 border-b border-b-gray-light justify-center items-center inline-flex")}
+      spaceBetween= {30}
+      className={clsx(classes, 'w-100 border-b border-b-gray-light justify-center items-center inline-flex')}
       
     >
-      {items?.map(({ name, id }, index) => (
+      {items?.map(({ name, id }) => (
         <SwiperSlide
           key={id}
           className={`font-['DMSans'] grow ${
-            id === selected ? "border-b-2 border-black font-bold" : " font-light hover:font-normal hover:border-b-1 hover:border-gray-dark"
+            id === selected ? 'border-b-2 border-black font-bold' : ' font-light hover:font-normal hover:border-b-1 hover:border-gray-dark'
           } `}
           onClick={() => onChange(id)}
         >

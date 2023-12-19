@@ -1,9 +1,9 @@
 'use client';
-import { SelectProp } from "./List.types";
-import { Fragment } from "react";
-import { CheckIcon, ChevronUpDownIcon } from "@heroicons/react/24/outline";
-import { Listbox, Transition } from "@headlessui/react";
-import clsx from "clsx";
+import { SelectProp } from './List.types';
+import { Fragment } from 'react';
+import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/24/outline';
+import { Listbox, Transition } from '@headlessui/react';
+import clsx from 'clsx';
 
 //color
 //tamaño

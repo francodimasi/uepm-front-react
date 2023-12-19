@@ -153,19 +153,23 @@ export type VotePostRequest = {
  * All posts
  */
 
-export type BlogPostParams = {
-  page: number;
-  per_page: number;
-  status: string;
-  context: string;
-  categories?: number[];
-  tags?: string[];
+export type BlogCategoryParams = {
+  slug?: string[];
 };
 
-export type BlogPostFilterParams = Pick<
-  BlogPostParams,
-  'page' | 'categories' | 'tags' | 'per_page'
->;
+
+export type BlogPostFilterParams = {
+  page?: number;
+  per_page?: number;
+  status?: string;
+  context?: string;
+  categories?: number[];
+  tags?: string[];
+  order?: string;
+  orderby?: string;
+  slug?: string;
+  operator?: 'AND' | 'OR';
+};
 
 export type BlogCategory = {
   id: number;

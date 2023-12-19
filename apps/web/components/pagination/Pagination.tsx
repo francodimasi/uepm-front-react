@@ -1,10 +1,9 @@
 'use client';
 
-import Image from "next/image";
-import LeftArrow from "public/images/LeftArrow.svg"
-import RightArrow from "public/images/RightArrow.svg"
-import { Dispatch, SetStateAction } from "react";
-import React, { useEffect, useState } from 'react';
+import Image from 'next/image';
+import LeftArrow from 'public/images/LeftArrow.svg'
+import RightArrow from 'public/images/RightArrow.svg'
+import { Dispatch, SetStateAction } from 'react';
 import ReactPaginate from 'react-paginate';
 
 type PagintationParams = {

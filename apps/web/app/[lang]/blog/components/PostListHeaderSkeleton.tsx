@@ -1,7 +1,3 @@
-import ImagePlaceholder from "public/images/ImagePlaceholder.svg";
-import Image from "next/image";
-import clsx from "clsx";
-
 export const PostListHeaderSkeleton = () => {
   return (
     <>

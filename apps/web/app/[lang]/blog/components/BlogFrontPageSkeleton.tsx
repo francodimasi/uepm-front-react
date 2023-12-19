@@ -1,5 +1,3 @@
-import ImagePlaceholder from 'public/images/ImagePlaceholder.svg'
-import Image from 'next/image';
 import { PostItemSkeleton } from './PostItemSkeleton';
 
 export const BlogFrontPageSkeleton = () => {

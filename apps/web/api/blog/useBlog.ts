@@ -4,7 +4,6 @@ import {
   BlogCategoryTag,
   BlogPost,
   BlogPostFilterParams,
-  BlogPostParams,
   VotePostRequest,
 } from './types/blog.types';
 import { BlogAuthor } from './types/author.types';
@@ -54,7 +53,7 @@ export const useBlog = () => {
       per_page: 3,
     };
 
-    const allParams: BlogPostParams = { ...defaultParams, ...params };
+    const allParams: BlogPostFilterParams = { ...defaultParams, ...params };
     let queryParams = '?';
     const keys = Object.keys(allParams);
 
