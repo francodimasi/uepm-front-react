@@ -2,10 +2,9 @@
 
 import Link from 'next/link';
 import React from 'react';
-import { Logo } from 'ui/core/logo';
+import { Logo, Social } from 'ui/components';
 import { FooterSection } from './section';
 import { FooterSectionLinkProps } from './section/FooterSection.types';
-import { Social } from 'ui/core/social/Social';
 import { PrivacyPolicy, Terms } from './t&c';
 import useTailwindBreakpoints from 'ui/hooks/useTailwindBreakpoints';
 
