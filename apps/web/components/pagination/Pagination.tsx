@@ -1,8 +1,7 @@
 'use client';
 
-import Image from 'next/image';
-import LeftArrow from 'public/images/LeftArrow.svg';
-import RightArrow from 'public/images/RightArrow.svg';
+import { ArrowLeftIcon } from 'ui/core/icons/ArrowLeftIcon';
+import { ArrowRightIcon } from 'ui/core/icons/ArrowRightIcon';
 import { Dispatch, SetStateAction } from 'react';
 import ReactPaginate from 'react-paginate';
 
@@ -25,12 +24,8 @@ export const Pagination = ({
       pageRangeDisplayed={2}
       marginPagesDisplayed={3}
       pageCount={pagesCount}
-      previousLabel={
-        <Image src={LeftArrow} width={33} height={16} alt="Previous Page" />
-      }
-      nextLabel={
-        <Image src={RightArrow} width={33} height={16} alt="Previous Page" />
-      }
+      previousLabel={<ArrowLeftIcon />}
+      nextLabel={<ArrowRightIcon />}
       renderOnZeroPageCount={null}
       initialPage={actualPage - 1}
       className="flex items-center justify-center pt-4 px-4 sm:px-0 gap-5"
