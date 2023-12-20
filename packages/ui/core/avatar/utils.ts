@@ -1,6 +1,6 @@
-import { Size } from '../types/core';
+import { Size } from '../../types/core';
 
-export const getDimensions = (size: Size) => {
+export const getWidth = (size: Size) => {
   switch (size) {
     case 'xs':
       return 16;

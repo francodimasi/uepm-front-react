@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { AvatarProps } from './Avatar.types';
-import { getDimensions } from '../../utils/core';
+import { getWidth } from './utils';
 
 export const Avatar: React.FC<AvatarProps> = ({
   imageUrl,
@@ -19,7 +19,7 @@ export const Avatar: React.FC<AvatarProps> = ({
           className="rounded-full"
           src={imageUrl}
           alt={alt}
-          width={getDimensions(size)}
+          width={getWidth(size)}
         />
         {title && (
           <span
