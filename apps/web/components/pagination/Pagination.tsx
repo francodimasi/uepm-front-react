@@ -22,7 +22,7 @@ export const Pagination = ({
       breakClassName="font-bold text-lg cursor-pointer"
       onPageChange={(event) => setPage(event.selected + 1)}
       pageRangeDisplayed={2}
-      marginPagesDisplayed={3}
+      marginPagesDisplayed={2}
       pageCount={pagesCount}
       previousLabel={<ArrowLeftIcon />}
       nextLabel={<ArrowRightIcon />}
