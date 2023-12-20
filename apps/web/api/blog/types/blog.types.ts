@@ -125,7 +125,7 @@ type BlogPostEmbeddedFeaturedMedia = {
 type BlogPostEmbeddedFeaturedMediaDetails = {
   width: number;
   height: number;
-}
+};
 type BlogPostEmbeddedTerm = {
   id: number;
   link: string;
@@ -158,7 +158,7 @@ export type BlogPostParams = {
   categories?: number[];
   tags?: number[];
   order?: string;
-  before?: string
+  before?: string;
 };
 
 export type BlogPostFilterParams = Pick<

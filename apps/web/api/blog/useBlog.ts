@@ -17,36 +17,32 @@ export const useBlog = () => {
 
   const getTags = async () => {
     try {
-      const res = await fetch(
-        ENDPOINTS.BLOG.TAGS,
-        {
-          next: { revalidate: 3600 },// 60*60 = 1 hour
-        }
-      );
-      const data = await res.json()
-      const newTags: {id: number, text: string}[] = data.map( (tag) => {
-        return {id: tag.id, text: tag.name} 
-      })
-      return newTags
+      const res = await fetch(ENDPOINTS.BLOG.TAGS, {
+        next: { revalidate: 3600 }, // 60*60 = 1 hour
+      });
+      const data = await res.json();
+      const newTags: { id: number; text: string }[] = data.map((tag) => {
+        return { id: tag.id, text: tag.name };
+      });
+      return newTags;
     } catch (error) {
-      console.log(error)
-      return null
+      console.log(error);
+      return null;
     }
   };
 
   const getOnePost = async (slug: string) => {
     try {
       const response = await get<BlogPost[]>(
-        `${ENDPOINTS.BLOG.POSTS}?slug=${slug}&_embed=1&context=view`
+        `${ENDPOINTS.BLOG.POSTS}?slug=${slug}&_embed=1&context=view`,
       );
       const post = response[0];
-      return post;  
+      return post;
     } catch (error) {
-      console.log(error)
-      return null
+      console.log(error);
+      return null;
     }
   };
-
 
   const getPostList = async (params: BlogPostFilterParams) => {
     const defaultParams = {
@@ -73,31 +69,31 @@ export const useBlog = () => {
       );
       return response;
     } catch (error) {
-      console.log(error)
-      return null
+      console.log(error);
+      return null;
     }
   };
 
-  const getTagID = async (tagName : string) => {
+  const getTagID = async (tagName: string) => {
     try {
       const res = await fetch(
         `${ENDPOINTS.BLOG.TAGS}?search=${tagName}&orderby=name`,
         {
-          next: { revalidate: 86400 },// 1 day (should never change though)
-        }
+          next: { revalidate: 86400 }, // 1 day (should never change though)
+        },
       );
-      const data = await res.json()
+      const data = await res.json();
       if (data.length == 0) {
-        return null
+        return null;
       }
-  
-      const id:number= data[0].id
-      return id 
+
+      const id: number = data[0].id;
+      return id;
     } catch (error) {
       console.log(error);
-      return null
+      return null;
     }
-  }
+  };
 
   return {
     getCategories,
