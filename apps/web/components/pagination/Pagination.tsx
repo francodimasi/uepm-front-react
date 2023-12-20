@@ -12,6 +12,8 @@ type PagintationParams = {
   setPage: Dispatch<SetStateAction<number>>,
 };
 
+const variable = 'prueba';
+
 export const Pagination = ({actualPage, pagesCount, setPage} : PagintationParams) => {
 
   return (
