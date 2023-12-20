@@ -28,8 +28,12 @@ const getRecommendedPosts = async function (
         getPostsParams.tags = [tagID]  
     }
     
-    const recommendedPosts = await getPostListFn(getPostsParams)
-    return recommendedPosts
+    try {
+        return await getPostListFn(getPostsParams)
+    } catch (error) {
+        console.log(error)
+        return null
+    }
 }
 
 // Gets next cronological post from the same category as current post 
@@ -37,21 +41,22 @@ const getNextPost = async function(
     currentPost : BlogPost, 
     getPostsFn: Function //(params: BlogPostFilterParams) => Promise<BlogPost[]> 
     ) {
-        const nextPost = await getPostsFn(
-            { 
-                context: 'view', 
-                page: 1, 
-                per_page: 1, 
-                categories: currentPost.categories, 
-                order: 'desc',
-                before: currentPost.date
-            })
-        
-        if (nextPost.length === 0) {
-            return null 
+        try {
+            const nextPost : BlogPost[] = await getPostsFn(
+                { 
+                    context: 'view', 
+                    page: 1, 
+                    per_page: 1, 
+                    categories: currentPost.categories, 
+                    order: 'desc',
+                    before: currentPost.date
+                })
+            if (nextPost.length === 0) return null    
+            return nextPost[0]
+        } catch (error) {
+            console.log(error)
+            return null
         }
-
-        return nextPost[0]
 }
 
 
@@ -71,7 +76,7 @@ const Article : React.FC<ArticleProps> = async ({ params }) => {
                 <div className="container px-4 lg:px-10">
                     <div className="grid grid-cols-1 lg:grid-cols-12">
                         <section className="col-span-1 lg:col-span-12">
-                            <Title title={postBlog.title.rendered} date={postBlog.date} readingTime={postBlog.yoast_head_json.twitter_misc['Tiempo de lectura']}/>
+                            <Title title={postBlog.title.rendered} date={postBlog.date} readingTime={postBlog['yoast_head_json']['twitter_misc']['Tiempo de lectura']}/>
                         </section>
                         <section className="col-span-1 lg:col-span-9">
                             <div className="mt-10 lg:mr-32">
@@ -95,15 +100,19 @@ export async function generateStaticParams() {
     //Grab only the slug field for the 100 most recent posts
     const queryParams = '?_fields=slug&status=publish&per_page=100&order=desc'
 
-    const response = await fetch (`${ENDPOINTS.BLOG.POSTS}${queryParams}`,{
-        next: { revalidate: DAY_IN_SECONDS },
-    })
-    const data = await response.json()
-    const postSlugs = data.map((post) => {
-        return { slug: post.slug }
-    });
-    return postSlugs
+    try {
+        const response = await fetch (`${ENDPOINTS.BLOG.POSTS}${queryParams}`,{
+            next: { revalidate: DAY_IN_SECONDS },
+        })
+        const data : BlogPost[] = await response.json()
+        const postSlugs = data.map((post) => {
+            return { slug: post.slug }
+        });
+        return postSlugs
+    } catch (error) {
+        console.log(error)
+        return null
+    }
 }
-
 
 export default Article;

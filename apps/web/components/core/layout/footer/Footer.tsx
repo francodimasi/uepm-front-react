@@ -32,7 +32,7 @@ const productsLinks: FooterSectionLinkProps[] = [
 export const Footer: React.FC = () => {
   const { isMobile } = useTailwindBreakpoints();
   return (
-    <div className="felx flex-col bg-primary-dark">
+    <div className="flex flex-col bg-primary-dark">
       <div className="grid grid-cols-1 sm:grid-cols-4 gap-4 p-4 pb-2 sm:p-20 sm:pb-8">
         <Link href="/" aria-label="Home">
           <Logo brand="uepm" type="dark" className="flex px-2" width={120} />

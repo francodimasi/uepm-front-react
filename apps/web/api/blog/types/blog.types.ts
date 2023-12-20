@@ -1,5 +1,3 @@
-import { YoastHeadJson } from './yoast.types';
-
 /**
  * Categories and Tags
  */
@@ -17,8 +15,6 @@ export type BlogCategoryTag = {
   taxonomy: string;
   parent: number;
   meta: any[];
-  yoast_head: string;
-  yoast_head_json: YoastHeadJson;
   _links: BlogLinks;
 };
 
@@ -66,8 +62,6 @@ export type BlogPost = {
   meta: any[];
   categories: number[];
   tags: string[];
-  yoast_head: string;
-  yoast_head_json: YoastHeadJson;
   featured_image_src: string;
   thumbnail_image_src: string;
   display_name: string;
@@ -116,8 +110,6 @@ type BlogPostEmbeddedAuthor = {
   link: string;
   slug: string;
   avatar_urls: { [key: number]: string };
-  yoast_head: string;
-  yoast_head_json: YoastHeadJson;
   _links: BlogPostLinks;
 };
 type BlogPostEmbeddedFeaturedMedia = {
@@ -140,8 +132,6 @@ type BlogPostEmbeddedTerm = {
   name: string;
   slug: string;
   taxonomy: string;
-  yoast_head: string;
-  yoast_head_json: YoastHeadJson;
   _links: BlogPostLinks;
 };
 
