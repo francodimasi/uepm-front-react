@@ -5,7 +5,7 @@ export const BlogFrontPageSkeleton = () => {
     <>
       <div className="col-span-12  mt-6 mb-6 sm:mt-10 sm:mb-10 border-b-1 border-gray-medium sm:border-0">
         <div>
-            <PostItemSkeleton size="bigger" />
+          <PostItemSkeleton size="bigger" />
         </div>
       </div>
       <div className="flex flex-col sm:flex-row sm:gap-12 mt-0 ">
@@ -31,15 +31,11 @@ export const BlogFrontPageSkeleton = () => {
               <PostItemSkeleton size="vertical" />
             </div>
             <div className="sm:border-0 border-b border-gray-medium mb-6 pb-6 sm:pb-10">
-              <PostItemSkeleton size="vertical"  />
+              <PostItemSkeleton size="vertical" />
             </div>
           </div>
         </div>
       </div>
-      
-      
     </>
-    
-  )
-}
-
+  );
+};

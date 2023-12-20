@@ -3,8 +3,6 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import clsx from 'clsx';
 
-
-
 export type TabItem = {
   name: string;
   id: number;
@@ -15,30 +13,35 @@ export type TabsProps = {
   selected: number;
   // eslint-disable-next-line no-unused-vars
   onChange: (id: number) => void;
-  classes?: string
+  classes?: string;
 };
-export const Tabs = ({ items, selected, onChange, classes}: TabsProps) => {
+export const Tabs = ({ items, selected, onChange, classes }: TabsProps) => {
   return (
     <Swiper
       slidesPerView={4}
       slidesPerGroup={1}
       resistanceRatio={1000}
-      spaceBetween= {30}
-      className={clsx(classes, 'w-100 border-b border-b-gray-light justify-center items-center inline-flex')}
-      
+      spaceBetween={30}
+      className={clsx(
+        classes,
+        'w-100 border-b border-b-gray-light justify-center items-center inline-flex',
+      )}
     >
       {items?.map(({ name, id }) => (
         <SwiperSlide
           key={id}
           className={`font-['DMSans'] grow ${
-            id === selected ? 'border-b-2 border-black font-bold' : ' font-light hover:font-normal hover:border-b-1 hover:border-gray-dark'
+            id === selected
+              ? 'border-b-2 border-black font-bold'
+              : ' font-light hover:font-normal hover:border-b-1 hover:border-gray-dark'
           } `}
           onClick={() => onChange(id)}
         >
-          <div className="text-center text-dark text-base  ms-1 leading-none w-full whitespace-nowrap">{name}</div>
+          <div className="text-center text-dark text-base  ms-1 leading-none w-full whitespace-nowrap">
+            {name}
+          </div>
         </SwiperSlide>
       ))}
-      
     </Swiper>
   );
 };

@@ -157,7 +157,6 @@ export type BlogCategoryParams = {
   slug?: string[];
 };
 
-
 export type BlogPostFilterParams = {
   page?: number;
   per_page?: number;

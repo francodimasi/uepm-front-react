@@ -14,7 +14,7 @@ module.exports = {
         hostname: 'content.unensayoparami.org',
         port: '',
         pathname: '/wp-includes/images/**',
-      }
+      },
     ],
   },
 };

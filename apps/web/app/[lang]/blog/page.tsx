@@ -8,7 +8,7 @@ import {
   getTrendingTopics,
   getCategories,
   getSuggestedPosts,
-  getEditorChoicePosts
+  getEditorChoicePosts,
 } from '@api/blog/requests';
 
 export default async function Page() {
@@ -22,7 +22,7 @@ export default async function Page() {
 
   const trendingTopics = await getTrendingTopics();
   const editorChoicePosts = await getEditorChoicePosts();
-  
+
   const featuredPost = await getFeaturedPost(defaultCategoryId);
   const suggestedPosts = await getSuggestedPosts();
 

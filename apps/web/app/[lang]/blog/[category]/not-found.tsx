@@ -1,9 +1,9 @@
 'use client';
 
-import { useRouter } from 'next/navigation'
+import { useRouter } from 'next/navigation';
 
 export default function NotFound() {
-  const router = useRouter()
+  const router = useRouter();
 
   return (
     <div className=" w-full gap-5 p-24 bg-light flex-col justify-between items-start inline-flex">
@@ -14,7 +14,11 @@ export default function NotFound() {
         </span>
       </div>
       <div>
-        <button className=" text-2xl text-primary-dark underline font-normal font-['Lexend']" type="button" onClick={() => router.back()}>
+        <button
+          className=" text-2xl text-primary-dark underline font-normal font-['Lexend']"
+          type="button"
+          onClick={() => router.back()}
+        >
           volver
         </button>
       </div>

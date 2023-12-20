@@ -11,10 +11,12 @@ export const Tag: React.FC<TagProps> = ({
       className=" flex-grow basis-auto my-2 sm:my-2 mx-0 py-0 px-px text-center border-l-1 border-solid border-l-gray-medium bg-white leading-none"
       onClick={onClickHandler}
     >
-      <span className={clsx(
-        "text-black text-base font-normal font-['DMSans'] leading-none mx-2 sm:mx-px ",
-        className
-      )}>
+      <span
+        className={clsx(
+          "text-black text-base font-normal font-['DMSans'] leading-none mx-2 sm:mx-px ",
+          className,
+        )}
+      >
         {text}
       </span>
     </li>

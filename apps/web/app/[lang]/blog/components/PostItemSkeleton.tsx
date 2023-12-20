@@ -14,15 +14,18 @@ type PostItemSkeletonProps = {
 
 export const PostItemSkeleton = ({ size = 'large' }: PostItemSkeletonProps) => {
   const containerClasses = clsx('animate-pulse isolate ', {
-    'border-b-1 border-gray-medium w-full pb-4 h-28 justify-start items-start inline-flex': size === 'small',
+    'border-b-1 border-gray-medium w-full pb-4 h-28 justify-start items-start inline-flex':
+      size === 'small',
     'flex-col inline-flex  w-full gap-6 lg:flex-row ': size === 'large',
     'inline-flex sm:flex-col w-full': size === 'vertical',
     'flex-col inline-flex  w-full sm:flex-col-reverse mt-5': size === 'bigger',
   });
   const imageContentClasses = clsx('', {
     'relative w-16 h-24 shrink-0 me-4': size === 'small',
-    'hidden sm:block  relative aspect-[16/9] sm:aspect-[2/1] lg:aspect-square w-36 lg:shrink-0 ':size === 'large',
-    'relative h-32 w-40 sm:w-full sm:h-42 self-center mb-4': size === 'vertical',
+    'hidden sm:block  relative aspect-[16/9] sm:aspect-[2/1] lg:aspect-square w-36 lg:shrink-0 ':
+      size === 'large',
+    'relative h-32 w-40 sm:w-full sm:h-42 self-center mb-4':
+      size === 'vertical',
     'relative w-64 h-64 self-center': size === 'bigger',
   });
 
@@ -40,20 +43,24 @@ export const PostItemSkeleton = ({ size = 'large' }: PostItemSkeletonProps) => {
     'grow shrink basis-0 flex-col justify-start items-start sm:block ':
       size === 'small',
     'grow shrink basis-0 flex-col justify-start items-start sm:block':
-      size === 'vertical' ,
+      size === 'vertical',
   });
 
-  const categoryContent = clsx('h-3 bg-primary-dark  opacity-60  rounded-full w-48 mb-4', {
-    'w-14' : size === 'small',
-    'w-16' : size === 'vertical'
-  });
+  const categoryContent = clsx(
+    'h-3 bg-primary-dark  opacity-60  rounded-full w-48 mb-4',
+    {
+      'w-14': size === 'small',
+      'w-16': size === 'vertical',
+    },
+  );
 
-  const titleClass = clsx( 'bg-gray-medium opacity-80 rounded-full w-full mb-6', {
-    'h-8 ' : size !== 'small',
-    'h-4 ' : size === 'small'
-  }
-    
-  )
+  const titleClass = clsx(
+    'bg-gray-medium opacity-80 rounded-full w-full mb-6',
+    {
+      'h-8 ': size !== 'small',
+      'h-4 ': size === 'small',
+    },
+  );
 
   return (
     <>
@@ -82,7 +89,7 @@ export const PostItemSkeleton = ({ size = 'large' }: PostItemSkeletonProps) => {
             <div className="h-3 bg-gray-light opacity-80 rounded-full w-full mb-4"></div>
             <div className="h-3 bg-gray-light opacity-80 rounded-full w-full"></div>
           </div>
-        </div>        
+        </div>
       </div>
     </>
   );

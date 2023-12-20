@@ -6,12 +6,15 @@ import { getCategories } from '@api/blog/requests';
 export default async function Page({
   params,
 }: {
-  params: { category: string;};
+  params: { category: string };
 }) {
-  const categories = await getCategories()
+  const categories = await getCategories();
 
-  if(isNaN(Number(params.category)) || !categories.find((category) => category.id === Number(params.category))) {
-    notFound()
+  if (
+    isNaN(Number(params.category)) ||
+    !categories.find((category) => category.id === Number(params.category))
+  ) {
+    notFound();
   }
 
   return (
@@ -19,7 +22,11 @@ export default async function Page({
       <div className="container">
         <div className="grid grid-cols-12">
           <section className="col-span-12 pr-8 py-12">
-            <MainPostList categories={categories} category={Number(params.category)} itemsPerPage={10}/>
+            <MainPostList
+              categories={categories}
+              category={Number(params.category)}
+              itemsPerPage={10}
+            />
           </section>
         </div>
       </div>
@@ -44,4 +51,4 @@ export default async function Page({
 //     }
 //   });
 //   return _return;
-// }  
+// }

@@ -20,7 +20,10 @@ export const PostSearch = () => {
     >
       {open ? (
         <>
-          <button className="w-6 h-6 relative cursor-pointer z-40 py-3" type="submit">
+          <button
+            className="w-6 h-6 relative cursor-pointer z-40 py-3"
+            type="submit"
+          >
             <span className="material-icons block">search</span>
           </button>
           <PostSearchInput open={open} />

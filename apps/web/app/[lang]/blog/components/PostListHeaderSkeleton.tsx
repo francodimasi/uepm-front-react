@@ -9,7 +9,7 @@ export const PostListHeaderSkeleton = () => {
           <div className="h-4 ms-24 bg-gray-medium rounded-full dark:bg-gray-dark w-36"></div>
         </div>
       </div>
-      <div className="flex sm:hidden w-full">        
+      <div className="flex sm:hidden w-full">
         <div className="h-8 bg-gray-light rounded-full dark:bg-gray-medium w-full"></div>
       </div>
     </>

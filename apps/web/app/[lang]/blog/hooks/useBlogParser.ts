@@ -3,7 +3,8 @@ import { PostItemProps } from '../components/PostItem';
 
 export const blogParser = () => {
   const postToPostItem = (post: BlogPost): PostItemProps => {
-    const { title, date, featured_image_src, slug, yoast_head_json, category} = post;
+    const { title, date, featured_image_src, slug, yoast_head_json, category } =
+      post;
     const postItem: PostItemProps = {
       category,
       content: yoast_head_json.description,

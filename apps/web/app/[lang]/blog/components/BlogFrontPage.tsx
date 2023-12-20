@@ -75,13 +75,14 @@ export const BlogFrontPage = ({
             {Object.keys(posts).length > 0 && (
               <div className="sm:basis-2/3 order-2 sm:order-1">
                 <div className="flex flex-col ">
-                  {
-                    posts.map((post) => (
-                      <div key={post.slug} className="sm:h-60 pb-6 mb-5 border-b border-gray-medium sm:mb-5 sm:mt-0 sm:pb-0">
-                        <PostItem key={post.slug} size="large" {...post} />
-                      </div>
-                    ))
-                  }
+                  {posts.map((post) => (
+                    <div
+                      key={post.slug}
+                      className="sm:h-60 pb-6 mb-5 border-b border-gray-medium sm:mb-5 sm:mt-0 sm:pb-0"
+                    >
+                      <PostItem key={post.slug} size="large" {...post} />
+                    </div>
+                  ))}
                 </div>
               </div>
             )}

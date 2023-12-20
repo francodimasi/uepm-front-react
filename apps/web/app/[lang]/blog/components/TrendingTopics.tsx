@@ -4,11 +4,15 @@ import { Tag } from 'ui';
 import { TrendingTopicsSkeleton } from './TrendingTopicsSkeleton';
 import { useState, useEffect } from 'react';
 
-export const TrendingTopics = ({tags}: {tags: {id: number, text: string}[]}) => {
+export const TrendingTopics = ({
+  tags,
+}: {
+  tags: { id: number; text: string }[];
+}) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    setLoading(false)
+    setLoading(false);
   }, []);
 
   return (
@@ -17,19 +21,21 @@ export const TrendingTopics = ({tags}: {tags: {id: number, text: string}[]}) => 
         {/*@todo i18nPending translation*/}
         Temas más buscados
       </div>
-      {
-        loading ? (
-          <TrendingTopicsSkeleton />
-        ) : (
-          <div className=" relative overflow-hidden">
-            <ul className=" flex flex-row flex-wrap justify-between -ml-px">
-              {tags.map((tag) => (
-                <Tag text={tag.text} key={tag.id} className=" text-sm lowercase" />
-              ))}
-            </ul>
-          </div>   
-        )
-      }
+      {loading ? (
+        <TrendingTopicsSkeleton />
+      ) : (
+        <div className=" relative overflow-hidden">
+          <ul className=" flex flex-row flex-wrap justify-between -ml-px">
+            {tags.map((tag) => (
+              <Tag
+                text={tag.text}
+                key={tag.id}
+                className=" text-sm lowercase"
+              />
+            ))}
+          </ul>
+        </div>
+      )}
     </div>
   );
 };
