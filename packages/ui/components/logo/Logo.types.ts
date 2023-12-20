@@ -1,8 +1,8 @@
-import { PropsWithClassName } from '../../types/core';
+import { PropsWithClassName, Theme } from '../../types/core';
 
 export type LogoProps = PropsWithClassName & {
   brand: 'uepm' | 'tt';
-  type?: 'color' | 'dark' | 'light';
+  type?: Theme;
   width?: number;
   height?: number;
 };
