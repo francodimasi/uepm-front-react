@@ -7,6 +7,9 @@ import {
   BlogPostParams,
 } from './types/blog.types';
 
+const TAGS_REVALIDATE = 3600;  // 60 * 60  = 1 hour
+const TAG_ID_REVALIDATE = 86400;  // 1 day (should never change anyway)
+
 export const useBlog = () => {
   const { get } = useRest();
 
@@ -18,7 +21,7 @@ export const useBlog = () => {
   const getTags = async () => {
     try {
       const res = await fetch(ENDPOINTS.BLOG.TAGS, {
-        next: { revalidate: 3600 }, // 60*60 = 1 hour
+        next: { revalidate: TAGS_REVALIDATE },
       });
       const data = await res.json();
       const newTags: { id: number; text: string }[] = data.map((tag) => {
@@ -79,7 +82,7 @@ export const useBlog = () => {
       const res = await fetch(
         `${ENDPOINTS.BLOG.TAGS}?search=${tagName}&orderby=name`,
         {
-          next: { revalidate: 86400 }, // 1 day (should never change though)
+          next: { revalidate: TAG_ID_REVALIDATE },
         },
       );
       const data = await res.json();

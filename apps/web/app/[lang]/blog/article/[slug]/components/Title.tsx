@@ -1,7 +1,7 @@
 import dayjs from 'dayjs';
-import ShareIcon from 'public/images/search-normal.svg';
-import Ellipsis from 'public/images/Ellipse 1.svg';
-import LeftArrow from 'public/images/Arrow 1.svg';
+import ShareIcon from 'ui/core/icons/ShareOutlineIcon.svg';
+import Ellipsis from 'ui/core/icons/EllipsisIcon.svg';
+import LeftArrow from 'ui/core/icons/ArrowBackIcon.svg';
 import Image from 'next/image';
 import Link from 'next/link';
 import { TitleProps } from '../Article.types';
