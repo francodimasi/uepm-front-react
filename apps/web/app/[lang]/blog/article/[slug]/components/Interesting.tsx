@@ -11,7 +11,7 @@ export const Interesting: React.FC<InterestingProps> = ({ blogPost }) => {
         Te podría interesar
       </div>
       {/* Need a generic image for posts without thumbnail? */}
-      <div className="relative w-[85px] h-[100px] lg:w-[302px] lg:h-[190px]">
+      <div className="relative w-[85px] h-[100px] sm:w-[302px] sm:h-[190px]">
         <Image
           className="col-span-1 object-contain"
           src={blogPost.thumbnail_image_src}

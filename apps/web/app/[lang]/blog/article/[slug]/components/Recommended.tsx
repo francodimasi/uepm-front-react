@@ -18,15 +18,15 @@ export const Recommended: React.FC<RecommendedProps> = ({ posts, tag }) => {
           </div>
         </Link>
       </div>
-      <div className="flex flex-col justify-between lg:flex-row gap-6">
+      <div className="flex flex-col justify-between sm:flex-row gap-6">
         {posts?.map((post) => {
           return (
             <div
               key={post.id}
-              className="grid grid-cols-3 lg:flex lg:flex-col lg:basis-full pb-6 border-b border-gray-medium gap-6"
+              className="grid grid-cols-3 sm:flex sm:flex-col sm:basis-full pb-6 border-b border-gray-medium gap-6"
             >
               {/* Need a generic image for posts without thumbnail? */}
-              <div className="relative w-[85px] h-[100px] lg:w-full lg:h-[190px]">
+              <div className="relative w-[85px] h-[100px] sm:w-full sm:h-[190px]">
                 <Image
                   className="col-span-1 object-contain"
                   src={post.thumbnail_image_src}
@@ -34,7 +34,7 @@ export const Recommended: React.FC<RecommendedProps> = ({ posts, tag }) => {
                   fill={true}
                 />
               </div>
-              <div className="col-span-2 col-start-2 lg:flex lg:flex-col self-stretch gap-2">
+              <div className="col-span-2 col-start-2 sm:flex sm:flex-col self-stretch gap-2">
                 <div className="self-stretch text-primary text-xs font-normal font-['DMSans'] uppercase leading-none tracking-tight">
                   {post.tags.join(' | ')}
                 </div>

@@ -77,9 +77,9 @@ const Article: React.FC<ArticleProps> = async ({ params }) => {
 
   return (
     <Layout>
-      <div className="container px-4 lg:px-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12">
-          <section className="col-span-1 lg:col-span-12">
+      <div className="container px-4 sm:px-10">
+        <div className="grid grid-cols-1 sm:grid-cols-12">
+          <section className="col-span-1 sm:col-span-12">
             <Title
               title={postBlog.title.rendered}
               date={postBlog.date}
@@ -88,15 +88,15 @@ const Article: React.FC<ArticleProps> = async ({ params }) => {
               }
             />
           </section>
-          <section className="col-span-1 lg:col-span-9">
-            <div className="mt-10 lg:mr-32">
+          <section className="col-span-1 sm:col-span-9">
+            <div className="mt-10 sm:mr-32">
               <div
                 dangerouslySetInnerHTML={{ __html: postBlog.content.rendered }}
               />
               <ArticleTags articleTags={postBlog.tags} />
             </div>
           </section>
-          <aside className="col-span-1 lg:col-span-3 flex-col justify-start items-start gap-8 hidden lg:inline-flex">
+          <aside className="col-span-1 sm:col-span-3 flex-col justify-start items-start gap-8 hidden sm:inline-flex">
             <Highlights nextPost={nextPost} newTags={tags} />
           </aside>
         </div>

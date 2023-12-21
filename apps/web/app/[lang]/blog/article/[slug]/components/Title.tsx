@@ -27,7 +27,7 @@ export const Title: React.FC<TitleProps> = ({ title, date, readingTime }) => {
         </div>
       </div>
       <div className="h-full flex-col gap-2 flex">
-        <div className="self-stretch text-dark lg:text-[56px] font-semibold font-['Lexend']">
+        <div className="self-stretch text-dark sm:text-[56px] font-semibold font-['Lexend']">
           {title}
         </div>
         <div className="items-center gap-4 inline-flex">
