@@ -1,7 +1,7 @@
 import { Layout } from '@components/core/layout/Layout';
-import { MainPostList } from './../components/MainPostList';
+import { MainPostList } from '../components/postList/MainPostList';
 import { notFound } from 'next/navigation';
-import { getCategories } from '@api/blog/requests';
+import { getCategories } from '@api/blog/blogRequests';
 
 export default async function Page({
   params,
@@ -33,22 +33,3 @@ export default async function Page({
     </Layout>
   );
 }
-
-// export async function generateStaticParams() {
-//   // const posts = await getAllPost()
-//   const categories = await getCategories();
-//   const postsPerPage = 10;
-//   const _return = []
-//   categories.forEach(async (category) => {
-//     const pages = Math.ceil(category.count / postsPerPage);
-//     for (let i = 1 ; i <= pages; i++) {
-//       _return.push(
-//         {
-//           category: category.id.toString(),
-//           page: i.toString()
-//         }
-//       )
-//     }
-//   });
-//   return _return;
-// }

@@ -1,5 +1,5 @@
 import { BlogPost } from '@api/blog/types/blog.types';
-import { PostItemProps } from '../components/PostItem';
+import { PostItemProps } from '../components/postItem/PostItem';
 
 export const blogParser = () => {
   const postToPostItem = (post: BlogPost): PostItemProps => {

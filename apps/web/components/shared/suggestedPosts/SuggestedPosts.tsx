@@ -1,0 +1,37 @@
+'use client';
+
+import { useEffect, useState } from 'react';
+import { SuggestedPostsSkeleton } from './SuggestedPostsSkeleton';
+import { PostItem } from '../../../app/[lang]/blog/components/postItem/PostItem';
+import { SuggestedPostsProps } from './SuggestedPosts.types';
+
+export const SuggestedPosts = ({ posts }: SuggestedPostsProps) => {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    setLoading(false);
+  }, []);
+
+  return (
+    <div className="flex-col justify-start items-start gap-8 flex">
+      <div className="text-2xl font-medium font-['Lexend'] leading-7 text-primary ">
+        {/*@todo i18nPending translation*/}
+        Selección del editor
+      </div>
+      {/*@todo Pending translation*/}
+      {loading ? (
+        <div className="space-y-6 lg:space-y-6">
+          <SuggestedPostsSkeleton />
+        </div>
+      ) : (
+        <div className=" space-y-6 lg:space-y-6">
+          {posts?.map((postItem) => (
+            <div className="flex-1  last:mr-0" key={postItem.slug}>
+              <PostItem size="small" {...postItem} />
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+};

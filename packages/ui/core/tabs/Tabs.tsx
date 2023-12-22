@@ -11,8 +11,7 @@ export type TabItem = {
 export type TabsProps = {
   items: TabItem[];
   selected: number;
-  // eslint-disable-next-line no-unused-vars
-  onChange: (id: number) => void;
+  onChange: (_id: number) => void;
   classes?: string;
 };
 export const Tabs = ({ items, selected, onChange, classes }: TabsProps) => {

@@ -9,7 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@heroicons/react": "^2.0.18",
     "clsx": "^1.2.1",
     "dayjs": "^1.11.10",
     "i18n": "*",
