@@ -1,12 +1,9 @@
-'use client';
-
 import Link from 'next/link';
 import React from 'react';
 import { Logo, Social } from 'ui/components';
 import { FooterSection } from './section';
 import { FooterSectionLinkProps } from './section/FooterSection.types';
 import { PrivacyPolicy, Terms } from './t&c';
-import useTailwindBreakpoints from 'ui/hooks/useTailwindBreakpoints';
 
 const patientLinks: FooterSectionLinkProps[] = [
   { label: 'Sponsors', link: '' },
@@ -29,7 +26,6 @@ const productsLinks: FooterSectionLinkProps[] = [
 ];
 
 export const Footer: React.FC = () => {
-  const { isMobile } = useTailwindBreakpoints();
   return (
     <div className="felx flex-col bg-primary-dark">
       <div className="grid grid-cols-1 sm:grid-cols-4 gap-4 p-4 pb-2 sm:p-20 sm:pb-8">
@@ -59,27 +55,24 @@ export const Footer: React.FC = () => {
           />
         </div>
       </div>
-      {isMobile ? (
-        <div className="grid grid-cols-2 gap-4 p-4 pb-2">
-          <div className="ps-2 text-light">Language selector</div>
-          <Social className="ps-2" />
+      <div className="grid grid-cols-2 gap-4 p-4 pb-2 sm:hidden">
+        <div className="ps-2 text-light">Language selector</div>
+        <Social className="ps-2" />
+        <Terms className="mr-2" />
+        <PrivacyPolicy />
+      </div>
+      <div className="sm:grid grid-cols-2 px-4 py-2 sm:px-20 sm:py-8 hidden">
+        <div className="flex flex-row justify-start items-center">
+          <div className="ms-2 me-4 p-2 text-light border border-solid">
+            Language selector
+          </div>
           <Terms className="mr-2" />
           <PrivacyPolicy />
         </div>
-      ) : (
-        <div className="grid grid-cols-2 px-4 py-2 sm:px-20 sm:py-8">
-          <div className="flex flex-row justify-start items-center">
-            <div className="ms-2 me-4 p-2 text-light border border-solid">
-              Language selector
-            </div>
-            <Terms className="mr-2" />
-            <PrivacyPolicy />
-          </div>
-          <div className="flex flex-row justify-end">
-            <Social size="sm" />
-          </div>
+        <div className="flex flex-row justify-end">
+          <Social size="sm" />
         </div>
-      )}
+      </div>
     </div>
   );
 };
