@@ -56,7 +56,9 @@ const getNextPost = async function (
   }
 };
 
-{/* @ts-expect-error Async Server Component */}
+{
+  /* @ts-expect-error Async Server Component */
+}
 const Article: React.FC<ArticleProps> = async ({ params }) => {
   const { slug } = params;
 
