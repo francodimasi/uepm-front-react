@@ -1,29 +1,13 @@
-'use client';
-
-import { useLayoutEffect } from 'react';
 import { Layout } from '../../components/core/layout/Layout';
-import { SwitchLanguage } from '../../components/core/layout/language/SwitchLanguage';
-import { errorResponseHandler } from '@core/error-handler';
-import { siteRequests } from '@api/site/useSite';
 
 export default function Page() {
-  const { getSites } = siteRequests();
-
-  const loadSites = async () => {
-    try {
-      await getSites();
-    } catch (e) {
-      errorResponseHandler(e);
-    }
-  };
-
-  useLayoutEffect(() => {
-    loadSites();
-  }, []);
-
   return (
     <Layout>
-      <SwitchLanguage />
+      <span>{`ENV: ${process.env.NEXT_PUBLIC_ENV}`}</span>
+      <br></br>
+      <span>{`API url: ${process.env.NEXT_PUBLIC_API_URL}`}</span>
+      <br></br>
+      <span>{`WP url: ${process.env.NEXT_PUBLIC_WP_URL}`}</span>
     </Layout>
   );
 }

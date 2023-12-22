@@ -5,7 +5,6 @@ module.exports = {
     'react/display-name': 'off',
     '@next/next/no-html-link-for-pages': 'off',
     'no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
-
     quotes: ['error', 'single', { avoidEscape: true }],
   },
   parserOptions: {
