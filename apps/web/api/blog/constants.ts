@@ -22,7 +22,7 @@ export const BLOG = {
     ORDER_BY: 'date',
   },
   CATEGORY: {
-    SLUG: 'testimonios, entrevistas,ensayos-clinicos,noticias',
+    SLUG: 'testimonios, entrevistas, ensayos-clinicos, noticias',
   },
   LANG: {
     // CATEGORY
