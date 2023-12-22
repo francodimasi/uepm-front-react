@@ -7,8 +7,8 @@ import {
   BlogPostParams,
 } from './types/blog.types';
 
-const TAGS_REVALIDATE = 3600;  // 60 * 60  = 1 hour
-const TAG_ID_REVALIDATE = 86400;  // 1 day (should never change anyway)
+const TAGS_REVALIDATE = 3600; // 60 * 60  = 1 hour
+const TAG_ID_REVALIDATE = 86400; // 1 day (should never change anyway)
 
 export const useBlog = () => {
   const { get } = useRest();

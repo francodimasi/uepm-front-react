@@ -1,5 +1,5 @@
 import dayjs from 'dayjs';
-import { ArrowBackIcon, EllipsisIcon, ShareOutlineIcon } from 'ui/core/icons'
+import { ArrowBackIcon, EllipsisIcon, ShareOutlineIcon } from 'ui/core/icons';
 import Link from 'next/link';
 import { TitleProps } from '../Article.types';
 
