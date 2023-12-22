@@ -25,7 +25,7 @@ export const MainPostList = ({
     setPosts(posts);
     setLoading(false);
   };
-  
+
   useEffect(() => {
     setLoading(true);
     fetchData();

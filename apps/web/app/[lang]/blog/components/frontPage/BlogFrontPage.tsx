@@ -2,7 +2,10 @@
 
 import { PostListHeader } from '../postList/PostListHeader';
 import { useState, useEffect } from 'react';
-import { getFeaturedPost, getBlogCategoryPostList } from '@api/blog/blogRequests';
+import {
+  getFeaturedPost,
+  getBlogCategoryPostList,
+} from '@api/blog/blogRequests';
 import { BlogFrontPageSkeleton } from './BlogFrontPageSkeleton';
 import { PostItem } from '../postItem/PostItem';
 import { Button } from 'ui/core';

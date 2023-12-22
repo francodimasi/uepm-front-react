@@ -1,3 +1,3 @@
 export type PostSearchInputProps = {
-    open: boolean;
+  open: boolean;
 };

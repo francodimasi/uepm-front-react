@@ -1,4 +1,3 @@
-
 type PostItemPropsSize = 'small' | 'large' | 'vertical' | 'bigger';
 
 export type PostItemProps = {
@@ -11,11 +10,7 @@ export type PostItemProps = {
   size?: PostItemPropsSize;
 };
 
-type PostItemSkeletonPropsSize =
-  | 'small'
-  | 'large'
-  | 'vertical'
-  | 'bigger';
+type PostItemSkeletonPropsSize = 'small' | 'large' | 'vertical' | 'bigger';
 
 export type PostItemSkeletonProps = {
   size?: PostItemSkeletonPropsSize;

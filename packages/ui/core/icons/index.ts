@@ -5,5 +5,3 @@ export { CloseIcon } from './CloseIcon';
 export { MenuIcon } from './MenuIcon';
 export { CheckOutlineIcon } from './CheckOutlineIcon';
 export { ChevronDownIcon } from './ChevronDownIcon';
-
-

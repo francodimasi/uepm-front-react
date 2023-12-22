@@ -6,4 +6,3 @@ export type PagintationParams = PropsWithClassName & {
   pagesCount: number;
   setPage: Dispatch<SetStateAction<number>>;
 };
-
