@@ -1,0 +1,11 @@
+{
+  "name": "intl",
+  "description": "next-intl implementation",
+  "version": "0.0.0",
+  "main": "index.ts",
+  "license": "Trialtech",
+  "author": "Trialtech",
+  "dependencies": {
+    "next-intl": "^3.4.0"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "metadata": {
+    "title": "Un Ensayo Para Mí"
+  },
+  "locale": {
+    "en": "Inglés",
+    "es": "Español",
+    "pt": "Portugués"
+  },
+  "home": {
+    "lang": "Español"
+  },
+  "about": {
+    "title": "Nosotros"
+  }
+}
