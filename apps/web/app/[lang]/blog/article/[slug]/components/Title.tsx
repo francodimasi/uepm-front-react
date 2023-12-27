@@ -1,8 +1,5 @@
 import dayjs from 'dayjs';
-import ShareIcon from 'ui/core/icons/ShareOutlineIcon.svg';
-import Ellipsis from 'ui/core/icons/EllipsisIcon.svg';
-import LeftArrow from 'ui/core/icons/ArrowBackIcon.svg';
-import Image from 'next/image';
+import { ArrowBackIcon, EllipsisIcon, ShareOutlineIcon } from 'ui/core/icons';
 import Link from 'next/link';
 import { TitleProps } from '../Article.types';
 
@@ -12,7 +9,7 @@ export const Title: React.FC<TitleProps> = ({ title, date, readingTime }) => {
       <div className="self-stretch justify-between items-center inline-flex">
         {/* TODO: this link needs to consider locale */}
         <Link href="/en/blog/">
-          <Image src={LeftArrow} alt="Back to blog home"></Image>
+          <ArrowBackIcon></ArrowBackIcon>
         </Link>
         <div className="flex items-center">
           {/* TODO: add functionality to Share link */}
@@ -20,9 +17,7 @@ export const Title: React.FC<TitleProps> = ({ title, date, readingTime }) => {
             Compartir
           </div>
           <div className="w-12 px-3 py-4 rounded-[100px] items-center gap-3 flex">
-            <div className="w-6 h-6 relative">
-              <Image src={ShareIcon} alt="Share this article"></Image>
-            </div>
+            <ShareOutlineIcon className="w-6 h-6"></ShareOutlineIcon>
           </div>
         </div>
       </div>
@@ -34,9 +29,7 @@ export const Title: React.FC<TitleProps> = ({ title, date, readingTime }) => {
           <div className="text-dark text-xs font-normal font-['DMSans'] uppercase leading-normal">
             {dayjs(date).format('d [de] MMMM, YYYY')}
           </div>
-          <div className="w-[5px] h-[5px] bg-black rounded-full">
-            <Image src={Ellipsis} alt="Ellipsis"></Image>
-          </div>
+          <EllipsisIcon className="w-[5px] h-[5px] bg-black rounded-full"></EllipsisIcon>
           <div className="text-dark text-xs font-normal font-['DMSans'] uppercase leading-normal">
             {readingTime} de lectura
           </div>

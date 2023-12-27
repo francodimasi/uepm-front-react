@@ -1,10 +1,6 @@
 import { useBlog } from '@api/blog/useBlog';
 import { Layout } from '@components/core/layout/Layout';
-
-import { ArticleTags } from './components/ArticleTags';
-import { Title } from './components/Title';
-import { Highlights } from './components/Highlights';
-import { Recommended } from './components/Recommended';
+import { ArticleTags, Title, Highlights, Recommended } from './components';
 import { ENDPOINTS } from '@api/endpoints.conts';
 import { BlogPost, BlogPostFilterParams } from '@api/blog/types/blog.types';
 import { ArticleProps } from './Article.types';
@@ -60,6 +56,9 @@ const getNextPost = async function (
   }
 };
 
+{
+  /* @ts-expect-error Async Server Component */
+}
 const Article: React.FC<ArticleProps> = async ({ params }) => {
   const { slug } = params;
 
