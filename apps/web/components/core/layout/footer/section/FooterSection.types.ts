@@ -1,11 +1,15 @@
+import { LocaleProps } from 'intl';
 import { PropsWithClassName } from 'ui/types/core';
 
 export type FooterSectionLinkProps = PropsWithClassName & {
   label: string;
-  link: string;
+  href: string;
+  outbound?: boolean;
+  target?: '_blank' | '_self';
 };
 
-export type FooterSectionProps = PropsWithClassName & {
-  title: string;
-  links: FooterSectionLinkProps[];
-};
+export type FooterSectionProps = PropsWithClassName &
+  LocaleProps & {
+    title: string;
+    links: FooterSectionLinkProps[];
+  };
