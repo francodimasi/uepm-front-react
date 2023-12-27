@@ -1,9 +1,15 @@
-import { Layout } from '../../../components/core/layout/Layout';
+import { Layout } from '@components/core/layout/Layout';
+import { SwitchLocale } from '@intl/components/SwitchLocale';
+import { unstable_setRequestLocale, useTranslations } from 'intl';
 
-export default function Page() {
+export default function Page({ params: { lang } }) {
+  unstable_setRequestLocale(lang);
+  const t = useTranslations('about');
+
   return (
     <Layout>
-      <p className="text-red-500">This is the About us section</p>
+      <p className="text-red-500">{t('title')}</p>
+      <SwitchLocale />
     </Layout>
   );
 }

@@ -1,0 +1,16 @@
+{
+  "metadata": {
+    "title": "Trialtech"
+  },
+  "locale": {
+    "en": "English",
+    "es": "Spanish",
+    "pt": "Portuguese"
+  },
+  "home": {
+    "lang": "English"
+  },
+  "about": {
+    "title": "About us"
+  }
+}
