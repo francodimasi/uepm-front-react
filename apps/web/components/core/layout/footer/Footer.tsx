@@ -22,7 +22,11 @@ const newsLinks: FooterSectionLinkProps[] = [
 ];
 const productsLinks: FooterSectionLinkProps[] = [
   { label: 'UEPM Patients', href: '', outbound: true },
-  { label: 'UEPM Onco', href: 'https://onco.unensayoparami.org', outbound: true },
+  {
+    label: 'UEPM Onco',
+    href: 'https://onco.unensayoparami.org',
+    outbound: true,
+  },
   { label: 'UEPM Physicians', href: '', outbound: true },
 ];
 
