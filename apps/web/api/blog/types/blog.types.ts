@@ -112,6 +112,7 @@ type BlogPostEmbeddedAuthor = {
   avatar_urls: { [key: number]: string };
   _links: BlogPostLinks;
 };
+
 type BlogPostEmbeddedFeaturedMedia = {
   id: number;
   date: string;

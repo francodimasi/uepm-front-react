@@ -9,7 +9,7 @@ export const Tag: React.FC<TagProps> = ({
   return (
     <div
       className={clsx(
-        "text-black text-base font-normal font-['DMSans'] leading-none p-1",
+        "text-black text-base font-normal font-['DMSans'] leading-none p-1 whitespace-nowrap",
         className,
       )}
       onClick={onClickHandler}

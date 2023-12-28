@@ -1,19 +1,23 @@
 import { useBlog } from '@api/blog/useBlog';
 import { Layout } from '@components/core/layout/Layout';
-import { ArticleTags, Title, Highlights, Recommended } from './components';
-import { ENDPOINTS } from '@api/endpoints.conts';
+import {
+  ArticleContent,
+  ArticleTitle,
+  ArticleRelated,
+  FeaturedArticles,
+} from './components';
+// import { ENDPOINTS } from '@api/endpoints.conts';
 import { BlogPost, BlogPostFilterParams } from '@api/blog/types/blog.types';
 import { ArticleProps } from './Article.types';
+import { defaultLocale } from 'intl';
 
-const DAY_IN_SECONDS = 86400;
+// const DAY_IN_SECONDS = 86400;
 
 const getRecommendedPosts = async function (
   tagName: string,
-  getPostListFn: Function, //(params: BlogPostFilterParams) => Promise<BlogPost[]>
-  getTagIDFn: Function,
+  getPostListFn: (_params: BlogPostFilterParams) => Promise<BlogPost[]>,
+  getTagIDFn: (_tagName: string) => Promise<number>,
 ) {
-  //(tagName: string) => Promise<number> ) {
-
   const getPostsParams: BlogPostFilterParams = {
     per_page: 4,
     page: 1,
@@ -37,7 +41,7 @@ const getRecommendedPosts = async function (
 // Gets next cronological post from the same category as current post
 const getNextPost = async function (
   currentPost: BlogPost,
-  getPostsFn: Function, //(params: BlogPostFilterParams) => Promise<BlogPost[]>
+  getPostsFn: (_params: BlogPostFilterParams) => Promise<BlogPost[]>,
 ) {
   try {
     const nextPost: BlogPost[] = await getPostsFn({
@@ -56,74 +60,76 @@ const getNextPost = async function (
   }
 };
 
-{
-  /* @ts-expect-error Async Server Component */
-}
-const Article: React.FC<ArticleProps> = async ({ params }) => {
-  const { slug } = params;
-
+const Page = async ({
+  params: { lang = defaultLocale, slug },
+}: ArticleProps) => {
   const { getOnePost, getPostList, getTagID, getTags } = useBlog();
 
-  const postBlog = await getOnePost(slug);
-  const tagName = postBlog.tags[0];
-  const recommendedPosts = await getRecommendedPosts(
+  const article = await getOnePost(slug);
+  const tagName = article.tags[0];
+  const featuredArticles = await getRecommendedPosts(
     tagName,
     getPostList,
     getTagID,
   );
-  const nextPost = await getNextPost(postBlog, getPostList);
+  const nextArticle = await getNextPost(article, getPostList);
   const tags = await getTags();
 
   return (
     <Layout>
-      <div className="container px-4 sm:px-10">
-        <div className="grid grid-cols-1 sm:grid-cols-12">
-          <section className="col-span-1 sm:col-span-12">
-            <Title
-              title={postBlog.title.rendered}
-              date={postBlog.date}
-              readingTime={
-                postBlog['yoast_head_json']['twitter_misc']['Tiempo de lectura']
-              }
-            />
-          </section>
-          <section className="col-span-1 sm:col-span-9">
-            <div className="mt-10 sm:mr-32">
-              <div
-                dangerouslySetInnerHTML={{ __html: postBlog.content.rendered }}
-              />
-              <ArticleTags articleTags={postBlog.tags} />
-            </div>
-          </section>
-          <aside className="col-span-1 sm:col-span-3 flex-col justify-start items-start gap-8 hidden sm:inline-flex">
-            <Highlights nextPost={nextPost} newTags={tags} />
-          </aside>
+      <div className="flex flex-col px-0">
+        <ArticleTitle
+          title={article.title.rendered}
+          date={article.date}
+          readingTime={
+            article['yoast_head_json']['twitter_misc']['Tiempo de lectura']
+          }
+          tag={article.tags[0]}
+          locale={lang}
+        />
+        <div className="grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-4">
+          <ArticleContent article={article} />
+          <ArticleRelated
+            nextArticle={nextArticle}
+            trendingTags={tags}
+            locale={lang}
+          />
         </div>
-        <Recommended tag={tagName} posts={recommendedPosts} />
+        <FeaturedArticles
+          tag={tagName}
+          articles={featuredArticles}
+          locale={lang}
+        />
       </div>
     </Layout>
   );
 };
 
-//TODO: check if wordpress rate limits these requests, seeing some Socket closed errors during build
-//TODO: this may take a long time to build, maybe generate fewer static posts?
-export async function generateStaticParams() {
-  //Grab only the slug field for the 100 most recent posts
-  const queryParams = '?_fields=slug&status=publish&per_page=100&order=desc';
+export default Page;
 
-  try {
-    const response = await fetch(`${ENDPOINTS.BLOG.POSTS}${queryParams}`, {
-      next: { revalidate: DAY_IN_SECONDS },
-    });
-    const data: BlogPost[] = await response.json();
-    const postSlugs = data.map((post) => {
-      return { slug: post.slug };
-    });
-    return postSlugs;
-  } catch (error) {
-    console.log(error);
-    return null;
-  }
-}
+/**
+ * @author Lucas
+ * Setting this as a comment due to build issue. We will need to do a spike on this
+ */
 
-export default Article;
+// TODO: check if wordpress rate limits these requests, seeing some Socket closed errors during build
+// TODO: this may take a long time to build, maybe generate fewer static posts?
+
+// export async function generateStaticParams() {
+//   //Grab only the slug field for the 100 most recent posts
+//   const queryParams = '?_fields=slug&status=publish&per_page=100&order=desc';
+
+//   try {
+//     const response = await fetch(`${ENDPOINTS.BLOG.POSTS}${queryParams}`, {
+//       next: { revalidate: DAY_IN_SECONDS },
+//     });
+//     const data: BlogPost[] = await response.json();
+//     const postSlugs = data?.map((post) => {
+//       return { slug: post.slug };
+//     });
+//     return postSlugs;
+//   } catch (error) {
+//     console.log(error);
+//     return null;
+//   }
+// }

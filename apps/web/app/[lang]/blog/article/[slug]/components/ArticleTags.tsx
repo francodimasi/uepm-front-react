@@ -1,16 +1,28 @@
 import { Tag } from 'ui';
 import { ArticleTagsProps } from '../Article.types';
+import clsx from 'clsx';
 
-export const ArticleTags: React.FC<ArticleTagsProps> = ({ articleTags }) => {
-  if (!articleTags) return null;
+export const ArticleTags: React.FC<ArticleTagsProps> = ({
+  tags,
+  className,
+}) => {
+  if (!tags) return null;
 
   return (
-    <div className="flex gap-5 pt-10 mt-16 mb-20 border-t border-dark border-opacity-20">
-      {articleTags?.map((tag, index) => (
+    <div
+      className={clsx(
+        'flex flex-wrap divide-x-2 divide-dark divide-opacity-20',
+        className,
+      )}
+    >
+      {tags?.map((tag, index) => (
         <Tag
           key={index}
           text={tag}
-          className="text-dark text-xs font-medium font-['DMSans'] uppercase leading-none"
+          className={clsx(
+            'px-4 py-1 my-1 text-dark text-xs font-medium font-["DMSans"] uppercase',
+            { 'ps-0': index === 0 },
+          )}
         />
       ))}
     </div>

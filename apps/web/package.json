@@ -22,6 +22,7 @@
     "react-intl": "^6.4.3",
     "react-query": "^3.39.3",
     "rest": "*",
+    "sharp": "^0.33.1",
     "swiper": "^10.3.1",
     "ui": "*",
     "zustand": "^4.4.3"
