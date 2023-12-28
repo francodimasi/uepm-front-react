@@ -7,8 +7,11 @@ export const Tag: React.FC<TagProps> = ({
   className,
 }) => {
   return (
-    <li
-      className=" flex-grow basis-auto my-2 sm:my-2 mx-0 py-0 px-px text-center border-l-1 border-solid border-l-gray-medium bg-white leading-none"
+    <div
+      className={clsx(
+        "text-black text-base font-normal font-['DMSans'] leading-none p-1 whitespace-nowrap",
+        className,
+      )}
       onClick={onClickHandler}
     >
       <span
@@ -19,6 +22,6 @@ export const Tag: React.FC<TagProps> = ({
       >
         {text}
       </span>
-    </li>
+    </div>
   );
 };

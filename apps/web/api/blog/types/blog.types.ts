@@ -1,5 +1,3 @@
-import { YoastHeadJson } from './yoast.types';
-
 /**
  * Categories and Tags
  */
@@ -17,8 +15,6 @@ export type BlogCategoryTag = {
   taxonomy: string;
   parent: number;
   meta: any[];
-  yoast_head: string;
-  yoast_head_json: YoastHeadJson;
   _links: BlogLinks;
 };
 
@@ -64,10 +60,8 @@ export type BlogPost = {
   template: string;
   format: string;
   meta: any[];
-  category: string[];
-  tags: number[];
-  yoast_head: string;
-  yoast_head_json: YoastHeadJson;
+  categories: number[];
+  tags: string[];
   featured_image_src: string;
   thumbnail_image_src: string;
   display_name: string;
@@ -116,16 +110,22 @@ type BlogPostEmbeddedAuthor = {
   link: string;
   slug: string;
   avatar_urls: { [key: number]: string };
-  yoast_head: string;
-  yoast_head_json: YoastHeadJson;
   _links: BlogPostLinks;
 };
+
 type BlogPostEmbeddedFeaturedMedia = {
   id: number;
   date: string;
   slug: string;
   type: string;
   link: string;
+  alt_text: string;
+  media_details: BlogPostEmbeddedFeaturedMediaDetails;
+};
+
+type BlogPostEmbeddedFeaturedMediaDetails = {
+  width: number;
+  height: number;
 };
 type BlogPostEmbeddedTerm = {
   id: number;
@@ -133,8 +133,6 @@ type BlogPostEmbeddedTerm = {
   name: string;
   slug: string;
   taxonomy: string;
-  yoast_head: string;
-  yoast_head_json: YoastHeadJson;
   _links: BlogPostLinks;
 };
 
@@ -176,3 +174,8 @@ export type BlogCategory = {
   slug: string;
   count: number;
 };
+
+// export type BlogPostFilterParams = Pick<
+//   BlogPostParams,
+//   'page' | 'categories' | 'tags' | 'per_page' | 'order' | 'context' | 'before'
+// >;

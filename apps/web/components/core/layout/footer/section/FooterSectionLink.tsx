@@ -3,11 +3,21 @@ import { FooterSectionLinkProps } from './FooterSection.types';
 
 export const FooterSectionLink: React.FC<FooterSectionLinkProps> = ({
   label,
-  link,
+  href,
+  outbound = false,
+  target,
 }) => {
   return (
-    <Link href={link} className="p-1">
-      <span className="text-base text-light">{label}</span>
-    </Link>
+    <>
+      {outbound ? (
+        <a href={href} target={target} className="p-1">
+          <span className="text-base text-light">{label}</span>
+        </a>
+      ) : (
+        <Link href={href} className="p-1">
+          <span className="text-base text-light">{label}</span>
+        </Link>
+      )}
+    </>
   );
 };

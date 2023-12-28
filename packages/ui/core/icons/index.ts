@@ -1,7 +1,10 @@
-export { ChevronUpIcon } from './ChevronUpIcon';
+export { ArrowBackIcon } from './ArrowBackIcon';
 export { ArrowLeftIcon } from './ArrowLeftIcon';
 export { ArrowRightIcon } from './ArrowRightIcon';
-export { CloseIcon } from './CloseIcon';
-export { MenuIcon } from './MenuIcon';
 export { CheckOutlineIcon } from './CheckOutlineIcon';
 export { ChevronDownIcon } from './ChevronDownIcon';
+export { ChevronUpIcon } from './ChevronUpIcon';
+export { CloseIcon } from './CloseIcon';
+export { EllipsisIcon } from './EllipsisIcon';
+export { MenuIcon } from './MenuIcon';
+export { ShareOutlineIcon } from './ShareOutlineIcon';

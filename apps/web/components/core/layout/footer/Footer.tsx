@@ -1,35 +1,42 @@
-import Link from 'next/link';
-import React from 'react';
+import { Link } from '@intl/navigation';
+import { PropsWithChildren } from 'react';
 import { Logo, Social } from 'ui/components';
 import { FooterSection } from './section';
 import { FooterSectionLinkProps } from './section/FooterSection.types';
 import { PrivacyPolicy, Terms } from './t&c';
+import { LocaleProps } from 'intl';
 
 const patientLinks: FooterSectionLinkProps[] = [
-  { label: 'Sponsors', link: '' },
-  { label: 'Physicians', link: '' },
+  { label: 'Sponsors', href: '/partners' },
+  { label: 'Physicians', href: '' },
 ];
 const aboutUsLinks: FooterSectionLinkProps[] = [
-  { label: 'Our mission', link: '' },
-  { label: 'The team', link: '' },
-  { label: 'FAQs', link: '' },
+  { label: 'Our mission', href: '/about' },
+  { label: 'The team', href: '/about' },
+  { label: 'FAQs', href: '/about' },
 ];
 const newsLinks: FooterSectionLinkProps[] = [
-  { label: 'Last news', link: '' },
-  { label: 'Science', link: '' },
-  { label: 'Studies', link: '' },
+  { label: 'Last news', href: '/blog' },
+  { label: 'Science', href: '/blog' },
+  { label: 'Studies', href: '' },
 ];
 const productsLinks: FooterSectionLinkProps[] = [
-  { label: 'UEPM Patients', link: '' },
-  { label: 'UEPM Onco', link: '' },
-  { label: 'UEPM Physicians', link: '' },
+  { label: 'UEPM Patients', href: '', outbound: true },
+  {
+    label: 'UEPM Onco',
+    href: 'https://onco.unensayoparami.org',
+    outbound: true,
+  },
+  { label: 'UEPM Physicians', href: '', outbound: true },
 ];
 
-export const Footer: React.FC = () => {
+type FooterProps = PropsWithChildren & LocaleProps;
+
+export const Footer: React.FC<FooterProps> = ({ locale }) => {
   return (
-    <div className="felx flex-col bg-primary-dark">
+    <div className="flex flex-col bg-primary-dark">
       <div className="grid grid-cols-1 sm:grid-cols-4 gap-4 p-4 pb-2 sm:p-20 sm:pb-8">
-        <Link href="/" aria-label="Home">
+        <Link href="/" aria-label="Home" locale={locale}>
           <Logo brand="uepm" type="dark" className="flex px-2" width={120} />
         </Link>
         <div className="grid grid-cols-2 sm:grid-cols-4 col-span-3 gap-4">

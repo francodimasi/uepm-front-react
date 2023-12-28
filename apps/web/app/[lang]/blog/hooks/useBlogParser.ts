@@ -1,13 +1,13 @@
 import { BlogPost } from '@api/blog/types/blog.types';
-import { PostItemProps } from '../components/postItem/PostItem';
+import { PostItemProps } from '../components/postItem/PostItem.types';
 
 export const blogParser = () => {
   const postToPostItem = (post: BlogPost): PostItemProps => {
-    const { title, date, featured_image_src, slug, yoast_head_json, category } =
-      post;
+    const { title, date, featured_image_src, slug } = post;
+    const content = post['yoast_head_json']['description'];
     const postItem: PostItemProps = {
-      category,
-      content: yoast_head_json.description,
+      category: ['@todo categoria / tag'],
+      content,
       date,
       image: featured_image_src,
       slug,

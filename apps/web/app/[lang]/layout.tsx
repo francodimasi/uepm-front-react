@@ -1,34 +1,39 @@
-import { dir } from 'i18next';
-import 'ui/styles.css';
 import '@styles/globals.css';
 import 'swiper/swiper-bundle.css';
-import { Providers } from '@core/Providers';
-import dayjs from 'dayjs';
+import 'ui/styles.css';
+import { locales, unstable_setRequestLocale, getTranslations } from 'intl';
+import { NextIntlClientProvider, useMessages } from 'next-intl';
 
 export default function RootLayout({
   children,
-  params,
+  params: { lang },
 }: {
   children: React.ReactNode;
   params: { lang: string };
 }) {
-  const { lang } = params;
-  dayjs.locale(lang);
+  unstable_setRequestLocale(lang);
+  const messages = useMessages();
 
   return (
-    <html lang={lang} dir={dir(lang)}>
+    <html lang={lang}>
       <body>
-        <Providers>{children}</Providers>
+        <NextIntlClientProvider messages={JSON.parse(JSON.stringify(messages))}>
+          {children}
+        </NextIntlClientProvider>
       </body>
     </html>
   );
 }
 
 // Return a list of `params` to populate the [lang] dynamic segment
-export async function generateStaticParams() {
-  return [
-    //Languages not listed here will be dinamycally generated on request time
-    { lang: 'es' },
-    { lang: 'en' },
-  ];
+export function generateStaticParams() {
+  return locales.map((locale) => ({ lang: locale }));
+}
+
+export async function generateMetadata({ params: { locale } }) {
+  const t = await getTranslations({ locale, namespace: 'metadata' });
+
+  return {
+    title: t('title'),
+  };
 }
