@@ -1,8 +1,12 @@
 import { Layout } from '@components/core/layout/Layout';
-import { unstable_setRequestLocale, useTranslations } from 'intl';
+import {
+  defaultLocale,
+  unstable_setRequestLocale,
+  useTranslations,
+} from 'intl';
 import { SwitchLocale } from '@intl/components/SwitchLocale';
 
-export default function Page({ params: { lang } }) {
+export default function Page({ params: { lang = defaultLocale } }) {
   unstable_setRequestLocale(lang);
   const t = useTranslations('home');
 
