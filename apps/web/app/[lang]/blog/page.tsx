@@ -16,7 +16,7 @@ export default async function Page() {
           </section>
           <aside className="col-span-3 flex-col justify-start items-start gap-8 inline-flex">
             <SuggestedPost />
-            <TrendingTopics tags={newTags} />
+            <TrendingTopics topics={newTags} />
           </aside>
         </div>
       </div>

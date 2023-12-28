@@ -12,7 +12,7 @@ export const SwitchLocale: React.FC<LocaleProps> = () => {
     <ul>
       {locales.map((locale) => (
         <li key={locale}>
-          <Link href={path} locale={locale}>
+          <Link href={path as any} locale={locale}>
             {t(locale)}
           </Link>
         </li>
