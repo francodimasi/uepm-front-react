@@ -7,7 +7,7 @@ import {
 } from '../blogCategory';
 import { getPromotedArticle, getArticlesByCategory } from '@api/blog/requests';
 import { BlogCoverSkeleton } from './BlogCoverSkeleton';
-import { BlogItem } from '../blogItem';
+import { BlogItem } from '@components/shared/blogItem';
 import { Button } from 'ui/core';
 import { BlogFrontPageParam } from './BlogCover.types';
 import { Link } from '@intl/navigation';

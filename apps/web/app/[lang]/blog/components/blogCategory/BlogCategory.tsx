@@ -4,7 +4,7 @@ import { Pagination } from 'ui/core/pagination';
 import { useState, useEffect } from 'react';
 import { getArticles } from '@api/blog/requests';
 import { BlogCategorySkeleton } from './BlogCategorySkeleton';
-import { BlogItem } from '../blogItem';
+import { BlogItem } from '@components/shared/blogItem';
 import { BlogCategoryProps } from './BlogCategory.types';
 import { LocaleProps } from 'intl';
 

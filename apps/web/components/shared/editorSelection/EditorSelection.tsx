@@ -1,5 +1,5 @@
 import { EditorSelectionSkeleton } from './EditorSelectionSkeleton';
-import { BlogItem } from '../../../app/[lang]/blog/components/blogItem/BlogItem';
+import { BlogItem } from '../blogItem/BlogItem';
 import { EditorSelectionProps } from './EditorSelection.types';
 import { LocaleProps } from 'intl';
 

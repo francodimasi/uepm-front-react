@@ -1,4 +1,4 @@
-import { BlogItemSkeleton } from '../blogItem';
+import { BlogItemSkeleton } from '@components/shared/blogItem';
 
 export const BlogCoverSkeleton = () => {
   return (

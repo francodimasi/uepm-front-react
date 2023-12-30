@@ -1,4 +1,4 @@
-import { BlogItemSkeleton } from '../../../app/[lang]/blog/components/blogItem';
+import { BlogItemSkeleton } from '../blogItem';
 
 export const EditorSelectionSkeleton = () => {
   return (
