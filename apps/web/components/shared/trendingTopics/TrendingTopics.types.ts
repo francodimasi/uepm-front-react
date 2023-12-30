@@ -1,8 +1,5 @@
-type TagProp = {
-  id: number;
-  text: string;
-};
+import { FormattedTag } from '@models/blog.types';
 
 export type TrendingTopicsProps = {
-  tags: TagProp[];
+  topics: FormattedTag[];
 };

@@ -29,7 +29,7 @@ export const Tabs = ({ items, selected, onChange, classes }: TabsProps) => {
       {items?.map(({ name, id }) => (
         <SwiperSlide
           key={id}
-          className={`font-['DMSans'] grow ${
+          className={`font-['DMSans'] grow cursor-pointer ${
             id === selected
               ? 'border-b-2 border-black font-bold'
               : ' font-light hover:font-normal hover:border-b-1 hover:border-gray-dark'

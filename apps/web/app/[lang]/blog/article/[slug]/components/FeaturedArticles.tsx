@@ -2,7 +2,7 @@ import { Link } from '@intl/navigation';
 import { FeaturedArticlesProps } from '../Article.types';
 import { LocaleProps } from 'intl';
 import clsx from 'clsx';
-import { ImageWithFallback } from '@components/shared/ImageWithFallback';
+import { ImageWithFallback } from '@components/utils/ImageWithFallback';
 import { ArticleTags } from './ArticleTags';
 
 export const FeaturedArticles: React.FC<
@@ -28,12 +28,12 @@ export const FeaturedArticles: React.FC<
         {articles.map((article) => {
           return (
             <div
-              key={article.id}
+              key={article.slug}
               className="flex flex-col col-span-1 pb-6 justify-start"
             >
               <ImageWithFallback
-                src={article.thumbnail_image_src || article.featured_image_src}
-                alt={article.title.rendered}
+                src={article.image}
+                alt={article.title}
                 style={{
                   width: '100%',
                   height: 'auto',
@@ -43,13 +43,13 @@ export const FeaturedArticles: React.FC<
                 width={512}
                 height={384}
               />
-              <ArticleTags tags={article.tags.slice(0, 1)} className="pt-4" />
+              <ArticleTags tags={article.tags?.slice(0, 1)} className="pt-4" />
               <Link
                 href={`/blog/article/${article.slug}` as any}
                 locale={locale}
               >
                 <span className="text-dark text-base font-semibold font-['Lexend']">
-                  {article.title.rendered}
+                  {article.title}
                 </span>
               </Link>
               <span className="pt-2 text-dark text-xs font-normal font-['DMSans'] uppercase">
@@ -63,12 +63,12 @@ export const FeaturedArticles: React.FC<
         {articles.map((article) => {
           return (
             <div
-              key={article.id}
+              key={article.slug}
               className="flex flex-row py-4 justify-start items-center"
             >
               <ImageWithFallback
-                src={article.thumbnail_image_src || article.featured_image_src}
-                alt={article.title.rendered}
+                src={article.image}
+                alt={article.title}
                 style={{
                   width: '100%',
                   height: 'auto',
@@ -79,13 +79,13 @@ export const FeaturedArticles: React.FC<
                 height={96}
               />
               <div className="flex flex-col gap-1 ps-4">
-                <ArticleTags tags={article.tags.slice(0, 1)} />
+                <ArticleTags tags={article.tags?.slice(0, 1)} />
                 <Link
                   href={`/blog/article/${article.slug}` as any}
                   locale={locale}
                 >
                   <span className="text-dark text-base font-semibold font-['Lexend']">
-                    {article.title.rendered}
+                    {article.title}
                   </span>
                 </Link>
                 <span className="text-dark text-xs font-normal font-['DMSans'] uppercase">

@@ -1,22 +1,38 @@
 'use client';
 
-import { Link, usePathname } from '@intl/navigation';
-import { LocaleProps, useTranslations } from 'intl';
-import { locales } from 'intl';
+import { useMemo } from 'react';
+import { usePathname, useRouter } from '@intl/navigation';
+import { useParams } from 'next/navigation';
+import { LocaleProps, useTranslations, locales } from 'intl';
+import { Select } from 'ui/core';
 
-export const SwitchLocale: React.FC<LocaleProps> = () => {
-  const path = usePathname();
+export const SwitchLocale: React.FC<LocaleProps> = ({ locale }) => {
+  const pathname = usePathname();
+  const router = useRouter();
+  const params = useParams();
   const t = useTranslations('locale');
 
+  const items = useMemo(() => {
+    return locales.map((locale) => ({ id: locale, name: t(locale) }));
+  }, [locale]);
+
+  const onChangeLanguage = (id: string) => {
+    router.replace(
+      {
+        pathname,
+        params: params as any,
+      },
+      { locale: id },
+    );
+  };
+
   return (
-    <ul>
-      {locales.map((locale) => (
-        <li key={locale}>
-          <Link href={path as any} locale={locale}>
-            {t(locale)}
-          </Link>
-        </li>
-      ))}
-    </ul>
+    <Select
+      items={items}
+      selected={locale}
+      onChange={onChangeLanguage}
+      className="max-w-xs"
+      color='light'
+    />
   );
 };

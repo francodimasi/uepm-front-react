@@ -1,4 +1,4 @@
-import { Tag } from 'ui';
+import { Tag } from 'ui/core';
 import { ArticleTagsProps } from '../Article.types';
 import clsx from 'clsx';
 

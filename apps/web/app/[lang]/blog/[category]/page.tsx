@@ -1,18 +1,19 @@
 import { Layout } from '@components/core/layout/Layout';
-import { MainPostList } from '../components/postList/MainPostList';
+import { BlogCategory } from '../components/blogCategory';
 import { notFound } from 'next/navigation';
-import { getCategories } from '@api/blog/blogRequests';
+import { getCategories } from '@api/blog/requests';
+import { defaultLocale } from 'intl';
 
 export default async function Page({
-  params,
+  params: { category, lang = defaultLocale },
 }: {
-  params: { category: string };
+  params: { category: string; lang: string };
 }) {
   const categories = await getCategories();
 
   if (
-    isNaN(Number(params.category)) ||
-    !categories.find((category) => category.id === Number(params.category))
+    isNaN(Number(category)) ||
+    !categories.find((cat) => cat.id === Number(category))
   ) {
     notFound();
   }
@@ -22,10 +23,11 @@ export default async function Page({
       <div className="container">
         <div className="grid grid-cols-12">
           <section className="col-span-12 pr-8 py-12">
-            <MainPostList
+            <BlogCategory
               categories={categories}
-              category={Number(params.category)}
+              category={Number(category)}
               itemsPerPage={10}
+              locale={lang}
             />
           </section>
         </div>

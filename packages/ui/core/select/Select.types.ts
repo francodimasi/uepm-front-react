@@ -1,13 +1,14 @@
-import { PropsWithClassName } from '../../types/core';
+import { PropsWithClassName, Theme } from '../../types/core';
 
 export type SelectItem = {
   name: string;
-  id: number;
+  id: number | string;
 };
 
 export type SelectProps = PropsWithClassName & {
   items: SelectItem[];
-  selected: number;
-  onChange: (_id: number) => void;
+  selected: number | string;
+  onChange: (_id: number | string) => void;
   label?: string;
+  color?: Theme;
 };

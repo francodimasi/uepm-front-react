@@ -1,15 +1,15 @@
 'use client';
 
+import ReactPaginate from 'react-paginate';
 import { ArrowLeftIcon } from 'ui/core/icons/ArrowLeftIcon';
 import { ArrowRightIcon } from 'ui/core/icons/ArrowRightIcon';
-import ReactPaginate from 'react-paginate';
-import { PagintationParams } from './Pagination.types';
+import { PaginationProps } from './Pagination.types';
 
 export const Pagination = ({
   actualPage,
   pagesCount,
   setPage,
-}: PagintationParams) => {
+}: PaginationProps) => {
   return (
     <ReactPaginate
       breakLabel="..."
@@ -23,7 +23,7 @@ export const Pagination = ({
       renderOnZeroPageCount={null}
       initialPage={actualPage - 1}
       className="flex items-center justify-center pt-4 px-4 sm:px-0 gap-5"
-      pageClassName=" w-6 h-7 p-2 justify-end items-center gap-2 inline-flex font-light cursor-pointer hover:font-semibold  hover:border-b-1 hover:border-gray-dark"
+      pageClassName=" w-6 h-7 p-2 justify-end items-center gap-2 inline-flex font-light cursor-pointer hover:font-semibold hover:border-b-1 hover:border-gray-dark"
       activeClassName="border-b-2 border-dark hover:border-b-2 hover:boder-dark"
       activeLinkClassName="font-bold"
       pageLinkClassName="text-right text-dark text-base font-['DMSans'] leading-normal"

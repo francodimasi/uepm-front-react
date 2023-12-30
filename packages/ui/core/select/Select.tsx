@@ -1,13 +1,21 @@
 'use client';
-import { SelectProps } from './Select.types';
+
 import { Fragment } from 'react';
-import { CheckOutlineIcon } from 'ui/core/icons/CheckOutlineIcon';
-import { ChevronDownIcon } from 'ui/core/icons/ChevronDownIcon';
 import { Listbox, Transition } from '@headlessui/react';
 import clsx from 'clsx';
+import { SelectProps } from './Select.types';
+import { CheckOutlineIcon, ChevronDownIcon } from 'ui/core/icons';
 
-export const Select = ({ items, selected, onChange, label }: SelectProps) => {
+export const Select = ({
+  items,
+  selected,
+  onChange,
+  label,
+  color = 'dark',
+  className,
+}: SelectProps) => {
   const selectedItem = items.find((item) => item.id === selected);
+
   return (
     <Listbox
       value={selectedItem}
@@ -23,11 +31,16 @@ export const Select = ({ items, selected, onChange, label }: SelectProps) => {
             </Listbox.Label>
           )}
           <div className="relative mt-2">
-            <Listbox.Button className="relative w-full cursor-default  bg-light py-3.5 pl-3 pr-10 text-left font-semibold text-dark shadow-sm ring-1 ring-inset ring-dark focus:outline-none focus:ring-2 focus:ring-primary sm:text-sm sm:leading-6">
+            <Listbox.Button
+              className={clsx(
+                className,
+                `relative w-full cursor-default py-3.5 pl-3 pr-10 text-left text-${color} font-semibold shadow-sm border-1 border-${color} focus:outline-none focus:border-2 focus:border-primary sm:text-sm sm:leading-6`,
+              )}
+            >
               <span className="block truncate">{selectedItem?.name}</span>
               <span className="pointer-events-none absolute text-dark inset-y-0 right-0 flex items-center pr-2">
-                <div className="h-5 w-5 " aria-hidden="true">
-                  <ChevronDownIcon />
+                <div className="h-5 w-5" aria-hidden="true">
+                  <ChevronDownIcon color={color} />
                 </div>
               </span>
             </Listbox.Button>
@@ -39,7 +52,12 @@ export const Select = ({ items, selected, onChange, label }: SelectProps) => {
               leaveFrom="opacity-100"
               leaveTo="opacity-0"
             >
-              <Listbox.Options className="absolute z-10 mt-1 max-h-60 w-full overflow-auto bg-light py-1 text-base shadow-lg ring-1 ring-gray-dark focus:outline-none sm:text-sm">
+              <Listbox.Options
+                className={clsx(
+                  className,
+                  'absolute z-10 mt-1 max-h-60 w-full max-w-xs overflow-auto bg-light text-dark py-1 text-base shadow-lg ring-1 ring-gray-dark focus:outline-none sm:text-sm',
+                )}
+              >
                 {items.map((item) => (
                   <Listbox.Option
                     key={item.id}
