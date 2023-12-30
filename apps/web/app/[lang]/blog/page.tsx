@@ -33,21 +33,19 @@ export default async function Page({ params: { lang = defaultLocale } }) {
 
   return (
     <Layout>
-      <div className="container grid grid-cols-12">
-        <section className="col-span-12 py-2 pr-0 sm:col-span-9 sm:pr-8 sm:py-12">
-          <BlogCover
-            categories={categories}
-            promotedArticle={promotedArticle}
-            suggestedArticles={suggestedArticles}
-            plainArticles={articles}
-            initialCategory={defaultCategoryId}
-            locale={lang}
-          />
-        </section>
-        <aside className="col-span-12 sm:col-span-3 pr-2 py-12 flex-col justify-start items-start gap-8 inline-flex">
+      <div className="grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-4">
+        <BlogCover
+          categories={categories}
+          promotedArticle={promotedArticle}
+          suggestedArticles={suggestedArticles}
+          plainArticles={articles}
+          initialCategory={defaultCategoryId}
+          locale={lang}
+        />
+        <div className="col-span-1 pb-12 lg:pb-16 pl-0 lg:pl-12 flex flex-col gap-12 lg:gap-10">
           <EditorSelection articles={editorSelection} locale={lang} />
           <TrendingTopics topics={trendingTopics} />
-        </aside>
+        </div>
       </div>
     </Layout>
   );

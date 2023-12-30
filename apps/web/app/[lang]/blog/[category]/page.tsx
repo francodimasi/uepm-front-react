@@ -20,17 +20,13 @@ export default async function Page({
 
   return (
     <Layout>
-      <div className="container">
-        <div className="grid grid-cols-12">
-          <section className="col-span-12 pr-8 py-12">
-            <BlogCategory
-              categories={categories}
-              category={Number(category)}
-              itemsPerPage={10}
-              locale={lang}
-            />
-          </section>
-        </div>
+      <div className="pb-12">
+        <BlogCategory
+          categories={categories}
+          category={Number(category)}
+          itemsPerPage={10}
+          locale={lang}
+        />
       </div>
     </Layout>
   );

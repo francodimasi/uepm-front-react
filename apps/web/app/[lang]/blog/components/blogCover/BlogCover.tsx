@@ -44,7 +44,7 @@ export const BlogCover = ({
   }, []);
 
   return (
-    <div className="relative">
+    <div className="relative col-span-1 lg:col-span-2 xl:col-span-3 pr-0 lg:pr-12 pb-12 lg:pb-16">
       {loadingPage ? (
         <BlogCategoryHeaderSkeleton />
       ) : (
