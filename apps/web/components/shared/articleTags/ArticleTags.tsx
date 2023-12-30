@@ -1,5 +1,5 @@
 import { Tag } from 'ui/core';
-import { ArticleTagsProps } from '../Article.types';
+import { ArticleTagsProps } from './ArticleTags.types';
 import clsx from 'clsx';
 
 export const ArticleTags: React.FC<ArticleTagsProps> = ({
@@ -20,7 +20,7 @@ export const ArticleTags: React.FC<ArticleTagsProps> = ({
           key={index}
           text={tag}
           className={clsx(
-            'px-4 py-1 my-1 text-dark text-xs font-medium font-["DMSans"] uppercase',
+            'px-2 py-1 my-1 text-dark text-xs font-medium font-["DMSans"] uppercase',
             { 'ps-0': index === 0 },
           )}
         />

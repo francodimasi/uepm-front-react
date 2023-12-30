@@ -1,11 +1,6 @@
 import { notFound } from 'next/navigation';
 import { Layout } from '@components/core/layout/Layout';
-import {
-  ArticleContent,
-  ArticleTitle,
-  ArticleRelated,
-  FeaturedArticles,
-} from './components';
+import { ArticleContent, ArticleTitle, ArticleRelated } from './components';
 import { BlogArticle, BlogFilterParams } from '@models/blog.types';
 import { ArticleProps } from './Article.types';
 import { defaultLocale } from 'intl';
@@ -17,6 +12,7 @@ import {
   getTags,
 } from '@api/blog/requests';
 import { BlogItem } from '@models/blog.types';
+import { FeaturedArticles } from '@components/shared/featuredArticles';
 
 const getArticlesByTag = async function (tagName: string) {
   const getArticlesParams: BlogFilterParams = {

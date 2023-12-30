@@ -1,6 +1,6 @@
 import { Link } from '@intl/navigation';
 import { ArticleOfInterestProps } from '../Article.types';
-import { ArticleTags } from './ArticleTags';
+import { ArticleTags } from '../../../../../../components/shared/articleTags/ArticleTags';
 import { LocaleProps } from 'intl';
 import { ImageWithFallback } from '@components/utils/ImageWithFallback';
 

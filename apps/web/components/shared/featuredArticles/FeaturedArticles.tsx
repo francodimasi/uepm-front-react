@@ -1,9 +1,9 @@
 import { Link } from '@intl/navigation';
-import { FeaturedArticlesProps } from '../Article.types';
+import { FeaturedArticlesProps } from './FeaturedArticle.types';
 import { LocaleProps } from 'intl';
 import clsx from 'clsx';
 import { ImageWithFallback } from '@components/utils/ImageWithFallback';
-import { ArticleTags } from './ArticleTags';
+import { ArticleTags } from '../articleTags/ArticleTags';
 
 export const FeaturedArticles: React.FC<
   FeaturedArticlesProps & LocaleProps
