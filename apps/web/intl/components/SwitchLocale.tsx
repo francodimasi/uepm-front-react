@@ -32,7 +32,7 @@ export const SwitchLocale: React.FC<LocaleProps> = ({ locale }) => {
       selected={locale}
       onChange={onChangeLanguage}
       className="max-w-xs"
-      color='light'
+      color="light"
     />
   );
 };
