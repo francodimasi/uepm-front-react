@@ -36,7 +36,7 @@ export const SuggestedArticles = ({
         )}
       </div>
       <div className="flex xl:hidden flex-col">
-      <div className="border-b border-gray-medium pb-6 xl:pb-10">
+        <div className="border-b border-gray-medium pb-6 xl:pb-10">
           <BlogItem
             key={articles[0].slug}
             locale={locale}

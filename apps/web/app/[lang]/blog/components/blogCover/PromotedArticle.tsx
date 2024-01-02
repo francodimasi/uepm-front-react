@@ -31,7 +31,7 @@ export const PromotedArticle = ({
             orientation: 'vertical',
             size: 'xl',
             imgPosition: 'start',
-            contentClasses: 'py-4'
+            contentClasses: 'py-4',
           }}
         />
       </div>
