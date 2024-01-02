@@ -14,7 +14,14 @@ export const Tag: React.FC<TagProps> = ({
       )}
       onClick={onClickHandler}
     >
-      {text}
+      <span
+        className={clsx(
+          "text-black text-base font-normal font-['DMSans'] leading-none mx-2 sm:mx-px ",
+          className,
+        )}
+      >
+        {text}
+      </span>
     </div>
   );
 };

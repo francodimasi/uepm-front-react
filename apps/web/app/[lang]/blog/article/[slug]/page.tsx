@@ -1,24 +1,21 @@
-import { useBlog } from '@api/blog/useBlog';
+import { notFound } from 'next/navigation';
 import { Layout } from '@components/core/layout/Layout';
-import {
-  ArticleContent,
-  ArticleTitle,
-  ArticleRelated,
-  FeaturedArticles,
-} from './components';
-// import { ENDPOINTS } from '@api/endpoints.conts';
-import { BlogPost, BlogPostFilterParams } from '@api/blog/types/blog.types';
+import { ArticleContent, ArticleTitle, ArticleRelated } from './components';
+import { BlogArticle, BlogFilterParams } from '@models/blog.types';
 import { ArticleProps } from './Article.types';
 import { defaultLocale } from 'intl';
+import {
+  getArticleBySlug,
+  getEditorSelection,
+  getArticles,
+  getTagID,
+  getTags,
+} from '@api/blog/requests';
+import { BlogItem } from '@models/blog.types';
+import { FeaturedArticles } from '@components/shared/featuredArticles';
 
-// const DAY_IN_SECONDS = 86400;
-
-const getRecommendedPosts = async function (
-  tagName: string,
-  getPostListFn: (_params: BlogPostFilterParams) => Promise<BlogPost[]>,
-  getTagIDFn: (_tagName: string) => Promise<number>,
-) {
-  const getPostsParams: BlogPostFilterParams = {
+const getArticlesByTag = async function (tagName: string) {
+  const getArticlesParams: BlogFilterParams = {
     per_page: 4,
     page: 1,
     context: 'view',
@@ -26,34 +23,34 @@ const getRecommendedPosts = async function (
   };
 
   if (tagName) {
-    const tagID = await getTagIDFn(tagName);
-    getPostsParams.tags = [tagID];
+    const tagID = await getTagID(tagName);
+    getArticlesParams.tags = [tagID];
   }
 
   try {
-    return await getPostListFn(getPostsParams);
+    return await getArticles(getArticlesParams);
   } catch (error) {
     console.log(error);
     return null;
   }
 };
 
-// Gets next cronological post from the same category as current post
-const getNextPost = async function (
-  currentPost: BlogPost,
-  getPostsFn: (_params: BlogPostFilterParams) => Promise<BlogPost[]>,
-) {
+/**
+ * Gets next cronological article from the same category as current article
+ * @param current
+ * @returns
+ */
+const getNextArticle = async function (current: BlogArticle) {
   try {
-    const nextPost: BlogPost[] = await getPostsFn({
+    const followingArticles: BlogItem[] = await getArticles({
       context: 'view',
       page: 1,
       per_page: 1,
-      categories: currentPost.categories,
       order: 'desc',
-      before: currentPost.date,
+      before: current.date,
     });
-    if (nextPost.length === 0) return null;
-    return nextPost[0];
+
+    return followingArticles?.length > 0 ? followingArticles[0] : null;
   } catch (error) {
     console.log(error);
     return null;
@@ -63,16 +60,12 @@ const getNextPost = async function (
 const Page = async ({
   params: { lang = defaultLocale, slug },
 }: ArticleProps) => {
-  const { getOnePost, getPostList, getTagID, getTags } = useBlog();
+  const article = await getArticleBySlug(slug);
+  if (!article) notFound();
 
-  const article = await getOnePost(slug);
-  const tagName = article.tags[0];
-  const featuredArticles = await getRecommendedPosts(
-    tagName,
-    getPostList,
-    getTagID,
-  );
-  const nextArticle = await getNextPost(article, getPostList);
+  const editorSelection = await getEditorSelection();
+  const tagArticles = await getArticlesByTag(article.tags[0]);
+  const nextArticle = await getNextArticle(article);
   const tags = await getTags();
 
   return (
@@ -91,13 +84,14 @@ const Page = async ({
           <ArticleContent article={article} />
           <ArticleRelated
             nextArticle={nextArticle}
+            editorSelection={editorSelection}
             trendingTags={tags}
             locale={lang}
           />
         </div>
         <FeaturedArticles
-          tag={tagName}
-          articles={featuredArticles}
+          tag={article.tags[0]}
+          articles={tagArticles}
           locale={lang}
         />
       </div>
@@ -113,21 +107,21 @@ export default Page;
  */
 
 // TODO: check if wordpress rate limits these requests, seeing some Socket closed errors during build
-// TODO: this may take a long time to build, maybe generate fewer static posts?
+// TODO: this may take a long time to build, maybe generate fewer static articles?
 
 // export async function generateStaticParams() {
-//   //Grab only the slug field for the 100 most recent posts
+//   //Grab only the slug field for the 100 most recent articles
 //   const queryParams = '?_fields=slug&status=publish&per_page=100&order=desc';
 
 //   try {
 //     const response = await fetch(`${ENDPOINTS.BLOG.POSTS}${queryParams}`, {
 //       next: { revalidate: DAY_IN_SECONDS },
 //     });
-//     const data: BlogPost[] = await response.json();
-//     const postSlugs = data?.map((post) => {
-//       return { slug: post.slug };
+//     const data: BlogArticles[] = await response.json();
+//     const articleSlugs = data?.map((article) => {
+//       return { slug: article.slug };
 //     });
-//     return postSlugs;
+//     return articleSlugs;
 //   } catch (error) {
 //     console.log(error);
 //     return null;

@@ -13,6 +13,12 @@ module.exports = withNextIntl({
         port: '',
         pathname: '/wp-content/uploads/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'content.unensayoparami.org',
+        port: '',
+        pathname: '/wp-includes/images/**',
+      },
     ],
   },
 });

@@ -1,4 +1,4 @@
-import { useRest } from 'rest';
+import { Rest } from 'rest';
 import dayjs from 'dayjs';
 import { ContactRequest } from '@components/contact/contact.type';
 
@@ -7,7 +7,7 @@ const groupId = 'grupo_nuevo17439';
 const boardId = '5210496844';
 
 export const useContact = () => {
-  const { post } = useRest();
+  const { post } = Rest();
 
   const sendContact = ({
     apellido,

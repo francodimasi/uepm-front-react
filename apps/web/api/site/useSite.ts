@@ -1,10 +1,10 @@
-import { ENDPOINTS } from '@api/endpoints.conts';
+import { ENDPOINTS } from '@api/endpoints';
 import { PageResponse } from '@core/types';
-import { useRest } from 'rest';
-import { Site, SitesParams } from './site.types';
+import { Rest } from 'rest';
+import { Site, SitesParams } from '../../models/site.types';
 
-export const useSite = () => {
-  const { get } = useRest();
+export const siteRequests = () => {
+  const { get } = Rest();
 
   const getAllSites = async () => {
     const response = await get<PageResponse<Site>>(ENDPOINTS.SITES);

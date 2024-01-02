@@ -1,3 +1,3 @@
-export * from './src/hooks/useFetch';
-export * from './src/hooks/useRest';
+export * from './src/hooks/fetch';
+export * from './src/hooks/rest';
 export * from './src/types';

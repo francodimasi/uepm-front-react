@@ -1,25 +1,44 @@
 'use client';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { TabsProps } from './Tabs.types';
+import clsx from 'clsx';
 
-export const Tabs = ({ items, selected, onChange }: TabsProps) => {
+export type TabItem = {
+  name: string;
+  id: number;
+};
+
+export type TabsProps = {
+  items: TabItem[];
+  selected: number;
+  onChange: (_id: number) => void;
+  classes?: string;
+};
+export const Tabs = ({ items, selected, onChange, classes }: TabsProps) => {
   return (
     <Swiper
-      spaceBetween={0}
-      slidesPerView={5.5}
+      slidesPerView={4}
       slidesPerGroup={1}
       resistanceRatio={1000}
+      spaceBetween={30}
+      className={clsx(
+        classes,
+        'w-100 border-b border-b-gray-light justify-center items-center inline-flex',
+      )}
     >
-      {items?.map(({ name, id }, index) => (
+      {items?.map(({ name, id }) => (
         <SwiperSlide
-          key={index}
-          className={`cursor-pointer ${
-            id === selected ? 'border-b-2' : 'border-b-1 border-gray-medium'
-          } hover:border-b-2`}
+          key={id}
+          className={`font-['DMSans'] grow cursor-pointer ${
+            id === selected
+              ? 'border-b-2 border-black font-bold'
+              : ' font-light hover:font-normal hover:border-b-1 hover:border-gray-dark'
+          } `}
           onClick={() => onChange(id)}
         >
-          <div className="text-center whitespace-nowrap p-4">{name}</div>
+          <div className="text-center text-dark text-base  ms-1 leading-none w-full whitespace-nowrap">
+            {name}
+          </div>
         </SwiperSlide>
       ))}
     </Swiper>

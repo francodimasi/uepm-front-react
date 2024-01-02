@@ -4,7 +4,6 @@ import {
   unstable_setRequestLocale,
   useTranslations,
 } from 'intl';
-import { SwitchLocale } from '@intl/components/SwitchLocale';
 
 export default function Page({ params: { lang = defaultLocale } }) {
   unstable_setRequestLocale(lang);
@@ -22,9 +21,6 @@ export default function Page({ params: { lang = defaultLocale } }) {
       <span>{`API url: ${process.env.NEXT_PUBLIC_API_URL}`}</span>
       <br></br>
       <span>{`WP url: ${process.env.NEXT_PUBLIC_WP_URL}`}</span>
-      <br></br>
-      <br></br>
-      <SwitchLocale />
     </Layout>
   );
 }

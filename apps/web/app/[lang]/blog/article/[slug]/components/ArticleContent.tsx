@@ -1,7 +1,7 @@
 import { ArticleContentProps } from '../Article.types';
 import { LocaleProps } from 'intl';
-import { ArticleTags } from './ArticleTags';
-import { ImageWithFallback } from '@components/shared/ImageWithFallback';
+import { ImageWithFallback } from '@components/utils/ImageWithFallback';
+import { ArticleTags } from '@components/shared/articleTags';
 
 export const ArticleContent: React.FC<ArticleContentProps & LocaleProps> = ({
   article,

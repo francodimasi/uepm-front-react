@@ -23,6 +23,7 @@
     "clsx": "^1.2.1",
     "framer-motion": "^10.12.16",
     "i18n": "*",
+    "react-paginate": "^8.2.0",
     "swiper": "^10.3.1"
   }
 }

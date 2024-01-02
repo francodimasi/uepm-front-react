@@ -1,6 +1,10 @@
+export { ArrowBackIcon } from './ArrowBackIcon';
+export { ArrowLeftIcon } from './ArrowLeftIcon';
+export { ArrowRightIcon } from './ArrowRightIcon';
+export { CheckOutlineIcon } from './CheckOutlineIcon';
+export { ChevronDownIcon } from './ChevronDownIcon';
 export { ChevronUpIcon } from './ChevronUpIcon';
 export { CloseIcon } from './CloseIcon';
-export { MenuIcon } from './MenuIcon';
-export { ArrowBackIcon } from './ArrowBackIcon';
 export { EllipsisIcon } from './EllipsisIcon';
+export { MenuIcon } from './MenuIcon';
 export { ShareOutlineIcon } from './ShareOutlineIcon';

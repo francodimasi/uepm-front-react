@@ -9,6 +9,7 @@ export const localePrefix = 'always';
 export const pathnames = {
   '/': '/',
   '/blog': '/blog',
+  '/blog/[category]': '/blog/[category]',
   '/blog/article/[slug]': {
     en: '/blog/article/[slug]',
     es: '/blog/articulo/[slug]',

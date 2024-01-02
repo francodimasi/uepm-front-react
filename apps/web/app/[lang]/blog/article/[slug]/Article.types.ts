@@ -1,5 +1,5 @@
-import { BlogPost } from '@api/blog/types/blog.types';
-import { PropsWithClassName } from 'ui/types/core';
+import { BlogArticle, BlogItem } from '@models/blog.types';
+import { FormattedTag } from '@models/blog.types';
 
 export type ArticleProps = {
   params: { slug: string; lang: string };
@@ -13,28 +13,15 @@ export type ArticleTitleProps = {
 };
 
 export type ArticleRelatedProps = {
-  nextArticle: BlogPost;
+  editorSelection: BlogItem[];
+  nextArticle: BlogItem;
   trendingTags: FormattedTag[];
 };
 
 export type ArticleContentProps = {
-  article: BlogPost;
-};
-
-export type ArticleTagsProps = PropsWithClassName & {
-  tags: string[];
+  article: BlogArticle;
 };
 
 export type ArticleOfInterestProps = {
-  article: BlogPost;
-};
-
-export type FeaturedArticlesProps = {
-  articles: BlogPost[];
-  tag: string;
-};
-
-export type FormattedTag = {
-  id: number;
-  text: string;
+  article: BlogItem;
 };
