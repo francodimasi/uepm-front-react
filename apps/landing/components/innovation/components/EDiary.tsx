@@ -1,11 +1,11 @@
 import { LanguageContext, useClientTranslation } from 'i18n';
 import Image from 'next/image';
 import uepm from 'public/images/innovation/uepm-innovation.png';
-import { useContext } from 'react';
+import { ServerContext, useContext } from 'react';
 import { LandingButton } from 'ui';
 
 export const EDiary = () => {
-  const { lang } = useContext(LanguageContext);
+  const { lang } = useContext(LanguageContext as ServerContext<any>);
   const { t } = useClientTranslation(lang, {
     keyPrefix: 'innovation.ediary.content',
   });

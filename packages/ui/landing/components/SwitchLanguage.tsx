@@ -1,7 +1,7 @@
 'use client';
 
 import { Language, LanguageContext, useLanguage } from 'i18n';
-import { useContext } from 'react';
+import { ServerContext, useContext } from 'react';
 type SwitchLanguageProps = {
   languages: Language[];
   className?: string;
@@ -13,7 +13,7 @@ export const SwitchLanguage = ({
   iso,
 }: SwitchLanguageProps) => {
   const { changeLanguage } = useLanguage();
-  const { lang } = useContext(LanguageContext);
+  const { lang } = useContext(LanguageContext as ServerContext<any>);
 
   return (
     <select

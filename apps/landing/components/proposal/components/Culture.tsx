@@ -1,10 +1,10 @@
 import { LanguageContext, useClientTranslation } from 'i18n';
 import Image from 'next/image';
 import culture from 'public/images/proposal/culture.png';
-import { useContext } from 'react';
+import { ServerContext, useContext } from 'react';
 
 export const Culture = () => {
-  const { lang } = useContext(LanguageContext);
+  const { lang } = useContext(LanguageContext as ServerContext<any>);
   const { t } = useClientTranslation(lang, {
     keyPrefix: 'proposal.culture.content',
   });

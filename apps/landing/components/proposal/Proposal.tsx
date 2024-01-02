@@ -2,12 +2,12 @@ import { Accordion } from '@components/shared/accordion/Accordion';
 import { Tabs } from '@components/shared/tabs/Tabs';
 import { TabItem } from '@components/shared/tabs/tabs.type';
 import { LanguageContext, useClientTranslation } from 'i18n';
-import { useContext, useEffect, useState } from 'react';
+import { ServerContext, useContext, useEffect, useState } from 'react';
 import { BREAKPOINTS, H2 } from 'ui';
 import { Culture } from './components/Culture';
 
 export const Proposal = () => {
-  const { lang } = useContext(LanguageContext);
+  const { lang } = useContext(LanguageContext as ServerContext<any>);
   const { t } = useClientTranslation(lang, { keyPrefix: 'proposal' });
 
   const [showAccordion, setShowAccordion] = useState<boolean>(false);

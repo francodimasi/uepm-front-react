@@ -1,11 +1,11 @@
 import { LandingButton } from 'ui';
 import uepm from 'public/images/innovation/uepm-innovation.png';
 import Image from 'next/image';
-import { useContext } from 'react';
+import { ServerContext, useContext } from 'react';
 import { LanguageContext, useClientTranslation } from 'i18n';
 
 export const UnEnsayoParaMiOnco = () => {
-  const { lang } = useContext(LanguageContext);
+  const { lang } = useContext(LanguageContext as ServerContext<any>);
   const { t } = useClientTranslation(lang, {
     keyPrefix: 'innovation.uepmOnco.content',
   });

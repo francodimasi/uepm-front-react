@@ -1,10 +1,10 @@
 import { LanguageContext, useClientTranslation } from 'i18n';
-import { useContext } from 'react';
+import { ServerContext, useContext } from 'react';
 import { H2 } from 'ui';
 import { CasesContainer } from './components/CasesContainer';
 
 export const SuccessCases = () => {
-  const { lang } = useContext(LanguageContext);
+  const { lang } = useContext(LanguageContext as ServerContext<any>);
   const { t } = useClientTranslation(lang, { keyPrefix: 'successCases' });
 
   return (

@@ -4,7 +4,7 @@ import { Controller, useForm } from 'react-hook-form';
 import { LandingButton } from 'ui';
 import { ContactInput } from './ContactInput';
 import { ContactRequest } from './contact.type';
-import { useCallback, useContext, useState } from 'react';
+import { ServerContext, useCallback, useContext, useState } from 'react';
 import { LanguageContext, useClientTranslation } from 'i18n';
 import { useContact } from '@api/useContact';
 import ReCAPTCHA from 'react-google-recaptcha';
@@ -15,7 +15,7 @@ type ContactFormProps = {
   onSend: (sent: boolean) => void;
 };
 export const ContactForm = ({ onSend }: ContactFormProps) => {
-  const { lang } = useContext(LanguageContext);
+  const { lang } = useContext(LanguageContext as ServerContext<any>);
   const { t } = useClientTranslation(lang, { keyPrefix: 'contact.inputs' });
   const { sendContact } = useContact();
 

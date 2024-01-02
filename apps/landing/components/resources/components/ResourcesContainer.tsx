@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from 'react';
+import { ServerContext, useContext, useEffect, useState } from 'react';
 import { Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { BREAKPOINTS } from 'ui';
@@ -15,7 +15,7 @@ import { ResourceItem } from '../types/resource.type';
 import { LanguageContext, useClientTranslation } from 'i18n';
 
 export const ResourcesContainer = () => {
-  const { lang } = useContext(LanguageContext);
+  const { lang } = useContext(LanguageContext as ServerContext<any>);
   const { t } = useClientTranslation(lang, { keyPrefix: 'resources' });
 
   const [showSwiper, setShowSwiper] = useState<boolean>(false);
