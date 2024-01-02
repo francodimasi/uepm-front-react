@@ -1,24 +1,30 @@
 import { forwardRef } from 'react';
-import Link from 'next/link';
-import clsx from 'clsx';
-import { baseStyles, variantStyles } from './Button.const';
 import { ButtonProps } from './Button.types';
+import { getClasses } from './helpers';
 
 export const Button = forwardRef<any, ButtonProps>(
   (
-    { variant = 'solid', color = 'primary', className, href, ...props },
+    {
+      variant = 'solid',
+      color = 'primary',
+      size = 'md',
+      className = '',
+      disabled = false,
+      onClick,
+      ...props
+    },
     ref,
   ) => {
-    className = clsx(
-      baseStyles[variant],
-      variantStyles[variant][color],
-      className,
-    );
+    const classes = getClasses(size, variant, color, className, disabled);
 
-    return href ? (
-      <Link ref={ref} href={href} className={className} {...props} />
-    ) : (
-      <button ref={ref} className={className} {...props} />
+    return (
+      <button
+        ref={ref}
+        className={classes}
+        onClick={onClick}
+        disabled={disabled}
+        {...props}
+      />
     );
   },
 );
