@@ -47,7 +47,7 @@ export const getClasses = (
       'text-light': variant !== 'solid' && color === 'light',
       'text-dark': variant !== 'solid' && color === 'dark',
       'disabled opacity-50': disabled,
-      'hover:opacity-75': !disabled
+      'hover:opacity-75': !disabled,
     },
     `text-${size}`,
     `px-${getSize(size)}`,
