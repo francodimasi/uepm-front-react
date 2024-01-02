@@ -26,7 +26,6 @@ export type BlogItem = {
   content: string;
   image: string;
   slug: string;
-  type?: BlogItemType;
   tags: string[];
 };
 

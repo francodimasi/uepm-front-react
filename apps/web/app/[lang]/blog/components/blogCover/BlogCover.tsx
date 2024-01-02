@@ -1,17 +1,16 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import {
-  BlogCategoryHeader,
-  BlogCategoryHeaderSkeleton,
-} from '../blogCategory';
+import { BlogCategoryHeader } from '../blogCategory';
 import { getPromotedArticle, getArticlesByCategory } from '@api/blog/requests';
 import { BlogCoverSkeleton } from './BlogCoverSkeleton';
-import { BlogItem } from '@components/shared/blogItem';
 import { Button } from 'ui/core';
 import { BlogFrontPageParam } from './BlogCover.types';
 import { Link } from '@intl/navigation';
-import { LocaleProps } from '../../../../../../../packages/intl/src/types';
+import { LocaleProps } from 'intl/src/types';
+import { PromotedArticle } from './PromotedArticle';
+import { SuggestedArticles } from './SuggestedArticles';
+import { CategoryArticles } from './CategoryArticles';
 
 export const BlogCover = ({
   categories,
@@ -25,7 +24,6 @@ export const BlogCover = ({
   const [articles, setArticles] = useState(plainArticles);
   const [promoted, setPromoted] = useState(promotedArticle);
   const [loading, setLoading] = useState(true);
-  const [loadingPage, setLoadingPage] = useState(true);
 
   const fetchData = async () => {
     const articles = await getArticlesByCategory(category);
@@ -39,77 +37,34 @@ export const BlogCover = ({
     fetchData();
   }, [category]);
 
-  useEffect(() => {
-    setLoadingPage(false);
-  }, []);
-
   return (
     <div className="relative col-span-1 lg:col-span-2 xl:col-span-3 pr-0 lg:pr-12 pb-12 lg:pb-16">
-      {loadingPage ? (
-        <BlogCategoryHeaderSkeleton />
-      ) : (
-        <BlogCategoryHeader
-          category={category}
-          setCategory={setCategory}
-          categories={categories}
-        />
-      )}
+      <BlogCategoryHeader
+        category={category}
+        setCategory={setCategory}
+        categories={categories}
+      />
       {loading ? (
         <BlogCoverSkeleton />
       ) : (
-        <>
-          {Object.keys(promoted).length > 0 && (
-            <div className="col-span-12  mt-6 mb-5  sm:mt-10  border-b-1 border-gray-medium sm:border-0">
-              <BlogItem type="bigger" locale={locale} {...promoted} />
+        <div className="flex flex-col">
+          <PromotedArticle article={promoted} locale={locale} />
+          <div className="grid grid-cols-1 xl:grid-cols-3 xl:gap-6 lg:mt-10">
+            <div className="flex xl:hidden flex-col col-span-1">
+              <SuggestedArticles
+                articles={suggestedArticles}
+                orientation="horizontal"
+                locale={locale}
+              />
             </div>
-          )}
-          <div className="flex flex-col mb-t sm:flex-row sm:gap-12 sm:mt-10 ">
-            {Object.keys(articles).length > 0 && (
-              <div className="sm:basis-2/3 order-2 sm:order-1">
-                <div className="flex flex-col ">
-                  {articles.map((article) => (
-                    <div
-                      key={article.slug}
-                      className="sm:h-60 pb-6 mb-5 border-b border-gray-medium sm:mb-5 sm:mt-0 sm:pb-0"
-                    >
-                      <BlogItem
-                        key={article.slug}
-                        locale={locale}
-                        type="large"
-                        {...article}
-                      />
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
-
-            {suggestedArticles.length > 0 && (
-              <div className="sm:basis-1/3 order-1 sm:order-2">
-                <div className="flex flex-col">
-                  <div className=" border-b border-gray-medium mb-6 pb-6 sm:pb-10">
-                    <BlogItem
-                      locale={locale}
-                      type="vertical"
-                      {...suggestedArticles[0]}
-                    />
-                  </div>
-                  {suggestedArticles.length > 1 && (
-                    <div className="sm:border-0 border-b border-gray-medium mb-6 pb-6 sm:pb-10">
-                      <BlogItem
-                        locale={locale}
-                        type="vertical"
-                        {...suggestedArticles[1]}
-                      />
-                    </div>
-                  )}
-                </div>
-              </div>
-            )}
+            <CategoryArticles articles={articles} locale={locale} />
+            <div className="hidden xl:flex flex-col xl:gap-12 xl:mt-10 col-span-1">
+              <SuggestedArticles articles={suggestedArticles} locale={locale} />
+            </div>
           </div>
-        </>
+        </div>
       )}
-      <div className="mt-5 text-center ">
+      <div className="mt-5 text-center">
         {categories.find((cat) => cat.id === category)?.count > 7 && (
           <Link href={`/blog/${category}` as any} locale={locale}>
             <Button className="w-full sm:w-auto">Ver mas artículos</Button>

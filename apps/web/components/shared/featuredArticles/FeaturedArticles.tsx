@@ -1,9 +1,8 @@
 import { Link } from '@intl/navigation';
 import { FeaturedArticlesProps } from './FeaturedArticle.types';
+import { BlogItem } from '../blogItem';
 import { LocaleProps } from 'intl';
 import clsx from 'clsx';
-import { ImageWithFallback } from '@components/utils/ImageWithFallback';
-import { ArticleTags } from '../articleTags/ArticleTags';
 
 export const FeaturedArticles: React.FC<
   FeaturedArticlesProps & LocaleProps
@@ -23,78 +22,25 @@ export const FeaturedArticles: React.FC<
           </span>
         </Link>
       </div>
-      {/* TODO: The next two bloks should use some implementation of ArticleItem */}
-      <div className={clsx('hidden lg:flex grid lg:grid-cols-4 gap-6')}>
-        {articles.map((article) => {
-          return (
-            <div
-              key={article.slug}
-              className="flex flex-col col-span-1 pb-6 justify-start"
-            >
-              <ImageWithFallback
-                src={article.image}
-                alt={article.title}
-                style={{
-                  width: '100%',
-                  height: 'auto',
-                  maxWidth: '512px',
-                  maxHeight: '384px',
-                }}
-                width={512}
-                height={384}
-              />
-              <ArticleTags tags={article.tags?.slice(0, 1)} className="pt-4" />
-              <Link
-                href={`/blog/article/${article.slug}` as any}
-                locale={locale}
-              >
-                <span className="text-dark text-base font-semibold font-['Lexend']">
-                  {article.title}
-                </span>
-              </Link>
-              <span className="pt-2 text-dark text-xs font-normal font-['DMSans'] uppercase">
-                {article.date}
-              </span>
-            </div>
-          );
-        })}
+      <div className={clsx('hidden xl:grid grid-cols-4 gap-6')}>
+        {articles.map((article) => (
+          <BlogItem
+            key={article.slug}
+            locale={locale}
+            article={article}
+            layout={{ orientation: 'vertical', size: 'lg' }}
+          />
+        ))}
       </div>
-      <div className={clsx('flex flex-col lg:hidden')}>
-        {articles.map((article) => {
-          return (
-            <div
-              key={article.slug}
-              className="flex flex-row py-4 justify-start items-center"
-            >
-              <ImageWithFallback
-                src={article.image}
-                alt={article.title}
-                style={{
-                  width: '100%',
-                  height: 'auto',
-                  maxWidth: '112px',
-                  maxHeight: '96px',
-                }}
-                width={112}
-                height={96}
-              />
-              <div className="flex flex-col gap-1 ps-4">
-                <ArticleTags tags={article.tags?.slice(0, 1)} />
-                <Link
-                  href={`/blog/article/${article.slug}` as any}
-                  locale={locale}
-                >
-                  <span className="text-dark text-base font-semibold font-['Lexend']">
-                    {article.title}
-                  </span>
-                </Link>
-                <span className="text-dark text-xs font-normal font-['DMSans'] uppercase">
-                  {article.date}
-                </span>
-              </div>
-            </div>
-          );
-        })}
+      <div className={clsx('flex flex-col gap-4 xl:hidden')}>
+        {articles.map((article) => (
+          <BlogItem
+            key={article.slug}
+            locale={locale}
+            article={article}
+            layout={{ orientation: 'horizontal', size: 'md' }}
+          />
+        ))}
       </div>
     </div>
   );

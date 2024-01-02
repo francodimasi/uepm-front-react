@@ -21,11 +21,14 @@ export const EditorSelection = ({
         {/*@todo i18nPending translation*/}
         Selección del editor
       </div>
-      {/*@todo Pending translation*/}
       <div className=" space-y-6 lg:space-y-6">
         {articles.map((article) => (
           <div className="flex-1  last:mr-0" key={article.slug}>
-            <BlogItem locale={locale} type="small" {...article} />
+            <BlogItem
+              locale={locale}
+              article={article}
+              layout={{ size: 'sm', showDescription: false }}
+            />
           </div>
         ))}
       </div>

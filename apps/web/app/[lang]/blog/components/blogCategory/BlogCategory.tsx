@@ -52,7 +52,7 @@ export const BlogCategory = ({
               key={article.slug}
               className="border-b border-gray-medium mb-6 pb-6 sm:pb-10"
             >
-              <BlogItem locale={locale} type="large" {...article} />
+              <BlogItem locale={locale} article={article} layout={{}} />
             </div>
           ))}
         </div>

@@ -22,7 +22,7 @@ export const getCategories = async (): Promise<BlogCategory[]> => {
       },
     );
     const data = await response.json();
-    const categories = data?.map((category: BlogCategory) => {
+    return data?.map((category: BlogCategory) => {
       return {
         name: category.name,
         id: category.id,
@@ -30,7 +30,6 @@ export const getCategories = async (): Promise<BlogCategory[]> => {
         count: category.count,
       };
     });
-    return categories;
   } catch (error) {
     console.error(error);
     return [];
@@ -96,10 +95,7 @@ export const getArticles = async (
     }
 
     const data = await res.json();
-
-    const items =
-      data?.map((article: BlogArticle) => parseArticleItem(article)) ?? [];
-    return items;
+    return data?.map((article: BlogArticle) => parseArticleItem(article)) ?? [];
   } catch (error) {
     console.error(error);
     return [];
@@ -135,10 +131,10 @@ export const getPromotedArticle = async (
     });
     return promotedArticles && promotedArticles.length > 0
       ? promotedArticles[0]
-      : undefined;
+      : null;
   } catch (error) {
     console.error(error);
-    return undefined;
+    return null;
   }
 };
 
