@@ -1,8 +1,8 @@
 import { Link } from '@intl/navigation';
-import dayjs from 'dayjs';
 import { ArrowBackIcon, EllipsisIcon, ShareOutlineIcon } from 'ui/core/icons';
 import { ArticleTitleProps } from '../Article.types';
-import { LocaleProps } from 'intl';
+import { LocaleProps, useTranslations } from 'intl';
+import { DateMask } from 'ui/components';
 
 export const ArticleTitle: React.FC<ArticleTitleProps & LocaleProps> = ({
   title,
@@ -11,6 +11,7 @@ export const ArticleTitle: React.FC<ArticleTitleProps & LocaleProps> = ({
   tag,
   locale,
 }) => {
+  const t = useTranslations('commonTerms');
   return (
     <div className="flex flex-col pb-4 lg:pb-16">
       <div className="flex justify-between items-center pb-4 lg:pb-14">
@@ -36,9 +37,12 @@ export const ArticleTitle: React.FC<ArticleTitleProps & LocaleProps> = ({
           {title}
         </span>
         <div className="items-center gap-4 inline-flex">
-          <span className="text-dark text-xs font-normal font-['DMSans'] uppercase leading-normal">
-            {dayjs(date).format('d [de] MMMM, YYYY')}
-          </span>
+          <DateMask
+            date={date}
+            mask={`DD [${t('of')}] MMMM, YYYY`}
+            locale={locale}
+            className="text-xs font-normal font-['DMSans'] uppercase leading-normal"
+          />
           <EllipsisIcon className="w-[5px] h-[5px] bg-black rounded-full" />
           {readingTime && (
             <span className="text-dark text-xs font-normal font-['DMSans'] uppercase leading-normal">
