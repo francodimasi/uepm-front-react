@@ -1,6 +1,6 @@
 'use client';
 
-import { useContext, useEffect, useRef } from 'react';
+import { ServerContext, useContext, useEffect, useRef } from 'react';
 import { Molecules } from './components/Molecules';
 import { mouseParallax } from '@utils/animations/MouseParallax';
 import { H1, LandingButton } from 'ui';
@@ -8,7 +8,7 @@ import { openUrl } from 'utils';
 import { LanguageContext, useClientTranslation } from 'i18n';
 
 export const Cover = () => {
-  const { lang } = useContext(LanguageContext);
+  const { lang } = useContext(LanguageContext as ServerContext<any>);
   const { t } = useClientTranslation(lang, { keyPrefix: 'cover' });
   const containerRef = useRef<HTMLDivElement>(null);
   const moleculesRef = useRef<HTMLDivElement>(null);

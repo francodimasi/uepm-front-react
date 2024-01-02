@@ -10,11 +10,11 @@ import chat from 'public/images/resources/chat.png';
 import { H2 } from 'ui';
 import { Resource } from './components/Resource';
 import { ResourceItem } from './types/resource.type';
-import { useContext } from 'react';
+import { ServerContext, useContext } from 'react';
 import { LanguageContext, useClientTranslation } from 'i18n';
 
 export function Resources() {
-  const { lang } = useContext(LanguageContext);
+  const { lang } = useContext(LanguageContext as ServerContext<any>);
   const { t } = useClientTranslation(lang, { keyPrefix: 'resources' });
 
   const resources: ResourceItem[] = [

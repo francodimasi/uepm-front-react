@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState, useContext, useMemo } from 'react';
+import { useEffect, useState, useContext, useMemo, ServerContext } from 'react';
 import { Pagination } from 'swiper/modules';
 import { BREAKPOINTS } from 'ui';
 import { CaseCard, CaseCardProps } from './CaseCard';
@@ -8,7 +8,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { LanguageContext, useClientTranslation } from 'i18n';
 
 export const CasesContainer = () => {
-  const { lang } = useContext(LanguageContext);
+  const { lang } = useContext(LanguageContext as ServerContext<any>);
   const { t } = useClientTranslation(lang, { keyPrefix: 'successCases.cases' });
   const [showSwiper, setShowSwiper] = useState<boolean>(false);
 

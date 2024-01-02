@@ -4,11 +4,11 @@ import { H2 } from 'ui';
 import { SitesProvider } from '../SitesProvider';
 import { Map } from './Map';
 import { SiteSwiper } from './SiteSwiper';
-import { useContext } from 'react';
+import { ServerContext, useContext } from 'react';
 import { LanguageContext, useClientTranslation } from 'i18n';
 
 export const Sites = () => {
-  const { lang } = useContext(LanguageContext);
+  const { lang } = useContext(LanguageContext as ServerContext<any>);
   const { t } = useClientTranslation(lang, { keyPrefix: 'sites' });
 
   return (

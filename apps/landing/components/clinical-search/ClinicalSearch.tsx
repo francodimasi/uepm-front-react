@@ -1,13 +1,13 @@
 'use client';
 
-import { useContext } from 'react';
+import { ServerContext, useContext } from 'react';
 import { openUrl } from 'utils';
 import { LandingButton } from 'ui';
 import { LINKS } from '@constants/links.const';
 import { LanguageContext, useClientTranslation } from 'i18n';
 
 export const ClinicalSearch = () => {
-  const { lang } = useContext(LanguageContext);
+  const { lang } = useContext(LanguageContext as ServerContext<any>);
   const { t } = useClientTranslation(lang, { keyPrefix: 'clinicalSearch' });
 
   return (

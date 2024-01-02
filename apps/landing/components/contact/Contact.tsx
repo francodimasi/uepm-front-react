@@ -2,11 +2,11 @@
 
 import { H2 } from 'ui';
 import { ContactForm } from './ContactForm';
-import { useState, useContext } from 'react';
+import { useState, useContext, ServerContext } from 'react';
 import { LanguageContext, useClientTranslation } from 'i18n';
 
 export const Contact = () => {
-  const { lang } = useContext(LanguageContext);
+  const { lang } = useContext(LanguageContext as ServerContext<any>);
   const { t } = useClientTranslation(lang, { keyPrefix: 'contact' });
   const [sent, setSent] = useState(false);
 

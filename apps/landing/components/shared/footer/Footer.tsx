@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { useContext, useMemo } from 'react';
+import { ServerContext, useContext, useMemo } from 'react';
 import facebook from 'ui/assets/icons/social/facebook-light.svg';
 import instagram from 'ui/assets/icons/social/instagram-light.svg';
 import linkedin from 'ui/assets/icons/social/linkedin-light.svg';
@@ -10,7 +10,7 @@ import { Language, LanguageContext, useClientTranslation } from 'i18n';
 import { useMenu } from '@hooks/useMenu';
 
 export const Footer = () => {
-  const { lang } = useContext(LanguageContext);
+  const { lang } = useContext(LanguageContext as ServerContext<any>);
   const { t } = useClientTranslation(lang, { keyPrefix: 'footer' });
 
   const { links, languages } = useMenu();

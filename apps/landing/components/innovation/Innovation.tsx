@@ -5,12 +5,12 @@ import { UnEnsayoParaMiOnco } from './components/UnEnsayoParaMiOnco';
 import { ManagementPortal } from './components/ManagementPortal';
 import { EDiary } from './components/EDiary';
 import { LanguageContext, useClientTranslation } from 'i18n';
-import { useContext, useEffect, useState } from 'react';
+import { ServerContext, useContext, useEffect, useState } from 'react';
 import { BREAKPOINTS, H2 } from 'ui';
 import { Accordion } from '@components/shared/accordion/Accordion';
 
 export const Innovation = () => {
-  const { lang } = useContext(LanguageContext);
+  const { lang } = useContext(LanguageContext as ServerContext<any>);
   const { t } = useClientTranslation(lang, { keyPrefix: 'innovation' });
 
   const [showAccordion, setShowAccordion] = useState<boolean>(false);

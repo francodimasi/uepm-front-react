@@ -1,9 +1,9 @@
 import { LanguageContext, useClientTranslation } from 'i18n';
-import { useContext, useMemo } from 'react';
+import { ServerContext, useContext, useMemo } from 'react';
 import { Site } from '../types/sites.type';
 
 export const useSites = () => {
-  const { lang } = useContext(LanguageContext);
+  const { lang } = useContext(LanguageContext as ServerContext<any>);
   const { t } = useClientTranslation(lang, { keyPrefix: 'common.countries' });
 
   const sites: Site[] = useMemo(
