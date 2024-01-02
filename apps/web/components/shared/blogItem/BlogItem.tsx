@@ -56,6 +56,7 @@ export const BlogItem = ({
             size,
           }}
           className={contentClasses}
+          locale={locale}
         />
       </div>
     </Link>
