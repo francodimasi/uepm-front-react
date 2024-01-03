@@ -3,12 +3,13 @@ import { ArrowBackIcon, EllipsisIcon, ShareOutlineIcon } from 'ui/core/icons';
 import { ArticleTitleProps } from '../Article.types';
 import { LocaleProps, useTranslations } from 'intl';
 import { DateMask } from 'ui/components';
+import { ArticleTags } from '@components/shared/articleTags/ArticleTags';
 
 export const ArticleTitle: React.FC<ArticleTitleProps & LocaleProps> = ({
   title,
   date,
   readingTime,
-  tag,
+  tags,
   locale,
 }) => {
   const t = useTranslations('commonTerms');
@@ -29,9 +30,7 @@ export const ArticleTitle: React.FC<ArticleTitleProps & LocaleProps> = ({
           </div>
         </div>
       </div>
-      <span className="lg:hidden pb-2 text-primary text-xs font-normal font-['DMSans'] uppercase">
-        {tag}
-      </span>
+      <ArticleTags tags={tags?.slice(0, 1)} />
       <div className="h-full flex-col gap-2 flex">
         <span className="pb-4 lg:pb-12 text-dark text-2xl leading-8 sm:text-[56px] sm:leading-[64px] font-semibold font-['Lexend']">
           {title}

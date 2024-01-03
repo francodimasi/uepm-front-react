@@ -4,7 +4,7 @@ import {
   BlogCategory,
   BlogFilterParams,
   BlogItem,
-  FormattedTag,
+  BlogTag,
 } from '@models/blog.types';
 import { BLOG } from './constants';
 import { parseArticleItem } from './helpers';
@@ -31,25 +31,53 @@ export const getCategories = async (): Promise<BlogCategory[]> => {
       };
     });
   } catch (error) {
-    console.error(error);
+    console.log(error);
     return [];
   }
 };
 
-export const getTrendingTopics = async (): Promise<FormattedTag[]> => {
+export const getTags = async (): Promise<BlogTag[]> => {
   try {
     const res = await fetch(
-      ENDPOINTS.BLOG.TAGS + '?order=desc&orderby=count&per_page=10&page=1',
+      `${ENDPOINTS.BLOG.TAGS}?order=desc&orderby=count&per_page=100&page=1`,
+      {
+        next: { revalidate: _1D },
+      },
+    );
+    const data: BlogTag[] = await res.json();
+    return data?.map((tag) => {
+      return {
+        name: tag.name,
+        id: tag.id,
+        slug: tag.slug,
+        count: tag.count,
+      };
+    });
+  } catch (error) {
+    console.log(error);
+    return null;
+  }
+};
+
+export const getTrendingTopics = async (): Promise<BlogTag[]> => {
+  try {
+    const res = await fetch(
+      `${ENDPOINTS.BLOG.TAGS}?order=desc&orderby=count&per_page=10&page=1`,
       {
         next: { revalidate: _2H },
       },
     );
     const data = await res.json();
-    return data?.map((tag: { id: number; name: string }) => {
-      return { id: tag.id, text: tag.name };
+    return data?.map((tag: BlogTag) => {
+      return {
+        name: tag.name,
+        id: tag.id,
+        slug: tag.slug,
+        count: tag.count,
+      };
     });
   } catch (error) {
-    console.error(error);
+    console.log(error);
     return [];
   }
 };
@@ -59,7 +87,7 @@ export const getArticles = async (
 ): Promise<BlogItem[]> => {
   try {
     const defaultParams = {
-      context: 'embed',
+      context: 'view',
       status: 'publish',
       per_page: 3,
     };
@@ -97,7 +125,7 @@ export const getArticles = async (
     const data = await res.json();
     return data?.map((article: BlogArticle) => parseArticleItem(article)) ?? [];
   } catch (error) {
-    console.error(error);
+    console.log(error);
     return [];
   }
 };
@@ -133,7 +161,7 @@ export const getPromotedArticle = async (
       ? promotedArticles[0]
       : null;
   } catch (error) {
-    console.error(error);
+    console.log(error);
     return null;
   }
 };
@@ -152,7 +180,7 @@ export const getArticlesByCategory = async (
       orderby: BLOG.POST.ORDER_BY,
     });
   } catch (error) {
-    console.error(error);
+    console.log(error);
     return [];
   }
 };
@@ -169,7 +197,7 @@ export const getEditorSelection = async (): Promise<BlogItem[]> => {
       orderby: BLOG.EDITOR_CHOICE_POSTS.ORDER_BY,
     });
   } catch (error) {
-    console.error(error);
+    console.log(error);
     return [];
   }
 };
@@ -186,12 +214,12 @@ export const getSuggestedArticles = async (): Promise<BlogItem[]> => {
       orderby: BLOG.SUGGESTED_POSTS.ORDER_BY,
     });
   } catch (error) {
-    console.error(error);
+    console.log(error);
     return [];
   }
 };
 
-export const getTagID = async (tagName: string): Promise<string> => {
+export const getTagID = async (tagName: string): Promise<number> => {
   try {
     const res = await fetch(
       `${ENDPOINTS.BLOG.TAGS}?search=${tagName}&orderby=name`,
@@ -200,22 +228,7 @@ export const getTagID = async (tagName: string): Promise<string> => {
       },
     );
     const data = await res.json();
-    return data.length > 0 ? data[0].id : null;
-  } catch (error) {
-    console.log(error);
-    return null;
-  }
-};
-
-export const getTags = async (): Promise<FormattedTag[]> => {
-  try {
-    const res = await fetch(ENDPOINTS.BLOG.TAGS, {
-      next: { revalidate: _1D },
-    });
-    const data: { id: number; name: string }[] = await res.json();
-    return data?.map((tag) => {
-      return { id: tag.id, text: tag.name };
-    });
+    return data.length > 0 ? Number(data[0].id) : null;
   } catch (error) {
     console.log(error);
     return null;

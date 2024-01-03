@@ -9,10 +9,10 @@ export const getTagClasses = (size: BlogItemSize): string => {
     case 'xs':
     case 'sm':
     case 'md':
-      return 'pb-2 text-primary-dark text-xs font-medium leading-4 font-["DMSans"] uppercase';
+      return 'pb-1 text-xs font-medium leading-4 font-["DMSans"] uppercase';
     case 'lg':
     case 'xl':
-      return 'pb-2 lg:pb-4 text-primary-dark text-xs font-medium leading-4 font-["DMSans"] uppercase';
+      return 'pb-2 text-xs font-medium leading-4 font-["DMSans"] uppercase';
   }
 };
 

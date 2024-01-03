@@ -2,13 +2,13 @@
 
 import { BlogSearch } from '../blogSearch';
 import { Select, Tabs } from 'ui/core';
-import { BlogCategoryHeaderProps } from './BlogCategory.types';
+import { BlogFilterHeaderProps } from './BlogFilter.types';
 
-export const BlogCategoryHeader = ({
+export const BlogFilterHeader = ({
   category,
   categories,
   setCategory,
-}: BlogCategoryHeaderProps) => {
+}: BlogFilterHeaderProps) => {
   const tabItems = categories?.map(({ name, id }) => ({ name, id })) ?? [];
 
   const onChange = (catID: number) => {

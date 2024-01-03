@@ -3,25 +3,26 @@
 import { Pagination } from 'ui/core/pagination';
 import { useState, useEffect } from 'react';
 import { getArticles } from '@api/blog/requests';
-import { BlogCategorySkeleton } from './BlogCategorySkeleton';
+import { BlogFilterSkeleton } from './BlogFilterSkeleton';
 import { BlogItem } from '@components/shared/blogItem';
-import { BlogCategoryProps } from './BlogCategory.types';
+import { BlogFilterProps } from './BlogFilter.types';
 import { LocaleProps } from 'intl';
 
-export const BlogCategory = ({
-  categories,
-  category,
+export const BlogFilter = ({
+  by,
   itemsPerPage = 5,
   locale,
-}: BlogCategoryProps & LocaleProps) => {
+}: BlogFilterProps & LocaleProps) => {
   const [page, setPage] = useState(1);
   const [articles, setArticles] = useState([]);
   const [loading, setLoading] = useState(true);
 
+  const pages = Math.ceil(by.value?.count / itemsPerPage);
+
   const fetchData = async () => {
     const articles = await getArticles({
       page,
-      categories: [category],
+      [by.key]: [by.value.id],
       per_page: itemsPerPage,
     });
     setArticles(articles);
@@ -33,18 +34,13 @@ export const BlogCategory = ({
     fetchData();
   }, [page]);
 
-  const pageCount = Math.ceil(
-    categories.find((c) => c.id === category).count / itemsPerPage,
-  );
-  const categoryObj = categories.find((cat) => cat.id === category);
-
   return (
     <div className="relative">
       <div className="text-black text-4xl font-semibold font-['Lexend'] leading-10 text-center w-100 border-b-1 border-b-gray-medium pb-5 mb-5">
-        {categoryObj.name}
+        {by.value.name}
       </div>
       {loading ? (
-        <BlogCategorySkeleton entries={itemsPerPage} />
+        <BlogFilterSkeleton entries={itemsPerPage} />
       ) : (
         <div className="flex flex-col">
           {articles?.map((article) => (
@@ -58,12 +54,8 @@ export const BlogCategory = ({
         </div>
       )}
       <div className="mt-5 text-center">
-        {pageCount > 1 && (
-          <Pagination
-            actualPage={page}
-            pagesCount={pageCount}
-            setPage={setPage}
-          />
+        {pages > 1 && (
+          <Pagination actualPage={page} pagesCount={pages} setPage={setPage} />
         )}
       </div>
     </div>

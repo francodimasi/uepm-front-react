@@ -1,5 +1,5 @@
-import { FormattedTag } from '@models/blog.types';
+import { BlogTag } from '@models/blog.types';
 
 export type TrendingTopicsProps = {
-  topics: FormattedTag[];
+  topics: BlogTag[];
 };
