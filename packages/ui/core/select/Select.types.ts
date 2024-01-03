@@ -5,7 +5,7 @@ export type SelectItem = {
   id: number | string;
 };
 
-export type SelectMenuPlacement = 'bottom' | 'top' ;
+export type SelectMenuPlacement = 'bottom' | 'top';
 
 export type SelectProps = PropsWithClassName & {
   items: SelectItem[];
