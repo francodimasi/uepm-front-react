@@ -7,21 +7,14 @@ export const Tag: React.FC<TagProps> = ({
   className,
 }) => {
   return (
-    <div
+    <span
       className={clsx(
-        "text-black text-base font-normal font-['DMSans'] leading-none p-1 whitespace-nowrap",
+        "text-dark font-['DMSans'] leading-none p-1 mx-2 sm:mx-px ",
         className,
       )}
       onClick={onClickHandler}
     >
-      <span
-        className={clsx(
-          "text-black text-base font-normal font-['DMSans'] leading-none mx-2 sm:mx-px ",
-          className,
-        )}
-      >
-        {text}
-      </span>
-    </div>
+      {text}
+    </span>
   );
 };

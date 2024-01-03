@@ -56,7 +56,7 @@ export type BlogFilterParams = {
   status?: string;
   context?: string;
   categories?: number[];
-  tags?: string[];
+  tags?: number[];
   order?: string;
   orderby?: string;
   slug?: string;
@@ -70,8 +70,4 @@ export type BlogCategory = {
   slug: string;
   count: number;
 };
-
-export type FormattedTag = {
-  id: number;
-  text: string;
-};
+export type BlogTag = BlogCategory;

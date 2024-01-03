@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { BlogCategoryHeader } from '../blogCategory';
+import { BlogFilterHeader } from '../blogFilter';
 import { getPromotedArticle, getArticlesByCategory } from '@api/blog/requests';
 import { BlogCoverSkeleton } from './BlogCoverSkeleton';
 import { Button } from 'ui/core';
@@ -39,7 +39,7 @@ export const BlogCover = ({
 
   return (
     <div className="relative col-span-1 lg:col-span-2 xl:col-span-3 pr-0 lg:pr-12 pb-12 lg:pb-16">
-      <BlogCategoryHeader
+      <BlogFilterHeader
         category={category}
         setCategory={setCategory}
         categories={categories}
@@ -66,7 +66,7 @@ export const BlogCover = ({
       )}
       <div className="mt-5 text-center">
         {categories.find((cat) => cat.id === category)?.count > 7 && (
-          <Link href={`/blog/${category}` as any} locale={locale}>
+          <Link href={`/blog/category/${category}` as any} locale={locale}>
             <Button>Ver mas artículos</Button>
           </Link>
         )}

@@ -1,18 +1,18 @@
 export const BLOG = {
   POST: {
     FEATURED_SLUG: 'articulos-destacados',
-    CONTEXT: 'embed',
+    CONTEXT: 'view',
     STATUS: 'publish',
     ORDER: 'desc',
     ORDER_BY: 'date',
   },
   FEATURED_POSTS: {
-    TAG_ID: '130', //slug: articulo-destacado
+    TAG_ID: 130, //slug: articulo-destacado
     ORDER: 'desc',
     ORDER_BY: 'date',
   },
   EDITOR_CHOICE_POSTS: {
-    TAG_ID: '131',
+    TAG_ID: 131,
     ORDER: 'desc',
     ORDER_BY: 'date',
   },

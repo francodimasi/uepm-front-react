@@ -1,4 +1,4 @@
-export const BlogCategoryHeaderSkeleton = () => {
+export const BlogFilterHeaderSkeleton = () => {
   return (
     <>
       <div className="hidden sm:flex relative animate-pulse border-b border-b-gray-light justify-center items-center w-full">

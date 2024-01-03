@@ -16,7 +16,7 @@ export const TrendingTopics = ({ topics }: TrendingTopicsProps) => {
       <div className="flex flex-wrap divide-x-2 divide-dark divide-opacity-20">
         {topics.map((topic, index) => (
           <Tag
-            text={topic.text}
+            text={topic.name}
             key={topic.id}
             className={clsx(
               'px-2 py-1 my-1 text-dark text-base font-medium font-["DMSans"] capitalize cursor-pointer',

@@ -1,12 +1,10 @@
 import { BlogItemSkeleton } from '@components/shared/blogItem';
 
-type BlogCategorySkeletonProps = {
+type BlogFilterSkeletonProps = {
   entries: number;
 };
 
-export const BlogCategorySkeleton = ({
-  entries,
-}: BlogCategorySkeletonProps) => {
+export const BlogFilterSkeleton = ({ entries }: BlogFilterSkeletonProps) => {
   return (
     <>
       {(() => {
