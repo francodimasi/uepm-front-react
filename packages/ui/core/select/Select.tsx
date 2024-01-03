@@ -13,6 +13,7 @@ export const Select = ({
   label,
   color = 'dark',
   className,
+  menuPlacement = 'bottom',
 }: SelectProps) => {
   const selectedItem = items.find((item) => item.id === selected);
 
@@ -44,60 +45,60 @@ export const Select = ({
                 </div>
               </span>
             </Listbox.Button>
-
-            <Transition
-              show={open}
-              as={Fragment}
-              leave="transition ease-in duration-100"
-              leaveFrom="opacity-100"
-              leaveTo="opacity-0"
-            >
-              <Listbox.Options
-                className={clsx(
-                  className,
-                  'absolute z-10 mt-1 max-h-60 w-full max-w-xs overflow-auto bg-light text-dark py-1 text-base shadow-lg ring-1 ring-gray-dark focus:outline-none sm:text-sm',
-                )}
+              <Transition
+                show={open}
+                as={Fragment}
+                leave="transition ease-in duration-100"
+                leaveFrom="opacity-100"
+                leaveTo="opacity-0"
               >
-                {items.map((item) => (
-                  <Listbox.Option
-                    key={item.id}
-                    className={({ active }) =>
-                      clsx(
-                        active ? 'bg-primary text-light' : 'text-gray-dark',
-                        'relative cursor-default select-none py-2 pl-8 pr-4',
-                      )
-                    }
-                    value={item}
-                  >
-                    {({ selected, active }) => (
-                      <>
-                        <span
-                          className={clsx(
-                            selected ? 'font-semibold' : 'font-normal',
-                            'block truncate',
-                          )}
-                        >
-                          {item.name}
-                        </span>
-
-                        {selected ? (
+                <Listbox.Options
+                  className={clsx(
+                    className,
+                    menuPlacement === 'bottom' ? 'mt-2 top-full' : 'mb-2 bottom-full',
+                    'absolute z-10 mt-1 max-h-60 w-full max-w-xs overflow-auto bg-light text-dark py-1 text-base shadow-lg ring-1 ring-gray-dark focus:outline-none sm:text-sm',
+                  )}
+                >
+                  {items.map((item) => (
+                    <Listbox.Option
+                      key={item.id}
+                      className={({ active }) =>
+                        clsx(
+                          active ? 'bg-primary text-light' : 'text-gray-dark',
+                          'relative cursor-default select-none py-2 pl-8 pr-4',
+                        )
+                      }
+                      value={item}
+                    >
+                      {({ selected, active }) => (
+                        <>
                           <span
                             className={clsx(
-                              active ? 'text-white' : 'text-primary',
-                              'absolute inset-y-0 left-0 flex items-center pl-1.5',
+                              selected ? 'font-semibold' : 'font-normal',
+                              'block truncate',
                             )}
                           >
-                            <div className="h-5 w-5 " aria-hidden="true">
-                              <CheckOutlineIcon />
-                            </div>
+                            {item.name}
                           </span>
-                        ) : null}
-                      </>
-                    )}
-                  </Listbox.Option>
-                ))}
-              </Listbox.Options>
-            </Transition>
+
+                          {selected ? (
+                            <span
+                              className={clsx(
+                                active ? 'text-white' : 'text-primary',
+                                'absolute inset-y-0 left-0 flex items-center pl-1.5',
+                              )}
+                            >
+                              <div className="h-5 w-5 " aria-hidden="true">
+                                <CheckOutlineIcon />
+                              </div>
+                            </span>
+                          ) : null}
+                        </>
+                      )}
+                    </Listbox.Option>
+                  ))}
+                </Listbox.Options>
+              </Transition>
           </div>
         </>
       )}
