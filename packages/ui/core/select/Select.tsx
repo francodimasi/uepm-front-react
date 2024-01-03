@@ -13,6 +13,7 @@ export const Select = ({
   label,
   color = 'dark',
   className,
+  menuPlacement = 'bottom',
 }: SelectProps) => {
   const selectedItem = items.find((item) => item.id === selected);
 
@@ -44,7 +45,6 @@ export const Select = ({
                 </div>
               </span>
             </Listbox.Button>
-
             <Transition
               show={open}
               as={Fragment}
@@ -55,6 +55,9 @@ export const Select = ({
               <Listbox.Options
                 className={clsx(
                   className,
+                  menuPlacement === 'bottom'
+                    ? 'mt-2 top-full'
+                    : 'mb-2 bottom-full',
                   'absolute z-10 mt-1 max-h-60 w-full max-w-xs overflow-auto bg-light text-dark py-1 text-base shadow-lg ring-1 ring-gray-dark focus:outline-none sm:text-sm',
                 )}
               >
