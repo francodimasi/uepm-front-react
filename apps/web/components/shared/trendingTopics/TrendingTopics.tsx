@@ -7,26 +7,28 @@ import { defaultLocale } from 'intl';
 import { LocaleProps } from 'intl';
 import { useRouter } from '@intl/navigation';
 
-
 import clsx from 'clsx';
 
-export const TrendingTopics = ({ topics, locale = defaultLocale}: TrendingTopicsProps & LocaleProps) => {
+export const TrendingTopics = ({
+  topics,
+  locale = defaultLocale,
+}: TrendingTopicsProps & LocaleProps) => {
   const router = useRouter();
-  
+
   if (!topics) return <TrendingTopicsSkeleton />;
   if (topics.length === 0) return null;
 
   const handleClick = (id: number) => {
     router.push(
       {
-        pathname: '/blog/tag/[id]',
-        query: { id }
+        pathname: '/blog',
+        query: { id },
       },
       {
-        locale: { locale }
-      }
+        locale: { locale },
+      },
     );
-  }
+  };
 
   return (
     <div className="flex-col justify-start items-start gap-8 flex">
@@ -37,13 +39,11 @@ export const TrendingTopics = ({ topics, locale = defaultLocale}: TrendingTopics
       <div className="relative overflow-hidden">
         <div className="flex flex-row flex-wrap justify-between -ml-2">
           {topics.map((topic) => (
-            <Tag  
+            <Tag
               text={topic.text}
               key={topic.id}
-              onClickHandler={() => handleClick(topic.id)} 
-              className={clsx(
-                'text-sm font-normal capitalize cursor-pointer',
-              )}
+              onClickHandler={() => handleClick(topic.id)}
+              className={clsx('text-sm font-normal capitalize cursor-pointer')}
             />
           ))}
         </div>
