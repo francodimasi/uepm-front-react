@@ -9,7 +9,7 @@ const CATEGORIES_ORDER = new Map([
 ]);
 
 export const orderCategories = (categories: BlogCategory[]) => {
-  return categories.toSorted((a: BlogCategory, b: BlogCategory) => {
+  return [...categories].sort((a, b) => {
     const orderA =
       CATEGORIES_ORDER.get(a.slug) || CATEGORIES_ORDER.get('DEFAULT');
     const orderB =
