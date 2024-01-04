@@ -36,7 +36,7 @@ export const BlogFilter = ({
 
   return (
     <div className="relative">
-      <div className="text-black text-4xl font-semibold font-['Lexend'] leading-10 text-center w-100 border-b-1 border-b-gray-medium pb-5 mb-5">
+      <div className="text-black text-4xl font-semibold font-['Lexend'] leading-10 text-center w-100 border-b-1 border-b-gray-medium pb-5 mb-5 capitalize">
         {by.value.name}
       </div>
       {loading ? (

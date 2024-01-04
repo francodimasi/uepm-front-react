@@ -21,11 +21,11 @@ export const TrendingTopics = ({
   const handleClick = (id: number) => {
     router.push(
       {
-        pathname: '/blog',
-        query: { id },
+        pathname: '/blog/tag/[id]',
+        params: { id },
       },
       {
-        locale: { locale },
+        locale,
       },
     );
   };
