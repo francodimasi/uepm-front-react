@@ -12,7 +12,6 @@ export default async function Page({
   if (isNaN(Number(id))) notFound();
 
   const tags = await getTags();
-  console.log('tags', tags);
   const tag = tags.find((tag) => tag.id === Number(id));
 
   return (

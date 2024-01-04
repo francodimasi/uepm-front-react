@@ -26,10 +26,10 @@ export default async function Page({ params: { lang = defaultLocale } }) {
    * Use Promise.all for all the following requests
    */
   const trendingTopics = await getTrendingTopics();
-  const editorSelection = await getEditorSelection();
-  const promotedArticle = await getPromotedArticle(defaultCategoryId);
-  const suggestedArticles = await getSuggestedArticles();
-  const articles = await getArticlesByCategory(news);
+  const editorSelection = await getEditorSelection(lang);
+  const promotedArticle = await getPromotedArticle(defaultCategoryId, lang);
+  const suggestedArticles = await getSuggestedArticles(lang);
+  const articles = await getArticlesByCategory(news, lang);
 
   return (
     <Layout locale={lang}>

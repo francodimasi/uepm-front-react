@@ -7,6 +7,7 @@ import { BlogFilterSkeleton } from './BlogFilterSkeleton';
 import { BlogItem } from '@components/shared/blogItem';
 import { BlogFilterProps } from './BlogFilter.types';
 import { LocaleProps } from 'intl';
+import { addLangCategory } from './helpers';
 
 export const BlogFilter = ({
   by,
@@ -24,6 +25,7 @@ export const BlogFilter = ({
       page,
       [by.key]: [by.value.id],
       per_page: itemsPerPage,
+      ...addLangCategory(by, locale),
     });
     setArticles(articles);
     setLoading(false);

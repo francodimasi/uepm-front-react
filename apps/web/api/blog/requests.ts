@@ -7,7 +7,7 @@ import {
   BlogTag,
 } from '@models/blog.types';
 import { BLOG } from './constants';
-import { parseArticleItem } from './helpers';
+import { getLangCategory, parseArticleItem } from './helpers';
 
 const _1D = 86400;
 const _5H = 18000;
@@ -59,6 +59,9 @@ export const getTags = async (): Promise<BlogTag[]> => {
   }
 };
 
+/**
+ * TODO: Check if we can filter this by lang once we have more info about translations
+ */
 export const getTrendingTopics = async (): Promise<BlogTag[]> => {
   try {
     const res = await fetch(
@@ -114,6 +117,7 @@ export const getArticles = async (
         queryParams += `${query}${and}`;
       }
     });
+
     const res = await fetch(`${ENDPOINTS.BLOG.POSTS}${queryParams}`, {
       next: { revalidate: _2H },
     });
@@ -145,6 +149,7 @@ export const getArticleBySlug = async (slug: string): Promise<BlogArticle> => {
 
 export const getPromotedArticle = async (
   category: number,
+  lang: string,
 ): Promise<BlogItem> => {
   try {
     const promotedArticles = await getArticles({
@@ -155,7 +160,7 @@ export const getPromotedArticle = async (
       tags: [BLOG.FEATURED_POSTS.TAG_ID],
       order: BLOG.FEATURED_POSTS.ORDER,
       orderby: BLOG.FEATURED_POSTS.ORDER_BY,
-      categories: [category],
+      categories: [category, getLangCategory(lang)],
     });
     return promotedArticles && promotedArticles.length > 0
       ? promotedArticles[0]
@@ -168,6 +173,7 @@ export const getPromotedArticle = async (
 
 export const getArticlesByCategory = async (
   category: number,
+  lang: string,
 ): Promise<BlogItem[]> => {
   try {
     return await getArticles({
@@ -175,7 +181,7 @@ export const getArticlesByCategory = async (
       per_page: 4,
       context: BLOG.POST.CONTEXT,
       status: BLOG.POST.STATUS,
-      categories: [category],
+      categories: [category, getLangCategory(lang)],
       order: BLOG.POST.ORDER,
       orderby: BLOG.POST.ORDER_BY,
     });
@@ -185,7 +191,7 @@ export const getArticlesByCategory = async (
   }
 };
 
-export const getEditorSelection = async (): Promise<BlogItem[]> => {
+export const getEditorSelection = async (lang: string): Promise<BlogItem[]> => {
   try {
     return await getArticles({
       page: 1,
@@ -193,6 +199,7 @@ export const getEditorSelection = async (): Promise<BlogItem[]> => {
       context: BLOG.POST.CONTEXT,
       status: BLOG.POST.STATUS,
       tags: [BLOG.EDITOR_CHOICE_POSTS.TAG_ID],
+      categories: [getLangCategory(lang)],
       order: BLOG.EDITOR_CHOICE_POSTS.ORDER,
       orderby: BLOG.EDITOR_CHOICE_POSTS.ORDER_BY,
     });
@@ -202,14 +209,16 @@ export const getEditorSelection = async (): Promise<BlogItem[]> => {
   }
 };
 
-export const getSuggestedArticles = async (): Promise<BlogItem[]> => {
+export const getSuggestedArticles = async (
+  lang: string,
+): Promise<BlogItem[]> => {
   try {
     return await getArticles({
       page: 1,
       per_page: 2,
       context: BLOG.POST.CONTEXT,
       status: BLOG.POST.STATUS,
-      categories: [BLOG.SUGGESTED_POSTS.CATEGORY_ID],
+      categories: [BLOG.SUGGESTED_POSTS.CATEGORY_ID, getLangCategory(lang)],
       order: BLOG.SUGGESTED_POSTS.ORDER,
       orderby: BLOG.SUGGESTED_POSTS.ORDER_BY,
     });

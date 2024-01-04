@@ -1,4 +1,5 @@
 import { BlogArticle, BlogItem } from '@models/blog.types';
+import { BLOG } from './constants';
 
 export const parseArticleItem = (article: BlogArticle): BlogItem => {
   const { title, date, featured_image_src, slug, category, tags } = article;
@@ -15,4 +16,8 @@ export const parseArticleItem = (article: BlogArticle): BlogItem => {
   };
 
   return item;
+};
+
+export const getLangCategory = (lang: string): number => {
+  return BLOG.LANG[lang.toUpperCase()];
 };
