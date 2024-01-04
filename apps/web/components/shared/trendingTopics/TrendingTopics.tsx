@@ -37,12 +37,13 @@ export const TrendingTopics = ({
         Temas más buscados
       </div>
       <div className="relative overflow-hidden">
-        <div 
+        <div
           className={clsx(
             'flex ',
             orientation === 'horizontal' ? 'flex-row' : 'flex-col',
             'flex-wrap -ml-1',
-          )}>
+          )}
+        >
           {topics.map((topic) => (
             <Tag
               text={topic.name}
