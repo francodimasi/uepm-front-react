@@ -40,7 +40,7 @@ export const TrendingTopics = ({
         <div className="flex flex-row flex-wrap justify-between -ml-2">
           {topics.map((topic) => (
             <Tag
-              text={topic.text}
+              text={topic.name}
               key={topic.id}
               onClickHandler={() => handleClick(topic.id)}
               className={clsx('text-sm font-normal capitalize cursor-pointer')}

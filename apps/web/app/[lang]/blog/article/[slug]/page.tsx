@@ -77,7 +77,7 @@ const Page = async ({
           readingTime={
             article['yoast_head_json']['twitter_misc']['Tiempo de lectura']
           }
-          tag={article.tags[0]}
+          tags={article.tags}
           locale={lang}
         />
         <div className="grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-4">

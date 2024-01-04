@@ -1,5 +1,4 @@
-import { BlogArticle, BlogItem } from '@models/blog.types';
-import { FormattedTag } from '@models/blog.types';
+import { BlogArticle, BlogItem, BlogTag } from '@models/blog.types';
 
 export type ArticleProps = {
   params: { slug: string; lang: string };
@@ -9,13 +8,13 @@ export type ArticleTitleProps = {
   title: string;
   date: string;
   readingTime: string;
-  tag: string;
+  tags: string[];
 };
 
 export type ArticleRelatedProps = {
   editorSelection: BlogItem[];
   nextArticle: BlogItem;
-  trendingTags: FormattedTag[];
+  trendingTags: BlogTag[];
 };
 
 export type ArticleContentProps = {
