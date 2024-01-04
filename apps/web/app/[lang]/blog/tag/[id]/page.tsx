@@ -16,7 +16,7 @@ export default async function Page({
   const tag = tags.find((tag) => tag.id === Number(id));
 
   return (
-    <Layout>
+    <Layout locale={lang}>
       <div className="pb-12">
         <BlogFilter
           by={{ key: 'tags', value: tag }}

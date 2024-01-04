@@ -10,3 +10,8 @@
   padding: 0;
   margin: 0;
 }
+
+div.wp-block-embed__wrapper iframe {
+  width: 100%;
+  height: 100%;
+}

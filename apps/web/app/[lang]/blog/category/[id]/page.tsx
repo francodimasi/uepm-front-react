@@ -15,7 +15,7 @@ export default async function Page({
   const category = categories.find((category) => category.id === Number(id));
 
   return (
-    <Layout>
+    <Layout locale={lang}>
       <div className="pb-12">
         <BlogFilter
           by={{ key: 'categories', value: category }}

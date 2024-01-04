@@ -32,7 +32,7 @@ export default async function Page({ params: { lang = defaultLocale } }) {
   const articles = await getArticlesByCategory(news);
 
   return (
-    <Layout>
+    <Layout locale={lang}>
       <div className="grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-4">
         <BlogCover
           categories={categories}

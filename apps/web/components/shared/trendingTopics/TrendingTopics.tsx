@@ -6,10 +6,12 @@ import { TrendingTopicsProps } from './TrendingTopics.types';
 import { defaultLocale } from 'intl';
 import { LocaleProps } from 'intl';
 import { useRouter } from '@intl/navigation';
+import clsx from 'clsx';
 
 export const TrendingTopics = ({
   topics,
   locale = defaultLocale,
+  orientation = 'horizontal',
 }: TrendingTopicsProps & LocaleProps) => {
   const router = useRouter();
 
@@ -35,7 +37,12 @@ export const TrendingTopics = ({
         Temas más buscados
       </div>
       <div className="relative overflow-hidden">
-        <div className="flex flex-row flex-wrap -ml-1 ">
+        <div 
+          className={clsx(
+            'flex ',
+            orientation === 'horizontal' ? 'flex-row' : 'flex-col',
+            'flex-wrap -ml-1',
+          )}>
           {topics.map((topic) => (
             <Tag
               text={topic.name}
