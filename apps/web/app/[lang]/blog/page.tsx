@@ -11,11 +11,13 @@ import {
   getEditorSelection,
 } from '@api/blog/requests';
 import { defaultLocale } from 'intl';
+import { orderCategories } from '@helpers/category_helpers';
 
 const NEWS_SLUG = 'noticias';
 
 export default async function Page({ params: { lang = defaultLocale } }) {
   const categories = await getCategories();
+  const orderedCategories = orderCategories(categories);
   const defaultCategoryId = categories.find(
     (category) => category.slug === NEWS_SLUG,
   )?.id;
@@ -35,7 +37,7 @@ export default async function Page({ params: { lang = defaultLocale } }) {
     <Layout>
       <div className="grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-4">
         <BlogCover
-          categories={categories}
+          categories={orderedCategories}
           promotedArticle={promotedArticle}
           suggestedArticles={suggestedArticles}
           plainArticles={articles}
