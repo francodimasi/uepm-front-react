@@ -8,7 +8,7 @@ import { Select } from 'ui/core';
 
 export const SwitchLocale: React.FC<LocaleProps> = ({ locale }) => {
   const pathname = usePathname();
-  const router = useRouter();
+  const router = useRouter(); 
   const params = useParams();
   const t = useTranslations('locale');
 
