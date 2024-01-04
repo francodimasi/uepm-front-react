@@ -67,7 +67,7 @@ export const BlogCover = ({
       <div className="mt-5 text-center">
         {categories.find((cat) => cat.id === category)?.count > 7 && (
           <Link href={`/blog/category/${category}` as any} locale={locale}>
-            <Button size='sm'>Ver mas artículos</Button>
+            <Button size="sm">Ver mas artículos</Button>
           </Link>
         )}
       </div>
