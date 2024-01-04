@@ -1,19 +1,19 @@
 import { BlogCategory } from '@models/blog.types';
 
 const CATEGORIES_ORDER = new Map([
-  ['noticias', 1],
-  ['ensayos-clinicos', 2],
-  ['entrevistas', 3],
-  ['testimonios', 4],
-  ['DEFAULT', 5],
+  //[category_id => order]
+  [3, 1], //'noticias'
+  [4, 2], //'ensayos-clinicos'
+  [5, 3], //'entrevistas'
+  [2, 4], //'testimonios'
 ]);
 
 export const orderCategories = (categories: BlogCategory[]) => {
-  return [...categories].sort((a, b) => {
-    const orderA =
-      CATEGORIES_ORDER.get(a.slug) || CATEGORIES_ORDER.get('DEFAULT');
-    const orderB =
-      CATEGORIES_ORDER.get(b.slug) || CATEGORIES_ORDER.get('DEFAULT');
-    return orderA - orderB;
-  });
+  return [...categories]
+    .filter((category) => CATEGORIES_ORDER.has(category.id))
+    .sort((a, b) => {
+      const orderA = CATEGORIES_ORDER.get(a.id);
+      const orderB = CATEGORIES_ORDER.get(b.id);
+      return orderA - orderB;
+    });
 };
