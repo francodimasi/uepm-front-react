@@ -3,7 +3,10 @@ import { TrendingTopicsSkeleton } from './TrendingTopicsSkeleton';
 import { TrendingTopicsProps } from './TrendingTopics.types';
 import clsx from 'clsx';
 
-export const TrendingTopics = ({ topics }: TrendingTopicsProps) => {
+export const TrendingTopics = ({
+  topics,
+  orientation = 'horizontal',
+}: TrendingTopicsProps) => {
   if (!topics) return <TrendingTopicsSkeleton />;
   if (topics.length === 0) return null;
 
@@ -13,7 +16,13 @@ export const TrendingTopics = ({ topics }: TrendingTopicsProps) => {
         {/*@todo i18nPending translation*/}
         Temas más buscados
       </div>
-      <div className="flex flex-wrap divide-x-2 divide-dark divide-opacity-20">
+      <div
+        className={clsx(
+          'flex',
+          orientation === 'horizontal' ? 'flex-row' : 'flex-col',
+          'flex-wrap divide-x-2 divide-dark divide-opacity-20',
+        )}
+      >
         {topics.map((topic, index) => (
           <Tag
             text={topic.name}
