@@ -7,7 +7,7 @@ export default function Page({ params: { lang } }) {
   const t = useTranslations('about');
 
   return (
-    <Layout>
+    <Layout locale={lang}>
       <p className="text-red-500">{t('title')}</p>
       <SwitchLocale />
     </Layout>

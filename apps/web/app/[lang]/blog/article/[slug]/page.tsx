@@ -69,7 +69,7 @@ const Page = async ({
   const tags = await getTags();
 
   return (
-    <Layout>
+    <Layout locale={lang}>
       <div className="flex flex-col px-0">
         <ArticleTitle
           title={article.title.rendered}
