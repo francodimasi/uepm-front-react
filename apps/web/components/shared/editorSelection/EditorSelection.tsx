@@ -16,22 +16,23 @@ export const EditorSelection = ({
   if (articles.length === 0) return null;
 
   return (
-    <div className="flex-col justify-start items-start gap-8 flex">
-      <div className="text-2xl font-medium font-['Lexend'] leading-7 text-primary ">
+    <div className="flex flex-col justify-start items-start">
+      <div className="text-2xl font-medium font-['Lexend'] leading-7 text-primary pb-8">
         {/*@todo i18nPending translation*/}
         Selección del editor
       </div>
-      <div className=" space-y-6 lg:space-y-6">
-        {articles.map((article) => (
-          <div className="flex-1  last:mr-0" key={article.slug}>
-            <BlogItem
-              locale={locale}
-              article={article}
-              layout={{ size: 'sm', showDescription: false }}
-            />
-          </div>
-        ))}
-      </div>
+      {articles.map((article) => (
+        <div
+          className="flex-1 last:mr-0 border-b-1 border-gray-medium py-2"
+          key={article.slug}
+        >
+          <BlogItem
+            locale={locale}
+            article={article}
+            layout={{ size: 'xs', showDescription: false }}
+          />
+        </div>
+      ))}
     </div>
   );
 };

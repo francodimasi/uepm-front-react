@@ -16,7 +16,7 @@ export const ArticleOfInterest: React.FC<
         key={article.slug}
         locale={locale}
         article={article}
-        layout={{ orientation: 'vertical', showDescription: false, size: 'md' }}
+        layout={{ orientation: 'vertical', showDescription: false, size: 'lg' }}
       />
     </div>
   );

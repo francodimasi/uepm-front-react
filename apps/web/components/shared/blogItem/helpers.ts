@@ -64,21 +64,37 @@ export const getImgClasses = (
 ): string => {
   switch (size) {
     case 'xs':
+      switch (orientation) {
+        case 'horizontal':
+          switch (imgPosition) {
+            case 'start':
+              return 'w-20 h-24 shrink-0 me-2';
+            case 'end':
+              return 'w-20 h-24 shrink-0 ms-2';
+          }
+        case 'vertical':
+          switch (imgPosition) {
+            case 'start':
+              return 'w-full h-20 shrink-0 mb-2';
+            case 'end':
+              return 'w-full h-20 shrink-0 mt-2';
+          }
+      }
     case 'sm':
       switch (orientation) {
         case 'horizontal':
           switch (imgPosition) {
             case 'start':
-              return 'pe-2';
+              return 'w-24 h-32 shrink-0 me-2';
             case 'end':
-              return 'ps-2';
+              return 'w-24 h-32 shrink-0 ms-2';
           }
         case 'vertical':
           switch (imgPosition) {
             case 'start':
-              return 'pb-2';
+              return 'w-full h-24 shrink-0 mb-2';
             case 'end':
-              return 'pt-2';
+              return 'w-full h-24 shrink-0 mt-2';
           }
       }
     case 'md':
@@ -86,16 +102,16 @@ export const getImgClasses = (
         case 'horizontal':
           switch (imgPosition) {
             case 'start':
-              return 'pe-4';
+              return 'w-48 h-52 shrink-0 me-4';
             case 'end':
-              return 'ps-4';
+              return 'w-48 h-52 shrink-0 ms-4';
           }
         case 'vertical':
           switch (imgPosition) {
             case 'start':
-              return 'pb-4';
+              return 'w-full h-48 shrink-0 mb-4';
             case 'end':
-              return 'pt-4';
+              return 'w-full h-48 shrink-0 mt-4';
           }
       }
     case 'lg':
@@ -103,16 +119,16 @@ export const getImgClasses = (
         case 'horizontal':
           switch (imgPosition) {
             case 'start':
-              return 'pe-6';
+              return 'w-64 h-64 shrink-0 me-6';
             case 'end':
-              return 'ps-6';
+              return 'w-64 h-64 shrink-0 ms-6';
           }
         case 'vertical':
           switch (imgPosition) {
             case 'start':
-              return 'pb-8';
+              return 'w-full h-56 shrink-0 mb-8';
             case 'end':
-              return 'pt-8';
+              return 'w-full h-56 shrink-0 mt-8';
           }
       }
     case 'xl':
@@ -120,16 +136,16 @@ export const getImgClasses = (
         case 'horizontal':
           switch (imgPosition) {
             case 'start':
-              return '';
+              return 'w-72 h-72 shrink-0 ms-8';
             case 'end':
-              return '';
+              return 'w-72 h-72 shrink-0 me-8';
           }
         case 'vertical':
           switch (imgPosition) {
             case 'start':
-              return '';
+              return 'w-full h-72 shrink-0 mb-8';
             case 'end':
-              return '';
+              return 'w-full h-72 shrink-0 mt-8';
           }
       }
   }
