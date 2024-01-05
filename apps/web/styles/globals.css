@@ -15,3 +15,11 @@ div.wp-block-embed__wrapper iframe {
   width: 100%;
   min-height: 320px;
 }
+
+@media (max-width: 640px) {
+  div.wp-block-embed__wrapper iframe {
+    width: 100%;
+    min-height: 320px;
+    max-height: 320px;
+  }
+}
