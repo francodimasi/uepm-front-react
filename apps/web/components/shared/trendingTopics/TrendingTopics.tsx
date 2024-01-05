@@ -3,7 +3,7 @@
 import { Tag } from 'ui/core';
 import { TrendingTopicsSkeleton } from './TrendingTopicsSkeleton';
 import { TrendingTopicsProps } from './TrendingTopics.types';
-import { defaultLocale } from 'intl';
+import { defaultLocale, LocaleProps } from 'intl';
 import { LocaleProps } from 'intl';
 import { useRouter } from '@intl/navigation';
 import clsx from 'clsx';
