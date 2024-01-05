@@ -10,7 +10,6 @@ export const BlogItemImage = ({
   layout: { size, orientation, imgPosition },
   className,
 }: Partial<BlogItemProps> & BlogItemLayoutProps) => {
-
   return (
     <>
       {className ? (
