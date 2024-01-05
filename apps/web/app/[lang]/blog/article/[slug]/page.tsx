@@ -9,13 +9,15 @@ import {
   getEditorSelection,
   getArticles,
   getTagID,
-  getTags,
+  getTrendingTopics,
 } from '@api/blog/requests';
 import { BlogItem } from '@models/blog.types';
 import { FeaturedArticles } from '@components/shared/featuredArticles';
+import { BLOG } from '@api/blog/constants';
 
-const getArticlesByTag = async function (tagName: string) {
+const getArticlesByTag = async function (tagName: string, lang: string) {
   const getArticlesParams: BlogFilterParams = {
+    categories: [BLOG.LANG[lang.toUpperCase()]],
     per_page: 4,
     page: 1,
     context: 'view',
@@ -40,9 +42,10 @@ const getArticlesByTag = async function (tagName: string) {
  * @param current
  * @returns
  */
-const getNextArticle = async function (current: BlogArticle) {
+const getNextArticle = async function (current: BlogArticle, lang: string) {
   try {
     const followingArticles: BlogItem[] = await getArticles({
+      categories: [BLOG.LANG[lang.toUpperCase()]],
       context: 'view',
       page: 1,
       per_page: 1,
@@ -63,10 +66,10 @@ const Page = async ({
   const article = await getArticleBySlug(slug);
   if (!article) notFound();
 
-  const editorSelection = await getEditorSelection();
-  const tagArticles = await getArticlesByTag(article.tags[0]);
-  const nextArticle = await getNextArticle(article);
-  const tags = await getTags();
+  const editorSelection = await getEditorSelection(lang);
+  const tagArticles = await getArticlesByTag(article.tags[0], lang);
+  const nextArticle = await getNextArticle(article, lang);
+  const tags = await getTrendingTopics();
 
   return (
     <Layout locale={lang}>

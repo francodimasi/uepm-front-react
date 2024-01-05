@@ -26,8 +26,8 @@ export const BlogCover = ({
   const [loading, setLoading] = useState(true);
 
   const fetchData = async () => {
-    const articles = await getArticlesByCategory(category);
-    setPromoted(await getPromotedArticle(category));
+    const articles = await getArticlesByCategory(category, locale);
+    setPromoted(await getPromotedArticle(category, locale));
     setArticles(articles);
     setLoading(false);
   };
@@ -67,7 +67,7 @@ export const BlogCover = ({
       <div className="mt-5 text-center">
         {categories.find((cat) => cat.id === category)?.count > 7 && (
           <Link href={`/blog/category/${category}` as any} locale={locale}>
-            <Button>Ver mas artículos</Button>
+            <Button size="sm">Ver mas artículos</Button>
           </Link>
         )}
       </div>
