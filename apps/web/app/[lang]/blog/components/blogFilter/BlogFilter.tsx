@@ -50,7 +50,20 @@ export const BlogFilter = ({
               key={article.slug}
               className="border-b border-gray-medium mb-6 pb-6 sm:pb-10"
             >
-              <BlogItem locale={locale} article={article} layout={{}} />
+              <div className="hidden xl:flex">
+                <BlogItem
+                  locale={locale}
+                  article={article}
+                  layout={{ size: 'md' }}
+                />
+              </div>
+              <div className="xl:hidden">
+                <BlogItem
+                  locale={locale}
+                  article={article}
+                  layout={{ size: 'sm' }}
+                />
+              </div>
             </div>
           ))}
         </div>

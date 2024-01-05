@@ -1,7 +1,8 @@
 import { BlogItem as BlogItemProps } from '@models/blog.types';
 import { ImageWithFallback } from '@components/utils/ImageWithFallback';
 import { BlogItemLayoutProps } from './BlogItem.types';
-import { getImgClasses, getImgDimensions } from './helpers';
+import { getImgClasses } from './helpers';
+import clsx from 'clsx';
 
 export const BlogItemImage = ({
   title,
@@ -9,7 +10,6 @@ export const BlogItemImage = ({
   layout: { size, orientation, imgPosition },
   className,
 }: Partial<BlogItemProps> & BlogItemLayoutProps) => {
-  const { width, height } = getImgDimensions(size);
 
   return (
     <>
@@ -26,20 +26,20 @@ export const BlogItemImage = ({
           />
         </div>
       ) : (
-        <ImageWithFallback
-          src={image}
-          alt={title}
-          style={{
-            width: '100%',
-            height: 'auto',
-            maxWidth: `${width}px`,
-            maxHeight: `${height}px`,
-            margin: 'auto',
-          }}
-          width={width}
-          height={height}
-          className={getImgClasses(size, orientation, imgPosition)}
-        />
+        <div
+          className={clsx(
+            'relative',
+            getImgClasses(size, orientation, imgPosition),
+          )}
+        >
+          <ImageWithFallback
+            src={image}
+            alt={title}
+            fill
+            sizes="100%"
+            className="absolute inset-0 h-full w-full object-cover"
+          />
+        </div>
       )}
     </>
   );

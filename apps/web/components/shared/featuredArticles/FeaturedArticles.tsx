@@ -32,13 +32,23 @@ export const FeaturedArticles: React.FC<
           />
         ))}
       </div>
-      <div className={clsx('flex flex-col gap-4 xl:hidden')}>
+      <div className={clsx('hidden sm:flex flex-col gap-4 xl:hidden')}>
         {articles.map((article) => (
           <BlogItem
             key={article.slug}
             locale={locale}
             article={article}
             layout={{ orientation: 'horizontal', size: 'md' }}
+          />
+        ))}
+      </div>
+      <div className={clsx('sm:hidden flex flex-col gap-4 xl:hidden')}>
+        {articles.map((article) => (
+          <BlogItem
+            key={article.slug}
+            locale={locale}
+            article={article}
+            layout={{ orientation: 'horizontal', size: 'sm' }}
           />
         ))}
       </div>
