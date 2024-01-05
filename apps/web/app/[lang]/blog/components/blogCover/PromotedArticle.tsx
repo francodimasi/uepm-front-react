@@ -36,7 +36,7 @@ export const PromotedArticle = ({
           className="h-[640px]"
         />
       </div>
-      <div className="lg:hidden pb-8 border-b-1 border-gray-medium">
+      <div className="lg:hidden py-8 border-b-1 border-gray-medium">
         <BlogItem
           locale={locale}
           article={article}
