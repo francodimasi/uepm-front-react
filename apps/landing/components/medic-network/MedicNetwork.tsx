@@ -1,9 +1,9 @@
 import { H2 } from 'ui';
-import { useContext } from 'react';
+import { ServerContext, useContext } from 'react';
 import { LanguageContext, useClientTranslation } from 'i18n';
 
 export const MedicNetwork = () => {
-  const { lang } = useContext(LanguageContext);
+  const { lang } = useContext(LanguageContext as ServerContext<any>);
   const { t } = useClientTranslation(lang, { keyPrefix: 'medicalNetwork' });
 
   return (

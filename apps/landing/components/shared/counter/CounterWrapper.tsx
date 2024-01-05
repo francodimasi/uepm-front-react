@@ -1,6 +1,6 @@
 'use client';
 
-import { useCallback, useContext, useMemo } from 'react';
+import { ServerContext, useCallback, useContext, useMemo } from 'react';
 import { SitesContext } from '../../sites/SitesProvider';
 import { Counter } from './Counter';
 import { CounterItem } from './types/counter.type';
@@ -15,7 +15,7 @@ export const CounterWrapper = ({
   specialities,
 }: Site) => {
   const { selected } = useContext(SitesContext);
-  const { lang } = useContext(LanguageContext);
+  const { lang } = useContext(LanguageContext as ServerContext<any>);
   const { t } = useClientTranslation(lang, { keyPrefix: 'sites.counter' });
 
   const counterData: CounterItem[] = useMemo(

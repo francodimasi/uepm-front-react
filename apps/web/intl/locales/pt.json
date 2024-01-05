@@ -1,0 +1,35 @@
+{
+  "metadata": {
+    "title": "Un Ensaio Para Mi"
+  },
+  "locale": {
+    "en": "Inglês",
+    "es": "Espanhol",
+    "pt": "Português"
+  },
+  "home": {
+    "lang": "Português"
+  },
+  "about": {
+    "title": "Nos"
+  },
+  "actions": {
+    "back": "Atrás",
+    "cancel": "Cancelar",
+    "clear": "Borrar",
+    "close": "Cerrar",
+    "next": "Siguiente",
+    "ok": "Aceptar",
+    "previous": "Anterior",
+    "save": "Guardar",
+    "select": "Seleccionar",
+    "submit": "Enviar",
+    "seeMore": "Ver más",
+    "seeLess": "Ver menos",
+    "yes": "Sí",
+    "no": "No"
+  },
+  "commonTerms": {
+    "of": "de"
+  }
+}

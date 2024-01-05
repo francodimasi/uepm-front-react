@@ -3,11 +3,11 @@ import Image from 'next/image';
 import bgResources from 'public/images/bg/bg-resources.png';
 import { H2 } from 'ui';
 import { ResourcesContainer } from './ResourcesContainer';
-import { useContext } from 'react';
+import { ServerContext, useContext } from 'react';
 import { LanguageContext, useClientTranslation } from 'i18n';
 
 export function Resources() {
-  const { lang } = useContext(LanguageContext);
+  const { lang } = useContext(LanguageContext as ServerContext<any>);
   const { t } = useClientTranslation(lang, { keyPrefix: 'resources' });
 
   return (

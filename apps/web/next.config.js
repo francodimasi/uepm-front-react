@@ -1,6 +1,10 @@
-module.exports = {
+const withNextIntl = require('next-intl/plugin')(
+  '../../packages/intl/src/i18n.ts',
+);
+
+module.exports = withNextIntl({
   reactStrictMode: true,
-  transpilePackages: ['ui', 'i18n', 'rest'],
+  transpilePackages: ['ui', 'i18n', 'intl', 'rest'],
   images: {
     remotePatterns: [
       {
@@ -9,6 +13,12 @@ module.exports = {
         port: '',
         pathname: '/wp-content/uploads/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'content.unensayoparami.org',
+        port: '',
+        pathname: '/wp-includes/images/**',
+      },
     ],
   },
-};
+});

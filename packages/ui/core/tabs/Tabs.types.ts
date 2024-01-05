@@ -6,5 +6,5 @@ export type TabItem = {
 export type TabsProps = {
   items: TabItem[];
   selected: number;
-  onChange: Function;
+  onChange: (_id: number) => void;
 };

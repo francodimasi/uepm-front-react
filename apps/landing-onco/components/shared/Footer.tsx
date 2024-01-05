@@ -2,13 +2,13 @@ import { Language, LanguageContext, useClientTranslation } from 'i18n';
 import Image from 'next/image';
 import Link from 'next/link';
 import logo from 'public/images/uepm-onco-logo.svg';
-import { useContext, useMemo } from 'react';
+import { ServerContext, useContext, useMemo } from 'react';
 import { SwitchLanguage } from 'ui';
 import instagram from 'ui/assets/icons/social/instagram-light.svg';
 import linkedin from 'ui/assets/icons/social/linkedin-light.svg';
 
 export const Footer = () => {
-  const { lang } = useContext(LanguageContext);
+  const { lang } = useContext(LanguageContext as ServerContext<any>);
   const { t } = useClientTranslation(lang, { keyPrefix: 'footer' });
   const { t: tlang } = useClientTranslation(lang, { keyPrefix: 'language' });
   const links = useMemo(() => {

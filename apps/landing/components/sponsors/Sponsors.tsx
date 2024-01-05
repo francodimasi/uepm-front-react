@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { useMemo, useContext } from 'react';
+import { useMemo, useContext, ServerContext } from 'react';
 import { SwiperSlide, Swiper } from 'swiper/react';
 import { BREAKPOINTS, H2 } from 'ui';
 import boehringer from 'public/images/sponsors/boehringer.svg';
@@ -14,7 +14,7 @@ import { Autoplay } from 'swiper/modules';
 import { LanguageContext, useClientTranslation } from 'i18n';
 
 export const Sponsors = () => {
-  const { lang } = useContext(LanguageContext);
+  const { lang } = useContext(LanguageContext as ServerContext<any>);
   const { t } = useClientTranslation(lang, { keyPrefix: 'sponsors' });
 
   const sponsors = useMemo(() => {

@@ -1,11 +1,17 @@
-import { Layout } from '../../../components/core/layout/Layout';
-import { QuienesSomos } from './components/QuienesSomos';
+import { Layout } from '@components/core/layout/Layout';
+import { SwitchLocale } from '@intl/components/SwitchLocale';
+import { unstable_setRequestLocale, useTranslations } from 'intl';
+import { AboutUs } from './components/AboutUs';
 
-export default function Page() {
+export default function Page({ params: { lang } }) {
+  unstable_setRequestLocale(lang);
+  const t = useTranslations('about');
+
   return (
-    <Layout>
-      <QuienesSomos/>
-      <p className="text-red-500">This is the About us section</p>
+    <Layout locale={lang}>
+      <p className="text-red-500">{t('title')}</p>
+      <AboutUs/>
+      <SwitchLocale />
     </Layout>
   );
 }

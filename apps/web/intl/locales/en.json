@@ -1,0 +1,35 @@
+{
+  "metadata": {
+    "title": "Trialtech"
+  },
+  "locale": {
+    "en": "English",
+    "es": "Spanish",
+    "pt": "Portuguese"
+  },
+  "home": {
+    "lang": "English"
+  },
+  "about": {
+    "title": "About us"
+  },
+  "actions": {
+    "back": "Back",
+    "cancel": "Cancel",
+    "clear": "Clear",
+    "close": "Close",
+    "next": "Next",
+    "ok": "OK",
+    "previous": "Previous",
+    "save": "Save",
+    "select": "Select",
+    "submit": "Submit",
+    "seeMore": "See more",
+    "seeLess": "See less",
+    "yes": "Yes",
+    "no": "No"
+  },
+  "commonTerms": {
+    "of": "of"
+  }
+}
