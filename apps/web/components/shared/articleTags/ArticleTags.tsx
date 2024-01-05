@@ -19,10 +19,7 @@ export const ArticleTags: React.FC<ArticleTagsProps> = ({
         <Tag
           key={index}
           text={tag}
-          className={clsx(
-            'px-2 py-1 text-primary-dark text-xs font-medium font-["DMSans"] uppercase',
-            { 'ps-0': index === 0 },
-          )}
+          className='py-1 text-primary-dark text-xs font-medium font-["DMSans"] uppercase'
         />
       ))}
     </div>
