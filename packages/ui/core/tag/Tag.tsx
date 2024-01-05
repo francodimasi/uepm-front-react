@@ -7,7 +7,7 @@ export const Tag: React.FC<TagProps> = ({
 }) => {
   return (
     <div className={className} onClick={onClickHandler}>
-      <span className="mx-1.5 sm:mx-1">{text}</span>
+      {text}
     </div>
   );
 };

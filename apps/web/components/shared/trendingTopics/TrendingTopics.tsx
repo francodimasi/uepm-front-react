@@ -4,7 +4,6 @@ import { Tag } from 'ui/core';
 import { TrendingTopicsSkeleton } from './TrendingTopicsSkeleton';
 import { TrendingTopicsProps } from './TrendingTopics.types';
 import { defaultLocale, LocaleProps } from 'intl';
-import { LocaleProps } from 'intl';
 import { useRouter } from '@intl/navigation';
 import clsx from 'clsx';
 
@@ -49,7 +48,7 @@ export const TrendingTopics = ({
               text={topic.name}
               key={topic.id}
               onClickHandler={() => handleClick(topic.id)}
-              className="flex-grow basis-auto my-1.5 sm:my-2 mx-0 px-0 sm:px-1 py-0 text-center  border-l-1 border-solid border-l-gray-medium bg-white leading-none text-sm font-normal capitalize cursor-pointer "
+              className="flex-grow basis-auto my-1.5 sm:my-2 mx-0.5 sm:mx-0 px-0.5 sm:px-2 py-0.5 sm:py-0 text-center  border-l-1 border-solid border-l-gray-medium bg-white leading-none text-sm font-normal capitalize cursor-pointer "
             />
           ))}
         </div>
