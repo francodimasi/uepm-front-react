@@ -1,64 +1,15 @@
 import { notFound } from 'next/navigation';
 import { Layout } from '@components/core/layout/Layout';
 import { ArticleContent, ArticleTitle, ArticleRelated } from './components';
-import { BlogArticle, BlogFilterParams } from '@models/blog.types';
 import { ArticleProps } from './Article.types';
 import { defaultLocale } from 'intl';
 import {
   getArticleBySlug,
   getEditorSelection,
-  getArticles,
-  getTagID,
   getTrendingTopics,
 } from '@api/blog/requests';
-import { BlogItem } from '@models/blog.types';
 import { FeaturedArticles } from '@components/shared/featuredArticles';
-import { BLOG } from '@api/blog/constants';
-
-const getArticlesByTag = async function (tagName: string, lang: string) {
-  const getArticlesParams: BlogFilterParams = {
-    categories: [BLOG.LANG[lang.toUpperCase()]],
-    per_page: 4,
-    page: 1,
-    context: 'view',
-    order: 'desc',
-  };
-
-  if (tagName) {
-    const tagID = await getTagID(tagName);
-    getArticlesParams.tags = [tagID];
-  }
-
-  try {
-    return await getArticles(getArticlesParams);
-  } catch (error) {
-    console.log(error);
-    return null;
-  }
-};
-
-/**
- * Gets next cronological article from the same category as current article
- * @param current
- * @returns
- */
-const getNextArticle = async function (current: BlogArticle, lang: string) {
-  try {
-    const followingArticles: BlogItem[] = await getArticles({
-      categories: [BLOG.LANG[lang.toUpperCase()]],
-      context: 'view',
-      page: 1,
-      per_page: 1,
-      order: 'desc',
-      before: current.date,
-    });
-
-    return followingArticles?.length > 0 ? followingArticles[0] : null;
-  } catch (error) {
-    console.log(error);
-    return null;
-  }
-};
+import { getArticlesByTag, getNextArticle } from './helpers';
 
 const Page = async ({
   params: { lang = defaultLocale, slug },
@@ -66,10 +17,12 @@ const Page = async ({
   const article = await getArticleBySlug(slug);
   if (!article) notFound();
 
-  const editorSelection = await getEditorSelection(lang);
-  const tagArticles = await getArticlesByTag(article.tags[0], lang);
-  const nextArticle = await getNextArticle(article, lang);
-  const tags = await getTrendingTopics();
+  const [editorSelection, tagArticles, nextArticle, tags] = await Promise.all([
+    getEditorSelection(lang),
+    getArticlesByTag(article.tags[0], lang),
+    getNextArticle(article, lang),
+    getTrendingTopics(),
+  ]);
 
   return (
     <Layout locale={lang}>

@@ -38,8 +38,8 @@ export const TrendingTopics = ({
       <div className="relative overflow-hidden">
         <div
           className={clsx(
-            'flex ',
-            orientation === 'horizontal' ? 'flex-row' : 'flex-col',
+            'flex flex-row',
+            { 'lg:flex-col': orientation === 'vertical' },
             'flex-wrap -ml-1',
           )}
         >
@@ -48,7 +48,7 @@ export const TrendingTopics = ({
               text={topic.name}
               key={topic.id}
               onClickHandler={() => handleClick(topic.id)}
-              className="flex-grow basis-auto my-1.5 sm:my-2 mx-0.5 sm:mx-0 px-0.5 sm:px-2 py-0.5 sm:py-0 text-center  border-l-1 border-solid border-l-gray-medium bg-white leading-none text-sm font-normal capitalize cursor-pointer "
+              className="my-1.5 sm:my-2 mx-0 px-1 sm:px-2 py-0.5 sm:py-0 text-start border-l-1 border-solid border-l-gray-medium leading-none text-sm capitalize cursor-pointer"
             />
           ))}
         </div>
