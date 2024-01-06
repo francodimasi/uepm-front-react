@@ -47,9 +47,9 @@ export const getDateClasses = (size: BlogItemSize): string => {
 export const getDescriptionClasses = (size: BlogItemSize): string => {
   switch (size) {
     case 'xs':
-        return 'hidden'
+      return 'hidden';
     case 'sm':
-      return 'hidden'
+      return 'hidden';
     case 'md':
       return 'pt-1 lg:pt-2 text-dark text-sm font-light leading-6 font-["DMSans"] line-clamp-3';
     case 'lg':
