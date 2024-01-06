@@ -101,15 +101,14 @@ export const getArticles = async (
 
     keys.forEach((key, index) => {
       if (allParams[key]) {
-        let keyStr = key;
         const and = index < keys.length - 1 ? '&' : '';
-        let query = `${keyStr}=${allParams[key]}`;
+        let query = `${key}=${allParams[key]}`;
 
-        if (keyStr === 'categories') {
+        if (key === 'categories') {
           query = `categories[terms]=${allParams[key]}`;
           query += '&categories[operator]=AND';
         }
-        if (keyStr === 'tags') {
+        if (key === 'tags') {
           query = `tags[terms]=${allParams[key]}`;
           query += '&tags[operator]=AND';
         }

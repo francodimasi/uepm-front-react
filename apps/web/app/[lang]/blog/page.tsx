@@ -12,6 +12,7 @@ import {
 } from '@api/blog/requests';
 import { defaultLocale } from 'intl';
 import { orderCategories } from '@helpers/category_helpers';
+import { notFound } from 'next/navigation';
 
 const NEWS_SLUG = 'noticias';
 
@@ -21,17 +22,22 @@ export default async function Page({ params: { lang = defaultLocale } }) {
   const defaultCategoryId = categories.find(
     (category) => category.slug === NEWS_SLUG,
   )?.id;
-  const news = categories.find((category) => category.slug === NEWS_SLUG)?.id;
 
-  /**
-   * @todo
-   * Use Promise.all for all the following requests
-   */
-  const trendingTopics = await getTrendingTopics();
-  const editorSelection = await getEditorSelection(lang);
-  const promotedArticle = await getPromotedArticle(defaultCategoryId, lang);
-  const suggestedArticles = await getSuggestedArticles(lang);
-  const articles = await getArticlesByCategory(news, lang);
+  if (!defaultCategoryId) notFound();
+
+  const [
+    trendingTopics,
+    editorSelection,
+    promotedArticle,
+    suggestedArticles,
+    articlesByCategory,
+  ] = await Promise.all([
+    getTrendingTopics(),
+    getEditorSelection(lang),
+    getPromotedArticle(defaultCategoryId, lang),
+    getSuggestedArticles(lang),
+    getArticlesByCategory(defaultCategoryId, lang),
+  ]);
 
   return (
     <Layout locale={lang}>
@@ -40,7 +46,7 @@ export default async function Page({ params: { lang = defaultLocale } }) {
           categories={orderedCategories}
           promotedArticle={promotedArticle}
           suggestedArticles={suggestedArticles}
-          plainArticles={articles}
+          plainArticles={articlesByCategory}
           initialCategory={defaultCategoryId}
           locale={lang}
         />
