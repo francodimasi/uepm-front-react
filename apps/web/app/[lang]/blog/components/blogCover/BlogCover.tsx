@@ -49,8 +49,8 @@ export const BlogCover = ({
       ) : (
         <div className="flex flex-col">
           <PromotedArticle article={promoted} locale={locale} />
-          <div className="grid grid-cols-1 xl:grid-cols-3 xl:gap-6 lg:mt-10">
-            <div className="flex xl:hidden flex-col col-span-1">
+          <div className="grid grid-cols-1 xl:grid-cols-3 xl:gap-6">
+            <div className="flex xl:hidden flex-col col-span-1 ">
               <SuggestedArticles
                 articles={suggestedArticles}
                 orientation="horizontal"
@@ -58,7 +58,7 @@ export const BlogCover = ({
               />
             </div>
             <CategoryArticles articles={articles} locale={locale} />
-            <div className="hidden xl:flex flex-col xl:gap-12 xl:mt-10 col-span-1">
+            <div className="hidden xl:flex flex-col xl:gap-12 col-span-1">
               <SuggestedArticles articles={suggestedArticles} locale={locale} />
             </div>
           </div>

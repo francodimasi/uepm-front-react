@@ -11,7 +11,7 @@ export const TrendingTopics = ({
   if (topics.length === 0) return null;
 
   return (
-    <div className="flex-col justify-start items-start gap-8 flex">
+    <div className="flex-col justify-start items-start gap-5 flex">
       <div className="text-2xl font-semibold font-['Lexend'] leading-7 text-primary">
         {/*@todo i18nPending translation*/}
         Temas más buscados

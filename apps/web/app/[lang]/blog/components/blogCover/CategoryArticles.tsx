@@ -9,15 +9,15 @@ export const CategoryArticles = ({
   if (!articles || articles.length === 0) return null;
 
   return (
-    <div className="flex flex-col xl:mt-10 col-span-1 xl:col-span-2">
+    <div className="flex flex-col col-span-1 xl:col-span-2">
       <div className="hidden xl:flex flex-col xl:pe-6">
         {articles.map((article) => (
-          <div key={article.slug} className="py-4 border-b border-gray-medium">
+          <div key={article.slug} className="py-8 border-b border-gray-medium">
             <BlogItem
               key={article.slug}
               locale={locale}
               article={article}
-              layout={{ size: 'md' }}
+              layout={{ size: 'md', contentClasses: 'h-52 justify-between' }}
             />
           </div>
         ))}

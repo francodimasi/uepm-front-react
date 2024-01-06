@@ -44,7 +44,7 @@ export default async function Page({ params: { lang = defaultLocale } }) {
           initialCategory={defaultCategoryId}
           locale={lang}
         />
-        <div className="col-span-1 pb-12 lg:pb-16 pl-0 lg:pl-12 flex flex-col gap-12 lg:gap-10">
+        <div className="col-span-1 pb-12 lg:pb-16 pl-0 flex flex-col gap-12 lg:gap-10">
           <EditorSelection articles={editorSelection} locale={lang} />
           <TrendingTopics topics={trendingTopics} />
         </div>

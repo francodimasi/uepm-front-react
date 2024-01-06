@@ -11,7 +11,7 @@ export const ArticleTags: React.FC<ArticleTagsProps> = ({
   return (
     <div
       className={clsx(
-        'flex flex-wrap divide-x-2 divide-dark divide-opacity-20',
+        'flex flex-wrap divide-x-2 divide-dark divide-opacity-20 ',
         className,
       )}
     >
@@ -20,7 +20,7 @@ export const ArticleTags: React.FC<ArticleTagsProps> = ({
           key={index}
           text={tag}
           className={clsx(
-            'px-2 py-1 text-primary-dark text-xs font-medium font-["DMSans"] uppercase',
+            'px-2 py-1 text-primary-dark text-xs font-normal font-["DMSans"] uppercase',
             { 'ps-0': index === 0 },
           )}
         />
