@@ -20,7 +20,7 @@ export const getTitleClasses = (size: BlogItemSize): string => {
   switch (size) {
     case 'xs':
     case 'sm':
-      return 'text-sm leading-normal text-dark font-medium font-["Lexend"] line-clamp-2';
+      return 'text-sm leading-normal text-dark font-medium font-["Lexend"] line-clamp-3';
     case 'md':
       return 'text-base lg:text-[26px]  leading-6 lg:leading-8 text-dark font-medium font-["Lexend"] line-clamp-2';
     case 'lg':
@@ -47,7 +47,9 @@ export const getDateClasses = (size: BlogItemSize): string => {
 export const getDescriptionClasses = (size: BlogItemSize): string => {
   switch (size) {
     case 'xs':
+        return 'hidden'
     case 'sm':
+      return 'hidden'
     case 'md':
       return 'pt-1 lg:pt-2 text-dark text-sm font-light leading-6 font-["DMSans"] line-clamp-3';
     case 'lg':
@@ -85,9 +87,9 @@ export const getImgClasses = (
         case 'horizontal':
           switch (imgPosition) {
             case 'start':
-              return 'w-24 h-32 shrink-0 me-2';
+              return 'w-40 h-32 shrink-0 me-2';
             case 'end':
-              return 'w-24 h-32 shrink-0 ms-2';
+              return 'w-40 h-32 shrink-0 ms-2';
           }
         case 'vertical':
           switch (imgPosition) {

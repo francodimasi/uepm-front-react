@@ -29,7 +29,7 @@ export const CategoryArticles = ({
               key={article.slug}
               locale={locale}
               article={article}
-              layout={{ size: 'md', showImg: false }}
+              layout={{ size: 'sm', showImg: false }}
             />
           </div>
         ))}

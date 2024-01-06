@@ -61,7 +61,7 @@ export const BlogFilter = ({
                 <BlogItem
                   locale={locale}
                   article={article}
-                  layout={{ size: 'md', contentClasses: 'align-stretch' }}
+                  layout={{ size: 'md', contentClasses: 'self-start' }}
                 />
               </div>
               <div className="xl:hidden">
