@@ -45,7 +45,7 @@ export const getDateClasses = (size: BlogItemSize): string => {
 };
 
 export const getDescriptionClasses = (size: BlogItemSize): string => {
-  switch (size) { 
+  switch (size) {
     case 'xs':
     case 'sm':
     case 'md':
