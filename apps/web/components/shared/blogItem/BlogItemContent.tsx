@@ -16,15 +16,15 @@ export const BlogItemContent = ({
   date,
   tags,
   title,
-  layout: { showDescription, size },
+  layout: { showDescription, size, orientation },
   className,
   locale,
 }: Partial<BlogItemProps> & BlogItemLayoutProps & LocaleProps) => {
   const t = useTranslations('commonTerms');
   return (
-    <div className={clsx('flex flex-col w-full', className)}>
+    <div className={clsx('flex flex-col w-full justify-between', className)}>
       <ArticleTags tags={tags?.slice(0, 1)} className={getTagClasses(size)} />
-      <span className={getTitleClasses(size)}>{title}</span>
+      <span className={getTitleClasses(size, orientation)}>{title}</span>
       <DateMask
         date={date}
         mask={`DD [${t('of')}] MMMM, YYYY`}

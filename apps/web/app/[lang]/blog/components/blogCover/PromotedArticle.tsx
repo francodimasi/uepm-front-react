@@ -17,7 +17,7 @@ export const PromotedArticle = ({
           layout={{
             orientation: 'vertical',
             size: 'xl',
-            imgClasses: 'absolute inset-0 h-full w-full object-cover pt-8',
+            imgClasses: 'absolute inset-0 h-full w-full object-cover pt-6',
             imgPosition: 'end',
           }}
           className="h-[768px]"
@@ -30,7 +30,7 @@ export const PromotedArticle = ({
           layout={{
             orientation: 'vertical',
             size: 'xl',
-            imgClasses: 'absolute inset-0 h-full w-full object-cover pt-8',
+            imgClasses: 'absolute inset-0 h-full w-full object-cover pt-6',
             imgPosition: 'end',
           }}
           className="h-[640px]"

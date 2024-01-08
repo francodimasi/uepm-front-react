@@ -14,9 +14,9 @@ export const SuggestedArticles = ({
   if (!articles || articles.length === 0) return null;
 
   return (
-    <div className="pt-2 pb-4 lg:pt-0">
+    <div className="pb-4 lg:pt-0">
       <div className="hidden xl:flex flex-col">
-        <div className="border-b border-gray-medium pt-4 pb-10">
+        <div className="border-b border-gray-medium pb-6">
           <BlogItem
             key={articles[0].slug}
             locale={locale}
@@ -25,7 +25,7 @@ export const SuggestedArticles = ({
           />
         </div>
         {articles.length > 1 && (
-          <div className="xl:border-0 border-b border-gray-medium py-10">
+          <div className="xl:border-0 border-b border-gray-medium py-6">
             <BlogItem
               key={articles[1].slug}
               locale={locale}
@@ -61,7 +61,7 @@ export const SuggestedArticles = ({
             key={articles[0].slug}
             locale={locale}
             article={articles[0]}
-            layout={{ orientation, size: 'sm' }}
+            layout={{ orientation, size: 'sm', contentClasses: 'h-full' }}
           />
         </div>
         {articles.length > 1 && (

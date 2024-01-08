@@ -28,7 +28,11 @@ export const FeaturedArticles: React.FC<
             key={article.slug}
             locale={locale}
             article={article}
-            layout={{ orientation: 'vertical', size: 'lg' }}
+            layout={{
+              orientation: 'vertical',
+              size: 'lg',
+              showDescription: false,
+            }}
           />
         ))}
       </div>
@@ -38,7 +42,11 @@ export const FeaturedArticles: React.FC<
             key={article.slug}
             locale={locale}
             article={article}
-            layout={{ orientation: 'horizontal', size: 'md' }}
+            layout={{
+              orientation: 'horizontal',
+              size: 'md',
+              showDescription: false,
+            }}
           />
         ))}
       </div>
@@ -48,7 +56,11 @@ export const FeaturedArticles: React.FC<
             key={article.slug}
             locale={locale}
             article={article}
-            layout={{ orientation: 'horizontal', size: 'sm' }}
+            layout={{
+              orientation: 'horizontal',
+              size: 'sm',
+              showDescription: false,
+            }}
           />
         ))}
       </div>

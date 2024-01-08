@@ -30,7 +30,7 @@ export const TrendingTopics = ({
   };
 
   return (
-    <div className="flex-col justify-start items-start gap-8 flex">
+    <div className="flex-col justify-start items-start gap-5 flex">
       <div className="text-2xl font-semibold font-['Lexend'] leading-7 text-primary">
         {/*@todo i18nPending translation*/}
         Temas más buscados
@@ -48,7 +48,7 @@ export const TrendingTopics = ({
               text={topic.name}
               key={topic.id}
               onClickHandler={() => handleClick(topic.id)}
-              className="my-1.5 sm:my-2 mx-0 px-1 sm:px-2 py-0.5 sm:py-0 text-start border-l-1 border-solid border-l-gray-medium leading-none text-sm capitalize cursor-pointer"
+              className="my-1.5 sm:my-2 mx-0 px-3 sm:px-2 py-0.5 sm:py-0 text-start border-l-1 border-solid border-l-gray-medium leading-none text-sm capitalize cursor-pointer"
             />
           ))}
         </div>
