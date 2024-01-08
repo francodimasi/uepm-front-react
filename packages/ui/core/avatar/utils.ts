@@ -1,18 +1,24 @@
 import { Size } from '../../types/core';
 
-export const getWidth = (size: Size) => {
+export const getImgClasses = (size?: Size) => {
   switch (size) {
     case 'xs':
-      return 16;
+      return 'w-6 h-6';
     case 'sm':
-      return 24;
+      return 'w-10 h-10';
     case 'md':
-      return 48;
+      return 'w-16 h-16';
     case 'lg':
-      return 64;
+      return 'w-20 h-20';
     case 'xl':
-      return 96;
+      return 'w-28 h-28';
     case '2xl':
-      return 192;
+      return 'w-36 h-36';
+    case '3xl':
+      return 'w-48 h-48';
+    case '4xl':
+      return 'w-64 h-64';
+    default:
+      return 'w-full aspect-square';
   }
 };
