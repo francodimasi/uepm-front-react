@@ -1,10 +1,7 @@
 import { PropsWithClassName, Size } from '../../types/core';
 
 export type AvatarProps = PropsWithClassName & {
-  imageUrl: string;
+  imageUrl: string | undefined;
   alt: string;
-  title?: string;
-  description?: string;
-  href?: string;
   size?: Size;
 };

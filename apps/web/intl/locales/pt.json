@@ -11,7 +11,15 @@
     "lang": "Português"
   },
   "about": {
-    "title": "Nos"
+    "title": "Nos",
+    "sections": {
+      "team": {
+        "tag": "Liderança",
+        "title": "Nossa equipe",
+        "board": "Time executivo",
+        "staff": "Staff"
+      }
+    }
   },
   "actions": {
     "back": "Atrás",
