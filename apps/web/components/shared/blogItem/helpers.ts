@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import {
   BlogItemImgPosition,
   BlogItemOrientation,
@@ -16,17 +17,32 @@ export const getTagClasses = (size: BlogItemSize): string => {
   }
 };
 
-export const getTitleClasses = (size: BlogItemSize): string => {
+export const getTitleClasses = (
+  size: BlogItemSize,
+  orientation: BlogItemOrientation
+): string => {
   switch (size) {
     case 'xs':
     case 'sm':
-      return 'text-sm leading-normal text-dark font-medium font-["Lexend"] line-clamp-3';
+      return clsx(
+        'text-sm leading-normal text-dark font-medium font-["Lexend"]',
+        orientation === 'vertical' ? 'line-clamp-3' : 'line-clamp-2'
+      )  
     case 'md':
-      return 'text-base lg:text-[26px]  leading-6 lg:leading-8 text-dark font-medium font-["Lexend"] line-clamp-2';
+      return clsx(
+        'text-sm lg:text-[26px]  leading-6 lg:leading-8 text-dark font-medium font-["Lexend"]',
+        orientation === 'vertical' ? 'line-clamp-3' : 'line-clamp-2'
+      )
     case 'lg':
-      return 'text-base lg:text-[32px] leading-6 lg:leading-10 text-dark font-medium font-["Lexend"] line-clamp-3';
+      return clsx(
+        'text-base lg:text-[26px] leading-6 lg:leading-8 text-dark font-medium font-["Lexend"]',
+        orientation === 'vertical' ? 'line-clamp-3' : 'line-clamp-2'
+      )
     case 'xl':
-      return 'text-2xl lg:text-[40px] leading-8 lg:leading-[48px] text-dark font-semibold font-["Lexend"] line-clamp-3 ';
+      return clsx(
+        'text-2xl lg:text-[40px] leading-8 lg:leading-[48px] text-dark font-semibold font-["Lexend"]',
+        orientation === 'vertical' ? 'line-clamp-3' : 'line-clamp-2'
+      )
   }
 };
 
@@ -44,7 +60,9 @@ export const getDateClasses = (size: BlogItemSize): string => {
   }
 };
 
-export const getDescriptionClasses = (size: BlogItemSize): string => {
+export const getDescriptionClasses = (
+  size: BlogItemSize
+): string => {
   switch (size) {
     case 'xs':
       return 'hidden';
@@ -53,7 +71,7 @@ export const getDescriptionClasses = (size: BlogItemSize): string => {
     case 'md':
       return 'pt-1 lg:pt-2 text-dark text-sm font-light leading-6 font-["DMSans"] line-clamp-3';
     case 'lg':
-      return 'pt-2 lg:pt-3 text-dark text-base font-light leading-6 font-["DMSans"] line-clamp-2';
+      return 'pt-2 lg:pt-3 text-dark text-sm font-light leading-6 font-["DMSans"] line-clamp-2';
     case 'xl':
       return 'pt-3 lg:pt-4 text-dark text-base font-light leading-6 font-["DMSans"] line-clamp-4';
   }

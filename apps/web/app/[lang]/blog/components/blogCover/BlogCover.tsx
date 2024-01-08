@@ -58,7 +58,7 @@ export const BlogCover = ({
               />
             </div>
             <CategoryArticles articles={articles} locale={locale} />
-            <div className="hidden xl:flex flex-col xl:gap-12 col-span-1">
+            <div className="hidden xl:flex flex-col xl:gap-12 col-span-1 pt-8">
               <SuggestedArticles articles={suggestedArticles} locale={locale} />
             </div>
           </div>
