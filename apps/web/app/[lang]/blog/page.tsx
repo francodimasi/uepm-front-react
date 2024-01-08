@@ -11,7 +11,7 @@ import {
   getEditorSelection,
 } from '@api/blog/requests';
 import { defaultLocale } from 'intl';
-import { orderCategories } from '@helpers/category_helpers';
+import { orderCategories } from './helpers';
 import { notFound } from 'next/navigation';
 
 const NEWS_SLUG = 'noticias';
