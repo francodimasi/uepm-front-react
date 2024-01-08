@@ -19,16 +19,17 @@ export const BlogFilter = ({
   const [page, setPage] = useState(1);
   const [articles, setArticles] = useState([]);
   const [loading, setLoading] = useState(true);
-
-  const pages = Math.ceil(by.value?.count / itemsPerPage);
+  const [pagesCount, setPagesCount] = useState(0);
 
   const fetchData = async () => {
-    const articles = await getArticles({
+    const articleResponse = await getArticles({
       page,
       [by.key]: [by.value.id],
       per_page: itemsPerPage,
       ...addLangCategory(by, locale),
     });
+    const articles = articleResponse ? articleResponse?.data : [];
+    setPagesCount(articleResponse.meta.totalPages);
     setArticles(articles);
     setLoading(false);
   };
@@ -76,8 +77,12 @@ export const BlogFilter = ({
         </div>
       )}
       <div className="mt-5 text-center">
-        {pages > 1 && (
-          <Pagination actualPage={page} pagesCount={pages} setPage={setPage} />
+        {pagesCount > 1 && (
+          <Pagination
+            actualPage={page}
+            pagesCount={pagesCount}
+            setPage={setPage}
+          />
         )}
       </div>
     </>

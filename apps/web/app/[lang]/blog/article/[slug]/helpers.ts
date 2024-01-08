@@ -17,7 +17,8 @@ export const getArticlesByTag = async function (tagName: string, lang: string) {
   }
 
   try {
-    return await getArticles(getArticlesParams);
+    const articleResponse = await getArticles(getArticlesParams);
+    return articleResponse.data;
   } catch (error) {
     console.log(error);
     return null;
@@ -34,7 +35,7 @@ export const getNextArticle = async function (
   lang: string,
 ) {
   try {
-    const followingArticles: BlogItem[] = await getArticles({
+    const articleResponse = await getArticles({
       categories: [BLOG.LANG[lang.toUpperCase()]],
       context: 'view',
       page: 1,
@@ -42,6 +43,7 @@ export const getNextArticle = async function (
       order: 'desc',
       before: current.date,
     });
+    const followingArticles: BlogItem[] = articleResponse ? articleResponse?.data : [];
 
     return followingArticles?.length > 0 ? followingArticles[0] : null;
   } catch (error) {

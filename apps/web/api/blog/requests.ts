@@ -1,6 +1,7 @@
 import { ENDPOINTS } from '@api/endpoints';
 import {
   BlogArticle,
+  BlogArticleResponse,
   BlogCategory,
   BlogFilterParams,
   BlogItem,
@@ -87,7 +88,7 @@ export const getTrendingTopics = async (): Promise<BlogTag[]> => {
 
 export const getArticles = async (
   params: BlogFilterParams,
-): Promise<BlogItem[]> => {
+): Promise<BlogArticleResponse> => {
   try {
     const defaultParams = {
       context: 'view',
@@ -119,17 +120,25 @@ export const getArticles = async (
 
     const res = await fetch(`${ENDPOINTS.BLOG.POSTS}${queryParams}`, {
       next: { revalidate: _2H },
-    });
+    })
+    
+    const meta = {
+      totalItems: Number(res.headers.get('X-WP-Total')),
+      totalPages: Number(res.headers.get('X-WP-TotalPages'))
+    }
 
     if (!res.ok) {
-      return [];
+      return null;
     }
 
     const data = await res.json();
-    return data?.map((article: BlogArticle) => parseArticleItem(article)) ?? [];
+    return {
+      meta, 
+      data: data?.map((article: BlogArticle) => parseArticleItem(article)) ?? []
+    }
   } catch (error) {
     console.log(error);
-    return [];
+    return null;
   }
 };
 
@@ -151,7 +160,7 @@ export const getPromotedArticle = async (
   lang: string,
 ): Promise<BlogItem> => {
   try {
-    const promotedArticles = await getArticles({
+    const articleResponse = await getArticles({
       page: 1,
       per_page: 1,
       context: BLOG.POST.CONTEXT,
@@ -161,9 +170,9 @@ export const getPromotedArticle = async (
       orderby: BLOG.FEATURED_POSTS.ORDER_BY,
       categories: [category, getLangCategory(lang)],
     });
-    return promotedArticles && promotedArticles.length > 0
-      ? promotedArticles[0]
-      : null;
+    if (articleResponse && articleResponse.data)
+      return (articleResponse.data.length > 0) ? articleResponse.data[0] : null;      
+    return null;
   } catch (error) {
     console.log(error);
     return null;
@@ -175,7 +184,7 @@ export const getArticlesByCategory = async (
   lang: string,
 ): Promise<BlogItem[]> => {
   try {
-    return await getArticles({
+    const articleResponse = await getArticles({
       page: 1,
       per_page: 4,
       context: BLOG.POST.CONTEXT,
@@ -184,6 +193,7 @@ export const getArticlesByCategory = async (
       order: BLOG.POST.ORDER,
       orderby: BLOG.POST.ORDER_BY,
     });
+    return articleResponse.data
   } catch (error) {
     console.log(error);
     return [];
@@ -192,7 +202,7 @@ export const getArticlesByCategory = async (
 
 export const getEditorSelection = async (lang: string): Promise<BlogItem[]> => {
   try {
-    return await getArticles({
+    const articleResponse = await getArticles({
       page: 1,
       per_page: 3,
       context: BLOG.POST.CONTEXT,
@@ -202,6 +212,7 @@ export const getEditorSelection = async (lang: string): Promise<BlogItem[]> => {
       order: BLOG.EDITOR_CHOICE_POSTS.ORDER,
       orderby: BLOG.EDITOR_CHOICE_POSTS.ORDER_BY,
     });
+    return articleResponse.data;
   } catch (error) {
     console.log(error);
     return [];
@@ -212,7 +223,7 @@ export const getSuggestedArticles = async (
   lang: string,
 ): Promise<BlogItem[]> => {
   try {
-    return await getArticles({
+    const articleResponse = await getArticles({
       page: 1,
       per_page: 2,
       context: BLOG.POST.CONTEXT,
@@ -221,6 +232,7 @@ export const getSuggestedArticles = async (
       order: BLOG.SUGGESTED_POSTS.ORDER,
       orderby: BLOG.SUGGESTED_POSTS.ORDER_BY,
     });
+    return articleResponse ? articleResponse.data : [];
   } catch (error) {
     console.log(error);
     return [];

@@ -29,6 +29,16 @@ export type BlogItem = {
   tags: string[];
 };
 
+export type ResponseMetaData = {
+  totalItems?: number,
+  totalPages?: number
+};
+
+export type BlogArticleResponse = {
+  meta: ResponseMetaData,
+  data: BlogItem[]
+}
+
 export type BlogItemType = 'small' | 'large' | 'vertical' | 'bigger';
 
 export type WpArticle = BlogArticle & {
