@@ -19,30 +19,30 @@ export const getTagClasses = (size: BlogItemSize): string => {
 
 export const getTitleClasses = (
   size: BlogItemSize,
-  orientation: BlogItemOrientation
+  orientation: BlogItemOrientation,
 ): string => {
   switch (size) {
     case 'xs':
     case 'sm':
       return clsx(
         'text-sm leading-normal text-dark font-medium font-["Lexend"]',
-        orientation === 'vertical' ? 'line-clamp-3' : 'line-clamp-2'
-      )  
+        orientation === 'vertical' ? 'line-clamp-3' : 'line-clamp-2',
+      );
     case 'md':
       return clsx(
         'text-sm lg:text-[26px]  leading-6 lg:leading-8 text-dark font-medium font-["Lexend"]',
-        orientation === 'vertical' ? 'line-clamp-3' : 'line-clamp-2'
-      )
+        orientation === 'vertical' ? 'line-clamp-3' : 'line-clamp-2',
+      );
     case 'lg':
       return clsx(
         'text-base lg:text-[26px] leading-6 lg:leading-8 text-dark font-medium font-["Lexend"]',
-        orientation === 'vertical' ? 'line-clamp-3' : 'line-clamp-2'
-      )
+        orientation === 'vertical' ? 'line-clamp-3' : 'line-clamp-2',
+      );
     case 'xl':
       return clsx(
         'text-2xl lg:text-[40px] leading-8 lg:leading-[48px] text-dark font-semibold font-["Lexend"]',
-        orientation === 'vertical' ? 'line-clamp-3' : 'line-clamp-2'
-      )
+        orientation === 'vertical' ? 'line-clamp-3' : 'line-clamp-2',
+      );
   }
 };
 
@@ -60,9 +60,7 @@ export const getDateClasses = (size: BlogItemSize): string => {
   }
 };
 
-export const getDescriptionClasses = (
-  size: BlogItemSize
-): string => {
+export const getDescriptionClasses = (size: BlogItemSize): string => {
   switch (size) {
     case 'xs':
       return 'hidden';

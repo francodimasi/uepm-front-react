@@ -10,12 +10,7 @@ export const ArticleTags: React.FC<ArticleTagsProps> = ({
 
   return (
     <div className="relative overflow-hidden">
-      <div
-        className={clsx(
-          'flex flex-row flex-wrap -ml-2 ',
-          className,
-        )}
-      >
+      <div className={clsx('flex flex-row flex-wrap -ml-2 ', className)}>
         {tags?.map((tag, index) => (
           <Tag
             key={index}

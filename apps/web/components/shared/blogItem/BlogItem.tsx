@@ -55,7 +55,7 @@ export const BlogItem = ({
             imgPosition,
             showDescription,
             size,
-            orientation
+            orientation,
           }}
           className={contentClasses}
           locale={locale}
