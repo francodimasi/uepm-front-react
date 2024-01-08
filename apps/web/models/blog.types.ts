@@ -30,14 +30,14 @@ export type BlogItem = {
 };
 
 export type ResponseMetaData = {
-  totalItems?: number,
-  totalPages?: number
+  totalItems?: number;
+  totalPages?: number;
 };
 
 export type BlogArticleResponse = {
-  meta: ResponseMetaData,
-  data: BlogItem[]
-}
+  meta: ResponseMetaData;
+  data: BlogItem[];
+};
 
 export type BlogItemType = 'small' | 'large' | 'vertical' | 'bigger';
 

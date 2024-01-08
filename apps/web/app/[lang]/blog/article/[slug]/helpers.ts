@@ -43,7 +43,9 @@ export const getNextArticle = async function (
       order: 'desc',
       before: current.date,
     });
-    const followingArticles: BlogItem[] = articleResponse ? articleResponse?.data : [];
+    const followingArticles: BlogItem[] = articleResponse
+      ? articleResponse?.data
+      : [];
 
     return followingArticles?.length > 0 ? followingArticles[0] : null;
   } catch (error) {

@@ -120,12 +120,12 @@ export const getArticles = async (
 
     const res = await fetch(`${ENDPOINTS.BLOG.POSTS}${queryParams}`, {
       next: { revalidate: _2H },
-    })
-    
+    });
+
     const meta = {
       totalItems: Number(res.headers.get('X-WP-Total')),
-      totalPages: Number(res.headers.get('X-WP-TotalPages'))
-    }
+      totalPages: Number(res.headers.get('X-WP-TotalPages')),
+    };
 
     if (!res.ok) {
       return null;
@@ -133,9 +133,10 @@ export const getArticles = async (
 
     const data = await res.json();
     return {
-      meta, 
-      data: data?.map((article: BlogArticle) => parseArticleItem(article)) ?? []
-    }
+      meta,
+      data:
+        data?.map((article: BlogArticle) => parseArticleItem(article)) ?? [],
+    };
   } catch (error) {
     console.log(error);
     return null;
@@ -171,7 +172,7 @@ export const getPromotedArticle = async (
       categories: [category, getLangCategory(lang)],
     });
     if (articleResponse && articleResponse.data)
-      return (articleResponse.data.length > 0) ? articleResponse.data[0] : null;      
+      return articleResponse.data.length > 0 ? articleResponse.data[0] : null;
     return null;
   } catch (error) {
     console.log(error);
@@ -193,7 +194,7 @@ export const getArticlesByCategory = async (
       order: BLOG.POST.ORDER,
       orderby: BLOG.POST.ORDER_BY,
     });
-    return articleResponse.data
+    return articleResponse.data;
   } catch (error) {
     console.log(error);
     return [];
