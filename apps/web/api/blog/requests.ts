@@ -119,7 +119,7 @@ export const getArticles = async (
         queryParams += `${query}${and}`;
       }
     });
-    console.log(`${ENDPOINTS.BLOG.POSTS}${queryParams}`)
+    console.log(`${ENDPOINTS.BLOG.POSTS}${queryParams}`);
 
     const res = await fetch(`${ENDPOINTS.BLOG.POSTS}${queryParams}`, {
       next: { revalidate: _2H },

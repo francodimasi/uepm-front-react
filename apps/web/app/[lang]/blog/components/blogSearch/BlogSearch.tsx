@@ -5,8 +5,7 @@ import { SearchNormalIcon } from 'ui/core';
 import { useRouter } from '@intl/navigation';
 import { defaultLocale, LocaleProps } from 'intl';
 
-
-export const BlogSearch = ({ locale = defaultLocale } : LocaleProps) => {
+export const BlogSearch = ({ locale = defaultLocale }: LocaleProps) => {
   const [open, setOpen] = useState(false);
   const [criteria, setCriteria] = useState('');
   const ref = useDetectClickOutside({

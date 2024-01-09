@@ -16,6 +16,6 @@ export const addLangCategory = (
     };
   }
   return {
-    categories: [BLOG.LANG[lang.toUpperCase()]]
+    categories: [BLOG.LANG[lang.toUpperCase()]],
   };
 };
