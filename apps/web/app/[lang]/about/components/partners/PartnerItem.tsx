@@ -26,7 +26,7 @@ export const PartnerItem: React.FC<PartnerItemProps> = ({
       onMouseLeave={() => setHover(false)}
     >
       {about ? (
-        <Link href={about} target="_blank" className='flex'>
+        <Link href={about} target="_blank" className="flex">
           <Avatar imageUrl={image} alt={name} size={size} />
         </Link>
       ) : (

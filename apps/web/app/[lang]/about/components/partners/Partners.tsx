@@ -36,7 +36,7 @@ export const Partners: React.FC<PartnersProps & LocaleProps> = ({
               key={index}
               partner={partner}
               className="items-center"
-              size='xl'
+              size="xl"
             />
           ))}
         </div>
