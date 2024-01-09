@@ -18,6 +18,10 @@
         "title": "Our team",
         "board": "Executive team",
         "staff": "Staff"
+      },
+      "partners": {
+        "tag": "Partners",
+        "title": "Our net"
       }
     }
   },
