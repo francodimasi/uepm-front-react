@@ -1,12 +1,7 @@
 import { Layout } from '@components/core/layout/Layout';
-<<<<<<< HEAD
-import { SwitchLocale } from '@intl/components/SwitchLocale';
-import { unstable_setRequestLocale, useTranslations } from 'intl';
-import { AboutUs } from './components/AboutUs';
-=======
 import { Team } from './components/team/Team';
 import { promises as fs } from 'fs';
->>>>>>> develop
+import { AboutUs } from './components/AboutUs';
 
 export default async function Page({ params: { lang } }) {
   /**
@@ -24,13 +19,8 @@ export default async function Page({ params: { lang } }) {
 
   return (
     <Layout locale={lang}>
-<<<<<<< HEAD
-      <p className="text-red-500">{t('title')}</p>
       <AboutUs />
-      <SwitchLocale />
-=======
       <Team board={team.board} staff={team.staff} />
->>>>>>> develop
     </Layout>
   );
 }
