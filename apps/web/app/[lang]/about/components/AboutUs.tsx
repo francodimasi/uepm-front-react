@@ -101,19 +101,19 @@ const HumanCare = () => {
             style={{
               width: '50%',
               height: 'auto',
-              marginTop: '62px'
+              marginTop: '62px',
             }}
           />
         </div>
-        <div className='hidden 2xl:block absolute bottom-0 right-0'>
+        <div className="hidden 2xl:block absolute bottom-0 right-0">
           <ImageWithFallback
-              src={HumanCareImg}
-              alt='human care'
-              style={{
-                width: 'auto',
-                height: 'auto',
-              }}
-            />
+            src={HumanCareImg}
+            alt="human care"
+            style={{
+              width: 'auto',
+              height: 'auto',
+            }}
+          />
         </div>
       </div>
     </div>
@@ -121,38 +121,39 @@ const HumanCare = () => {
 };
 
 const PatientCare = () => {
-  return <>
-    <div className='flex flex-col mb-[350px]'>
-       <span className="text-primary uppercase text-sm font-normal font-['DMSans'] leading-none">
+  return (
+    <>
+      <div className="flex flex-col mb-[350px]">
+        <span className="text-primary uppercase text-sm font-normal font-['DMSans'] leading-none">
           Nuestra prioridad
         </span>
         <span className="text-dark text-3xl  font-semibold font-['Lexend'] leading-10 mt-4">
           Calidad y cuidado del paciente
         </span>
         <div className="relative h-[445px] mt-10 bg-[url('../public/images/doctor-talking-with-her-patient.png')] bg-no-repeat bg-cover bg-top">
-          <div className='flex flex-col absolute mx-4 mt-[287px] bg-[#FFFFFF]'>
-            <ImageWithFallback 
+          <div className="flex flex-col absolute mx-4 mt-[287px] bg-[#FFFFFF]">
+            <ImageWithFallback
               src={IsoLogo}
-              alt='Iso45001 logo'
+              alt="Iso45001 logo"
               style={{
-                marginLeft: '24px'
+                marginLeft: '24px',
               }}
-              />
+            />
             <div className="text-dark text-base font-normal font-['DMSans'] leading-normal px-6 pb-9 mt-[6px]">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-              minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-              aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-              pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-              culpa qui officia deserunt mollit anim id est laborum.
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+              sunt in culpa qui officia deserunt mollit anim id est laborum.
             </div>
           </div>
         </div>
-    </div>
-  </>
-}
-
+      </div>
+    </>
+  );
+};
 
 export const AboutUs: React.FC = () => {
   return (
