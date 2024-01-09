@@ -28,7 +28,7 @@ export const BlogFilter = ({
       per_page: itemsPerPage,
       ...addLangCategory(by, locale),
     });
-    const articles = articleResponse ? articleResponse?.data : [];
+    const articles = articleResponse ? articleResponse.data : [];
     setPagesCount(articleResponse.meta.totalPages);
     setArticles(articles);
     setLoading(false);
