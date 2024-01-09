@@ -1,4 +1,4 @@
-import { BlogArticle, BlogFilterParams, BlogItem } from '@models/blog.types';
+import { BlogArticle, BlogFilterParams } from '@models/blog.types';
 import { getArticles, getTagID } from '@api/blog/requests';
 import { BLOG } from '@api/blog/constants';
 
@@ -17,9 +17,8 @@ export const getArticlesByTag = async function (tagName: string, lang: string) {
   }
 
   try {
-    const articleResponse = await getArticles(getArticlesParams);
-    if (articleResponse && articleResponse.data) return articleResponse.data;
-    return [];
+    const res = await getArticles(getArticlesParams);
+    return res?.data || [];
   } catch (error) {
     console.log(error);
     return [];
@@ -36,7 +35,7 @@ export const getNextArticle = async function (
   lang: string,
 ) {
   try {
-    const articleResponse = await getArticles({
+    const res = await getArticles({
       categories: [BLOG.LANG[lang.toUpperCase()]],
       context: 'view',
       page: 1,
@@ -44,10 +43,8 @@ export const getNextArticle = async function (
       order: 'desc',
       before: current.date,
     });
-    const followingArticles: BlogItem[] =
-      articleResponse && articleResponse.data ? articleResponse.data : [];
-
-    return followingArticles?.length > 0 ? followingArticles[0] : null;
+    if (!res || res.data.length === 0) return null;
+    return res.data[0];
   } catch (error) {
     console.log(error);
     return null;

@@ -122,14 +122,14 @@ export const getArticles = async (
       next: { revalidate: _2H },
     });
 
-    const meta = {
-      totalItems: Number(res.headers.get('X-WP-Total')),
-      totalPages: Number(res.headers.get('X-WP-TotalPages')),
-    };
-
     if (!res.ok) {
       return null;
     }
+
+    const meta = {
+      totalItems: Number(res.headers?.get('X-WP-Total') || 0),
+      totalPages: Number(res.headers?.get('X-WP-TotalPages') || 0),
+    };
 
     const data = await res.json();
     return {
@@ -185,7 +185,7 @@ export const getArticlesByCategory = async (
   lang: string,
 ): Promise<BlogItem[]> => {
   try {
-    const articleResponse = await getArticles({
+    const res = await getArticles({
       page: 1,
       per_page: 4,
       context: BLOG.POST.CONTEXT,
@@ -194,8 +194,7 @@ export const getArticlesByCategory = async (
       order: BLOG.POST.ORDER,
       orderby: BLOG.POST.ORDER_BY,
     });
-    if (articleResponse && articleResponse.data) return articleResponse.data;
-    return [];
+    return res?.data || [];
   } catch (error) {
     console.log(error);
     return [];
@@ -204,7 +203,7 @@ export const getArticlesByCategory = async (
 
 export const getEditorSelection = async (lang: string): Promise<BlogItem[]> => {
   try {
-    const articleResponse = await getArticles({
+    const res = await getArticles({
       page: 1,
       per_page: 3,
       context: BLOG.POST.CONTEXT,
@@ -214,8 +213,7 @@ export const getEditorSelection = async (lang: string): Promise<BlogItem[]> => {
       order: BLOG.EDITOR_CHOICE_POSTS.ORDER,
       orderby: BLOG.EDITOR_CHOICE_POSTS.ORDER_BY,
     });
-    if (articleResponse && articleResponse.data) return articleResponse.data;
-    return [];
+    return res?.data || [];
   } catch (error) {
     console.log(error);
     return [];
@@ -226,7 +224,7 @@ export const getSuggestedArticles = async (
   lang: string,
 ): Promise<BlogItem[]> => {
   try {
-    const articleResponse = await getArticles({
+    const res = await getArticles({
       page: 1,
       per_page: 2,
       context: BLOG.POST.CONTEXT,
@@ -235,8 +233,7 @@ export const getSuggestedArticles = async (
       order: BLOG.SUGGESTED_POSTS.ORDER,
       orderby: BLOG.SUGGESTED_POSTS.ORDER_BY,
     });
-    if (articleResponse && articleResponse.data) return articleResponse.data;
-    return [];
+    return res?.data || [];
   } catch (error) {
     console.log(error);
     return [];
