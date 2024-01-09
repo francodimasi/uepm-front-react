@@ -10,7 +10,7 @@ export default function Page({ params: { lang } }) {
   return (
     <Layout locale={lang}>
       <p className="text-red-500">{t('title')}</p>
-      <AboutUs/>
+      <AboutUs />
       <SwitchLocale />
     </Layout>
   );
