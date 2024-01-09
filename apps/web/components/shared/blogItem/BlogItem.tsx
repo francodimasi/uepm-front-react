@@ -36,6 +36,7 @@ export const BlogItem = ({
         {showImg && (
           <BlogItemImage
             image={image}
+            title={title}
             layout={{
               imgPosition,
               orientation,
@@ -54,6 +55,7 @@ export const BlogItem = ({
             imgPosition,
             showDescription,
             size,
+            orientation,
           }}
           className={contentClasses}
           locale={locale}

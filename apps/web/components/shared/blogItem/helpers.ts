@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import {
   BlogItemImgPosition,
   BlogItemOrientation,
@@ -16,17 +17,32 @@ export const getTagClasses = (size: BlogItemSize): string => {
   }
 };
 
-export const getTitleClasses = (size: BlogItemSize): string => {
+export const getTitleClasses = (
+  size: BlogItemSize,
+  orientation: BlogItemOrientation,
+): string => {
   switch (size) {
     case 'xs':
     case 'sm':
-      return 'text-sm leading-6 text-dark font-semibold font-["Lexend"] line-clamp-2';
+      return clsx(
+        'text-sm leading-normal text-dark font-medium font-["Lexend"]',
+        orientation === 'vertical' ? 'line-clamp-3' : 'line-clamp-2',
+      );
     case 'md':
-      return 'text-base leading-6 text-dark font-semibold font-["Lexend"] line-clamp-2';
+      return clsx(
+        'text-sm lg:text-[26px]  leading-6 lg:leading-8 text-dark font-medium font-["Lexend"]',
+        orientation === 'vertical' ? 'line-clamp-3' : 'line-clamp-2',
+      );
     case 'lg':
-      return 'text-base lg:text-[32px] leading-6 lg:leading-10 text-dark font-semibold font-["Lexend"] line-clamp-2';
+      return clsx(
+        'text-base lg:text-[26px] leading-6 lg:leading-8 text-dark font-medium font-["Lexend"]',
+        orientation === 'vertical' ? 'line-clamp-3' : 'line-clamp-2',
+      );
     case 'xl':
-      return 'text-2xl lg:text-[40px] leading-8 lg:leading-[48px] text-dark font-semibold font-["Lexend"] line-clamp-3';
+      return clsx(
+        'text-2xl lg:text-[40px] leading-8 lg:leading-[48px] text-dark font-semibold font-["Lexend"]',
+        orientation === 'vertical' ? 'line-clamp-3' : 'line-clamp-2',
+      );
   }
 };
 
@@ -34,26 +50,28 @@ export const getDateClasses = (size: BlogItemSize): string => {
   switch (size) {
     case 'xs':
     case 'sm':
-      return 'pt-1 text-medium text-xs font-normal leading-6 font-["DMSans"] uppercase';
+      return 'pt-1 text-medium text-xs font-light leading-6 font-["DMSans"] uppercase';
     case 'md':
-      return 'pt-2 lg:pt-3 text-medium text-xs font-normal leading-6 font-["DMSans"] uppercase';
+      return 'pt-1 lg:pt-2 text-medium text-xs font-light leading-6 font-["DMSans"] uppercase';
     case 'lg':
-      return 'pt-3 lg:pt-4 text-medium text-xs font-normal leading-6 font-["DMSans"] uppercase';
+      return 'pt-2 lg:pt-3 text-medium text-xs font-light leading-6 font-["DMSans"] uppercase';
     case 'xl':
-      return 'pt-4 lg:pt-6 text-medium text-xs font-normal leading-6 font-["DMSans"] uppercase';
+      return 'pt-3 lg:pt-4 text-medium text-xs font-light leading-6 font-["DMSans"] uppercase';
   }
 };
 
 export const getDescriptionClasses = (size: BlogItemSize): string => {
   switch (size) {
     case 'xs':
+      return 'hidden';
     case 'sm':
+      return 'hidden';
     case 'md':
-      return 'pt-2 lg:pt-3 text-dark text-base font-normal leading-6 font-["DMSans"] line-clamp-2';
+      return 'pt-1 lg:pt-2 text-dark text-sm font-light leading-6 font-["DMSans"] line-clamp-3';
     case 'lg':
-      return 'pt-3 lg:pt-4 text-dark text-base font-normal leading-6 font-["DMSans"] line-clamp-3';
+      return 'pt-2 lg:pt-3 text-dark text-sm font-light leading-6 font-["DMSans"] line-clamp-2';
     case 'xl':
-      return 'pt-4 lg:pt-6 text-dark text-base font-normal leading-6 font-["DMSans"] line-clamp-4';
+      return 'pt-3 lg:pt-4 text-dark text-base font-light leading-6 font-["DMSans"] line-clamp-4';
   }
 };
 
@@ -68,16 +86,16 @@ export const getImgClasses = (
         case 'horizontal':
           switch (imgPosition) {
             case 'start':
-              return 'w-20 h-24 shrink-0 me-2';
+              return 'w-20 h-24 shrink-0 me-4';
             case 'end':
-              return 'w-20 h-24 shrink-0 ms-2';
+              return 'w-20 h-24 shrink-0 ms-4';
           }
         case 'vertical':
           switch (imgPosition) {
             case 'start':
-              return 'w-full h-20 shrink-0 mb-2';
+              return 'w-full h-20 shrink-0 mb-4';
             case 'end':
-              return 'w-full h-20 shrink-0 mt-2';
+              return 'w-full h-20 shrink-0 mt-4';
           }
       }
     case 'sm':
@@ -85,9 +103,9 @@ export const getImgClasses = (
         case 'horizontal':
           switch (imgPosition) {
             case 'start':
-              return 'w-24 h-32 shrink-0 me-2';
+              return 'w-40 h-32 shrink-0 me-2';
             case 'end':
-              return 'w-24 h-32 shrink-0 ms-2';
+              return 'w-40 h-32 shrink-0 ms-2';
           }
         case 'vertical':
           switch (imgPosition) {
@@ -109,9 +127,9 @@ export const getImgClasses = (
         case 'vertical':
           switch (imgPosition) {
             case 'start':
-              return 'w-full h-48 shrink-0 mb-4';
+              return 'w-full h-60 shrink-0 mb-4';
             case 'end':
-              return 'w-full h-48 shrink-0 mt-4';
+              return 'w-full h-60 shrink-0 mt-4';
           }
       }
     case 'lg':
@@ -126,9 +144,9 @@ export const getImgClasses = (
         case 'vertical':
           switch (imgPosition) {
             case 'start':
-              return 'w-full h-56 shrink-0 mb-8';
+              return 'w-full h-60 shrink-0 mb-6';
             case 'end':
-              return 'w-full h-56 shrink-0 mt-8';
+              return 'w-full h-60 shrink-0 mt-6';
           }
       }
     case 'xl':
@@ -143,9 +161,9 @@ export const getImgClasses = (
         case 'vertical':
           switch (imgPosition) {
             case 'start':
-              return 'w-full h-72 shrink-0 mb-8';
+              return 'w-full h-72 shrink-0 mb-6';
             case 'end':
-              return 'w-full h-72 shrink-0 mt-8';
+              return 'w-full h-72 shrink-0 mt-10';
           }
       }
   }

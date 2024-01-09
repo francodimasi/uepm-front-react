@@ -1,13 +1,15 @@
 'use client';
 
-import { Pagination } from 'ui/core/pagination';
 import { useState, useEffect } from 'react';
+import { Pagination } from 'ui/core';
 import { getArticles } from '@api/blog/requests';
 import { BlogFilterSkeleton } from './BlogFilterSkeleton';
 import { BlogItem } from '@components/shared/blogItem';
 import { BlogFilterProps } from './BlogFilter.types';
 import { LocaleProps } from 'intl';
 import { addLangCategory } from './helpers';
+import { Link } from '@intl/navigation';
+import { ArrowBackIcon } from 'ui/core/icons';
 
 export const BlogFilter = ({
   by,
@@ -37,8 +39,13 @@ export const BlogFilter = ({
   }, [page]);
 
   return (
-    <div className="relative">
-      <div className="text-black text-4xl font-semibold font-['Lexend'] leading-10 text-center w-100 border-b-1 border-b-gray-medium pb-5 mb-5">
+    <>
+      <div className="relative text-black text-4xl font-semibold font-['Lexend'] leading-10 text-center w-100 mb-10 capitalize">
+        <div className="absolute left-0 h-full flex items-center">
+          <Link href="/blog" locale={locale}>
+            <ArrowBackIcon />
+          </Link>
+        </div>
         {by.value.name}
       </div>
       {loading ? (
@@ -48,13 +55,13 @@ export const BlogFilter = ({
           {articles?.map((article) => (
             <div
               key={article.slug}
-              className="border-b border-gray-medium mb-6 pb-6 sm:pb-10"
+              className="border-t border-gray-medium mb-6 pt-6"
             >
               <div className="hidden xl:flex">
                 <BlogItem
                   locale={locale}
                   article={article}
-                  layout={{ size: 'md' }}
+                  layout={{ size: 'md', contentClasses: 'self-start' }}
                 />
               </div>
               <div className="xl:hidden">
@@ -73,6 +80,6 @@ export const BlogFilter = ({
           <Pagination actualPage={page} pagesCount={pages} setPage={setPage} />
         )}
       </div>
-    </div>
+    </>
   );
 };

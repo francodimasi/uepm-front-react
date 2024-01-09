@@ -31,7 +31,7 @@ export const Tabs = ({ items, selected, onChange, classes }: TabsProps) => {
           key={id}
           className={`font-['DMSans'] grow cursor-pointer ${
             id === selected
-              ? 'border-b-2 border-black font-bold'
+              ? 'border-b-2 border-black font-semibold'
               : ' font-light hover:font-normal hover:border-b-1 hover:border-gray-dark'
           } `}
           onClick={() => onChange(id)}

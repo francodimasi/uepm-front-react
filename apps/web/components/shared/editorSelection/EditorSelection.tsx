@@ -17,13 +17,13 @@ export const EditorSelection = ({
 
   return (
     <div className="flex flex-col justify-start items-start">
-      <div className="text-2xl font-medium font-['Lexend'] leading-7 text-primary pb-8">
+      <div className="text-2xl font-medium font-['Lexend'] leading-7 text-primary pb-5">
         {/*@todo i18nPending translation*/}
         Selección del editor
       </div>
       {articles.map((article) => (
         <div
-          className="flex-1 last:mr-0 border-b-1 border-gray-medium py-2"
+          className="flex-1 last:mr-0 border-b-1 border-gray-medium py-3"
           key={article.slug}
         >
           <BlogItem

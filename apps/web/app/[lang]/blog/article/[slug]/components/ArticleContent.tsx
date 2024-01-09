@@ -25,7 +25,7 @@ export const ArticleContent: React.FC<ArticleContentProps & LocaleProps> = ({
       <div dangerouslySetInnerHTML={{ __html: article.content.rendered }} />
       <ArticleTags
         tags={article.tags}
-        className="mt-8 pt-10 border-t border-dark border-opacity-20"
+        className='pb-1 pt-5 text-base font-medium leading-4 font-["DMSans"] uppercase'
       />
     </div>
   );

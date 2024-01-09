@@ -11,7 +11,15 @@
     "lang": "English"
   },
   "about": {
-    "title": "About us"
+    "title": "About us",
+    "sections": {
+      "team": {
+        "tag": "Leadership",
+        "title": "Our team",
+        "board": "Executive team",
+        "staff": "Staff"
+      }
+    }
   },
   "actions": {
     "back": "Back",

@@ -11,7 +11,15 @@
     "lang": "Español"
   },
   "about": {
-    "title": "Nosotros"
+    "title": "Nosotros",
+    "sections": {
+      "team": {
+        "tag": "Liderazgo",
+        "title": "Nuestro equipo",
+        "board": "Equipo ejecutivo",
+        "staff": "Staff"
+      }
+    }
   },
   "actions": {
     "back": "Atrás",
