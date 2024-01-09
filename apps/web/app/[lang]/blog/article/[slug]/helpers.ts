@@ -18,8 +18,7 @@ export const getArticlesByTag = async function (tagName: string, lang: string) {
 
   try {
     const articleResponse = await getArticles(getArticlesParams);
-    if(articleResponse && articleResponse.data)
-      return articleResponse.data;
+    if (articleResponse && articleResponse.data) return articleResponse.data;
     return [];
   } catch (error) {
     console.log(error);
@@ -45,9 +44,8 @@ export const getNextArticle = async function (
       order: 'desc',
       before: current.date,
     });
-    const followingArticles: BlogItem[] = (articleResponse && articleResponse.data)
-      ? articleResponse.data
-      : [];
+    const followingArticles: BlogItem[] =
+      articleResponse && articleResponse.data ? articleResponse.data : [];
 
     return followingArticles?.length > 0 ? followingArticles[0] : null;
   } catch (error) {
