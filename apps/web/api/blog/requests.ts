@@ -194,7 +194,9 @@ export const getArticlesByCategory = async (
       order: BLOG.POST.ORDER,
       orderby: BLOG.POST.ORDER_BY,
     });
-    return articleResponse.data;
+    if (articleResponse && articleResponse.data)
+      return articleResponse.data;
+    return [];
   } catch (error) {
     console.log(error);
     return [];
@@ -213,7 +215,9 @@ export const getEditorSelection = async (lang: string): Promise<BlogItem[]> => {
       order: BLOG.EDITOR_CHOICE_POSTS.ORDER,
       orderby: BLOG.EDITOR_CHOICE_POSTS.ORDER_BY,
     });
-    return articleResponse.data;
+    if (articleResponse && articleResponse.data)
+      return articleResponse.data;
+    return [];
   } catch (error) {
     console.log(error);
     return [];
@@ -233,7 +237,9 @@ export const getSuggestedArticles = async (
       order: BLOG.SUGGESTED_POSTS.ORDER,
       orderby: BLOG.SUGGESTED_POSTS.ORDER_BY,
     });
-    return articleResponse ? articleResponse.data : [];
+    if (articleResponse && articleResponse.data)
+      return articleResponse.data
+    return [];
   } catch (error) {
     console.log(error);
     return [];

@@ -28,8 +28,9 @@ export const BlogFilter = ({
       per_page: itemsPerPage,
       ...addLangCategory(by, locale),
     });
-    const articles = articleResponse ? articleResponse?.data : [];
-    setPagesCount(articleResponse.meta.totalPages);
+    const articles =
+      articleResponse && articleResponse.data ? articleResponse.data : [];
+    setPagesCount(articleResponse?.meta?.totalPages || 0);
     setArticles(articles);
     setLoading(false);
   };
@@ -76,15 +77,15 @@ export const BlogFilter = ({
           ))}
         </div>
       )}
-      <div className="mt-5 text-center">
-        {pagesCount > 1 && (
+      {pagesCount && pagesCount > 1 && (
+        <div className="mt-5 text-center">
           <Pagination
             actualPage={page}
             pagesCount={pagesCount}
             setPage={setPage}
           />
-        )}
-      </div>
+        </div>
+      )}
     </>
   );
 };
