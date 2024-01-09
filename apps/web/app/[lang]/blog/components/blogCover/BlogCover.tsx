@@ -43,6 +43,7 @@ export const BlogCover = ({
         category={category}
         setCategory={setCategory}
         categories={categories}
+        locale={locale}
       />
       {loading ? (
         <BlogCoverSkeleton />

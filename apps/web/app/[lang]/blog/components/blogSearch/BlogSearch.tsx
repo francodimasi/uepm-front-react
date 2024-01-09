@@ -1,41 +1,65 @@
-import { useCallback, useState } from 'react';
+import { useState } from 'react';
 import { BlogSearchInput } from './BlogSearchInput';
 import { useDetectClickOutside } from 'react-detect-click-outside';
+import { SearchNormalIcon } from 'ui/core';
+import { useRouter } from '@intl/navigation';
+import { defaultLocale, LocaleProps } from 'intl';
 
-export const BlogSearch = () => {
+
+export const BlogSearch = ({ locale = defaultLocale } : LocaleProps) => {
   const [open, setOpen] = useState(false);
-  const ref = useDetectClickOutside({ onTriggered: () => setOpen(false) });
+  const [criteria, setCriteria] = useState('');
+  const ref = useDetectClickOutside({
+    onTriggered: () => setOpen(false),
+  });
+  const router = useRouter();
 
-  const handleSubmit = useCallback((e: any) => {
-    e.preventDefault();
-    /**@todo add search funcionality */
-    console.log('search');
-  }, []);
+  const handleKeyPress = (e: any) => {
+    if (e.key === 'Enter') {
+      handleSubmit();
+    }
+  };
+
+  const handleSubmit = () => {
+    router.push(
+      {
+        pathname: '/blog/search/[query]',
+        params: { query: criteria },
+      },
+      {
+        locale,
+      },
+    );
+  };
 
   return (
-    <form
+    <div
       ref={ref}
-      onSubmit={handleSubmit}
-      className="w-24 py-1 px-3 mb-0 border-b border-b-gray-light justify-center items-center inline-flex"
+      className=" pb-2 px-5 mb-0 border-b border-b-gray-light justify-center items-center inline-flex"
+      onKeyDown={handleKeyPress}
     >
       {open ? (
         <>
           <button
-            className="w-6 h-6 relative cursor-pointer z-40 py-3"
-            type="submit"
+            className="w-6 h-6 relative cursor-pointer z-40"
+            onClick={handleSubmit}
           >
-            <span className="material-icons block">search</span>
+            <SearchNormalIcon />
           </button>
-          <BlogSearchInput open={open} />
+          <BlogSearchInput
+            open={open}
+            setCriteria={setCriteria}
+            criteria={criteria}
+          />
         </>
       ) : (
         <div
-          className="w-6 h-6 relative cursor-pointer"
+          className="w-6 h-6 relative cursor-pointer mb-2"
           onClick={() => setOpen(true)}
         >
-          <span className="material-icons block">search</span>
+          <SearchNormalIcon />
         </div>
       )}
-    </form>
+    </div>
   );
 };

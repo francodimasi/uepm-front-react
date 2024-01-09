@@ -25,7 +25,7 @@ export const BlogFilter = ({
   const fetchData = async () => {
     const articles = await getArticles({
       page,
-      [by.key]: [by.value.id],
+      [by.key]: [by.value],
       per_page: itemsPerPage,
       ...addLangCategory(by, locale),
     });
@@ -40,13 +40,13 @@ export const BlogFilter = ({
 
   return (
     <>
-      <div className="relative text-black text-4xl font-semibold font-['Lexend'] leading-10 text-center w-100 mb-10 capitalize">
+      <div className="relative text-black text-3xl font-semibold font-['Lexend'] leading-10 text-center w-100 mb-10 capitalize">
         <div className="absolute left-0 h-full flex items-center">
           <Link href="/blog" locale={locale}>
             <ArrowBackIcon />
           </Link>
         </div>
-        {by.value.name}
+        {by.name}
       </div>
       {loading ? (
         <BlogFilterSkeleton entries={itemsPerPage} />

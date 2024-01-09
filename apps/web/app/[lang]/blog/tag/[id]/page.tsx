@@ -18,7 +18,7 @@ export default async function Page({
     <Layout locale={lang}>
       <div className="pb-12">
         <BlogFilter
-          by={{ key: 'tags', value: tag }}
+          by={{ key: 'tags', value: tag.id, name: tag.name.toLocaleUpperCase() }}
           itemsPerPage={10}
           locale={lang}
         />

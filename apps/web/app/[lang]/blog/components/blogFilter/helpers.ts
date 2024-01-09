@@ -15,5 +15,7 @@ export const addLangCategory = (
       categories: [BLOG.LANG[lang.toUpperCase()]],
     };
   }
-  return {};
+  return {
+    categories: [BLOG.LANG[lang.toUpperCase()]]
+  };
 };
