@@ -18,6 +18,10 @@
         "title": "Nossa equipe",
         "board": "Time executivo",
         "staff": "Staff"
+      },
+      "partners": {
+        "tag": "Nos acompanham",
+        "title": "Nossa Rede"
       }
     }
   },

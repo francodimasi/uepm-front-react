@@ -1,41 +1,87 @@
-import { useCallback, useState } from 'react';
-import { BlogSearchInput } from './BlogSearchInput';
-import { useDetectClickOutside } from 'react-detect-click-outside';
+import { useEffect, useRef, useState } from 'react';
+import { GlassIcon } from 'ui/core';
+import { useRouter } from '@intl/navigation';
+import { defaultLocale, LocaleProps } from 'intl';
 
-export const BlogSearch = () => {
+export const BlogSearch = ({ locale = defaultLocale }: LocaleProps) => {
   const [open, setOpen] = useState(false);
-  const ref = useDetectClickOutside({ onTriggered: () => setOpen(false) });
+  const [search, setSearch] = useState('');
+  const inputRef = useRef<HTMLInputElement>();
+  const router = useRouter();
+  const ref = useRef(null);
 
-  const handleSubmit = useCallback((e: any) => {
-    e.preventDefault();
-    /**@todo add search funcionality */
-    console.log('search');
+  const handleClickOutside = (event) => {
+    if (ref.current && !ref.current.contains(event.target)) {
+      setOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener('click', handleClickOutside, true);
+    return () => {
+      document.removeEventListener('click', handleClickOutside, true);
+    };
   }, []);
 
+  const handleKeyPress = (e: any) => {
+    if (e.key === 'Enter') {
+      handleSubmit();
+    }
+  };
+
+  useEffect(() => {
+    if (open) {
+      inputRef.current?.focus();
+    }
+  }, [open]);
+
+  const handleSubmit = () => {
+    if (search !== '') {
+      router.push(
+        {
+          pathname: '/blog/search/[query]',
+          params: { query: search },
+        },
+        {
+          locale,
+        },
+      );
+    }
+  };
   return (
-    <form
+    <div
       ref={ref}
-      onSubmit={handleSubmit}
-      className="w-24 py-1 px-3 mb-0 border-b border-b-gray-light justify-center items-center inline-flex"
+      className="sm:mt-0 mt-3 pb-0 px-5 mb-0 sm:border-b sm:border-b-gray-light justify-center items-center inline-flex"
+      onKeyDown={handleKeyPress}
     >
       {open ? (
         <>
           <button
-            className="w-6 h-6 relative cursor-pointer z-40 py-3"
-            type="submit"
+            className="w-6 h-6 relative cursor-pointer z-40 mb-2 "
+            onClick={handleSubmit}
           >
-            <span className="material-icons block">search</span>
+            <GlassIcon />
           </button>
-          <BlogSearchInput open={open} />
+
+          <div className="absolute top-0 left-0 z-20 w-[97%] border-b-1 border-gray-medium">
+            <input
+              ref={inputRef}
+              className="w-full bg-white outline-none py-5 sm:pt-0 sm:pb-3 px-3 font-['DMSans'] font-normal text-normal text-start"
+              placeholder="Ingrese la Búsqueda..."
+              type="text"
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+            />
+          </div>
         </>
       ) : (
         <div
-          className="w-6 h-6 relative cursor-pointer"
+          className="w-6 h-6 relative cursor-pointer mb-2"
           onClick={() => setOpen(true)}
         >
-          <span className="material-icons block">search</span>
+          <GlassIcon />
         </div>
       )}
-    </form>
+    </div>
   );
 };

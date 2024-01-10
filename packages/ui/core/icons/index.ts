@@ -8,3 +8,4 @@ export { CloseIcon } from './CloseIcon';
 export { EllipsisIcon } from './EllipsisIcon';
 export { MenuIcon } from './MenuIcon';
 export { ShareOutlineIcon } from './ShareOutlineIcon';
+export { GlassIcon } from './GlassIcon';
