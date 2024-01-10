@@ -25,7 +25,7 @@ export const pathnames = {
     pt: '/blog/artigo/[slug]',
   },
   '/blog/search/[query]': {
-    en: '/blog/article/[query]',
+    en: '/blog/search/[query]',
     es: '/blog/buscar/[query]',
     pt: '/blog/procurar/[query]',
   },
