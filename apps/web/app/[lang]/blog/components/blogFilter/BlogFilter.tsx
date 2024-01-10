@@ -10,7 +10,7 @@ import { LocaleProps } from 'intl';
 import { addLangCategory } from './helpers';
 import { Link } from '@intl/navigation';
 import { ArrowBackIcon } from 'ui/core/icons';
-import { Error } from '@components/shared/error';
+import { Error } from 'ui/components';
 
 export const BlogFilter = ({
   by,

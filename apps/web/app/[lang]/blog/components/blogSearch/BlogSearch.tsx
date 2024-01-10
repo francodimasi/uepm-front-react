@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { SearchNormalIcon } from 'ui/core';
+import { GlassIcon } from 'ui/core';
 import { useRouter } from '@intl/navigation';
 import { defaultLocale, LocaleProps } from 'intl';
 
@@ -60,7 +60,7 @@ export const BlogSearch = ({ locale = defaultLocale }: LocaleProps) => {
             className="w-6 h-6 relative cursor-pointer z-40 mb-2"
             onClick={handleSubmit}
           >
-            <SearchNormalIcon />
+            <GlassIcon />
           </button>
 
           <div className="absolute top-0 left-0 z-20 w-[97%] border-b-1 border-gray-medium">
@@ -79,7 +79,7 @@ export const BlogSearch = ({ locale = defaultLocale }: LocaleProps) => {
           className="w-6 h-6 relative cursor-pointer mb-2"
           onClick={() => setOpen(true)}
         >
-          <SearchNormalIcon />
+          <GlassIcon />
         </div>
       )}
     </div>

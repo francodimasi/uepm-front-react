@@ -1,6 +1,6 @@
 import { IconColor, IconProps } from './types';
 
-export const SearchNormalIcon = ({
+export const GlassIcon = ({
   width = 24,
   height = 24,
   fill,

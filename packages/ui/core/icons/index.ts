@@ -8,4 +8,4 @@ export { CloseIcon } from './CloseIcon';
 export { EllipsisIcon } from './EllipsisIcon';
 export { MenuIcon } from './MenuIcon';
 export { ShareOutlineIcon } from './ShareOutlineIcon';
-export { SearchNormalIcon } from './SearchNormalIcon';
+export { GlassIcon } from './GlassIcon';
