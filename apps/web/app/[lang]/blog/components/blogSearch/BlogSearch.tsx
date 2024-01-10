@@ -51,13 +51,13 @@ export const BlogSearch = ({ locale = defaultLocale }: LocaleProps) => {
   return (
     <div
       ref={ref}
-      className=" pb-0 px-5 mb-0 border-b border-b-gray-light justify-center items-center inline-flex"
+      className="sm:mt-0 mt-3 pb-0 px-5 mb-0 sm:border-b sm:border-b-gray-light justify-center items-center inline-flex"
       onKeyDown={handleKeyPress}
     >
       {open ? (
         <>
           <button
-            className="w-6 h-6 relative cursor-pointer z-40 mb-2"
+            className="w-6 h-6 relative cursor-pointer z-40 mb-2 "
             onClick={handleSubmit}
           >
             <GlassIcon />
@@ -66,7 +66,7 @@ export const BlogSearch = ({ locale = defaultLocale }: LocaleProps) => {
           <div className="absolute top-0 left-0 z-20 w-[97%] border-b-1 border-gray-medium">
             <input
               ref={inputRef}
-              className="w-full bg-white outline-none pb-3 px-3 font-['DMSans'] font-normal text-normal text-start"
+              className="w-full bg-white outline-none py-5 sm:pt-0 sm:pb-3 px-3 font-['DMSans'] font-normal text-normal text-start"
               placeholder="Ingrese la Búsqueda..."
               type="text"
               value={search}
