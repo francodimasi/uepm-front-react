@@ -24,7 +24,7 @@ export const BlogFilterHeader = ({
         <BlogSearch locale={locale} />
       </div>
       <div className="sm:hidden w-full flex ">
-        <div className='w-11/12'>
+        <div className="w-11/12">
           <Select items={tabItems} selected={category} onChange={onChange} />
         </div>
         <BlogSearch locale={locale} />
