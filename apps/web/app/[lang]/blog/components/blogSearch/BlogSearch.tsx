@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from 'react';
-import { useDetectClickOutside } from 'react-detect-click-outside';
 import { SearchNormalIcon } from 'ui/core';
 import { useRouter } from '@intl/navigation';
 import { defaultLocale, LocaleProps } from 'intl';
@@ -8,11 +7,21 @@ export const BlogSearch = ({ locale = defaultLocale }: LocaleProps) => {
   const [open, setOpen] = useState(false);
   const [search, setSearch] = useState('');
   const inputRef = useRef<HTMLInputElement>();
-  const ref = useDetectClickOutside({
-    //TODO manejar evento nativos de react
-    onTriggered: () => setOpen(false),
-  });
   const router = useRouter();
+  const ref = useRef(null);
+
+  const handleClickOutside = (event) => {
+    if (ref.current && !ref.current.contains(event.target)) {
+      setOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener('click', handleClickOutside, true);
+    return () => {
+      document.removeEventListener('click', handleClickOutside, true);
+    };
+  }, []);
 
   const handleKeyPress = (e: any) => {
     if (e.key === 'Enter') {
@@ -39,7 +48,6 @@ export const BlogSearch = ({ locale = defaultLocale }: LocaleProps) => {
       );
     }
   };
-  // TODO unificar todo
   return (
     <div
       ref={ref}
