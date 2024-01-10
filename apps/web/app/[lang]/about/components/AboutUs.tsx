@@ -105,13 +105,23 @@ const HumanCare = () => {
             }}
           />
         </div>
-        <div className="hidden 2xl:block absolute bottom-0 right-0">
+        <div className="hidden sm:max-2xl:block absolute bottom-0 right-0">
           <ImageWithFallback
             src={HumanCareImg}
             alt="human care"
             style={{
               width: 'auto',
               height: 'auto',
+            }}
+          />
+        </div>
+        <div className="hidden 2xl:block absolute bottom-0 right-0">
+          <ImageWithFallback
+            src={HumanCareImg}
+            alt="human care"
+            style={{
+              width: '800px',
+              height: '800px',
             }}
           />
         </div>
@@ -123,7 +133,7 @@ const HumanCare = () => {
 const PatientCare = () => {
   return (
     <>
-      <div className="flex flex-col mb-[350px]">
+      <div className="sm:hidden flex flex-col mb-[350px]">
         <span className="text-primary uppercase text-sm font-normal font-['DMSans'] leading-none">
           Nuestra prioridad
         </span>
@@ -140,6 +150,35 @@ const PatientCare = () => {
               }}
             />
             <div className="text-dark text-base font-normal font-['DMSans'] leading-normal px-6 pb-9 mt-[6px]">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+              sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="hidden sm:flex flex-col mb-40">
+        <span className="text-primary uppercase text-base font-medium font-['DMSans'] leading-tight">
+          Nuestra prioridad
+        </span>
+        <span className="text-dark text-6xl font-semibold font-['Lexend'] leading-[72px] mt-3">
+          Calidad y cuidado del paciente
+        </span>
+        <div className="w-full h-[768px] mt-14 relative bg-[url('../public/images/doctor-talking-with-her-patient.png')] bg-no-repeat bg-cover">
+          <div className="absolute bottom-[100px] flex flex-row items-center gap-16 bg-[#FFFFFF] mx-20 pl-9  py-14 pr-24">
+            <ImageWithFallback
+              src={IsoLogo}
+              alt="Iso45001 logo"
+              style={{
+                marginLeft: '38px',
+              }}
+            />
+            <div className="text-dark text-base font-normal font-['DMSans'] leading-normal">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
               enim ad minim veniam, quis nostrud exercitation ullamco laboris
