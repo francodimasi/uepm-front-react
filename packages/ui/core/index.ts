@@ -5,6 +5,7 @@ export * from './icons';
 export * from './menu';
 export * from './navigation';
 export * from './pagination';
+export * from './scroll';
 export * from './select';
 export * from './tabs';
 export * from './tag';

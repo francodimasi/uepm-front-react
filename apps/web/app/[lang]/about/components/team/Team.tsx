@@ -1,10 +1,16 @@
-import { useTranslations } from 'intl';
+import { LocaleProps, useTranslations } from 'intl';
 import { TeamProps } from './Team.types';
 import { Tag } from 'ui/core';
 import { TeamMemerItem } from './TeamMemberItem';
+import { Link } from '@intl/navigation';
 
-export const Team: React.FC<TeamProps> = ({ board = [], staff }) => {
+export const Team: React.FC<TeamProps & LocaleProps> = ({
+  board = [],
+  staff,
+  locale,
+}) => {
   const t = useTranslations('about.sections.team');
+  const tActions = useTranslations('actions');
 
   if (board.length === 0) return null;
 
@@ -54,7 +60,7 @@ export const Team: React.FC<TeamProps> = ({ board = [], staff }) => {
               {t('staff')}
             </span>
             <div className="grid grid-cols-2 sm:hidden gap-4">
-              {staff.map((mmember, index) => (
+              {staff.slice(0, 4).map((mmember, index) => (
                 <TeamMemerItem
                   key={index}
                   member={mmember}
@@ -87,6 +93,15 @@ export const Team: React.FC<TeamProps> = ({ board = [], staff }) => {
               ))}
             </div>
           </>
+        )}
+        {staff?.length > 4 && (
+          <div className="sm:hidden pt-6">
+            <Link href="/" locale={locale}>
+              <span className="flex justify-center text-base font-semibold font-['DMSans'] leading-none">
+                {tActions('seeMore')}
+              </span>
+            </Link>
+          </div>
         )}
       </div>
     </div>
