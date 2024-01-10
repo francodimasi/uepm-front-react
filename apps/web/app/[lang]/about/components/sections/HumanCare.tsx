@@ -1,3 +1,6 @@
+import styles from './humanCare.module.css';
+
+import clsx from 'clsx';
 import { ImageWithFallback } from '@components/utils/ImageWithFallback';
 import HumanCareImg from 'public/images/humanCare.png';
 import Shapes from 'public/images/shapes.jpg';
@@ -32,7 +35,7 @@ export const HumanCare: React.FC = () => {
           />
         </div>
       </div>
-      <div className="hidden sm:flex flex-row justify-between items-start relative 2xl:min-h-[800px]">
+      <div className="hidden sm:flex flex-row justify-between items-start relative">
         <div className="flex flex-col w-1/2">
           <span className="text-primary uppercase text-base font-medium font-['DMSans'] leading-tight">
             Nuestro compromiso
@@ -59,23 +62,28 @@ export const HumanCare: React.FC = () => {
             }}
           />
         </div>
-        <div className="hidden sm:max-2xl:block absolute bottom-0 right-0">
+        <div
+          className={clsx(
+            'hidden absolute bottom-0 right-0',
+            styles.smTo2xlRangeBlock,
+          )}
+        >
           <ImageWithFallback
             src={HumanCareImg}
             alt="human care"
             style={{
-              width: 'auto',
               height: 'auto',
+              width: 'auto',
             }}
           />
         </div>
-        <div className="hidden 2xl:block absolute bottom-0 right-0">
+        <div className="h-full hidden 2xl:block absolute bottom-0 right-0">
           <ImageWithFallback
             src={HumanCareImg}
             alt="human care"
             style={{
-              width: '800px',
-              height: '800px',
+              height: '100%',
+              width: 'auto',
             }}
           />
         </div>

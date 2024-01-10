@@ -4,7 +4,7 @@ import AboutUsDesktop from 'public/images/aboutUsDesktop.png';
 
 export const Title: React.FC = () => {
   return (
-    <div>
+    <div className="w-full">
       <div className="flex flex-col sm:flex-row justify-start sm:justify-evenly items-start sm:items-center gap-4 sm:gap-72">
         <div className="text-dark text-2xl sm:text-7xl font-semibold font-['Lexend'] leading-10 sm:leading-[80px]">
           Quiénes somos
