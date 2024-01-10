@@ -21,7 +21,7 @@ export default async function Page({
           by={{
             key: 'tags',
             value: tag.id,
-            name: tag.name.toLocaleUpperCase(),
+            name: tag.name,
           }}
           itemsPerPage={10}
           locale={lang}

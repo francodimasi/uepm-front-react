@@ -14,7 +14,7 @@ export default function Page({
           by={{
             key: 'query',
             value: query.toLocaleLowerCase(),
-            name: 'Resultados para la búsqueda: ' + query,
+            name: 'Resultados para la búsqueda: ' + decodeURIComponent(query),
           }}
           itemsPerPage={10}
           locale={lang}
