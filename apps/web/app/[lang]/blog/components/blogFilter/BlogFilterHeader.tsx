@@ -3,12 +3,14 @@
 import { BlogSearch } from '../blogSearch';
 import { Select, Tabs } from 'ui/core';
 import { BlogFilterHeaderProps } from './BlogFilter.types';
+import { defaultLocale, LocaleProps } from 'intl';
 
 export const BlogFilterHeader = ({
   category,
   categories,
   setCategory,
-}: BlogFilterHeaderProps) => {
+  locale = defaultLocale,
+}: BlogFilterHeaderProps & LocaleProps) => {
   const tabItems = categories?.map(({ name, id }) => ({ name, id })) ?? [];
 
   const onChange = (catID: number) => {
@@ -19,10 +21,13 @@ export const BlogFilterHeader = ({
     <>
       <div className="hidden sm:flex w-full">
         <Tabs items={tabItems} selected={category} onChange={onChange} />
-        <BlogSearch />
+        <BlogSearch locale={locale} />
       </div>
-      <div className="block sm:hidden w-full">
-        <Select items={tabItems} selected={category} onChange={onChange} />
+      <div className="sm:hidden w-full flex ">
+        <div className="w-11/12">
+          <Select items={tabItems} selected={category} onChange={onChange} />
+        </div>
+        <BlogSearch locale={locale} />
       </div>
     </>
   );

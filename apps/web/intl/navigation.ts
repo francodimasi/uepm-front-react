@@ -24,6 +24,11 @@ export const pathnames = {
     es: '/blog/articulo/[slug]',
     pt: '/blog/artigo/[slug]',
   },
+  '/blog/search/[query]': {
+    en: '/blog/search/[query]',
+    es: '/blog/buscar/[query]',
+    pt: '/blog/procurar/[query]',
+  },
   '/partners': '/partners',
   '/about': {
     en: '/about',

@@ -113,6 +113,9 @@ export const getArticles = async (
           query = `tags[terms]=${allParams[key]}`;
           query += '&tags[operator]=AND';
         }
+        if (key === 'query') {
+          query = `search=${allParams[key]}`;
+        }
 
         queryParams += `${query}${and}`;
       }
