@@ -10,6 +10,7 @@ export type ButtonColor =
 export type ButtonSize = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
 
 export type ButtonProps = PropsWithClassName & {
+  type?: 'submit' | 'button';
   variant?: ButtonVariant;
   color?: ButtonColor;
   size?: ButtonSize;
