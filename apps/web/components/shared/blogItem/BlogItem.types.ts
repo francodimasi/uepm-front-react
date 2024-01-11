@@ -3,7 +3,7 @@ import { PropsWithClassName } from 'ui/types/core';
 
 export type BlogItemSkeletonProps = {
   orientation?: BlogItemOrientation;
-  showImg?: boolean;  
+  showImg?: boolean;
   size?: BlogItemSize;
   position?: BlogItemImgPosition;
 };

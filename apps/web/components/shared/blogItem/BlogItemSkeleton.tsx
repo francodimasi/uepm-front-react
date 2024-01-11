@@ -51,12 +51,7 @@ export const BlogItemSkeleton = ({
     <div className={containerClasses}>
       {showImg && (
         <div className={imageContentClasses}>
-          <Image
-            src={fallbackImg}
-            fill
-            aria-hidden="true"
-            alt="Placeholder"
-          />
+          <Image src={fallbackImg} fill aria-hidden="true" alt="Placeholder" />
         </div>
       )}
       <div className="w-full grow shrink basis-0 flex-col justify-start items-start sm:block ">
