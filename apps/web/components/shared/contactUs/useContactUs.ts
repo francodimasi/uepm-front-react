@@ -37,7 +37,8 @@ export const useContactUs = () => {
             }
         `.replace(/(\r\n|\n|\r)/gm, '');
 
-    return post('https://api.monday.com/v2', { // TODO: Move to env variable
+    return post('https://api.monday.com/v2', {
+      // TODO: Move to env variable
       customToken: mondayApiKey,
       data: {
         query,
