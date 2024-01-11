@@ -15,7 +15,7 @@ export const BlogFilterSkeleton = ({ entries }: BlogFilterSkeletonProps) => {
               key={i}
               className="pt-0 pb-10 border-b border-gray-medium sm:mb-0 sm:mt-10 sm:pb-7"
             >
-              <BlogItemSkeleton type="large" />
+              <BlogItemSkeleton size="lg" />
             </div>,
           );
         }

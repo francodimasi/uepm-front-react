@@ -1,8 +1,11 @@
-import { BlogItem, BlogItemType } from '@models/blog.types';
+import { BlogItem } from '@models/blog.types';
 import { PropsWithClassName } from 'ui/types/core';
 
 export type BlogItemSkeletonProps = {
-  type?: BlogItemType;
+  orientation?: BlogItemOrientation;
+  showImg?: boolean;  
+  size?: BlogItemSize;
+  position?: BlogItemImgPosition;
 };
 
 export type BlogItemOrientation = 'horizontal' | 'vertical';
