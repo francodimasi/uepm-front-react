@@ -1,6 +1,7 @@
 export * from './avatar';
 export * from './button';
 export * from './button';
+export * from './form';
 export * from './icons';
 export * from './menu';
 export * from './navigation';

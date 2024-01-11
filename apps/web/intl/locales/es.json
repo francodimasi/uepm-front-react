@@ -25,6 +25,20 @@
       }
     }
   },
+  "shared": {
+    "contactUs": {
+      "title": "Envíanos tu consulta",
+      "description": "Completa el formulario y te responderemos a la brevedad",
+      "fields": {
+        "name": "Nombre",
+        "lastname": "Apellido",
+        "email": "Correo Electrónico",
+        "phone": "Teléfono",
+        "query": "Consulta"
+      },
+      "optional": "(Opcional)"
+    }
+  },
   "actions": {
     "back": "Atrás",
     "cancel": "Cancelar",
