@@ -1,5 +1,5 @@
-import fallbackImg from 'public/images/fallback.jpg';
-import Image from 'next/image';
+// import fallbackImg from 'public/images/fallback.jpg';
+// import Image from 'next/image';
 import clsx from 'clsx';
 
 export const BlogItemSkeleton = ({ type = 'large' }) => {
@@ -10,11 +10,11 @@ export const BlogItemSkeleton = ({ type = 'large' }) => {
     'inline-flex sm:flex-col w-full': type === 'vertical',
     'flex-col inline-flex w-full sm:flex-col-reverse mt-5': type === 'bigger',
   });
-  const imageContentClasses = clsx('', {
+  const imageContentClasses = clsx('opacity-10', {
     'relative w-16 h-24 shrink-0 me-4': type === 'small',
     'hidden sm:block relative aspect-[16/9] sm:aspect-[2/1] lg:aspect-square w-36 lg:shrink-0 ':
       type === 'large',
-    'relative h-32 w-40 sm:w-full sm:h-42 self-center mb-4':
+    'relative h-32 w-32 sm:w-full me-5 sm:me-0 sm:h-64 sm:w-64 self-center mb-2':
       type === 'vertical',
     'relative w-64 h-64 self-center': type === 'bigger',
   });
@@ -55,13 +55,14 @@ export const BlogItemSkeleton = ({ type = 'large' }) => {
   return (
     <div className={containerClasses}>
       <div className={imageContentClasses}>
-        <Image
-          src={fallbackImg}
-          fill
+        <svg
           aria-hidden="true"
-          className="opacity-20 text-gray-light"
-          alt="Placeholder"
-        />
+          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
+          viewBox="0 0 20 18"
+        >
+          <path d="M18 0H2a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2Zm-5.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Zm4.376 10.481A1 1 0 0 1 16 15H4a1 1 0 0 1-.895-1.447l3.5-7A1 1 0 0 1 7.468 6a.965.965 0 0 1 .9.5l2.775 4.757 1.546-1.887a1 1 0 0 1 1.618.1l2.541 4a1 1 0 0 1 .028 1.011Z" />
+        </svg>
       </div>
       <div className={mainContent}>
         <div className="flex items-center gap-x-4 text-xs">

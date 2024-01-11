@@ -27,10 +27,10 @@ export const BlogCoverSkeleton = () => {
         </div>
         <div className="sm:basis-1/3 order-1 sm:order-2">
           <div className="flex flex-col">
-            <div className=" border-b border-gray-medium mb-6 pb-6 sm:pb-10">
+            <div className=" border-b border-gray-medium mb-4 pb-4 sm:pb-10">
               <BlogItemSkeleton type="vertical" />
             </div>
-            <div className="sm:border-0 border-b border-gray-medium mb-6 pb-6 sm:pb-10">
+            <div className="sm:border-0 border-b border-gray-medium mb-4 pb-4 sm:pb-10">
               <BlogItemSkeleton type="vertical" />
             </div>
           </div>
