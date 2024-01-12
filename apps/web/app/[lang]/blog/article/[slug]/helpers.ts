@@ -1,20 +1,16 @@
-import { BlogArticle, BlogFilterParams } from '@models/blog.types';
-import { getArticles, getTagID } from '@api/blog/requests';
+import { BlogArticle, BlogFilterParams, BlogTag } from '@models/blog.types';
+import { getArticles } from '@api/blog/requests';
 import { BLOG } from '@api/blog/constants';
 
-export const getArticlesByTag = async function (tagName: string, lang: string) {
+export const getArticlesByTag = async function (tag: BlogTag, lang: string) {
   const getArticlesParams: BlogFilterParams = {
     categories: [BLOG.LANG[lang.toUpperCase()]],
+    tags: [tag.id],
     per_page: 4,
     page: 1,
     context: 'view',
     order: 'desc',
   };
-
-  if (tagName) {
-    const tagID = await getTagID(tagName);
-    getArticlesParams.tags = [tagID];
-  }
 
   try {
     const res = await getArticles(getArticlesParams);

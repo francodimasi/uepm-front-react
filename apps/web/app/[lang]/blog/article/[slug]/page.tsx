@@ -21,7 +21,7 @@ const Page = async ({
     getEditorSelection(lang),
     getArticlesByTag(article.tags[0], lang),
     getNextArticle(article, lang),
-    getTrendingTopics(),
+    getTrendingTopics(lang),
   ]);
 
   return (
