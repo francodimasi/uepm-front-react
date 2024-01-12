@@ -1,5 +1,5 @@
 import NextImage, { ImageProps } from 'next/image';
-import fallbackImage from 'public/images/fallback.jpg';
+import fallbackImage from 'public/images/fallback.svg';
 
 interface ImageWithFallbackProps extends ImageProps {
   fallbackSrc?: string;
