@@ -1,23 +1,26 @@
 import { Link } from '@intl/navigation';
 import { FeaturedArticlesProps } from './FeaturedArticle.types';
 import { BlogItem } from '../blogItem';
-import { LocaleProps } from 'intl';
+import { LocaleProps, useTranslations } from 'intl';
 import clsx from 'clsx';
 
 export const FeaturedArticles: React.FC<
   FeaturedArticlesProps & LocaleProps
 > = ({ articles, tag, locale }) => {
+  const t = useTranslations('shared.featuredArticles');
+  const tActions = useTranslations('actions');
+
   if (!articles || articles.length === 0) return null;
 
   return (
     <div className="flex flex-col gap-8 pt-2">
       <div className="flex justify-between items-center">
         <span className="text-primary lg:text-dark text-2xl font-semibold font-['Lexend'] leading-8 lg:leading-7">
-          Más sobre el tema
+          {t('title')}
         </span>
         <Link href={`/blog/${tag.name}` as any} locale={locale}>
           <span className="text-dark text-base font-bold font-['DMSans'] leading-none">
-            Ver más →
+            {tActions('seeMore')} →
           </span>
         </Link>
       </div>
