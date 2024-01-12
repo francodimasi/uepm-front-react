@@ -70,7 +70,9 @@ export const BlogCover = ({
       <div className="mt-5 flex justify-center">
         {categories.find((cat) => cat.id === category)?.count > 7 && (
           <Link href={`/blog/category/${category}` as any} locale={locale}>
-            <Button fill='clear' color='dark'>{t('seeMore')}</Button>
+            <Button fill="clear" color="dark">
+              {t('seeMore')}
+            </Button>
           </Link>
         )}
       </div>
