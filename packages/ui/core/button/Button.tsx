@@ -20,7 +20,7 @@ export const Button = forwardRef<any, ButtonProps>(
     const classes = getClasses(size, fill, shape, color, className, disabled);
 
     return (
-      <button style={{ backgroundColor: color }}
+      <button
         type={type}
         ref={ref}
         className={classes}
