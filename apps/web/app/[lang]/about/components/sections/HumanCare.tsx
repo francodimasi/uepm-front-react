@@ -59,7 +59,7 @@ export const HumanCare: React.FC = () => {
             }}
           />
         </div>
-        <div className='col-start-6 col-span-7 row-start-1 row-span-1'>
+        <div className="col-start-6 col-span-7 row-start-1 row-span-1">
           <ImageWithFallback
             src={HumanCareImg}
             alt="human care"

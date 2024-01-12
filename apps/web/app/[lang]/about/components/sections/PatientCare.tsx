@@ -12,8 +12,7 @@ export const PatientCare: React.FC = () => {
           Calidad y cuidado del paciente
         </span>
         <div className="grid grid-rows-5 grid-cols-12 mt-10 ">
-          <div className="row-start-1 row-span-3 col-start-1 col-span-12 bg-[url('../public/images/doctor-talking-with-her-patient.png')] bg-no-repeat bg-cover">
-          </div>
+          <div className="row-start-1 row-span-3 col-start-1 col-span-12 bg-[url('../public/images/doctor-talking-with-her-patient.png')] bg-no-repeat bg-cover"></div>
           <div className="row-start-3 row-span-3 col-start-2 col-span-10 flex flex-col bg-[#FFFFFF]">
             <ImageWithFallback
               src={IsoLogo}
@@ -23,13 +22,13 @@ export const PatientCare: React.FC = () => {
               }}
             />
             <div className="text-dark text-base font-normal font-['DMSans'] leading-normal px-6 pb-9 mt-[6px]">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-                reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                sunt in culpa qui officia deserunt mollit anim id est laborum.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+              sunt in culpa qui officia deserunt mollit anim id est laborum.
             </div>
           </div>
         </div>
