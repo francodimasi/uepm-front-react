@@ -1,6 +1,6 @@
 import { PropsWithClassName } from '../../types/core';
 
-export type ButtonVariant = 'solid' | 'outline' | 'clear';
+export type ButtonFill = 'solid' | 'outline' | 'clear';
 export type ButtonColor =
   | 'primary'
   | 'secondary'
@@ -8,9 +8,12 @@ export type ButtonColor =
   | 'light'
   | 'dark';
 export type ButtonSize = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+export type ButtonShape = 'round' | 'square';
 
 export type ButtonProps = PropsWithClassName & {
-  variant?: ButtonVariant;
+  type?: 'submit' | 'button';
+  fill?: ButtonFill;
+  shape?: ButtonShape;
   color?: ButtonColor;
   size?: ButtonSize;
   disabled?: boolean;

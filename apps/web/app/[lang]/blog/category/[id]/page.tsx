@@ -11,7 +11,7 @@ export default async function Page({
 }) {
   if (isNaN(Number(id))) notFound();
 
-  const categories = await getCategories();
+  const categories = await getCategories(lang);
   const category = categories.find((category) => category.id === Number(id));
 
   return (

@@ -1,8 +1,7 @@
 'use client';
 
 import ReactPaginate from 'react-paginate';
-import { ArrowLeftIcon } from 'ui/core/icons/ArrowLeftIcon';
-import { ArrowRightIcon } from 'ui/core/icons/ArrowRightIcon';
+import { ArrowBackIcon, ArrowForwardIcon } from 'ui/core/icons';
 import { PaginationProps } from './Pagination.types';
 
 export const Pagination = ({
@@ -18,9 +17,9 @@ export const Pagination = ({
       pageRangeDisplayed={2}
       marginPagesDisplayed={2}
       pageCount={pagesCount}
-      previousLabel={<ArrowLeftIcon />}
-      nextLabel={<ArrowRightIcon />}
-      renderOnZeroPageCount={null}
+      previousLabel={<ArrowBackIcon />}
+      nextLabel={<ArrowForwardIcon />}
+      renderOnZeroPageCount={undefined}
       initialPage={actualPage - 1}
       className="flex items-center justify-center pt-4 px-4 sm:px-0 gap-5"
       pageClassName=" w-6 h-7 p-2 justify-end items-center gap-2 inline-flex font-light cursor-pointer hover:font-semibold hover:border-b-1 hover:border-gray-dark"

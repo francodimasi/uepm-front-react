@@ -5,7 +5,9 @@ import { getClasses } from './helpers';
 export const Button = forwardRef<any, ButtonProps>(
   (
     {
-      variant = 'solid',
+      type = 'button',
+      fill = 'solid',
+      shape = 'round',
       color = 'primary',
       size = 'md',
       className = '',
@@ -15,10 +17,11 @@ export const Button = forwardRef<any, ButtonProps>(
     },
     ref,
   ) => {
-    const classes = getClasses(size, variant, color, className, disabled);
+    const classes = getClasses(size, fill, shape, color, className, disabled);
 
     return (
       <button
+        type={type}
         ref={ref}
         className={classes}
         onClick={onClick}

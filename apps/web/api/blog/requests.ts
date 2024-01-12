@@ -14,7 +14,9 @@ const _1D = 86400;
 const _5H = 18000;
 const _2H = 7200;
 
-export const getCategories = async (): Promise<BlogCategory[]> => {
+export const getCategories = async (
+  locale: string,
+): Promise<BlogCategory[]> => {
   try {
     const response = await fetch(
       ENDPOINTS.BLOG.CATEGORIES + `?slug=${BLOG.CATEGORY.SLUG}`,
@@ -25,7 +27,9 @@ export const getCategories = async (): Promise<BlogCategory[]> => {
     const data = await response.json();
     return data?.map((category: BlogCategory) => {
       return {
-        name: category.name,
+        name: category.description
+          ? JSON.parse(category.description)[locale] ?? category.name
+          : category.name,
         id: category.id,
         slug: category.slug,
         count: category.count,
@@ -37,7 +41,7 @@ export const getCategories = async (): Promise<BlogCategory[]> => {
   }
 };
 
-export const getTags = async (): Promise<BlogTag[]> => {
+export const getTags = async (locale: string): Promise<BlogTag[]> => {
   try {
     const res = await fetch(
       `${ENDPOINTS.BLOG.TAGS}?order=desc&orderby=count&per_page=100&page=1`,
@@ -48,7 +52,9 @@ export const getTags = async (): Promise<BlogTag[]> => {
     const data: BlogTag[] = await res.json();
     return data?.map((tag) => {
       return {
-        name: tag.name,
+        name: tag.description
+          ? JSON.parse(tag.description)[locale] ?? tag.name
+          : tag.name,
         id: tag.id,
         slug: tag.slug,
         count: tag.count,
@@ -63,7 +69,7 @@ export const getTags = async (): Promise<BlogTag[]> => {
 /**
  * TODO: Check if we can filter this by lang once we have more info about translations
  */
-export const getTrendingTopics = async (): Promise<BlogTag[]> => {
+export const getTrendingTopics = async (locale: string): Promise<BlogTag[]> => {
   try {
     const res = await fetch(
       `${ENDPOINTS.BLOG.TAGS}?order=desc&orderby=count&per_page=10&page=1`,
@@ -74,7 +80,9 @@ export const getTrendingTopics = async (): Promise<BlogTag[]> => {
     const data = await res.json();
     return data?.map((tag: BlogTag) => {
       return {
-        name: tag.name,
+        name: tag.description
+          ? JSON.parse(tag.description)[locale] ?? tag.name
+          : tag.name,
         id: tag.id,
         slug: tag.slug,
         count: tag.count,
@@ -240,21 +248,5 @@ export const getSuggestedArticles = async (
   } catch (error) {
     console.log(error);
     return [];
-  }
-};
-
-export const getTagID = async (tagName: string): Promise<number> => {
-  try {
-    const res = await fetch(
-      `${ENDPOINTS.BLOG.TAGS}?search=${tagName}&orderby=name`,
-      {
-        next: { revalidate: _1D },
-      },
-    );
-    const data = await res.json();
-    return data.length > 0 ? Number(data[0].id) : null;
-  } catch (error) {
-    console.log(error);
-    return null;
   }
 };

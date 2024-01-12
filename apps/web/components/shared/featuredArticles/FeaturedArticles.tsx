@@ -15,8 +15,7 @@ export const FeaturedArticles: React.FC<
         <span className="text-primary lg:text-dark text-2xl font-semibold font-['Lexend'] leading-8 lg:leading-7">
           Más sobre el tema
         </span>
-        {/* TODO: check if this link should go to /blog/category? */}
-        <Link href={`/blog/${tag}` as any} locale={locale}>
+        <Link href={`/blog/${tag.name}` as any} locale={locale}>
           <span className="text-dark text-base font-bold font-['DMSans'] leading-none">
             Ver más →
           </span>

@@ -3,6 +3,7 @@ import { Team } from './components/team';
 import { Partners } from './components/partners';
 import { promises as fs } from 'fs';
 import { AboutUs } from './components/AboutUs';
+import { ContactUs } from '@components/shared/contactUs/ContactUs';
 
 export default async function Page({ params: { lang } }) {
   /**
@@ -32,6 +33,7 @@ export default async function Page({ params: { lang } }) {
       <AboutUs />
       <Team board={team.board} staff={team.staff} />
       <Partners partners={partners} />
+      <ContactUs />
     </Layout>
   );
 }
