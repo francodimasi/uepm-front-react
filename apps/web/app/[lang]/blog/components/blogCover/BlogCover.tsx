@@ -11,6 +11,7 @@ import { LocaleProps } from 'intl/src/types';
 import { PromotedArticle } from './PromotedArticle';
 import { SuggestedArticles } from './SuggestedArticles';
 import { CategoryArticles } from './CategoryArticles';
+import { useTranslations } from 'intl';
 
 export const BlogCover = ({
   categories,
@@ -20,6 +21,7 @@ export const BlogCover = ({
   initialCategory,
   locale,
 }: BlogFrontPageParam & LocaleProps) => {
+  const t = useTranslations('actions');
   const [category, setCategory] = useState(initialCategory);
   const [articles, setArticles] = useState(plainArticles);
   const [promoted, setPromoted] = useState(promotedArticle);
@@ -65,10 +67,12 @@ export const BlogCover = ({
           </div>
         </div>
       )}
-      <div className="mt-5 text-center">
+      <div className="mt-5 flex justify-center">
         {categories.find((cat) => cat.id === category)?.count > 7 && (
           <Link href={`/blog/category/${category}` as any} locale={locale}>
-            <Button size="sm">Ver mas artículos</Button>
+            <Button fill="clear" color="dark">
+              {t('seeMore')}
+            </Button>
           </Link>
         )}
       </div>

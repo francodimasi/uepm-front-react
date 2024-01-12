@@ -1,9 +1,10 @@
 import { useEffect, useRef, useState } from 'react';
 import { GlassIcon } from 'ui/core';
 import { useRouter } from '@intl/navigation';
-import { defaultLocale, LocaleProps } from 'intl';
+import { defaultLocale, LocaleProps, useTranslations } from 'intl';
 
 export const BlogSearch = ({ locale = defaultLocale }: LocaleProps) => {
+  const t = useTranslations('actions');
   const [open, setOpen] = useState(false);
   const [search, setSearch] = useState('');
   const inputRef = useRef<HTMLInputElement>();
@@ -67,7 +68,7 @@ export const BlogSearch = ({ locale = defaultLocale }: LocaleProps) => {
             <input
               ref={inputRef}
               className="w-full bg-white outline-none py-5 sm:pt-0 sm:pb-3 px-3 font-['DMSans'] font-normal text-normal text-start"
-              placeholder="Ingrese la Búsqueda..."
+              placeholder={`${t('search')}...`}
               type="text"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
