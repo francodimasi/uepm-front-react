@@ -8,7 +8,7 @@ export type ArticleTitleProps = {
   title: string;
   date: string;
   readingTime: string;
-  tags: string[];
+  tags: BlogTag[];
 };
 
 export type ArticleRelatedProps = {

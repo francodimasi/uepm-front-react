@@ -1,6 +1,6 @@
-import { BlogItem } from '@models/blog.types';
+import { BlogItem, BlogTag } from '@models/blog.types';
 
 export type FeaturedArticlesProps = {
   articles: BlogItem[];
-  tag: string;
+  tag: Partial<BlogTag>;
 };

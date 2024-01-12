@@ -11,8 +11,8 @@ export type BlogArticle = {
   title: WpArticleRendered;
   content: WpArticleRendered;
   author: number;
-  category: number[];
-  tags: string[];
+  category: BlogCategory[];
+  tags: BlogTag[];
   featured_image_src: string;
   thumbnail_image_src: string;
   display_name: string;
@@ -20,13 +20,13 @@ export type BlogArticle = {
 };
 
 export type BlogItem = {
-  category: string[] | number[];
+  category: BlogCategory[];
   title: string;
   date: string;
   content: string;
   image: string;
   slug: string;
-  tags: string[];
+  tags: BlogTag[];
 };
 
 export type ResponseMetaData = {
@@ -79,5 +79,6 @@ export type BlogCategory = {
   name: string;
   slug: string;
   count: number;
+  description?: string;
 };
 export type BlogTag = BlogCategory;

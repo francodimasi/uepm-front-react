@@ -17,7 +17,7 @@ import { notFound } from 'next/navigation';
 const NEWS_SLUG = 'noticias';
 
 export default async function Page({ params: { lang = defaultLocale } }) {
-  const categories = await getCategories();
+  const categories = await getCategories(lang);
   const orderedCategories = orderCategories(categories);
   const defaultCategoryId = categories.find(
     (category) => category.slug === NEWS_SLUG,
@@ -32,7 +32,7 @@ export default async function Page({ params: { lang = defaultLocale } }) {
     suggestedArticles,
     articlesByCategory,
   ] = await Promise.all([
-    getTrendingTopics(),
+    getTrendingTopics(lang),
     getEditorSelection(lang),
     getPromotedArticle(defaultCategoryId, lang),
     getSuggestedArticles(lang),
