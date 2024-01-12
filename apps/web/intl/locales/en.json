@@ -25,6 +25,20 @@
       }
     }
   },
+  "shared": {
+    "contactUs": {
+      "title": "Send us your query",
+      "description": "Complete the form and we will respond to you as soon as possible",
+      "fields": {
+        "name": "Name",
+        "lastname": "Lastname",
+        "email": "Email",
+        "phone": "Phone",
+        "query": "Query"
+      },
+      "optional": "(Optional)"
+    }
+  },
   "actions": {
     "back": "Back",
     "cancel": "Cancel",
