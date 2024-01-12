@@ -6,7 +6,8 @@ export const Button = forwardRef<any, ButtonProps>(
   (
     {
       type = 'button',
-      variant = 'solid',
+      fill = 'solid',
+      shape = 'round',
       color = 'primary',
       size = 'md',
       className = '',
@@ -16,7 +17,7 @@ export const Button = forwardRef<any, ButtonProps>(
     },
     ref,
   ) => {
-    const classes = getClasses(size, variant, color, className, disabled);
+    const classes = getClasses(size, fill, shape, color, className, disabled);
 
     return (
       <button

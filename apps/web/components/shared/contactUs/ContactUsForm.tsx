@@ -5,7 +5,14 @@ import { ContactUsFormProps, ContactUsFormRequest } from './ContactUs.types';
 import { useState } from 'react';
 import { useContactUs } from './useContactUs';
 import clsx from 'clsx';
-import { Button, FormField, InputEmail, InputText, Textarea } from 'ui/core';
+import {
+  ArrowForwardIcon,
+  Button,
+  FormField,
+  InputEmail,
+  InputText,
+  Textarea,
+} from 'ui/core';
 
 export const ContactUsForm = ({
   className,
@@ -43,7 +50,7 @@ export const ContactUsForm = ({
   };
 
   return (
-    <div className={clsx('w-full h-auto max-w-2xl', className)}>
+    <div className={clsx('w-full h-auto lg:max-w-2xl', className)}>
       <form className="flex flex-col" onSubmit={handleSubmit(onSubmit)}>
         <div className="flex flex-col gap-6 lg:hidden">
           <Controller
@@ -190,12 +197,12 @@ export const ContactUsForm = ({
         <div className="mt-8 lg:t-12 flex justify-end">
           <Button
             type="submit"
-            className="w-full lg:w-auto"
-            color="primary"
+            color="dark"
             disabled={!isValid || sending}
             onClick={() => {}}
           >
             {buttonText}
+            <ArrowForwardIcon color="light" />
           </Button>
         </div>
       </form>
