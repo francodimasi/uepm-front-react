@@ -1,5 +1,0 @@
-.smTo2xlRangeBlock {
-  @media (min-width: 640px) and (max-width: 1536px) {
-    display: block;
-  }
-}

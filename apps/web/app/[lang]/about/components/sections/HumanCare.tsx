@@ -1,6 +1,3 @@
-import styles from './humanCare.module.css';
-
-import clsx from 'clsx';
 import { ImageWithFallback } from '@components/utils/ImageWithFallback';
 import HumanCareImg from 'public/images/humanCare.png';
 import Shapes from 'public/images/shapes.jpg';
@@ -35,15 +32,15 @@ export const HumanCare: React.FC = () => {
           />
         </div>
       </div>
-      <div className="hidden sm:flex flex-row justify-between items-start relative">
-        <div className="flex flex-col w-1/2">
+      <div className="hidden sm:grid sm:grid-rows-1 sm:grid-cols-12">
+        <div className="flex flex-col col-start-1 col-span-5 row-start-1 row-span-1">
           <span className="text-primary uppercase text-base font-medium font-['DMSans'] leading-tight">
             Nuestro compromiso
           </span>
-          <span className="text-dark text-6xl font-semibold font-['Lexend'] leading-[72px] mt-[13px]">
+          <span className="break-words text-dark text-6xl font-semibold font-['Lexend'] leading-[72px] mt-[13px]">
             Acompañamiento humano
           </span>
-          <span className="text-dark text-base font-normal font-['DMSans'] leading-normal mt-[34px]">
+          <span className="break-words text-dark text-base font-normal font-['DMSans'] leading-normal mt-[34px]">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
             ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -62,22 +59,7 @@ export const HumanCare: React.FC = () => {
             }}
           />
         </div>
-        <div
-          className={clsx(
-            'hidden absolute bottom-0 right-0',
-            styles.smTo2xlRangeBlock,
-          )}
-        >
-          <ImageWithFallback
-            src={HumanCareImg}
-            alt="human care"
-            style={{
-              height: 'auto',
-              width: 'auto',
-            }}
-          />
-        </div>
-        <div className="h-full hidden 2xl:block absolute bottom-0 right-0">
+        <div className='col-start-6 col-span-7 row-start-1 row-span-1'>
           <ImageWithFallback
             src={HumanCareImg}
             alt="human care"
