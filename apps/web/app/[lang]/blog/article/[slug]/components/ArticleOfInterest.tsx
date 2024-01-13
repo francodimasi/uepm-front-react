@@ -11,7 +11,7 @@ export const ArticleOfInterest: React.FC<
 
   return (
     <div className="flex flex-col pb-6 border-b border-dark border-opacity-20">
-      <H4 label={t('title')} className='text-primary'/>
+      <H4 label={t('title')} className="text-primary" />
       <BlogItem
         key={article.slug}
         locale={locale}

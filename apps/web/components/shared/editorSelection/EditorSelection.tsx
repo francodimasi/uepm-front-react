@@ -19,7 +19,7 @@ export const EditorSelection = ({
 
   return (
     <div className="flex flex-col justify-start items-start">
-      <H4 label={t('title')} className='text-primary my-0 lg:my-0'/>
+      <H4 label={t('title')} className="text-primary my-0 lg:my-0" />
       {articles.map((article) => (
         <div
           className="flex-1 last:mr-0 border-b-1 border-gray-medium py-3"

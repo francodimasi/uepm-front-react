@@ -32,7 +32,7 @@ export const TrendingTopics = ({
 
   return (
     <div className="flex-col justify-start items-start gap-5 flex">
-      <H4 label={t('title')} className='text-primary my-0 lg:my-0'/>
+      <H4 label={t('title')} className="text-primary my-0 lg:my-0" />
       <div className="relative overflow-hidden">
         <div
           className={clsx(
