@@ -20,7 +20,7 @@ export const ContactUs = ({}: ContactUsProps) => {
       </div>
       <div className="hidden lg:flex mx-24 xl:mx-36 2xl:mx-48">
         <div className="flex flex-col text-start pe-12">
-          <H2 label={t('title')} className='lg:pb-0 xl:pb-0' />
+          <H2 label={t('title')} className="lg:pb-0 xl:pb-0" />
           <P1 label={t('description')} />
         </div>
         <ContactUsForm

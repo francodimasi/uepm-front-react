@@ -21,7 +21,7 @@ export const Team: React.FC<TeamProps & LocaleProps> = ({
           text={t('tag')}
           className='py-2 text-primary-dark text-sm lg:text-base font-medium font-["DMSans"] uppercase'
         />
-        <H2 label={t('title')} className='mt-0 sm:mt-0 lg:mt-0 xl:mt-0' />
+        <H2 label={t('title')} className="mt-0 sm:mt-0 lg:mt-0 xl:mt-0" />
         <H3 label={t('board')} />
         <div className="grid grid-cols-2 sm:hidden gap-4">
           {board.map((mmember, index) => (
@@ -90,7 +90,7 @@ export const Team: React.FC<TeamProps & LocaleProps> = ({
         )}
         {staff?.length > 4 && (
           <div className="sm:hidden pt-6 flex justify-center">
-            <Link href="/" locale={locale} className='flex'>
+            <Link href="/" locale={locale} className="flex">
               <L1 label={tActions('seeMore')} />
             </Link>
           </div>
