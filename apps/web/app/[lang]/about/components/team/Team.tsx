@@ -1,6 +1,6 @@
 import { LocaleProps, useTranslations } from 'intl';
 import { TeamProps } from './Team.types';
-import { Tag } from 'ui/core';
+import { H2, H3, L1, Tag } from 'ui/core';
 import { TeamMemerItem } from './TeamMemberItem';
 import { Link } from '@intl/navigation';
 
@@ -21,12 +21,8 @@ export const Team: React.FC<TeamProps & LocaleProps> = ({
           text={t('tag')}
           className='py-2 text-primary-dark text-sm lg:text-base font-medium font-["DMSans"] uppercase'
         />
-        <span className="pb-4 pb-10 sm:pb-20 text-dark text-2xl leading-8 sm:text-4xl sm:leading-10 lg:text-6xl lg:leading-[72px] font-semibold font-['Lexend']">
-          {t('title')}
-        </span>
-        <span className="pb-2 pb-5 sm:pb-10 text-dark text-xl leading-5 sm:text-2xl sm:leading-8 lg:text-3xl lg:leading-10 font-semibold font-['Lexend']">
-          {t('board')}
-        </span>
+        <H2 label={t('title')} className='mt-0 sm:mt-0 lg:mt-0 xl:mt-0' />
+        <H3 label={t('board')} />
         <div className="grid grid-cols-2 sm:hidden gap-4">
           {board.map((mmember, index) => (
             <TeamMemerItem
@@ -56,9 +52,7 @@ export const Team: React.FC<TeamProps & LocaleProps> = ({
         </div>
         {staff && (
           <>
-            <span className="pb-2 pb-6 sm:pb-10 text-dark text-xl leading-5 sm:text-2xl sm:leading-8 lg:text-3xl lg:leading-10 font-semibold font-['Lexend']">
-              {t('staff')}
-            </span>
+            <H3 label={t('staff')} />
             <div className="grid grid-cols-2 sm:hidden gap-4">
               {staff.slice(0, 4).map((mmember, index) => (
                 <TeamMemerItem
@@ -95,11 +89,9 @@ export const Team: React.FC<TeamProps & LocaleProps> = ({
           </>
         )}
         {staff?.length > 4 && (
-          <div className="sm:hidden pt-6">
-            <Link href="/" locale={locale}>
-              <span className="flex justify-center text-base font-semibold font-['DMSans'] leading-none">
-                {tActions('seeMore')}
-              </span>
+          <div className="sm:hidden pt-6 flex justify-center">
+            <Link href="/" locale={locale} className='flex'>
+              <L1 label={tActions('seeMore')} />
             </Link>
           </div>
         )}

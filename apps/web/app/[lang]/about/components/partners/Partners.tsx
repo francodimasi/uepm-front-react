@@ -1,6 +1,6 @@
 import { LocaleProps, useTranslations } from 'intl';
 import { PartnersProps } from './Partners.types';
-import { Scroll, Tag } from 'ui/core';
+import { H2, L1, Scroll, Tag } from 'ui/core';
 import { PartnerItem } from './PartnerItem';
 import { Link } from '@intl/navigation';
 
@@ -20,15 +20,15 @@ export const Partners: React.FC<PartnersProps & LocaleProps> = ({
           text={t('tag')}
           className='py-2 text-primary-dark text-sm lg:text-base font-medium font-["DMSans"] uppercase'
         />
-        <div className="relative mb-4 mb-10 sm:mb-16 text-dark text-2xl leading-8 sm:text-4xl sm:leading-10 lg:text-6xl lg:leading-[72px] font-semibold font-['Lexend']">
-          <div className="absolute right-0 h-full flex items-center hidden sm:flex">
-            <Link href="/partners" locale={locale}>
-              <span className="flex text-base font-['DMSans'] leading-none">
-                {tActions('seeMore')} →
-              </span>
-            </Link>
+        <div className="pb-3.5 sm:pb-4 lg:pb-5 xl:pb-8">
+          <div className="relative mb-6 sm:mb-8 lg:mb-10 xl:mb-16">
+            <div className="absolute right-0 h-full flex items-center hidden sm:flex">
+              <Link href="/partners" locale={locale}>
+                <L1 label={`${tActions('seeMore')} →`} />
+              </Link>
+            </div>
+            <H2 label={t('title')} />
           </div>
-          {t('title')}
         </div>
         <div className="grid grid-cols-2 sm:hidden gap-4">
           {partners.slice(0, 6).map((partner, index) => (
@@ -41,25 +41,23 @@ export const Partners: React.FC<PartnersProps & LocaleProps> = ({
           ))}
         </div>
         <div className="hidden sm:flex xl:hidden">
-          <Scroll className="w-full h-40">
+          <Scroll className="w-full h-36">
             {partners.map((partner, index) => (
               <PartnerItem key={index} partner={partner} size="xl" />
             ))}
           </Scroll>
         </div>
         <div className="hidden xl:flex">
-          <Scroll className="w-full h-40">
+          <Scroll className="w-full h-44">
             {partners.map((partner, index) => (
               <PartnerItem key={index} partner={partner} size="2xl" />
             ))}
           </Scroll>
         </div>
         {partners.length > 6 && (
-          <div className="sm:hidden pt-6">
-            <Link href="/partners" locale={locale}>
-              <span className="flex justify-center text-base font-semibold font-['DMSans'] leading-none">
-                {tActions('seeMore')}
-              </span>
+          <div className="sm:hidden pt-6 flex justify-center">
+            <Link href="/partners" locale={locale} className="flex">
+              <L1 label={tActions('seeMore')} />
             </Link>
           </div>
         )}

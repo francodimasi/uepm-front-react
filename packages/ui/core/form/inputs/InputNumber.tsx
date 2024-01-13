@@ -12,7 +12,7 @@ export const InputNumber = forwardRef<any, FormInputProps>(
         name={name}
         id={name}
         className={clsx(
-          'block border-b-1 border-gray-medium pe-4 py-4 text-dark placeholder:text-gray-dark focus:border-primary-dark text-xl leading-4 cursor-text outline-none',
+          'block border-b-1 border-gray-medium pe-4 py-4 text-dark placeholder:text-gray-dark focus:border-primary-dark text-base lg:text-lg leading-4 lg:leading-5 cursor-text outline-none',
           {
             'cursor-auto placeholder:text-gray-light border-gray-light':
               disabled,
