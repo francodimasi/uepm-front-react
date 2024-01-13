@@ -6,7 +6,7 @@ export const ArticleTags: React.FC<ArticleTagsProps> = ({
   tags,
   className,
 }) => {
-  if (!tags) return null;
+  if (!tags || tags.length === 0) return null;
 
   return (
     <div className="relative overflow-hidden">

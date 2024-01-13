@@ -10,3 +10,4 @@ export * from './scroll';
 export * from './select';
 export * from './tabs';
 export * from './tag';
+export * from './typography';
