@@ -4,6 +4,7 @@ import Link from 'next/link';
 import clsx from 'clsx';
 import { AnimatePresence, motion } from 'framer-motion';
 import { NavLinkProps } from './NavLink.types';
+import { L1 } from '../typography';
 
 export const NavLink: React.FC<NavLinkProps> = ({
   label,
@@ -37,7 +38,7 @@ export const NavLink: React.FC<NavLinkProps> = ({
           />
         )}
       </AnimatePresence>
-      <span className="relative z-10">{label}</span>
+      <L1 label={label} className="relative z-10 font-medium" />
     </Link>
   );
 };

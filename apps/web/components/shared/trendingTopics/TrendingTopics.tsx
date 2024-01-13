@@ -1,6 +1,6 @@
 'use client';
 
-import { Tag } from 'ui/core';
+import { H4, Tag } from 'ui/core';
 import { TrendingTopicsSkeleton } from './TrendingTopicsSkeleton';
 import { TrendingTopicsProps } from './TrendingTopics.types';
 import { defaultLocale, LocaleProps, useTranslations } from 'intl';
@@ -32,9 +32,7 @@ export const TrendingTopics = ({
 
   return (
     <div className="flex-col justify-start items-start gap-5 flex">
-      <div className="text-2xl font-semibold font-['Lexend'] leading-7 text-primary">
-        {t('title')}
-      </div>
+      <H4 label={t('title')} className='text-primary my-0 lg:my-0'/>
       <div className="relative overflow-hidden">
         <div
           className={clsx(

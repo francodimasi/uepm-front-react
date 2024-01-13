@@ -78,7 +78,7 @@
       "title": "Escolha do Editor"
     },
     "featuredArticles": {
-      "title": "Você pode estar interessado"
+      "title": "Mais sobre o assunto"
     },
     "trendingTopics": {
       "title": "Tópicos mais pesquisados"
@@ -103,6 +103,7 @@
     "no": "Não"
   },
   "commonTerms": {
-    "of": "de"
+    "of": "de",
+    "ofReading": "de leitura"
   }
 }

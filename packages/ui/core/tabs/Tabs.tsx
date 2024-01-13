@@ -23,20 +23,20 @@ export const Tabs = ({ items, selected, onChange, classes }: TabsProps) => {
       spaceBetween={30}
       className={clsx(
         classes,
-        'w-100 border-b border-b-gray-light justify-center items-center inline-flex',
+        'w-100 border-b border-b-gray-light justify-start items-center',
       )}
     >
       {items?.map(({ name, id }) => (
         <SwiperSlide
           key={id}
-          className={`font-['DMSans'] grow cursor-pointer ${
+          className={`font-['DMSans'] cursor-pointer ${
             id === selected
-              ? 'border-b-2 border-black font-semibold'
-              : ' font-light hover:font-normal hover:border-b-1 hover:border-gray-dark'
+              ? 'border-b-2 border-dark font-bold'
+              : 'font-normal hover:font-semibold hover:border-b-1 hover:border-gray-dark'
           } `}
           onClick={() => onChange(id)}
         >
-          <div className="text-center text-dark text-base  ms-1 leading-none w-full whitespace-nowrap">
+          <div className="text-center text-dark text-base ms-1 leading-none whitespace-nowrap">
             {name}
           </div>
         </SwiperSlide>

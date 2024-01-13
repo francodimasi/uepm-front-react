@@ -16,6 +16,7 @@ export type ButtonProps = PropsWithClassName & {
   fill?: ButtonFill;
   shape?: ButtonShape;
   expand?: ButtonExpand;
+  iconOnly?: boolean;
   color?: ButtonColor;
   size?: ButtonSize;
   disabled?: boolean;

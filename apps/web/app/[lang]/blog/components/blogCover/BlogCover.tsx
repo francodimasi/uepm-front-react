@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { BlogFilterHeader } from '../blogFilter';
 import { getPromotedArticle, getArticlesByCategory } from '@api/blog/requests';
 import { BlogCoverSkeleton } from './BlogCoverSkeleton';
-import { Button } from 'ui/core';
+import { L1 } from 'ui/core';
 import { BlogFrontPageParam } from './BlogCover.types';
 import { Link } from '@intl/navigation';
 import { LocaleProps } from 'intl/src/types';
@@ -69,11 +69,15 @@ export const BlogCover = ({
       )}
       <div className="mt-5 flex justify-center">
         {categories.find((cat) => cat.id === category)?.count > 7 && (
-          <Link href={`/blog/category/${category}` as any} locale={locale}>
-            <Button fill="clear" color="dark">
-              {t('seeMore')}
-            </Button>
-          </Link>
+          <div className="pt-6 flex justify-center">
+            <Link
+              href={`/blog/category/${category}` as any}
+              locale={locale}
+              className="flex"
+            >
+              <L1 label={t('seeMore')} />
+            </Link>
+          </div>
         )}
       </div>
     </div>

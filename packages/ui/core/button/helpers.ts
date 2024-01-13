@@ -42,6 +42,7 @@ export const getClasses = ({
   fill,
   shape,
   expand,
+  iconOnly,
   color,
   classes,
   disabled,
@@ -51,16 +52,18 @@ export const getClasses = ({
   fill?: ButtonFill;
   shape?: ButtonShape;
   expand?: ButtonExpand;
+  iconOnly?: boolean;
   color?: ButtonColor;
   classes?: string;
   disabled?: boolean;
   childs: number;
 }) => {
   const buttonClasses = clsx(
-    'w-full sm:w-auto',
     'rounded',
     'flex items-center',
     {
+      'w-full sm:w-auto': !iconOnly,
+      'w-auto': iconOnly,
       'bg-primary text-light': color === 'primary' && fill === 'solid',
       'bg-secondary text-light': color === 'secondary' && fill === 'solid',
       'bg-tertiary text-light': color === 'tertiary' && fill === 'solid',
