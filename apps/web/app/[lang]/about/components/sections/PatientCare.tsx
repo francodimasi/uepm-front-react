@@ -12,7 +12,7 @@ export const PatientCare: React.FC = () => {
           Calidad y cuidado del paciente
         </span>
         <div className="grid grid-rows-5 grid-cols-12 mt-10 ">
-          <div className="row-start-1 row-span-3 col-start-1 col-span-12 bg-[url('../public/images/doctor-talking-with-her-patient.png')] bg-no-repeat bg-cover"></div>
+          <div className="row-start-1 row-span-3 col-start-1 col-span-12 bg-[url('../public/images/doctor-talking-with-her-patient.png')] bg-no-repeat bg-cover bg-top"></div>
           <div className="row-start-3 row-span-3 col-start-2 col-span-10 flex flex-col bg-[#FFFFFF]">
             <ImageWithFallback
               src={IsoLogo}
