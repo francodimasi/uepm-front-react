@@ -69,31 +69,31 @@ export async function generateMetadata({
 
   return {
     title: yoast_head_json.title
-      ? yoast_head_json.title + ' - Un Ensayo para Mí Yoast'
-      : article.title.rendered + ' - Un Ensayo para Mí Rendered',
+      ? yoast_head_json.title + ' - ' + process.env.NEXT_PUBLIC_COMPANY_NAME
+      : article.title.rendered + ' - ' + process.env.NEXT_PUBLIC_COMPANY_NAME,
     description: yoast_head_json.description
       ? yoast_head_json.description
       : article['excerpt'].rendered,
     openGraph: {
       title: yoast_head_json.og_title
-        ? yoast_head_json.og_title + ' - Un Ensayo para Mí'
-        : article.title.rendered + ' - Un Ensayo para Mí',
+        ? yoast_head_json.og_title + ' - ' + process.env.NEXT_PUBLIC_COMPANY_NAME
+        : article.title.rendered + ' - ' + process.env.NEXT_PUBLIC_COMPANY_NAME,
       description: yoast_head_json.og_description
         ? yoast_head_json.og_description
         : article['excerpt'].rendered,
       type: 'article',
-      siteName: 'Un Ensayo para Mí',
+      siteName: process.env.NEXT_PUBLIC_COMPANY_NAME,
       images:
         typeof yoast_head_json.og_image !== typeof undefined &&
         yoast_head_json.og_image[0].url
           ? yoast_head_json.og_image[0].url
-          : 'https://www.unensayoparami.org/img/logo.png',
+          : process.env.NEXT_PUBLIC_COMPANY_LOGO,
       url: url,
     },
     other: {
       image: article.featured_image_src
         ? article.featured_image_src
-        : 'https://www.unensayoparami.org/img/logo.png',
+        : process.env.NEXT_PUBLIC_COMPANY_LOGO,
     },
   };
 }
