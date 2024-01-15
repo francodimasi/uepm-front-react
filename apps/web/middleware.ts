@@ -4,7 +4,11 @@ import { localePrefix, pathnames } from './intl/navigation';
 import createIntlMiddleware from 'next-intl/middleware';
 import { NextRequest, NextResponse } from 'next/server';
 
-export default async function middleware(request: NextRequest) {
+export default function middleware(request: NextRequest) {
+  const url = new URL(request.url);
+  const origin = url.origin;
+  const pathname = url.pathname;
+
   const [, locale, ...segments] = request.nextUrl.pathname.split('/');
 
   if (locale !== null && !locales.includes(locale)) {
@@ -20,7 +24,14 @@ export default async function middleware(request: NextRequest) {
     localePrefix,
     pathnames,
   });
-  return handleI18nRouting(request);
+
+  const response = handleI18nRouting(request);
+
+  response.headers.set('x-url', request.url);
+  response.headers.set('x-origin', origin);
+  response.headers.set('x-pathname', pathname);
+
+  return response;
 }
 
 export const config = {
