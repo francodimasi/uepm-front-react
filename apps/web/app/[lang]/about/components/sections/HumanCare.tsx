@@ -1,6 +1,6 @@
 import { ImageWithFallback } from '@components/utils/ImageWithFallback';
 import HumanCareImg from 'public/images/humanCare.png';
-import Shapes from 'public/images/shapes.jpg';
+import Shapes from 'public/images/shapes.png';
 
 export const HumanCare: React.FC = () => {
   return (
