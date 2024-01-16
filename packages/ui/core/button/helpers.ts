@@ -1,6 +1,7 @@
 import clsx from 'clsx';
 import {
   ButtonColor,
+  ButtonExpand,
   ButtonFill,
   ButtonShape,
   ButtonSize,
@@ -36,18 +37,33 @@ const getSizeY = (size: ButtonSize) => {
   }
 };
 
-export const getClasses = (
-  size: ButtonSize,
-  fill?: ButtonFill,
-  shape?: ButtonShape,
-  color?: ButtonColor,
-  classes?: string,
-  disabled?: boolean,
-) => {
+export const getClasses = ({
+  size,
+  fill,
+  shape,
+  expand,
+  iconOnly,
+  color,
+  classes,
+  disabled,
+  childs,
+}: {
+  size: ButtonSize;
+  fill?: ButtonFill;
+  shape?: ButtonShape;
+  expand?: ButtonExpand;
+  iconOnly?: boolean;
+  color?: ButtonColor;
+  classes?: string;
+  disabled?: boolean;
+  childs: number;
+}) => {
   const buttonClasses = clsx(
-    'w-full sm:w-auto',
     'rounded',
+    'flex items-center',
     {
+      'w-full sm:w-auto': !iconOnly,
+      'w-auto': iconOnly,
       'bg-primary text-light': color === 'primary' && fill === 'solid',
       'bg-secondary text-light': color === 'secondary' && fill === 'solid',
       'bg-tertiary text-light': color === 'tertiary' && fill === 'solid',
@@ -61,7 +77,7 @@ export const getClasses = (
         fill === 'outline' && color === 'tertiary',
       'border-light text-light': fill === 'outline' && color === 'light',
       'border-dark text-dark': fill === 'outline' && color === 'dark',
-      'border-transparent': fill === 'clear',
+      'border-transparent bg-transparent': fill === 'clear',
       'text-primary': fill !== 'solid' && color === 'primary',
       'text-secondary': fill !== 'solid' && color === 'secondary',
       'text-tertiary': fill !== 'solid' && color === 'tertiary',
@@ -77,9 +93,16 @@ export const getClasses = (
     `py-${getSizeY(size)}`,
     'font-medium',
     'border-2',
-    'flex items-center gap-16 justify-between',
     classes,
   );
 
-  return buttonClasses;
+  const spanClasses = clsx('w-full items-center', {
+    'gap-16': expand === 'full',
+    'gap-8': expand === 'default',
+    'gap-2': expand === 'none',
+    'flex justify-between': childs > 1,
+    block: childs <= 1,
+  });
+
+  return { buttonClasses, spanClasses };
 };

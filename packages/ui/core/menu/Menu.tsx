@@ -6,6 +6,7 @@ import { MenuProps, MenuItem } from './Menu.types';
 import { MenuLink } from './MenuLink';
 import { CloseIcon, MenuIcon } from '../icons';
 import { LocaleProps } from 'intl';
+import { L1 } from '../typography';
 
 export const Menu: React.FC<MenuProps & LocaleProps> = ({
   className,
@@ -58,7 +59,7 @@ export const Menu: React.FC<MenuProps & LocaleProps> = ({
                         key={index}
                         href={locale ? `/${locale}${item.href}` : item.href}
                       >
-                        {item.label}
+                        <L1 label={item.label} className="font-medium" />
                       </MenuLink>
                     ))}
                   </div>

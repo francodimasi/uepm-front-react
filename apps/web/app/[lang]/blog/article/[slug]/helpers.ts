@@ -46,3 +46,45 @@ export const getNextArticle = async function (
     return null;
   }
 };
+
+/**
+ * Add meta data to the page
+ */
+export const setMetadata = function ({
+  meta,
+  url,
+  article,
+}: {
+  meta: any;
+  url: string;
+  article: BlogArticle;
+}) {
+  return {
+    title: meta.title
+      ? meta.title + ' - ' + process.env.NEXT_PUBLIC_COMPANY_NAME
+      : article.title.rendered + ' - ' + process.env.NEXT_PUBLIC_COMPANY_NAME,
+    description: meta.description
+      ? meta.description
+      : article['excerpt'].rendered,
+    openGraph: {
+      title: meta.og_title
+        ? meta.og_title + ' - ' + process.env.NEXT_PUBLIC_COMPANY_NAME
+        : article.title.rendered + ' - ' + process.env.NEXT_PUBLIC_COMPANY_NAME,
+      description: meta.og_description
+        ? meta.og_description
+        : article['excerpt'].rendered,
+      type: 'article',
+      siteName: process.env.NEXT_PUBLIC_COMPANY_NAME,
+      images:
+        typeof meta.og_image !== typeof undefined && meta.og_image[0].url
+          ? meta.og_image[0].url
+          : process.env.NEXT_PUBLIC_COMPANY_LOGO,
+      url: url,
+    },
+    other: {
+      image: article.featured_image_src
+        ? article.featured_image_src
+        : process.env.NEXT_PUBLIC_COMPANY_LOGO,
+    },
+  };
+};

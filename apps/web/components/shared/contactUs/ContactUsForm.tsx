@@ -115,7 +115,7 @@ export const ContactUsForm = ({
             )}
           />
         </div>
-        <div className="hidden lg:flex flex-col gap-6">
+        <div className="hidden lg:flex flex-col gap-6 mt-3.5 sm:mt-4 lg:mt-5 xl:mt-8">
           <div className="grid grid-cols-4 gap-6">
             <div className="col-span-2">
               <Controller
@@ -167,7 +167,7 @@ export const ContactUsForm = ({
             </div>
             <div className="col-span-2">
               <Controller
-                name="email"
+                name="phone"
                 control={control}
                 rules={{ required: initialValues.phone.required }}
                 disabled={sending}

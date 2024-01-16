@@ -7,6 +7,37 @@
     "es": "Español",
     "pt": "Portugués"
   },
+  "menu": {
+    "links": {
+      "patients": "Pacientes",
+      "sponsors": "Sponsors",
+      "physicians": "Investigadores",
+      "aboutUs": "Quiénes somos",
+      "blog": "Noticias Médicas",
+      "products": "Productos"
+    }
+  },
+  "footer": {
+    "links": {
+      "sponsors": "Sponsors",
+      "physicians": "Investigadores",
+      "mission": "Nuestra misión",
+      "team": "Nuestro equipo",
+      "faqs": "FAQs",
+      "news": "Últimas noticias",
+      "science": "Ciencia",
+      "studies": "Ensayos clínicos",
+      "uepmPatients": "UEPM Pacientes",
+      "uepmOnco": "UEPM Onco",
+      "uepmPhysicians": "UEPM Investigadores"
+    }
+  },
+  "legal": {
+    "links": {
+      "t&c": "Términos y Condiciones",
+      "privacy": "Política de privacidad"
+    }
+  },
   "home": {
     "lang": "Español"
   },
@@ -25,6 +56,11 @@
       }
     }
   },
+  "blog": {
+    "articleOfInterest": {
+      "title": "Te podría interesar"
+    }
+  },
   "shared": {
     "contactUs": {
       "title": "Envíanos tu consulta",
@@ -37,6 +73,18 @@
         "query": "Consulta"
       },
       "optional": "(Opcional)"
+    },
+    "faqs": {
+      "title": "FAQs"
+    },
+    "editorSelection": {
+      "title": "Selección del editor"
+    },
+    "featuredArticles": {
+      "title": "Más sobre el tema"
+    },
+    "trendingTopics": {
+      "title": "Temas más buscados"
     }
   },
   "actions": {
@@ -48,14 +96,17 @@
     "ok": "Aceptar",
     "previous": "Anterior",
     "save": "Guardar",
+    "search": "Buscar",
     "select": "Seleccionar",
     "submit": "Enviar",
     "seeMore": "Ver más",
     "seeLess": "Ver menos",
+    "share": "Compartir",
     "yes": "Sí",
     "no": "No"
   },
   "commonTerms": {
-    "of": "de"
+    "of": "de",
+    "ofReading": "de lectura"
   }
 }

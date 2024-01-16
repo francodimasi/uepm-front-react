@@ -27,15 +27,15 @@ export const Select = ({
       {({ open }) => (
         <>
           {label && (
-            <Listbox.Label className="block text-sm font-medium leading-6 ">
+            <Listbox.Label className="block text-sm font-medium leading-6">
               {label}
             </Listbox.Label>
           )}
-          <div className="relative mt-2">
+          <div className="relative mt-2 mx-0.5">
             <Listbox.Button
               className={clsx(
                 className,
-                `relative w-full cursor-default py-3.5 pl-3 pr-10 ms-1 text-left text-${color} font-semibold shadow-sm border-1 border-${color} focus:outline-none focus:border-2 focus:border-primary sm:text-sm sm:leading-6`,
+                `relative w-full cursor-default py-3.5 pl-3 pr-10 text-left text-${color} font-["DMSans"] font-semibold shadow-sm border-1 border-${color} focus:outline-none sm:text-sm sm:leading-6`,
               )}
             >
               <span className="block truncate">{selectedItem?.name}</span>
@@ -58,7 +58,7 @@ export const Select = ({
                   menuPlacement === 'bottom'
                     ? 'mt-2 top-full'
                     : 'mb-2 bottom-full',
-                  'absolute ms-1 z-10 mt-1 max-h-60 w-full overflow-auto bg-light text-dark py-1 text-base shadow-lg ring-1 ring-gray-dark focus:outline-none sm:text-sm',
+                  'absolute z-10 mt-1 max-h-60 w-full overflow-auto bg-light text-dark font-["DMSans"] text-base shadow-lg ring-1 ring-gray-dark focus:outline-none sm:text-sm',
                 )}
               >
                 {items.map((item) => (

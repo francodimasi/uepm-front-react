@@ -1,9 +1,9 @@
 'use client';
 
-import { Tag } from 'ui/core';
+import { H4, Tag } from 'ui/core';
 import { TrendingTopicsSkeleton } from './TrendingTopicsSkeleton';
 import { TrendingTopicsProps } from './TrendingTopics.types';
-import { defaultLocale, LocaleProps } from 'intl';
+import { defaultLocale, LocaleProps, useTranslations } from 'intl';
 import { useRouter } from '@intl/navigation';
 import clsx from 'clsx';
 
@@ -13,6 +13,7 @@ export const TrendingTopics = ({
   orientation = 'horizontal',
 }: TrendingTopicsProps & LocaleProps) => {
   const router = useRouter();
+  const t = useTranslations('shared.trendingTopics');
 
   if (!topics) return <TrendingTopicsSkeleton />;
   if (topics.length === 0) return null;
@@ -31,10 +32,7 @@ export const TrendingTopics = ({
 
   return (
     <div className="flex-col justify-start items-start gap-5 flex">
-      <div className="text-2xl font-semibold font-['Lexend'] leading-7 text-primary">
-        {/*@todo i18nPending translation*/}
-        Temas más buscados
-      </div>
+      <H4 label={t('title')} className="text-primary my-0 lg:my-0" />
       <div className="relative overflow-hidden">
         <div
           className={clsx(

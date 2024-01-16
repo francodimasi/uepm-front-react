@@ -1,27 +1,31 @@
 import { Link } from '@intl/navigation';
 import { FeaturedArticlesProps } from './FeaturedArticle.types';
 import { BlogItem } from '../blogItem';
-import { LocaleProps } from 'intl';
+import { LocaleProps, useTranslations } from 'intl';
 import clsx from 'clsx';
+import { H4, L1 } from 'ui/core';
 
 export const FeaturedArticles: React.FC<
   FeaturedArticlesProps & LocaleProps
 > = ({ articles, tag, locale }) => {
+  const t = useTranslations('shared.featuredArticles');
+  const tActions = useTranslations('actions');
+
   if (!articles || articles.length === 0) return null;
 
   return (
     <div className="flex flex-col gap-8 pt-2">
       <div className="flex justify-between items-center">
-        <span className="text-primary lg:text-dark text-2xl font-semibold font-['Lexend'] leading-8 lg:leading-7">
-          Más sobre el tema
-        </span>
-        <Link href={`/blog/${tag.name}` as any} locale={locale}>
-          <span className="text-dark text-base font-bold font-['DMSans'] leading-none">
-            Ver más →
-          </span>
+        <H4 label={t('title')} className="text-primary" />
+        <Link
+          href={`/blog/${tag.name}` as any}
+          locale={locale}
+          className="flex"
+        >
+          <L1 label={`${tActions('seeMore')} →`} />
         </Link>
       </div>
-      <div className={clsx('hidden xl:grid grid-cols-4 gap-6')}>
+      <div className={clsx('hidden xl:grid grid-cols-4 gap-6 pb-10')}>
         {articles.map((article) => (
           <BlogItem
             key={article.slug}
@@ -35,7 +39,7 @@ export const FeaturedArticles: React.FC<
           />
         ))}
       </div>
-      <div className={clsx('hidden sm:flex flex-col gap-4 xl:hidden')}>
+      <div className={clsx('hidden sm:flex flex-col gap-4 pb-10 xl:hidden')}>
         {articles.map((article) => (
           <BlogItem
             key={article.slug}
@@ -49,7 +53,7 @@ export const FeaturedArticles: React.FC<
           />
         ))}
       </div>
-      <div className={clsx('sm:hidden flex flex-col gap-4 xl:hidden')}>
+      <div className={clsx('sm:hidden flex flex-col gap-4 pb-10 xl:hidden')}>
         {articles.map((article) => (
           <BlogItem
             key={article.slug}

@@ -7,6 +7,37 @@
     "es": "Espanhol",
     "pt": "Português"
   },
+  "menu": {
+    "links": {
+      "patients": "Pacientes",
+      "sponsors": "Patrocinadores",
+      "physicians": "Pesquisadores",
+      "aboutUs": "Quem somos",
+      "blog": "Notícias médicas",
+      "products": "Produtos"
+    }
+  },
+  "footer": {
+    "links": {
+      "sponsors": "Sponsors",
+      "physicians": "Pesquisadores",
+      "mission": "Nossa missão",
+      "team": "Nossa equipe",
+      "faqs": "FAQs",
+      "news": "Últimas notícias",
+      "science": "Ciência",
+      "studies": "Ensaios clínicos",
+      "uepmPatients": "UEPM Pacientes",
+      "uepmOnco": "UEPM Onco",
+      "uepmPhysicians": "UEPM Pesquisadores"
+    }
+  },
+  "legal": {
+    "links": {
+      "t&c": "Termos e Condições",
+      "privacy": "Política de privacidade"
+    }
+  },
   "home": {
     "lang": "Português"
   },
@@ -25,6 +56,11 @@
       }
     }
   },
+  "blog": {
+    "articleOfInterest": {
+      "title": "Você pode estar interessado"
+    }
+  },
   "shared": {
     "contactUs": {
       "title": "Envie-nos a sua consulta",
@@ -37,25 +73,40 @@
         "query": "Consulta"
       },
       "optional": "(Opcional)"
+    },
+    "faqs": {
+      "title": "FAQs"
+    },
+    "editorSelection": {
+      "title": "Escolha do Editor"
+    },
+    "featuredArticles": {
+      "title": "Mais sobre o assunto"
+    },
+    "trendingTopics": {
+      "title": "Tópicos mais pesquisados"
     }
   },
   "actions": {
-    "back": "Atrás",
+    "back": "Voltar",
     "cancel": "Cancelar",
-    "clear": "Borrar",
-    "close": "Cerrar",
-    "next": "Siguiente",
-    "ok": "Aceptar",
-    "previous": "Anterior",
-    "save": "Guardar",
-    "select": "Seleccionar",
+    "clear": "Excluir",
+    "close": "Fechar",
+    "next": "Seguindo",
+    "ok": "Aceitar",
+    "previous": "Antigo",
+    "save": "Manter",
+    "search": "Procurar",
+    "select": "Selecione",
     "submit": "Enviar",
-    "seeMore": "Ver más",
+    "seeMore": "Ver mais",
     "seeLess": "Ver menos",
-    "yes": "Sí",
-    "no": "No"
+    "share": "Compartilhar",
+    "yes": "Sim",
+    "no": "Não"
   },
   "commonTerms": {
-    "of": "de"
+    "of": "de",
+    "ofReading": "de leitura"
   }
 }

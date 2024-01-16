@@ -8,27 +8,27 @@ import { LocaleProps } from 'intl';
 import { SwitchLocale } from '@intl/components/SwitchLocale';
 
 const patientLinks: FooterSectionLinkProps[] = [
-  { label: 'Sponsors', href: '/partners' },
-  { label: 'Physicians', href: '' },
+  { id: 'sponsors', href: '/partners' },
+  { id: 'physicians', href: '' },
 ];
 const aboutUsLinks: FooterSectionLinkProps[] = [
-  { label: 'Our mission', href: '/about' },
-  { label: 'The team', href: '/about' },
-  { label: 'FAQs', href: '/about' },
+  { id: 'mission', href: '/about' },
+  { id: 'team', href: '/about' },
+  { id: 'faqs', href: '/about' },
 ];
 const newsLinks: FooterSectionLinkProps[] = [
-  { label: 'Last news', href: '/blog' },
-  { label: 'Science', href: '/blog' },
-  { label: 'Studies', href: '' },
+  { id: 'news', href: '/blog' },
+  { id: 'science', href: '/blog' },
+  { id: 'studies', href: '' },
 ];
 const productsLinks: FooterSectionLinkProps[] = [
-  { label: 'UEPM Patients', href: '', outbound: true },
+  { id: 'uepmPatients', href: '', outbound: true },
   {
-    label: 'UEPM Onco',
+    id: 'uepmOnco',
     href: 'https://onco.unensayoparami.org',
     outbound: true,
   },
-  { label: 'UEPM Physicians', href: '', outbound: true },
+  { id: 'uepmPhysicians', href: '', outbound: true },
 ];
 
 type FooterProps = PropsWithChildren & LocaleProps;

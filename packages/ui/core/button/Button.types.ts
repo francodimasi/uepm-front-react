@@ -9,11 +9,14 @@ export type ButtonColor =
   | 'dark';
 export type ButtonSize = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
 export type ButtonShape = 'round' | 'square';
+export type ButtonExpand = 'full' | 'default' | 'none';
 
 export type ButtonProps = PropsWithClassName & {
   type?: 'submit' | 'button';
   fill?: ButtonFill;
   shape?: ButtonShape;
+  expand?: ButtonExpand;
+  iconOnly?: boolean;
   color?: ButtonColor;
   size?: ButtonSize;
   disabled?: boolean;

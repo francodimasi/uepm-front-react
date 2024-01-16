@@ -1,12 +1,14 @@
 import { EditorSelectionSkeleton } from './EditorSelectionSkeleton';
 import { BlogItem } from '../blogItem/BlogItem';
 import { EditorSelectionProps } from './EditorSelection.types';
-import { LocaleProps } from 'intl';
+import { LocaleProps, useTranslations } from 'intl';
+import { H4 } from 'ui/core';
 
 export const EditorSelection = ({
   articles,
   locale,
 }: EditorSelectionProps & LocaleProps) => {
+  const t = useTranslations('shared.editorSelection');
   if (!articles)
     return (
       <div className="space-y-6 lg:space-y-6">
@@ -17,10 +19,7 @@ export const EditorSelection = ({
 
   return (
     <div className="flex flex-col justify-start items-start">
-      <div className="text-2xl font-medium font-['Lexend'] leading-7 text-primary pb-5">
-        {/*@todo i18nPending translation*/}
-        Selección del editor
-      </div>
+      <H4 label={t('title')} className="text-primary my-0 lg:my-0" />
       {articles.map((article) => (
         <div
           className="flex-1 last:mr-0 border-b-1 border-gray-medium py-3"

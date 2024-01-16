@@ -1,4 +1,6 @@
+import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
+import { headers } from 'next/headers';
 import { Layout } from '@components/core/layout/Layout';
 import { ArticleContent, ArticleTitle, ArticleRelated } from './components';
 import { ArticleProps } from './Article.types';
@@ -9,7 +11,7 @@ import {
   getTrendingTopics,
 } from '@api/blog/requests';
 import { FeaturedArticles } from '@components/shared/featuredArticles';
-import { getArticlesByTag, getNextArticle } from './helpers';
+import { getArticlesByTag, getNextArticle, setMetadata } from './helpers';
 
 const Page = async ({
   params: { lang = defaultLocale, slug },
@@ -56,6 +58,17 @@ const Page = async ({
 };
 
 export default Page;
+
+export async function generateMetadata({
+  params: { slug },
+}: ArticleProps): Promise<Metadata> {
+  const article = await getArticleBySlug(slug);
+  const yoast_head_json = article['yoast_head_json'];
+  const headersInstance = headers();
+  const url = headersInstance.get('x-url');
+
+  return setMetadata({ meta: yoast_head_json, url, article });
+}
 
 /**
  * @author Lucas

@@ -49,6 +49,7 @@ const tailwindDefaultConfig: Config = {
       },
     },
   },
+  plugins: [require('@tailwindcss/forms')],
 };
 
 export default tailwindDefaultConfig;

@@ -1,3 +1,4 @@
+export * from './accordion';
 export * from './avatar';
 export * from './button';
 export * from './button';
@@ -10,3 +11,4 @@ export * from './scroll';
 export * from './select';
 export * from './tabs';
 export * from './tag';
+export * from './typography';

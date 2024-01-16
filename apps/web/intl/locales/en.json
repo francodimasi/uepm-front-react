@@ -7,6 +7,37 @@
     "es": "Spanish",
     "pt": "Portuguese"
   },
+  "menu": {
+    "links": {
+      "patients": "Patients",
+      "sponsors": "Sponsors",
+      "physicians": "Physicians",
+      "aboutUs": "About us",
+      "blog": "Blog",
+      "products": "Products"
+    }
+  },
+  "footer": {
+    "links": {
+      "sponsors": "Sponsors",
+      "physicians": "Physicians",
+      "mission": "Our mission",
+      "team": "Our team",
+      "faqs": "FAQs",
+      "news": "Last news",
+      "science": "Science",
+      "studies": "Studies",
+      "uepmPatients": "UEPM Patients",
+      "uepmOnco": "UEPM Onco",
+      "uepmPhysicians": "UEPM Physicians"
+    }
+  },
+  "legal": {
+    "links": {
+      "t&c": "Terms and Conditions",
+      "privacy": "Privacy Policy"
+    }
+  },
   "home": {
     "lang": "English"
   },
@@ -25,6 +56,11 @@
       }
     }
   },
+  "blog": {
+    "articleOfInterest": {
+      "title": "Content for you"
+    }
+  },
   "shared": {
     "contactUs": {
       "title": "Send us your query",
@@ -37,6 +73,18 @@
         "query": "Query"
       },
       "optional": "(Optional)"
+    },
+    "faqs": {
+      "title": "FAQs"
+    },
+    "editorSelection": {
+      "title": "Editor selection for you"
+    },
+    "featuredArticles": {
+      "title": "More about this subject"
+    },
+    "trendingTopics": {
+      "title": "Trending topics"
     }
   },
   "actions": {
@@ -48,14 +96,17 @@
     "ok": "OK",
     "previous": "Previous",
     "save": "Save",
+    "search": "Search",
     "select": "Select",
     "submit": "Submit",
     "seeMore": "See more",
     "seeLess": "See less",
+    "share": "Share",
     "yes": "Yes",
     "no": "No"
   },
   "commonTerms": {
-    "of": "of"
+    "of": "of",
+    "ofReading": "of reading"
   }
 }
