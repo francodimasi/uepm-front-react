@@ -30,7 +30,7 @@ export const FAQsContent = ({ faqs }: FAQsProps) => {
           size="lg"
           className="mb-6"
         />
-        <Accordion open={0} items={items} size="lg" className='w-full' />
+        <Accordion open={0} items={items} size="lg" className="w-full" />
       </div>
       <div className="hidden lg:grid grid-cols-3">
         <div className="col-span-1">
