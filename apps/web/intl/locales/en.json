@@ -74,6 +74,9 @@
       },
       "optional": "(Optional)"
     },
+    "faqs": {
+      "title": "FAQs"
+    },
     "editorSelection": {
       "title": "Editor selection for you"
     },

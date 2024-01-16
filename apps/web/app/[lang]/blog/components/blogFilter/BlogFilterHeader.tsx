@@ -19,12 +19,17 @@ export const BlogFilterHeader = ({
 
   return (
     <>
-      <div className="hidden sm:flex w-full">
-        <Tabs items={tabItems} selected={category} onChange={onChange} />
+      <div className="hidden xl:flex w-full relative">
+        <Tabs
+          items={tabItems}
+          selected={category}
+          onChange={onChange}
+          className="flex-1"
+        />
         <BlogSearch locale={locale} />
       </div>
-      <div className="sm:hidden w-full flex ">
-        <div className="w-11/12">
+      <div className="w-full flex flex-1 relative xl:hidden">
+        <div className="flex-1">
           <Select items={tabItems} selected={category} onChange={onChange} />
         </div>
         <BlogSearch locale={locale} />

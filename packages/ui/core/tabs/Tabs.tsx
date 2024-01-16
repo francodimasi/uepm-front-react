@@ -1,46 +1,38 @@
-'use client';
-
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { TabsProps } from './Tabs.types';
+import { getClasses } from './helpers';
 import clsx from 'clsx';
 
-export type TabItem = {
-  name: string;
-  id: number;
-};
-
-export type TabsProps = {
-  items: TabItem[];
-  selected: number;
-  onChange: (_id: number) => void;
-  classes?: string;
-};
-export const Tabs = ({ items, selected, onChange, classes }: TabsProps) => {
+export const Tabs = ({
+  items,
+  selected,
+  onChange,
+  orientation = 'horizontal',
+  size = 'md',
+  className,
+}: TabsProps) => {
   return (
-    <Swiper
-      slidesPerView={4}
-      slidesPerGroup={1}
-      resistanceRatio={1000}
-      spaceBetween={30}
-      className={clsx(
-        classes,
-        'w-100 border-b border-b-gray-light justify-start items-center',
-      )}
-    >
-      {items?.map(({ name, id }) => (
-        <SwiperSlide
-          key={id}
-          className={`font-['DMSans'] cursor-pointer ${
-            id === selected
-              ? 'border-b-2 border-dark font-bold'
-              : 'font-normal hover:font-semibold hover:border-b-1 hover:border-gray-dark'
-          } `}
-          onClick={() => onChange(id)}
-        >
-          <div className="text-center text-dark text-base ms-1 leading-none whitespace-nowrap">
-            {name}
+    <div className={clsx('block border-b border-gray-light', className)}>
+      <nav
+        className={clsx(
+          'flex',
+          orientation === 'horizontal'
+            ? '-mb-px space-x-8'
+            : 'flex-col -mb-px space-7-8',
+        )}
+      >
+        {items.map((item) => (
+          <div
+            key={item.name}
+            className={clsx(
+              'flex whitespace-nowrap border-b-2 py-4 px-1 text-sm font-["Lexend"] font-medium cursor-pointer',
+              getClasses({ size, selected: item.id === selected }),
+            )}
+            onClick={() => onChange(item.id)}
+          >
+            {item.name}
           </div>
-        </SwiperSlide>
-      ))}
-    </Swiper>
+        ))}
+      </nav>
+    </div>
   );
 };
