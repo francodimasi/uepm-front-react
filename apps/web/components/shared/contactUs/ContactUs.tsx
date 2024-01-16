@@ -9,7 +9,7 @@ export const ContactUs = ({}: ContactUsProps) => {
   const tActions = useTranslations('actions');
 
   return (
-    <div className="py-16 lg:py-24">
+    <div className="py-8 lg:py-10">
       <div className="flex flex-col gap-6 lg:hidden">
         <H2 label={t('title')} />
         <P1 label={t('description')} />

@@ -1,0 +1,158 @@
+{
+  "en": [
+    {
+      "id": "general",
+      "name": "General",
+      "items": [
+        {
+          "question": "Question 1 [general]",
+          "answer": "Answer 1 [general]"
+        },
+        {
+          "question": "Question 2 [general]",
+          "answer": "Answer 2 [general]"
+        },
+        {
+          "question": "Question 3 [general]",
+          "answer": "Answer 3 [general]"
+        }
+      ]
+    },
+    {
+      "id": "studies",
+      "name": "Studies",
+      "items": [
+        {
+          "question": "Question 1 [studies]",
+          "answer": "Answer 1 [general]"
+        },
+        {
+          "question": "Question 2 [studies]",
+          "answer": "Answer 2 [studies]"
+        },
+        {
+          "question": "Question 3 [studies]",
+          "answer": "Answer 3 [studies]"
+        }
+      ]
+    },
+    {
+      "id": "uepm",
+      "name": "UEPM",
+      "items": [
+        {
+          "question": "Question 1 [uepm]",
+          "answer": "Answer 1 [uepm]"
+        },
+        {
+          "question": "Question 2 [uepm]",
+          "answer": "Answer 2 [uepm]"
+        }
+      ]
+    }
+  ],
+  "es": [
+    {
+      "id": "general",
+      "name": "General",
+      "items": [
+        {
+          "question": "Pregunta 1 [general]",
+          "answer": "Respuesta 1 [general]"
+        },
+        {
+          "question": "Pregunta 2 [general]",
+          "answer": "Respuesta 2 [general]"
+        },
+        {
+          "question": "Pregunta 3 [general]",
+          "answer": "Respuesta 3 [general]"
+        }
+      ]
+    },
+    {
+      "id": "studies",
+      "name": "Ensayos clínicos",
+      "items": [
+        {
+          "question": "Pregunta 1 [studies]",
+          "answer": "Respuesta 1 [general]"
+        },
+        {
+          "question": "Pregunta 2 [studies]",
+          "answer": "Respuesta 2 [studies]"
+        },
+        {
+          "question": "Pregunta 3 [studies]",
+          "answer": "Respuesta 3 [studies]"
+        }
+      ]
+    },
+    {
+      "id": "uepm",
+      "name": "Un Ensayo para Mí",
+      "items": [
+        {
+          "question": "Pregunta 1 [uepm]",
+          "answer": "Respuesta 1 [uepm]"
+        },
+        {
+          "question": "Pregunta 2 [uepm]",
+          "answer": "Respuesta 2 [uepm]"
+        }
+      ]
+    }
+  ],
+  "pt": [
+    {
+      "id": "general",
+      "name": "General",
+      "items": [
+        {
+          "question": "Pergunta 1 [general]",
+          "answer": "Resposta 1 [general]"
+        },
+        {
+          "question": "Pergunta 2 [general]",
+          "answer": "Resposta 2 [general]"
+        },
+        {
+          "question": "Pergunta 3 [general]",
+          "answer": "Resposta 3 [general]"
+        }
+      ]
+    },
+    {
+      "id": "studies",
+      "name": "Ensaios clínicos",
+      "items": [
+        {
+          "question": "Pergunta 1 [studies]",
+          "answer": "Resposta 1 [general]"
+        },
+        {
+          "question": "Pergunta 2 [studies]",
+          "answer": "Resposta 2 [studies]"
+        },
+        {
+          "question": "Pergunta 3 [studies]",
+          "answer": "Resposta 3 [studies]"
+        }
+      ]
+    },
+    {
+      "id": "uepm",
+      "name": "Um Ensaio para Mim",
+      "items": [
+        {
+          "question": "Pergunta 1 [uepm]",
+          "answer": "Resposta 1 [uepm]"
+        },
+        {
+          "question": "Pergunta 2 [uepm]",
+          "answer": "Resposta 2 [uepm]"
+        }
+      ]
+    }
+  ]
+}

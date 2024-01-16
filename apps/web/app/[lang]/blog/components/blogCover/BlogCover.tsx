@@ -40,7 +40,7 @@ export const BlogCover = ({
   }, [category]);
 
   return (
-    <div className="relative col-span-1 lg:col-span-2 xl:col-span-3 pr-0 lg:pr-12 pb-12 lg:pb-16">
+    <div className="w-full col-span-1 lg:col-span-2 xl:col-span-3 pr-0 lg:pr-12 pb-12 lg:pb-16">
       <BlogFilterHeader
         category={category}
         setCategory={setCategory}

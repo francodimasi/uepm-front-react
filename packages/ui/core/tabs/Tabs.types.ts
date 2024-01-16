@@ -1,10 +1,17 @@
+import { PropsWithClassName, Size } from '../../types/core';
+
+type TabId = string | number;
+
 export type TabItem = {
+  id: TabId;
   name: string;
-  id: number;
+  count?: number;
 };
 
-export type TabsProps = {
+export type TabsProps = PropsWithClassName & {
   items: TabItem[];
-  selected: number;
-  onChange: (_id: number) => void;
+  selected: TabId;
+  size?: Size;
+  orientation?: 'horizontal' | 'vertical';
+  onChange: (_id: TabId) => void;
 };
