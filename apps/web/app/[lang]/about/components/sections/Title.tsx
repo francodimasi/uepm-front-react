@@ -1,24 +1,20 @@
 import { ImageWithFallback } from '@components/utils/ImageWithFallback';
 import AboutUsMobile from 'public/images/aboutUsMobile.png';
 import AboutUsDesktop from 'public/images/aboutUsDesktop.png';
+import { H2, P1 } from 'ui/core';
 
 export const Title: React.FC = () => {
   return (
     <div className="w-full">
-      <div className="flex flex-col sm:flex-row justify-start sm:justify-evenly items-start sm:items-center gap-4 sm:gap-72 pr-[10%]">
-        <div className="text-dark text-2xl sm:text-7xl font-semibold font-['Lexend'] leading-10 sm:leading-[80px]">
-          Quiénes somos
-        </div>
+      <div className="flex flex-col sm:flex-row justify-start sm:justify-between items-start sm:items-center gap-4 sm:gap-72 pr-[10%]">
+        <H2 label={'Quiénes somos'} className="sm:!pb-0" />
         <div>
-          <span className="text-dark text-xl sm:text-[28px] font-normal font-['DMSans'] leading-7 sm:leading-10">
-            Trabajamos en la inclusión de pacientes uniendo a{' '}
-          </span>
-          <span className="text-dark text-xl sm:text-[28px] font-bold font-['DM Sans'] leading-7 sm:leading-10">
-            todos los actores de la investigación
-          </span>
-          <span className="text-dark text-xl sm:text-[28px] font-bold font-['DM Sans'] leading-7 sm:leading-10">
-            .
-          </span>
+          <P1 label={'Trabajamos en la inclusión de pacientes uniendo a '} />
+          <P1
+            label={'todos los actores de la investigación'}
+            className="!font-bold"
+          />
+          <P1 label={'.'} />
         </div>
       </div>
       <div className="block sm:hidden w-full mt-12">
