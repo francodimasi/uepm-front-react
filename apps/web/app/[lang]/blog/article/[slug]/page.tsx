@@ -11,7 +11,7 @@ import {
   getTrendingTopics,
 } from '@api/blog/requests';
 import { FeaturedArticles } from '@components/shared/featuredArticles';
-import { getArticlesByTag, getNextArticle } from './helpers';
+import { getArticlesByTag, getNextArticle, setMetadata } from './helpers';
 
 const Page = async ({
   params: { lang = defaultLocale, slug },
@@ -67,36 +67,9 @@ export async function generateMetadata({
   const headersInstance = headers();
   const url = headersInstance.get('x-url');
 
-  return {
-    title: yoast_head_json.title
-      ? yoast_head_json.title + ' - ' + process.env.NEXT_PUBLIC_COMPANY_NAME
-      : article.title.rendered + ' - ' + process.env.NEXT_PUBLIC_COMPANY_NAME,
-    description: yoast_head_json.description
-      ? yoast_head_json.description
-      : article['excerpt'].rendered,
-    openGraph: {
-      title: yoast_head_json.og_title
-        ? yoast_head_json.og_title + ' - ' + process.env.NEXT_PUBLIC_COMPANY_NAME
-        : article.title.rendered + ' - ' + process.env.NEXT_PUBLIC_COMPANY_NAME,
-      description: yoast_head_json.og_description
-        ? yoast_head_json.og_description
-        : article['excerpt'].rendered,
-      type: 'article',
-      siteName: process.env.NEXT_PUBLIC_COMPANY_NAME,
-      images:
-        typeof yoast_head_json.og_image !== typeof undefined &&
-        yoast_head_json.og_image[0].url
-          ? yoast_head_json.og_image[0].url
-          : process.env.NEXT_PUBLIC_COMPANY_LOGO,
-      url: url,
-    },
-    other: {
-      image: article.featured_image_src
-        ? article.featured_image_src
-        : process.env.NEXT_PUBLIC_COMPANY_LOGO,
-    },
-  };
+  return setMetadata({ meta: yoast_head_json, url, article });
 }
+
 /**
  * @author Lucas
  * Setting this as a comment due to build issue. We will need to do a spike on this
