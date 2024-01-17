@@ -59,6 +59,14 @@
   "blog": {
     "articleOfInterest": {
       "title": "Content for you"
+    },
+    "article": {
+      "share": {
+        "title": "Share",
+        "description": "Where do you wanna share this?",
+        "copyLabel": "Copy link",
+        "copiedLabel": "Copied!"
+      }
     }
   },
   "shared": {
