@@ -12,9 +12,9 @@ export const TakePartIcon = () => {
           id="Vector"
           d="M34.4863 14.458C32.3749 19.3726 15.9105 21.8031 15.9105 21.8031C16.2743 25.7892 19.6064 29.6235 23.6082 29.6436H27.7751L34.2028 36V29.291C38.3228 28.0925 40.6909 23.7805 39.4923 19.6605C38.7804 17.2099 36.9078 15.2637 34.484 14.458H34.4863Z"
           stroke="#020001"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           id="Vector_2"

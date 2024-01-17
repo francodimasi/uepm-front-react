@@ -12,17 +12,17 @@ export const SearchIcon = () => {
           id="Vector"
           d="M20.1048 19.2261L22.6174 21.7387L22.6417 21.7629"
           stroke="#020001"
-          stroke-width="1.72466"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="1.72466"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           id="Vector_2"
           d="M12.5552 22.3524C18.4515 22.3524 23.2314 17.5725 23.2314 11.6762C23.2314 5.77991 18.4515 1 12.5552 1C6.65894 1 1.87906 5.77991 1.87906 11.6762C1.87906 17.5725 6.65894 22.3524 12.5552 22.3524Z"
           stroke="#020001"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           id="Vector_3"
