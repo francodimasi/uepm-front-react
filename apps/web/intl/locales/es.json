@@ -59,6 +59,14 @@
   "blog": {
     "articleOfInterest": {
       "title": "Te podría interesar"
+    },
+    "article": {
+      "share": {
+        "title": "Compartir",
+        "description": "¿Dónde deseas compartirlo?",
+        "copyLabel": "Copiar enlace",
+        "copiedLabel": "¡Ya lo tienes!"
+      }
     }
   },
   "shared": {

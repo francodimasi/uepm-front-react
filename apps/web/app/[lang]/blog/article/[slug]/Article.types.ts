@@ -24,3 +24,8 @@ export type ArticleContentProps = {
 export type ArticleOfInterestProps = {
   article: BlogItem;
 };
+
+export type ArticleShareProps = {
+  quote: string;
+  tags: BlogTag[];
+}

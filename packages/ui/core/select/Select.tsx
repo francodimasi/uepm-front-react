@@ -4,7 +4,7 @@ import { Fragment } from 'react';
 import { Listbox, Transition } from '@headlessui/react';
 import clsx from 'clsx';
 import { SelectProps } from './Select.types';
-import { CheckOutlineIcon, ChevronDownIcon } from 'ui/core/icons';
+import { CheckIcon, ChevronDownIcon } from 'ui/core/icons';
 
 export const Select = ({
   items,
@@ -83,18 +83,18 @@ export const Select = ({
                           {item.name}
                         </span>
 
-                        {selected ? (
+                        {selected && (
                           <span
                             className={clsx(
-                              active ? 'text-white' : 'text-primary',
+                              active ? 'text-light' : 'text-dark',
                               'absolute inset-y-0 left-0 flex items-center pl-1.5',
                             )}
                           >
                             <div className="h-5 w-5 " aria-hidden="true">
-                              <CheckOutlineIcon />
+                              <CheckIcon color={active ? 'light' : 'dark'} />
                             </div>
                           </span>
-                        ) : null}
+                        )}
                       </>
                     )}
                   </Listbox.Option>
