@@ -1,0 +1,31 @@
+ [
+        {
+            "icon": "search",
+            "es": {
+                "title": "Busca",
+                "description": "Descubre ensayos clinicos disponibles para tu enfermedad"
+            },
+            "en": {
+                "title": "Discover",
+                "description": "Discover clinical trials available for your condition"    
+            },
+            "pt": {
+                "title": "Busquinha",
+                "description": "Descubra os ensaios clínicos disponíveis para a sua doença"    
+            }
+        },
+        {
+            "icon": "apply",
+            "es": {
+                "title": "Postúlate",
+                "description": "Completa el formulario para que podamos ponernos en contacto contigo"
+                }
+            },
+        { 
+            "icon": "takepart",  
+            "es": {
+                "title": "Participa",
+                "description": "Si cumples con los requisitos médicos te contactaremos"
+            }
+        }
+    ]

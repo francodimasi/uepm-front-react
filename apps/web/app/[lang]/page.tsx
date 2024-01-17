@@ -4,6 +4,7 @@ import {
   unstable_setRequestLocale,
   useTranslations,
 } from 'intl';
+import { HowItWorks } from './howitworks/HowItWorks';
 
 export default function Page({ params: { lang = defaultLocale } }) {
   unstable_setRequestLocale(lang);
@@ -11,6 +12,7 @@ export default function Page({ params: { lang = defaultLocale } }) {
 
   return (
     <Layout locale={lang}>
+      <HowItWorks locale={lang} />
       <span>{`Language is: ${t('lang')}`}</span>
       <br></br>
       <span>{`Locale is: ${lang}`}</span>
