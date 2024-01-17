@@ -28,4 +28,4 @@ export type ArticleOfInterestProps = {
 export type ArticleShareProps = {
   quote: string;
   tags: BlogTag[];
-}
+};
