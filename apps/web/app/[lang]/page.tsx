@@ -4,9 +4,9 @@ import {
   unstable_setRequestLocale,
   getTranslations,
 } from 'intl';
-import { HowItWorks } from './howitworks/HowItWorks';
 import { promises as fs } from 'fs';
 import { Step } from './howitworks/HowItWorks.types';
+import { HowItWorks } from './howitworks';
 
 export default async function Page({ params: { lang = defaultLocale } }) {
   unstable_setRequestLocale(lang);
@@ -25,7 +25,7 @@ export default async function Page({ params: { lang = defaultLocale } }) {
 
   return (
     <Layout locale={lang}>
-      <HowItWorks locale={lang} steps={steps} />
+      <HowItWorks steps={steps[lang]} />
       <span>{`Language is: ${t('lang')}`}</span>
       <br></br>
       <span>{`Locale is: ${lang}`}</span>

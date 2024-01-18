@@ -1,12 +1,7 @@
-export type StepDefinition = {
-  title: string;
-  description: string;
-};
 export type Step = {
   icon: string;
-  es?: StepDefinition;
-  en?: StepDefinition;
-  pt?: StepDefinition;
+  title: string;
+  description: string;
 };
 
 export type HowItWorksProps = {

@@ -39,7 +39,10 @@
     }
   },
   "home": {
-    "lang": "Español"
+    "lang": "Español",
+    "howitworks": {
+      "title": "¿Como funciona?"
+    }
   },
   "about": {
     "title": "Nosotros",
