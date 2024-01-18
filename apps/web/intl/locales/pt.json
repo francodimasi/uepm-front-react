@@ -44,6 +44,23 @@
   "about": {
     "title": "Nos",
     "sections": {
+      "presentation": {
+        "top": {
+          "title": "Quem somos?",
+          "description": "Trabalhamos na inclusão de pacientes unindo",
+          "highlighted": "todos os atores da pesquisa"
+        },
+        "middle": {
+          "tag": "Nosso compromisso",
+          "title": "Acompanhamento humano",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum"
+        },
+        "bottom": {
+          "tag": "Nossa prioridade",
+          "title": "Qualidade e atendimento ao paciente",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum"
+        }
+      },
       "team": {
         "tag": "Liderança",
         "title": "Nossa equipe",
