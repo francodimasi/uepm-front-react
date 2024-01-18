@@ -9,7 +9,7 @@ export const HowItWorks: React.FC<HowItWorksProps> = ({ steps }) => {
   const t = useTranslations('home.howitworks');
 
   return (
-    <div className="flex flex-col sm:flex-row gap-4">
+    <div className="grid grid-flow-row  sm:grid-flow-col auto-rows-fr auto-cols-fr gap-4">
       <H2 label={t('title')} className="!mt-0" />
       {steps.map((step, index) => {
         return (
