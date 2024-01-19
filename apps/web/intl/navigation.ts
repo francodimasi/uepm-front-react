@@ -35,6 +35,16 @@ export const pathnames = {
     es: '/nosotros',
     pt: '/sobre-nos',
   },
+  '/docs/terms': {
+    en: '/docs/terms',
+    es: '/documentos/terminos',
+    pt: '/documentos/termos',
+  },
+  '/docs/privacy': {
+    en: '/docs/privacy',
+    es: '/documentos/privacidad',
+    pt: '/documentos/privacidade',
+  },
 } satisfies Pathnames<typeof locales>;
 
 export const { Link, redirect, usePathname, useRouter, getPathname } =

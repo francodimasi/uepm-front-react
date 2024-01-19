@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { FooterSectionLinkProps } from './FooterSection.types';
 import { useTranslations } from 'intl';
+import { P2 } from 'ui/core';
 
 export const FooterSectionLink: React.FC<FooterSectionLinkProps> = ({
   id,
@@ -13,11 +14,11 @@ export const FooterSectionLink: React.FC<FooterSectionLinkProps> = ({
     <>
       {outbound ? (
         <a href={href} target={target} className="p-1">
-          <span className="text-base text-light">{t(id)}</span>
+          <P2 className="text-base text-light">{t(id)}</P2>
         </a>
       ) : (
         <Link href={href} className="p-1">
-          <span className="text-base text-light">{t(id)}</span>
+          <P2 className="text-base text-light">{t(id)}</P2>
         </Link>
       )}
     </>

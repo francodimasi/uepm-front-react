@@ -1,3 +1,4 @@
+import { P2 } from 'ui/core';
 import { FooterSectionProps } from './FooterSection.types';
 import { FooterSectionLink } from './FooterSectionLink';
 
@@ -8,7 +9,7 @@ export const FooterSection: React.FC<FooterSectionProps> = ({
 }) => {
   return (
     <div className="flex flex-col ps-2">
-      <span className="text-light font-bold p-1 pb-3">{title}</span>
+      <P2 className="text-light !font-bold p-1 pb-3">{title}</P2>
       {links?.map((link, index) => (
         <FooterSectionLink
           key={index}
