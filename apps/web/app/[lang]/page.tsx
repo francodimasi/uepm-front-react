@@ -1,8 +1,8 @@
 import { Layout } from '@components/core/layout/Layout';
 import { defaultLocale, unstable_setRequestLocale } from 'intl';
 import { promises as fs } from 'fs';
-import { Step } from './howitworks/HowItWorks.types';
-import { HowItWorks } from './howitworks';
+import { Step } from './components/howitworks/HowItWorks.types';
+import { HowItWorks } from './components/howitworks';
 
 export default async function Page({ params: { lang = defaultLocale } }) {
   unstable_setRequestLocale(lang);
