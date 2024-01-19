@@ -38,7 +38,12 @@ export const Footer: React.FC<FooterProps> = ({ locale }) => {
     <div className="flex flex-col bg-primary-dark">
       <div className="grid grid-cols-1 xl:grid-cols-4 gap-4 p-4 pb-2 sm:p-20 sm:pb-8">
         <Link href="/" aria-label="Home" locale={locale}>
-          <Logo brand="uepm" type="dark" className="flex px-2 mb-6 pt-2 xl:pt-0" width={120} />
+          <Logo
+            brand="uepm"
+            type="dark"
+            className="flex px-2 mb-6 pt-2 xl:pt-0"
+            width={120}
+          />
         </Link>
         <div className="grid grid-cols-2 lg:grid-cols-4 col-span-3 gap-4">
           <FooterSection
