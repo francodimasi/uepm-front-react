@@ -14,11 +14,11 @@ export default async function Page({ params: { lang = defaultLocale } }) {
 
   //TODO: replace with real fetch
   const getHowItWorksSteps = async () => {
-    const team = await fs.readFile(
+    const steps = await fs.readFile(
       process.cwd() + '/api/mocks/howItWorksSteps.json',
       'utf8',
     );
-    return JSON.parse(team);
+    return JSON.parse(steps);
   };
 
   const steps: Step[] = await getHowItWorksSteps();
