@@ -4,7 +4,7 @@ export const ENDPOINTS = {
   SITES: `${BASE_URL}/sites`,
   COUNTRIES: `${BASE_URL}/countries`,
   PARTNERS: `${BASE_URL}/partners`,
-  LEGAL_DOCUMENTS: `${BASE_URL}/legal_documents`,
+  DOCUMENTS: `${BASE_URL}/legal_documents`,
   BLOG: {
     CATEGORIES: `${BLOG_BASE_URL}/categories`,
     TAGS: `${BLOG_BASE_URL}/tags`,

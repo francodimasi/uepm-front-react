@@ -25,6 +25,7 @@ const tailwindDefaultConfig: Config = {
       'gray-medium': '#D9D9D9',
       'gray-dark': '#7A7A7A',
       transparent: 'transparent',
+      white: '#FFFFFF',
     },
     fontFamily: {
       sans: 'Manrope',
