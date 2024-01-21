@@ -68,7 +68,7 @@ export const Footer: React.FC<FooterProps> = ({ locale }) => {
           />
         </div>
       </div>
-      <div className="grid grid-cols-2 gap-4 sm:px-20 sm:py-8 lg:hidden">
+      <div className="grid grid-cols-2 gap-4 sm:px-20 pb-4 sm:py-8 lg:hidden">
         <div className="ps-2 text-light">
           <SwitchLocale locale={locale} />
         </div>

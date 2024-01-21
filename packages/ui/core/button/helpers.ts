@@ -62,8 +62,8 @@ export const getClasses = ({
     'rounded',
     'flex items-center',
     {
-      'w-full sm:w-auto': !iconOnly,
-      'w-auto': iconOnly,
+      'w-full sm:w-auto': !iconOnly && !(expand === 'none'),
+      'w-auto': iconOnly || expand === 'none',
       'bg-primary text-light': color === 'primary' && fill === 'solid',
       'bg-secondary text-light': color === 'secondary' && fill === 'solid',
       'bg-tertiary text-light': color === 'tertiary' && fill === 'solid',
