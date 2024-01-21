@@ -8,7 +8,7 @@ import { LocaleProps } from 'intl';
 import { SwitchLocale } from '@intl/components/SwitchLocale';
 
 const patientLinks: FooterSectionLinkProps[] = [
-  { id: 'sponsors', href: '/partners' },
+  { id: 'sponsors', href: '/' },
   { id: 'physicians', href: '' },
 ];
 const aboutUsLinks: FooterSectionLinkProps[] = [

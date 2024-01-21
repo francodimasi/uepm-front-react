@@ -1,6 +1,6 @@
 import '@styles/globals.css';
 import 'ui/styles.css';
-import { locales, unstable_setRequestLocale, getTranslations } from 'intl';
+import { getTranslations, unstable_setRequestLocale } from 'intl';
 import { NextIntlClientProvider, useMessages } from 'next-intl';
 
 export default function RootLayout({
@@ -22,11 +22,6 @@ export default function RootLayout({
       </body>
     </html>
   );
-}
-
-// Return a list of `params` to populate the [lang] dynamic segment
-export function generateStaticParams() {
-  return locales.map((locale) => ({ lang: locale }));
 }
 
 export async function generateMetadata({ params: { locale } }) {

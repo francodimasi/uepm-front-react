@@ -7,7 +7,7 @@ import { LocaleProps, useTranslations } from 'intl';
 
 const links = [
   { id: 'patients', href: '/' },
-  { id: 'sponsors', href: '/partners' },
+  { id: 'sponsors', href: '/' },
   { id: 'physicians', href: '/' },
   { id: 'aboutUs', href: '/about' },
   { id: 'blog', href: '/blog' },

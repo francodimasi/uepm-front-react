@@ -23,7 +23,7 @@ export const Partners: React.FC<PartnersProps & LocaleProps> = ({
         <div className="pb-3.5 sm:pb-4 lg:pb-5 xl:pb-8">
           <div className="relative mb-6 sm:mb-8 lg:mb-10 xl:mb-16">
             <div className="absolute right-0 h-full flex items-center hidden sm:flex">
-              <Link href="/partners" locale={locale}>
+              <Link href="/" locale={locale}>
                 <L1 label={`${tActions('seeMore')} →`} />
               </Link>
             </div>
@@ -56,7 +56,7 @@ export const Partners: React.FC<PartnersProps & LocaleProps> = ({
         </div>
         {partners.length > 6 && (
           <div className="sm:hidden pt-6 flex justify-center">
-            <Link href="/partners" locale={locale} className="flex">
+            <Link href="/" locale={locale} className="flex">
               <L1 label={tActions('seeMore')} />
             </Link>
           </div>

@@ -1,6 +1,7 @@
 import { Layout } from '@components/core/layout/Layout';
 import {
   defaultLocale,
+  locales,
   unstable_setRequestLocale,
   useTranslations,
 } from 'intl';
@@ -23,4 +24,8 @@ export default function Page({ params: { lang = defaultLocale } }) {
       <span>{`WP url: ${process.env.NEXT_PUBLIC_WP_URL}`}</span>
     </Layout>
   );
+}
+
+export function generateStaticParams() {
+  return locales.map((locale) => ({ lang: locale }));
 }
