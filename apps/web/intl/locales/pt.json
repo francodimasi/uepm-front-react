@@ -32,6 +32,12 @@
       "uepmPhysicians": "UEPM Pesquisadores"
     }
   },
+  "notFound": {
+    "status": "404",
+    "title": "Página não encontrada",
+    "description": "Desculpe, não conseguimos encontrar a página que você está procurando",
+    "goBack": "Voltar ao início"
+  },
   "legal": {
     "links": {
       "t&c": "Termos e Condições",

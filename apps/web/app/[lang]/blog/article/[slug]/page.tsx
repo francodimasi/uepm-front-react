@@ -63,6 +63,9 @@ export async function generateMetadata({
   params: { slug },
 }: ArticleProps): Promise<Metadata> {
   const article = await getArticleBySlug(slug);
+
+  if (!article) notFound();
+
   const yoast_head_json = article['yoast_head_json'];
   const headersInstance = headers();
   const url = headersInstance.get('x-url');

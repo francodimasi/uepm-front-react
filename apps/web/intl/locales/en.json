@@ -32,6 +32,12 @@
       "uepmPhysicians": "UEPM Physicians"
     }
   },
+  "notFound": {
+    "status": "404",
+    "title": "Page not found",
+    "description": "Sorry, we couldn't find the page you're looking for",
+    "goBack": "Go back to home"
+  },
   "legal": {
     "links": {
       "t&c": "Terms and Conditions",
