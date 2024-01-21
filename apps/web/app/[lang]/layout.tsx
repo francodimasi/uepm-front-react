@@ -1,5 +1,4 @@
 import '@styles/globals.css';
-import 'swiper/swiper-bundle.css';
 import 'ui/styles.css';
 import { locales, unstable_setRequestLocale, getTranslations } from 'intl';
 import { NextIntlClientProvider, useMessages } from 'next-intl';
