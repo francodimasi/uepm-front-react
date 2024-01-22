@@ -5,6 +5,7 @@ import { TeamMemerItem } from './TeamMemberItem';
 import { Link } from '@intl/navigation';
 
 export const Team: React.FC<TeamProps & LocaleProps> = ({
+  id = 'team-section',
   board = [],
   staff,
   locale,
@@ -15,7 +16,7 @@ export const Team: React.FC<TeamProps & LocaleProps> = ({
   if (board.length === 0) return null;
 
   return (
-    <div className="flex flex-col py-8 lg:py-10">
+    <div id={id} className="flex flex-col py-8 lg:py-10">
       <div className="flex flex-col gap-2">
         <Tag
           text={t('tag')}

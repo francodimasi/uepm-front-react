@@ -29,7 +29,6 @@ export const pathnames = {
     es: '/blog/buscar/[query]',
     pt: '/blog/procurar/[query]',
   },
-  '/partners': '/partners',
   '/about': {
     en: '/about',
     es: '/nosotros',

@@ -5,8 +5,10 @@ import { Summary } from './components/summary';
 import { ContactUs } from '@components/shared/contactUs';
 import { FAQs } from '@components/shared/faqs';
 import { promises as fs } from 'fs';
+import { locales, unstable_setRequestLocale } from 'intl';
 
 export default async function Page({ params: { lang } }) {
+  unstable_setRequestLocale(lang);
   /**
    * @todo Replace for a real fetch
    */
@@ -47,4 +49,8 @@ export default async function Page({ params: { lang } }) {
       <ContactUs />
     </Layout>
   );
+}
+
+export function generateStaticParams() {
+  return locales.map((locale) => ({ lang: locale }));
 }

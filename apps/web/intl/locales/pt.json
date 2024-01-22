@@ -18,8 +18,14 @@
     }
   },
   "footer": {
+    "sections": {
+      "about": "Quem somos",
+      "news": "Notícias médicas",
+      "products": "Productos"
+    },
     "links": {
       "sponsors": "Sponsors",
+      "partners": "Nos acompanham",
       "physicians": "Pesquisadores",
       "mission": "Nossa missão",
       "team": "Nossa equipe",
@@ -27,6 +33,8 @@
       "news": "Últimas notícias",
       "science": "Ciência",
       "studies": "Ensaios clínicos",
+      "interviews": "Entrevistas",
+      "testimonies": "Testemunhos",
       "uepmPatients": "UEPM Pacientes",
       "uepmOnco": "UEPM Onco",
       "uepmPhysicians": "UEPM Pesquisadores"

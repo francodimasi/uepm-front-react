@@ -6,12 +6,11 @@ import { NavLinks } from '.';
 import { LocaleProps, useTranslations } from 'intl';
 
 const links = [
-  { id: 'patients', href: '/' },
-  { id: 'sponsors', href: '/partners' },
-  { id: 'physicians', href: '/' },
+  { id: 'patients', href: 'https://unensayoparami.org/', outbound: true },
+  { id: 'sponsors', href: 'https://preview.trialtech.es/', outbound: true },
+  { id: 'physicians', href: 'https://app.trialtech.es/', outbound: true },
   { id: 'aboutUs', href: '/about' },
   { id: 'blog', href: '/blog' },
-  { id: 'products', href: '/' },
 ];
 
 type HeaderProps = PropsWithChildren & LocaleProps;

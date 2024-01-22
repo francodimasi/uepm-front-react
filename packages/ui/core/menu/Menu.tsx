@@ -57,7 +57,11 @@ export const Menu: React.FC<MenuProps & LocaleProps> = ({
                     {items.map((item: MenuItem, index: number) => (
                       <MenuLink
                         key={index}
-                        href={locale ? `/${locale}${item.href}` : item.href}
+                        href={
+                          locale && !item.outbound
+                            ? `/${locale}${item.href}`
+                            : item.href
+                        }
                       >
                         <L1 label={item.label} className="font-medium" />
                       </MenuLink>

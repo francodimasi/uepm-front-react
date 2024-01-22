@@ -12,5 +12,6 @@ export type FAQsTopic = {
 };
 
 export type FAQsProps = PropsWithClassName & {
+  id?: string;
   faqs: FAQsTopic[];
 };
