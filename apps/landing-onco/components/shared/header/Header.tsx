@@ -1,11 +1,11 @@
-"use client";
-import Image from "next/image";
-import logo from "public/images/uepm-onco-logo.svg";
+'use client';
+import Image from 'next/image';
+import logo from 'public/images/uepm-onco-logo.svg';
 
-import cx from "classnames";
-import { useCallback, useEffect, useState } from "react";
-import { isMobile, openUrl } from "utils";
-import { LandingButton } from "ui";
+import cx from 'classnames';
+import { useCallback, useEffect, useState } from 'react';
+import { isMobile, openUrl } from 'utils';
+import { LandingButton } from 'ui';
 
 export const Header = () => {
   const scrollBreakpoint = isMobile() ? 0 : 150;
@@ -13,28 +13,25 @@ export const Header = () => {
   const [headerButton, setHeaderButton] = useState<boolean>(false);
 
   const headerClasses = cx(
-    "group fixed top-0 left-0 w-full z-[9999] md:transition-all backdrop-blur",
+    'group fixed top-0 left-0 w-full z-[9999] md:transition-all backdrop-blur',
     {
-      "py-4 bg-opacity-70": minimized,
-      "py-4 lg:pt-12": !minimized,
-    }
+      'py-4 bg-opacity-70': minimized,
+      'py-4 lg:pt-12': !minimized,
+    },
   );
 
   const bgHeaderClasses = cx(
-    "bg-light transition-opacity ease-in-out absolute top-0 left-0 w-full h-full",
+    'bg-light transition-opacity ease-in-out absolute top-0 left-0 w-full h-full',
     {
-      "opacity-0": !minimized,
-      "opacity-70": minimized,
-    }
+      'opacity-0': !minimized,
+      'opacity-70': minimized,
+    },
   );
 
-  const headerButtonClasses = cx(
-    "transition-all",
-    {
-      "opacity-0": !headerButton,
-      "opacity-100": headerButton,
-    }
-  );
+  const headerButtonClasses = cx('transition-all', {
+    'opacity-0': !headerButton,
+    'opacity-100': headerButton,
+  });
 
   const loadPosition = (target: Document) => {
     const scrollTop = target.scrollingElement?.scrollTop ?? 0;
@@ -44,13 +41,13 @@ export const Header = () => {
   const handleHeaderButton = (target: Document) => {
     const scrollTop = target.scrollingElement?.scrollTop ?? 0;
     setHeaderButton(scrollTop > screen.height / 2);
-  }
+  };
 
   useEffect(() => {
     loadPosition(document);
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
@@ -60,7 +57,7 @@ export const Header = () => {
       loadPosition(target);
       handleHeaderButton(target);
     },
-    [minimized]
+    [minimized],
   );
 
   return (
@@ -74,15 +71,15 @@ export const Header = () => {
             width={180}
             alt="Trialtech logo"
           />
-            <div className={headerButtonClasses}>
-              <LandingButton
-                size="small"
-                icon={false}
-                onClick={() => openUrl('#contact')}
-              >
-                Registrarme
-              </LandingButton>
-            </div>
+          <div className={headerButtonClasses}>
+            <LandingButton
+              size="small"
+              icon={false}
+              onClick={() => openUrl('#contact')}
+            >
+              Registrarme
+            </LandingButton>
+          </div>
         </nav>
       </div>
     </header>

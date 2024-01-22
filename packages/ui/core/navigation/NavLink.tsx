@@ -1,7 +1,10 @@
-import Link from "next/link";
-import clsx from "clsx";
-import { AnimatePresence, motion } from "framer-motion";
-import { NavLinkProps } from "./NavLink.types";
+'use client';
+
+import Link from 'next/link';
+import clsx from 'clsx';
+import { AnimatePresence, motion } from 'framer-motion';
+import { NavLinkProps } from './NavLink.types';
+import { L1 } from '../typography';
 
 export const NavLink: React.FC<NavLinkProps> = ({
   label,
@@ -15,8 +18,8 @@ export const NavLink: React.FC<NavLinkProps> = ({
     <Link
       href={href}
       className={clsx(
-        "relative -mx-3 -my-2 rounded-lg px-3 py-2 text-sm text-gray-700 transition-colors delay-150 hover:text-gray-900 hover:delay-[0ms]",
-        className
+        'relative -mx-3 -my-2 rounded-lg px-3 py-2 transition-colors delay-150 hover:text-gray-900 hover:delay-[0ms]',
+        className,
       )}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
@@ -35,7 +38,7 @@ export const NavLink: React.FC<NavLinkProps> = ({
           />
         )}
       </AnimatePresence>
-      <span className="relative z-10">{label}</span>
+      <L1 label={label} className="relative z-10 font-medium" />
     </Link>
   );
 };

@@ -1,35 +1,31 @@
-"use client";
+import { Layout } from '@components/core/layout/Layout';
+import {
+  defaultLocale,
+  locales,
+  unstable_setRequestLocale,
+  useTranslations,
+} from 'intl';
 
-import { useLayoutEffect } from "react";
-import { useClientTranslation } from "i18n";
-import { Header } from "ui";
-import { Layout } from "../../components/core/layout/Layout";
-import { SwitchLanguage } from "../../components/core/layout/language/SwitchLanguage";
-import { errorResponseHandler } from "@core/error-handler";
-import { useSite } from "@api/site/useSite";
-
-export default function Page({ params }) {
-  const { lang } = params;
-  const { t } = useClientTranslation(lang);
-  const { getSites } = useSite();
-
-  const loadSites = async () => {
-    try {
-      await getSites();
-    } catch (e) {
-      errorResponseHandler(e);
-    }
-  };
-
-  useLayoutEffect(() => {
-    loadSites();
-  }, []);
+export default function Page({ params: { lang = defaultLocale } }) {
+  unstable_setRequestLocale(lang);
+  const t = useTranslations('home');
 
   return (
-    <Layout>
-      <Header text="Web" />
-      <p>{t("home")}</p>
-      <SwitchLanguage />
+    <Layout locale={lang}>
+      <span>{`Language is: ${t('lang')}`}</span>
+      <br></br>
+      <span>{`Locale is: ${lang}`}</span>
+      <br></br>
+      <br></br>
+      <span>{`ENV: ${process.env.NEXT_PUBLIC_ENV}`}</span>
+      <br></br>
+      <span>{`API url: ${process.env.NEXT_PUBLIC_API_URL}`}</span>
+      <br></br>
+      <span>{`WP url: ${process.env.NEXT_PUBLIC_WP_URL}`}</span>
     </Layout>
   );
+}
+
+export function generateStaticParams() {
+  return locales.map((locale) => ({ lang: locale }));
 }

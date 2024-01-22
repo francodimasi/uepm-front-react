@@ -1,7 +1,7 @@
-import { useMotionValue } from "framer-motion";
-import { ResourceItem } from "../types/resource.type";
-import Image from "next/image";
-import { ResourcePattern } from "./ResourcePattern";
+import { useMotionValue } from 'framer-motion';
+import { ResourceItem } from '../types/resource.type';
+import Image from 'next/image';
+import { ResourcePattern } from './ResourcePattern';
 
 export const Resource = ({ name, icon, description }: ResourceItem) => {
   let mouseX = useMotionValue(0);
@@ -27,7 +27,9 @@ export const Resource = ({ name, icon, description }: ResourceItem) => {
           width={48}
           className="opacity-90 group-hover:opacity-100 transition-opacity duration-200"
         />
-        <h4 className="text-light text-base md:text-2xl font-semibold my-4">{name}</h4>
+        <h4 className="text-light text-base md:text-2xl font-semibold my-4">
+          {name}
+        </h4>
         <p className="text-light">{description}</p>
       </div>
     </div>

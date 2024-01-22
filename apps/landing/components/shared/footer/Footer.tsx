@@ -1,25 +1,25 @@
-import Image from "next/image";
-import Link from "next/link";
-import { useContext, useMemo } from "react";
-import facebook from "ui/assets/icons/facebook.svg";
-import instagram from "ui/assets/icons/instagram.svg";
-import linkedin from "ui/assets/icons/linkedin.svg";
-import logo from "public/images/trialtech-logo.svg";
-import { SwitchLanguage } from "ui";
-import { Language, LanguageContext, useClientTranslation } from "i18n";
-import { useMenu } from "@hooks/useMenu";
+import Image from 'next/image';
+import Link from 'next/link';
+import { ServerContext, useContext, useMemo } from 'react';
+import facebook from 'ui/assets/icons/social/facebook-light.svg';
+import instagram from 'ui/assets/icons/social/instagram-light.svg';
+import linkedin from 'ui/assets/icons/social/linkedin-light.svg';
+import logo from 'public/images/trialtech-logo.svg';
+import { SwitchLanguage } from 'ui';
+import { Language, LanguageContext, useClientTranslation } from 'i18n';
+import { useMenu } from '@hooks/useMenu';
 
 export const Footer = () => {
-  const { lang } = useContext(LanguageContext)
-  const { t } = useClientTranslation(lang, { keyPrefix: "footer" });
+  const { lang } = useContext(LanguageContext as ServerContext<any>);
+  const { t } = useClientTranslation(lang, { keyPrefix: 'footer' });
 
   const { links, languages } = useMenu();
 
   const social = useMemo(() => {
     return [
-      { icon: linkedin, alt: "Linkedin" },
-      { icon: instagram, alt: "Instagram" },
-      { icon: facebook, alt: "Facebook" },
+      { icon: linkedin, alt: 'Linkedin' },
+      { icon: instagram, alt: 'Instagram' },
+      { icon: facebook, alt: 'Facebook' },
     ];
   }, []);
 
@@ -31,7 +31,11 @@ export const Footer = () => {
             <Image src={logo} width={160} alt="Trialtech logo" />
             <div className="block md:flex mt-9">
               {links.map(({ title, url }, index) => (
-                <Link key={index} className="block mr-6 mt-2 sm:mt-0 sm:mr-4 text-light" href={url}>
+                <Link
+                  key={index}
+                  className="block mr-6 mt-2 sm:mt-0 sm:mr-4 text-light"
+                  href={url}
+                >
                   {title}
                 </Link>
               ))}
@@ -40,7 +44,12 @@ export const Footer = () => {
           <div className="flex flex-col justify-between sm:block">
             <div className="flex sm:justify-end">
               {social.map(({ icon, alt }, index) => (
-                <Image key={index} className="mr-8 sm:mr-0 sm:ml-4 cursor-pointer" src={icon} alt={alt} />
+                <Image
+                  key={index}
+                  className="mr-8 sm:mr-0 sm:ml-4 cursor-pointer"
+                  src={icon}
+                  alt={alt}
+                />
               ))}
             </div>
             <div className="flex flex-col justify-end mt-16 sm:items-end lg:flex-row sm:mt-5 text-light">

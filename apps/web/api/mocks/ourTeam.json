@@ -1,0 +1,89 @@
+{
+  "board": [
+    {
+      "image": "",
+      "name": "Georgina Sposetti",
+      "role": "CEO y fundadora",
+      "about": "https://www.linkedin.com/in/georgina-sposetti/"
+    },
+    {
+      "image": "https://content.unensayoparami.org/wp-content/uploads/2023/09/Portadas-Blog-15.png",
+      "name": "Franco Di Masi",
+      "role": "CTO y fundador",
+      "about": "https://www.linkedin.com/in/francodimasi/"
+    },
+    {
+      "image": "",
+      "name": "Georgina Sposetti",
+      "role": "CEO y fundadora"
+    },
+    {
+      "image": "https://content.unensayoparami.org/wp-content/uploads/2023/09/Portadas-Blog-15.png",
+      "name": "Franco Di Masi",
+      "role": "CTO y fundador"
+    },
+    {
+      "image": "https://content.unensayoparami.org/wp-content/uploads/2023/09/Portadas-Blog-15.png",
+      "name": "Georgina Sposetti",
+      "role": "CEO y fundadora"
+    },
+    {
+      "image": "https://content.unensayoparami.org/wp-content/uploads/2023/09/Portadas-Blog-15.png",
+      "name": "Franco Di Masi",
+      "role": "CTO y fundador",
+      "about": "https://www.linkedin.com/in/francodimasi/"
+    },
+    {
+      "image": "",
+      "name": "Georgina Sposetti",
+      "role": "CEO y fundadora"
+    },
+    {
+      "image": "",
+      "name": "Franco Di Masi",
+      "role": "CTO y fundador"
+    }
+  ],
+  "staff": [
+    {
+      "image": "",
+      "name": "Nico Buchhalter",
+      "role": "Backend Engineer"
+    },
+    {
+      "image": "https://content.unensayoparami.org/wp-content/uploads/2023/09/Portadas-Blog-15.png",
+      "name": "Javo Bianciotto",
+      "role": "Frontend Engineer"
+    },
+    {
+      "image": "",
+      "name": "Lucas Martinez",
+      "role": "Frontend Engineer"
+    },
+    {
+      "image": "",
+      "name": "Lucas Batti",
+      "role": "Frontend Engineer"
+    },
+    {
+      "image": "https://content.unensayoparami.org/wp-content/uploads/2023/09/Portadas-Blog-15.png",
+      "name": "Aleta Portela",
+      "role": "Support"
+    },
+    {
+      "image": "",
+      "name": "Georgina Sposetti",
+      "role": "CEO y fundadora"
+    },
+    {
+      "image": "",
+      "name": "Georgina Sposetti",
+      "role": "CEO y fundadora"
+    },
+    {
+      "image": "",
+      "name": "Georgina Sposetti",
+      "role": "CEO y fundadora"
+    }
+  ]
+}

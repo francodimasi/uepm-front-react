@@ -1,11 +1,10 @@
-import { H2 } from "ui";
-import { useContext } from 'react';
-import { LanguageContext, useClientTranslation } from "i18n";
+import { H2 } from 'ui';
+import { ServerContext, useContext } from 'react';
+import { LanguageContext, useClientTranslation } from 'i18n';
 
 export const MedicNetwork = () => {
-
-  const { lang } = useContext(LanguageContext)
-  const { t } = useClientTranslation(lang, { keyPrefix: "medicalNetwork" });
+  const { lang } = useContext(LanguageContext as ServerContext<any>);
+  const { t } = useClientTranslation(lang, { keyPrefix: 'medicalNetwork' });
 
   return (
     <section className="bg-light relative">
@@ -13,9 +12,7 @@ export const MedicNetwork = () => {
         <div className="grid grid-cols-12">
           <div className="col-span-12 md:col-span-8 lg:col-span-6 sm:pr-20">
             <H2 className="pb-12">{t('title')}</H2>
-            <p>
-              {t('description')}
-            </p>
+            <p>{t('description')}</p>
           </div>
         </div>
       </div>

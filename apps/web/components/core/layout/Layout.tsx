@@ -1,14 +1,18 @@
-import React, { PropsWithChildren } from "react";
-import { Header } from "./header/Header";
-import { Footer } from "./Footer";
-import { Content } from "./Content";
+import { PropsWithChildren } from 'react';
+import { Header } from './header';
+import { Footer } from './footer';
+import { Content } from './Content';
+import { LocaleProps, defaultLocale } from 'intl';
 
-type LayoutProps = PropsWithChildren<{}>;
+type LayoutProps = PropsWithChildren & LocaleProps;
 
-export const Layout: React.FC<LayoutProps> = ({ children }) => (
+export const Layout: React.FC<LayoutProps> = ({
+  children,
+  locale = defaultLocale,
+}) => (
   <div className="min-h-full flex flex-col">
-    <Header />
+    <Header locale={locale} />
     <Content>{children}</Content>
-    <Footer />
+    <Footer locale={locale} />
   </div>
 );

@@ -1,4 +1,4 @@
-import { forwardRef } from "react";
+import { forwardRef } from 'react';
 
 type ContactInputProps = {
   label: string;
@@ -13,7 +13,7 @@ export const ContactInput = forwardRef<any, ContactInputProps>(
       <div className={`${className}`}>
         <div className="uppercase text-xs mb-1 h-4 text-light">{label}</div>
         <input
-        ref={ref}
+          ref={ref}
           className="border-2 border-light py-2 px-3 w-full outline-light text-light bg-transparent"
           type={type}
           name={name}
@@ -21,5 +21,5 @@ export const ContactInput = forwardRef<any, ContactInputProps>(
         />
       </div>
     );
-  }
+  },
 );

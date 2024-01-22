@@ -1,21 +1,21 @@
-"use client";
+'use client';
 
-import money from "public/images/resources/money.png";
-import tap from "public/images/resources/tap.png";
-import efficiency from "public/images/resources/efficiency.png";
-import team from "public/images/resources/team.png";
-import personalData from "public/images/resources/personal-data.png";
-import chat from "public/images/resources/chat.png";
+import money from 'public/images/resources/money.png';
+import tap from 'public/images/resources/tap.png';
+import efficiency from 'public/images/resources/efficiency.png';
+import team from 'public/images/resources/team.png';
+import personalData from 'public/images/resources/personal-data.png';
+import chat from 'public/images/resources/chat.png';
 
-import { H2 } from "ui";
-import { Resource } from "./components/Resource";
-import { ResourceItem } from "./types/resource.type";
-import { useContext } from "react";
-import { LanguageContext, useClientTranslation } from "i18n";
+import { H2 } from 'ui';
+import { Resource } from './components/Resource';
+import { ResourceItem } from './types/resource.type';
+import { ServerContext, useContext } from 'react';
+import { LanguageContext, useClientTranslation } from 'i18n';
 
 export function Resources() {
-  const { lang } = useContext(LanguageContext)
-  const { t } = useClientTranslation(lang, {keyPrefix: "resources"});
+  const { lang } = useContext(LanguageContext as ServerContext<any>);
+  const { t } = useClientTranslation(lang, { keyPrefix: 'resources' });
 
   const resources: ResourceItem[] = [
     {
@@ -56,9 +56,7 @@ export function Resources() {
       <div className="container relative z-10">
         <div className="grid grid-cols-11">
           <div className="col-span-11 lg:col-span-6 mb-14">
-            <H2>
-              {t('title')}
-            </H2>
+            <H2>{t('title')}</H2>
           </div>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 dark">

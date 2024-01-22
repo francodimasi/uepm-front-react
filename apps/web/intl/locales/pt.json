@@ -1,0 +1,151 @@
+{
+  "metadata": {
+    "title": "Un Ensaio Para Mi"
+  },
+  "locale": {
+    "en": "Inglês",
+    "es": "Espanhol",
+    "pt": "Português"
+  },
+  "menu": {
+    "links": {
+      "patients": "Pacientes",
+      "sponsors": "Patrocinadores",
+      "physicians": "Pesquisadores",
+      "aboutUs": "Quem somos",
+      "blog": "Notícias médicas",
+      "products": "Produtos"
+    }
+  },
+  "footer": {
+    "sections": {
+      "about": "Quem somos",
+      "news": "Notícias médicas",
+      "products": "Productos"
+    },
+    "links": {
+      "sponsors": "Sponsors",
+      "partners": "Nos acompanham",
+      "physicians": "Pesquisadores",
+      "mission": "Nossa missão",
+      "team": "Nossa equipe",
+      "faqs": "FAQs",
+      "news": "Últimas notícias",
+      "science": "Ciência",
+      "studies": "Ensaios clínicos",
+      "interviews": "Entrevistas",
+      "testimonies": "Testemunhos",
+      "uepmPatients": "UEPM Pacientes",
+      "uepmOnco": "UEPM Onco",
+      "uepmPhysicians": "UEPM Pesquisadores"
+    }
+  },
+  "notFound": {
+    "status": "404",
+    "title": "Página não encontrada",
+    "description": "Desculpe, não conseguimos encontrar a página que você está procurando",
+    "goBack": "Voltar ao início"
+  },
+  "legal": {
+    "links": {
+      "t&c": "Termos e Condições",
+      "privacy": "Política de privacidade"
+    }
+  },
+  "home": {
+    "lang": "Português"
+  },
+  "about": {
+    "title": "Nos",
+    "sections": {
+      "presentation": {
+        "top": {
+          "title": "Quem somos?",
+          "description": "Trabalhamos na inclusão de pacientes unindo",
+          "highlighted": "todos os atores da pesquisa"
+        },
+        "middle": {
+          "tag": "Nosso compromisso",
+          "title": "Acompanhamento humano",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum"
+        },
+        "bottom": {
+          "tag": "Nossa prioridade",
+          "title": "Qualidade e atendimento ao paciente",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum"
+        }
+      },
+      "team": {
+        "tag": "Liderança",
+        "title": "Nossa equipe",
+        "board": "Time executivo",
+        "staff": "Staff"
+      },
+      "partners": {
+        "tag": "Nos acompanham",
+        "title": "Nossa Rede"
+      }
+    }
+  },
+  "blog": {
+    "articleOfInterest": {
+      "title": "Você pode estar interessado"
+    },
+    "article": {
+      "share": {
+        "title": "Compartilhar",
+        "description": "Onde você deseja compartilhá-lo?",
+        "copyLabel": "Link de cópia",
+        "copiedLabel": "Já o tens!"
+      }
+    }
+  },
+  "shared": {
+    "contactUs": {
+      "title": "Envie-nos a sua consulta",
+      "description": "Preencha o formulário e responderemos o mais breve possível",
+      "fields": {
+        "name": "Nome",
+        "lastname": "Sobrenome",
+        "email": "Correio eletrônico",
+        "phone": "Telefone",
+        "query": "Consulta"
+      },
+      "optional": "(Opcional)"
+    },
+    "faqs": {
+      "title": "FAQs"
+    },
+    "editorSelection": {
+      "title": "Escolha do Editor"
+    },
+    "featuredArticles": {
+      "title": "Mais sobre o assunto"
+    },
+    "trendingTopics": {
+      "title": "Tópicos mais pesquisados"
+    }
+  },
+  "actions": {
+    "back": "Voltar",
+    "cancel": "Cancelar",
+    "clear": "Excluir",
+    "close": "Fechar",
+    "next": "Seguindo",
+    "ok": "Aceitar",
+    "previous": "Antigo",
+    "save": "Manter",
+    "search": "Procurar",
+    "select": "Selecione",
+    "submit": "Enviar",
+    "seeMore": "Ver mais",
+    "seeLess": "Ver menos",
+    "share": "Compartilhar",
+    "yes": "Sim",
+    "no": "Não"
+  },
+  "commonTerms": {
+    "of": "de",
+    "ofReading": "de leitura"
+  }
+}

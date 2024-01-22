@@ -1,0 +1,151 @@
+{
+  "metadata": {
+    "title": "Trialtech"
+  },
+  "locale": {
+    "en": "English",
+    "es": "Spanish",
+    "pt": "Portuguese"
+  },
+  "menu": {
+    "links": {
+      "patients": "Patients",
+      "sponsors": "Sponsors",
+      "physicians": "Physicians",
+      "aboutUs": "About us",
+      "blog": "Blog",
+      "products": "Products"
+    }
+  },
+  "footer": {
+    "sections": {
+      "about": "About us",
+      "news": "Medical news",
+      "products": "Products"
+    },
+    "links": {
+      "sponsors": "Sponsors",
+      "partners": "Partners",
+      "physicians": "Physicians",
+      "mission": "Our mission",
+      "team": "Our team",
+      "faqs": "FAQs",
+      "news": "Last news",
+      "science": "Science",
+      "studies": "Studies",
+      "interviews": "Interviews",
+      "testimonies": "Testimonies",
+      "uepmPatients": "UEPM Patients",
+      "uepmOnco": "UEPM Onco",
+      "uepmPhysicians": "UEPM Physicians"
+    }
+  },
+  "notFound": {
+    "status": "404",
+    "title": "Page not found",
+    "description": "Sorry, we couldn't find the page you're looking for",
+    "goBack": "Go back to home"
+  },
+  "legal": {
+    "links": {
+      "t&c": "Terms and Conditions",
+      "privacy": "Privacy Policy"
+    }
+  },
+  "home": {
+    "lang": "English"
+  },
+  "about": {
+    "title": "About us",
+    "sections": {
+      "presentation": {
+        "top": {
+          "title": "About us",
+          "description": "We work on the inclusion of patients by",
+          "highlighted": "uniting all research actors"
+        },
+        "middle": {
+          "tag": "Our commitment",
+          "title": "Human support",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum"
+        },
+        "bottom": {
+          "tag": "Our priority",
+          "title": "Quality and patient care",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum"
+        }
+      },
+      "team": {
+        "tag": "Leadership",
+        "title": "Our team",
+        "board": "Executive team",
+        "staff": "Staff"
+      },
+      "partners": {
+        "tag": "Partners",
+        "title": "Our net"
+      }
+    }
+  },
+  "blog": {
+    "articleOfInterest": {
+      "title": "Content for you"
+    },
+    "article": {
+      "share": {
+        "title": "Share",
+        "description": "Where do you wanna share this?",
+        "copyLabel": "Copy link",
+        "copiedLabel": "Copied!"
+      }
+    }
+  },
+  "shared": {
+    "contactUs": {
+      "title": "Send us your query",
+      "description": "Complete the form and we will respond to you as soon as possible",
+      "fields": {
+        "name": "Name",
+        "lastname": "Lastname",
+        "email": "Email",
+        "phone": "Phone",
+        "query": "Query"
+      },
+      "optional": "(Optional)"
+    },
+    "faqs": {
+      "title": "FAQs"
+    },
+    "editorSelection": {
+      "title": "Editor selection for you"
+    },
+    "featuredArticles": {
+      "title": "More about this subject"
+    },
+    "trendingTopics": {
+      "title": "Trending topics"
+    }
+  },
+  "actions": {
+    "back": "Back",
+    "cancel": "Cancel",
+    "clear": "Clear",
+    "close": "Close",
+    "next": "Next",
+    "ok": "OK",
+    "previous": "Previous",
+    "save": "Save",
+    "search": "Search",
+    "select": "Select",
+    "submit": "Submit",
+    "seeMore": "See more",
+    "seeLess": "See less",
+    "share": "Share",
+    "yes": "Yes",
+    "no": "No"
+  },
+  "commonTerms": {
+    "of": "of",
+    "ofReading": "of reading"
+  }
+}

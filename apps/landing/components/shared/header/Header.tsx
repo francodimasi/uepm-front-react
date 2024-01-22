@@ -1,18 +1,18 @@
-"use client";
+'use client';
 
-import cx from "classnames";
-import Image from "next/image";
-import { useCallback, useEffect, useState } from "react";
-import { isMobile } from "utils";
+import cx from 'classnames';
+import Image from 'next/image';
+import { useCallback, useEffect, useState } from 'react';
+import { isMobile } from 'utils';
 
-import { useMenu } from "@hooks/useMenu";
-import close from "public/images/icons/close.svg";
-import menu from "public/images/icons/menu.svg";
-import logo from "public/images/trialtech-logo.svg";
-import { MenuDesktop } from "./menu/MenuDesktop";
-import { MenuMobile } from "./menu/MenuMobile";
+import { useMenu } from '@hooks/useMenu';
+import close from 'public/images/icons/close.svg';
+import menu from 'public/images/icons/menu.svg';
+import logo from 'public/images/trialtech-logo.svg';
+import { MenuDesktop } from './menu/MenuDesktop';
+import { MenuMobile } from './menu/MenuMobile';
 
-const mobileBreakpoint = "lg";
+const mobileBreakpoint = 'lg';
 
 export const Header = () => {
   const [minimized, setMinimized] = useState<boolean>(false);
@@ -21,25 +21,25 @@ export const Header = () => {
   const { links } = useMenu();
 
   const headerClasses = cx(
-    "group fixed top-0 left-0 w-full z-[9999] transition-all",
+    'group fixed top-0 left-0 w-full z-[9999] transition-all',
     {
-      "py-4 bg-opacity-70 backdrop-blur": minimized,
-      "py-4 lg:py-12": !minimized,
-    }
+      'py-4 bg-opacity-70 backdrop-blur': minimized,
+      'py-4 lg:py-12': !minimized,
+    },
   );
 
   const bgHeaderClasses = cx(
-    "bg-dark transition-opacity ease-in-out absolute top-0 left-0 w-full h-full",
+    'bg-dark transition-opacity ease-in-out absolute top-0 left-0 w-full h-full',
     {
-      "opacity-0": !minimized,
-      "opacity-70": minimized,
-    }
+      'opacity-0': !minimized,
+      'opacity-70': minimized,
+    },
   );
-  
+
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener('scroll', handleScroll);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -51,7 +51,7 @@ export const Header = () => {
       setMinimized(scrollTop > scrollBreakpoint);
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [minimized]
+    [minimized],
   );
 
   const handleOpened = useCallback(() => setOpened((opened) => !opened), []);
@@ -68,7 +68,10 @@ export const Header = () => {
             alt="Trialtech logo"
           />
           <div>
-            <button className={`${mobileBreakpoint}:hidden relative z-10`} onClick={handleOpened}>
+            <button
+              className={`${mobileBreakpoint}:hidden relative z-10`}
+              onClick={handleOpened}
+            >
               <Image src={opened ? close : menu} width={24} alt="Menu" />
             </button>
 
@@ -79,7 +82,11 @@ export const Header = () => {
         </nav>
       </div>
       <div className={`${mobileBreakpoint}:hidden`}>
-        <MenuMobile links={links} opened={opened} breakpoint={mobileBreakpoint}></MenuMobile>
+        <MenuMobile
+          links={links}
+          opened={opened}
+          breakpoint={mobileBreakpoint}
+        ></MenuMobile>
       </div>
     </header>
   );

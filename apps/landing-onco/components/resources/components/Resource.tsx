@@ -1,7 +1,7 @@
-import { useMotionValue } from "framer-motion";
-import { ResourceItem } from "../types/resource.type";
-import Image from "next/image";
-import { ResourcePattern } from "./ResourcePattern";
+import { useMotionValue } from 'framer-motion';
+import { ResourceItem } from '../types/resource.type';
+import Image from 'next/image';
+import { ResourcePattern } from './ResourcePattern';
 
 export const Resource = ({ name, icon, description }: ResourceItem) => {
   let mouseX = useMotionValue(0);
@@ -14,10 +14,7 @@ export const Resource = ({ name, icon, description }: ResourceItem) => {
   }
 
   return (
-    <div
-      onMouseMove={onMouseMove}
-      className="group relative backdrop-blur"
-    >
+    <div onMouseMove={onMouseMove} className="group relative backdrop-blur">
       <div className="bg-light absolute w-full h-full opacity-30 top-0 left-0"></div>
       <div className="relative z-10 p-8 w-full h-full">
         <ResourcePattern mouseX={mouseX} mouseY={mouseY} />

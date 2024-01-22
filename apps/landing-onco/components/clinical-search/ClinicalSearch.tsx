@@ -1,9 +1,8 @@
-"use client";
+'use client';
 
-import { openUrl } from "utils";
-import { LandingButton } from "ui";
-import { LINKS } from "@constants/links.const";
-
+import { openUrl } from 'utils';
+import { LandingButton } from 'ui';
+import { LINKS } from '@constants/links.const';
 
 export const ClinicalSearch = () => {
   return (

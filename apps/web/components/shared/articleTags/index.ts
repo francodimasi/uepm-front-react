@@ -1,0 +1,1 @@
+export { ArticleTags } from './ArticleTags';

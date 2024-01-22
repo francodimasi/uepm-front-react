@@ -10,3 +10,24 @@
   padding: 0;
   margin: 0;
 }
+
+div.wp-block-embed__wrapper iframe {
+  width: 100%;
+  min-height: 320px;
+}
+
+@media (max-width: 640px) {
+  div.wp-block-embed__wrapper iframe {
+    width: 100%;
+    min-height: 320px;
+    max-height: 320px;
+  }
+}
+
+/* HTML docs */
+.document p{
+  @apply mb-4
+}
+.document h2{
+  @apply font-bold mb-6 mt-20 text-xl
+}

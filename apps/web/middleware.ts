@@ -1,59 +1,39 @@
-import { NextResponse } from "next/server";
-import type { NextRequest } from "next/server";
+import { defaultLocale, locales } from 'intl/src/constants';
+import { localePrefix, pathnames } from './intl/navigation';
 
-import { match as matchLocale } from "@formatjs/intl-localematcher";
-import Negotiator from "negotiator";
+import createIntlMiddleware from 'next-intl/middleware';
+import { NextRequest, NextResponse } from 'next/server';
 
-import cookie from "react-cookies";
+export default function middleware(request: NextRequest) {
+  const url = new URL(request.url);
+  const origin = url.origin;
+  const pathname = url.pathname;
 
-/**
- * @todo define locales
- */
+  const [, locale, ...segments] = request.nextUrl.pathname.split('/');
 
-const locales = ["en", "es"];
-let defaultLocale = "en";
-
-function getLocale(request: NextRequest): string | undefined {
-  // Negotiator expects plain object so we need to transform headers
-  const negotiatorHeaders: Record<string, string> = {};
-  request.headers.forEach((value, key) => (negotiatorHeaders[key] = value));
-
-  // Use negotiator and intl-localematcher to get best locale
-  let languages = new Negotiator({ headers: negotiatorHeaders }).languages();
-  return (
-    cookie.load("NEXT_LOCALE") ?? matchLocale(languages, locales, defaultLocale)
-  );
-}
-
-export function middleware(request: NextRequest) {
-  const pathname = request.nextUrl.pathname;
-  let tempLocale;
-
-  // Check if there is any supported locale in the pathname
-  const pathnameIsMissingLocale = locales.every((locale) => {
-    if (!pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`) {
-      return true;
-    } else {
-      tempLocale = locale;
-      return false;
-    }
-  });
-
-  // Save locale in cookies
-  if (!pathnameIsMissingLocale) {
-    cookie.save("NEXT_LOCALE", tempLocale);
-  }
-
-  // Redirect if there is no locale
-  if (pathnameIsMissingLocale) {
-    const locale = getLocale(request);
+  if (locale !== null && !locales.includes(locale)) {
+    request.nextUrl.pathname = `/${defaultLocale}/${segments.join('/')}`;
     return NextResponse.redirect(
-      new URL(`/${locale}/${pathname}`, request.url)
+      new URL(`/${defaultLocale}/${segments.join('/')}`, request.url),
     );
   }
+
+  const handleI18nRouting = createIntlMiddleware({
+    locales,
+    defaultLocale,
+    localePrefix,
+    pathnames,
+  });
+
+  const response = handleI18nRouting(request);
+
+  response.headers.set('x-url', request.url);
+  response.headers.set('x-origin', origin);
+  response.headers.set('x-pathname', pathname);
+
+  return response;
 }
 
 export const config = {
-  // Matcher ignoring `/_next/` and `/api/`
-  matcher: ['/((?!api|_next/static|_next/image|.*\\..*|favicon.ico).*)',],
+  matcher: ['/((?!api|_next|.*\\..*).*)'],
 };

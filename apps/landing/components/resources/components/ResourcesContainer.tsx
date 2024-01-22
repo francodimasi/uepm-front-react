@@ -1,23 +1,23 @@
-import { useContext, useEffect, useState } from "react";
-import { Pagination } from "swiper/modules";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { BREAKPOINTS } from "ui";
+import { ServerContext, useContext, useEffect, useState } from 'react';
+import { Pagination } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { BREAKPOINTS } from 'ui';
 // import { RESOURCES } from "../constants/resources.const";
-import { Resource } from "./Resource";
+import { Resource } from './Resource';
 
-import patient from "public/images/resources/patient.svg";
-import precision from "public/images/resources/precision.svg";
-import automatization from "public/images/resources/automatization.svg";
-import innovation from "public/images/resources/innovation.svg";
-import realTime from "public/images/resources/real-time.svg";
-import catchment from "public/images/resources/catchment.svg";
-import { ResourceItem } from "../types/resource.type";
-import { LanguageContext, useClientTranslation } from "i18n";
+import patient from 'public/images/resources/patient.svg';
+import precision from 'public/images/resources/precision.svg';
+import automatization from 'public/images/resources/automatization.svg';
+import innovation from 'public/images/resources/innovation.svg';
+import realTime from 'public/images/resources/real-time.svg';
+import catchment from 'public/images/resources/catchment.svg';
+import { ResourceItem } from '../types/resource.type';
+import { LanguageContext, useClientTranslation } from 'i18n';
 
 export const ResourcesContainer = () => {
-  const { lang } = useContext(LanguageContext)
-  const { t } = useClientTranslation(lang, { keyPrefix: "resources" });
-  
+  const { lang } = useContext(LanguageContext as ServerContext<any>);
+  const { t } = useClientTranslation(lang, { keyPrefix: 'resources' });
+
   const [showSwiper, setShowSwiper] = useState<boolean>(false);
 
   const switchSlider = () => {
@@ -27,10 +27,10 @@ export const ResourcesContainer = () => {
 
   useEffect(() => {
     switchSlider();
-    window.addEventListener("resize", switchSlider);
+    window.addEventListener('resize', switchSlider);
 
     return () => {
-      window.removeEventListener("resize", switchSlider);
+      window.removeEventListener('resize', switchSlider);
     };
   }, []);
 
@@ -77,8 +77,8 @@ export const ResourcesContainer = () => {
         pagination={{
           clickable: true,
           enabled: true,
-          bulletClass: "swiper-pagination-bullet !top-1 !relative",
-          bulletActiveClass: "swiper-pagination-bullet-active",
+          bulletClass: 'swiper-pagination-bullet !top-1 !relative',
+          bulletActiveClass: 'swiper-pagination-bullet-active',
         }}
         breakpoints={{
           [BREAKPOINTS.md]: {

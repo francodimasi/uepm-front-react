@@ -1,9 +1,8 @@
-import Link from "next/link";
-import { LanguageSelector } from "./LanguageSelector";
-import { MenuProps } from "./Menu.types";
+import Link from 'next/link';
+import { LanguageSelector } from './LanguageSelector';
+import { MenuProps } from './Menu.types';
 
 export const MenuDesktop = ({ links }: MenuProps) => {
-  
   return (
     <div className="top-0 left-0 h-auto w-auto">
       <div className="flex items-center h-full">

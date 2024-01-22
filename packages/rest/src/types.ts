@@ -1,4 +1,3 @@
-
 export type HttpErrorResponse = {
   status: number;
   message: string;
@@ -17,7 +16,7 @@ export type ParseHeaderProps = {
 
 export type FetchParams = {
   url: string;
-  method: "GET" | "POST" | "PUT" | "DELETE";
+  method: 'GET' | 'POST' | 'PUT' | 'DELETE';
   headers?: Headers;
-  data?: any
+  data?: any;
 };

@@ -1,14 +1,13 @@
-"use client";
+'use client';
 
-import { H2 } from "ui";
-import { ContactForm } from "./ContactForm";
-import { useState, useContext } from "react";
-import { LanguageContext, useClientTranslation } from "i18n";
+import { H2 } from 'ui';
+import { ContactForm } from './ContactForm';
+import { useState, useContext, ServerContext } from 'react';
+import { LanguageContext, useClientTranslation } from 'i18n';
 
 export const Contact = () => {
-
-  const { lang } = useContext(LanguageContext)
-  const { t } = useClientTranslation(lang, { keyPrefix: "contact" });
+  const { lang } = useContext(LanguageContext as ServerContext<any>);
+  const { t } = useClientTranslation(lang, { keyPrefix: 'contact' });
   const [sent, setSent] = useState(false);
 
   return (
@@ -39,9 +38,7 @@ export const Contact = () => {
           <div className="col-span-12 lg:col-span-6">
             {sent ? (
               <div className="p-8 sm:p-20 bg-gradient-to-br bg- border-primary border-2">
-                <p className="text-2xl text-light">
-                  {t('thanks')}
-                </p>
+                <p className="text-2xl text-light">{t('thanks')}</p>
               </div>
             ) : (
               <ContactForm onSend={setSent} />

@@ -1,17 +1,17 @@
-import { NextResponse } from "next/server";
-import type { NextRequest } from "next/server";
+import { NextResponse } from 'next/server';
+import type { NextRequest } from 'next/server';
 
-import { match as matchLocale } from "@formatjs/intl-localematcher";
-import Negotiator from "negotiator";
+import { match as matchLocale } from '@formatjs/intl-localematcher';
+import Negotiator from 'negotiator';
 
-import cookie from "react-cookies";
+import cookie from 'react-cookies';
 
 /**
  * @todo define locales
  */
 
-const locales = ["en", "es"];
-let defaultLocale = "en";
+const locales = ['en', 'es'];
+let defaultLocale = 'en';
 
 function getLocale(request: NextRequest): string | undefined {
   // Negotiator expects plain object so we need to transform headers
@@ -21,7 +21,7 @@ function getLocale(request: NextRequest): string | undefined {
   // Use negotiator and intl-localematcher to get best locale
   let languages = new Negotiator({ headers: negotiatorHeaders }).languages();
   return (
-    cookie.load("NEXT_LOCALE") ?? matchLocale(languages, locales, defaultLocale)
+    cookie.load('NEXT_LOCALE') ?? matchLocale(languages, locales, defaultLocale)
   );
 }
 
@@ -41,19 +41,19 @@ export function middleware(request: NextRequest) {
 
   // Save locale in cookies
   if (!pathnameIsMissingLocale) {
-    cookie.save("NEXT_LOCALE", tempLocale);
+    cookie.save('NEXT_LOCALE', tempLocale);
   }
 
   // Redirect if there is no locale
   if (pathnameIsMissingLocale) {
     const locale = getLocale(request);
     return NextResponse.redirect(
-      new URL(`/${locale}/${pathname}`, request.url)
+      new URL(`/${locale}/${pathname}`, request.url),
     );
   }
 }
 
 export const config = {
   // Matcher ignoring `/_next/` and `/api/`
-  matcher: ['/((?!api|_next/static|_next/image|.*\\..*|favicon.ico).*)',],
+  matcher: ['/((?!api|_next/static|_next/image|.*\\..*|favicon.ico).*)'],
 };

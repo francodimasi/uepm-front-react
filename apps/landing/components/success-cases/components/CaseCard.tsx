@@ -1,10 +1,10 @@
-import { Counter } from "../../shared/counter/Counter";
+import { Counter } from '../../shared/counter/Counter';
 export type CaseCardProps = {
   value: number;
   label: string;
   title: string;
   text: string;
-}
+};
 export const CaseCard = ({ title, text, value, label }: CaseCardProps) => {
   return (
     <div className="bg-dark bg-opacity-60 backdrop-blur p-8 text-light">
