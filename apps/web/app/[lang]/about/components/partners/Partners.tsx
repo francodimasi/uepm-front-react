@@ -5,6 +5,7 @@ import { PartnerItem } from './PartnerItem';
 import { Link } from '@intl/navigation';
 
 export const Partners: React.FC<PartnersProps & LocaleProps> = ({
+  id = 'partners-section',
   partners = [],
   locale,
 }) => {
@@ -14,7 +15,7 @@ export const Partners: React.FC<PartnersProps & LocaleProps> = ({
   if (partners.length === 0) return null;
 
   return (
-    <div className="flex flex-col py-8 lg:py-10">
+    <div id={id} className="flex flex-col py-8 lg:py-10">
       <div className="flex flex-col">
         <Tag
           text={t('tag')}

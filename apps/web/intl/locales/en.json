@@ -18,8 +18,14 @@
     }
   },
   "footer": {
+    "sections": {
+      "about": "About us",
+      "news": "Medical news",
+      "products": "Products"
+    },
     "links": {
       "sponsors": "Sponsors",
+      "partners": "Partners",
       "physicians": "Physicians",
       "mission": "Our mission",
       "team": "Our team",
@@ -27,6 +33,8 @@
       "news": "Last news",
       "science": "Science",
       "studies": "Studies",
+      "interviews": "Interviews",
+      "testimonies": "Testimonies",
       "uepmPatients": "UEPM Patients",
       "uepmOnco": "UEPM Onco",
       "uepmPhysicians": "UEPM Physicians"

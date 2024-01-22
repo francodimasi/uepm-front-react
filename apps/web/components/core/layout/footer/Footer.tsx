@@ -4,40 +4,40 @@ import { Logo, Social } from 'ui/components';
 import { FooterSection } from './section';
 import { FooterSectionLinkProps } from './section/FooterSection.types';
 import { PrivacyPolicy, Terms } from './t&c';
-import { LocaleProps } from 'intl';
+import { LocaleProps, useTranslations } from 'intl';
 import { SwitchLocale } from '@intl/components/SwitchLocale';
 
-const patientLinks: FooterSectionLinkProps[] = [
-  { id: 'sponsors', href: '/' },
-  { id: 'physicians', href: '' },
-];
 const aboutUsLinks: FooterSectionLinkProps[] = [
   { id: 'mission', href: '/about' },
-  { id: 'team', href: '/about' },
-  { id: 'faqs', href: '/about' },
+  { id: 'team', href: '/about#team-section' },
+  { id: 'partners', href: '/about#partners-section' },
+  { id: 'faqs', href: '/about#faqs-section' },
 ];
 const newsLinks: FooterSectionLinkProps[] = [
-  { id: 'news', href: '/blog' },
-  { id: 'science', href: '/blog' },
-  { id: 'studies', href: '' },
+  { id: 'news', href: '/blog/category/3' },
+  { id: 'studies', href: '/blog/category/4' },
+  { id: 'interviews', href: '/blog/category/5' },
+  { id: 'testimonies', href: '/blog/category/2' },
 ];
 const productsLinks: FooterSectionLinkProps[] = [
-  { id: 'uepmPatients', href: '', outbound: true },
+  { id: 'uepmPatients', href: 'https://unensayoparami.org/', outbound: true },
   {
     id: 'uepmOnco',
-    href: 'https://onco.unensayoparami.org',
+    href: 'https://onco.unensayoparami.org/',
     outbound: true,
   },
-  { id: 'uepmPhysicians', href: '', outbound: true },
+  { id: 'uepmPhysicians', href: 'https://app.trialtech.es/', outbound: true },
 ];
 
 type FooterProps = PropsWithChildren & LocaleProps;
 
 export const Footer: React.FC<FooterProps> = ({ locale }) => {
+  const t = useTranslations('footer.sections');
+
   return (
     <div className="flex flex-col bg-primary-dark">
       <div className="grid grid-cols-1 xl:grid-cols-4 gap-4 p-4 pb-2 sm:p-20 sm:pb-8">
-        <Link href="/" aria-label="Home" locale={locale}>
+        <Link href="/" aria-label="Home" locale={locale} className="col-span-2">
           <Logo
             brand="uepm"
             type="dark"
@@ -45,25 +45,20 @@ export const Footer: React.FC<FooterProps> = ({ locale }) => {
             width={120}
           />
         </Link>
-        <div className="grid grid-cols-2 lg:grid-cols-4 col-span-3 gap-4">
+        <div className="grid grid-cols-2 lg:grid-cols-3 col-span-2 gap-4">
           <FooterSection
             className="bg-light"
-            title="Patients"
-            links={patientLinks}
-          />
-          <FooterSection
-            className="bg-light"
-            title="About us"
+            title={t('about')}
             links={aboutUsLinks}
           />
           <FooterSection
             className="bg-light"
-            title="Medical news"
+            title={t('news')}
             links={newsLinks}
           />
           <FooterSection
             className="bg-light"
-            title="Products"
+            title={t('products')}
             links={productsLinks}
           />
         </div>

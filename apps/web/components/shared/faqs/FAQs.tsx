@@ -4,12 +4,16 @@ import { FAQsProps } from './FAQs.types';
 import { Link } from '@intl/navigation';
 import { FAQsContent } from './FAQsContent';
 
-export const FAQs = ({ faqs, locale }: FAQsProps & LocaleProps) => {
+export const FAQs = ({
+  id = 'faqs-section',
+  faqs,
+  locale,
+}: FAQsProps & LocaleProps) => {
   const t = useTranslations('shared.faqs');
   const tActions = useTranslations('actions');
 
   return (
-    <div className="flex flex-col py-8 lg:py-10">
+    <div id={id} className="flex flex-col py-8 lg:py-10">
       <div className="relative mt-3.5 mb-8 sm:mt-4 sm:mb-12 lg:mt-5 lg:mb-14 xl:mt-8 xl:mb-20">
         <div className="absolute right-0 h-full flex items-center">
           <Link href="/" locale={locale}>

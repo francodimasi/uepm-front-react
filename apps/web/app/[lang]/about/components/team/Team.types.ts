@@ -10,6 +10,7 @@ export type TeamMember = {
 
 export type TeamProps = PropsWithClassName &
   LocaleProps & {
+    id?: string;
     board?: TeamMember[];
     staff?: TeamMember[];
   };
