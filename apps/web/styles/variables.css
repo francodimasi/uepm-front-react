@@ -4,59 +4,59 @@
   */
 
   /* Archia */
-  --font-archia: "Archia";
-  --font-archia-bold: "Archia Bold";
-  --font-archia-light: "Archia Light";
-  --font-archia-medium: "Archia Medium";
-  --font-archia-semibold: "Archia SemiBold";
-  --font-archia-thin: "Archia Thin";
+  --font-archia: 'Archia';
+  --font-archia-bold: 'Archia Bold';
+  --font-archia-light: 'Archia Light';
+  --font-archia-medium: 'Archia Medium';
+  --font-archia-semibold: 'Archia SemiBold';
+  --font-archia-thin: 'Archia Thin';
 
   /* Manrope */
-  --font-manrope: "Manrope";
-  --font-manrope-bold: "Manrope Bold";
-  --font-manrope-extrabold: "Manrope ExtraBold";
-  --font-manrope-extralight: "Manrope ExtraLight";
-  --font-manrope-light: "Manrope Light";
-  --font-manrope-medium: "Manrope Medium";
-  --font-manrope-semibold: "Manrope Semibold";
+  --font-manrope: 'Manrope';
+  --font-manrope-bold: 'Manrope Bold';
+  --font-manrope-extrabold: 'Manrope ExtraBold';
+  --font-manrope-extralight: 'Manrope ExtraLight';
+  --font-manrope-light: 'Manrope Light';
+  --font-manrope-medium: 'Manrope Medium';
+  --font-manrope-semibold: 'Manrope Semibold';
 
   /* DMSans */
-  --font-DMSans: "DMSans";
-  --font-DMSans-bold: "DMSans Bold";
-  --font-DMSans-extrabold: "DMSans ExtraBold";
-  --font-DMSans-extralight: "DMSans ExtraLight";
-  --font-DMSans-light: "DMSans Light";
-  --font-DMSans-medium: "DMSans Medium";
-  --font-DMSans-semibold: "DMSans Semibold";
+  --font-DMSans: 'DMSans';
+  --font-DMSans-bold: 'DMSans Bold';
+  --font-DMSans-extrabold: 'DMSans ExtraBold';
+  --font-DMSans-extralight: 'DMSans ExtraLight';
+  --font-DMSans-light: 'DMSans Light';
+  --font-DMSans-medium: 'DMSans Medium';
+  --font-DMSans-semibold: 'DMSans Semibold';
 
-    /* Lexend */
-    --font-Lexend: "Lexend";
-    --font-Lexend-bold: "Lexend Bold";
-    --font-Lexend-extrabold: "Lexend ExtraBold";
-    --font-Lexend-extralight: "Lexend ExtraLight";
-    --font-Lexend-light: "Lexend Light";
-    --font-Lexend-medium: "Lexend Medium";
-    --font-Lexend-semibold: "Lexend Semibold";
-  
+  /* Lexend */
+  --font-Lexend: 'Lexend';
+  --font-Lexend-bold: 'Lexend Bold';
+  --font-Lexend-extrabold: 'Lexend ExtraBold';
+  --font-Lexend-extralight: 'Lexend ExtraLight';
+  --font-Lexend-light: 'Lexend Light';
+  --font-Lexend-medium: 'Lexend Medium';
+  --font-Lexend-semibold: 'Lexend Semibold';
 
   /* 
   * Color variables
   */
 
-  --color-primary: #00A393;
-  --color-primary-light: #CEFF67;
-  --color-primary-dark: #04625C;
-  --color-secondary: #00DDC8;
+  --color-primary: #00a393;
+  --color-primary-light: #ceff67;
+  --color-primary-dark: #04625c;
+  --color-secondary: #00ddc8;
 
   --color-dark: #020001;
-  --color-light: #FCFCFC;
+  --color-light: #fcfcfc;
 
-  --color-gray-light: #F0F0F0;
-  --color-gray-medium: #D9D9D9;
-  --color-gray-dark: #7A7A7A;
+  --color-white: #ffffff;
 
-  --color-error: #FF0F3A;
-  --color-alert: #F99232;
-  --color-success: #49CD4F;
+  --color-gray-light: #f0f0f0;
+  --color-gray-medium: #d9d9d9;
+  --color-gray-dark: #7a7a7a;
 
+  --color-error: #ff0f3a;
+  --color-alert: #f99232;
+  --color-success: #49cd4f;
 }

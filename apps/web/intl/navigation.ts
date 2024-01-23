@@ -29,11 +29,20 @@ export const pathnames = {
     es: '/blog/buscar/[query]',
     pt: '/blog/procurar/[query]',
   },
-  '/partners': '/partners',
   '/about': {
     en: '/about',
     es: '/nosotros',
     pt: '/sobre-nos',
+  },
+  '/docs/terms': {
+    en: '/docs/terms',
+    es: '/documentos/terminos',
+    pt: '/documentos/termos',
+  },
+  '/docs/privacy': {
+    en: '/docs/privacy',
+    es: '/documentos/privacidad',
+    pt: '/documentos/privacidade',
   },
 } satisfies Pathnames<typeof locales>;
 

@@ -1,11 +1,14 @@
 import { Layout } from '@components/core/layout/Layout';
 import { Team } from './components/team';
 import { Partners } from './components/partners';
-import { promises as fs } from 'fs';
-import { ContactUs } from '@components/shared/contactUs/ContactUs';
+import { Summary } from './components/summary';
+import { ContactUs } from '@components/shared/contactUs';
 import { FAQs } from '@components/shared/faqs';
+import { promises as fs } from 'fs';
+import { locales, unstable_setRequestLocale } from 'intl';
 
 export default async function Page({ params: { lang } }) {
+  unstable_setRequestLocale(lang);
   /**
    * @todo Replace for a real fetch
    */
@@ -39,10 +42,15 @@ export default async function Page({ params: { lang } }) {
 
   return (
     <Layout locale={lang}>
+      <Summary />
       <Team board={team.board} staff={team.staff} locale={lang} />
       <Partners partners={partners} locale={lang} />
       <FAQs faqs={faqs} locale={lang} />
       <ContactUs />
     </Layout>
   );
+}
+
+export function generateStaticParams() {
+  return locales.map((locale) => ({ lang: locale }));
 }

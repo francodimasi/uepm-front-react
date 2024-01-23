@@ -10,13 +10,14 @@ import {
   getSuggestedArticles,
   getEditorSelection,
 } from '@api/blog/requests';
-import { defaultLocale } from 'intl';
+import { defaultLocale, locales, unstable_setRequestLocale } from 'intl';
 import { orderCategories } from './helpers';
 import { notFound } from 'next/navigation';
 
 const NEWS_SLUG = 'noticias';
 
 export default async function Page({ params: { lang = defaultLocale } }) {
+  unstable_setRequestLocale(lang);
   const categories = await getCategories(lang);
   const orderedCategories = orderCategories(categories);
   const defaultCategoryId = categories.find(
@@ -57,4 +58,8 @@ export default async function Page({ params: { lang = defaultLocale } }) {
       </div>
     </Layout>
   );
+}
+
+export function generateStaticParams() {
+  return locales.map((locale) => ({ lang: locale }));
 }

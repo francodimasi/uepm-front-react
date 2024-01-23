@@ -1,7 +1,11 @@
 import clsx from 'clsx';
 import { TypographyProps } from './types';
 
-export const H2: React.FC<TypographyProps> = ({ label, className }) => {
+export const H2: React.FC<TypographyProps> = ({
+  label,
+  children,
+  className,
+}) => {
   const font = 'font-["Lexend"] font-semibold text-dark';
   const sizing =
     'text-3xl leading-8 sm:text-4xl sm:leading-10 lg:text-5xl lg:leading-[64px] xl:text-6xl xl:leading-[72px]';
@@ -10,6 +14,7 @@ export const H2: React.FC<TypographyProps> = ({ label, className }) => {
   return (
     <span className={clsx(`${font} ${sizing} ${spacing}`, className)}>
       {label}
+      {children}
     </span>
   );
 };

@@ -23,3 +23,11 @@ div.wp-block-embed__wrapper iframe {
     max-height: 320px;
   }
 }
+
+/* HTML docs */
+.document p{
+  @apply mb-4
+}
+.document h2{
+  @apply font-bold mb-6 mt-20 text-xl
+}

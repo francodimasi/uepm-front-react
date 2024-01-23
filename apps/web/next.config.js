@@ -4,7 +4,7 @@ const withNextIntl = require('next-intl/plugin')(
 
 module.exports = withNextIntl({
   reactStrictMode: true,
-  transpilePackages: ['ui', 'i18n', 'intl', 'rest'],
+  transpilePackages: ['ui', 'intl', 'rest'],
   images: {
     remotePatterns: [
       {

@@ -9,6 +9,7 @@ export type Partner = {
 
 export type PartnersProps = PropsWithClassName &
   LocaleProps & {
+    id?: string;
     partners: Partner[];
   };
 

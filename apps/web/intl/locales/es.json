@@ -18,8 +18,14 @@
     }
   },
   "footer": {
+    "sections": {
+      "about": "Quiénes somos",
+      "news": "Noticias médicas",
+      "products": "Productos"
+    },
     "links": {
       "sponsors": "Sponsors",
+      "partners": "Nos acompañan",
       "physicians": "Investigadores",
       "mission": "Nuestra misión",
       "team": "Nuestro equipo",
@@ -27,10 +33,18 @@
       "news": "Últimas noticias",
       "science": "Ciencia",
       "studies": "Ensayos clínicos",
+      "interviews": "Entrevistas",
+      "testimonies": "Testimonios",
       "uepmPatients": "UEPM Pacientes",
       "uepmOnco": "UEPM Onco",
       "uepmPhysicians": "UEPM Investigadores"
     }
+  },
+  "notFound": {
+    "status": "404",
+    "title": "Página no encontrada",
+    "description": "Lo sentimos, no pudimos encontrar la página que estás buscando",
+    "goBack": "Ir al inicio"
   },
   "legal": {
     "links": {
@@ -46,6 +60,23 @@
   "about": {
     "title": "Nosotros",
     "sections": {
+      "presentation": {
+        "top": {
+          "title": "¿Quiénes somos?",
+          "description": "Trabajamos en la inclusión de pacientes uniendo a",
+          "highlighted": "todos los actores de la investigación"
+        },
+        "middle": {
+          "tag": "Nuestro compromiso",
+          "title": "Acompañamiento humano",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum"
+        },
+        "bottom": {
+          "tag": "Nuestra prioridad",
+          "title": "Calidad y cuidado del paciente",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum"
+        }
+      },
       "team": {
         "tag": "Liderazgo",
         "title": "Nuestro equipo",
