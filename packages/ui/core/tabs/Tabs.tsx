@@ -1,3 +1,4 @@
+import { twMerge } from 'tailwind-merge';
 import { TabsProps } from './Tabs.types';
 import { getClasses } from './helpers';
 import clsx from 'clsx';
@@ -11,7 +12,7 @@ export const Tabs = ({
   className,
 }: TabsProps) => {
   return (
-    <div className={clsx('block border-b border-gray-light', className)}>
+    <div className={twMerge(`block border-b border-gray-light ${className}`)}>
       <nav
         className={clsx(
           'flex',
