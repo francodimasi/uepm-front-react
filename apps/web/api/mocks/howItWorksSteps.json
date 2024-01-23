@@ -1,0 +1,53 @@
+{
+    "es": [
+        {
+            "icon": "search",
+            "title": "Busca",
+            "description": "Descubre ensayos clinicos disponibles para tu enfermedad"
+        },
+        {
+            "icon": "apply",
+            "title": "Postúlate",
+            "description": "Completa el formulario para que podamos ponernos en contacto contigo"
+        },
+        {
+            "icon": "takepart",
+            "title": "Participa",
+            "description": "Si cumples con los requisitos médicos te contactaremos"
+        }
+    ],
+    "en": [
+        {
+            "icon": "search",
+            "title": "Search",
+            "description": "Discover clinical trials available for your condition"
+        },
+        {
+            "icon": "apply",
+            "title": "Apply",
+            "description": "Fill the form so we can contact you"
+        },
+        {
+            "icon": "takepart",
+            "title": "Take part",
+            "description": "If you meet the medical requirements we will contact you"
+        }
+    ],
+    "pt": [
+        {
+            "icon": "search",
+            "title": "Procura",
+            "description": "Descubra os ensaios clínicos disponíveis para a sua doença"
+        },
+        {
+            "icon": "apply",
+            "title": "Aplica",
+            "description": "Preencha o formulário para que possamos entrar em contato com você"
+        },
+        {
+            "icon": "takepart",
+            "title": "Participa",
+            "description": "Se você atender aos requisitos médicos, entraremos em contato com você"
+        }
+    ]
+}

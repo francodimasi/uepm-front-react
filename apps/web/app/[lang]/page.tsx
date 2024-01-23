@@ -1,19 +1,26 @@
 import { Layout } from '@components/core/layout/Layout';
-import {
-  defaultLocale,
-  locales,
-  unstable_setRequestLocale,
-  useTranslations,
-} from 'intl';
+import { defaultLocale, locales, unstable_setRequestLocale } from 'intl';
+import { promises as fs } from 'fs';
+import { Step } from './components/howitworks/HowItWorks.types';
+import { HowItWorks } from './components/howitworks';
 
-export default function Page({ params: { lang = defaultLocale } }) {
+export default async function Page({ params: { lang = defaultLocale } }) {
   unstable_setRequestLocale(lang);
-  const t = useTranslations('home');
+
+  //TODO: replace with real fetch
+  const getHowItWorksSteps = async () => {
+    const steps = await fs.readFile(
+      process.cwd() + '/api/mocks/howItWorksSteps.json',
+      'utf8',
+    );
+    return JSON.parse(steps);
+  };
+
+  const steps: Step[] = await getHowItWorksSteps();
 
   return (
     <Layout locale={lang}>
-      <span>{`Language is: ${t('lang')}`}</span>
-      <br></br>
+      <HowItWorks steps={steps[lang]} />
       <span>{`Locale is: ${lang}`}</span>
       <br></br>
       <br></br>

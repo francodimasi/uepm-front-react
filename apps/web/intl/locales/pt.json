@@ -53,7 +53,9 @@
     }
   },
   "home": {
-    "lang": "Português"
+    "howitworks": {
+      "title": "Como funciona?"
+    }
   },
   "about": {
     "title": "Nos",
