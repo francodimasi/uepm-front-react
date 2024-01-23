@@ -19,7 +19,10 @@ export const Step: React.FC<StepProps> = ({
         <span className="flex justify-center items-center w-20 h-20 rounded-full p-6 bg-white">
           {icon}
         </span>
-        <H3 label={title} className="!pb-0 !mb-2 sm:text-2xl lg:text-3xl lg:leading-8 xl:text-4xl xl:leading-10" />
+        <H3
+          label={title}
+          className="!pb-0 !mb-2 sm:text-2xl lg:text-3xl lg:leading-8 xl:text-4xl xl:leading-10"
+        />
       </div>
       <P1
         label={description}
