@@ -1,5 +1,5 @@
-import clsx from 'clsx';
 import { TypographyProps } from './types';
+import { twMerge } from 'tailwind-merge';
 
 export const H3: React.FC<TypographyProps> = ({
   label,
@@ -12,7 +12,7 @@ export const H3: React.FC<TypographyProps> = ({
   const spacing =
     'my-2.5 pb-4 sm:my-3 sm:pb-6 lg:my-4 lg:pb-8 xl:my-6 xl:pb-12';
   return (
-    <span className={clsx(`${font} ${sizing} ${spacing}`, className)}>
+    <span className={twMerge(`${font} ${sizing} ${spacing} ${className}`)}>
       {label}
       {children}
     </span>
