@@ -18,7 +18,9 @@ export const Step: React.FC<StepProps> = ({
       )}
     >
       <div className="flex sm:flex-col gap-4 w-full pb-6 sm:pb-0 items-center sm:items-start">
-        <span className="w-20 h-20 rounded-full p-6 bg-[#FFFFFF]">{icon}</span>
+        <span className="flex justify-center items-center w-20 h-20 rounded-full p-6 bg-[#FFFFFF]">
+          {icon}
+        </span>
         <H3 label={title} className="!pb-0 sm:!text-2xl" />
       </div>
       <P2 label={description} />
