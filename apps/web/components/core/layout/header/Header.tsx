@@ -19,7 +19,7 @@ export const Header: React.FC<HeaderProps> = ({ locale }) => {
   const t = useTranslations('menu.links');
   const menuLinks = links.map((link) => ({ ...link, label: t(link.id) }));
   return (
-    <header className="sticky top-0 z-10 bg-white">
+    <header className="sticky top-0 z-50 bg-gray-light">
       <nav>
         <div className="relative z-50 flex justify-between px-4 py-4 lg:px-20 lg:py-8">
           <div className="relative z-10 w-full flex items-center gap-16">

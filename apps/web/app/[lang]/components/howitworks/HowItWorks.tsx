@@ -15,10 +15,10 @@ export const HowItWorks: React.FC<HowItWorksProps> = ({ steps }) => {
       <div className="sm:mb-8 lg:hidden">
         <H2 label={t('title')} className="!mt-0" />
       </div>
-      <div className="grid grid-flow-row  sm:grid-flow-col auto-rows-fr auto-cols-fr">
+      <div className="grid grid-flow-row sm:grid-flow-col auto-rows-fr auto-cols-fr">
         <H2
           label={t('title')}
-          className="!mt-0 xl:!text-5xl sm:!text-3xl hidden lg:block 2xl:max-w-xs"
+          className="hidden lg:flex mt-0 sm:text-3xl xl:text-5xl 2xl:max-w-xs"
         />
         {steps.map((step, index) => {
           return (
