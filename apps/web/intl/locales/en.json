@@ -53,7 +53,9 @@
     }
   },
   "home": {
-    "lang": "English"
+    "campaigns": {
+      "title": "Campaigns"
+    }
   },
   "about": {
     "title": "About us",

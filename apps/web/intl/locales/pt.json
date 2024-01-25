@@ -53,7 +53,9 @@
     }
   },
   "home": {
-    "lang": "Português"
+    "campaigns": {
+      "title": "Campanhas"
+    }
   },
   "about": {
     "title": "Nos",

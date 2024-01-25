@@ -3,16 +3,33 @@ import {
   defaultLocale,
   locales,
   unstable_setRequestLocale,
-  useTranslations,
 } from 'intl';
+import { promises as fs } from 'fs';
+import { Campaigns } from './components/campaigns';
+import { Campaign } from './components/campaigns/Campaigns.types';
 
-export default function Page({ params: { lang = defaultLocale } }) {
+export default async function Page({ params: { lang = defaultLocale } }) {
   unstable_setRequestLocale(lang);
-  const t = useTranslations('home');
+
+  //TODO: replace with real fetch
+  const getCampaigns = async () => {
+    const campaigns = await fs.readFile(
+      process.cwd() + '/api/mocks/campaigns.json',
+      'utf8',
+    );
+    return JSON.parse(campaigns);
+  };
+
+  const campaigns: Campaign[] = await getCampaigns();
 
   return (
     <Layout locale={lang}>
-      <span>{`Language is: ${t('lang')}`}</span>
+      <div className="sm:hidden">
+        <Campaigns campaigns={campaigns[lang]} perPage={1} />
+      </div>
+      <div className="hidden sm:block">
+        <Campaigns campaigns={campaigns[lang]} perPage={2} />
+      </div>
       <br></br>
       <span>{`Locale is: ${lang}`}</span>
       <br></br>
