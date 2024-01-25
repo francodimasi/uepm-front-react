@@ -19,7 +19,7 @@ export const Menu: React.FC<MenuProps & LocaleProps> = ({
       {({ open }) => (
         <>
           <Popover.Button
-            className="relative z-10 -m-2 inline-flex items-center rounded-lg stroke-dark p-2 hover:bg-dark/50 hover:stroke-dark active:stroke-dark [&:not(:focus-visible)]:focus:outline-none"
+            className="relative z-10 -m-2 inline-flex items-center rounded-lg stroke-dark p-2 focus:outline-none"
             aria-label="Toggle site navigation"
           >
             {({ open }) =>

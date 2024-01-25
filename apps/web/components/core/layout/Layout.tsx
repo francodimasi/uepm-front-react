@@ -10,7 +10,7 @@ export const Layout: React.FC<LayoutProps> = ({
   children,
   locale = defaultLocale,
 }) => (
-  <div className="min-h-full flex flex-col">
+  <div className="min-h-full flex flex-col bg-gradient-to-b from-gray-light from-opacity-20 via-opacity-20 to-white">
     <Header locale={locale} />
     <Content>{children}</Content>
     <Footer locale={locale} />

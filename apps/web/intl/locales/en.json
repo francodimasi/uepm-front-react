@@ -55,6 +55,9 @@
   "home": {
     "campaigns": {
       "title": "Campaigns"
+    },
+    "howitworks": {
+      "title": "How it works?"
     }
   },
   "about": {
