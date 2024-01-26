@@ -33,12 +33,7 @@ export default async function Page({ params: { lang = defaultLocale } }) {
   return (
     <Layout locale={lang}>
       <HowItWorks steps={steps[lang]} />
-      <div className="sm:hidden">
-        <Campaigns campaigns={campaigns[lang]} perPage={1} />
-      </div>
-      <div className="hidden sm:block">
-        <Campaigns campaigns={campaigns[lang]} perPage={2} />
-      </div>
+      <Campaigns campaigns={campaigns[lang]} />
       <br></br>
       <span>{`Locale is: ${lang}`}</span>
       <br></br>

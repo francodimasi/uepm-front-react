@@ -1,39 +1,47 @@
+import { Button } from 'ui/core';
 import { ArrowBackIcon, ArrowForwardIcon } from 'ui/core/icons';
 
 export const Pagination = ({ currentPage, totalPages, setPage }) => {
-  const DISABLED_FILL = '#E7DED7';
-  const ENABLED_FILL = '#020001';
-
   const prevDisabled = () => currentPage === 1;
   const nextDisabled = () => currentPage === totalPages;
 
   const goToNextPage = () => {
-    if (currentPage !== totalPages) setPage(currentPage + 1);
+    if (!nextDisabled()) setPage(currentPage + 1);
   };
 
   const goToPrevPage = () => {
-    if (currentPage !== 1) {
+    if (!prevDisabled()) {
       setPage(currentPage - 1);
     }
   };
 
   return (
     <div className="w-full flex gap-2 items-center justify-between sm:justify-end">
-      <button onClick={goToPrevPage} disabled={prevDisabled()}>
+      <Button
+        onClick={goToPrevPage}
+        disabled={prevDisabled()}
+        fill="clear"
+        size="sm"
+        iconOnly
+      >
         <span>
-          <ArrowBackIcon fill={prevDisabled() ? DISABLED_FILL : ENABLED_FILL} />
+          <ArrowBackIcon disabled={prevDisabled()} />
         </span>
-      </button>
+      </Button>
       <span>
         {currentPage}/{totalPages}
       </span>
-      <button onClick={goToNextPage} disabled={nextDisabled()}>
+      <Button
+        onClick={goToNextPage}
+        disabled={nextDisabled()}
+        fill="clear"
+        size="sm"
+        iconOnly
+      >
         <span>
-          <ArrowForwardIcon
-            fill={nextDisabled() ? DISABLED_FILL : ENABLED_FILL}
-          />
+          <ArrowForwardIcon disabled={nextDisabled()} />
         </span>
-      </button>
+      </Button>
     </div>
   );
 };
