@@ -34,11 +34,14 @@ export const CampaignsList: React.FC<CampaignsProps> = ({
   if (!campaigns || campaigns.length === 0) return null;
 
   return (
-    <div>
+    <>
       <H2 label={t('title')} className="mt-0 lg:hidden" />
       <div className="grid grid-flow-col grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 sm:gap-4 lg:gap-6 mt-10">
         <div className="mb-10 sm:mb-8 hidden lg:block">
-          <H2 label={t('title')} className="!mt-0" />
+          <H2
+            label={t('title')}
+            className="!mt-0 sm:text-3xl xl:text-5xl 2xl:max-w-xs"
+          />
           <Image src={shapes} alt={'img'} className="mt-24" />
         </div>
         {campaignsShown.map((campaign, index) => {
@@ -63,6 +66,6 @@ export const CampaignsList: React.FC<CampaignsProps> = ({
           />
         </div>
       )}
-    </div>
+    </>
   );
 };

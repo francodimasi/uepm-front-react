@@ -1,7 +1,7 @@
 import { Theme } from '../../types/core';
 
 export const IconStatus = {
-  disabled: '#d9d9d9', // The already defined gray-medium
+  disabled: '#d9d9d9',
 };
 
 export const IconColor = {

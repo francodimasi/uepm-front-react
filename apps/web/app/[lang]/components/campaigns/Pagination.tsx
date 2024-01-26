@@ -24,13 +24,10 @@ export const Pagination = ({ currentPage, totalPages, setPage }) => {
         size="sm"
         iconOnly
       >
-        <span>
-          <ArrowBackIcon disabled={prevDisabled()} />
-        </span>
+        <ArrowBackIcon disabled={prevDisabled()} />
       </Button>
-      <span>
-        {currentPage}/{totalPages}
-      </span>
+      <span className="font-semibold">{currentPage}</span>/
+      <span>{totalPages}</span>
       <Button
         onClick={goToNextPage}
         disabled={nextDisabled()}
@@ -38,9 +35,7 @@ export const Pagination = ({ currentPage, totalPages, setPage }) => {
         size="sm"
         iconOnly
       >
-        <span>
-          <ArrowForwardIcon disabled={nextDisabled()} />
-        </span>
+        <ArrowForwardIcon disabled={nextDisabled()} />
       </Button>
     </div>
   );
