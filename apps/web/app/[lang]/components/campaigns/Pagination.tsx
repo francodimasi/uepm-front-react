@@ -26,8 +26,11 @@ export const Pagination = ({ currentPage, totalPages, setPage }) => {
       >
         <ArrowBackIcon disabled={prevDisabled()} />
       </Button>
-      <span className="font-semibold">{currentPage}</span>/
-      <span>{totalPages}</span>
+      <span>
+        <span className="font-semibold">{currentPage}</span>
+        <span className="px-1">/</span>
+        <span>{totalPages}</span>
+      </span>
       <Button
         onClick={goToNextPage}
         disabled={nextDisabled()}
