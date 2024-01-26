@@ -1,0 +1,177 @@
+{
+    "en": [
+      {
+        "id": "3e707b7f-bf4e-4f70-8ce7-f6591fb0e1b5",
+        "name": "MEX-EM-ROCH-OPERETTA2",
+        "link": "https://www.unensayoparami.org/ensayo-clinico/cb247d79-416c-4b42-ae39-c6077249df68?campaign=3e707b7f-bf4e-4f70-8ce7-f6591fb0e1b5",
+        "image": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/operetta.jpeg",
+        "brief_title": "A Study To Evaluate Safety And Efficacy Of Ocrelizumab In Comparison With Fingolimod In Children And Adolescents With Relapsing-Remitting Multiple Sclerosis",
+        "condition": "Pediatric Multiple Sclerosis"
+      },
+      {
+        "id": "8102ded9-61bf-4d57-91fe-0539dad12aa3",
+        "name": "ARG-LUPUS-BMS-IM011132",
+        "link": "https://www.unensayoparami.org/ensayo-clinico/265d058d-4d02-403b-9786-f831bfb1199e",
+        "image": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/lupus.jpg",
+        "brief_title": "A Study to Evaluate Efficacy and Safety of Deucravacitinib in Participants With Active Discoid and/or Subacute Cutaneous Lupus Erythematosus (DLE/SCLE)",
+        "condition": "Lupus Erythematosus"
+      },
+      {
+        "id": "48448d11-27ef-401d-8654-ff23e54f0c71",
+        "name": "ARG-ESQUIZO-BI-CONNEX",
+        "link": "https://unensayoparami.org/ensayo-clinico/esquizofrenia-latam",
+        "image": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/esquizo.png",
+        "brief_title": "Clinical Trial of BI 425809 Effect on Cognition and Functional Capacity in Schizophrenia (CONNEX-2)",
+        "condition": "Schizophrenia"
+      },
+      {
+        "id": "e93f0300-7427-4a94-a039-eb637f1a748c",
+        "name": "BRA-ECSIS-BI-1366-0031",
+        "link": "https://www.unensayoparami.org/ensayo-clinico/a06d7c87-720d-47e9-8149-1447e7d3e092?lang=pt&campaign=e93f0300-7427-4a94-a039-eb637f1a748c",
+        "image": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/esclero-01.png",
+        "brief_title": "A Study in People With Systemic Sclerosis to Test Whether BI 685509 Has an Effect on Lung Function and Other Systemic Sclerosis Symptoms",
+        "condition": "Scleroderma Systemic"
+      },
+      {
+        "id": "e1162ced-6e51-4f32-ae1d-1e737c3f8f74",
+        "name": "ARG-ECSIS-BI-1366-0031",
+        "link": "https://www.unensayoparami.org/ensayo-clinico/a06d7c87-720d-47e9-8149-1447e7d3e092",
+        "image": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/esclero-02.png",
+        "brief_title": "A Study in People With Systemic Sclerosis to Test Whether BI 685509 Has an Effect on Lung Function and Other Systemic Sclerosis Symptoms",
+        "condition": "Scleroderma Systemic"
+      },
+      {
+        "id": "78995f57-812d-441a-83e3-0d252795351a",
+        "name": "ARG-CAVEJ-ROCH-BO42843",
+        "link": "https://www.unensayoparami.org/ensayo-clinico/c13b630c-3cad-4410-aa0c-da4122f6f98a",
+        "image": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/vejiga.png",
+        "brief_title": "A Study of Atezolizumab Versus Placebo as Adjuvant Therapy in Patients With High-Risk Muscle-Invasive Bladder Cancer Who Are ctDNA Positive Following Cystectomy",
+        "condition": "Muscle-invasive Bladder Cancer"
+      },
+      {
+        "id": "dc43148e-e523-485a-a1c8-39d35903ffc4",
+        "name": "ARG-CU-AMG-20170104",
+        "link": "https://www.unensayoparami.org/ensayo-clinico/f2165b65-6a61-4bab-b200-79938909b24c",
+        "image": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/colitis.jpg",
+        "brief_title": "Safety and Efficacy of Efavaleukin Alfa in Participants With Moderately to Severely Active Ulcerative Colitis",
+        "condition": "Ulcerative Colitis"
+      }
+    ],
+    "es": [
+      {
+        "id": "3e707b7f-bf4e-4f70-8ce7-f6591fb0e1b5",
+        "name": "MEX-EM-ROCH-OPERETTA2",
+        "link": "https://www.unensayoparami.org/ensayo-clinico/cb247d79-416c-4b42-ae39-c6077249df68?campaign=3e707b7f-bf4e-4f70-8ce7-f6591fb0e1b5",
+        "image": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/operetta.jpeg",
+        "brief_title": "Esclerosis múltiple infantil y adolescente: nuevo tratamiento en investigación",
+        "condition": "Esclerosis múltiple"
+      },
+      {
+        "id": "8102ded9-61bf-4d57-91fe-0539dad12aa3",
+        "name": "ARG-LUPUS-BMS-IM011132",
+        "link": "https://www.unensayoparami.org/ensayo-clinico/265d058d-4d02-403b-9786-f831bfb1199e",
+        "image": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/lupus.jpg",
+        "brief_title": "Ensayo clínico para pacientes con lupus eritematoso cutáneo subagudo o discoide",
+        "condition": "Lupus"
+      },
+      {
+        "id": "48448d11-27ef-401d-8654-ff23e54f0c71",
+        "name": "ARG-ESQUIZO-BI-CONNEX",
+        "link": "https://unensayoparami.org/ensayo-clinico/esquizofrenia-latam",
+        "image": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/esquizo.png",
+        "brief_title": "Ensayo clínico para personas con esquizofrenia: se estudia nuevo tratamiento para mejorar los síntomas cognitivos",
+        "condition": "Esquizofrenia"
+      },
+      {
+        "id": "e93f0300-7427-4a94-a039-eb637f1a748c",
+        "name": "BRA-ECSIS-BI-1366-0031",
+        "link": "https://www.unensayoparami.org/ensayo-clinico/a06d7c87-720d-47e9-8149-1447e7d3e092?lang=pt&campaign=e93f0300-7427-4a94-a039-eb637f1a748c",
+        "image": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/esclero-01.png",
+        "brief_title": "Ensayo clínico para personas con esclerosis sistémica de tipo cutánea difusa que presenten afectación pulmonar",
+        "condition": "Esclerosis sistémica"
+      },
+      {
+        "id": "e1162ced-6e51-4f32-ae1d-1e737c3f8f74",
+        "name": "ARG-ECSIS-BI-1366-0031",
+        "link": "https://www.unensayoparami.org/ensayo-clinico/a06d7c87-720d-47e9-8149-1447e7d3e092",
+        "image": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/esclero-02.png",
+        "brief_title": "Ensayo clínico para personas con esclerosis sistémica de tipo cutánea difusa que presenten afectación pulmonar",
+        "condition": "Esclerosis sistémica"
+      },
+      {
+        "id": "78995f57-812d-441a-83e3-0d252795351a",
+        "name": "ARG-CAVEJ-ROCH-BO42843",
+        "link": "https://www.unensayoparami.org/ensayo-clinico/c13b630c-3cad-4410-aa0c-da4122f6f98a",
+        "image": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/vejiga.png",
+        "brief_title": "Ensayo clínico para personas recientemente operadas de cáncer de vejiga",
+        "condition": "Cáncer de vejiga"
+      },
+      {
+        "id": "dc43148e-e523-485a-a1c8-39d35903ffc4",
+        "name": "ARG-CU-AMG-20170104",
+        "link": "https://www.unensayoparami.org/ensayo-clinico/f2165b65-6a61-4bab-b200-79938909b24c",
+        "image": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/colitis.jpg",
+        "brief_title": "Ensayo clínico para pacientes con colitis ulcerosa de moderada a grave",
+        "condition": "Colitis ulcerosa"
+      }
+    ],
+    "pt": [
+      {
+        "id": "3e707b7f-bf4e-4f70-8ce7-f6591fb0e1b5",
+        "name": "MEX-EM-ROCH-OPERETTA2",
+        "link": "https://www.unensayoparami.org/ensayo-clinico/cb247d79-416c-4b42-ae39-c6077249df68?campaign=3e707b7f-bf4e-4f70-8ce7-f6591fb0e1b5",
+        "image": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/operetta.jpeg",
+        "brief_title": "Um estudo para avaliar a segurança e eficácia do ocrelizumab em comparação com o fingolimode em crianças e adolescentes com esclerose múltipla recorrente-remitente",
+        "condition": "Esclerose múltipla"
+      },
+      {
+        "id": "8102ded9-61bf-4d57-91fe-0539dad12aa3",
+        "name": "ARG-LUPUS-BMS-IM011132",
+        "link": "https://www.unensayoparami.org/ensayo-clinico/265d058d-4d02-403b-9786-f831bfb1199e",
+        "image": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/lupus.jpg",
+        "brief_title": "Um estudo para avaliar a eficácia e segurança de BMS-986165 em participantes com lúpus eritematoso cutâneo subagudo e / ou discóide ativo (DLE / SCLE)",
+        "condition": "Lúpus"
+      },
+      {
+        "id": "48448d11-27ef-401d-8654-ff23e54f0c71",
+        "name": "ARG-ESQUIZO-BI-CONNEX",
+        "link": "https://unensayoparami.org/ensayo-clinico/esquizofrenia-latam",
+        "image": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/esquizo.png",
+        "brief_title": "Estudo clínico para pessoas com esquizofrenia: estuda-se novo tratamento para melhorar os sintomas cognitivos",
+        "condition": "Esquizofrenia"
+      },
+      {
+        "id": "e93f0300-7427-4a94-a039-eb637f1a748c",
+        "name": "BRA-ECSIS-BI-1366-0031",
+        "link": "https://www.unensayoparami.org/ensayo-clinico/a06d7c87-720d-47e9-8149-1447e7d3e092?lang=pt&campaign=e93f0300-7427-4a94-a039-eb637f1a748c",
+        "image": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/esclero-01.png",
+        "brief_title": "Estudo para pessoas com esclerose sistêmica cutânea difusa com envolvimento pulmonar",
+        "condition": "Esclerose sistêmica"
+      },
+      {
+        "id": "e1162ced-6e51-4f32-ae1d-1e737c3f8f74",
+        "name": "ARG-ECSIS-BI-1366-0031",
+        "link": "https://www.unensayoparami.org/ensayo-clinico/a06d7c87-720d-47e9-8149-1447e7d3e092",
+        "image": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/esclero-02.png",
+        "brief_title": "Estudo para pessoas com esclerose sistêmica cutânea difusa com envolvimento pulmonar",
+        "condition": "Esclerose sistêmica"
+      },
+      {
+        "id": "78995f57-812d-441a-83e3-0d252795351a",
+        "name": "ARG-CAVEJ-ROCH-BO42843",
+        "link": "https://www.unensayoparami.org/ensayo-clinico/c13b630c-3cad-4410-aa0c-da4122f6f98a",
+        "image": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/vejiga.png",
+        "brief_title": "Um estudo de atezolizumabe versus placebo como terapia adjuvante em pacientes com câncer de bexiga invasivo muscular de alto risco que apresentam ctDNA positivo após cistectomia",
+        "condition": "Câncer de bexiga músculo-invasivo"
+      },
+      {
+        "id": "dc43148e-e523-485a-a1c8-39d35903ffc4",
+        "name": "ARG-CU-AMG-20170104",
+        "link": "https://www.unensayoparami.org/ensayo-clinico/f2165b65-6a61-4bab-b200-79938909b24c",
+        "image": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/colitis.jpg",
+        "brief_title": "Segurança e eficácia da efavaleucina alfa em participantes com colite ulcerativa moderada a grave",
+        "condition": "Colite ulcerativa"
+      }
+    ]
+  }
+  

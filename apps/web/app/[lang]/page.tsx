@@ -3,6 +3,8 @@ import { defaultLocale, locales, unstable_setRequestLocale } from 'intl';
 import { promises as fs } from 'fs';
 import { Step } from './components/howitworks/HowItWorks.types';
 import { HowItWorks } from './components/howitworks';
+import { Campaigns } from './components/campaigns';
+import { Campaign } from './components/campaigns/Campaigns.types';
 
 export default async function Page({ params: { lang = defaultLocale } }) {
   unstable_setRequestLocale(lang);
@@ -16,11 +18,31 @@ export default async function Page({ params: { lang = defaultLocale } }) {
     return JSON.parse(steps);
   };
 
+  //TODO: replace with real fetch
+  const getCampaigns = async () => {
+    const campaigns = await fs.readFile(
+      process.cwd() + '/api/mocks/campaigns.json',
+      'utf8',
+    );
+    return JSON.parse(campaigns);
+  };
+
   const steps: Step[] = await getHowItWorksSteps();
+  const campaigns: Campaign[] = await getCampaigns();
 
   return (
     <Layout locale={lang}>
       <HowItWorks steps={steps[lang]} />
+      <Campaigns campaigns={campaigns[lang]} />
+      <br></br>
+      <span>{`Locale is: ${lang}`}</span>
+      <br></br>
+      <br></br>
+      <span>{`ENV: ${process.env.NEXT_PUBLIC_ENV}`}</span>
+      <br></br>
+      <span>{`API url: ${process.env.NEXT_PUBLIC_API_URL}`}</span>
+      <br></br>
+      <span>{`WP url: ${process.env.NEXT_PUBLIC_WP_URL}`}</span>
     </Layout>
   );
 }

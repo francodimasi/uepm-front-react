@@ -19,6 +19,12 @@ module.exports = withNextIntl({
         port: '',
         pathname: '/wp-includes/images/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'uepm-dev.sfo3.digitaloceanspaces.com',
+        port: '',
+        pathname: '/public/images/**',
+      },
     ],
   },
 });
