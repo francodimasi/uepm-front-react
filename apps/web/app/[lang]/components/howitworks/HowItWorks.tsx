@@ -11,8 +11,8 @@ export const HowItWorks: React.FC<HowItWorksProps> = ({ steps }) => {
   if (!steps || steps.length === 0) return null;
 
   return (
-    <>
-      <H2 label={t('title')} className="block xl:hidden" />
+    <div className="flex flex-col">
+      <H2 label={t('title')} className="flex xl:hidden" />
       <div className="grid grid-flow-row sm:grid-flow-col auto-rows-fr auto-cols-fr">
         <H2
           label={t('title')}
@@ -30,6 +30,6 @@ export const HowItWorks: React.FC<HowItWorksProps> = ({ steps }) => {
           );
         })}
       </div>
-    </>
+    </div>
   );
 };

@@ -61,6 +61,9 @@
     },
     "stories": {
       "title": "En Primera Persona"
+    },
+    "news": {
+      "title": "Noticias médicas"
     }
   },
   "about": {
@@ -106,12 +109,18 @@
         "copyLabel": "Copiar enlace",
         "copiedLabel": "¡Ya lo tienes!"
       }
+    },
+    "blogFilter": {
+      "noResults": {
+        "title": "No se encontraron artículos",
+        "description": "Por favor, intente nuevamente"
+      }
     }
   },
   "shared": {
     "contactUs": {
-      "title": "Envíanos tu consulta",
-      "description": "Completa el formulario y te responderemos a la brevedad",
+      "title": "¿Tienes dudas?",
+      "description": "Completa el formulario para que podamos ponernos en contacto contigo",
       "fields": {
         "name": "Nombre",
         "lastname": "Apellido",

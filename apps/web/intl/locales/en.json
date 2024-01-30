@@ -53,14 +53,17 @@
     }
   },
   "home": {
-    "campaigns": {
-      "title": "Campaigns"
-    },
     "howitworks": {
       "title": "How it works?"
     },
     "stories": {
       "title": "First-hand Stories"
+    },
+    "campaigns": {
+      "title": "Campaigns"
+    },
+    "news": {
+      "title": "Medical news"
     }
   },
   "about": {
@@ -106,12 +109,18 @@
         "copyLabel": "Copy link",
         "copiedLabel": "Copied!"
       }
+    },
+    "blogFilter": {
+      "noResults": {
+        "title": "No articles found",
+        "description": "Please try again"
+      }
     }
   },
   "shared": {
     "contactUs": {
-      "title": "Send us your query",
-      "description": "Complete the form and we will respond to you as soon as possible",
+      "title": "Do you have any doubts?",
+      "description": "Complete the form so we can reach you",
       "fields": {
         "name": "Name",
         "lastname": "Lastname",

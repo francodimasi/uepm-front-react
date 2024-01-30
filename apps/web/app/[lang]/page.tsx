@@ -5,13 +5,17 @@ import { Step } from './components/howitworks/HowItWorks.types';
 import { HowItWorks } from './components/howitworks';
 import { Campaigns } from './components/campaigns';
 import { Campaign } from './components/campaigns/Campaigns.types';
+import { BlogItem } from '@models/blog.types';
+import { getArticlesByCategory } from '@api/blog/requests';
+import { blogCategories } from './blog/constants';
+import { News } from './components/news';
+import { ContactUs } from '@components/shared/contactUs';
 import { Stories } from './components/stories';
 import { Story } from './components/stories/Stories.types';
 
 export default async function Page({ params: { lang = defaultLocale } }) {
   unstable_setRequestLocale(lang);
 
-  //TODO: replace with real fetch
   const getHowItWorksSteps = async () => {
     const steps = await fs.readFile(
       process.cwd() + '/api/mocks/howItWorksSteps.json',
@@ -20,7 +24,6 @@ export default async function Page({ params: { lang = defaultLocale } }) {
     return JSON.parse(steps);
   };
 
-  //TODO: replace with real fetch
   const getCampaigns = async () => {
     const campaigns = await fs.readFile(
       process.cwd() + '/api/mocks/campaigns.json',
@@ -40,22 +43,21 @@ export default async function Page({ params: { lang = defaultLocale } }) {
 
   const steps: Step[] = await getHowItWorksSteps();
   const campaigns: Campaign[] = await getCampaigns();
+  const news: BlogItem[] = await getArticlesByCategory(
+    blogCategories.NEWS,
+    lang,
+  );
   const stories: Story[] = await getStories();
 
   return (
     <Layout locale={lang}>
-      <Stories stories={stories[lang]} />
-      <HowItWorks steps={steps[lang]} />
-      <Campaigns campaigns={campaigns[lang]} />
-      <br></br>
-      <span>{`Locale is: ${lang}`}</span>
-      <br></br>
-      <br></br>
-      <span>{`ENV: ${process.env.NEXT_PUBLIC_ENV}`}</span>
-      <br></br>
-      <span>{`API url: ${process.env.NEXT_PUBLIC_API_URL}`}</span>
-      <br></br>
-      <span>{`WP url: ${process.env.NEXT_PUBLIC_WP_URL}`}</span>
+      <div className="w-full flex flex-col justify-start items-start gap-[72px] pb-16">
+        <HowItWorks steps={steps[lang]} />
+        <Stories stories={stories[lang]} />
+        <Campaigns campaigns={campaigns[lang]} />
+        <News articles={news} locale={lang} />
+        <ContactUs />
+      </div>
     </Layout>
   );
 }
