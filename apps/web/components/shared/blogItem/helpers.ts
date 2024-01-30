@@ -9,8 +9,9 @@ export const getTagClasses = (size: BlogItemSize): string => {
   switch (size) {
     case 'xs':
     case 'sm':
-    case 'md':
       return 'pb-1 text-xs font-medium leading-4 font-["DMSans"] uppercase';
+    case 'md':
+      return 'pb-1 text-sm font-medium leading-4 font-["DMSans"] uppercase';
     case 'lg':
     case 'xl':
       return 'pb-2 text-xs font-medium leading-4 font-["DMSans"] uppercase';
@@ -30,7 +31,7 @@ export const getTitleClasses = (
       );
     case 'md':
       return clsx(
-        'text-sm lg:text-[26px]  leading-6 lg:leading-8 text-dark font-medium font-["Lexend"]',
+        'text-lg lg:text-[26px] leading-6 lg:leading-8 text-dark font-medium font-["Lexend"]',
         orientation === 'vertical' ? 'line-clamp-3' : 'line-clamp-2',
       );
     case 'lg':
