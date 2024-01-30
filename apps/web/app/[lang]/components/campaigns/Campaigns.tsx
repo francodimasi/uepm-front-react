@@ -7,8 +7,11 @@ export const Campaigns: React.FC<CampaignsProps> = ({ campaigns }) => {
       <div className="sm:hidden">
         <CampaignsList campaigns={campaigns} perPage={1} />
       </div>
-      <div className="hidden sm:block">
+      <div className="hidden sm:block 2xl:hidden">
         <CampaignsList campaigns={campaigns} perPage={2} />
+      </div>
+      <div className="hidden 2xl:block">
+        <CampaignsList campaigns={campaigns} perPage={3} />
       </div>
     </>
   );

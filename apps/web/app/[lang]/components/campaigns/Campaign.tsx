@@ -15,22 +15,21 @@ export const Campaign: React.FC<CampaignProps> = ({
   return (
     <div className="flex flex-col">
       <ImageWithFallback
-        className="w-full h-auto max-w-[400px]"
+        className="w-full h-auto"
         alt="Alt image"
         src={image}
         width={343}
         height={343}
-        style={{ margin: 'auto' }}
       />
-      <div className="flex flex-col flex-1 lg:mx-0 2xl:mx-10">
+      <div className="flex flex-col flex-1 lg:mx-0">
         <Tag
           text={tag}
-          className='text-primary-dark font-normal leading-none mt-8 uppercase font-["DMSans"] text-base lg:leading-6 my-1 pb-1 sm:my-1.5 sm:pb-1.5 lg:my-3 lg:pb-3'
+          className='text-primary-dark font-medium leading-none mt-3 uppercase font-["DMSans"] lg:leading-6 py-1 sm:py-1.5 lg:py-3'
         />
-        <H3 className="!mt-4 sm:text-2xl lg:text-3xl lg:leading-8 xl:text-4xl xl:leading-10">
+        <H3 className="!mt-4 !pb-2 !text-2xl !leading-7">
           <span className="line-clamp-2">{title}</span>
         </H3>
-        <Link href={link} className="mt-auto">
+        <Link href={link}>
           <L1 label={`${t('seeMore')} →`} />
         </Link>
       </div>

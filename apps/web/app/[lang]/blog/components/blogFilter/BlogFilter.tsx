@@ -6,7 +6,7 @@ import { getArticles } from '@api/blog/requests';
 import { BlogFilterSkeleton } from './BlogFilterSkeleton';
 import { BlogItem } from '@components/shared/blogItem';
 import { BlogFilterProps } from './BlogFilter.types';
-import { LocaleProps } from 'intl';
+import { LocaleProps, useTranslations } from 'intl';
 import { addLangCategory } from './helpers';
 import { Link } from '@intl/navigation';
 import { ArrowBackIcon } from 'ui/core/icons';
@@ -17,6 +17,7 @@ export const BlogFilter = ({
   itemsPerPage = 5,
   locale,
 }: BlogFilterProps & LocaleProps) => {
+  const t = useTranslations('blog.blogFilter.noResults');
   const [page, setPage] = useState(1);
   const [articles, setArticles] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -53,10 +54,7 @@ export const BlogFilter = ({
       {loading ? (
         <BlogFilterSkeleton entries={itemsPerPage} />
       ) : articles.length === 0 ? (
-        <Error
-          title="No encontramos posts asociados a los criterios ingresados."
-          description="Por favor, vuelva a intentar la búsqueda con otros términos."
-        />
+        <Error title={t('title')} description={t('description')} />
       ) : (
         <div className="flex flex-col">
           {articles?.map((article) => (
@@ -64,18 +62,25 @@ export const BlogFilter = ({
               key={article.slug}
               className="border-t border-gray-medium mb-6 pt-6"
             >
+              <div className="flex sm:hidden">
+                <BlogItem
+                  locale={locale}
+                  article={article}
+                  layout={{ size: 'xs', contentClasses: 'self-start' }}
+                />
+              </div>
+              <div className="hidden sm:flex xl:hidden">
+                <BlogItem
+                  locale={locale}
+                  article={article}
+                  layout={{ size: 'sm' }}
+                />
+              </div>
               <div className="hidden xl:flex">
                 <BlogItem
                   locale={locale}
                   article={article}
                   layout={{ size: 'md', contentClasses: 'self-start' }}
-                />
-              </div>
-              <div className="xl:hidden">
-                <BlogItem
-                  locale={locale}
-                  article={article}
-                  layout={{ size: 'sm' }}
                 />
               </div>
             </div>
