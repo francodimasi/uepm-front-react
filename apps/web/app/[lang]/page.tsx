@@ -5,6 +5,8 @@ import { Step } from './components/howitworks/HowItWorks.types';
 import { HowItWorks } from './components/howitworks';
 import { Campaigns } from './components/campaigns';
 import { Campaign } from './components/campaigns/Campaigns.types';
+import { Stories } from './components/stories';
+import { Story } from './components/stories/Stories.types';
 
 export default async function Page({ params: { lang = defaultLocale } }) {
   unstable_setRequestLocale(lang);
@@ -27,11 +29,22 @@ export default async function Page({ params: { lang = defaultLocale } }) {
     return JSON.parse(campaigns);
   };
 
+  //TODO: replace with real fetch
+  const getStories = async () => {
+    const stories = await fs.readFile(
+      process.cwd() + '/api/mocks/stories.json',
+      'utf8',
+    );
+    return JSON.parse(stories);
+  };
+
   const steps: Step[] = await getHowItWorksSteps();
   const campaigns: Campaign[] = await getCampaigns();
+  const stories: Story[] = await getStories();
 
   return (
     <Layout locale={lang}>
+      <Stories stories={stories[lang]} />
       <HowItWorks steps={steps[lang]} />
       <Campaigns campaigns={campaigns[lang]} />
       <br></br>
