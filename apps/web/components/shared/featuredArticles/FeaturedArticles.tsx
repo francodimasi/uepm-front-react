@@ -71,7 +71,7 @@ export const FeaturedArticles: React.FC<
           />
         ))}
       </div>
-      <div className={clsx('hidden sm:flex flex-col gap-4 pb-10 md:hidden')}>
+      <div className={clsx('hidden sm:flex flex-col gap-4 pb-4 md:hidden')}>
         {alwaysVertical ? (
           <>
             {articles.slice(0, 3).map((article) => (
@@ -84,7 +84,7 @@ export const FeaturedArticles: React.FC<
                   size: 'xl',
                   showDescription: false,
                 }}
-                className="pb-16"
+                className="pt-8"
               />
             ))}
           </>
@@ -106,7 +106,7 @@ export const FeaturedArticles: React.FC<
           </>
         )}
       </div>
-      <div className={clsx('sm:hidden flex flex-col gap-4 pb-10 xl:hidden')}>
+      <div className={clsx('sm:hidden flex flex-col gap-4 pb-2 xl:hidden')}>
         {alwaysVertical ? (
           <>
             {articles.slice(0, 3).map((article) => (
@@ -119,7 +119,7 @@ export const FeaturedArticles: React.FC<
                   size: 'lg',
                   showDescription: false,
                 }}
-                className="pb-12"
+                className="pt-5"
               />
             ))}
           </>
