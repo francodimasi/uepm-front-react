@@ -35,7 +35,7 @@ export const CampaignsList: React.FC<CampaignsProps> = ({
   if (!campaigns || campaigns.length === 0) return null;
 
   return (
-    <div className='flex flex-col lg:mt-10'>
+    <div className="flex flex-col lg:mt-10">
       <H2 label={t('title')} className="lg:hidden" />
       <div className="grid grid-flow-col grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 sm:gap-4 lg:gap-6">
         <div className="mb-10 sm:mb-8 hidden lg:block">

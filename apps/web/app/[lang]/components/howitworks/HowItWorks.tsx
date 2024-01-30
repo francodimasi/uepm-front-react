@@ -11,7 +11,7 @@ export const HowItWorks: React.FC<HowItWorksProps> = ({ steps }) => {
   if (!steps || steps.length === 0) return null;
 
   return (
-    <div className='flex flex-col'>
+    <div className="flex flex-col">
       <H2 label={t('title')} className="flex xl:hidden" />
       <div className="grid grid-flow-row sm:grid-flow-col auto-rows-fr auto-cols-fr">
         <H2
