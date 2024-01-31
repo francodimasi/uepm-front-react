@@ -13,8 +13,8 @@ export const Stories: React.FC<StoriesProps> = ({ stories }) => {
 
   return (
     <>
-      <H2 label={t('title')} className="sm:hidden" />
       <div className="sm:hidden flex flex-col w-full">
+        <H2 label={t('title')} />
         <div className="flex justify-start">
           <StoryComp {...stories[0]} />
         </div>
@@ -39,7 +39,7 @@ export const Stories: React.FC<StoriesProps> = ({ stories }) => {
         </div>
       </div>
 
-      <div className="hidden sm:flex flex-col">
+      <div className="hidden sm:flex flex-col w-full">
         <div className="flex justify-between">
           <H2
             label={t('title')}
@@ -66,27 +66,23 @@ export const Stories: React.FC<StoriesProps> = ({ stories }) => {
           </div>
         </div>
         <div className="flex justify-between">
-          <div>
-            <ImageWithFallback
-              alt={'image'}
-              src={BottomLeftImage}
-              width={256}
-              height={256}
-              className="rounded-full object-cover"
-              style={{ height: '256px' }}
-            />
-          </div>
+          <ImageWithFallback
+            alt={'image'}
+            src={BottomLeftImage}
+            width={256}
+            height={256}
+            className="rounded-full object-cover"
+            style={{ height: '256px' }}
+          />
           <StoryComp {...stories[0]} />
-          <div>
-            <ImageWithFallback
-              alt={'image'}
-              src={BottomRightImage}
-              width={256}
-              height={256}
-              className="rounded-full object-cover"
-              style={{ height: '256px' }}
-            />
-          </div>
+          <ImageWithFallback
+            alt={'image'}
+            src={BottomRightImage}
+            width={256}
+            height={256}
+            className="rounded-full object-cover"
+            style={{ height: '256px' }}
+          />
         </div>
       </div>
     </>
