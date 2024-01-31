@@ -37,7 +37,6 @@ export const StoryComp: React.FC<Story> = ({
         <Avatar imageUrl={image} alt={patientName} size="4xl"></Avatar>
         <PlayVideoModal
           videoLink={videoLink}
-          title={'play video'}
           open={isVideoOpen}
           onClose={() => setIsVideoOpen(false)}
         />

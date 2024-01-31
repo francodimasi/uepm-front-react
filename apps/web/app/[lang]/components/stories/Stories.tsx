@@ -66,23 +66,23 @@ export const Stories: React.FC<StoriesProps> = ({ stories }) => {
           </div>
         </div>
         <div className="flex justify-between">
-          <ImageWithFallback
+          <div><ImageWithFallback
             alt={'image'}
             src={BottomLeftImage}
-            width={250}
-            height={250}
+            width={256}
+            height={256}
             className="rounded-full object-cover"
-            style={{ height: '250px' }}
-          />
+            style={{ height: '256px' }}
+          /></div>
           <StoryComp {...stories[0]} />
-          <ImageWithFallback
+          <div><ImageWithFallback
             alt={'image'}
             src={BottomRightImage}
-            width={250}
-            height={250}
+            width={256}
+            height={256}
             className="rounded-full object-cover"
-            style={{ height: '250px' }}
-          />
+            style={{ height: '256px' }}
+          /></div>
         </div>
       </div>
     </>

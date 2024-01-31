@@ -10,3 +10,10 @@ export type Story = {
 export type StoriesProps = {
   stories: Story[];
 };
+
+export type PlayVideoProps = {
+  title?: string;
+  videoLink: string;
+  open: boolean;
+  onClose: () => void
+}
