@@ -43,7 +43,7 @@ export const Stories: React.FC<StoriesProps> = ({ stories }) => {
         <div className="flex justify-between">
           <H2
             label={t('title')}
-            className="flex !mt-0 sm:text-3xl xl:text-5xl 2xl:max-w-xs"
+            className="flex !mt-0 xl:text-5xl 2xl:max-w-xs"
           />
           <Story {...stories[1]} />
           <div className="flex flex-col ">

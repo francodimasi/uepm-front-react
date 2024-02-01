@@ -39,7 +39,7 @@ export const PlayVideoModal: React.FC<PlayVideoProps> = ({
         </Transition.Child>
 
         {/* Full screen container to center Dialog */}
-        <div className="fixed inset-0 flex z-10 w-screen text-center items-center justify-center p-4">
+        <div className="fixed inset-0 flex z-10 w-screen text-center items-center justify-center p-2">
           <Transition.Child
             as={Fragment}
             enter="ease-out duration-300"
@@ -50,7 +50,7 @@ export const PlayVideoModal: React.FC<PlayVideoProps> = ({
             leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
           >
             {/* The actual dialog panel */}
-            <Dialog.Panel className="relative p-4 transform overflow-hidden rounded-lg bg-light text-left shadow-2xl transition-all sm:my-24 sm:w-full sm:min-h-[400px] max-w-3xl">
+            <Dialog.Panel className="relative p-0 transform overflow-hidden rounded-sm bg-light shadow-2xl transition-all sm:my-24 w-full min-h-[300px] sm:min-h-[400px] max-w-3xl">
               <div className="text-center">
                 {title && (
                   <Dialog.Title
@@ -63,7 +63,7 @@ export const PlayVideoModal: React.FC<PlayVideoProps> = ({
                 <iframe
                   src={videoLink}
                   allowFullScreen
-                  className="w-full h-full sm:min-h-[400px]"
+                  className="w-full min-h-[300px] sm:min-h-[400px] rounded-sm"
                 />
               </div>
             </Dialog.Panel>

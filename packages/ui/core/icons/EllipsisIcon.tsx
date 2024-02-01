@@ -1,14 +1,27 @@
-export const EllipsisIcon = (props: any) => {
+import { IconColor, IconProps } from './types';
+
+export const EllipsisIcon = ({
+  width = 6,
+  height = 6,
+  fill,
+  color = 'dark',
+}: IconProps) => {
   return (
     <svg
-      width="5"
-      height="6"
-      viewBox="0 0 5 6"
+      id="ellipsis-icon"
+      width={width}
+      height={height}
+      viewBox={`0 0 ${width} ${height}`}
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      {...props}
     >
-      <circle id="Ellipse 1" cx="2.5" cy="3.2998" r="2.5" fill="#020001" />
+      <circle
+        id="ellipsis-icon-circle"
+        cx="2.5"
+        cy="3.2998"
+        r="2.5"
+        fill={fill || IconColor[color]}
+      />
     </svg>
   );
 };

@@ -1,9 +1,10 @@
 'use client';
-import { Avatar, Tag } from 'ui/core';
+
+import { useState } from 'react';
+import { Avatar, Button, EllipsisIcon, Tag } from 'ui/core';
+import { PlayVideoModal } from 'ui/components';
 import { StoryProp } from './Stories.types';
 import { PlayIcon } from './icons';
-import { useState } from 'react';
-import { PlayVideoModal } from 'ui/components';
 
 export const Story: React.FC<StoryProp> = ({
   tag,
@@ -19,22 +20,34 @@ export const Story: React.FC<StoryProp> = ({
       {description && (
         <div className="hidden sm:flex flex-col mr-3 pl-20 items-center justify-center w-min h-64 gap-6 py-12">
           <span>{description}</span>
-          <Tag
-            text={`${patientName}.${tag}`}
-            className="uppercase text-primary-dark"
-          />
+          <div className="flex items-center">
+            <Tag
+              text={patientName}
+              className="uppercase text-primary-dark font-medium text-sm"
+            />
+            <span className="p-1">
+              <EllipsisIcon color="primaryDark" />
+            </span>
+            <Tag
+              text={tag}
+              className="uppercase text-primary-dark font-medium text-sm"
+            />
+          </div>
         </div>
       )}
       <div className="relative">
         {videoLink && (
-          <div className="flex absolute items-center gap-4 bg-dark z-10 left-1/2 top-3/4 transform -translate-x-1/2 -translate-y-1/2 p-4 rounded-full">
-            <span className=" text-white ">{patientName}</span>
-            <span onClick={() => setIsVideoOpen(true)}>
-              <PlayIcon />
-            </span>
-          </div>
+          <Button
+            onClick={() => setIsVideoOpen(true)}
+            color="dark"
+            expand="none"
+            className="absolute z-10 left-1/2 top-3/4 transform -translate-x-1/2 -translate-y-1/2 !border-0"
+          >
+            <span className="text-white">{patientName}</span>
+            <PlayIcon />
+          </Button>
         )}
-        <Avatar imageUrl={image} alt={patientName} size="4xl"></Avatar>
+        <Avatar imageUrl={image} alt={patientName} size="4xl" />
         <PlayVideoModal
           videoLink={videoLink}
           open={isVideoOpen}
