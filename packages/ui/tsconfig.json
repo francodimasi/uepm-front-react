@@ -1,5 +1,5 @@
 {
   "extends": "tsconfig/react-library.json",
-  "include": [".", "../../apps/web/components/shared/error", "../../apps/web/app/[lang]/components/stories/PlayVideoModal.tsx"],
+  "include": [".", "../../apps/web/components/shared/error"],
   "exclude": ["dist", "build", "node_modules"]
 }

@@ -11,7 +11,7 @@ import { blogCategories } from './blog/constants';
 import { News } from './components/news';
 import { ContactUs } from '@components/shared/contactUs';
 import { Stories } from './components/stories';
-import { Story } from './components/stories/Stories.types';
+import { StoryProp } from './components/stories/Stories.types';
 
 export default async function Page({ params: { lang = defaultLocale } }) {
   unstable_setRequestLocale(lang);
@@ -47,7 +47,7 @@ export default async function Page({ params: { lang = defaultLocale } }) {
     blogCategories.NEWS,
     lang,
   );
-  const stories: Story[] = await getStories();
+  const stories: StoryProp[] = await getStories();
 
   return (
     <Layout locale={lang}>

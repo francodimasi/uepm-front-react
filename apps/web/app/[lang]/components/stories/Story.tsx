@@ -1,11 +1,11 @@
 'use client';
 import { Avatar, Tag } from 'ui/core';
-import { Story } from './Stories.types';
+import { StoryProp } from './Stories.types';
 import { PlayIcon } from './icons';
 import { useState } from 'react';
-import { PlayVideoModal } from './PlayVideoModal';
+import { PlayVideoModal } from 'ui/components';
 
-export const StoryComp: React.FC<Story> = ({
+export const Story: React.FC<StoryProp> = ({
   tag,
   patientName,
   image,

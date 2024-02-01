@@ -2,7 +2,7 @@
 
 import { Fragment } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
-import { PlayVideoProps } from './Stories.types';
+import { PlayVideoProps } from './PlayVideoModal.types';
 
 export const PlayVideoModal: React.FC<PlayVideoProps> = ({
   title,

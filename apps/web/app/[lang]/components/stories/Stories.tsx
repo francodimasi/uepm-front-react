@@ -1,12 +1,12 @@
 import { H2 } from 'ui/core';
 import { StoriesProps } from './Stories.types';
 import { useTranslations } from 'intl';
-import { StoryComp } from './StoryComp';
+import { Story } from './Story';
 import { ImageWithFallback } from '@components/utils/ImageWithFallback';
-import SmallMidImage from '@public/images/stories/mid.jpeg';
-import SmallRightImage from '@public/images/stories/smallRight.png';
-import BottomLeftImage from '@public/images/stories/bottomLeft.jpeg';
-import BottomRightImage from '@public/images/stories/bottomRight.jpeg';
+import MotherAndChild from '@public/images/home/stories/motherAndChild.jpeg';
+import SmilingPeople from '@public/images/home/stories/smilingPeople.png';
+import SmilingGirl from '@public/images/home/stories/smilingGirl.jpeg';
+import SmilingWoman from '@public/images/home/stories/smilingWoman.jpeg';
 
 export const Stories: React.FC<StoriesProps> = ({ stories }) => {
   const t = useTranslations('home.stories');
@@ -16,22 +16,22 @@ export const Stories: React.FC<StoriesProps> = ({ stories }) => {
       <div className="sm:hidden flex flex-col w-full">
         <H2 label={t('title')} />
         <div className="flex justify-start">
-          <StoryComp {...stories[0]} />
+          <Story {...stories[0]} />
         </div>
         <div className="flex justify-end">
-          <StoryComp {...stories[1]} />
+          <Story {...stories[1]} />
         </div>
         <div className="flex justify-end h-[115px]">
           <ImageWithFallback
             alt={'image'}
-            src={SmallMidImage}
+            src={MotherAndChild}
             width={115}
             height={115}
             className="rounded-full object-cover"
           />
           <ImageWithFallback
             alt={'image'}
-            src={SmallRightImage}
+            src={SmilingPeople}
             width={115}
             height={115}
             className="rounded-full object-cover"
@@ -45,11 +45,11 @@ export const Stories: React.FC<StoriesProps> = ({ stories }) => {
             label={t('title')}
             className="flex !mt-0 sm:text-3xl xl:text-5xl 2xl:max-w-xs"
           />
-          <StoryComp {...stories[1]} />
+          <Story {...stories[1]} />
           <div className="flex flex-col ">
             <ImageWithFallback
               alt={'image'}
-              src={SmallMidImage}
+              src={MotherAndChild}
               width={125}
               height={125}
               className="rounded-full object-cover"
@@ -57,7 +57,7 @@ export const Stories: React.FC<StoriesProps> = ({ stories }) => {
             />
             <ImageWithFallback
               alt={'image'}
-              src={SmallRightImage}
+              src={SmilingPeople}
               width={125}
               height={125}
               className="rounded-full object-cover"
@@ -68,16 +68,16 @@ export const Stories: React.FC<StoriesProps> = ({ stories }) => {
         <div className="flex justify-between">
           <ImageWithFallback
             alt={'image'}
-            src={BottomLeftImage}
+            src={SmilingGirl}
             width={256}
             height={256}
             className="rounded-full object-cover"
             style={{ height: '256px' }}
           />
-          <StoryComp {...stories[0]} />
+          <Story {...stories[0]} />
           <ImageWithFallback
             alt={'image'}
-            src={BottomRightImage}
+            src={SmilingWoman}
             width={256}
             height={256}
             className="rounded-full object-cover"

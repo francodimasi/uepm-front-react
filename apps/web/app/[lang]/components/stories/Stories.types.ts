@@ -1,4 +1,4 @@
-export type Story = {
+export type StoryProp = {
   patientName: string;
   videoLink?: string;
   description?: string;
@@ -8,12 +8,5 @@ export type Story = {
 };
 
 export type StoriesProps = {
-  stories: Story[];
-};
-
-export type PlayVideoProps = {
-  title?: string;
-  videoLink: string;
-  open: boolean;
-  onClose: () => void;
+  stories: StoryProp[];
 };
