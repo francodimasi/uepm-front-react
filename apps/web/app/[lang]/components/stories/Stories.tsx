@@ -50,29 +50,26 @@ export const Stories: React.FC<StoriesProps> = ({ stories }) => {
             <ImageWithFallback
               alt={'image'}
               src={MotherAndChild}
-              width={125}
-              height={125}
-              className="rounded-full object-cover"
-              style={{ height: '125px' }}
+              width={128}
+              height={128}
+              className="rounded-full object-cover h-32"
             />
             <ImageWithFallback
               alt={'image'}
               src={SmilingPeople}
-              width={125}
-              height={125}
-              className="rounded-full object-cover"
-              style={{ height: '125px' }}
+              width={128}
+              height={128}
+              className="rounded-full object-cover h-32"
             />
           </div>
         </div>
-        <div className="flex justify-between">
+        <div className="flex justify-between items-center">
           <ImageWithFallback
             alt={'image'}
             src={SmilingGirl}
             width={256}
             height={256}
-            className="rounded-full object-cover"
-            style={{ height: '256px' }}
+            className="rounded-full object-cover w-32 h-32 lg:w-64 lg:h-64"
           />
           <Story {...stories[0]} />
           <ImageWithFallback
@@ -80,8 +77,7 @@ export const Stories: React.FC<StoriesProps> = ({ stories }) => {
             src={SmilingWoman}
             width={256}
             height={256}
-            className="rounded-full object-cover"
-            style={{ height: '256px' }}
+            className="hidden md:block rounded-full object-cover w-32 h-32 xl:w-64 xl:h-64"
           />
         </div>
       </div>

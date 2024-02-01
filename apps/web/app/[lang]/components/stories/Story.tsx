@@ -15,7 +15,7 @@ export const Story: React.FC<StoryProp> = ({
   const [isVideoOpen, setIsVideoOpen] = useState(false);
 
   return (
-    <div className="flex flex-row justify-center rounded-full bg-gray-medium">
+    <div className="flex flex-row justify-center items-center rounded-full bg-gray-medium">
       {description && (
         <div className="hidden sm:flex flex-col mr-3 pl-20 items-center justify-center w-min h-64 gap-6 py-12">
           <span>{description}</span>
