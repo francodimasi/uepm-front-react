@@ -15,24 +15,10 @@ export const Stories: React.FC<StoriesProps> = ({ stories }) => {
     <>
       <div className="sm:hidden flex flex-col w-full">
         <H2 label={t('title')} />
-        <div className="flex items-center justify-evenly">
+        <div className="flex items-center justify-start">
           <Story {...stories[0]} />
-          <ImageWithFallback
-            alt={'image'}
-            src={MotherAndChild}
-            width={115}
-            height={115}
-            className="rounded-full object-cover aspect-square"
-          />
         </div>
-        <div className="flex items-center justify-between">
-          <ImageWithFallback
-            alt={'image'}
-            src={SmilingPeople}
-            width={115}
-            height={115}
-            className="rounded-full object-cover aspect-square"
-          />
+        <div className="flex items-center justify-end">
           <Story {...stories[1]} />
         </div>
       </div>
