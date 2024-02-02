@@ -10,6 +10,8 @@ import { getArticlesByCategory } from '@api/blog/requests';
 import { blogCategories } from './blog/constants';
 import { News } from './components/news';
 import { ContactUs } from '@components/shared/contactUs';
+import { Stories } from './components/stories';
+import { StoryProp } from './components/stories/Stories.types';
 
 export default async function Page({ params: { lang = defaultLocale } }) {
   unstable_setRequestLocale(lang);
@@ -30,17 +32,28 @@ export default async function Page({ params: { lang = defaultLocale } }) {
     return JSON.parse(campaigns);
   };
 
+  //TODO: replace with real fetch
+  const getStories = async () => {
+    const stories = await fs.readFile(
+      process.cwd() + '/api/mocks/stories.json',
+      'utf8',
+    );
+    return JSON.parse(stories);
+  };
+
   const steps: Step[] = await getHowItWorksSteps();
   const campaigns: Campaign[] = await getCampaigns();
   const news: BlogItem[] = await getArticlesByCategory(
     blogCategories.NEWS,
     lang,
   );
+  const stories: StoryProp[] = await getStories();
 
   return (
     <Layout locale={lang}>
       <div className="w-full flex flex-col justify-start items-start gap-[72px] pb-16">
         <HowItWorks steps={steps[lang]} />
+        <Stories stories={stories[lang]} />
         <Campaigns campaigns={campaigns[lang]} />
         <News articles={news} locale={lang} />
         <ContactUs />

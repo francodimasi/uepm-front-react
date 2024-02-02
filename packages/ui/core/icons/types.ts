@@ -7,6 +7,8 @@ export const IconStatus = {
 export const IconColor = {
   light: '#fcfcfc',
   dark: '#020001',
+  primary: '#00a393',
+  primaryDark: '#04625c',
 };
 
 export type IconProps = {

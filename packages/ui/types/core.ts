@@ -4,7 +4,7 @@ export type PropsWithClassName = PropsWithChildren<{
   className?: string;
 }>;
 
-export type Theme = 'light' | 'dark';
+export type Theme = 'light' | 'dark' | 'primary' | 'primaryDark';
 
 export type LogoTheme = 'color' | Theme;
 

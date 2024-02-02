@@ -16,7 +16,7 @@ export const HowItWorks: React.FC<HowItWorksProps> = ({ steps }) => {
       <div className="grid grid-flow-row sm:grid-flow-col auto-rows-fr auto-cols-fr">
         <H2
           label={t('title')}
-          className="hidden xl:flex !mt-0 sm:text-3xl xl:text-5xl 2xl:max-w-xs"
+          className="hidden xl:flex !mt-0 xl:text-5xl 2xl:max-w-xs"
         />
         {steps.map((step, index) => {
           return (
