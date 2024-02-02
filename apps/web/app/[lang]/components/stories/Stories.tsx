@@ -15,27 +15,25 @@ export const Stories: React.FC<StoriesProps> = ({ stories }) => {
     <>
       <div className="sm:hidden flex flex-col w-full">
         <H2 label={t('title')} />
-        <div className="flex justify-start">
+        <div className="flex items-center justify-evenly">
           <Story {...stories[0]} />
-        </div>
-        <div className="flex justify-end">
-          <Story {...stories[1]} />
-        </div>
-        <div className="flex justify-end h-[115px]">
           <ImageWithFallback
             alt={'image'}
             src={MotherAndChild}
             width={115}
             height={115}
-            className="rounded-full object-cover"
+            className="rounded-full object-cover aspect-square"
           />
+        </div>
+        <div className="flex items-center justify-between">
           <ImageWithFallback
             alt={'image'}
             src={SmilingPeople}
             width={115}
             height={115}
-            className="rounded-full object-cover"
+            className="rounded-full object-cover aspect-square"
           />
+          <Story {...stories[1]} />
         </div>
       </div>
 
@@ -46,7 +44,7 @@ export const Stories: React.FC<StoriesProps> = ({ stories }) => {
             className="flex !mt-0 xl:text-5xl 2xl:max-w-xs"
           />
           <Story {...stories[1]} />
-          <div className="flex flex-col ">
+          <div className="hidden md:flex flex-col">
             <ImageWithFallback
               alt={'image'}
               src={MotherAndChild}
@@ -69,7 +67,7 @@ export const Stories: React.FC<StoriesProps> = ({ stories }) => {
             src={SmilingGirl}
             width={256}
             height={256}
-            className="rounded-full object-cover w-32 h-32 lg:w-64 lg:h-64"
+            className="hidden md:flex rounded-full object-cover w-32 h-32 lg:w-64 lg:h-64"
           />
           <Story {...stories[0]} />
           <ImageWithFallback
@@ -77,7 +75,7 @@ export const Stories: React.FC<StoriesProps> = ({ stories }) => {
             src={SmilingWoman}
             width={256}
             height={256}
-            className="hidden md:block rounded-full object-cover w-32 h-32 xl:w-64 xl:h-64"
+            className="hidden md:flex rounded-full object-cover w-32 h-32 xl:w-64 xl:h-64"
           />
         </div>
       </div>
