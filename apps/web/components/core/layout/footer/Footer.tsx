@@ -20,13 +20,21 @@ const newsLinks: FooterSectionLinkProps[] = [
   { id: 'testimonies', href: '/blog/category/2' },
 ];
 const productsLinks: FooterSectionLinkProps[] = [
-  { id: 'uepmPatients', href: 'https://unensayoparami.org/', outbound: true },
   {
-    id: 'uepmOnco',
-    href: 'https://onco.unensayoparami.org/',
+    id: 'uepmPatients',
+    href: process.env.NEXT_PUBLIC_PRODUCT_PATIENTS,
     outbound: true,
   },
-  { id: 'uepmPhysicians', href: 'https://app.trialtech.es/', outbound: true },
+  {
+    id: 'uepmOnco',
+    href: process.env.NEXT_PUBLIC_PRODUCT_ONCO,
+    outbound: true,
+  },
+  {
+    id: 'uepmPhysicians',
+    href: process.env.NEXT_PUBLIC_PRODUCT_PHYSICIANS,
+    outbound: true,
+  },
 ];
 
 type FooterProps = PropsWithChildren & LocaleProps;

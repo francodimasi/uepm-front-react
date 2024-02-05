@@ -53,6 +53,18 @@
     }
   },
   "home": {
+    "main": {
+      "title": "Conectando pacientes com ensaios clínicos",
+      "browser": {
+        "title": "Você é paciente?",
+        "subtitle": "Qual é a sua doença?",
+        "placeholder": "Ex: Esclerose sistêmica"
+      },
+      "links": {
+        "sponsor": "Sou um patrocinador",
+        "physician": "Sou um pesquisador"
+      }
+    },
     "howitworks": {
       "title": "Como funciona?"
     },

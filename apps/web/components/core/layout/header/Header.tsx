@@ -6,9 +6,21 @@ import { NavLinks } from '.';
 import { LocaleProps, useTranslations } from 'intl';
 
 const links = [
-  { id: 'patients', href: 'https://unensayoparami.org/', outbound: true },
-  { id: 'sponsors', href: 'https://preview.trialtech.es/', outbound: true },
-  { id: 'physicians', href: 'https://app.trialtech.es/', outbound: true },
+  {
+    id: 'patients',
+    href: process.env.NEXT_PUBLIC_PRODUCT_PATIENTS,
+    outbound: true,
+  },
+  {
+    id: 'sponsors',
+    href: process.env.NEXT_PUBLIC_PRODUCT_SPONSORS,
+    outbound: true,
+  },
+  {
+    id: 'physicians',
+    href: process.env.NEXT_PUBLIC_PRODUCT_PHYSICIANS,
+    outbound: true,
+  },
   { id: 'aboutUs', href: '/about' },
   { id: 'blog', href: '/blog' },
 ];
