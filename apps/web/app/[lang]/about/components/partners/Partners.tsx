@@ -15,7 +15,7 @@ export const Partners: React.FC<PartnersProps & LocaleProps> = ({
   if (partners.length === 0) return null;
 
   return (
-    <div id={id} className="flex flex-col py-8 lg:py-10">
+    <div id={id} className="flex flex-col py-8 lg:py-10 w-full">
       <div className="flex flex-col">
         <Tag
           text={t('tag')}

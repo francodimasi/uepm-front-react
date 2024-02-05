@@ -20,9 +20,9 @@ export const getTitleClasses = (size: Size) => {
 
 export const getContentClasses = (size: Size) => {
   return clsx('font-["DMSans"] text-dark py-0 px-2', {
-    'text-xs leading-3': size === 'xs' || size === 'sm',
-    'text-sm leading-4': size === 'md',
-    'text-base leading-5': size === 'lg',
-    'text-xl leading-6': size === 'xl',
+    'text-xs leading-4': size === 'xs' || size === 'sm',
+    'text-sm leading-5': size === 'md',
+    'text-base leading-6': size === 'lg',
+    'text-xl leading-7': size === 'xl',
   });
 };

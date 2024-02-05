@@ -31,7 +31,7 @@ export const Select = ({
               {label}
             </Listbox.Label>
           )}
-          <div className="relative mt-2 mx-0.5">
+          <div className="relative mt-0 mx-0.5">
             <Listbox.Button
               className={clsx(
                 className,
