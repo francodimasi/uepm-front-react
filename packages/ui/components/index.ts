@@ -1,3 +1,4 @@
+export * from './algolia';
 export * from './dateMask';
 export * from './error';
 export * from './logo';

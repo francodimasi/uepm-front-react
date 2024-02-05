@@ -1,0 +1,1 @@
+export { TextHit } from './TextHit';

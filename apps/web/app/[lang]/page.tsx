@@ -12,6 +12,7 @@ import { News } from './components/news';
 import { ContactUs } from '@components/shared/contactUs';
 import { Stories } from './components/stories';
 import { StoryProp } from './components/stories/Stories.types';
+import { Main } from './components/main';
 
 export default async function Page({ params: { lang = defaultLocale } }) {
   unstable_setRequestLocale(lang);
@@ -52,6 +53,7 @@ export default async function Page({ params: { lang = defaultLocale } }) {
   return (
     <Layout locale={lang}>
       <div className="w-full flex flex-col justify-start items-start gap-[72px] pb-16">
+        <Main locale={lang} />
         <HowItWorks steps={steps[lang]} />
         <Stories stories={stories[lang]} />
         <Campaigns campaigns={campaigns[lang]} />

@@ -53,6 +53,18 @@
     }
   },
   "home": {
+    "main": {
+      "title": "Connecting patients with clinical trials",
+      "browser": {
+        "title": "Are you a patient?",
+        "subtitle": "Which is your illness?",
+        "placeholder": "Ex: Systemic Sclerosis"
+      },
+      "links": {
+        "sponsor": "I'm a Sponsor",
+        "physician": "I'm a Physician"
+      }
+    },
     "howitworks": {
       "title": "How it works?"
     },

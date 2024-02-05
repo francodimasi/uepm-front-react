@@ -43,6 +43,10 @@ export const CampaignsList: React.FC<CampaignsProps> = ({
           <ImageWithFallback
             src={shapes}
             alt="shapes"
+            style={{
+              width: 'auto',
+              height: 'auto',
+            }}
             className="aspect-square mt-16"
           />
         </div>
