@@ -27,7 +27,9 @@ export const Story: React.FC<StoryProp> = ({
     >
       {description && (
         <div className="hidden sm:flex flex-col pe-3 ps-10 py-5 md:ps-12 md:py-8 lg:ps-16 lg:py-10 items-start justify-center flex-1">
-          <span className="pb-4 text-base lg:text-base 2xl:text-base 3xl:text-lg">{description}</span>
+          <span className="pb-4 text-base lg:text-base 2xl:text-base 3xl:text-lg">
+            {description}
+          </span>
           <div className="flex items-center">
             <Tag
               text={patientName}
