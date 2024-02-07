@@ -27,7 +27,7 @@ export const TeamMemerItem: React.FC<TeamMemberItemProps> = ({
       onMouseOver={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
     >
-      <Avatar imageUrl={image} alt={name} size={size} />
+      <Avatar imageUrl={image} alt={name} size={size} className='grayscale' />
       <div className="flex flex-col gap-4 sm:gap-6 mt-2 lg:mt-6">
         {name && (
           <span className={`flex-wrap text-xl lg:text-2xl text-${alignment} `}>

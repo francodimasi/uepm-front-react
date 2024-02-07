@@ -25,7 +25,7 @@ export default async function Page({ params: { lang } }) {
       process.cwd() + '/api/mocks/ourPartners.json',
       'utf8',
     );
-    return JSON.parse(partners);
+    return JSON.parse(partners)[lang];
   };
 
   const getFAQs = async () => {

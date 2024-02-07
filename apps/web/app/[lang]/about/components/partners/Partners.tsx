@@ -37,14 +37,14 @@ export const Partners: React.FC<PartnersProps & LocaleProps> = ({
               key={index}
               partner={partner}
               className="items-center"
-              size="xl"
+              size="2xl"
             />
           ))}
         </div>
         <div className="hidden sm:flex xl:hidden">
-          <Scroll className="w-full h-36">
+          <Scroll className="w-full h-44">
             {partners.map((partner, index) => (
-              <PartnerItem key={index} partner={partner} size="xl" />
+              <PartnerItem key={index} partner={partner} size="2xl" />
             ))}
           </Scroll>
         </div>
