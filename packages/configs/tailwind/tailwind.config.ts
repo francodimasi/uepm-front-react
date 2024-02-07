@@ -37,6 +37,8 @@ const tailwindDefaultConfig: Config = {
     },
     extend: {
       screens: {
+        '2xl': { raw: '(min-width: 1536px)' },
+        '3xl': { raw: '(min-width: 21966px)' },
         hmd: { raw: '(min-height: 668px)' },
         hsm: { raw: '(max-height: 667px)' },
       },

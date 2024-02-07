@@ -1,63 +1,602 @@
-[
-  {
-    "image": "",
-    "name": "Ineco",
-    "about": "ineco"
-  },
-  {
-    "image": "https://content.unensayoparami.org/wp-content/uploads/2023/09/Portadas-Blog-15.png",
-    "name": "Fundaleu"
-  },
-  {
-    "image": "",
-    "name": "Sostén",
-    "about": "ineco"
-  },
-  {
-    "image": "",
-    "name": "Alma"
-  },
-  {
-    "image": "https://content.unensayoparami.org/wp-content/uploads/2023/09/Portadas-Blog-15.png",
-    "name": "Acerca"
-  },
-  {
-    "image": "",
-    "name": "Aepso",
-    "about": ""
-  },
-  {
-    "image": "",
-    "name": "Georgina Sposetti"
-  },
-  {
-    "image": "",
-    "name": "Georgina Sposetti"
-  },
-  {
-    "image": "",
-    "name": "Sostén",
-    "about": "ineco"
-  },
-  {
-    "image": "",
-    "name": "Alma"
-  },
-  {
-    "image": "https://content.unensayoparami.org/wp-content/uploads/2023/09/Portadas-Blog-15.png",
-    "name": "Acerca"
-  },
-  {
-    "image": "",
-    "name": "Aepso",
-    "about": ""
-  },
-  {
-    "image": "",
-    "name": "Georgina Sposetti"
-  },
-  {
-    "image": "",
-    "name": "Georgina Sposetti"
-  }
-]
+{
+  "es": [
+    {
+      "logo": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/partners/logo-ineco.jpg",
+      "name": "Fundación INECO",
+      "about": "Desarrollando y exportando conocimiento neurocientifico al mundo desde Argentina.",
+      "website": "http://www.fundacionineco.org/"
+    },
+    {
+      "logo": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/partners/logo-fundaleu.jpg",
+      "name": "Fundaleu",
+      "about": "Fundaleu fue creada en el año 1956 para combatir la leucemia.",
+      "website": "https://www.fundaleu.org/"
+    },
+    {
+      "logo": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/partners/logo-sosten.jpg",
+      "name": "Sostén Asociación Civil",
+      "about": "Asociación Civil Sostén brinda apoyo, orientación y asesoramiento a personas con cáncer.",
+      "website": "http://sosten.org.ar/"
+    },
+    {
+      "logo": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/partners/logo-articular.jpg",
+      "name": "Fundacion Articular",
+      "about": "Ciencia y comunidad mutuamente comprometidas con el bienestar de la humanidad.",
+      "website": "http://www.fundaciónarticular.org/"
+    },
+    {
+      "logo": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/partners/logo-acerca.jpg",
+      "name": "Proyecto Acerca",
+      "about": "Aprende más sobre los ensayos clínicos por el proyecto ACERCA.",
+      "website": "http://acercacomunidad.com/"
+    },
+    {
+      "logo": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/partners/logo-alma.jpg",
+      "name": "ALMA",
+      "about": "ALMA está formada por pacientes y familiares con diagnóstico de Leucemia Mieloide Crónica.",
+      "website": "http://www.asociacionalma.org.ar/"
+    },
+    {
+      "logo": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/partners/logo-aepso.jpg",
+      "name": "AEPSO",
+      "about": "Asociación Civil para el Enfermo de Psoriasis, es una organización sin fines de lucro creada en el 2005 por personas con psoriasis y artritis psoriásica para ayudar a las personas que también la padecen y sus familiares.",
+      "website": "http://www.aepso.org/"
+    },
+    {
+      "logo": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/partners/logo-linfomas.jpg",
+      "name": "Linfomas Argentina",
+      "about": "Linfomas Argentina es una asociación civil sin fines de lucro de pacientes y familiares con linfoma, mielofibrosis y síndromes mielodisplásicos.",
+      "website": "http://www.linfomasargentina.org/home.php"
+    },
+    {
+      "logo": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/partners/logo-ema.jpg",
+      "name": "EMA",
+      "about": "EMA (Esclerosis Múltiple Argentina) es una asociación civil sin fines de lucro, el objetivo principal estaba centrado en la divulgación de la enfermedad a la vez que comenzaban a organizarse los primeros grupos de apoyo para las personas con EM.",
+      "website": "http://www.ema.org.ar/"
+    },
+    {
+      "logo": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/partners/logo-ama.jpg",
+      "name": "AMA",
+      "about": "AMA tiene como misión difundir sobre la MPS, informando sobre su diagnóstico, tratamientos y formas de obtener los mismos.",
+      "website": "https://es-la.facebook.com/AMA-Asociacion-de-Mucopolisacaridosis-Argentina-779050348847526/"
+    },
+    {
+      "logo": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/partners/logo-mieloma.jpg",
+      "name": "Fundación Argentina de Mieloma",
+      "about": "Somos una organización que procura asistencia a personas que conviven con Mieloma y a sus seres queridos.",
+      "website": "http://www.mieloma.org.ar/"
+    },
+    {
+      "logo": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/partners/logo-lupus.jpg",
+      "name": "Fundación Lupus Córdoba",
+      "about": "Queremos realizar una correcta difusión, de la enfermedad, para lograr la prevención y promoción de la salud en torno al LUPUS.",
+      "website": "https://www.facebook.com/LupusCordoba/"
+    },
+    {
+      "logo": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/partners/logo-teamd.jpg",
+      "name": "TEAMD",
+      "about": "En teamd nos comprometemos a acompañarte en tu aprendizaje diario sobre la diabetes.",
+      "website": "https://www.teamd.com.ar/"
+    },
+    {
+      "logo": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/partners/logo-alma2.jpg",
+      "name": "A.L.M.A",
+      "about": "Su misión es difundir el conocimiento de la enfermedad y bregar por una mejor calidad de vida para las personas con demencia y sus familias.",
+      "website": "https://www.alma-alzheimer.org.ar/es/"
+    },
+    {
+      "logo": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/partners/logo-donde.png",
+      "name": "Donde Quiero Estar",
+      "about": "Mundo Cáncer es una iniciativa de la Fundación Donde Quiero Estar, que busca brindar de forma integral información accesible, confiable y segura para la población en general.",
+      "website": "https://mundocancer.com/"
+    },
+    {
+      "logo": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/partners/logo-voces.jpg",
+      "name": "Voces Diabetes Colombia",
+      "about": "Somos una entidad sin ánimo de lucro que trabaja decididamente por la prevención de la diabetes y sus complicaciones en el país.",
+      "website": "https://diabetescolombia.com/"
+    },
+    {
+      "logo": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/partners/logo-alcem.jpg",
+      "name": "ALCEM",
+      "about": "Somos una organización civil sin fines de lucro, que trabaja en todo el territorio argentino en defensa de los derechos de las personas con EM.",
+      "website": "https://www.alcem.org.ar/"
+    },
+    {
+      "logo": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/partners/logo-cima.jpg",
+      "name": "CIMA",
+      "about": "Fundación CIMA es una organización que se dedica a luchar contra el cáncer de mama.",
+      "website": "https://www.cimafundacion.org/"
+    },
+    {
+      "logo": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/partners/logo-fim.jpg",
+      "name": "Fundación de Investigaciones Metabólicas",
+      "about": "Somos una institución comprometida con la salud de nuestros pacientes. En los últimos 20 años, hemos participado en más de 120 protocolos de investigación para nuevos fármacos en pacientes ambulatorios.",
+      "website": "http://www.fim-fundacion.org.ar/"
+    },
+    {
+      "logo": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/partners/logo-macma.jpg",
+      "name": "Movimiento Ayuda Cáncer de Mama",
+      "about": "Fundada el 25 de febrero de 1997 por María Cecilia Palacios quién transitó la enfermedad y sintió la necesidad de alentar a otras mujeres y ayudarlas a pasar los diferentes momentos de la enfermedad y de los tratamientos.",
+      "website": "http://www.macma.org.ar/"
+    },
+    {
+      "logo": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/partners/logo-fepreva.jpg",
+      "name": "Fundación para el Estudio, la Prevención y el Tratamiento de la Enfermedad Vascular Aterosclerótica.",
+      "about": "FEPREVA es una organización dedicada al estudio, la prevención y el tratamiento de las enfermedades crónicas de mayor prevalencia, siendo una organización de vanguardia en la atención, docencia e investigación clínica.",
+      "website": "http://www.fepreva.org/investigacion_clinica.php"
+    },
+    {
+      "logo": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/partners/logo-femexer.png",
+      "name": "Federación Mexicana de Enfermedades Raras.",
+      "about": "FEMEXER es una alianza no gubernamental y totalmente voluntaria de organizaciones de pacientes, dirigida exclusívamente por pacientes y familiares; representamos a más de 85 organizaciones de pacientes de enfermedades raras en México, con lo que damos cobertura a casi 500 enfermedades raras (EERR) entre la población de nuestro país.",
+      "website": "http://www.femexer.org/"
+    },
+    {
+      "logo": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/partners/logo-emc.png",
+      "name": "Corporación Esclerosis Múltiple Chile.",
+      "about": "Somos una Organización sin fines de lucro, trabajamos para difundir, educar y apoyar a personas diagnosticadas con Esclerosis Múltiple y sus familias en Chile.",
+      "website": "https://www.esclerosismultiplechile.cl/"
+    },
+    {
+      "logo": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/partners/logo-ucem.png",
+      "name": "UCEM",
+      "about": "Somos una asociación sin fines de lucro fundada en 2009. Nuestro objetivo es brindar servicios integrales a las personas que viven con Esclerosis Múltiple y sus familias para mejorar su calidad de vida y facilitar su plena integración social y laboral, salvaguardando su entereza moral, emocional y física.",
+      "website": "https://ucemmexico.org/"
+    },
+    {
+      "logo": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/partners/logo-femmex.png",
+      "name": "FEMMEX",
+      "about": "Federación de asociaciones de esclerosis múltiple y de esclerosis lateral amiotrófica. Tiene miembros asociados de toda la República Mexicana.",
+      "website": "https://www.facebook.com/femmexorg"
+    },
+    {
+      "logo": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/partners/logo-alem.jpg",
+      "name": "ALEM",
+      "about": "Fundada en 1997 en Medellín Colombia, Su objeto social está encaminado a promover la salud aún en la enfermedad, participar en investigación y Educación y difusión sobre la Esclerosis Múltiple entre personal de salud y comunidad.",
+      "website": "https://www.alem-colombia.org"
+    },
+    {
+      "logo": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/partners/logo-ares.png",
+      "name": "ARES",
+      "about": "ARES a través de su Centro de Rehabilitación atiende a personas con Esclerosis Múltiple, Esclerosis Lateral Amiotrófica y otros padecimientos, brindamos terapias de rehabilitación física, hidroterapia, atención psicológica, terapia ocupacional y pláticas con especialistas.",
+      "website": "http://www.asrem.org.mx/"
+    },
+    {
+      "logo": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/partners/logo-asocoem.png",
+      "name": "ASOCOEM",
+      "about": "ASOCOEM es una organización sin fines de lucro que ayuda a pacientes y familiares de Esclerosis Múltiple, a tener una mejor calidad de vida.",
+      "website": "https://www.facebook.com/asocoem"
+    },
+    {
+      "logo": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/partners/logo-fundem.png",
+      "name": "FUNDEM",
+      "about": "Somos una entidad sin ánimo de lucro que dedica sus esfuerzos al mejoramiento de la calidad de vida y bienestar de personas que han sido diagnosticadas con enfermedades crónicas de alto costo y huérfanas, con nuestra gestión no solo apoyamos al paciente y su entorno familiar, sino que también impactamos de manera positiva al SGSSS (Sistema de seguridad social en salud) de Colombia.",
+      "website": "https://fundem-co.org/"
+    },
+    {
+      "logo": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/partners/logo-golfo.jpg",
+      "name": "Esclerosis Múltiple del Golfo",
+      "about": "Institución Altruista, que proporciona atención médica integral a personas con esclerosis múltiple y familia.",
+      "website": "https://www.facebook.com/esclerosismultipledelgolfo.ac"
+    },
+    {
+      "logo": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/partners/logo-guamem.png",
+      "name": "GUAMEM",
+      "about": "Constituida el 12 de noviembre de 1999 por un grupo de personas con Esclerosis Múltiple y sus familiares, con el objetivo de ofrecer orientación, información, asesoría y apoyo. Atendemos a personas de 28 de los 46 municipios de estado de Guanajuato - México.",
+      "website": "https://www.facebook.com/Guamem/"
+    },
+    {
+      "logo": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/partners/logo-amme.jpeg",
+      "name": "AMME",
+      "about": "AMME es una organización sin fines de lucro que auxilia a los familiares y cuidadores de pacientes con esquizofrenia.",
+      "website": "https://maosdemaes.org.br/"
+    },
+    {
+      "logo": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/partners/logo-hca.jpeg",
+      "name": "Hecho con amor",
+      "about": "Se dedica a asistir pacientes con esclerosis múltiple en Perú, que atraviesan situación socioeconómica adversa con o sin seguro, especialmente de áreas rurales.",
+      "website": "https://hechoconamor.pe/"
+    }
+  ],
+  "pt": [
+    {
+      "logo": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/partners/logo-ineco.jpg",
+      "name": "Fundación INECO",
+      "about": "Desenvolvendo e exportando conhecimento neurocientífico para o mundo a partir da Argentina.",
+      "website": "http://www.fundacionineco.org/"
+    },
+    {
+      "logo": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/partners/logo-fundaleu.jpg",
+      "name": "Fundaleu",
+      "about": "Fundaleu foi criada em 1956 para combater a leucemia.",
+      "website": "https://www.fundaleu.org/"
+    },
+    {
+      "logo": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/partners/logo-sosten.jpg",
+      "name": "Sostén Asociación Civil",
+      "about": "A Associação Civil Sostén oferece apoio, orientação e aconselhamento a pessoas com câncer.",
+      "website": "http://sosten.org.ar/"
+    },
+    {
+      "logo": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/partners/logo-articular.jpg",
+      "name": "Fundacion Articular",
+      "about": "Ciência e comunidade mutuamente comprometidas com o bem-estar da humanidade.",
+      "website": "http://www.fundaciónarticular.org/"
+    },
+    {
+      "logo": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/partners/logo-acerca.jpg",
+      "name": "Proyecto Acerca",
+      "about": "Saiba mais sobre os ensaios clínicos pelo projeto ACERCA.",
+      "website": "http://acercacomunidad.com/"
+    },
+    {
+      "logo": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/partners/logo-alma.jpg",
+      "name": "ALMA",
+      "about": "ALMA é formada por pacientes e familiares com diagnóstico de Leucemia Mieloide Crônica.",
+      "website": "http://www.asociacionalma.org.ar/"
+    },
+    {
+      "logo": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/partners/logo-aepso.jpg",
+      "name": "AEPSO",
+      "about": "A Associação Civil para o Enfermo de Psoríase é uma organização sem fins lucrativos criada em 2005 por pessoas com psoríase e artrite psoriásica para ajudar as pessoas que também sofrem e seus familiares.",
+      "website": "http://www.aepso.org/"
+    },
+    {
+      "logo": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/partners/logo-linfomas.jpg",
+      "name": "Linfomas Argentina",
+      "about": "Linfomas Argentina é uma associação civil sem fins lucrativos de pacientes e familiares com linfoma, mielofibrose e síndromes mielodisplásicos.",
+      "website": "http://www.linfomasargentina.org/home.php"
+    },
+    {
+      "logo": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/partners/logo-ema.jpg",
+      "name": "EMA",
+      "about": "EMA (Esclerose Múltipla Argentina) é uma associação civil sem fins lucrativos. O objetivo principal era centrado na divulgação da doença ao mesmo tempo em que os primeiros grupos de apoio para pessoas com EM começavam a se organizar.",
+      "website": "http://www.ema.org.ar/"
+    },
+    {
+      "logo": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/partners/logo-ama.jpg",
+      "name": "AMA",
+      "about": "AMA tem como missão divulgar sobre a MPS, informando sobre seu diagnóstico, tratamentos e formas de obtê-los.",
+      "website": "https://es-la.facebook.com/AMA-Asociacion-de-Mucopolisacaridosis-Argentina-779050348847526/"
+    },
+    {
+      "logo": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/partners/logo-mieloma.jpg",
+      "name": "Fundación Argentina de Mieloma",
+      "about": "Somos uma organização que procura assistência a pessoas que convivem com Mieloma e a seus entes queridos.",
+      "website": "http://www.mieloma.org.ar/"
+    },
+    {
+      "logo": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/partners/logo-lupus.jpg",
+      "name": "Fundación Lupus Córdoba",
+      "about": "Queremos realizar uma correta divulgação da doença, para alcançar a prevenção e promoção da saúde em torno do LÚPUS.",
+      "website": "https://www.facebook.com/LupusCordoba/"
+    },
+    {
+      "logo": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/partners/logo-teamd.jpg",
+      "name": "TEAMD",
+      "about": "Na teamd, comprometemo-nos a acompanhá-lo em sua aprendizagem diária sobre o diabetes.",
+      "website": "https://www.teamd.com.ar/"
+    },
+    {
+      "logo": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/partners/logo-alma2.jpg",
+      "name": "A.L.M.A",
+      "about": "Sua missão é divulgar o conhecimento da doença e lutar por uma melhor qualidade de vida para as pessoas com demência e suas famílias.",
+      "website": "https://www.alma-alzheimer.org.ar/es/"
+    },
+    {
+      "logo": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/partners/logo-donde.png",
+      "name": "Donde Quiero Estar",
+      "about": "Mundo Câncer é uma iniciativa da Fundación Donde Quiero Estar, que busca fornecer de forma integral informações acessíveis, confiáveis e seguras para a população em geral.",
+      "website": "https://mundocancer.com/"
+    },
+    {
+      "logo": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/partners/logo-voces.jpg",
+      "name": "Voces Diabetes Colombia",
+      "about": "Somos uma entidade sem fins lucrativos que trabalha decididamente pela prevenção do diabetes e suas complicações no país.",
+      "website": "https://diabetescolombia.com/"
+    },
+    {
+      "logo": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/partners/logo-alcem.jpg",
+      "name": "ALCEM",
+      "about": "Somos uma organização civil sem fins lucrativos que atua em todo o território argentino na defesa dos direitos das pessoas com EM.",
+      "website": "https://www.alcem.org.ar/"
+    },
+    {
+      "logo": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/partners/logo-cima.jpg",
+      "name": "CIMA",
+      "about": "A Fundación CIMA é uma organização que luta contra o câncer de mama.",
+      "website": "https://www.cimafundacion.org/"
+    },
+    {
+      "logo": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/partners/logo-fim.jpg",
+      "name": "Fundación de Investigaciones Metabólicas",
+      "about": "Somos uma instituição comprometida com a saúde de nossos pacientes. Nos últimos 20 anos, participamos de mais de 120 protocolos de pesquisa para novos medicamentos em pacientes ambulatoriais.",
+      "website": "http://www.fim-fundacion.org.ar/"
+    },
+    {
+      "logo": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/partners/logo-macma.jpg",
+      "name": "Movimiento Ayuda Cáncer de Mama",
+      "about": "Fundada em 25 de fevereiro de 1997 por María Cecilia Palacios, que passou pela doença e sentiu a necessidade de encorajar outras mulheres e ajudá-las a enfrentar os diferentes momentos da doença e dos tratamentos.",
+      "website": "http://www.macma.org.ar/"
+    },
+    {
+      "logo": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/partners/logo-fepreva.jpg",
+      "name": "Fundación para el Estudio, la Prevención y el Tratamiento de la Enfermedad Vascular Aterosclerótica.",
+      "about": "A FEPREVA é uma organização dedicada ao estudo, prevenção e tratamento de doenças crônicas de maior prevalência, sendo uma organização líder em atendimento, ensino e pesquisa clínica.",
+      "website": "http://www.fepreva.org/investigacion_clinica.php"
+    },
+    {
+      "logo": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/partners/logo-femexer.png",
+      "name": "Federación Mexicana de Enfermedades Raras.",
+      "about": "A FEMEXER é uma aliança não governamental e totalmente voluntária de organizações de pacientes, dirigida exclusivamente por pacientes e familiares. Representamos mais de 85 organizações de pacientes com doenças raras no México, cobrindo quase 500 doenças raras entre a população do país.",
+      "website": "http://www.femexer.org/"
+    },
+    {
+      "logo": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/partners/logo-emc.png",
+      "name": "Corporación Esclerosis Múltiple Chile.",
+      "about": "Somos uma organização sem fins lucrativos que trabalha para divulgar, educar e apoiar pessoas diagnosticadas com Esclerose Múltipla e suas famílias no Chile.",
+      "website": "https://www.esclerosismultiplechile.cl/"
+    },
+    {
+      "logo": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/partners/logo-ucem.png",
+      "name": "UCEM",
+      "about": "Somos uma associação sem fins lucrativos fundada em 2009. Nosso objetivo é fornecer serviços abrangentes a pessoas que vivem com Esclerose Múltipla e suas famílias, visando melhorar sua qualidade de vida e facilitar sua plena integração social e laboral, preservando sua integridade moral, emocional e física.",
+      "website": "https://ucemmexico.org/"
+    },
+    {
+      "logo": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/partners/logo-femmex.png",
+      "name": "FEMMEX",
+      "about": "Federação de associações de esclerose múltipla e esclerose lateral amiotrófica. Tem membros associados em todo o México.",
+      "website": "https://www.facebook.com/femmexorg"
+    },
+    {
+      "logo": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/partners/logo-alem.jpg",
+      "name": "ALEM",
+      "about": "Fundada em 1997 em Medellín, Colômbia, tem como objetivo promover a saúde mesmo na doença, participando de pesquisas e educando e divulgando informações sobre a Esclerose Múltipla entre profissionais de saúde e a comunidade.",
+      "website": "https://www.alem-colombia.org"
+    },
+    {
+      "logo": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/partners/logo-ares.png",
+      "name": "ARES",
+      "about": "ARES, por meio de seu Centro de Reabilitação, atende pessoas com Esclerose Múltipla, Esclerose Lateral Amiotrófica e outras condições, oferecendo terapias de reabilitação física, hidroterapia, atendimento psicológico, terapia ocupacional e palestras com especialistas.",
+      "website": "http://www.asrem.org.mx/"
+    },
+    {
+      "logo": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/partners/logo-asocoem.png",
+      "name": "ASOCOEM",
+      "about": "ASOCOEM é uma organização sem fins lucrativos que ajuda pacientes e familiares com Esclerose Múltipla a terem uma melhor qualidade de vida.",
+      "website": "https://www.facebook.com/asocoem"
+    },
+    {
+      "logo": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/partners/logo-fundem.png",
+      "name": "FUNDEM",
+      "about": "Somos uma entidade sem fins lucrativos dedicada ao aprimoramento da qualidade de vida e bem-estar de pessoas diagnosticadas com doenças crônicas de alto custo e órfãs. Com nossas ações, não apenas apoiamos o paciente e seu ambiente familiar, mas também impactamos positivamente o Sistema de Segurança Social em Saúde da Colômbia.",
+      "website": "https://fundem-co.org/"
+    },
+    {
+      "logo": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/partners/logo-golfo.jpg",
+      "name": "Esclerosis Múltiple del Golfo",
+      "about": "Instituição altruísta que fornece atendimento médico abrangente a pessoas com esclerose múltipla e suas famílias.",
+      "website": "https://www.facebook.com/esclerosismultipledelgolfo.ac"
+    },
+    {
+      "logo": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/partners/logo-guamem.png",
+      "name": "GUAMEM",
+      "about": "Constituída em 12 de novembro de 1999 por um grupo de pessoas com Esclerose Múltipla e seus familiares, com o objetivo de oferecer orientação, informações, assessoria e apoio. Atendemos pessoas de 28 dos 46 municípios do estado de Guanajuato - México.",
+      "website": "https://www.facebook.com/Guamem/"
+    },
+    {
+      "logo": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/partners/logo-amme.jpeg",
+      "name": "AMME",
+      "about": "AMME é uma organização sem fins lucrativos que auxilia familiares e cuidadores de pacientes com esquizofrenia.",
+      "website": "https://maosdemaes.org.br/"
+    },
+    {
+      "logo": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/partners/logo-hca.jpeg",
+      "name": "Hecho con amor",
+      "about": "Dedicada a auxiliar pacientes com esclerose múltipla no Peru que enfrentam situações socioeconômicas adversas, com ou sem seguro, especialmente em áreas rurais.",
+      "website": "https://hechoconamor.pe/"
+    }
+  ],
+  "en": [
+    {
+      "logo": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/partners/logo-ineco.jpg",
+      "name": "Fundación INECO",
+      "about": "Developing and exporting neuroscientific knowledge to the world from Argentina.",
+      "website": "http://www.fundacionineco.org/"
+    },
+    {
+      "logo": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/partners/logo-fundaleu.jpg",
+      "name": "Fundaleu",
+      "about": "Fundaleu was created in 1956 to fight leukemia.",
+      "website": "https://www.fundaleu.org/"
+    },
+    {
+      "logo": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/partners/logo-sosten.jpg",
+      "name": "Sostén Asociación Civil",
+      "about": "Sostén Civil Association provides support, guidance, and counseling to people with cancer.",
+      "website": "http://sosten.org.ar/"
+    },
+    {
+      "logo": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/partners/logo-articular.jpg",
+      "name": "Fundacion Articular",
+      "about": "Science and community mutually committed to the well-being of humanity.",
+      "website": "http://www.fundaciónarticular.org/"
+    },
+    {
+      "logo": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/partners/logo-acerca.jpg",
+      "name": "Proyecto Acerca",
+      "about": "Learn more about clinical trials through the ACERCA project.",
+      "website": "http://acercacomunidad.com/"
+    },
+    {
+      "logo": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/partners/logo-alma.jpg",
+      "name": "ALMA",
+      "about": "ALMA is formed by patients and family members with a diagnosis of Chronic Myeloid Leukemia.",
+      "website": "http://www.asociacionalma.org.ar/"
+    },
+    {
+      "logo": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/partners/logo-aepso.jpg",
+      "name": "AEPSO",
+      "about": "The Civil Association for Psoriasis Patients is a non-profit organization created in 2005 by people with psoriasis and psoriatic arthritis to help those who also suffer and their families.",
+      "website": "http://www.aepso.org/"
+    },
+    {
+      "logo": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/partners/logo-linfomas.jpg",
+      "name": "Linfomas Argentina",
+      "about": "Linfomas Argentina is a non-profit civil association of patients and family members with lymphoma, myelofibrosis, and myelodysplastic syndromes.",
+      "website": "http://www.linfomasargentina.org/home.php"
+    },
+    {
+      "logo": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/partners/logo-ema.jpg",
+      "name": "EMA",
+      "about": "EMA (Multiple Sclerosis Argentina) is a non-profit civil association. The main objective was centered on spreading awareness of the disease as the first support groups for people with MS began to organize.",
+      "website": "http://www.ema.org.ar/"
+    },
+    {
+      "logo": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/partners/logo-ama.jpg",
+      "name": "AMA",
+      "about": "AMA's mission is to raise awareness about MPS, providing information about its diagnosis, treatments, and how to obtain them.",
+      "website": "https://es-la.facebook.com/AMA-Asociacion-de-Mucopolisacaridosis-Argentina-779050348847526/"
+    },
+    {
+      "logo": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/partners/logo-mieloma.jpg",
+      "name": "Fundación Argentina de Mieloma",
+      "about": "We are an organization seeking assistance for people living with Myeloma and their loved ones.",
+      "website": "http://www.mieloma.org.ar/"
+    },
+    {
+      "logo": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/partners/logo-lupus.jpg",
+      "name": "Fundación Lupus Córdoba",
+      "about": "We aim to provide accurate information about the disease to achieve prevention and health promotion around LUPUS.",
+      "website": "https://www.facebook.com/LupusCordoba/"
+    },
+    {
+      "logo": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/partners/logo-teamd.jpg",
+      "name": "TEAMD",
+      "about": "At teamd, we commit to accompany you in your daily learning about diabetes.",
+      "website": "https://www.teamd.com.ar/"
+    },
+    {
+      "logo": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/partners/logo-alma2.jpg",
+      "name": "A.L.M.A",
+      "about": "Its mission is to disseminate knowledge about the disease and advocate for a better quality of life for people with dementia and their families.",
+      "website": "https://www.alma-alzheimer.org.ar/es/"
+    },
+    {
+      "logo": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/partners/logo-donde.png",
+      "name": "Donde Quiero Estar",
+      "about": "Mundo Cáncer is an initiative of the Donde Quiero Estar Foundation, which seeks to provide comprehensive, accessible, reliable, and safe information to the general population.",
+      "website": "https://mundocancer.com/"
+    },
+    {
+      "logo": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/partners/logo-voces.jpg",
+      "name": "Voces Diabetes Colombia",
+      "about": "We are a non-profit entity that works decisively for the prevention of diabetes and its complications in the country.",
+      "website": "https://diabetescolombia.com/"
+    },
+    {
+      "logo": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/partners/logo-alcem.jpg",
+      "name": "ALCEM",
+      "about": "We are a non-profit civil organization that operates throughout Argentina to defend the rights of people with MS.",
+      "website": "https://www.alcem.org.ar/"
+    },
+    {
+      "logo": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/partners/logo-cima.jpg",
+      "name": "CIMA",
+      "about": "The CIMA Foundation is an organization that fights against breast cancer.",
+      "website": "https://www.cimafundacion.org/"
+    },
+    {
+      "logo": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/partners/logo-fim.jpg",
+      "name": "Fundación de Investigaciones Metabólicas",
+      "about": "We are an institution committed to the health of our patients. In the last 20 years, we have participated in over 120 research protocols for new drugs in outpatient patients.",
+      "website": "http://www.fim-fundacion.org.ar/"
+    },
+    {
+      "logo": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/partners/logo-macma.jpg",
+      "name": "Movimiento Ayuda Cáncer de Mama",
+      "about": "Founded on February 25, 1997, by María Cecilia Palacios, who went through the disease and felt the need to encourage other women and help them face the different moments of the disease and treatments.",
+      "website": "http://www.macma.org.ar/"
+    },
+    {
+      "logo": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/partners/logo-fepreva.jpg",
+      "name": "Fundación para el Estudio, la Prevención y el Tratamiento de la Enfermedad Vascular Aterosclerótica.",
+      "about": "FEPREVA is an organization dedicated to the study, prevention, and treatment of chronic diseases of higher prevalence. It is a leading organization in care, education, and clinical research.",
+      "website": "http://www.fepreva.org/investigacion_clinica.php"
+    },
+    {
+      "logo": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/partners/logo-femexer.png",
+      "name": "Federación Mexicana de Enfermedades Raras.",
+      "about": "FEMEXER is a non-governmental and entirely voluntary alliance of patient organizations, exclusively led by patients and family members. We represent over 85 patient organizations with rare diseases in Mexico, covering almost 500 rare diseases among the country's population.",
+      "website": "http://www.femexer.org/"
+    },
+    {
+      "logo": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/partners/logo-emc.png",
+      "name": "Corporación Esclerosis Múltiple Chile.",
+      "about": "We are a non-profit organization working to raise awareness, educate, and support people diagnosed with Multiple Sclerosis and their families in Chile.",
+      "website": "https://www.esclerosismultiplechile.cl/"
+    },
+    {
+      "logo": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/partners/logo-ucem.png",
+      "name": "UCEM",
+      "about": "We are a non-profit association founded in 2009. Our goal is to provide comprehensive services to people living with Multiple Sclerosis and their families, aiming to improve their quality of life and facilitate their full social and work integration while preserving their moral, emotional, and physical integrity.",
+      "website": "https://ucemmexico.org/"
+    },
+    {
+      "logo": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/partners/logo-femmex.png",
+      "name": "FEMMEX",
+      "about": "Federation of multiple sclerosis and amyotrophic lateral sclerosis associations. It has member associations throughout Mexico.",
+      "website": "https://www.facebook.com/femmexorg"
+    },
+    {
+      "logo": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/partners/logo-alem.jpg",
+      "name": "ALEM",
+      "about": "Founded in 1997 in Medellín, Colombia, it aims to promote health even in illness, participating in research and educating and disseminating information about Multiple Sclerosis among health professionals and the community.",
+      "website": "https://www.alem-colombia.org"
+    },
+    {
+      "logo": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/partners/logo-ares.png",
+      "name": "ARES",
+      "about": "ARES, through its Rehabilitation Center, serves people with Multiple Sclerosis, Amyotrophic Lateral Sclerosis, and other conditions, offering physical rehabilitation therapies, hydrotherapy, psychological care, occupational therapy, and lectures by specialists.",
+      "website": "http://www.asrem.org.mx/"
+    },
+    {
+      "logo": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/partners/logo-asocoem.png",
+      "name": "ASOCOEM",
+      "about": "ASOCOEM is a non-profit organization that helps patients and families with Multiple Sclerosis have a better quality of life.",
+      "website": "https://www.facebook.com/asocoem"
+    },
+    {
+      "logo": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/partners/logo-fundem.png",
+      "name": "FUNDEM",
+      "about": "We are a non-profit entity dedicated to improving the quality of life and well-being of people diagnosed with high-cost and orphan chronic diseases. With our actions, we not only support the patient and their family environment but also positively impact Colombia's Health Social Security System.",
+      "website": "https://fundem-co.org/"
+    },
+    {
+      "logo": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/partners/logo-golfo.jpg",
+      "name": "Esclerosis Múltiple del Golfo",
+      "about": "Altruistic institution that provides comprehensive medical care to people with multiple sclerosis and their families.",
+      "website": "https://www.facebook.com/esclerosismultipledelgolfo.ac"
+    },
+    {
+      "logo": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/partners/logo-guamem.png",
+      "name": "GUAMEM",
+      "about": "Established on November 12, 1999, by a group of people with Multiple Sclerosis and their families, with the aim of offering guidance, information, advice, and support. We serve people from 28 of the 46 municipalities in the state of Guanajuato - Mexico.",
+      "website": "https://www.facebook.com/Guamem/"
+    },
+    {
+      "logo": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/partners/logo-amme.jpeg",
+      "name": "AMME",
+      "about": "AMME is a non-profit organization that assists family members and caregivers of patients with schizophrenia.",
+      "website": "https://maosdemaes.org.br/"
+    },
+    {
+      "logo": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/partners/logo-hca.jpeg",
+      "name": "Hecho con amor",
+      "about": "Dedicated to assisting multiple sclerosis patients in Peru facing adverse socio-economic situations, with or without insurance, especially in rural areas.",
+      "website": "https://hechoconamor.pe/"
+    }
+  ]
+}

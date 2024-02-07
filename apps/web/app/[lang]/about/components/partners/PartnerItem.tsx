@@ -11,7 +11,7 @@ export const PartnerItem: React.FC<PartnerItemProps> = ({
   size,
   className,
 }) => {
-  const { image, name, about } = partner;
+  const { logo, name, website } = partner;
 
   const [hover, setHover] = useState(false);
 
@@ -19,18 +19,18 @@ export const PartnerItem: React.FC<PartnerItemProps> = ({
     <div
       className={clsx(
         'flex p-3 lg:p-4 justify-center',
-        { 'scale-110': hover && about },
+        { 'scale-110': hover && website },
         className,
       )}
       onMouseOver={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
     >
-      {about ? (
-        <Link href={about} target="_blank">
-          <Avatar imageUrl={image} alt={name} size={size} />
+      {website ? (
+        <Link href={website} target="_blank">
+          <Avatar imageUrl={logo} alt={name} size={size} />
         </Link>
       ) : (
-        <Avatar imageUrl={image} alt={name} size={size} />
+        <Avatar imageUrl={logo} alt={name} size={size} />
       )}
     </div>
   );

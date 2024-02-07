@@ -25,6 +25,12 @@ module.exports = withNextIntl({
         port: '',
         pathname: '/public/images/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'media.licdn.com',
+        port: '',
+        pathname: '/dms/image/**',
+      },
     ],
   },
 });

@@ -44,7 +44,7 @@ export const Footer: React.FC<FooterProps> = ({ locale }) => {
 
   return (
     <div className="flex flex-col bg-primary-dark">
-      <div className="grid grid-cols-1 xl:grid-cols-4 gap-4 p-4 pb-2 sm:p-20 sm:pb-8">
+      <div className="grid grid-cols-1 xl:grid-cols-4 gap-4 p-4 pb-2 sm:p-20 pb-8">
         <Link href="/" aria-label="Home" locale={locale} className="col-span-2">
           <Logo
             brand="uepm"

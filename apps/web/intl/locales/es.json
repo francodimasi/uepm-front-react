@@ -90,12 +90,12 @@
         "middle": {
           "tag": "Nuestro compromiso",
           "title": "Acompañamiento humano",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum"
+          "description": "Porque respetamos la identidad de cada país, trabajamos con un equipo de Asistencia a la Comunidad multicultural e interdisciplinario que acompaña a los pacientes durante todo el proceso de postulación, respondiendo dudas y facilitando el contacto con el investigador médico"
         },
         "bottom": {
           "tag": "Nuestra prioridad",
           "title": "Calidad y cuidado del paciente",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum"
+          "description": "Un Ensayo para Mí cumple con todas las normas internacionales para el tratamiento y protección de tus datos personales. Por eso, contamos con certificaciones que garantizan la calidad de nuestro trabajo"
         }
       },
       "team": {
@@ -143,7 +143,7 @@
       "optional": "(Opcional)"
     },
     "faqs": {
-      "title": "FAQs"
+      "title": "Preguntas frecuentes"
     },
     "editorSelection": {
       "title": "Selección del editor"

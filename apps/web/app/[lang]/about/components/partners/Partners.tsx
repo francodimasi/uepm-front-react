@@ -15,7 +15,7 @@ export const Partners: React.FC<PartnersProps & LocaleProps> = ({
   if (partners.length === 0) return null;
 
   return (
-    <div id={id} className="flex flex-col py-8 lg:py-10">
+    <div id={id} className="flex flex-col py-8 lg:py-10 w-full">
       <div className="flex flex-col">
         <Tag
           text={t('tag')}
@@ -37,14 +37,14 @@ export const Partners: React.FC<PartnersProps & LocaleProps> = ({
               key={index}
               partner={partner}
               className="items-center"
-              size="xl"
+              size="2xl"
             />
           ))}
         </div>
         <div className="hidden sm:flex xl:hidden">
-          <Scroll className="w-full h-36">
+          <Scroll className="w-full h-44">
             {partners.map((partner, index) => (
-              <PartnerItem key={index} partner={partner} size="xl" />
+              <PartnerItem key={index} partner={partner} size="2xl" />
             ))}
           </Scroll>
         </div>

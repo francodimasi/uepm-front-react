@@ -1,7 +1,7 @@
 import { ImageWithFallback } from '@components/utils/ImageWithFallback';
 import { MainProps } from './Main.types';
-import imgDesktop from 'public/images/home/topDesktop.png';
-import imgMobile from 'public/images/home/topMobile.png';
+import imgDesktop from 'public/images/home/main/topDesktop.png';
+import imgMobile from 'public/images/home/main/topMobile.png';
 import { H1 } from 'ui/core';
 import { useTranslations } from 'intl';
 import { Browser } from '@components/shared/browser';

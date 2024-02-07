@@ -36,9 +36,21 @@ export const Header: React.FC<HeaderProps> = ({ locale }) => {
         <div className="relative z-50 flex justify-between px-4 py-4 lg:px-20 lg:py-8">
           <div className="relative z-10 w-full flex items-center gap-16">
             <Link href="/" aria-label="Home" locale={locale}>
-              <Logo brand="uepm" className="h-10 w-auto flex" />
+              <Logo brand="uepm" className="h-10 w-auto flex sm:hidden" />
+              <Logo
+                brand="uepm"
+                className="h-12 w-auto hidden sm:flex lg:hidden"
+                height={125}
+                width={125}
+              />
+              <Logo
+                brand="uepm"
+                className="h-14 w-auto hidden hidden lg:flex"
+                height={140}
+                width={140}
+              />
             </Link>
-            <div className="hidden lg:flex lg:flex-1 lg:gap-10 lg:justify-end">
+            <div className="hidden lg:flex lg:flex-1 lg:gap-8 lg:justify-end">
               <NavLinks links={menuLinks} locale={locale} />
             </div>
           </div>

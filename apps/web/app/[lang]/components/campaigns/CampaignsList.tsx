@@ -1,6 +1,6 @@
 'use client';
 
-import shapes from 'public/images/home/shapes.png';
+import shapes from 'public/images/shared/circle-brand.png';
 import { useTranslations } from 'intl';
 import { H2 } from 'ui/core';
 import { CampaignsProps } from './Campaigns.types';
@@ -43,11 +43,8 @@ export const CampaignsList: React.FC<CampaignsProps> = ({
           <ImageWithFallback
             src={shapes}
             alt="shapes"
-            style={{
-              width: 'auto',
-              height: 'auto',
-            }}
-            className="aspect-square mt-16"
+            sizes="100%"
+            className="aspect-square mt-16 w-64 h-64"
           />
         </div>
         {campaignsShown.map((campaign, index) => (

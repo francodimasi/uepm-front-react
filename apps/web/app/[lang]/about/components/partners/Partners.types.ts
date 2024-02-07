@@ -2,9 +2,10 @@ import { LocaleProps } from 'intl';
 import { PropsWithClassName, Size } from 'ui/types/core';
 
 export type Partner = {
-  image?: string;
+  logo?: string;
   name: string;
   about?: string;
+  website?: string;
 };
 
 export type PartnersProps = PropsWithClassName &
