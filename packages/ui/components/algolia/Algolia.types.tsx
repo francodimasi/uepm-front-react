@@ -1,4 +1,3 @@
-import { Dispatch, SetStateAction } from 'react';
 import type { Hit as AlgoliaHit } from 'instantsearch.js/es/types';
 import { PropsWithClassName } from '../../types/core';
 
@@ -36,5 +35,5 @@ export type AlgoliaProps = PropsWithClassName & {
   indexName: string;
   placeholder?: string;
   initialValue?: string;
-  onQuery: Dispatch<SetStateAction<string>>;
+  onQuery: (_query: string, _format: string) => void;
 };

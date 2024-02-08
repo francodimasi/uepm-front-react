@@ -9,7 +9,7 @@ export type AutocompleteProps = Partial<AutocompleteOptions<BaseItem>> & {
   className?: string;
   placeholder: string;
   initialValue: string;
-  onQuery: Dispatch<SetStateAction<string>>;
+  onQuery: (_query: string, _format: string) => void;
 };
 
 export type AutocompleteHookProps = {
@@ -19,7 +19,7 @@ export type AutocompleteHookProps = {
   setInstantSearchUiState: Dispatch<
     SetStateAction<SetInstantSearchUiStateOptions>
   >;
-  onQuery: Dispatch<SetStateAction<string>>;
+  onQuery: (_query: string, _format: string) => void;
 };
 
 export type SetInstantSearchUiStateOptions = {

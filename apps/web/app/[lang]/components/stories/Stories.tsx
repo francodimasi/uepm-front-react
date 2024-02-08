@@ -104,7 +104,7 @@ export const Stories: React.FC<StoriesProps> = ({ stories }) => {
             alt={'image'}
             src={SemiCircleBrand}
             sizes="100%"
-            className="hidden xl:flex 2xl:hidden w-32 h-64 opacity-80"
+            className="hidden 2xl:flex 2xl:hidden w-32 h-64 opacity-80"
           />
           <ImageWithFallback
             alt={'image'}

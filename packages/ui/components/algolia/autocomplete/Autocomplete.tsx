@@ -58,11 +58,11 @@ export const Autocomplete = ({
       plugins,
       onReset() {
         setInstantSearchUiState({ query: '' });
-        onQuery('');
+        onQuery('', 'free');
       },
       onSubmit({ state }) {
         setInstantSearchUiState({ query: state.query });
-        onQuery(state.query);
+        onQuery(state.query, 'free');
       },
       renderer: {
         createElement,

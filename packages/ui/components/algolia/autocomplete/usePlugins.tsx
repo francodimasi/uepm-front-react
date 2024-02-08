@@ -3,10 +3,10 @@
 import { Fragment, useMemo } from 'react';
 import { createLocalStorageRecentSearchesPlugin } from '@algolia/autocomplete-plugin-recent-searches';
 import { createQuerySuggestionsPlugin } from '@algolia/autocomplete-plugin-query-suggestions';
+import { AutocompletePlugin } from '@algolia/autocomplete-js';
 
 import { AutocompleteHookProps } from './Autocomplete.types';
 import { HIERARCHICAL_ATTRIBUTES, QUERY_SUGGESTIONS } from './constants';
-import { AutocompletePlugin } from '@algolia/autocomplete-js';
 
 const usePlugins = ({
   searchClient,
@@ -29,7 +29,7 @@ const usePlugins = ({
               query: item.label,
               category: item.category,
             });
-            onQuery(item.label);
+            onQuery(item.label, 'suggestion');
           },
         };
       },
@@ -58,7 +58,7 @@ const usePlugins = ({
               query: item.query,
               category: item.__autocomplete_qsCategory || '',
             });
-            onQuery(item.query);
+            onQuery(item.query, 'suggestion');
           },
           getItems(params) {
             if (!params.state.query) {

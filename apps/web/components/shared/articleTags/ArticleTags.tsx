@@ -15,7 +15,7 @@ export const ArticleTags: React.FC<ArticleTagsProps> = ({
           <Tag
             key={index}
             text={tag.name}
-            className='my-1.5 sm:my-2 mx-0 px-3 sm:px-2 py-0.5 sm:py-0 text-start border-l-1 border-solid border-l-gray-medium leading-none text-primary-dark text-xs font-normal font-["DMSans"] uppercase'
+            className='my-1.5 sm:my-2 mx-0 px-2 py-0.5 sm:py-0 text-start border-l-1 border-solid border-l-gray-medium leading-none text-primary-dark text-xs font-normal font-["DMSans"] uppercase'
           />
         ))}
       </div>

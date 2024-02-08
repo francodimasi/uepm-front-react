@@ -10,6 +10,7 @@ import { Button, P1 } from 'ui/core';
 import { BrowserContext } from './context/provider';
 import { browserActions } from './context/reducer';
 import { twMerge } from 'tailwind-merge';
+import { QueryType } from './context/types';
 
 export const Browser = ({
   title,
@@ -22,18 +23,18 @@ export const Browser = ({
   const router = useRouter();
 
   const {
-    browserState: { query },
+    browserState: { query, format },
     browserDispatch,
   } = useContext(BrowserContext);
 
   useEffect(() => {
     if (query !== '') {
-      handleQuery(query);
+      handleQuery(query, format);
     }
-  }, [query]);
+  }, [query, format]);
 
-  const updateQuery = (query: string) => {
-    browserDispatch({ type: browserActions.SET_QUERY, query });
+  const updateQuery = (query: string, format: QueryType) => {
+    browserDispatch({ type: browserActions.SET_QUERY, query, format });
   };
 
   const handleSearch = () => {
@@ -43,10 +44,18 @@ export const Browser = ({
     );
   };
 
-  const handleQuery = (query: string) => {
-    router.push(
-      `${process.env.NEXT_PUBLIC_PRODUCT_PATIENTS}ensayos?query=&conditions%5B%5D=${query}&page=1&lang=${locale}`,
-    );
+  const handleQuery = (query: string, format: QueryType) => {
+    switch (format) {
+      case 'suggestion':
+        router.push(
+          `${process.env.NEXT_PUBLIC_PRODUCT_PATIENTS}ensayos?query=&conditions%5B%5D=${query}&page=1&lang=${locale}`,
+        );
+        break;
+      default:
+        router.push(
+          `${process.env.NEXT_PUBLIC_PRODUCT_PATIENTS}ensayos?query=${query}&page=1`,
+        );
+    }
   };
 
   return (

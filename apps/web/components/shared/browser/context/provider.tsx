@@ -17,6 +17,7 @@ export const BrowserContext: Context<BrowserContextModel> = createContext(
 export const BrowserProvider = (props: any) => {
   const initialState: BrowserState = {
     query: '',
+    format: 'free',
   };
 
   const loggerReducer = ContextLogger(BrowserReducer);

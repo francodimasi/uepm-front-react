@@ -83,18 +83,18 @@
     "sections": {
       "presentation": {
         "top": {
-          "title": "About us",
-          "description": "We work on the inclusion of patients by",
-          "highlighted": "uniting all research actors"
+          "title": "We are Un Ensayo para Mí",
+          "description": "We facilitate patient access to clinical trials through ",
+          "highlighted": "simple, accessible and reliable information"
         },
         "middle": {
           "tag": "Our commitment",
-          "title": "Human support",
+          "title": "We are here at your side",
           "description": "Because we respect the identity of each country, we work with a multicultural and interdisciplinary Community Assistance team that accompanies patients throughout the application process, answering questions and facilitating contact with the medical researcher"
         },
         "bottom": {
           "tag": "Our priority",
-          "title": "Quality and patient care",
+          "title": "You can trust us",
           "description": "Un Ensayo para Mí complies with all international standards for the treatment and protection of your personal data. Therefore, we have certifications that guarantee the quality of our work"
         }
       },
