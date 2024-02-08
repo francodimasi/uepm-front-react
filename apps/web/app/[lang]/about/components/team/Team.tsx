@@ -2,12 +2,13 @@ import { LocaleProps, useTranslations } from 'intl';
 import { TeamProps } from './Team.types';
 import { H2, H3, L1, Tag } from 'ui/core';
 import { TeamMemerItem } from './TeamMemberItem';
-import Link from 'next/link';
+import { Link } from '@intl/navigation';
 
 export const Team: React.FC<TeamProps & LocaleProps> = ({
   id = 'team-section',
   board = [],
   staff,
+  locale,
 }) => {
   const t = useTranslations('about.sections.team');
   const tActions = useTranslations('actions');
@@ -90,10 +91,7 @@ export const Team: React.FC<TeamProps & LocaleProps> = ({
         )}
         {staff?.length > 4 && (
           <div className="sm:hidden pt-6 flex justify-center">
-            <Link
-              href={`${process.env.NEXT_PUBLIC_PRODUCT_PATIENTS}partners`}
-              className="flex"
-            >
+            <Link href="/" locale={locale} className="flex">
               <L1 label={tActions('seeMore')} />
             </Link>
           </div>
