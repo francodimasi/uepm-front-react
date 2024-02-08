@@ -83,18 +83,18 @@
     "sections": {
       "presentation": {
         "top": {
-          "title": "¿Quiénes somos?",
-          "description": "Trabajamos en la inclusión de pacientes uniendo a",
-          "highlighted": "todos los actores de la investigación"
+          "title": "Somos Un Ensayo para Mí",
+          "description": "Facilitamos el acceso de los pacientes a ensayos clínicos a través de ",
+          "highlighted": "información simple, accesible y confiable"
         },
         "middle": {
           "tag": "Nuestro compromiso",
-          "title": "Acompañamiento humano",
+          "title": "Estamos aquí para acompañarte",
           "description": "Porque respetamos la identidad de cada país, trabajamos con un equipo de Asistencia a la Comunidad multicultural e interdisciplinario que acompaña a los pacientes durante todo el proceso de postulación, respondiendo dudas y facilitando el contacto con el investigador médico"
         },
         "bottom": {
           "tag": "Nuestra prioridad",
-          "title": "Calidad y cuidado del paciente",
+          "title": "Puedes confiar en nosotros",
           "description": "Un Ensayo para Mí cumple con todas las normas internacionales para el tratamiento y protección de tus datos personales. Por eso, contamos con certificaciones que garantizan la calidad de nuestro trabajo"
         }
       },

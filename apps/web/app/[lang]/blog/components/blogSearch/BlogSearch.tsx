@@ -52,7 +52,7 @@ export const BlogSearch = ({ locale = defaultLocale }: LocaleProps) => {
   return (
     <div
       ref={ref}
-      className="sm:mt-0 mt-3 pb-0 px-5 mb-0 justify-center items-center inline-flex"
+      className="sm:mt-0 mt-0.5 pb-0 px-5 mb-0 justify-center items-center inline-flex"
       onKeyDown={handleKeyPress}
     >
       {open ? (
@@ -67,7 +67,7 @@ export const BlogSearch = ({ locale = defaultLocale }: LocaleProps) => {
           <div className="absolute top-0 left-0 z-20 w-full h-full">
             <input
               ref={inputRef}
-              className="w-full h-full bg-light focus:ring-0 focus:outline-none border-0 border-b-1 border-b-gray-medium focus:border-b-gray-dark py-5 sm:pt-3 sm:pb-3 px-3 font-['DMSans'] font-normal text-normal text-start"
+              className="w-full h-full bg-light focus:ring-0 focus:outline-none border-1 border-gray-medium focus:border-gray-dark py-5 sm:pt-3 sm:pb-3 px-3 font-['DMSans'] font-normal text-normal text-start"
               placeholder={`${t('search')}...`}
               type="text"
               value={search}

@@ -19,6 +19,7 @@ export const BrowserReducer = (
       return {
         ...state,
         query: action.query,
+        format: action.format,
       };
     }
   }

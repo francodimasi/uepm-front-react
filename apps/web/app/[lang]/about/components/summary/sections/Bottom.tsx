@@ -1,5 +1,5 @@
 import { ImageWithFallback } from '@components/utils/ImageWithFallback';
-import isoLogo from 'public/images/about/iso45001.png';
+import logo from 'public/images/about/compliance-logo.svg';
 import imgDesktop from 'public/images/about/bottomDesktop.png';
 import imgMobile from 'public/images/about/bottomMobile.png';
 import { H1, P1, Tag } from 'ui/core';
@@ -24,10 +24,10 @@ export const Bottom: React.FC = () => {
           }}
           loading="lazy"
         />
-        <div className="relative h-64 overflow-visible">
+        <div className="relative h-40 overflow-visible">
           <div className="absolute bottom-0 mx-4 w-100 bg-light flex flex-col items-start">
             <ImageWithFallback
-              src={isoLogo}
+              src={logo}
               alt="iso45001"
               width={128}
               height={128}
@@ -47,10 +47,10 @@ export const Bottom: React.FC = () => {
           }}
           loading="lazy"
         />
-        <div className="relative h-56 md:h-24 lg:h-12 xl:h-0 overflow-visible">
-          <div className="absolute bottom-0 xl:bottom-16 2xl:bottom-20 mx-4 md:mx-8 lg:mx-10 xl:mx-16 2xl:mx-20 w-100 bg-light flex flex-col items-start md:flex-row md:items-center">
+        <div className="relative h-40 md:h-0 lg:h-0 xl:h-0 overflow-visible">
+          <div className="absolute bottom-8 xl:bottom-16 2xl:bottom-20 mx-4 md:mx-8 lg:mx-10 xl:mx-16 2xl:mx-20 w-100 bg-light flex flex-col items-start md:flex-row md:items-center">
             <ImageWithFallback
-              src={isoLogo}
+              src={logo}
               alt="iso45001"
               width={128}
               height={128}

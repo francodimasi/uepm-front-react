@@ -9,10 +9,10 @@ export const Top: React.FC = () => {
   return (
     <div className="w-full">
       <div className="grid grid-cols-2 sm:pb-4">
-        <div className="col-span-2 sm:col-span-1 w-full md:w-1/2">
+        <div className="col-span-2 md:col-span-1 w-full md:max-w-md lg:max-w-lg xl:max-w-xl">
           <H1 label={t('title')} className="block sm:!pb-0" />
         </div>
-        <div className="col-span-2 sm:col-span-1 w-full lg:w-3/4 xl:w-2/3 flex items-center">
+        <div className="col-span-2 md:col-span-1 w-full flex items-center md:ps-10">
           <H4 className="!font-normal">
             {`${t('description')} `}
             <b>{`${t('highlighted')}.`}</b>
