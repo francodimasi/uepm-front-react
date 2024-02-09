@@ -55,7 +55,7 @@ export const Main = ({ locale }: MainProps) => {
       <div className="absolute right-0 top-0 -mt-12 lg:-mt-16 xl:-mt-20 xl:me-20  hidden md:flex justify-end w-[90%]">
         <ImageWithFallback
           src={imgDesktop}
-          alt="image" 
+          alt="image"
           style={{
             width: '40%',
             height: 'auto',
