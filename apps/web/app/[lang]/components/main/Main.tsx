@@ -12,7 +12,7 @@ export const Main = ({ locale }: MainProps) => {
   const t = useTranslations('home.main');
 
   return (
-    <div className="relative w-full flex flex-col mb-10">
+    <div className="relative w-full flex flex-col mb-10 ">
       <ImageWithFallback
         src={imgMobile}
         alt="image"
@@ -52,10 +52,10 @@ export const Main = ({ locale }: MainProps) => {
       </div>
       <MainLinks className="hidden sm:flex md:hidden border-t-1 border-gray-medium pt-4 gap-4" />
       <MainLinks className="flex flex-col sm:hidden border-t-1 border-gray-medium pt-4" />
-      <div className="absolute right-0 top-0 -mt-12 lg:-mt-16 xl:-mt-28 xl:me-20 hidden md:flex justify-end w-[90%]">
+      <div className="absolute right-0 top-0 -mt-12 lg:-mt-16 xl:-mt-20 xl:me-20  hidden md:flex justify-end w-[90%]">
         <ImageWithFallback
           src={imgDesktop}
-          alt="image"
+          alt="image" 
           style={{
             width: '40%',
             height: 'auto',
