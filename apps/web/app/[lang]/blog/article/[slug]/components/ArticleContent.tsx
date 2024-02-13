@@ -1,4 +1,3 @@
-
 import { ArticleContentProps } from '../Article.types';
 import { LocaleProps } from 'intl';
 import { ImageWithFallback } from '@components/utils/ImageWithFallback';
@@ -23,7 +22,10 @@ export const ArticleContent: React.FC<ArticleContentProps & LocaleProps> = ({
         width={896}
         height={672}
       />
-      <div dangerouslySetInnerHTML={{ __html: article.content.rendered }} className='article-content'/>
+      <div
+        dangerouslySetInnerHTML={{ __html: article.content.rendered }}
+        className="article-content"
+      />
       <ArticleTags
         tags={article.tags}
         className='pb-1 pt-5 text-base font-medium leading-4 font-["DMSans"] uppercase'
