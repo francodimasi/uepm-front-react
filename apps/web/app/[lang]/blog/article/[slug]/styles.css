@@ -1,0 +1,51 @@
+.article-content h3{
+  font-size: x-large;
+
+} 
+
+.article-content h2{
+  font-size: x-large;
+} 
+
+.article-content .wp-block-image img {
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+
+.article-content .wp-block-heading {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.article-content h2.wp-block-heading {
+  color: #757575; 
+}
+
+.article-content h3.wp-block-heading {
+  font-weight: 500 ;
+}
+
+.article-content p {
+  margin-bottom: 20px;
+}
+
+.article-content li {
+  margin-bottom: 15px;
+}
+
+.article-content .button {
+  display: block;
+  background-color: var(--color-primary);
+  border: none;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 30px;
+  cursor: pointer;
+  border-radius: 9999px;
+}

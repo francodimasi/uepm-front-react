@@ -5,6 +5,7 @@ import { Layout } from '@components/core/layout/Layout';
 import { ArticleContent, ArticleTitle, ArticleRelated } from './components';
 import { ArticleProps } from './Article.types';
 import { defaultLocale } from 'intl';
+import './styles.css'
 import {
   getArticleBySlug,
   getEditorSelection,
