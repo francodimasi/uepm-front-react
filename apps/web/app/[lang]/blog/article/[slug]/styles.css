@@ -35,6 +35,12 @@
   margin-bottom: 15px;
 }
 
+
+/* OCULTAMOS LAS IMAGENES QUE SE REPITEN */
+.article-content .wp-block-image {
+  display: none;
+}
+
 .article-content .button {
   display: block;
   background-color: var(--color-primary);
@@ -46,6 +52,7 @@
   font-size: 16px;
   font-weight: 600;
   margin-top: 30px;
+  margin-bottom: 30px;
   cursor: pointer;
   border-radius: 9999px;
 }
