@@ -57,6 +57,9 @@
 
 .article-content li {
   margin-bottom: 1rem;
+  margin-left: 1.50rem;
+  padding-left:0.25rem;
+  list-style: disc;
 }
 
 .article-content .wp-block-image {
@@ -85,4 +88,11 @@
   @media (max-width: 476px) {
     width: 100%;
   }
+}
+
+
+.article-content a { 
+  text-decoration: underline;
+  text-underline-offset: 0.125rem;
+  color: var(--color-primary-dark);
 }
