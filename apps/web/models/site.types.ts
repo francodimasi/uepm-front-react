@@ -9,23 +9,23 @@ export type SitesParams = {
 };
 
 export type Site = {
-  address: string;
-  category: string;
-  country: Country;
+  id: string;
+  name: string;
+  username: string;
   description: string;
-  email: string;
-  id: number;
-  keywords: string[];
+  url: string;
+  verified: boolean;
+  address: string;
   lat: number;
   lng: number;
+  phone: string;
+  email: string;
+  category: string;
+  pipedrive_organization_id: string;
+  keywords: string[];
   logo: string;
   map: string;
-  name: string;
-  phone: string;
-  physicians: Physician[];
-  pipedrive_organization_id: string;
   studies: StudyInSite[];
-  url: string;
-  username: string;
-  verified: boolean;
+  physicians: Physician[];
+  country: Country;
 };
