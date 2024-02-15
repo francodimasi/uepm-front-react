@@ -34,15 +34,20 @@
     }
   },
   "contact": {
-    "title": " Regístrese para recibir noticias sobre nuestra plataforma exclusiva",
+    "title": "Registrese para acceder a la plataforma exclusiva",
     "thanks": "¡Muchas gracias por registrarse! En su casilla de mail encontrará información importante.",
     "inputs": {
       "name": "Nombre",
       "lastName": "Apellido",
+      "contact": "Persona de contacto",
+      "city": "Localidad",
       "speciality": "Especialidad",
       "email": "E-mail",
       "whatsapp": "Whatsapp",
-      "button": "Quiero que me contacten"
+      "button": "Quiero que me contacten",
+      "isDoctor": "Soy médico",
+      "isSite": "Soy centro de investigación"
+
     }
   },
   "footer": {
