@@ -15,13 +15,17 @@ export const useContact = () => {
     especialidad,
     nombre,
     whatsapp,
+    localidad,
+    contacto,
   }: ContactRequest) => {
     const date = dayjs().format('YYYY-MM-DD');
-    const fullName = `${nombre} ${apellido}`;
+    const fullName = `${nombre} ${apellido}`.trim();
     const item = {
       texto8: email,
       texto0: whatsapp,
       texto: especialidad,
+      texto83: contacto,
+      texto49: localidad,
       date,
     };
 

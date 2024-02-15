@@ -4,4 +4,6 @@ export type ContactRequest = {
   email: string;
   especialidad: string;
   whatsapp: string;
+  contacto: string;
+  localidad: string;
 };
