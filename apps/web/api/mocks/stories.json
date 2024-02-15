@@ -1,0 +1,54 @@
+{
+    "en": [
+      {
+        "patientName": "Ricardo",
+        "videoLink": "https://www.youtube.com/embed/JkwcUDIp5s0?t=8s",
+        "title": "Ricardo, volunteer in a clinical trial for Arthritis",
+        "description": "I believe that participating will be good for patients, good for science, good for finding a new medicine.",
+        "image": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/ricardo.jpeg",
+        "tag": "Rheumatology"
+      },
+      {
+        "patientName": "Maxi",
+        "videoLink": "https://www.youtube.com/embed/fSr78Y_tDjU?t=13s",
+        "title": "Maxi, voluntario en un ensayo clínico para Esclerosis",
+        "image": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/maxi.jpeg",
+        "tag": "Rheumatology"
+      }
+    ],
+    "es": [
+      {
+        "patientName": "Ricardo",
+        "videoLink": "https://www.youtube.com/embed/JkwcUDIp5s0?t=8s",
+        "title": "Ricardo, voluntario en un ensayo clínico para Artritis",
+        "description": "Yo creo que participar va a ser un bien para los pacientes, un bien para la ciencia, un bien para encontrar un nuevo medicamento",
+        "image": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/ricardo.jpeg",
+        "tag": "Reumatología"
+      },
+      {
+        "patientName": "Maxi",
+        "videoLink": "https://www.youtube.com/embed/fSr78Y_tDjU?t=13s",
+        "title": "Maxi, voluntario en un ensayo clínico para Esclerosis",
+        "image": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/maxi.jpeg",
+        "tag": "Reumatología"
+      }
+    ],
+    "pt": [
+      {
+        "patientName": "Ricardo",
+        "videoLink": "https://www.youtube.com/embed/JkwcUDIp5s0?t=8s",
+        "title": "Ricardo, voluntário em um ensaio clínico para artrite",
+        "description": "Acredito que participar será bom para os pacientes, bom para a ciência, bom para encontrar um novo medicamento.",
+        "image": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/ricardo.jpeg",
+        "tag": "Reumatología"
+      },
+      {
+        "patientName": "Maxi",
+        "videoLink": "https://www.youtube.com/embed/fSr78Y_tDjU?t=13s",
+        "title": "Maxi, voluntário em um ensaio clínico para esclerose",
+        "image": "https://uepm-dev.sfo3.digitaloceanspaces.com/public/images/maxi.jpeg",
+        "tag": "Reumatología"
+      }
+    ]
+  }
+  

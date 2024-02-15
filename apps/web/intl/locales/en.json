@@ -53,26 +53,49 @@
     }
   },
   "home": {
-    "lang": "English"
+    "main": {
+      "title": "Connecting patients with clinical trials",
+      "browser": {
+        "title": "Are you a patient?",
+        "subtitle": "Which is your illness?",
+        "placeholder": "Ex: Systemic Sclerosis"
+      },
+      "links": {
+        "sponsor": "I'm a Sponsor",
+        "physician": "I'm a Physician"
+      }
+    },
+    "howitworks": {
+      "title": "How it works?"
+    },
+    "stories": {
+      "title": "First-hand Stories"
+    },
+    "campaigns": {
+      "title": "Apply"
+    },
+    "news": {
+      "title": "Medical news"
+    }
   },
   "about": {
     "title": "About us",
     "sections": {
       "presentation": {
         "top": {
-          "title": "About us",
-          "description": "We work on the inclusion of patients by",
-          "highlighted": "uniting all research actors"
+          "title": "We are Un Ensayo para Mí",
+          "description": "We facilitate patient access to clinical trials through ",
+          "highlighted": "simple, accessible and reliable information"
         },
         "middle": {
           "tag": "Our commitment",
-          "title": "Human support",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum"
+          "title": "We are here at your side",
+          "description": "Because we respect the identity of each country, we work with a multicultural and interdisciplinary Community Assistance team that accompanies patients throughout the application process, answering questions and facilitating contact with the medical researcher"
         },
         "bottom": {
           "tag": "Our priority",
-          "title": "Quality and patient care",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum"
+          "title": "You can trust us",
+          "description": "Un Ensayo para Mí complies with all international standards for the treatment and protection of your personal data. Therefore, we have certifications that guarantee the quality of our work"
         }
       },
       "team": {
@@ -98,12 +121,18 @@
         "copyLabel": "Copy link",
         "copiedLabel": "Copied!"
       }
+    },
+    "blogFilter": {
+      "noResults": {
+        "title": "No articles found",
+        "description": "Please try again"
+      }
     }
   },
   "shared": {
     "contactUs": {
-      "title": "Send us your query",
-      "description": "Complete the form and we will respond to you as soon as possible",
+      "title": "Do you have any doubts?",
+      "description": "Complete the form so we can reach you",
       "fields": {
         "name": "Name",
         "lastname": "Lastname",
@@ -114,7 +143,7 @@
       "optional": "(Optional)"
     },
     "faqs": {
-      "title": "FAQs"
+      "title": "Frequent questions"
     },
     "editorSelection": {
       "title": "Editor selection for you"

@@ -1,156 +1,180 @@
 {
   "en": [
     {
-      "id": "general",
-      "name": "General",
-      "items": [
-        {
-          "question": "Question 1 [general]",
-          "answer": "Answer 1 [general]"
-        },
-        {
-          "question": "Question 2 [general]",
-          "answer": "Answer 2 [general]"
-        },
-        {
-          "question": "Question 3 [general]",
-          "answer": "Answer 3 [general]"
-        }
-      ]
-    },
-    {
-      "id": "studies",
-      "name": "Studies",
-      "items": [
-        {
-          "question": "Question 1 [studies]",
-          "answer": "Answer 1 [general]"
-        },
-        {
-          "question": "Question 2 [studies]",
-          "answer": "Answer 2 [studies]"
-        },
-        {
-          "question": "Question 3 [studies]",
-          "answer": "Answer 3 [studies]"
-        }
-      ]
-    },
-    {
       "id": "uepm",
-      "name": "UEPM",
+      "name": "Un Ensayo Para Mí",
       "items": [
         {
-          "question": "Question 1 [uepm]",
-          "answer": "Answer 1 [uepm]"
+          "question": "What is Un Ensayo Para Mí?",
+          "answer": "At Un Ensayo Para Mí, our mission is to bring patients closer to clinical trials in a simple, fast, and secure manner. We have a website for patients, a platform for referring physicians, and a platform for research centers."
         },
         {
-          "question": "Question 2 [uepm]",
-          "answer": "Answer 2 [uepm]"
+          "question": "Where is Un Ensayo Para Mí?",
+          "answer": "Un Ensayo Para Mí operates in 9 Latin American countries, recruiting patients for clinical trials approved by regulatory entities and Ethics Committees."
+        }
+      ]
+    },
+    {
+      "id": "clinical-trials",
+      "name": "Clinical Trials",
+      "items": [
+        {
+          "question": "What is a clinical trial?",
+          "answer": "A clinical trial is a medical investigation aimed at verifying the safety and efficacy of a new medication. In these scientific studies, it is compared whether the new investigational treatment is better than those currently available."
+        },
+        {
+          "question": "Where are clinical trials conducted?",
+          "answer": "In clinics and hospitals that serve as centers for scientific research. There, a research physician, specialized in your disease, evaluates each case."
+        },
+        {
+          "question": "Do clinical trials have a cost?",
+          "answer": "Participating in a clinical trial has no cost for the patient. Being part of these studies includes at least one laboratory analysis, transportation from your home to the nearest clinical trial center, and the supply of medication."
+        },
+        {
+          "question": "Are clinical trials safe?",
+          "answer": "These studies have the approval of regulatory authorities in each country and the Ethics Committee. Before opening to the public, each trial was tested."
+        },
+        {
+          "question": "If I complete the form, does it mean I am already in the trial?",
+          "answer": "No, it only means that you have applied. We will be connecting with you from An Essay For Me to conduct an interview and verify that you meet all the inclusion and exclusion criteria."
+        },
+        {
+          "question": "What if I change my mind?",
+          "answer": "Any patient can end their participation in a trial at any time without any obligation to the research center."
+        }
+      ]
+    },
+    {
+      "id": "referals",
+      "name": "Referring Physicians",
+      "items": [
+        {
+          "question": "What are the fees for referring patients?",
+          "answer": "Un Ensayo Para Mí (UEPM) understands the importance of the referring physician's work in the process of identifying and monitoring a patient in a clinical trial. That's why we will be crediting fees for the hours of work we consider performed. Depending on each trial, specific hours will be recognized when the patient enters screening and certain hours when the patient is randomized (meaning the patient effectively entered the study after successfully passing the screening period). The hours will be detailed in each trial."
+        },
+        {
+          "question": "I don't want to lose track of my patient. Can I continue to follow up?",
+          "answer": "Yes. Referring a patient does not mean stopping follow-up. Through our platform, you will be able to track the patient's progress and even communicate with the coordinator or medical investigator for updates."
         }
       ]
     }
   ],
   "es": [
     {
-      "id": "general",
-      "name": "General",
+      "id": "uepm",
+      "name": "Un Ensayo Para Mí",
       "items": [
         {
-          "question": "Pregunta 1 [general]",
-          "answer": "Respuesta 1 [general]"
+          "question": "¿Qué es Un Ensayo Para Mí?",
+          "answer": "En Un Ensayo Para Mí tenemos la misión de acercar a los pacientes a los ensayos clínicos de manera simple, rápida y segura. Contamos con una web para pacientes, una plataforma para médicos referentes y una plataforma para los centros de investigación."
         },
         {
-          "question": "Pregunta 2 [general]",
-          "answer": "Respuesta 2 [general]"
-        },
-        {
-          "question": "Pregunta 3 [general]",
-          "answer": "Respuesta 3 [general]"
+          "question": "¿Dónde está Un Ensayo Para Mí?",
+          "answer": "Un Ensayo para Mí trabaja en 9 países de Latinoamérica reclutando pacientes para ensayos clínicos aprobados por las entidades regulatorias y Comités de Ética."
         }
       ]
     },
     {
-      "id": "studies",
+      "id": "clinical-trials",
       "name": "Ensayos clínicos",
       "items": [
         {
-          "question": "Pregunta 1 [studies]",
-          "answer": "Respuesta 1 [general]"
+          "question": "¿Qué es un ensayo clínico?",
+          "answer": "Un ensayo clínico es una investigación médica que tiene como objetivo comprobar la seguridad y eficacia de un nuevo medicamento. En estos estudios científicos, se compara si el nuevo tratamiento en investigación es mejor que los disponibles."
         },
         {
-          "question": "Pregunta 2 [studies]",
-          "answer": "Respuesta 2 [studies]"
+          "question": "¿Dónde se realiza un ensayo clínico?",
+          "answer": "En clínicas y hospitales que funcionan como centros de investigación científica. Allí, un médico investigador, especializado en tu enfermedad, evalúa cada caso."
         },
         {
-          "question": "Pregunta 3 [studies]",
-          "answer": "Respuesta 3 [studies]"
+          "question": "¿Los ensayos clínicos tienen costo?",
+          "answer": "Participar de un ensayo clínico no tiene ningún costo para el paciente. Formar parte de estos estudios incluye al menos un análisis de laboratorio, el traslado desde tu domicilio al centro de ensayos clínicos más cercano y suministro de la medicación."
+        },
+        {
+          "question": "¿Los ensayos clínicos son seguros?",
+          "answer": "Estos estudios cuentan con la aprobación de las entidades regulatorias en cada país y del Comité de Ética. Antes de abrirse al público, cada ensayo fue testeado."
+        },
+        {
+          "question": "Si completo el formulario ¿significa que ya entré en el ensayo?",
+          "answer": "No, solo significa que te postulaste. Vamos a estar conectándote desde Un Ensayo Para Mi para hacerte una entrevista y verificar que cumples con todos los criterios de inclusión y exclusión."
+        },
+        {
+          "question": "¿Qué pasa si me arrepiento?",
+          "answer": "Cualquier paciente puede finalizar su participación en un ensayo en el momento que lo desee sin ningún tipo de obligación para con el centro de investigacion."
         }
       ]
     },
     {
-      "id": "uepm",
-      "name": "Un Ensayo para Mí",
+      "id": "referals",
+      "name": "Médicos referentes",
       "items": [
         {
-          "question": "Pregunta 1 [uepm]",
-          "answer": "Respuesta 1 [uepm]"
+          "question": "Qué son los honorarios al referir pacientes?",
+          "answer": "UEPM entiende la importancia del trabajo del médico referente en el proceso de identificar y hacer seguimiento de un paciente en un ensayo clínico. Es por eso que estaremos acreditando honorarios por las horas de trabajo que consideramos realizadas. Dependiendo de cada ensayo se reconocerán determinadas horas cuando el paciente ingresa a screening y ciertas horas cuando el paciente es randomizado (es decir que el paciente ingresó efectivamente al estudio luego de pasar con éxito el periodo de screening). Las horas estarán detalladas en cada ensayo."
         },
         {
-          "question": "Pregunta 2 [uepm]",
-          "answer": "Respuesta 2 [uepm]"
+          "question": "No quiero perder a mi paciente, ¿puedo darle seguimiento?",
+          "answer": "Si. Referir a un paciente no significa dejar de darle seguimiento. A traves de nuestra plataforma podrá ver la evolucion del mismo e incluso hablar con el coordinador o investigador médico para informarse."
         }
       ]
     }
   ],
   "pt": [
     {
-      "id": "general",
-      "name": "General",
-      "items": [
-        {
-          "question": "Pergunta 1 [general]",
-          "answer": "Resposta 1 [general]"
-        },
-        {
-          "question": "Pergunta 2 [general]",
-          "answer": "Resposta 2 [general]"
-        },
-        {
-          "question": "Pergunta 3 [general]",
-          "answer": "Resposta 3 [general]"
-        }
-      ]
-    },
-    {
-      "id": "studies",
-      "name": "Ensaios clínicos",
-      "items": [
-        {
-          "question": "Pergunta 1 [studies]",
-          "answer": "Resposta 1 [general]"
-        },
-        {
-          "question": "Pergunta 2 [studies]",
-          "answer": "Resposta 2 [studies]"
-        },
-        {
-          "question": "Pergunta 3 [studies]",
-          "answer": "Resposta 3 [studies]"
-        }
-      ]
-    },
-    {
       "id": "uepm",
-      "name": "Um Ensaio para Mim",
+      "name": "Um Ensaio Para Mim",
       "items": [
         {
-          "question": "Pergunta 1 [uepm]",
-          "answer": "Resposta 1 [uepm]"
+          "question": "O que é Um Ensaio Para Mim?",
+          "answer": "No Um Ensaio Para Mim, nossa missão é aproximar os pacientes de ensaios clínicos de maneira simples, rápida e segura. Contamos com um site para pacientes, uma plataforma para médicos referentes e uma plataforma para os centros de pesquisa."
         },
         {
-          "question": "Pergunta 2 [uepm]",
-          "answer": "Resposta 2 [uepm]"
+          "question": "Onde está Um Ensaio Para Mim?",
+          "answer": "Um Ensaio Para Mim opera em 9 países da América Latina recrutando pacientes para ensaios clínicos aprovados pelas entidades regulatórias e Comitês de Ética."
+        }
+      ]
+    },
+    {
+      "id": "clinical-trials",
+      "name": "Ensaios Clínicos",
+      "items": [
+        {
+          "question": "O que é um ensaio clínico?",
+          "answer": "Um ensaio clínico é uma pesquisa médica que tem como objetivo verificar a segurança e eficácia de um novo medicamento. Nestes estudos científicos, é comparado se o novo tratamento em investigação é melhor do que os disponíveis."
+        },
+        {
+          "question": "Onde um ensaio clínico é realizado?",
+          "answer": "Em clínicas e hospitais que atuam como centros de pesquisa científica. Lá, um médico pesquisador, especializado na sua doença, avalia cada caso."
+        },
+        {
+          "question": "Os ensaios clínicos têm custos?",
+          "answer": "Participar de um ensaio clínico não tem custo para o paciente. Fazer parte desses estudos inclui pelo menos uma análise laboratorial, o transporte do seu domicílio para o centro de ensaios clínicos mais próximo e o fornecimento da medicação."
+        },
+        {
+          "question": "Os ensaios clínicos são seguros?",
+          "answer": "Esses estudos contam com a aprovação das entidades regulatórias em cada país e do Comitê de Ética. Antes de serem abertos ao público, cada ensaio foi testado."
+        },
+        {
+          "question": "Se eu preencher o formulário, significa que já estou no ensaio?",
+          "answer": "Não, significa apenas que você se candidatou. Vamos entrar em contato com você a partir do Um Ensaio Para Mim para realizar uma entrevista e verificar se você atende a todos os critérios de inclusão e exclusão."
+        },
+        {
+          "question": "E se eu me arrepender?",
+          "answer": "Qualquer paciente pode encerrar sua participação em um ensaio a qualquer momento, sem qualquer obrigação com o centro de pesquisa."
+        }
+      ]
+    },
+    {
+      "id": "referals",
+      "name": "Médicos Referenciadores",
+      "items": [
+        {
+          "question": "O que são as taxas ao encaminhar pacientes?",
+          "answer": "A UEPM compreende a importância do trabalho do médico referenciador no processo de identificar e acompanhar um paciente em um ensaio clínico. É por isso que estaremos creditando honorários pelas horas de trabalho que consideramos realizadas. Dependendo de cada ensaio, serão reconhecidas horas específicas quando o paciente passa pela triagem e certas horas quando o paciente é randomizado (ou seja, quando o paciente ingressa efetivamente no estudo após passar com sucesso pelo período de triagem). As horas serão detalhadas em cada ensaio."
+        },
+        {
+          "question": "Não quero perder meu paciente, posso continuar acompanhando?",
+          "answer": "Sim. Encaminhar um paciente não significa deixar de acompanhá-lo. Através de nossa plataforma, você poderá acompanhar a evolução do mesmo e até mesmo conversar com o coordenador ou pesquisador médico para se informar."
         }
       ]
     }

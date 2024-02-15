@@ -17,7 +17,7 @@ export default async function Page({ params: { lang } }) {
       process.cwd() + '/api/mocks/ourTeam.json',
       'utf8',
     );
-    return JSON.parse(team);
+    return JSON.parse(team)[lang];
   };
 
   const getPartners = async () => {
@@ -25,7 +25,7 @@ export default async function Page({ params: { lang } }) {
       process.cwd() + '/api/mocks/ourPartners.json',
       'utf8',
     );
-    return JSON.parse(partners);
+    return JSON.parse(partners)[lang];
   };
 
   const getFAQs = async () => {
@@ -42,11 +42,13 @@ export default async function Page({ params: { lang } }) {
 
   return (
     <Layout locale={lang}>
-      <Summary />
-      <Team board={team.board} staff={team.staff} locale={lang} />
-      <Partners partners={partners} locale={lang} />
-      <FAQs faqs={faqs} locale={lang} />
-      <ContactUs />
+      <div className="w-full flex flex-col justify-start items-start gap-[72px] pb-16">
+        <Summary />
+        <Team board={team.board} staff={team.staff} locale={lang} />
+        <Partners partners={partners} locale={lang} />
+        <FAQs faqs={faqs} locale={lang} />
+        <ContactUs />
+      </div>
     </Layout>
   );
 }

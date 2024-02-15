@@ -212,11 +212,14 @@ export const getArticlesByCategory = async (
   }
 };
 
-export const getEditorSelection = async (lang: string): Promise<BlogItem[]> => {
+export const getEditorSelection = async (
+  lang: string,
+  perPage = 3,
+): Promise<BlogItem[]> => {
   try {
     const res = await getArticles({
       page: 1,
-      per_page: 3,
+      per_page: perPage,
       context: BLOG.POST.CONTEXT,
       status: BLOG.POST.STATUS,
       tags: [BLOG.EDITOR_CHOICE_POSTS.TAG_ID],

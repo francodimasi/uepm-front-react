@@ -1,11 +1,11 @@
 import { BlogCategory } from '@models/blog.types';
+import { blogCategories } from './constants';
 
 const CATEGORIES_ORDER = new Map([
-  //[category_id => order]
-  [3, 1], //'noticias'
-  [4, 2], //'ensayos-clinicos'
-  [5, 3], //'entrevistas'
-  [2, 4], //'testimonios'
+  [blogCategories.NEWS, 1],
+  [blogCategories.STUDIES, 2],
+  [blogCategories.INTERVIEWS, 3],
+  [blogCategories.TESTIMONIES, 4],
 ]);
 
 export const orderCategories = (categories: BlogCategory[]) => {

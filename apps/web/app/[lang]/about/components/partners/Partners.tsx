@@ -2,12 +2,11 @@ import { LocaleProps, useTranslations } from 'intl';
 import { PartnersProps } from './Partners.types';
 import { H2, L1, Scroll, Tag } from 'ui/core';
 import { PartnerItem } from './PartnerItem';
-import { Link } from '@intl/navigation';
+import Link from 'next/link';
 
 export const Partners: React.FC<PartnersProps & LocaleProps> = ({
   id = 'partners-section',
   partners = [],
-  locale,
 }) => {
   const t = useTranslations('about.sections.partners');
   const tActions = useTranslations('actions');
@@ -15,7 +14,7 @@ export const Partners: React.FC<PartnersProps & LocaleProps> = ({
   if (partners.length === 0) return null;
 
   return (
-    <div id={id} className="flex flex-col py-8 lg:py-10">
+    <div id={id} className="flex flex-col py-8 lg:py-10 w-full">
       <div className="flex flex-col">
         <Tag
           text={t('tag')}
@@ -24,7 +23,10 @@ export const Partners: React.FC<PartnersProps & LocaleProps> = ({
         <div className="pb-3.5 sm:pb-4 lg:pb-5 xl:pb-8">
           <div className="relative mb-6 sm:mb-8 lg:mb-10 xl:mb-16">
             <div className="absolute right-0 h-full flex items-center hidden sm:flex">
-              <Link href="/" locale={locale}>
+              <Link
+                href={`${process.env.NEXT_PUBLIC_PRODUCT_PATIENTS}partners`}
+                target="_blank"
+              >
                 <L1 label={`${tActions('seeMore')} →`} />
               </Link>
             </div>
@@ -37,14 +39,14 @@ export const Partners: React.FC<PartnersProps & LocaleProps> = ({
               key={index}
               partner={partner}
               className="items-center"
-              size="xl"
+              size="2xl"
             />
           ))}
         </div>
         <div className="hidden sm:flex xl:hidden">
-          <Scroll className="w-full h-36">
+          <Scroll className="w-full h-44">
             {partners.map((partner, index) => (
-              <PartnerItem key={index} partner={partner} size="xl" />
+              <PartnerItem key={index} partner={partner} size="2xl" />
             ))}
           </Scroll>
         </div>
@@ -57,7 +59,10 @@ export const Partners: React.FC<PartnersProps & LocaleProps> = ({
         </div>
         {partners.length > 6 && (
           <div className="sm:hidden pt-6 flex justify-center">
-            <Link href="/" locale={locale} className="flex">
+            <Link
+              href={`${process.env.NEXT_PUBLIC_PRODUCT_PATIENTS}partners`}
+              target="_blank"
+            >
               <L1 label={tActions('seeMore')} />
             </Link>
           </div>

@@ -20,13 +20,21 @@ const newsLinks: FooterSectionLinkProps[] = [
   { id: 'testimonies', href: '/blog/category/2' },
 ];
 const productsLinks: FooterSectionLinkProps[] = [
-  { id: 'uepmPatients', href: 'https://unensayoparami.org/', outbound: true },
   {
-    id: 'uepmOnco',
-    href: 'https://onco.unensayoparami.org/',
+    id: 'uepmPatients',
+    href: process.env.NEXT_PUBLIC_PRODUCT_PATIENTS,
     outbound: true,
   },
-  { id: 'uepmPhysicians', href: 'https://app.trialtech.es/', outbound: true },
+  {
+    id: 'uepmOnco',
+    href: process.env.NEXT_PUBLIC_PRODUCT_ONCO,
+    outbound: true,
+  },
+  {
+    id: 'uepmPhysicians',
+    href: process.env.NEXT_PUBLIC_PRODUCT_PHYSICIANS,
+    outbound: true,
+  },
 ];
 
 type FooterProps = PropsWithChildren & LocaleProps;
@@ -36,7 +44,7 @@ export const Footer: React.FC<FooterProps> = ({ locale }) => {
 
   return (
     <div className="flex flex-col bg-primary-dark">
-      <div className="grid grid-cols-1 xl:grid-cols-4 gap-4 p-4 pb-2 sm:p-20 sm:pb-8">
+      <div className="grid grid-cols-1 xl:grid-cols-4 gap-4 p-4 pb-2 sm:p-20 pb-8">
         <Link href="/" aria-label="Home" locale={locale} className="col-span-2">
           <Logo
             brand="uepm"

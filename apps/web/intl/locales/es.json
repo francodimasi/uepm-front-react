@@ -53,26 +53,49 @@
     }
   },
   "home": {
-    "lang": "Español"
+    "main": {
+      "title": "Conectando pacientes con ensayos clínicos",
+      "browser": {
+        "title": "¿Eres paciente?",
+        "subtitle": "¿Cuál es tu enfermedad?",
+        "placeholder": "Ej: Esclerosis sistémica"
+      },
+      "links": {
+        "sponsor": "Soy Sponsor",
+        "physician": "Soy Investigador"
+      }
+    },
+    "howitworks": {
+      "title": "¿Como funciona?"
+    },
+    "campaigns": {
+      "title": "Postúlate"
+    },
+    "stories": {
+      "title": "En Primera Persona"
+    },
+    "news": {
+      "title": "Noticias médicas"
+    }
   },
   "about": {
     "title": "Nosotros",
     "sections": {
       "presentation": {
         "top": {
-          "title": "¿Quiénes somos?",
-          "description": "Trabajamos en la inclusión de pacientes uniendo a",
-          "highlighted": "todos los actores de la investigación"
+          "title": "Somos Un Ensayo para Mí",
+          "description": "Facilitamos el acceso de los pacientes a ensayos clínicos a través de ",
+          "highlighted": "información simple, accesible y confiable"
         },
         "middle": {
           "tag": "Nuestro compromiso",
-          "title": "Acompañamiento humano",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum"
+          "title": "Estamos aquí para acompañarte",
+          "description": "Porque respetamos la identidad de cada país, trabajamos con un equipo de Asistencia a la Comunidad multicultural e interdisciplinario que acompaña a los pacientes durante todo el proceso de postulación, respondiendo dudas y facilitando el contacto con el investigador médico"
         },
         "bottom": {
           "tag": "Nuestra prioridad",
-          "title": "Calidad y cuidado del paciente",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum"
+          "title": "Puedes confiar en nosotros",
+          "description": "Un Ensayo para Mí cumple con todas las normas internacionales para el tratamiento y protección de tus datos personales. Por eso, contamos con certificaciones que garantizan la calidad de nuestro trabajo"
         }
       },
       "team": {
@@ -98,12 +121,18 @@
         "copyLabel": "Copiar enlace",
         "copiedLabel": "¡Ya lo tienes!"
       }
+    },
+    "blogFilter": {
+      "noResults": {
+        "title": "No se encontraron artículos",
+        "description": "Por favor, intente nuevamente"
+      }
     }
   },
   "shared": {
     "contactUs": {
-      "title": "Envíanos tu consulta",
-      "description": "Completa el formulario y te responderemos a la brevedad",
+      "title": "¿Tienes dudas?",
+      "description": "Completa el formulario para que podamos ponernos en contacto contigo",
       "fields": {
         "name": "Nombre",
         "lastname": "Apellido",
@@ -114,7 +143,7 @@
       "optional": "(Opcional)"
     },
     "faqs": {
-      "title": "FAQs"
+      "title": "Preguntas frecuentes"
     },
     "editorSelection": {
       "title": "Selección del editor"

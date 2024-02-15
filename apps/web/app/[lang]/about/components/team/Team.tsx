@@ -23,7 +23,7 @@ export const Team: React.FC<TeamProps & LocaleProps> = ({
           className='py-2 text-primary-dark text-sm lg:text-base font-medium font-["DMSans"] uppercase'
         />
         <H2 label={t('title')} className="mt-0 sm:mt-0 lg:mt-0 xl:mt-0" />
-        <H3 label={t('board')} />
+        {staff && <H3 label={t('board')} />}
         <div className="grid grid-cols-2 sm:hidden gap-4">
           {board.map((mmember, index) => (
             <TeamMemerItem
