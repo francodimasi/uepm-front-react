@@ -3,9 +3,7 @@ import { Site } from '@models/site.types';
 
 export const getSiteById = async (id: string): Promise<Site> => {
   try {
-    const res = await fetch(
-      `${ENDPOINTS.SITES}/${id}`,
-    );
+    const res = await fetch(`${ENDPOINTS.SITES}/${id}`);
     const data = await res.json();
     return data ? data : null;
   } catch (error) {
