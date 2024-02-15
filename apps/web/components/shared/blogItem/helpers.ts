@@ -27,22 +27,22 @@ export const getTitleClasses = (
     case 'sm':
       return clsx(
         'text-sm leading-normal text-dark font-medium font-["Lexend"]',
-        orientation === 'vertical' ? 'line-clamp-3' : 'line-clamp-2',
+        orientation === 'vertical' ? 'text-sm' : 'text-sm',
       );
     case 'md':
       return clsx(
         'text-lg lg:text-[26px] leading-6 lg:leading-8 text-dark font-medium font-["Lexend"]',
-        orientation === 'vertical' ? 'line-clamp-3' : 'line-clamp-2',
+        orientation === 'vertical' ? 'text-lg' : 'text-base',
       );
     case 'lg':
       return clsx(
         'text-base lg:text-[26px] leading-6 lg:leading-8 text-dark font-medium font-["Lexend"]',
-        orientation === 'vertical' ? 'line-clamp-3' : 'line-clamp-2',
+        orientation === 'vertical' ? 'text-base' : 'text-sm',
       );
     case 'xl':
       return clsx(
         'text-2xl lg:text-[40px] leading-8 lg:leading-[48px] text-dark font-semibold font-["Lexend"]',
-        orientation === 'vertical' ? 'line-clamp-3' : 'line-clamp-2',
+        orientation === 'vertical' ? 'text-2xl' : 'text-xl',
       );
   }
 };
@@ -68,11 +68,11 @@ export const getDescriptionClasses = (size: BlogItemSize): string => {
     case 'sm':
       return 'hidden';
     case 'md':
-      return 'pt-1 lg:pt-2 text-dark text-sm font-light leading-6 font-["DMSans"] line-clamp-3';
+      return 'pt-1 lg:pt-2 text-dark text-sm font-light leading-6 font-["DMSans"] line-clamp-2';
     case 'lg':
       return 'pt-2 lg:pt-3 text-dark text-sm font-light leading-6 font-["DMSans"] line-clamp-2';
     case 'xl':
-      return 'pt-3 lg:pt-4 text-dark text-base font-light leading-6 font-["DMSans"] line-clamp-4';
+      return 'pt-3 lg:pt-4 text-dark text-base font-light leading-6 font-["DMSans"] line-clamp-3';
   }
 };
 
@@ -104,9 +104,9 @@ export const getImgClasses = (
         case 'horizontal':
           switch (imgPosition) {
             case 'start':
-              return 'w-40 h-32 shrink-0 me-2';
+              return 'w-28 h-32 shrink-0 me-2';
             case 'end':
-              return 'w-40 h-32 shrink-0 ms-2';
+              return 'w-28 h-32 shrink-0 ms-2';
           }
         case 'vertical':
           switch (imgPosition) {
@@ -121,9 +121,9 @@ export const getImgClasses = (
         case 'horizontal':
           switch (imgPosition) {
             case 'start':
-              return 'w-48 h-52 shrink-0 me-4';
+              return 'w-40 h-44 shrink-0 me-4';
             case 'end':
-              return 'w-48 h-52 shrink-0 ms-4';
+              return 'w-40 h-44 shrink-0 ms-4';
           }
         case 'vertical':
           switch (imgPosition) {
