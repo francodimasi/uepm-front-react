@@ -106,7 +106,11 @@ export const ContactForm = ({ onSend }: ContactFormProps) => {
             disabled={loading}
             rules={{ required: true }}
             render={({ field }) => (
-              <ContactInput label={t('name')} type="text" {...field} />
+              <ContactInput
+                label={isDoctor ? t('name') : t('siteName')}
+                type="text"
+                {...field}
+              />
             )}
           />
         </div>

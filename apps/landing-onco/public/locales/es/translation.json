@@ -39,6 +39,7 @@
     "inputs": {
       "name": "Nombre",
       "lastName": "Apellido",
+      "siteName": "Nombre del centro",
       "contact": "Persona de contacto",
       "city": "Localidad",
       "speciality": "Especialidad",
