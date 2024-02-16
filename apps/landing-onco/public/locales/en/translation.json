@@ -39,6 +39,7 @@
     "inputs": {
       "name": "Name",
       "lastName": "Last Name",
+      "siteName": "Site name",
       "contact": "Contact person",
       "city": "City",
       "speciality": "Specialty",
