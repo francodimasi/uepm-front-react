@@ -3,10 +3,10 @@ import { notFound } from 'next/navigation';
 // import { headers } from 'next/headers';
 import { Layout } from '@components/core/layout/Layout';
 import { defaultLocale } from 'intl';
-import { SiteProp } from './Site.types';
+import { SiteProps } from './Site.types';
 import { getSiteById } from '@api/sites/requests';
 
-const Page = async ({ params: { lang = defaultLocale, id } }: SiteProp) => {
+const Page = async ({ params: { lang = defaultLocale, id } }: SiteProps) => {
   const site = await getSiteById(id);
   if (!site) notFound();
 
