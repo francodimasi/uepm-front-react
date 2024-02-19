@@ -21,6 +21,8 @@ export const ContactForm = ({ onSend }: ContactFormProps) => {
 
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState<ContactRequest | null>();
+  const [isDoctor, setIsDoctor] = useState(true);
+  const [isSite, setIsSite] = useState(false);
 
   const {
     handleSubmit,
@@ -34,6 +36,8 @@ export const ContactForm = ({ onSend }: ContactFormProps) => {
       email: '',
       whatsapp: '',
       especialidad: '',
+      localidad: '',
+      contacto: '',
     },
   });
 
@@ -52,6 +56,17 @@ export const ContactForm = ({ onSend }: ContactFormProps) => {
   };
 
   const inputClasses = 'col-span-2 sm:col-span-1';
+  const checkboxClasses = `${inputClasses} flex items-center`;
+
+  const handleIsDoctorChange = () => {
+    setIsDoctor(!isDoctor);
+    setIsSite(false);
+  };
+
+  const handleIsSiteChange = () => {
+    setIsDoctor(false);
+    setIsSite(!isSite);
+  };
 
   return (
     <>
@@ -59,6 +74,31 @@ export const ContactForm = ({ onSend }: ContactFormProps) => {
         onSubmit={handleSubmit(onSubmit)}
         className="grid grid-cols-2 gap-4"
       >
+        <div className={checkboxClasses}>
+          <input
+            type="checkbox"
+            id="isDoctor"
+            name="isDoctor"
+            checked={isDoctor}
+            onChange={handleIsDoctorChange}
+          />
+          <label htmlFor="isDoctor" className="ml-1">
+            {t('isDoctor')}
+          </label>
+        </div>
+        <div className={checkboxClasses}>
+          <input
+            type="checkbox"
+            id="isSite"
+            name="isSite"
+            checked={isSite}
+            onChange={handleIsSiteChange}
+          />{' '}
+          <label htmlFor="isSite" className="ml-1">
+            {t('isSite')}
+          </label>
+        </div>
+
         <div className={inputClasses}>
           <Controller
             name="nombre"
@@ -66,31 +106,59 @@ export const ContactForm = ({ onSend }: ContactFormProps) => {
             disabled={loading}
             rules={{ required: true }}
             render={({ field }) => (
-              <ContactInput label={t('name')} type="text" {...field} />
+              <ContactInput
+                label={isDoctor ? t('name') : t('siteName')}
+                type="text"
+                {...field}
+              />
             )}
           />
         </div>
         <div className={inputClasses}>
-          <Controller
-            name="apellido"
-            control={control}
-            disabled={loading}
-            rules={{ required: true }}
-            render={({ field }) => (
-              <ContactInput label={t('lastName')} type="text" {...field} />
-            )}
-          />{' '}
+          {isDoctor ? (
+            <Controller
+              name="apellido"
+              control={control}
+              disabled={loading}
+              rules={{ required: true }}
+              render={({ field }) => (
+                <ContactInput label={t('lastName')} type="text" {...field} />
+              )}
+            />
+          ) : (
+            <Controller
+              name="contacto"
+              control={control}
+              disabled={loading}
+              rules={{ required: true }}
+              render={({ field }) => (
+                <ContactInput label={t('contact')} type="text" {...field} />
+              )}
+            />
+          )}{' '}
         </div>
         <div className={inputClasses}>
-          <Controller
-            name="especialidad"
-            control={control}
-            disabled={loading}
-            rules={{ required: true }}
-            render={({ field }) => (
-              <ContactInput label={t('speciality')} type="text" {...field} />
-            )}
-          />
+          {isDoctor ? (
+            <Controller
+              name="especialidad"
+              control={control}
+              disabled={loading}
+              rules={{ required: true }}
+              render={({ field }) => (
+                <ContactInput label={t('speciality')} type="text" {...field} />
+              )}
+            />
+          ) : (
+            <Controller
+              name="localidad"
+              control={control}
+              disabled={loading}
+              rules={{ required: true }}
+              render={({ field }) => (
+                <ContactInput label={t('city')} type="text" {...field} />
+              )}
+            />
+          )}
         </div>
         <div className={inputClasses}>
           <Controller

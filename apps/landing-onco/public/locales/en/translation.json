@@ -39,10 +39,16 @@
     "inputs": {
       "name": "Name",
       "lastName": "Last Name",
+      "siteName": "Site name",
+      "contact": "Contact person",
+      "city": "City",
       "speciality": "Specialty",
       "email": "Email",
       "whatsapp": "WhatsApp",
-      "button": "Contact Me"
+      "button": "Contact Me",
+      "isDoctor": "I am a doctor",
+      "isSite": "I am a research site"
+
     }
   },
   "footer": {
@@ -55,6 +61,6 @@
   },
   "language": {
     "en": "English",
-    "es": "Espanish"
+    "es": "Spanish"
   }
 }
