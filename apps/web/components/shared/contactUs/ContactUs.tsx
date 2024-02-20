@@ -13,7 +13,6 @@ export const ContactUs = ({}: ContactUsProps) => {
       <div className="flex flex-col gap-6 lg:hidden">
         <H2 label={t('title')} />
         <P1 label={t('description')} />
-
         <ContactUsForm
           initialValues={getInitialValues(t)}
           buttonText={tActions('submit')}

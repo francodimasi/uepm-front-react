@@ -50,12 +50,9 @@ export const ContactUsForm = ({
     if (data) {
       try {
         await sendQuery(data);
-        setSending(false);
         setSent(true);
-        reset();
       } catch (error) {
         console.log(error);
-        setSending(false);
       }
     }
     reset();
@@ -240,12 +237,7 @@ export const ContactUsForm = ({
                   onChange={recaptchaVerification}
                 />
               ) : (
-                <Button
-                  type="submit"
-                  color="dark"
-                  disabled={!isValid}
-                  onClick={() => {}}
-                >
+                <Button type="submit" color="dark" disabled={!isValid}>
                   {buttonText}
                   <ArrowForwardIcon color="light" />
                 </Button>
