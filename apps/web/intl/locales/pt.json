@@ -133,6 +133,7 @@
     "contactUs": {
       "title": "Têm dúvidas?",
       "description": "Preencha o formulário para que possamos entrar em contato com você",
+      "thanks": "Obrigado por seu contato!",
       "fields": {
         "name": "Nome",
         "lastname": "Sobrenome",
