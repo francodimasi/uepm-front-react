@@ -2,9 +2,11 @@
 
 import { Controller, useForm } from 'react-hook-form';
 import { ContactUsFormProps, ContactUsFormRequest } from './ContactUs.types';
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 import { useContactUs } from './useContactUs';
 import clsx from 'clsx';
+import ReCAPTCHA from 'react-google-recaptcha';
+
 import {
   ArrowForwardIcon,
   Button,
@@ -14,12 +16,16 @@ import {
   Textarea,
 } from 'ui/core';
 
+const recaptchaKey = process.env.NEXT_PUBLIC_RECAPTCHA_API_KEY;
+
 export const ContactUsForm = ({
   className,
   initialValues,
   buttonText,
+  onSend,
 }: ContactUsFormProps) => {
   const [sending, setSending] = useState(false);
+  const [data, setData] = useState<ContactUsFormRequest | null>();
   const { sendQuery } = useContactUs();
   const {
     handleSubmit,
@@ -36,17 +42,27 @@ export const ContactUsForm = ({
     },
   });
 
-  const onSubmit = async (data: ContactUsFormRequest) => {
-    if (!isValid) return;
-    setSending(true);
-    try {
-      await sendQuery(data);
-      setSending(false);
-      reset();
-    } catch (error) {
-      console.log(error);
-      setSending(false);
+  const recaptchaVerification = useCallback(async () => {
+    if (data) {
+      try {
+        await sendQuery(data);
+        setSending(false);
+        reset();
+      } catch (error) {
+        console.log(error);
+        setSending(false);
+      }
     }
+    reset();
+    onSend(true);
+    setSending(false);
+  }, [data]);
+
+  const onSubmit = (data: ContactUsFormRequest) => {
+    if (!isValid) return;
+
+    setSending(true);
+    setData(data);
   };
 
   return (
@@ -93,7 +109,7 @@ export const ContactUsForm = ({
             )}
           />
           <Controller
-            name="email"
+            name="phone"
             control={control}
             rules={{ required: initialValues.phone.required }}
             disabled={sending}
@@ -194,16 +210,24 @@ export const ContactUsForm = ({
             )}
           />
         </div>
+
         <div className="mt-8 lg:t-12 flex justify-end">
-          <Button
-            type="submit"
-            color="dark"
-            disabled={!isValid || sending}
-            onClick={() => {}}
-          >
-            {buttonText}
-            <ArrowForwardIcon color="light" />
-          </Button>
+          {sending ? (
+            <ReCAPTCHA
+              sitekey={recaptchaKey}
+              onChange={recaptchaVerification}
+            />
+          ) : (
+            <Button
+              type="submit"
+              color="dark"
+              disabled={!isValid || sending}
+              onClick={() => {}}
+            >
+              {buttonText}
+              <ArrowForwardIcon color="light" />
+            </Button>
+          )}
         </div>
       </form>
     </div>

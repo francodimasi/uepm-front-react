@@ -17,6 +17,7 @@ export type ContactUsFormProps = PropsWithClassName & {
     query: FormInitialValue;
   };
   buttonText: string;
+  onSend: Function;
 };
 
 export type ContactUsFormRequest = {
