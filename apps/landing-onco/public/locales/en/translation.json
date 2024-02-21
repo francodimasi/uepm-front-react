@@ -1,7 +1,7 @@
 {
   "cover": {
     "title": "Exclusive Platform for Oncologists: Find Clinical Trials and Refer Patients.",
-    "subtitle": "Discover clinical trials, refer patients, and track progress in real time.",
+    "subtitle": "Now, researchers and doctors can work together to enroll patients in clinical trials in a simple, accessible and safe way.",
     "button": "Register"
   },
   "resources": {
@@ -45,7 +45,7 @@
       "speciality": "Specialty",
       "email": "Email",
       "whatsapp": "WhatsApp",
-      "button": "Contact Me",
+      "button": "Send",
       "isDoctor": "I am a doctor",
       "isSite": "I am a research site"
 

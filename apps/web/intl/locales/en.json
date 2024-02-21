@@ -133,6 +133,7 @@
     "contactUs": {
       "title": "Do you have any doubts?",
       "description": "Complete the form so we can reach you",
+      "thanks": "Thank you for your contact!",
       "fields": {
         "name": "Name",
         "lastname": "Lastname",
