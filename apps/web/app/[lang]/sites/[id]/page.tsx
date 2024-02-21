@@ -43,7 +43,7 @@ const Page = async ({ params: { lang = defaultLocale, id } }: SiteProps) => {
               label={site.name}
               className="my-0 sm:my-0 lg:my-0 xl:my-0 !pb-0"
             />
-            {site.studies.some((study) => study.status === 'recruiting') && (
+            {site.studies.some((study) => study.status === studyStatus.RECRUITING) && (
               <div className="justify-start items-start gap-2 inline-flex">
                 <Tag
                   text={t('recruiting')}
