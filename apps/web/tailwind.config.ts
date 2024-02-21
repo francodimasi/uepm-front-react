@@ -4,7 +4,13 @@ import tailwindDefault from 'configs/tailwind/tailwind.config';
 const config: Partial<Config> = {
   presets: [tailwindDefault],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        stone: {
+          200: '#E7DED7'
+        }
+      }
+    }
   },
 };
 
