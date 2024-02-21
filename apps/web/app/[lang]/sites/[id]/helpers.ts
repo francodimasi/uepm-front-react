@@ -23,7 +23,7 @@ export const setMetadata = function ({
     },
     other: {
       logo: site.logo,
-      image: site.site_image
+      image: site.site_image,
     },
   };
 };

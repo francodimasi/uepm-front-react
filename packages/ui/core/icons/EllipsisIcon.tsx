@@ -5,7 +5,7 @@ export const EllipsisIcon = ({
   height = 6,
   fill,
   color = 'dark',
-  className
+  className,
 }: IconProps) => {
   return (
     <svg

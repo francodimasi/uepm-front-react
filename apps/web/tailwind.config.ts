@@ -7,10 +7,10 @@ const config: Partial<Config> = {
     extend: {
       colors: {
         stone: {
-          200: '#E7DED7'
-        }
-      }
-    }
+          200: '#E7DED7',
+        },
+      },
+    },
   },
 };
 
