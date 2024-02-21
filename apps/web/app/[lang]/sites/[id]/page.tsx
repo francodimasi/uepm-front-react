@@ -43,9 +43,7 @@ const Page = async ({ params: { lang = defaultLocale, id } }: SiteProps) => {
               </div>
             )}
             {site.description && (
-              <P2 className='!leading-relaxed'>
-                {site.description}
-              </P2>
+              <P2 className="!leading-relaxed">{site.description}</P2>
             )}
           </div>
         </div>
@@ -86,9 +84,7 @@ const Page = async ({ params: { lang = defaultLocale, id } }: SiteProps) => {
                     className="self-stretch justify-start items-center gap-2 inline-flex"
                   >
                     <CheckIcon color="dark" />
-                    <P2 className="!leading-relaxed !m-0 !p-0">
-                      {perk}
-                    </P2>
+                    <P2 className="!leading-relaxed !m-0 !p-0">{perk}</P2>
                   </div>
                 ))}
               </div>
@@ -103,7 +99,10 @@ const Page = async ({ params: { lang = defaultLocale, id } }: SiteProps) => {
               />
               <div className="w-full grid sm:grid-cols-3 gap-x-36 gap-2">
                 {site.physicians.map((physician) => (
-                  <P2 className="!leading-relaxed !m-0" key={physician.id}>{`${physician.first_name} ${physician.last_name}`}</P2>
+                  <P2
+                    className="!leading-relaxed !m-0"
+                    key={physician.id}
+                  >{`${physician.first_name} ${physician.last_name}`}</P2>
                 ))}
               </div>
             </div>
