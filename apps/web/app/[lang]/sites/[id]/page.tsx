@@ -7,27 +7,16 @@ import { Layout } from '@components/core/layout/Layout';
 import { getTranslations, defaultLocale } from 'intl';
 import { SiteProps } from './Site.types';
 import { getSiteById } from '@api/sites/requests';
-import { H3, Tag, H4, L1 } from 'ui/core';
+import { H3, Tag, H4, L1, P2 } from 'ui/core';
 import { ImageWithFallback } from '@components/utils/ImageWithFallback';
 import { studyStatus } from './constants';
-import { setMetadata } from './helpers';
+import { setMetadata, getSiteConditions } from './helpers';
 
 const Page = async ({ params: { lang = defaultLocale, id } }: SiteProps) => {
   const site = await getSiteById(id);
   if (!site) notFound();
-  const t = await getTranslations({ lang, namespace: 'sites' });
-  const conditionsList = [];
-  site.studies
-    .filter((site) => site.status === studyStatus.RECRUITING)
-    .map((st) =>
-      st.translations
-        .find((trans) => trans[lang])
-        [lang].conditions_ct.map((cond) => {
-          if (conditionsList.indexOf(cond) === -1) {
-            conditionsList.push(cond);
-          }
-        }),
-    );
+  const t = await getTranslations({ lang, namespace: 'sites.site' });
+  const conditionsList = getSiteConditions(site, lang);
   return (
     <Layout locale={lang}>
       <div className="grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-4 gap-14">
@@ -53,9 +42,11 @@ const Page = async ({ params: { lang = defaultLocale, id } }: SiteProps) => {
                 />
               </div>
             )}
-            <p className='text-dark font-normal font-["DMSans"] leading-relaxed '>
-              {site.description}
-            </p>
+            {site.description && (
+              <P2 className='!leading-relaxed'>
+                {site.description}
+              </P2>
+            )}
           </div>
         </div>
 
@@ -75,9 +66,9 @@ const Page = async ({ params: { lang = defaultLocale, id } }: SiteProps) => {
               className="text-primary my-0 lg:my-0"
             />
             <div className="flex-col sm:flex-row justify-start items-start gap-2 flex flex-wrap">
-              {site.keywords.map((kw, index) => (
+              {site.keywords?.map((keyword, index) => (
                 <Tag
-                  text={kw}
+                  text={keyword}
                   key={index}
                   className="p-4 bg-stone-200 rounded-full justify-end items-center inline-flex text-base text-dark font-normal font-['DMSans'] leading-none whitespace-nowrap mt-2"
                 />
@@ -89,15 +80,15 @@ const Page = async ({ params: { lang = defaultLocale, id } }: SiteProps) => {
             <div className="w-full pt-14 flex-col justify-start items-start gap-4 inline-flex">
               <H4 label={t('benefits')} className="text-primary my-0 lg:my-0" />
               <div className="self-stretch flex-col justify-start items-start gap-4 flex">
-                {site.perks?.map((p, index) => (
+                {site.perks?.map((perk, index) => (
                   <div
                     key={index}
                     className="self-stretch justify-start items-center gap-2 inline-flex"
                   >
                     <CheckIcon color="dark" />
-                    <div className="text-dark text-base font-normal font-['DMSans'] leading-none">
-                      {p}
-                    </div>
+                    <P2 className="!leading-relaxed !m-0 !p-0">
+                      {perk}
+                    </P2>
                   </div>
                 ))}
               </div>
@@ -111,11 +102,8 @@ const Page = async ({ params: { lang = defaultLocale, id } }: SiteProps) => {
                 className="text-primary my-0 lg:my-0"
               />
               <div className="w-full grid sm:grid-cols-3 gap-x-36 gap-2">
-                {site.physicians.map((py) => (
-                  <div
-                    key={py.id}
-                    className="text-dark text-base font-normal font-['DMSans']"
-                  >{`${py.first_name} ${py.last_name}`}</div>
+                {site.physicians.map((physician) => (
+                  <P2 className="!leading-relaxed !m-0" key={physician.id}>{`${physician.first_name} ${physician.last_name}`}</P2>
                 ))}
               </div>
             </div>
@@ -128,12 +116,12 @@ const Page = async ({ params: { lang = defaultLocale, id } }: SiteProps) => {
                 className="text-primary my-0 lg:my-0"
               />
               <div className="w-full grid sm:grid-cols-2 gap-x-16 gap-y-2 pb-3">
-                {conditionsList.map((cond, index) => (
+                {conditionsList.map((condition, index) => (
                   <div
                     key={index}
                     className=" self-stretch justify-start items-center gap-2 inline-flex"
                   >
-                    <div className="text-dark text-base font-normal font-['DMSans']">{`${cond}`}</div>
+                    <P2 className="!leading-relaxed !m-0">{`${condition}`}</P2>
                   </div>
                 ))}
               </div>

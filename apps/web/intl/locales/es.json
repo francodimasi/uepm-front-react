@@ -179,11 +179,13 @@
     "ofReading": "de lectura"
   },
   "sites": {
-    "specializations": "Especializaciones",
-    "benefits": "Beneficios para pacientes",
-    "physicians": "Investigadores",
-    "openStudies": "Estudios abiertos",
-    "recruiting": "Incorporando",
-    "seeMore": "Ver más"
+    "site": {
+      "specializations": "Especializaciones",
+      "benefits": "Beneficios para pacientes",
+      "physicians": "Investigadores",
+      "openStudies": "Estudios abiertos",
+      "recruiting": "Incorporando",
+      "seeMore": "Ver más"
+    }
   }
 }

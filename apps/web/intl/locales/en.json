@@ -179,7 +179,7 @@
     "ofReading": "of reading"
   },
   "sites": {
-    "specializations": {
+    "site": {
       "title": "Specializations",
       "benefits": "Patients Benefits",
       "physicians": "Investigadores",
