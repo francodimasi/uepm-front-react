@@ -3,7 +3,6 @@
 import { Controller, useForm } from 'react-hook-form';
 import { ContactUsFormProps, ContactUsFormRequest } from './ContactUs.types';
 import { useCallback, useState } from 'react';
-import { useContactUs } from './useContactUs';
 import clsx from 'clsx';
 import ReCAPTCHA from 'react-google-recaptcha';
 
@@ -30,7 +29,6 @@ export const ContactUsForm = ({
   const [sending, setSending] = useState(false);
   const [sent, setSent] = useState(false);
   const [data, setData] = useState<ContactUsFormRequest | null>();
-  const { sendQuery } = useContactUs();
   const {
     handleSubmit,
     control,
@@ -47,9 +45,14 @@ export const ContactUsForm = ({
   });
 
   const recaptchaVerification = useCallback(async () => {
+    const apiEndpoint = '/api/contactUs';
+
     if (data) {
       try {
-        await sendQuery(data);
+        await fetch(apiEndpoint, {
+          method: 'POST',
+          body: JSON.stringify(data),
+        });
         setSent(true);
       } catch (error) {
         console.log(error);

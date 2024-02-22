@@ -1,17 +1,19 @@
 {
   "$schema": "https://turbo.build/schema.json",
   "globalDependencies": ["**/.env.*local"],
-  "globalEnv": [],
+  "globalEnv": ["MONDAY_URL","MONDAY_API_KEY","MONDAY_BOARD", "MONDAY_GROUP"],
   "pipeline": {
     "build": {
       "dependsOn": ["^build"],
       "outputs": [".next/**", "!.next/cache/**"],
-      "env": ["NEXT_PUBLIC_*", "!NEXT_PUBLIC_GIT_*"]
+      "env": ["NEXT_PUBLIC_*", "!NEXT_PUBLIC_GIT_*"],
+      "dotEnv": [".env.production.local", ".env.local", ".env.production", ".env"]
     },
     "lint": {},
     "dev": {
       "cache": false,
-      "persistent": true
+      "persistent": true,
+      "dotEnv": [".env.development.local", ".env.local", ".env.development", ".env"]
     }
   }
 }
