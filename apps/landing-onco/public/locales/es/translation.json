@@ -1,7 +1,7 @@
 {
   "cover": {
     "title": "Plataforma exclusiva para oncólogos: encuentre ensayos clínicos y refiera pacientes.",
-    "subtitle": "Descubra ensayos clínicos, refiera pacientes y haga un seguimiento del progreso en tiempo real.",
+    "subtitle": "Ahora, Investigadores y médicos pueden trabajar juntos para incluir pacientes en ensayos clínicos de manera simple, accesible y segura.",
     "button": "Registrarme"
   },
   "resources": {
@@ -45,7 +45,7 @@
       "speciality": "Especialidad",
       "email": "E-mail",
       "whatsapp": "Whatsapp",
-      "button": "Quiero que me contacten",
+      "button": "Enviar",
       "isDoctor": "Soy médico",
       "isSite": "Soy centro de investigación"
 
