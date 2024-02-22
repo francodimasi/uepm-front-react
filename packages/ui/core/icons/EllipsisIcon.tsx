@@ -5,6 +5,7 @@ export const EllipsisIcon = ({
   height = 6,
   fill,
   color = 'dark',
+  className,
 }: IconProps) => {
   return (
     <svg
@@ -14,6 +15,7 @@ export const EllipsisIcon = ({
       viewBox={`0 0 ${width} ${height}`}
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      className={className}
     >
       <circle
         id="ellipsis-icon-circle"

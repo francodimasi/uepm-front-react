@@ -28,4 +28,6 @@ export type Site = {
   studies: StudyInSite[];
   physicians: Physician[];
   country: Country;
+  perks: string[];
+  site_image: string;
 };

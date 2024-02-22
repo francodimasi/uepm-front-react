@@ -177,5 +177,15 @@
   "commonTerms": {
     "of": "de",
     "ofReading": "de lectura"
+  },
+  "sites": {
+    "site": {
+      "specializations": "Especializaciones",
+      "benefits": "Beneficios para pacientes",
+      "physicians": "Investigadores",
+      "openStudies": "Estudios abiertos",
+      "recruiting": "Incorporando",
+      "seeMore": "Ver más"
+    }
   }
 }

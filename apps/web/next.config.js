@@ -23,7 +23,7 @@ module.exports = withNextIntl({
         protocol: 'https',
         hostname: 'uepm-dev.sfo3.digitaloceanspaces.com',
         port: '',
-        pathname: '/public/images/**',
+        pathname: '**',
       },
       {
         protocol: 'https',
