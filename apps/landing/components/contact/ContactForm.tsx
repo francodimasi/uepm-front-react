@@ -6,8 +6,8 @@ import { ContactInput } from './ContactInput';
 import { ContactRequest } from './contact.type';
 import { ServerContext, useCallback, useContext, useState } from 'react';
 import { LanguageContext, useClientTranslation } from 'i18n';
-import { useContact } from '@api/useContact';
 import ReCAPTCHA from 'react-google-recaptcha';
+import { sendContactRequest } from './helpers';
 
 const recaptchaKey = process.env.NEXT_PUBLIC_RECAPTCHA_API_KEY;
 
@@ -17,7 +17,6 @@ type ContactFormProps = {
 export const ContactForm = ({ onSend }: ContactFormProps) => {
   const { lang } = useContext(LanguageContext as ServerContext<any>);
   const { t } = useClientTranslation(lang, { keyPrefix: 'contact.inputs' });
-  const { sendContact } = useContact();
 
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState<ContactRequest | null>();
@@ -38,7 +37,7 @@ export const ContactForm = ({ onSend }: ContactFormProps) => {
 
   const recaptchaVerification = useCallback(async () => {
     if (data) {
-      await sendContact(data);
+      await sendContactRequest(data);
     }
     reset();
     onSend(true);
