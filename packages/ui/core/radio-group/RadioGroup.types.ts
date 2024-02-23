@@ -6,13 +6,15 @@ export type RadioGroupItem = {
   id: number | string;
 };
 
-export type RadioGroupDisposition = 'vertical' | 'horizontal' | 'inline';
+export type RadioGroupOrientation = 'vertical' | 'horizontal';
+export type RadioGroupDisposition = 'inline' | 'block';
 
 export type RadioGroupProps = PropsWithClassName & {
   items: RadioGroupItem[];
   selected?: number | string | undefined;
   onChange?: (_id: number | string | undefined) => void;
-  radioDisposition?: RadioGroupDisposition;
+  orientation?: RadioGroupOrientation;
+  disposition?: RadioGroupDisposition;
   name?: string;
   circleClassName?: string;
   titleClassName?: string;

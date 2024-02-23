@@ -11,8 +11,8 @@ import { RadioButtonIcon } from 'ui/core/icons';
  * @items {[{id: string | number, title: string , description: string}]} Object array including id, title and description (optional)
  * @onchage { (id: any) => void } OPTIONAL You can pass a function triggered on selected item change
  * @selected {string | number} OPTIONAL The id of the selected item
- * @radioDisposition {vertical | horizontal | inline} default VERTICAL. Vertical: Title and description in separate line,
- * Horizontal: Title and description in the same line. Inline: All radio options are placed inline
+ * @disposition {inline | block } default block. Show component inilne or in a block way
+ * @orientation {horizontal | vertical } default vertical. Show description below or inline 
  * @name {string} Checkbox group name
  * @circleClassName {string} You can override radio button circle classes here
  * @titleClassName {string} You can override title classes here
@@ -23,11 +23,12 @@ export const RadioGroup = ({
   items,
   selected: selectedParam,
   onChange,
-  radioDisposition = 'inline',
+  orientation = 'vertical',
+  disposition = 'block',
   name = 'radio',
   circleClassName = 'h-5 w-5',
-  titleClassName = 'ms-1 text-base font-normal text-dark font font-["DMSans"] leading-normal',
-  descriptionClassName = 'ms-3 text-sm text-gray-dark',
+  titleClassName = 'ms-2 text-base font-normal text-dark font font-["DMSans"] leading-normal',
+  descriptionClassName = 'ms-2 text-sm text-gray-dark',
 }: RadioGroupProps) => {
   const [selected, setSelected] = useState(selectedParam);
 
@@ -42,8 +43,9 @@ export const RadioGroup = ({
     <div
       className={twMerge(
         `space-y-5 ${
-          radioDisposition === 'inline' &&
-          'flex items-center space-x-6 space-y-0'
+          disposition === 'inline' ?
+          'flex items-center space-x-6 space-y-0' :
+          'block'
         }`,
       )}
     >
@@ -83,7 +85,7 @@ export const RadioGroup = ({
               className={twMerge(`cursor-pointer ${titleClassName}`)}
             >
               {item.title}
-              {radioDisposition === 'horizontal' ? (
+              {orientation === 'horizontal' ? (
                 <span
                   id={`${item.id.toString()}-description`}
                   className={twMerge(`${descriptionClassName}`)}
