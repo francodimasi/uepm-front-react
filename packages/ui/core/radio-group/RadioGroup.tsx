@@ -2,53 +2,83 @@
 
 import { RadioGroupProps } from './RadioGroup.types';
 import { twMerge } from 'tailwind-merge';
+import { SetStateAction, useState } from 'react';
+import { RadioButtonIcon } from 'ui/core/icons';
+
+/**
+ * Checkbox group component
+ * 
+ * @items {[{id: string | number, title: string , description: string}]} Object array including id, title and description (optional)
+ * @onchage { (id: any) => void } OPTIONAL You can pass a function triggered on selected item change
+ * @selected {string | number} OPTIONAL The id of the selected item
+ * @radioDisposition {vertical | horizontal | inline} default VERTICAL. Vertical: Title and description in separate line, 
+ * Horizontal: Title and description in the same line. Inline: All radio options are placed inline
+ * @name {string} Checkbox group name
+ * @circleClassName {string} You can override radio button circle classes here
+ * @titleClassName {string} You can override title classes here
+ * @descriptionClassName {string} You can override description classes here
+ */
 
 export const RadioGroup = ({
   items,
-  selected,
+  selected: selectedParam,
   onChange,
-  radioDisposition = 'vertical',
-  name = 'radio',
-  circleClassName = 'border-gray-300 text-indigo-600 focus:ring-indigo-600',
-  titleClassName = 'text-sm font-medium text-gray-900',
-  descriptionClassName = 'text-sm text-gray-500',
+  radioDisposition = 'inline',
+  name = 'radio', 
+  circleClassName = 'h-5 w-5',
+  titleClassName = 'ms-1 text-base font-normal text-dark font font-["DMSans"] leading-normal',
+  descriptionClassName = 'ms-3 text-sm text-gray-dark',
 }: RadioGroupProps) => {
-  const inputClass = 'h-4 w-4';
+
+  const [selected, setSelected] = useState(selectedParam)
+
+  const handleChange = (event: { target: { id: SetStateAction<string | number | undefined>; }; }) => {
+    setSelected(event.target.id);
+    if (onChange) onChange(selected);
+  }
 
   return (
-    <div className="space-y-5">
+    <div className={twMerge(`space-y-5 ${radioDisposition === 'inline' && 'flex items-center space-x-6 space-y-0'}`)}>
       {items.map((item) => (
-        <div key={item.id} className="relative flex items-start">
-          <div className="flex h-6 items-center">
+        <div key={item.id} className="relative flex items-baseline">
+          <label className="cursor-pointer flex justify-center" htmlFor={item.id.toString()} >
             <input
               id={item.id.toString()}
               aria-describedby={`${item.id}-description`}
               name={name}
               type="radio"
-              defaultChecked={item.id === selected}
-              className={twMerge(`${inputClass} ${circleClassName}`)}
-              onChange={(e) => onChange(e.target.value)}
+              defaultChecked={item.id === selectedParam } 
+              className='bg-transparent border-0 cursor-pointer focus:ring-inset peer w-full'
+              onChange={handleChange}
             />
-          </div>
-          <div className="ml-3 leading-6">
-            <label htmlFor={item.id.toString()} className={titleClassName}>
+            <span
+              className={twMerge(`${circleClassName} absolute opacity-0 peer-checked:opacity-100`)}>
+              <RadioButtonIcon checked className='w-full h-full scale-110'/>
+            </span>
+            <span
+              className={twMerge(`${circleClassName} absolute opacity-100 peer-checked:opacity-0`)}>
+              <RadioButtonIcon className='w-full h-full scale-110' />
+            </span>
+          </label>
+          <div className="leading-6 ms-3" >
+            <label htmlFor={item.id.toString()} className={twMerge(`cursor-pointer ${titleClassName}`)}>
               {item.title}
+              {radioDisposition === 'horizontal' ? (
+                <span
+                  id={`${item.id.toString()}-description`}
+                  className={twMerge(`${descriptionClassName}`)}
+                >
+                  {item.description}
+                </span>
+              ) : (
+                <p
+                    id={`${item.id.toString()}-description`}
+                    className={descriptionClassName}
+                  >
+                    {item.description}
+                  </p>
+              )}
             </label>
-            {radioDisposition === 'vertical' ? (
-              <p
-                id={`${item.id.toString()}-description`}
-                className={descriptionClassName}
-              >
-                {item.description}
-              </p>
-            ) : (
-              <span
-                id={`${item.id.toString()}-description`}
-                className={descriptionClassName}
-              >
-                {item.description}
-              </span>
-            )}
           </div>
         </div>
       ))}
