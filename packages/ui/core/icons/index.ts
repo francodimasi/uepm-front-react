@@ -8,5 +8,6 @@ export { EllipsisIcon } from './EllipsisIcon';
 export { GlassIcon } from './GlassIcon';
 export { MenuIcon } from './MenuIcon';
 export { MinusIcon } from './MinusIcon';
+export { OfficeBuildingIcon } from './OfficeBuilding';
 export { PlusIcon } from './PlusIcon';
 export { ShareOutlineIcon } from './ShareOutlineIcon';
