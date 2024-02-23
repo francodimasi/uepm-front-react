@@ -11,7 +11,7 @@ export const SiteCard: React.FC<SiteCardProps> = ({
   logo,
 }) => {
   return (
-    <div className="w-full flex flex-col gap-10 p-4">
+    <div className="w-full flex flex-col gap-4 p-4">
       <div className="flex flex-col gap-4">
         <div className=" flex gap-4 items-center">
           {logo ? <Image src={logo} width={48} height={48} alt={'logo'} /> : ''}
@@ -26,8 +26,8 @@ export const SiteCard: React.FC<SiteCardProps> = ({
           <span>3 comentarios</span>
         </div> */}
         {website ? (
-          <div className="flex flex-col">
-            <P2 className="text-base font-bold m-0 p-0">Website</P2>
+          <div className="flex flex-col gap-2">
+            <P2 className="text-base font-bold !m-0 !p-0">Website</P2>
             <Link href={website}>
               <L1 className="text-base font-normal underline" label={website} />
             </Link>
@@ -35,8 +35,8 @@ export const SiteCard: React.FC<SiteCardProps> = ({
         ) : null}
       </div>
 
-      <div className="flex flex-col gap-6">
-        <P2 className="text-base font-bold font-['Lexend]">
+      <div className="flex flex-col gap-4">
+        <P2 className="text-base font-bold font-['Lexend] !pb-0 !my-0">
           Seleccione una opción
         </P2>
         <div className="flex justify-evenly gap-3">
