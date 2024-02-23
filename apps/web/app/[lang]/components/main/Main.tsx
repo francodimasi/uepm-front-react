@@ -7,6 +7,7 @@ import { useTranslations } from 'intl';
 import { Browser } from '@components/shared/browser';
 import { MainLinks } from './MainLinks';
 import { BrowserProvider } from '@components/shared/browser/context/provider';
+import { API_KEY, APP_ID, INDEX_NAME } from './constants';
 
 export const Main = ({ locale }: MainProps) => {
   const t = useTranslations('home.main');
@@ -41,6 +42,9 @@ export const Main = ({ locale }: MainProps) => {
         <div className="flex w-full">
           <BrowserProvider>
             <Browser
+              apiKey={API_KEY}
+              appId={APP_ID}
+              indexName={INDEX_NAME}
               locale={locale}
               title={t('browser.title')}
               subtitle={t('browser.subtitle')}

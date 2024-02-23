@@ -3,7 +3,6 @@
 import { useRouter } from 'next/navigation';
 import { useContext, useEffect } from 'react';
 import { Algolia } from 'ui/components';
-import { API_KEY, APP_ID, INDEX_NAME } from './constants';
 import { BrowserProps } from './Browser.types';
 import { useTranslations } from 'intl';
 import { Button, P1 } from 'ui/core';
@@ -13,6 +12,9 @@ import { twMerge } from 'tailwind-merge';
 import { QueryType } from './context/types';
 
 export const Browser = ({
+  apiKey,
+  appId,
+  indexName,
   title,
   subtitle,
   placeholder,
@@ -74,9 +76,9 @@ export const Browser = ({
       </div>
       <div className="flex">
         <Algolia
-          appId={APP_ID}
-          apiKey={API_KEY}
-          indexName={`${INDEX_NAME}${locale}`}
+          appId={appId}
+          apiKey={apiKey}
+          indexName={`${indexName}${locale}`}
           placeholder={placeholder}
           initialValue={query}
           onQuery={updateQuery}

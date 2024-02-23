@@ -3,7 +3,6 @@
 import { Controller, useForm } from 'react-hook-form';
 import { ContactUsFormProps, ContactUsFormRequest } from './ContactUs.types';
 import { useCallback, useState } from 'react';
-import { useContactUs } from './useContactUs';
 import clsx from 'clsx';
 import ReCAPTCHA from 'react-google-recaptcha';
 
@@ -17,6 +16,7 @@ import {
   Textarea,
 } from 'ui/core';
 import { useTranslations } from 'intl';
+import { sendContactRequest } from './helpers';
 
 const recaptchaKey = process.env.NEXT_PUBLIC_RECAPTCHA_API_KEY;
 
@@ -30,7 +30,7 @@ export const ContactUsForm = ({
   const [sending, setSending] = useState(false);
   const [sent, setSent] = useState(false);
   const [data, setData] = useState<ContactUsFormRequest | null>();
-  const { sendQuery } = useContactUs();
+
   const {
     handleSubmit,
     control,
@@ -49,7 +49,7 @@ export const ContactUsForm = ({
   const recaptchaVerification = useCallback(async () => {
     if (data) {
       try {
-        await sendQuery(data);
+        await sendContactRequest(data);
         setSent(true);
       } catch (error) {
         console.log(error);
@@ -61,7 +61,6 @@ export const ContactUsForm = ({
 
   const onSubmit = (data: ContactUsFormRequest) => {
     if (!isValid) return;
-
     setSending(true);
     setData(data);
   };
@@ -69,7 +68,7 @@ export const ContactUsForm = ({
   return (
     <>
       {sent ? (
-        <div className="p-8 sm:p-20 bg-gradient-to-br border-primary border-2">
+        <div className="p-8 sm:p-20 text-center">
           <H4>{t('thanks')}</H4>
         </div>
       ) : (
