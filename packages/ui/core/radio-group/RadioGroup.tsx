@@ -12,7 +12,7 @@ import { RadioButtonIcon } from 'ui/core/icons';
  * @onchage { (id: any) => void } OPTIONAL You can pass a function triggered on selected item change
  * @selected {string | number} OPTIONAL The id of the selected item
  * @disposition {inline | block } default block. Show component inilne or in a block way
- * @orientation {horizontal | vertical } default vertical. Show description below or inline 
+ * @orientation {horizontal | vertical } default vertical. Show description below or inline
  * @name {string} Checkbox group name
  * @circleClassName {string} You can override radio button circle classes here
  * @titleClassName {string} You can override title classes here
@@ -43,9 +43,9 @@ export const RadioGroup = ({
     <div
       className={twMerge(
         `space-y-5 ${
-          disposition === 'inline' ?
-          'flex items-center space-x-6 space-y-0' :
-          'block'
+          disposition === 'inline'
+            ? 'flex items-center space-x-6 space-y-0'
+            : 'block'
         }`,
       )}
     >
