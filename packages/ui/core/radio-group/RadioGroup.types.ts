@@ -2,8 +2,8 @@ import { PropsWithClassName } from '../../types/core';
 
 export type RadioGroupItem = {
   title: string;
-  description?: string ;
-  id: number | string ;
+  description?: string;
+  id: number | string;
 };
 
 export type RadioGroupDisposition = 'vertical' | 'horizontal' | 'inline';

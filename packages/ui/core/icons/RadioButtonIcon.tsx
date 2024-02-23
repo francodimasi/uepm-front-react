@@ -4,15 +4,15 @@ export const RadioButtonIcon = ({
   width = 24,
   height = 24,
   className = 'w-full h-full scale-110',
-  checked = false
-}: IconProps & {checked?: boolean}) => {
+  checked = false,
+}: IconProps & { checked?: boolean }) => {
   return (
-    <svg  
+    <svg
       width={width}
       height={height}
       viewBox={`0 0 ${height} ${height}`}
-      fill='white'
-      stroke='white'
+      fill="white"
+      stroke="white"
       strokeLinejoin="round"
       className={className}
       xmlns="http://www.w3.org/2000/svg"
