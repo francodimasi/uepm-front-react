@@ -3,17 +3,17 @@ export const OfficeBuildingIcon = ({ width = 24, height = 24 }) => {
     <svg
       width={width}
       height={height}
-      enable-background="new 0 0 128 128"
+      enableBackground="new 0 0 128 128"
       viewBox="0 0 128 128"
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"
     >
       <linearGradient id="a">
-        <stop offset=".0571" stop-color="#eee" />
-        <stop offset=".337" stop-color="#eaeaea" />
-        <stop offset=".5964" stop-color="#dfdfdf" />
-        <stop offset=".8469" stop-color="#ccc" />
-        <stop offset="1" stop-color="#bdbdbd" />
+        <stop offset=".0571" stopColor="#eee" />
+        <stop offset=".337" stopColor="#eaeaea" />
+        <stop offset=".5964" stopColor="#dfdfdf" />
+        <stop offset=".8469" stopColor="#ccc" />
+        <stop offset="1" stopColor="#bdbdbd" />
       </linearGradient>
       <radialGradient
         id="b"
@@ -24,9 +24,9 @@ export const OfficeBuildingIcon = ({ width = 24, height = 24 }) => {
         xlinkHref="#a"
       />
       <linearGradient id="c">
-        <stop offset="0" stop-color="#757575" />
-        <stop offset=".103" stop-color="#757575" stop-opacity=".897" />
-        <stop offset="1" stop-color="#757575" stop-opacity="0" />
+        <stop offset="0" stopColor="#757575" />
+        <stop offset=".103" stopColor="#757575" stopOpacity=".897" />
+        <stop offset="1" stopColor="#757575" stopOpacity="0" />
       </linearGradient>
       <linearGradient
         id="d"
