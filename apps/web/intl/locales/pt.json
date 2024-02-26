@@ -46,6 +46,10 @@
     "description": "Desculpe, não conseguimos encontrar a página que você está procurando",
     "goBack": "Voltar ao início"
   },
+  "maintenance": {
+    "title": "Site em manutenção",
+    "description": "Desculpe, estamos melhorando nosso site, voltaremos em breve"
+  },
   "legal": {
     "links": {
       "t&c": "Termos e Condições",
