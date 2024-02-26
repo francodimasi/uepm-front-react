@@ -13,3 +13,4 @@ export * from './select';
 export * from './tabs';
 export * from './tag';
 export * from './typography';
+export * from './radio-group';

@@ -10,3 +10,4 @@ export { MenuIcon } from './MenuIcon';
 export { MinusIcon } from './MinusIcon';
 export { PlusIcon } from './PlusIcon';
 export { ShareOutlineIcon } from './ShareOutlineIcon';
+export { RadioButtonIcon } from './RadioButtonIcon';
