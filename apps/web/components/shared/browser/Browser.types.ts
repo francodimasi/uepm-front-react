@@ -6,4 +6,7 @@ export type BrowserProps = PropsWithClassName &
     title: string;
     subtitle: string;
     placeholder: string;
+    appId: string;
+    apiKey: string;
+    indexName: string;
   };

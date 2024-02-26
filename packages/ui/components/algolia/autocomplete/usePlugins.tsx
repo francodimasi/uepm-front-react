@@ -29,7 +29,7 @@ const usePlugins = ({
               query: item.label,
               category: item.category,
             });
-            onQuery(item.label, 'suggestion');
+            onQuery(item.label, 'free');
           },
         };
       },
@@ -58,7 +58,7 @@ const usePlugins = ({
               query: item.query,
               category: item.__autocomplete_qsCategory || '',
             });
-            onQuery(item.query, 'suggestion');
+            onQuery(item.query, 'free');
           },
           getItems(params) {
             if (!params.state.query) {
