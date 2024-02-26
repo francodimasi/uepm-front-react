@@ -1,3 +1,7 @@
+import { ContactUsFormRequest } from './ContactUs.types';
+
+const routeEndpoint = '/api/contactUs';
+
 export const getInitialValues = (t: Function) => ({
   name: {
     value: '',
@@ -25,3 +29,10 @@ export const getInitialValues = (t: Function) => ({
     required: true,
   },
 });
+
+export const sendContactRequest = async (data: ContactUsFormRequest) => {
+  return await fetch(routeEndpoint, {
+    method: 'POST',
+    body: JSON.stringify(data),
+  });
+};
