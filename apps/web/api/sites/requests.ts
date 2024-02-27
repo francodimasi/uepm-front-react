@@ -11,3 +11,15 @@ export const getSiteById = async (id: string): Promise<Site> => {
     return null;
   }
 };
+
+export const getSites = async (): Promise<Site[]> => {
+  try {
+    const res = await fetch(`${ENDPOINTS.SITES}`);
+    if (!res.ok) return null;
+    const data = await res.json();
+    return data.page || [];
+  } catch (error) {
+    console.log(error);
+    return [];
+  }
+};
