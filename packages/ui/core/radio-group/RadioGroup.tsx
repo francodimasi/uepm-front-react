@@ -66,14 +66,14 @@ export const RadioGroup = ({
             />
             <span
               className={twMerge(
-                `${circleClassName} absolute opacity-0 peer-checked:opacity-100`,
+                `${circleClassName} absolute left-0 opacity-0 peer-checked:opacity-100`,
               )}
             >
               <RadioButtonIcon checked className="w-full h-full scale-110" />
             </span>
             <span
               className={twMerge(
-                `${circleClassName} absolute opacity-100 peer-checked:opacity-0`,
+                `${circleClassName} absolute left-0 opacity-100 peer-checked:opacity-0`,
               )}
             >
               <RadioButtonIcon className="w-full h-full scale-110" />

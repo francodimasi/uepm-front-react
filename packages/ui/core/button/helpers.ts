@@ -47,6 +47,7 @@ export const getClasses = ({
   classes,
   disabled,
   childs,
+  bold = false,
 }: {
   size: ButtonSize;
   fill?: ButtonFill;
@@ -57,6 +58,7 @@ export const getClasses = ({
   classes?: string;
   disabled?: boolean;
   childs: number;
+  bold?: boolean;
 }) => {
   const buttonClasses = clsx(
     'rounded',
@@ -102,6 +104,7 @@ export const getClasses = ({
     'gap-2': expand === 'none',
     'flex justify-between': childs > 1,
     block: childs <= 1,
+    'font-bold': bold,
   });
 
   return { buttonClasses, spanClasses };

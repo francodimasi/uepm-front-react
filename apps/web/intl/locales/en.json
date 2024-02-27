@@ -190,6 +190,13 @@
       "openStudies": "Estudios abiertos",
       "recruiting": "Recruiting",
       "seeMore": "See more"
+    },
+    "siteCard": {
+      "website": "Website",
+      "chooseOption": "Select an option",
+      "iamDoctor": "I am a doctor",
+      "iamSponsor": "I am a sponsor",
+      "contact": "Contact"
     }
   }
 }
