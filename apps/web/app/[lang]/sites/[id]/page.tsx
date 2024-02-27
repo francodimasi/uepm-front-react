@@ -7,7 +7,7 @@ import { Layout } from '@components/core/layout/Layout';
 import { getTranslations, defaultLocale } from 'intl';
 import { SiteProps } from './Site.types';
 import { getSiteById } from '@api/sites/requests';
-import { H3, Tag, H4, L1, P2, Card } from 'ui/core';
+import { H3, Tag, H4, L1, P2 } from 'ui/core';
 import { ImageWithFallback } from '@components/utils/ImageWithFallback';
 import { studyStatus } from './constants';
 import { setMetadata, getSiteConditions } from './helpers';
@@ -50,14 +50,12 @@ const Page = async ({ params: { lang = defaultLocale, id } }: SiteProps) => {
         </div>
 
         <div className="col-span-1 lg:row-span-2 pl-0 flex flex-col gap-12 lg:gap-10">
-          <Card>
-            <SiteCard
-              address={site.address}
-              name={site.name}
-              website={site.url}
-              logo={site.logo}
-            />
-          </Card>
+          <SiteCard
+            address={site.address}
+            name={site.name}
+            website={site.url}
+            logo={site.logo}
+          />
         </div>
 
         <div className="w-full col-span-1 lg:col-span-2 xl:col-span-3 pr-0 flex-col justify-start items-start gap-14 inline-flex divide-y divide-gray-medium">
