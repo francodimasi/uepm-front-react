@@ -46,6 +46,10 @@
     "description": "Sorry, we couldn't find the page you're looking for",
     "goBack": "Go back to home"
   },
+  "maintenance": {
+    "title": "Site under maintenance",
+    "description": "Sorry, we are working on our site, we will be back soon"
+  },
   "legal": {
     "links": {
       "t&c": "Terms and Conditions",

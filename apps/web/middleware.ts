@@ -3,8 +3,9 @@ import { localePrefix, pathnames } from './intl/navigation';
 
 import createIntlMiddleware from 'next-intl/middleware';
 import { NextRequest, NextResponse } from 'next/server';
+import { get } from '@vercel/edge-config';
 
-export default function middleware(request: NextRequest) {
+export default async function middleware(request: NextRequest) {
   const url = new URL(request.url);
   const origin = url.origin;
   const pathname = url.pathname;
@@ -14,8 +15,18 @@ export default function middleware(request: NextRequest) {
   if (locale !== null && !locales.includes(locale)) {
     request.nextUrl.pathname = `/${defaultLocale}/${segments.join('/')}`;
     return NextResponse.redirect(
-      new URL(`/${defaultLocale}/${segments.join('/')}`, request.url),
+      new URL(request.nextUrl.pathname, request.url),
     );
+  }
+
+  const isInMaintenanceMode = await get('isInMaintenanceMode');
+  if (isInMaintenanceMode) {
+    if (!locale || (locale !== null && !locales.includes(locale))) {
+      request.nextUrl.pathname = `/${defaultLocale}/mantenimiento`;
+    } else {
+      request.nextUrl.pathname = `/${locale || defaultLocale}/maintenance`;
+    }
+    return NextResponse.rewrite(request.nextUrl);
   }
 
   const handleI18nRouting = createIntlMiddleware({

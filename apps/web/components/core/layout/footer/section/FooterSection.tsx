@@ -15,7 +15,7 @@ export const FooterSection: React.FC<FooterSectionProps> = ({
           key={index}
           id={link.id}
           href={link.outbound ? link.href : `/${locale}${link.href}`}
-          target={link.target || link.outbound ? '_blank' : '_self'}
+          target={link.target ?? link.outbound ? '_blank' : '_self'}
           outbound={link.outbound}
         />
       ))}
