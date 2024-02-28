@@ -4,3 +4,12 @@ export type ContactSiteFormModalProps = {
   open?: boolean;
   onClose: () => void;
 };
+
+export type ContactSiteFormModalRequest = {
+  name: string;
+  email: string;
+  phone: string;
+  query: string;
+  specialty: string;
+  sponsor: string;
+};

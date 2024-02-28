@@ -2,7 +2,7 @@
 
 import { RadioGroupProps } from './RadioGroup.types';
 import { twMerge } from 'tailwind-merge';
-import { SetStateAction, useState } from 'react';
+import { useState } from 'react';
 import { RadioButtonIcon } from 'ui/core/icons';
 
 /**
@@ -33,10 +33,10 @@ export const RadioGroup = ({
   const [selected, setSelected] = useState(selectedParam);
 
   const handleChange = (event: {
-    target: { id: SetStateAction<string | number | undefined> };
+    target: { id: string | number | undefined };
   }) => {
     setSelected(event.target.id);
-    if (onChange) onChange(selected);
+    if (onChange) onChange(event.target.id);
   };
 
   return (
@@ -60,7 +60,7 @@ export const RadioGroup = ({
               aria-describedby={`${item.id}-description`}
               name={name}
               type="radio"
-              defaultChecked={item.id === selectedParam}
+              defaultChecked={item.id === selected}
               className="bg-transparent border-0 cursor-pointer focus:ring-inset peer w-full"
               onChange={handleChange}
             />

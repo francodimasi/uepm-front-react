@@ -197,6 +197,16 @@
       "iamDoctor": "I am a doctor",
       "iamSponsor": "I am a sponsor",
       "contact": "Contact"
+    },
+    "contactUs": {
+      "name": "Name",
+      "phone": "Phone",
+      "email": "Email",
+      "query": "Your query here",
+      "sponsor": "Sponsor",
+      "specialty": "Specialty",
+      "thanks": "Thank you for your contact!",
+      "send": "Send"
     }
   }
 }

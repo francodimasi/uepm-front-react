@@ -6,19 +6,22 @@ import { Button, P2, RadioGroup } from 'ui/core';
 import { ContactSiteFormModal } from './ContactSiteFormModal';
 
 const IS_DOCTOR_ID = 1;
+const IS_SPONSOR_ID = 2;
 
-export const ContactSiteForm: React.FC<{ buttonCaption: string }> = ({ buttonCaption}) => {
+export const ContactSiteForm: React.FC<{ buttonCaption: string }> = ({
+  buttonCaption,
+}) => {
   const t = useTranslations('sites.siteCard');
   const contactOptions = [
     { id: IS_DOCTOR_ID, title: t('iamDoctor') },
-    { id: 2, title: t('iamSponsor') },
+    { id: IS_SPONSOR_ID, title: t('iamSponsor') },
   ];
 
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isDoctor, setIsDoctorSelected] = useState(false);
+  const [isDoctor, setIsDoctorSelected] = useState(true);
 
   const handleContactOptionChange = (idSelected) => {
-    idSelected === IS_DOCTOR_ID
+    idSelected == IS_DOCTOR_ID
       ? setIsDoctorSelected(true)
       : setIsDoctorSelected(false);
   };
@@ -48,6 +51,7 @@ export const ContactSiteForm: React.FC<{ buttonCaption: string }> = ({ buttonCap
       >
         {buttonCaption}
       </Button>
+
       <ContactSiteFormModal
         open={isModalOpen}
         onClose={handleOnClose}
