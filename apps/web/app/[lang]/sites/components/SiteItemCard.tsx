@@ -9,12 +9,12 @@ export const SiteItemCard: React.FC<SiteItemCardProps> = ({ site }) => {
   const t = useTranslations('sites.card');
   if (!site) return null;
 
-  const handleCardClick = (event) => {
-    console.log('click en la card' + event);
+  const handleCardClick = () => {
+    console.log('click en la card');
   };
-  const handleSiteButtonClick = (event) => {
+  const handleSiteButtonClick = () => {
     event.stopPropagation();
-    console.log('click en el boton' + event);
+    console.log('click en el boton');
   };
   return (
     <Card
