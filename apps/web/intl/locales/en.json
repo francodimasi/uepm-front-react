@@ -190,6 +190,9 @@
       "openStudies": "Estudios abiertos",
       "recruiting": "Recruiting",
       "seeMore": "See more"
+    },
+    "card": {
+      "viewSite": "View site"
     }
   }
 }

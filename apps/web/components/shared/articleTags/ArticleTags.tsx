@@ -19,6 +19,6 @@ export const ArticleTags: React.FC<ArticleTagsProps> = ({
           />
         ))}
       </div>
-    </div>
+    </div>  
   );
 };
