@@ -3,9 +3,9 @@
 import { Card, H4, Tag, P2, Button } from 'ui/core';
 import { ImageWithFallback } from '@components/utils/ImageWithFallback';
 import { useTranslations } from 'intl';
-import { SiteCardProps } from './SiteCard.types';
+import { SiteItemCardProps } from './SiteItemCard.types';
 
-export const SiteCard: React.FC<SiteCardProps> = ({ site }) => {
+export const SiteItemCard: React.FC<SiteItemCardProps> = ({ site }) => {
   const t = useTranslations('sites.card');
   if (!site) return null;
 

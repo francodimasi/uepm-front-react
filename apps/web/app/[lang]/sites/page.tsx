@@ -1,7 +1,7 @@
 import { Layout } from '@components/core/layout/Layout';
 import { getSites } from '@api/sites/requests';
 import { defaultLocale } from 'intl';
-import { SiteCard } from './components/SiteCard';
+import { SiteItemCard } from './components/SiteItemCard';
 
 export default async function Page({ params: { lang = defaultLocale } }) {
   const sites = await getSites();
@@ -15,7 +15,7 @@ export default async function Page({ params: { lang = defaultLocale } }) {
           <div className="block sm:hidden col-span-1 lg:col-span-2">MAPA</div>
           <div className="w-full col-span-1  lg:col-span-1 lg:max-h-screen lg:overflow-y-auto lg:pe-2">
             {sites.map((site) => (
-              <SiteCard key={site.id} locale={lang} site={site} />
+              <SiteItemCard key={site.id} locale={lang} site={site} />
             ))}
           </div>
         </div>

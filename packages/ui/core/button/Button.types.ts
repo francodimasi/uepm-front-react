@@ -20,5 +20,6 @@ export type ButtonProps = PropsWithClassName & {
   color?: ButtonColor;
   size?: ButtonSize;
   disabled?: boolean;
+  bold?: boolean;
   onClick?: () => void;
 };

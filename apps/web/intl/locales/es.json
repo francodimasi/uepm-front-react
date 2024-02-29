@@ -193,6 +193,13 @@
     },
     "card": {
       "viewSite": "Ver sitio"
+    },
+    "siteCard": {
+      "website": "Website",
+      "chooseOption": "Seleccione una opción",
+      "iamDoctor": "Soy Médico",
+      "iamSponsor": "Soy Sponsor",
+      "contact": "Contactar"
     }
   }
 }

@@ -6,5 +6,5 @@ export type CardProps = PropsWithChildren & {
   marginClasses?: string;
   borderClasses?: string;
   onClick?: () => void;
-  disabled: boolean;
+  disabled?: boolean;
 };

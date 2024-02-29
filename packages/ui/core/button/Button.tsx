@@ -12,6 +12,7 @@ export const Button = forwardRef<any, ButtonProps>(
       iconOnly = false,
       color = 'primary',
       size = 'md',
+      bold = false,
       className = '',
       disabled = false,
       onClick,
@@ -31,6 +32,7 @@ export const Button = forwardRef<any, ButtonProps>(
       expand,
       iconOnly,
       size,
+      bold,
     });
 
     return (
