@@ -184,7 +184,7 @@
   },
   "sites": {
     "site": {
-      "title": "Specializations",
+      "specializations": "Specializations",
       "benefits": "Patients Benefits",
       "physicians": "Investigadores",
       "openStudies": "Estudios abiertos",

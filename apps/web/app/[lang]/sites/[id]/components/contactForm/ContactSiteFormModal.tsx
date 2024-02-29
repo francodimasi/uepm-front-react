@@ -5,6 +5,7 @@ import { Dialog, Transition } from '@headlessui/react';
 import {
   ContactSiteFormModalProps,
   ContactSiteFormModalRequest,
+  ContactUsSiteFormApiRequest,
 } from './ContactSiteForm.types';
 import { Controller, useForm } from 'react-hook-form';
 import {
@@ -42,9 +43,10 @@ export const ContactSiteFormModal: React.FC<ContactSiteFormModalProps> = ({
   } = useForm<ContactSiteFormModalRequest>();
 
   const sendContactRequest = async (data: ContactSiteFormModalRequest) => {
+    const body: ContactUsSiteFormApiRequest = { ...data, isDoctor: isDoctor };
     return await fetch(routeEndpoint, {
       method: 'POST',
-      body: JSON.stringify(data),
+      body: JSON.stringify(body),
     });
   };
 
@@ -67,9 +69,16 @@ export const ContactSiteFormModal: React.FC<ContactSiteFormModalProps> = ({
     setData(data);
   };
 
+  const handleOnClose = () => {
+    setData(null);
+    setSending(false);
+    setSent(false);
+    onClose();
+  };
+
   return (
     <Transition.Root show={open} as={Fragment}>
-      <Dialog as="div" className="relative z-10" onClose={onClose}>
+      <Dialog as="div" className="relative z-10" onClose={handleOnClose}>
         <Transition.Child
           as={Fragment}
           enter="ease-out duration-300"

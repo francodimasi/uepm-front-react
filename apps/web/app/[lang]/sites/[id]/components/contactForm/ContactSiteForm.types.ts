@@ -13,3 +13,7 @@ export type ContactSiteFormModalRequest = {
   specialty: string;
   sponsor: string;
 };
+
+export type ContactUsSiteFormApiRequest = ContactSiteFormModalRequest & {
+  isDoctor: boolean;
+};
