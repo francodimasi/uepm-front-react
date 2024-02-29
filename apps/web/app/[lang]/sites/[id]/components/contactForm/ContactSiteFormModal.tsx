@@ -1,7 +1,6 @@
 'use client';
 
-import { Fragment, useCallback, useState } from 'react';
-import { Dialog, Transition } from '@headlessui/react';
+import { useCallback, useState } from 'react';
 import {
   ContactSiteFormModalProps,
   ContactSiteFormModalRequest,
@@ -9,6 +8,7 @@ import {
 } from './ContactSiteForm.types';
 import { Controller, useForm } from 'react-hook-form';
 import {
+  Modal,
   ArrowForwardIcon,
   Button,
   FormField,
@@ -23,7 +23,7 @@ import ReCAPTCHA from 'react-google-recaptcha';
 const recaptchaKey = process.env.NEXT_PUBLIC_RECAPTCHA_API_KEY;
 
 export const ContactSiteFormModal: React.FC<ContactSiteFormModalProps> = ({
-  title = 'Contact us',
+  title = '',
   isDoctor,
   open = false,
   onClose,
@@ -77,186 +77,130 @@ export const ContactSiteFormModal: React.FC<ContactSiteFormModalProps> = ({
   };
 
   return (
-    <Transition.Root show={open} as={Fragment}>
-      <Dialog as="div" className="relative z-10" onClose={handleOnClose}>
-        <Transition.Child
-          as={Fragment}
-          enter="ease-out duration-300"
-          enterFrom="opacity-0"
-          enterTo="opacity-100"
-          leave="ease-in duration-200"
-          leaveFrom="opacity-100"
-          leaveTo="opacity-0"
-        >
-          <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
-        </Transition.Child>
-
-        {/* The backdrop, rendered as a fixed sibling to the panel container */}
-        <Transition.Child
-          as={Fragment}
-          enter="ease-out duration-300"
-          enterFrom="opacity-0"
-          enterTo="opacity-100"
-          leave="ease-in duration-200"
-          leaveFrom="opacity-100"
-          leaveTo="opacity-0"
-        >
-          <div className="fixed inset-0 bg-dark/30" aria-hidden="true" />
-        </Transition.Child>
-
-        {/* Full screen container to center Dialog */}
-        <div className="fixed inset-0 flex z-10 w-screen text-center items-center justify-center p-2">
-          <Transition.Child
-            as={Fragment}
-            enter="ease-out duration-300"
-            enterFrom="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-            enterTo="opacity-100 translate-y-0 sm:scale-100"
-            leave="ease-in duration-200"
-            leaveFrom="opacity-100 translate-y-0 sm:scale-100"
-            leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-          >
-            {/* The actual dialog panel */}
-            <Dialog.Panel className="relative p-0 transform overflow-hidden rounded-sm bg-light shadow-2xl transition-all mt-24 w-full h-4/5">
-              <div className="text-center p-4 sm:p-8">
-                {title && (
-                  <Dialog.Title
-                    as="h3"
-                    className="text-lg font-semibold leading-6 text-dark"
-                  >
-                    {title}
-                  </Dialog.Title>
-                )}
-
-                {sent ? (
-                  <div className="p-8 sm:p-20 text-center">
-                    <H4>{t('thanks')}</H4>
-                  </div>
-                ) : (
-                  <div className={'w-full'}>
-                    <form
-                      className="flex flex-col"
-                      onSubmit={handleSubmit(onSubmit)}
-                    >
-                      <div className="flex flex-col gap-2">
-                        <Controller
-                          name="name"
-                          control={control}
-                          rules={{ required: true }}
-                          disabled={sending}
-                          render={({ field }) => (
-                            <FormField>
-                              <InputText
-                                className="!py-2"
-                                placeholder={t('name')}
-                                {...field}
-                              />
-                            </FormField>
-                          )}
-                        />
-                        {isDoctor ? (
-                          <Controller
-                            name="specialty"
-                            control={control}
-                            rules={{ required: isDoctor ? true : false }}
-                            disabled={sending}
-                            render={({ field }) => (
-                              <FormField>
-                                <InputText
-                                  className="!py-2"
-                                  placeholder={t('specialty')}
-                                  {...field}
-                                />
-                              </FormField>
-                            )}
-                          />
-                        ) : (
-                          <Controller
-                            name="sponsor"
-                            control={control}
-                            rules={{ required: !isDoctor ? true : false }}
-                            disabled={sending}
-                            render={({ field }) => (
-                              <FormField>
-                                <InputText
-                                  className="!py-2"
-                                  placeholder={t('sponsor')}
-                                  {...field}
-                                />
-                              </FormField>
-                            )}
-                          />
-                        )}
-                        <Controller
-                          name="email"
-                          control={control}
-                          rules={{ required: true }}
-                          disabled={sending}
-                          render={({ field }) => (
-                            <FormField>
-                              <InputEmail
-                                className="!py-2"
-                                placeholder={t('email')}
-                                {...field}
-                              />
-                            </FormField>
-                          )}
-                        />
-                        <Controller
-                          name="phone"
-                          control={control}
-                          rules={{ required: true }}
-                          disabled={sending}
-                          render={({ field }) => (
-                            <FormField>
-                              <InputText
-                                className="!py-2"
-                                placeholder={t('phone')}
-                                {...field}
-                              />
-                            </FormField>
-                          )}
-                        />
-                        <Controller
-                          name="query"
-                          control={control}
-                          rules={{ required: true }}
-                          disabled={sending}
-                          render={({ field }) => (
-                            <FormField>
-                              <Textarea
-                                className="!py-2"
-                                placeholder={t('query')}
-                                {...field}
-                              />
-                            </FormField>
-                          )}
-                        />
-                      </div>
-                      <div className="mt-4 flex justify-end">
-                        {sending ? (
-                          <ReCAPTCHA
-                            sitekey={recaptchaKey}
-                            onChange={recaptchaVerification}
-                          />
-                        ) : (
-                          <Button
-                            type="submit"
-                            color="dark"
-                            disabled={!isValid}
-                          >
-                            {t('send')}
-                            <ArrowForwardIcon color="light" />
-                          </Button>
-                        )}
-                      </div>
-                    </form>
-                  </div>
-                )}
-              </div>
-            </Dialog.Panel>
-          </Transition.Child>
+    <Modal
+      title={title}
+      onClose={handleOnClose}
+      open={open}
+      panelClassname="w-5/6"
+    >
+      {sent ? (
+        <div className="p-8 sm:p-20 text-center">
+          <H4>{t('thanks')}</H4>
         </div>
-      </Dialog>
-    </Transition.Root>
+      ) : (
+        <div className={'w-full'}>
+          <form className="flex flex-col" onSubmit={handleSubmit(onSubmit)}>
+            <div className="flex flex-col gap-2">
+              <Controller
+                name="name"
+                control={control}
+                rules={{ required: true }}
+                disabled={sending}
+                render={({ field }) => (
+                  <FormField>
+                    <InputText
+                      className="!py-2"
+                      placeholder={t('name')}
+                      {...field}
+                    />
+                  </FormField>
+                )}
+              />
+              {isDoctor ? (
+                <Controller
+                  name="specialty"
+                  control={control}
+                  rules={{ required: isDoctor ? true : false }}
+                  disabled={sending}
+                  render={({ field }) => (
+                    <FormField>
+                      <InputText
+                        className="!py-2"
+                        placeholder={t('specialty')}
+                        {...field}
+                      />
+                    </FormField>
+                  )}
+                />
+              ) : (
+                <Controller
+                  name="sponsor"
+                  control={control}
+                  rules={{ required: !isDoctor ? true : false }}
+                  disabled={sending}
+                  render={({ field }) => (
+                    <FormField>
+                      <InputText
+                        className="!py-2"
+                        placeholder={t('sponsor')}
+                        {...field}
+                      />
+                    </FormField>
+                  )}
+                />
+              )}
+              <Controller
+                name="email"
+                control={control}
+                rules={{ required: true }}
+                disabled={sending}
+                render={({ field }) => (
+                  <FormField>
+                    <InputEmail
+                      className="!py-2"
+                      placeholder={t('email')}
+                      {...field}
+                    />
+                  </FormField>
+                )}
+              />
+              <Controller
+                name="phone"
+                control={control}
+                rules={{ required: true }}
+                disabled={sending}
+                render={({ field }) => (
+                  <FormField>
+                    <InputText
+                      className="!py-2"
+                      placeholder={t('phone')}
+                      {...field}
+                    />
+                  </FormField>
+                )}
+              />
+              <Controller
+                name="query"
+                control={control}
+                rules={{ required: true }}
+                disabled={sending}
+                render={({ field }) => (
+                  <FormField>
+                    <Textarea
+                      className="!py-2"
+                      placeholder={t('query')}
+                      {...field}
+                    />
+                  </FormField>
+                )}
+              />
+            </div>
+            <div className="mt-4 flex justify-end">
+              {sending ? (
+                <ReCAPTCHA
+                  sitekey={recaptchaKey}
+                  onChange={recaptchaVerification}
+                />
+              ) : (
+                <Button type="submit" color="dark" disabled={!isValid}>
+                  {t('send')}
+                  <ArrowForwardIcon color="light" />
+                </Button>
+              )}
+            </div>
+          </form>
+        </div>
+      )}
+    </Modal>
   );
 };

@@ -53,6 +53,7 @@ export const ContactSiteForm: React.FC<{ buttonCaption: string }> = ({
       </Button>
 
       <ContactSiteFormModal
+        title={t('modalTitle')}
         open={isModalOpen}
         onClose={handleOnClose}
         isDoctor={isDoctor}
