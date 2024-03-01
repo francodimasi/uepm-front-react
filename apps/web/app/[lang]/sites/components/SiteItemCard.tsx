@@ -68,7 +68,9 @@ export const SiteItemCard: React.FC<SiteItemCardProps> = ({ site }) => {
               expand="none"
               className="!px-4 !py-1.5"
             >
-              <P2 className="!text-sm !font-medium font-['DMSans]' text-white leading-normal">{t('viewSite')}</P2>
+              <P2 className="!text-sm !font-medium font-['DMSans]' text-white leading-normal">
+                {t('viewSite')}
+              </P2>
             </Button>
           </div>
         </div>

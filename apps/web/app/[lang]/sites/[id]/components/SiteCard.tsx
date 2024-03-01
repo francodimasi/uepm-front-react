@@ -18,9 +18,7 @@ export const SiteCard: React.FC<SiteCardProps> = ({
   ];
 
   return (
-    <Card
-      className="w-full max-h-min flex flex-col items-center justify-center !m-0 !p-0"
-    >
+    <Card className="w-full max-h-min flex flex-col items-center justify-center !m-0 !p-0">
       <div className="w-full flex flex-col gap-4 p-4">
         <div className="flex flex-col gap-4">
           <div className=" flex gap-4 items-center">
