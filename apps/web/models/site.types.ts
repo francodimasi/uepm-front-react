@@ -1,6 +1,7 @@
 import { Country } from '@models/country.types';
 import { Physician } from '@models/physician.types';
 import { StudyInSite } from '@models/study.types';
+import { Hit } from 'ui/components/algolia/hits/Hits.types';
 
 export type SitesParams = {
   verified?: boolean;
@@ -31,3 +32,5 @@ export type Site = {
   perks: string[];
   site_image: string;
 };
+
+export type SiteHit = Hit & Site;

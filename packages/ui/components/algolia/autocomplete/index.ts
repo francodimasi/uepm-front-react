@@ -1,1 +1,1 @@
-export { Autocomplete } from './Autocomplete';
+export { AlgoliaAutocomplete } from './Autocomplete';

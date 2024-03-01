@@ -1,0 +1,1 @@
+export { AlgoliaMap } from './Map';

@@ -2,6 +2,6 @@ import { PropsWithChildren } from 'react';
 
 export type CardProps = PropsWithChildren & {
   className?: string;
-  onClick?: () => void;
+  onClick?: (_el: any) => void;
   disabled?: boolean;
 };

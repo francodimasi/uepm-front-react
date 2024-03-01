@@ -2,7 +2,7 @@
 
 import { useRouter } from 'next/navigation';
 import { useContext, useEffect } from 'react';
-import { Algolia } from 'ui/components';
+import { Algolia, AlgoliaAutocomplete } from 'ui/components';
 import { BrowserProps } from './Browser.types';
 import { useTranslations } from 'intl';
 import { Button, P1 } from 'ui/core';
@@ -79,10 +79,16 @@ export const Browser = ({
           appId={appId}
           apiKey={apiKey}
           indexName={`${indexName}${locale}`}
-          placeholder={placeholder}
-          initialValue={query}
-          onQuery={updateQuery}
-        />
+        >
+          <AlgoliaAutocomplete
+            appId={appId}
+            apiKey={apiKey}
+            indexName={`${indexName}${locale}`}
+            placeholder={placeholder}
+            initialValue={query}
+            onQuery={updateQuery}
+          />
+        </Algolia>
         <Button
           color="dark"
           shape="round"
