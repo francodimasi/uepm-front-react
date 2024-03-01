@@ -1,50 +1,26 @@
 import { Layout } from '@components/core/layout/Layout';
 import { getSites } from '@api/sites/requests';
-import { defaultLocale /*, locales */ } from 'intl';
-// import { notFound } from 'next/navigation';
+import { defaultLocale } from 'intl';
+import { SiteItemCard } from './components/SiteItemCard';
 
 export default async function Page({ params: { lang = defaultLocale } }) {
   const sites = await getSites();
 
+  //traducciones
   return (
     <Layout locale={lang}>
-      <div
-        className="h-full grid grid-cols-1 lg:grid-cols-3 gap-5"
-        style={{ border: '1px solid black' }}
-      >
-        <div
-          className="w-full col-span-1 lg:col-span-1 xl:col-span-1"
-          style={{ border: '1px solid red' }}
-        >
-          <div
-            className="w-full col-span-1 lg:col-span-1 xl:col-span-1"
-            style={{ border: '1px solid pink' }}
-          >
-            searchBar
-          </div>
-          <div
-            className="block sm:hidden col-span-1 lg:col-span-2"
-            style={{ border: '1px solid green' }}
-          >
-            MAPA
-          </div>
-          <div
-            className="w-full col-span-1 lg:col-span-1 xl:col-span-1"
-            style={{ border: '1px solid gray' }}
-          >
-            Order
-          </div>
-          <div
-            className="w-full col-span-1 lg:col-span-1 xl:col-span-1"
-            style={{ border: '1px solid blue' }}
-          >
+      <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 ">
+        <div className="w-full col-span-1 lg:col-span-2 grid gap-6">
+          <div className="w-full col-span-1 lg:col-span-1">searchBar</div>
+          <div className="block sm:hidden col-span-1 lg:col-span-2">MAPA</div>
+          <div className="w-full col-span-1  lg:col-span-1 lg:max-h-screen lg:overflow-y-auto lg:pe-2">
             {sites.map((site) => (
-              <div key={site.id}>{site.name}</div>
+              <SiteItemCard key={site.id} locale={lang} site={site} />
             ))}
           </div>
         </div>
         <div
-          className="hidden sm:block col-span-1 lg:col-span-2 h-full"
+          className="hidden sm:block col-span-1 lg:col-span-3"
           style={{ border: '1px solid green' }}
         >
           MAPA
