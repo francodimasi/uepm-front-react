@@ -41,7 +41,7 @@ export const Modal: React.FC<ModalProps> = ({
         </Transition.Child>
 
         {/* Full screen container to center Dialog */}
-        <div className="fixed inset-0 flex z-10 w-screen text-center items-center justify-center p-2">
+        <div className="fixed inset-0 flex z-10 w-screen text-center items-center justify-center">
           <Transition.Child
             as={Fragment}
             enter="ease-out duration-300"
@@ -54,7 +54,7 @@ export const Modal: React.FC<ModalProps> = ({
             {/* The actual dialog panel */}
             <Dialog.Panel
               className={twMerge(
-                'relative p-4 sm:p-8 transform overflow-hidden rounded-sm bg-light shadow-2xl transition-all mt-24 w-full h-4/5',
+                '[&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] max-h-[70vh] relative p-4 sm:p-8 transform overflow-scroll rounded-sm bg-light shadow-2xl transition-all w-full',
                 panelClassname,
               )}
             >
