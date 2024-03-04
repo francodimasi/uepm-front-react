@@ -1,8 +1,9 @@
 import { PropsWithChildren } from 'react';
+import { PropsWithClassName } from '../../types/core';
 
-export type ModalProps = PropsWithChildren & {
-  panelClassname?: string;
-  title?: string;
-  open: boolean;
-  onClose: () => void;
-};
+export type ModalProps = PropsWithChildren &
+  PropsWithClassName & {
+    title?: string;
+    open: boolean;
+    onClose: () => void;
+  };

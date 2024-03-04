@@ -7,7 +7,7 @@ import { twMerge } from 'tailwind-merge';
 
 export const Modal: React.FC<ModalProps> = ({
   children,
-  panelClassname = '',
+  className = '',
   title,
   open,
   onClose,
@@ -55,7 +55,7 @@ export const Modal: React.FC<ModalProps> = ({
             <Dialog.Panel
               className={twMerge(
                 '[&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] max-h-[70vh] relative p-4 sm:p-8 transform overflow-scroll rounded-sm bg-light shadow-2xl transition-all w-full',
-                panelClassname,
+                className,
               )}
             >
               <div className="text-center">

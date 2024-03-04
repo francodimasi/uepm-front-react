@@ -32,9 +32,7 @@ export const RadioGroup = ({
 }: RadioGroupProps) => {
   const [selected, setSelected] = useState(selectedParam);
 
-  const handleChange = (event: {
-    target: { id: string | number | undefined };
-  }) => {
+  const handleChange = (event: { target: { id: string | number } }) => {
     setSelected(event.target.id);
     if (onChange) onChange(event.target.id);
   };
