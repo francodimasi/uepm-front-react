@@ -9,8 +9,9 @@ import { SiteItem } from '../siteItem';
 import { Algolia, AlgoliaHits, AlgoliaSearch } from 'ui/components';
 import dynamic from 'next/dynamic';
 
-const AlgoliaMap = dynamic (() => import('ui/components/algolia/map/Map'), { ssr: false})
-
+const AlgoliaMap = dynamic(() => import('ui/components/algolia/map/Map'), {
+  ssr: false,
+});
 
 export const SitesBrowser = ({
   apiKey,

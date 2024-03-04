@@ -7,22 +7,20 @@ import { useSearchBox, useGeoSearch, GeoHit } from 'react-instantsearch';
 import { SiteMapHit } from './Map.types';
 import dynamic from 'next/dynamic';
 
-
 const Marker = dynamic(
   () => import('react-leaflet').then((module) => module.Marker),
   {
     ssr: false,
-  }
+  },
 );
 const Popup = dynamic(
   () => import('react-leaflet').then((module) => module.Popup),
   {
     ssr: false,
-  }
+  },
 );
 
-
-export default function Markers () {
+export default function Markers() {
   const { query, refine: refineQuery } = useSearchBox();
   const {
     items,
@@ -88,7 +86,7 @@ export default function Markers () {
       ))}
     </>
   );
-};
+}
 
 function createMarkertIcon(item: GeoHit<SiteMapHit>) {
   return new DivIcon({

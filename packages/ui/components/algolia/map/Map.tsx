@@ -8,18 +8,18 @@ import dynamic from 'next/dynamic';
 const MapContainer = dynamic(
   () => import('react-leaflet').then((module) => module.MapContainer),
   {
-    ssr: false, 
-  }
+    ssr: false,
+  },
 );
 
 const TileLayer = dynamic(
   () => import('react-leaflet').then((module) => module.TileLayer),
   {
     ssr: false,
-  }
+  },
 );
 
-const Markers = dynamic (() => import('./Markers'), { ssr: false})
+const Markers = dynamic(() => import('./Markers'), { ssr: false });
 
 export default function AlgoliaMap({ className }: AlgoliaMapProps) {
   const [isMounted, setIsMounted] = useState(false);
@@ -44,4 +44,4 @@ export default function AlgoliaMap({ className }: AlgoliaMapProps) {
       </MapContainer>
     )
   );
-};
+}
