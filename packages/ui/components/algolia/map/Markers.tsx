@@ -1,12 +1,28 @@
 'use client';
 
 import { useState } from 'react';
-import { Marker, Popup, useMapEvents } from 'react-leaflet';
+import { useMapEvents } from 'react-leaflet';
 import { DivIcon } from 'leaflet';
 import { useSearchBox, useGeoSearch, GeoHit } from 'react-instantsearch';
 import { SiteMapHit } from './Map.types';
+import dynamic from 'next/dynamic';
 
-export const Markers = () => {
+
+const Marker = dynamic(
+  () => import('react-leaflet').then((module) => module.Marker),
+  {
+    ssr: false,
+  }
+);
+const Popup = dynamic(
+  () => import('react-leaflet').then((module) => module.Popup),
+  {
+    ssr: false,
+  }
+);
+
+
+export default function Markers () {
   const { query, refine: refineQuery } = useSearchBox();
   const {
     items,

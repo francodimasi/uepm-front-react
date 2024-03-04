@@ -200,6 +200,9 @@
       "iamDoctor": "I am a doctor",
       "iamSponsor": "I am a sponsor",
       "contact": "Contact"
+    },
+    "browser": {
+      "placeholder":"Search by site, location and/or therapeutic area"
     }
   }
 }

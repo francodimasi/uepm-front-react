@@ -200,6 +200,9 @@
       "iamDoctor": "Soy Médico",
       "iamSponsor": "Soy Sponsor",
       "contact": "Contactar"
+    },
+    "browser": {
+      "placeholder":"Buscar por sitio, ubicación y/o área terapéutica"
     }
   }
 }
