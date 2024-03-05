@@ -195,11 +195,22 @@
       "viewSite": "Ver site"
     },
     "siteCard": {
+      "modalTitle": "Contate-nos",
       "website": "Website",
       "chooseOption" : "Selecione uma opção",
       "iamDoctor": "Sou Médico",
       "iamSponsor": "Sou Patrocinador",
       "contact": "Contato"
+    },
+    "contactUs": {
+      "name": "Nome",
+      "phone": "Telefone",
+      "email": "Email",
+      "query": "Sua consulta aqui",
+      "sponsor": "Patrocinador",
+      "specialty": "Especialidade",
+      "thanks": "Obrigado por seu contato!",
+      "send": "Enviar"
     },
     "browser": {
       "placeholder":"Pesquisa por site, localização e/ou área terapêutica"

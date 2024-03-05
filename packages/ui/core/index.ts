@@ -6,6 +6,7 @@ export * from './card';
 export * from './form';
 export * from './icons';
 export * from './menu';
+export * from './modal';
 export * from './navigation';
 export * from './pagination';
 export * from './scroll';
