@@ -1,7 +1,7 @@
-import { L1, P2, OfficeBuildingIcon, RadioGroup, Card } from 'ui/core';
+import { L1, P2, OfficeBuildingIcon, Card } from 'ui/core';
 import { SiteCardProps } from '../Site.types';
 import Link from 'next/link';
-import { ContactSiteButton } from './ContactSiteButton';
+import { ContactSiteForm } from './contactForm/ContactSiteForm';
 import { useTranslations } from 'intl';
 import { ImageWithFallback } from '@components/utils/ImageWithFallback';
 
@@ -12,10 +12,6 @@ export const SiteCard: React.FC<SiteCardProps> = ({
   logo,
 }) => {
   const t = useTranslations('sites.siteCard');
-  const contactOptions = [
-    { id: 1, title: t('iamDoctor') },
-    { id: 2, title: t('iamSponsor') },
-  ];
 
   return (
     <Card className="w-full max-h-min flex flex-col items-center justify-center !m-0 !p-0">
@@ -49,19 +45,7 @@ export const SiteCard: React.FC<SiteCardProps> = ({
           )}
         </div>
 
-        <div className="flex flex-col gap-4">
-          <P2 className="text-base font-semibold font-['Lexend] !pb-0 !my-0">
-            {t('chooseOption')}
-          </P2>
-          <RadioGroup
-            items={contactOptions}
-            disposition="inline"
-            orientation="horizontal"
-            titleClassName="ml-4 font-medium"
-          />
-
-          <ContactSiteButton text={t('contact')} />
-        </div>
+        <ContactSiteForm buttonCaption={t('contact')} />
       </div>
     </Card>
   );
