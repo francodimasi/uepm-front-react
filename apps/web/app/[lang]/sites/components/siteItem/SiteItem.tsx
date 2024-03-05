@@ -6,7 +6,7 @@ import { Card, H4, Tag, P2, Button } from 'ui/core';
 import { ImageWithFallback } from '@components/utils/ImageWithFallback';
 import { useTranslations } from 'intl';
 import { SiteItemHitProps, SiteItemProps } from './SiteItem.types';
-import { Site, SiteHit } from '@models/site.types';
+import { AlgoliaSite, Site, SiteHit } from '@models/site.types';
 import { SitesBrowserContext } from '../browser/context/provider';
 import { sitesBrowserActions } from '../browser/context/reducer';
 
@@ -20,7 +20,7 @@ export const SiteItem: React.FC<SiteItemProps & SiteItemHitProps> = ({
     browserDispatch,
   } = useContext(SitesBrowserContext);
 
-  const siteItem: Site = site ?? (hit as SiteHit);
+  const siteItem: AlgoliaSite = site ?? (hit as SiteHit);
 
   if (!siteItem) return null;
 
@@ -37,7 +37,7 @@ export const SiteItem: React.FC<SiteItemProps & SiteItemHitProps> = ({
     <Card
       key={siteItem.id}
       className={twMerge(
-        `bg-white rounded-lg p-3 lg:!p-6 m-3 sm:m-6 lg:m-3 2xl:m-3 shadow-none ${
+        `bg-white rounded-lg p-3 lg:!p-6 m-0 my-3 sm:m-6 lg:m-3 2xl:m-3 shadow-none hover:border-primary ${
           isSelected && 'border-2 border-primary'
         }`,
       )}
@@ -48,22 +48,24 @@ export const SiteItem: React.FC<SiteItemProps & SiteItemHitProps> = ({
         <div className="grow shrink basis-0 flex-col justify-start items-start gap-3 inline-flex w-full">
           <div className="self-stretch flex-col justify-start items-start flex ">
             <div className="flex justify-between align-middle flex-row w-full">
-              {siteItem.username && (
+              {siteItem.username ? (
                 <P2 className="!p-0 self-stretch text-primary-dark text-sm lg:text-base font-light font-['DMSans'] uppercase leading-none">
                   {siteItem.username}
                 </P2>
+              ) : (
+                <div></div>
               )}
-              {siteItem.country?.flag && (
+              {siteItem.country_flag && (
                 <ImageWithFallback
-                  className="h-5 w-5 rounded-full my-auto object-cover"
-                  src={siteItem.country.flag}
-                  alt={siteItem.country.name}
+                  className="h-5 w-5 rounded-full my-auto object-cover "
+                  src={siteItem.country_flag}
+                  alt={siteItem.country}
                   width={16}
                   height={16}
                 />
               )}
             </div>
-            <H4 className="font-['DMSans'] line-clamp-4 lg:line-clamp-2 !my-0 !py-0 !text-xl !leading-tight lg:!text-2xl 2xl:!text-3xl lg:!leading-8'">
+            <H4 className="font-['DMSans'] line-clamp-4 lg:line-clamp-2 !my-0 !py-0 !text-xl !leading-tight lg:!text-2xl 2xl:!text-2xl lg:!leading-8'">
               {siteItem.name}
             </H4>
           </div>
@@ -95,9 +97,9 @@ export const SiteItem: React.FC<SiteItemProps & SiteItemHitProps> = ({
               type="submit"
               color="dark"
               expand="none"
-              className="!px-4 !py-1.5"
+              className="!px-4 !py-1"
             >
-              <P2 className="!text-sm !font-medium font-['DMSans]' text-white leading-normal">
+              <P2 className="!text-sm !font-medium !font-['DMSans]' text-white leading-normal !pb-0">
                 {t('viewSite')}
               </P2>
             </Button>

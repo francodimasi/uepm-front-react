@@ -22,7 +22,7 @@ export const Partners: React.FC<PartnersProps & LocaleProps> = ({
         />
         <div className="pb-3.5 sm:pb-4 lg:pb-5 xl:pb-8">
           <div className="relative mb-6 sm:mb-8 lg:mb-10 xl:mb-16">
-            <div className="absolute right-0 h-full flex items-center hidden sm:flex">
+            <div className="absolute right-0 h-full items-center hidden sm:flex">
               <Link
                 href={`${process.env.NEXT_PUBLIC_PRODUCT_PATIENTS}partners`}
                 target="_blank"

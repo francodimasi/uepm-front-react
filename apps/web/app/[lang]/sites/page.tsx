@@ -2,12 +2,8 @@ import { Layout } from '@components/core/layout/Layout';
 import { SitesBrowserProvider } from './components/browser/context/provider';
 import { SitesBrowser } from './components/browser/SitesBrowser';
 import { defaultLocale } from 'intl';
-// import { notFound } from 'next/navigation';
 
 export default function Page({ params: { lang = defaultLocale } }) {
-  // const sites = await getSites();
-
-  //traducciones
   return (
     <Layout locale={lang}>
       <SitesBrowserProvider>

@@ -202,7 +202,15 @@
       "contact": "Contactar"
     },
     "browser": {
-      "placeholder":"Buscar por sitio, ubicación y/o área terapéutica"
+      "placeholder": "Buscar por sitio, ubicación y/o área terapéutica"
+    }
+  },
+  "components": {
+    "algolia": {
+      "found": "Encontramos",
+      "sites": "sitios",
+      "site": "sitio",
+      "notFound": "No encontramos sitios"
     }
   }
 }

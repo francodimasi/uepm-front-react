@@ -5,30 +5,12 @@
   }
 
   /* Autocomplete */
-  .aa-Form {
-    border: none;
-    border-bottom: 1px solid #d9d9d9;
-    border-radius: 0;
-    box-shadow: none;
-    --aa-panel-border-color-alpha: 0;
-    --aa-input-border-color-alpha: 0;
-  }
-
-  .aa-SubmitIcon {
-    color: #020001 !important;
-  }
 
   /* Serachbox */
-  .ais-SearchBox-form,
-  .ais-SearchBox-input {
-    width: 100%;
-  }
-
-  .ais-SearchBox-input {
-  }
-
-  .ais-SearchBox-submitIcon {
-    color: #020001 !important;
+  .ais-SearchBox-input::-webkit-search-cancel-button,
+  .ais-SearchBox-input::-webkit-search-decoration {
+    -webkit-appearance: none;
+    appearance: none;
   }
 
   /* Map */

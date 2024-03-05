@@ -2,7 +2,7 @@
 
 import { useContext } from 'react';
 import { SitesBrowserProps } from './SitesBrowser.types';
-import { useTranslations } from 'intl';
+import { useTranslations, LocaleProps } from 'intl';
 import { SitesBrowserContext } from './context/provider';
 import { sitesBrowserActions } from './context/reducer';
 import { SiteItem } from '../siteItem';
@@ -16,8 +16,8 @@ const AlgoliaMap = dynamic(() => import('ui/components/algolia/map/Map'), {
 export const SitesBrowser = ({
   apiKey,
   appId,
-  indexName,
-}: SitesBrowserProps) => {
+  indexName
+} : SitesBrowserProps & LocaleProps ) => {
   const t = useTranslations('sites');
 
   const {
@@ -32,51 +32,27 @@ export const SitesBrowser = ({
 
   return (
     <Algolia appId={appId} apiKey={apiKey} indexName={indexName}>
-      <div
-        className="flex max-h-[1000px] h-full grid grid-cols-1 lg:grid-cols-3 gap-5"
-        style={{ border: '1px solid black' }}
-      >
-        <div
-          className="w-full col-span-1 lg:col-span-1 xl:col-span-1"
-          style={{ border: '1px solid red' }}
-        >
-          <div
-            className="w-full col-span-1 lg:col-span-1 xl:col-span-1"
-            style={{ border: '1px solid pink' }}
-          >
-            <AlgoliaSearch
-              placeholder={t('browser.placeholder')}
-              className="h-full searchbox"
-            />
+      <div className="h-auto grid grid-cols-1 lg:grid-cols-3 gap-5">
+        <div className="w-full h-full col-span-1 lg:col-span-1 xl:col-span-1">
+          <AlgoliaSearch
+            placeholder={t('browser.placeholder')}
+            className="h-full searchbox"
+
+          />
+          <div className="block sm:hidden col-span-1 lg:col-span-2">
+            <AlgoliaMap className="h-[500px] sm:h-full w-full relative" />
           </div>
-          <div
-            className="block sm:hidden col-span-1 lg:col-span-2"
-            style={{ border: '1px solid green' }}
-          >
-            <AlgoliaMap className="h-[1000px] w-full relative" />
-          </div>
-          <div
-            className="w-full col-span-1 lg:col-span-1 xl:col-span-1"
-            style={{ border: '1px solid gray' }}
-          >
-            Order
-          </div>
-          <div
-            className="w-full h-[1000px] relative col-span-1 lg:col-span-1 xl:col-span-1 overflow-y-scroll"
-            style={{ border: '1px solid blue' }}
-          >
+          
+          <div className="w-full h-full sm:h-[1000px] relative col-span-1 lg:col-span-1 xl:col-span-1 sm:overflow-y-scroll sm:overflow-auto">
             <AlgoliaHits
-              className="h-[1000px] relative"
+              className="sm:h-[500px] relative"
               hit={SiteItem}
               onChange={handleHits}
             />
           </div>
         </div>
-        <div
-          className="hidden sm:block col-span-1 lg:col-span-2"
-          style={{ border: '1px solid green' }}
-        >
-          <AlgoliaMap className="h-[1000px] z-10 w-full relative" />
+        <div className="hidden sm:block col-span-1 lg:col-span-2">
+          <AlgoliaMap className="h-full z-10 w-full relative" />
         </div>
       </div>
     </Algolia>

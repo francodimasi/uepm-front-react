@@ -204,5 +204,13 @@
     "browser": {
       "placeholder":"Pesquisa por site, localização e/ou área terapêutica"
     }
+  },
+  "components": {
+    "algolia": {
+      "found": "Encontramos",
+      "sites": "sites",
+      "site": "site",
+      "notFound": "Não encontramos sites"
+    }
   }
 }

@@ -33,4 +33,26 @@ export type Site = {
   site_image: string;
 };
 
-export type SiteHit = Hit & Site;
+export type AlgoliaSite = {
+  name: string;
+  id: string;
+  verified: boolean;
+  city: string;
+  address: string;
+  url: string;
+  phone: string;
+  keywords: string[];
+  perks: string[];
+  username: string;
+  description: string;
+  country: string;
+  country_flag: string;
+  object_type: string;
+  _geoloc: {
+    lat: number;
+    lng: number;
+  }
+  site_image: string;
+};
+
+export type SiteHit = Hit & AlgoliaSite;
