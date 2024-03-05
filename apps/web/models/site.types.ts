@@ -51,7 +51,7 @@ export type AlgoliaSite = {
   _geoloc: {
     lat: number;
     lng: number;
-  }
+  };
   site_image: string;
 };
 

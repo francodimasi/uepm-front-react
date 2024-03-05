@@ -5,8 +5,9 @@ import { GlassIcon } from 'ui/core';
 import { AlgoliaSearchProps } from './Search.types';
 import { useTranslations, LocaleProps } from 'intl';
 
-
-export const AlgoliaSearch = ({ placeholder = '' }: AlgoliaSearchProps & LocaleProps) => {
+export const AlgoliaSearch = ({
+  placeholder = '',
+}: AlgoliaSearchProps & LocaleProps) => {
   const t = useTranslations('components.algolia');
 
   return (
@@ -28,12 +29,12 @@ export const AlgoliaSearch = ({ placeholder = '' }: AlgoliaSearchProps & LocaleP
       <Stats
         className="hidden sm:block text-dark text-base text-end font-normal font-['DMSans'] leading-normal me-5 mb-2"
         translations={{
-          rootElementText({
-            nbHits
-          }) {
+          rootElementText({ nbHits }) {
             return nbHits > 0
-              ? (nbHits > 1 ? `${t('found')} ${nbHits!.toLocaleString()} ${t('sites')}` : `${t('found')}  ${nbHits!.toLocaleString()} ${t('site')} `)
-              : t('notFound') ; 
+              ? nbHits > 1
+                ? `${t('found')} ${nbHits!.toLocaleString()} ${t('sites')}`
+                : `${t('found')}  ${nbHits!.toLocaleString()} ${t('site')} `
+              : t('notFound');
           },
         }}
       />

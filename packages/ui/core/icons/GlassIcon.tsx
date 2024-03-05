@@ -6,7 +6,7 @@ export const GlassIcon = ({
   fill,
   stroke = 1.5,
   color = 'dark',
-}: IconProps) => {  
+}: IconProps) => {
   return (
     <svg
       id="glass-icon"
