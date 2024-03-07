@@ -213,11 +213,7 @@
       "send": "Enviar"
     },
     "browser": {
-      "placeholder": "Buscar por sitio, ubicación y/o área terapéutica"
-    }
-  },
-  "components": {
-    "algolia": {
+      "placeholder": "Buscar por sitio, ubicación y/o área terapéutica",
       "found": "Encontramos",
       "sites": "sitios",
       "site": "sitio",
