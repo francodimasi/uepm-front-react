@@ -211,6 +211,13 @@
       "specialty": "Specialty",
       "thanks": "Thank you for your contact!",
       "send": "Send"
+    },
+    "browser": {
+      "placeholder":"Search by site, location and/or therapeutic area",
+      "found": "",
+      "sites": "sites found",
+      "site": "site found",
+      "notFound": "No sites found"
     }
   }
 }

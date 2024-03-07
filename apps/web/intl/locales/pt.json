@@ -211,6 +211,13 @@
       "specialty": "Especialidade",
       "thanks": "Obrigado por seu contato!",
       "send": "Enviar"
+    },
+    "browser": {
+      "placeholder":"Pesquisa por site, localização e/ou área terapêutica",
+      "found": "Encontramos",
+      "sites": "sites",
+      "site": "site",
+      "notFound": "Não encontramos sites"
     }
   }
 }

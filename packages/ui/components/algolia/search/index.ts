@@ -1,0 +1,1 @@
+export { AlgoliaSearch } from './Search';

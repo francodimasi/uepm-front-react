@@ -1,31 +1,19 @@
 import { Layout } from '@components/core/layout/Layout';
-import { getSites } from '@api/sites/requests';
+import { SitesBrowserProvider } from './components/browser/context/provider';
+import { SitesBrowser } from './components/browser/SitesBrowser';
 import { defaultLocale } from 'intl';
-import { SiteItemCard } from './components/SiteItemCard';
 
-export default async function Page({ params: { lang = defaultLocale } }) {
-  const sites = await getSites();
-
-  //traducciones
+export default function Page({ params: { lang = defaultLocale } }) {
   return (
     <Layout locale={lang}>
-      <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 ">
-        <div className="w-full col-span-1 lg:col-span-2 grid gap-6">
-          <div className="w-full col-span-1 lg:col-span-1">searchBar</div>
-          <div className="block sm:hidden col-span-1 lg:col-span-2">MAPA</div>
-          <div className="w-full col-span-1  lg:col-span-1 lg:max-h-screen lg:overflow-y-auto lg:pe-2">
-            {sites.map((site) => (
-              <SiteItemCard key={site.id} locale={lang} site={site} />
-            ))}
-          </div>
-        </div>
-        <div
-          className="hidden sm:block col-span-1 lg:col-span-3"
-          style={{ border: '1px solid green' }}
-        >
-          MAPA
-        </div>
-      </div>
+      <SitesBrowserProvider>
+        <SitesBrowser
+          apiKey={process.env['ALGOLIA_API_KEY']}
+          appId={process.env['ALGOLIA_APP_ID']}
+          indexName={process.env.NEXT_PUBLIC_ALGOLIA_SITES_INDEX_NAME}
+          locale={lang}
+        />
+      </SitesBrowserProvider>
     </Layout>
   );
 }

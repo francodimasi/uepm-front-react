@@ -1,1 +1,1 @@
-export { TextHit } from './TextHit';
+export { AlgoliaHits } from './Hits';

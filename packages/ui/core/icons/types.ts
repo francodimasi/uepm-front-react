@@ -18,4 +18,5 @@ export type IconProps = {
   className?: string;
   color?: Theme;
   disabled?: boolean;
+  stroke?: number;
 };
