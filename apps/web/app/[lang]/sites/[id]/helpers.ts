@@ -32,7 +32,7 @@ export const setMetadata = function ({
 export const getSiteConditions = (site: Site, lang: string) => {
   const conditionsList = [];
   site.studies
-    .filter((site) => site.status === studyStatus.RECRUITING)
+    ?.filter((site) => site.status === studyStatus.RECRUITING)
     .map((st) =>
       st.translations
         .find((trans) => trans[lang])
