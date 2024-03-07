@@ -8,7 +8,7 @@ import { useTranslations, LocaleProps } from 'intl';
 export const AlgoliaSearch = ({
   placeholder = '',
 }: AlgoliaSearchProps & LocaleProps) => {
-  const t = useTranslations('components.algolia');
+  const t = useTranslations('site.browser');
 
   return (
     <div className="w-full col-span-1 lg:col-span-1 xl:col-span-1 grid gap-1 mb-2">
