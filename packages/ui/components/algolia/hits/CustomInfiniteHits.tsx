@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 import { useInfiniteHits } from 'react-instantsearch';
 import { AlgoliaHitsProps } from './Hits.types';
 
-export const CustomInfiniteHits = ({ hit:HitComponent }: AlgoliaHitsProps) => {
+export const CustomInfiniteHits = ({ hit: HitComponent }: AlgoliaHitsProps) => {
   const { hits, isLastPage, showMore } = useInfiniteHits();
   const sentinelRef = useRef(null);
 
@@ -27,17 +27,13 @@ export const CustomInfiniteHits = ({ hit:HitComponent }: AlgoliaHitsProps) => {
   return (
     <div className="ais-InfiniteHits">
       <ul className="ais-InfiniteHits-list">
-        {hits.map(hit => (
+        {hits.map((hit) => (
           <li key={hit.objectID} className="ais-InfiniteHits-item">
             <HitComponent hit={hit} />
           </li>
         ))}
-        <li
-          className="ais-InfiniteHits-sentinel h-20"
-          ref={sentinelRef}
-
-        />
+        <li className="ais-InfiniteHits-sentinel h-20" ref={sentinelRef} />
       </ul>
     </div>
   );
-}
+};

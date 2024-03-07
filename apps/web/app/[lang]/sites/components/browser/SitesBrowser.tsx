@@ -31,7 +31,12 @@ export const SitesBrowser = ({
   };
 
   return (
-    <Algolia appId={appId} apiKey={apiKey} indexName={indexName} className='sm:h-screen'>
+    <Algolia
+      appId={appId}
+      apiKey={apiKey}
+      indexName={indexName}
+      className="sm:h-screen"
+    >
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
         <div className="w-full sm:h-[80vh] col-span-1 lg:col-span-1 xl:col-span-1">
           <AlgoliaSearch
