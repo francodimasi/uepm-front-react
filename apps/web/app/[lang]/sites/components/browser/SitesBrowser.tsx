@@ -31,26 +31,26 @@ export const SitesBrowser = ({
   };
 
   return (
-    <Algolia appId={appId} apiKey={apiKey} indexName={indexName}>
-      <div className="h-auto grid grid-cols-1 lg:grid-cols-3 gap-5">
-        <div className="w-full h-full col-span-1 lg:col-span-1 xl:col-span-1">
+    <Algolia appId={appId} apiKey={apiKey} indexName={indexName} className='sm:h-screen'>
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
+        <div className="w-full sm:h-[80vh] col-span-1 lg:col-span-1 xl:col-span-1">
           <AlgoliaSearch
             placeholder={t('browser.placeholder')}
-            className="h-full searchbox"
+            className="sm:h-auto searchbox"
           />
           <div className="block sm:hidden col-span-1 lg:col-span-2">
-            <AlgoliaMap className="h-[500px] sm:h-full w-full relative" />
+            <AlgoliaMap className="h-[400px] sm:h-full w-full relative" />
           </div>
 
-          <div className="w-full h-full sm:h-[1000px] relative col-span-1 lg:col-span-1 xl:col-span-1 sm:overflow-y-scroll sm:overflow-auto">
+          <div className="w-full sm:h-5/6 relative col-span-1 lg:col-span-1 xl:col-span-1 sm:overflow-y-scroll sm:overflow-auto">
             <AlgoliaHits
-              className="sm:h-[500px] relative"
+              className="relative"
               hit={SiteItem}
               onChange={handleHits}
             />
           </div>
         </div>
-        <div className="hidden sm:block col-span-1 lg:col-span-2">
+        <div className="hidden sm:h-[80vh] sm:block col-span-1 lg:col-span-2">
           <AlgoliaMap className="h-full z-10 w-full relative" />
         </div>
       </div>
