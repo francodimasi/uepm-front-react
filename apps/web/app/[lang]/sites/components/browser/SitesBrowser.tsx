@@ -9,6 +9,7 @@ import { SiteItem } from '../siteItem';
 import { Algolia, AlgoliaHits, AlgoliaSearch } from 'ui/components';
 import dynamic from 'next/dynamic';
 import { SitePreviewCard } from '../sitePreviewCard';
+// import { Modal } from 'ui/core';
 
 const AlgoliaMap = dynamic(() => import('ui/components/algolia/map/Map'), {
   ssr: false,
@@ -93,6 +94,8 @@ export const SitesBrowser = ({
 }: SitesBrowserProps & LocaleProps) => {
   const t = useTranslations('sites');
 
+  // const [modalOpen, setModalOpen] = useState(true);
+
   const {
     browserState: { sites },
     browserDispatch,
@@ -103,9 +106,17 @@ export const SitesBrowser = ({
     browserDispatch({ type: sitesBrowserActions.SET_SITES, sites: hits });
   };
 
+  // const handleOnCloseModal = () => {
+  //   setModalOpen(false);
+  // };
+
+  // <div className='block sm:hidden bg-alert w-full h-full row-start-1 col-start-1'>
+  // <SitePreviewCardMobile site={selectedSite}></SitePreviewCardMobile>
+  // </div>
+
   return (
     <Algolia appId={appId} apiKey={apiKey} indexName={indexName}>
-      <div className="h-auto grid grid-cols-1 lg:grid-cols-3 gap-5">
+      <div className="h-auto grid grid-cols-1 sm:grid-cols-3 gap-5">
         <div className="w-full h-full row-start-1 col-span-1 lg:col-span-1 xl:col-span-1">
           <AlgoliaSearch
             placeholder={t('browser.placeholder')}
@@ -126,10 +137,14 @@ export const SitesBrowser = ({
         {selectedSite && (
           <SitePreviewCard site={selectedSite}></SitePreviewCard>
         )}
-        <div className="hidden sm:block row-start-1 col-start-2 col-end-3 lg:col-end-4 z-10">
+        <div className="hidden sm:block row-start-1 col-start-2 sm:col-end-4 z-10">
           <AlgoliaMap className="h-full z-10 w-full relative" />
         </div>
       </div>
+      {/* <Modal open={modalOpen} onClose={handleOnCloseModal} className='bg-alert'>
+        <SitePreviewCardMobile site={selectedSite}></SitePreviewCardMobile>
+
+      </Modal> */}
     </Algolia>
   );
 };
