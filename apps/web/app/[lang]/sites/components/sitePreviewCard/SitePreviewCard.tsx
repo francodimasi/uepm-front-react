@@ -18,7 +18,7 @@ export const SitePreviewCard: React.FC<SitePreviewProps> = ({
   // const t = useTranslations('sites.siteCard');
 
   return (
-    <Card className="hidden sm:flex row-start-1 col-start-2 col-span-1 z-20 w-11/12 h-5/6 self-center justify-self-center bg-white flex-col items-start justify-normal !m-0 !p-4 overflow-y-scroll">
+    <Card className="flex flex-col items-start justify-normal bg-white !m-0 !p-4 overflow-y-scroll">
       <div className=" flex gap-4 items-center">
         {site.logo && (
           <ImageWithFallback

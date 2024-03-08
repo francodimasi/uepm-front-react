@@ -6,6 +6,7 @@ import {
   L1,
   Button,
   ShareOutlineIcon,
+  CloseIcon,
 } from 'ui/core';
 import { ImageWithFallback } from '@components/utils/ImageWithFallback';
 import { SitePreviewProps } from './SitePreviewCard.types';
@@ -13,11 +14,8 @@ import { studyStatus } from '../../[id]/constants';
 import Link from 'next/link';
 
 export const SitePreviewCardMobile: React.FC<SitePreviewProps> = ({
-  // name,
-  // address,
-  // website,
-  // logo,
   site,
+  onClose = () => {},
 }) => {
   // const t = useTranslations('sites.siteCard');
 
@@ -29,8 +27,12 @@ export const SitePreviewCardMobile: React.FC<SitePreviewProps> = ({
     : 'Juan Carlos Banana';
 
   return (
-    <Card className="flex sm:hidden bg-white flex-col items-start justify-normal !m-0 !p-4 overflow-y-scroll">
-      <ShareOutlineIcon className="self-end"></ShareOutlineIcon>
+    <Card className="flex flex-col items-start justify-normal sm:hidden bg-white !m-0 !p-4 overflow-y-scroll">
+      <div className="flex flex-row w-full justify-end">
+        <span onClick={onClose}>
+          <CloseIcon />
+        </span>
+      </div>
       {site.logo && (
         <ImageWithFallback
           src={site.logo}

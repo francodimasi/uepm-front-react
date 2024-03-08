@@ -11,7 +11,7 @@ export const AlgoliaSearch = ({
   const t = useTranslations('site.browser');
 
   return (
-    <div className="w-full col-span-1 lg:col-span-1 xl:col-span-1 grid gap-1 mb-2">
+    <div className="w-full sm:col-span-1 lg:col-span-1 xl:col-span-1 grid gap-1 mb-2">
       <SearchBox
         placeholder={placeholder}
         className="searchbox "

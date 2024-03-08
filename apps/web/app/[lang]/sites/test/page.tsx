@@ -1,19 +1,4 @@
-'use client';
-
-import { useContext, useState } from 'react';
-import { SitesBrowserProps } from './SitesBrowser.types';
-import { useTranslations, LocaleProps } from 'intl';
-import { SitesBrowserContext } from './context/provider';
-import { sitesBrowserActions } from './context/reducer';
-import { SiteItem } from '../siteItem';
-import { Algolia, AlgoliaHits, AlgoliaSearch } from 'ui/components';
-import dynamic from 'next/dynamic';
-import { SitePreviewCard, SitePreviewCardMobile } from '../sitePreviewCard';
-import { Modal } from 'ui/core';
-
-const AlgoliaMap = dynamic(() => import('ui/components/algolia/map/Map'), {
-  ssr: false,
-});
+import { SitePreviewCardMobile } from '../components/sitePreviewCard';
 
 const Site = () => {
   return {
@@ -32,7 +17,7 @@ const Site = () => {
     name: 'Sitio de Prueba',
     description:
       'Somos una organización que trabaja en la generación de conocimiento para mejorar la calidad de vida de las personas a través de la investigación clínica. Trabajamos con un fuerte interés en concientizar y educar a la sociedad sobre la prevención y tratamiento de enfermedades y sobre la importancia de los ensayos clínicos para lograrlo.',
-    url: '',
+    url: 'www.google.com',
     verified: true,
     address: 'Av Triunvirato 3079, C1427 AAD, Buenos Aires, Argentina',
     lat: -34.5840872,
@@ -87,85 +72,6 @@ const Site = () => {
 };
 const selectedSite = Site();
 
-export const SitesBrowser = ({
-  apiKey,
-  appId,
-  indexName,
-}: SitesBrowserProps & LocaleProps) => {
-  const t = useTranslations('sites');
-
-  const [modalOpen, setModalOpen] = useState(false);
-
-  const {
-    browserState: { sites },
-    browserDispatch,
-  } = useContext(SitesBrowserContext);
-
-  const handleHits = (hits: any[]) => {
-    if (JSON.stringify(hits) === JSON.stringify(sites)) return;
-    browserDispatch({ type: sitesBrowserActions.SET_SITES, sites: hits });
-  };
-
-  const handleOnClose = () => {
-    setModalOpen(false);
-  };
-
-  const handleOnClick = () => {
-    setModalOpen(true);
-  };
-
-  return (
-    <Algolia appId={appId} apiKey={apiKey} indexName={indexName}>
-      <div className="w-full h-auto flex flex-col sm:hidden gap-5">
-        <Modal
-          open={modalOpen}
-          onClose={handleOnClose}
-          className="z-20 bg-alert"
-        >
-          <SitePreviewCardMobile site={selectedSite} onClose={handleOnClose} />
-        </Modal>
-
-        <span onClick={handleOnClick}>CLICK TO OPEN MODAL </span>
-        <AlgoliaSearch
-          placeholder={t('browser.placeholder')}
-          className="h-full searchbox"
-        />
-        <div className="block">
-          <AlgoliaMap className="h-[500px] w-full relative z-10" />
-        </div>
-
-        <div className="w-full h-full relative">
-          <AlgoliaHits
-            className="sm:h-[500px] relative"
-            hit={SiteItem}
-            onChange={handleHits}
-          />
-        </div>
-      </div>
-
-      <div className="hidden w-full h-auto sm:grid sm:grid-cols-3 gap-5">
-        <div className="w-full h-auto flex flex-col col-span-1 gap-5">
-          <AlgoliaSearch
-            placeholder={t('browser.placeholder')}
-            className="h-full searchbox"
-          />
-          <div className="w-full h-[1000px] relative sm:col-span-1 sm:overflow-y-scroll sm:overflow-auto">
-            <AlgoliaHits
-              className="sm:h-[500px] relative"
-              hit={SiteItem}
-              onChange={handleHits}
-            />
-          </div>
-        </div>
-        {selectedSite && (
-          <div className="hidden sm:block m-4 sm:row-start-1 sm:col-start-2 sm:col-span-1 z-20">
-            <SitePreviewCard site={selectedSite}></SitePreviewCard>
-          </div>
-        )}
-        <div className="hidden sm:block sm:row-start-1 sm:col-start-2 sm:col-end-4 z-10">
-          <AlgoliaMap className="h-full z-10 w-full relative" />
-        </div>
-      </div>
-    </Algolia>
-  );
-};
+export default function Page() {
+  return <SitePreviewCardMobile site={selectedSite} />;
+}
