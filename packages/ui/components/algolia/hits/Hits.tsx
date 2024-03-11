@@ -1,21 +1,49 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { useInfiniteHits } from 'react-instantsearch';
 import { AlgoliaHitsProps } from './Hits.types';
-import '../styles.css';
-import { CustomInfiniteHits } from './CustomInfiniteHits';
 
-export const AlgoliaHits = ({ className, hit, onChange }: AlgoliaHitsProps) => {
-  // const { hits } = useHits();
-  const { hits } = useInfiniteHits();
+export const AlgoliaHits = ({
+  hit: HitComponent,
+  onChange,
+}: AlgoliaHitsProps) => {
+  const { hits, isLastPage, showMore } =
+    useInfiniteHits();
+  const sentinelRef = useRef(null);
 
   useEffect(() => {
     onChange(hits);
   }, [hits, onChange]);
 
+  useEffect(() => {
+    if (sentinelRef.current !== null) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !isLastPage) {
+            showMore();
+          }
+        });
+      });
+
+      observer.observe(sentinelRef.current);
+
+      return () => {
+        observer.disconnect();
+      };
+    }
+  }, [isLastPage, showMore]);
+
   return (
-    // <InfiniteHits showPrevious={false}  className={className} hitComponent={hit} />
-    <CustomInfiniteHits className={className} hit={hit} onChange={onChange} />
+    <div className="ais-InfiniteHits">
+      <ul className="ais-InfiniteHits-list">
+        {hits.map((hit) => (
+          <li key={hit.objectID} className="ais-InfiniteHits-item">
+            <HitComponent hit={hit} />
+          </li>
+        ))}
+        <li className="ais-InfiniteHits-sentinel h-20" ref={sentinelRef} />
+      </ul>
+    </div>
   );
 };

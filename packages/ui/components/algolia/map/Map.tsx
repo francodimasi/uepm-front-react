@@ -32,7 +32,7 @@ export default function AlgoliaMap({ className }: AlgoliaMapProps) {
       <MapContainer
         className={className}
         center={[-34.61, -58.37]}
-        zoom={10}
+        zoom={12}
         minZoom={4}
         scrollWheelZoom={true}
       >
