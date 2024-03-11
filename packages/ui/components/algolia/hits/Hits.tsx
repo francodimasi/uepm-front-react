@@ -8,8 +8,7 @@ export const AlgoliaHits = ({
   hit: HitComponent,
   onChange,
 }: AlgoliaHitsProps) => {
-  const { hits, isLastPage, showMore } =
-    useInfiniteHits();
+  const { hits, isLastPage, showMore } = useInfiniteHits();
   const sentinelRef = useRef(null);
 
   useEffect(() => {
