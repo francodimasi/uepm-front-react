@@ -3,7 +3,7 @@ import { SitePerksProps } from '../Sites.types';
 
 export const SitePerks: React.FC<SitePerksProps> = ({ perks, title }) => {
   return (
-    <div className="w-full pt-14 flex-col justify-start items-start gap-4 inline-flex">
+    <div className="w-full flex-col justify-start items-start gap-4 inline-flex">
       <H4 label={title} className="text-primary my-0 lg:my-0" />
       <div className="self-stretch flex-col justify-start items-start gap-4 flex">
         {perks?.map((perk, index) => (

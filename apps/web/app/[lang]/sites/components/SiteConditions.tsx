@@ -10,7 +10,7 @@ export const SiteConditions: React.FC<SiteConditionsProps> = ({
   seeMore = 'See More',
 }) => {
   return (
-    <div className="w-full pt-14 flex-col justify-start items-start gap-4 inline-flex">
+    <div className="w-full flex-col justify-start items-start gap-4 inline-flex">
       <H4 label={title} className="text-primary my-0 lg:my-0" />
       <div className="w-full grid sm:grid-cols-2 gap-x-16 gap-y-2 pb-3">
         {conditions.map((condition, index) => (

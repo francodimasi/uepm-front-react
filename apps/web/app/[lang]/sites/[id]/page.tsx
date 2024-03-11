@@ -63,11 +63,12 @@ const Page = async ({ params: { lang = defaultLocale, id } }: SiteProps) => {
         </div>
 
         <div className="w-full col-span-1 lg:col-span-2 xl:col-span-3 pr-0 flex-col justify-start items-start gap-14 inline-flex divide-y divide-gray-medium">
-          <SiteSpecializations
-            specializations={site.keywords}
-            title={t('specializations')}
-          />
-
+          {site.keywords?.length > 0 && (
+            <SiteSpecializations
+              specializations={site.keywords}
+              title={t('specializations')}
+            />
+          )}
           {site.perks?.length > 0 && (
             <SitePerks perks={site.perks} title={t('benefits')} />
           )}

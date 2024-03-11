@@ -186,10 +186,13 @@
     "site": {
       "specializations": "Specializations",
       "benefits": "Patients Benefits",
-      "physicians": "Investigadores",
-      "openStudies": "Estudios abiertos",
+      "physicians": "Investigators",
+      "openStudies": "Open studies",
       "recruiting": "Recruiting",
-      "seeMore": "See more"
+      "seeMore": "See more",
+      "seeFullSite": "See full site",
+      "website": "Website",
+      "principalInvestigator": "Principal Investigator"
     },
     "siteItem": {
       "viewSite": "View site"

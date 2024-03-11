@@ -189,7 +189,10 @@
       "physicians": "Investigadores",
       "openStudies": "Estudios abiertos",
       "recruiting": "Incorporando",
-      "seeMore": "Ver más"
+      "seeMore": "Ver más",
+      "seeFullSite": "Ver sitio completo",
+      "website": "Website",
+      "principalInvestigator": "Investigador Principal"
     },
     "siteItem": {
       "viewSite": "Ver sitio"

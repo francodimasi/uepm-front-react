@@ -32,7 +32,7 @@ const Site = () => {
     name: 'Sitio de Prueba',
     description:
       'Somos una organización que trabaja en la generación de conocimiento para mejorar la calidad de vida de las personas a través de la investigación clínica. Trabajamos con un fuerte interés en concientizar y educar a la sociedad sobre la prevención y tratamiento de enfermedades y sobre la importancia de los ensayos clínicos para lograrlo.',
-    url: '',
+    url: 'www.google.com',
     verified: true,
     address: 'Av Triunvirato 3079, C1427 AAD, Buenos Aires, Argentina',
     lat: -34.5840872,
@@ -54,8 +54,8 @@ const Site = () => {
       'Cáncer de riñón',
       'Enfermedad renal crónica',
     ],
-    logo: 'https://uepm-dev.sfo3.digitaloceanspaces.com/2puvvkskzb5x12wielan6y5apzrt?response-content-disposition=inline%3B%20filename%3D%22original_logo.gif%22%3B%20filename%2A%3DUTF-8%27%27original_logo.gif&response-content-type=image%2Fgif&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=TEIB4WPTWDF6AMGMSWIW%2F20240301%2Fsfo3%2Fs3%2Faws4_request&X-Amz-Date=20240301T155735Z&X-Amz-Expires=1800&X-Amz-SignedHeaders=host&X-Amz-Signature=7c32b2d23a9961b2908aa59c2eef88ab125542650c1f670c7c4563d57faf99bc',
-    map: 'https://uepm-dev.sfo3.digitaloceanspaces.com/kzt78birpf21sriaktoyg4jduubi?response-content-disposition=inline%3B%20filename%3D%22staticmap%22%3B%20filename%2A%3DUTF-8%27%27staticmap&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=TEIB4WPTWDF6AMGMSWIW%2F20240301%2Fsfo3%2Fs3%2Faws4_request&X-Amz-Date=20240301T155735Z&X-Amz-Expires=1800&X-Amz-SignedHeaders=host&X-Amz-Signature=be17087d701f9f5408780fe19a95c5e2a2c08d22dceb0165f50f6ed32ba6a678',
+    logo: 'https://trialtech-production.ams3.digitaloceanspaces.com/L9CEii2VkXCXRwoDXTrG7mPf?response-content-disposition=inline%3B%20filename%3D%22cedimba.png%22%3B%20filename%2A%3DUTF-8%27%27cedimba.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00FUMZ722RD4JVYELA%2F20240311%2Fams3%2Fs3%2Faws4_request&X-Amz-Date=20240311T154006Z&X-Amz-Expires=1800&X-Amz-SignedHeaders=host&X-Amz-Signature=f249cb5a2757028cfe455ee270f92d7105e682090e4d0c89376fdffce7f11151',
+    map: 'https://trialtech-production.ams3.digitaloceanspaces.com/30l49hetlslavov0j9bz9flksh4d?response-content-disposition=inline%3B%20filename%3D%22staticmap%22%3B%20filename%2A%3DUTF-8%27%27staticmap&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00FUMZ722RD4JVYELA%2F20240311%2Fams3%2Fs3%2Faws4_request&X-Amz-Date=20240311T150202Z&X-Amz-Expires=1800&X-Amz-SignedHeaders=host&X-Amz-Signature=5332c83608ee806897a7e59ddc10ebb06dd56b1a7c596c5f194f9d63ef088100',
     physicians: [],
     perks: [
       'Traslado incluido',
@@ -117,11 +117,7 @@ export const SitesBrowser = ({
   return (
     <Algolia appId={appId} apiKey={apiKey} indexName={indexName}>
       <div className="w-full h-auto flex flex-col sm:hidden gap-5">
-        <Modal
-          open={modalOpen}
-          onClose={handleOnClose}
-          className="z-20 bg-alert"
-        >
+        <Modal open={modalOpen} onClose={handleOnClose} className="z-20">
           <SitePreviewCardMobile site={selectedSite} onClose={handleOnClose} />
         </Modal>
 
