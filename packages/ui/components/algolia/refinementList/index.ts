@@ -1,0 +1,1 @@
+export { AlgoliaRefinementList } from './RefinementList';

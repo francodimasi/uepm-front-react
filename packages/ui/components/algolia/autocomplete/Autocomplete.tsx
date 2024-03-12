@@ -3,7 +3,6 @@
 import algoliasearch from 'algoliasearch/lite';
 import { AlgoliaAutocompleteProps } from './Autocomplete.types';
 import { Autocomplete } from './components';
-//import '../styles.css';
 
 export const AlgoliaAutocomplete = ({
   appId,
