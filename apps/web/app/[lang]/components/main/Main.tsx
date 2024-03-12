@@ -1,8 +1,9 @@
 import { ImageWithFallback } from '@components/utils/ImageWithFallback';
 import { MainProps } from './Main.types';
-import imgDesktop from 'public/images/home/main/topDesktop.png';
+import imgPeople from 'public/images/home/main/peopleDesktop.png';
+import imgShapes from 'public/images/home/main/shapesBackground.png';
 import imgMobile from 'public/images/home/main/topMobile.png';
-import { H1 } from 'ui/core';
+import { H2 } from 'ui/core';
 import { useTranslations } from 'intl';
 import { Browser } from '@components/shared/browser';
 import { MainLinks } from './MainLinks';
@@ -22,22 +23,17 @@ export const Main = ({ locale }: MainProps) => {
           height: '100%',
           maxHeight: 500,
         }}
-        className="sm:hidden -mt-20 -mb-12 m-auto"
+        className="md:hidden m-auto"
       />
-      <ImageWithFallback
-        src={imgDesktop}
-        alt="image"
-        style={{
-          width: 'auto',
-          height: 'auto',
-          maxHeight: 700,
-        }}
-        className="hidden sm:flex md:hidden -mt-24 -mb-20 m-auto"
-      />
-      <H1
-        label={t('title')}
-        className="md:max-w-lg xl:max-w-2xl z-10 lg:mb-0 xl:mb-0"
-      />
+      <div className="flex">
+        <H2
+          label={t('title')}
+          className="md:max-w-lg xl:max-w-2xl z-10 md:!mb-0 md:!pb-0"
+        />
+        <div className="hidden md:block ml-auto">
+          <ImageWithFallback src={imgPeople} alt="smiling people" />
+        </div>
+      </div>
       <div className="w-full z-10 bg-white p-4 md:p-10 max-w-screen-2xl m-auto">
         <div className="flex w-full">
           <BrowserProvider>
@@ -54,18 +50,12 @@ export const Main = ({ locale }: MainProps) => {
           <MainLinks className="hidden md:flex flex-col justify-center border-s-1 border-gray-medium -my-4 ps-4" />
         </div>
       </div>
+
+      <div className="w-3/5 hidden md:flex ml-auto justify-end">
+        <ImageWithFallback src={imgShapes} alt="decorative shapes" />
+      </div>
       <MainLinks className="hidden sm:flex md:hidden border-t-1 border-gray-medium pt-4 gap-4" />
       <MainLinks className="flex flex-col sm:hidden border-t-1 border-gray-medium pt-4" />
-      <div className="absolute right-0 top-0 -mt-12 lg:-mt-16 xl:-mt-20 xl:me-20  hidden md:flex justify-end w-[90%]">
-        <ImageWithFallback
-          src={imgDesktop}
-          alt="image"
-          style={{
-            width: '40%',
-            height: 'auto',
-          }}
-        />
-      </div>
     </div>
   );
 };
