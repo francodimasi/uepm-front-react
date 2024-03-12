@@ -8,9 +8,7 @@ import { LocaleProps } from 'intl';
 export const AlgoliaSearch = ({
   placeholder = '',
   children,
-
 }: AlgoliaSearchProps & LocaleProps) => {
-
   return (
     <>
       <SearchBox

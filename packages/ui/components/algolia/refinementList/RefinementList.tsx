@@ -16,7 +16,6 @@ export function AlgoliaRefinementList({
   searchable,
   classNames,
 }: RefinementListProps) {
-
   return (
     <RefinementList
       transformItems={transformItems}

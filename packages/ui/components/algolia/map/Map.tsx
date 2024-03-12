@@ -21,7 +21,13 @@ const TileLayer = dynamic(
 
 const Markers = dynamic(() => import('./Markers'), { ssr: false });
 
-export default function AlgoliaMap({ className, center, zoom, minZoom, scrollWheelZoom }: AlgoliaMapProps) {
+export default function AlgoliaMap({
+  className,
+  center,
+  zoom,
+  minZoom,
+  scrollWheelZoom,
+}: AlgoliaMapProps) {
   const [isMounted, setIsMounted] = useState(false);
   useEffect(() => {
     setIsMounted(true);
@@ -33,7 +39,7 @@ export default function AlgoliaMap({ className, center, zoom, minZoom, scrollWhe
         className={className}
         center={center}
         zoom={zoom}
-        minZoom={minZoom} 
+        minZoom={minZoom}
         scrollWheelZoom={scrollWheelZoom}
       >
         <Markers />
