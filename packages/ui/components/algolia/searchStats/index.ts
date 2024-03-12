@@ -1,0 +1,1 @@
+export { AlgoliaSearchStats } from './SearchStats';

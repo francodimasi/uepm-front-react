@@ -1,3 +1,5 @@
+'use client';
+
 import { RefObject, useCallback, useEffect, useRef, useState } from 'react';
 import { useCurrentRefinements } from 'react-instantsearch';
 import type { CurrentRefinementsRenderState } from 'instantsearch.js/es/connectors/current-refinements/connectCurrentRefinements';
@@ -42,7 +44,7 @@ function getAttributeRefinements(
   return item?.refinements || [];
 }
 
-export function FacetDropdown({
+export function AlgoliaFacetDropdown({
   facetAttribute,
   facetText,
   children,

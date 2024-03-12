@@ -1,0 +1,1 @@
+export { AlgoliaFacetDropdown } from './FacetDropdown';
