@@ -20,21 +20,24 @@
     flex-direction: column;
   }
 
-  .map {
-    /* flex: 1; */
-    height: 500px;
-    width: 100%;
+  .marker-pin {
+    width: 30px;
+    height: 30px;
+    border-radius: 50% 50% 50% 0;
+    position: absolute;
+    transform: rotate(-45deg);
+    left: 50%;
+    top: 50%;
+    margin: -10px 0 0 -10px;
   }
 
-  .marker {
+  .marker-pin::after {
+    content: '';
+    width: 20px;
+    height: 20px;
+    margin: 5px 0 0 5px;
+    background: #fff;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    padding: 2px 5px;
-    font-weight: bold;
-    color: #8400ff;
-    background-color: white;
-    border: 2px solid currentColor;
-    transform: translate(-50%, -50%);
+    border-radius: 50%;
   }
 }

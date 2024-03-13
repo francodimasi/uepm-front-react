@@ -6,7 +6,14 @@ import { useTranslations, LocaleProps } from 'intl';
 import { SitesBrowserContext } from './context/provider';
 import { sitesBrowserActions } from './context/reducer';
 import { SiteItem } from '../siteItem';
-import { Algolia, AlgoliaHits, AlgoliaSearch } from 'ui/components';
+import {
+  Algolia,
+  AlgoliaInfiniteHits,
+  AlgoliaSearch,
+  AlgoliaFacetDropdown,
+  AlgoliaRefinementList,
+  AlgoliaSearchStats,
+} from 'ui/components';
 import dynamic from 'next/dynamic';
 import { SitePreviewCard, SitePreviewCardMobile } from '../sitePreviewCard';
 import { Modal } from 'ui/core';
@@ -92,7 +99,7 @@ export const SitesBrowser = ({
   appId,
   indexName,
 }: SitesBrowserProps & LocaleProps) => {
-  const t = useTranslations('sites');
+  const t = useTranslations('sites.browser');
 
   const [modalOpen, setModalOpen] = useState(false);
 
@@ -115,51 +122,80 @@ export const SitesBrowser = ({
   };
 
   return (
-    <Algolia appId={appId} apiKey={apiKey} indexName={indexName}>
-      <div className="w-full h-auto flex flex-col sm:hidden gap-5">
+    <Algolia
+      appId={appId}
+      apiKey={apiKey}
+      indexName={indexName}
+      className="sm:h-screen"
+    >
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
         <Modal open={modalOpen} onClose={handleOnClose} className="z-20">
           <SitePreviewCardMobile site={selectedSite} onClose={handleOnClose} />
         </Modal>
 
         <span onClick={handleOnClick}>CLICK TO OPEN MODAL </span>
-        <AlgoliaSearch
-          placeholder={t('browser.placeholder')}
-          className="h-full searchbox"
-        />
-        <div className="block">
-          <AlgoliaMap className="h-[500px] w-full relative z-10" />
-        </div>
+        <div className="w-full sm:h-[80vh] col-span-1 lg:col-span-1 xl:col-span-1">
+          <div className="w-full col-span-1 lg:col-span-1 xl:col-span-1 grid gap-1 mb-2">
+            <AlgoliaSearch
+              placeholder={t('placeholder')}
+              className="sm:h-auto searchbox"
+            >
+              <div className="inline-flex justify-between w-full">
+                <AlgoliaFacetDropdown
+                  facetAttribute="country"
+                  facetText={t('selectCountry')}
+                >
+                  <AlgoliaRefinementList
+                    attribute="country"
+                    escapeFacetValues={true}
+                    searchable={false}
+                    classNames={{
+                      list: 'space-y-2 w-full',
+                      label:
+                        'relative flex h-6 flex items-center w-full cursor-pointer',
+                      checkbox:
+                        'h-4 w-4 cursor-pointer rounded border-gray-300 text-indigo-600 focus:ring-indigo-600',
+                      labelText: 'ml-2 text-sm leading-6 font-medium text-dark',
+                      count: 'font-normal text-xs ms-1 text-gray-dark',
+                    }}
+                  />
+                </AlgoliaFacetDropdown>
 
-        <div className="w-full h-full relative">
-          <AlgoliaHits
-            className="sm:h-[500px] relative"
-            hit={SiteItem}
-            onChange={handleHits}
-          />
-        </div>
-      </div>
+                <AlgoliaSearchStats className="hidden sm:block text-dark text-base text-end font-normal font-['DMSans'] leading-normal me-5 mb-2" />
+              </div>
+            </AlgoliaSearch>
+          </div>
+          <div className="block sm:hidden col-span-1 lg:col-span-2">
+            <AlgoliaMap
+              className="h-[400px] sm:h-full w-full relative"
+              center={[-34.61, -58.37]}
+              zoom={12}
+              minZoom={4}
+              scrollWheelZoom={true}
+            />
+          </div>
 
-      <div className="hidden w-full h-auto sm:grid sm:grid-cols-3 gap-5">
-        <div className="w-full h-auto flex flex-col col-span-1 gap-5">
-          <AlgoliaSearch
-            placeholder={t('browser.placeholder')}
-            className="h-full searchbox"
-          />
-          <div className="w-full h-[1000px] relative sm:col-span-1 sm:overflow-y-scroll sm:overflow-auto">
-            <AlgoliaHits
-              className="sm:h-[500px] relative"
+          <div className="w-full sm:h-5/6 relative col-span-1 lg:col-span-1 xl:col-span-1 sm:overflow-y-scroll sm:overflow-auto">
+            <AlgoliaInfiniteHits
+              className="relative"
               hit={SiteItem}
               onChange={handleHits}
             />
           </div>
         </div>
         {selectedSite && (
-          <div className="hidden sm:block m-4 sm:row-start-1 sm:col-start-2 sm:col-span-1 z-20">
+          <div className="hidden sm:h-[80vh] sm:block m-4 sm:row-start-1 sm:col-start-2 sm:col-span-1 z-20">
             <SitePreviewCard site={selectedSite}></SitePreviewCard>
           </div>
         )}
         <div className="hidden sm:block sm:row-start-1 sm:col-start-2 sm:col-end-4 z-10">
-          <AlgoliaMap className="h-full z-10 w-full relative" />
+          <AlgoliaMap
+            className="h-full z-10 w-full relative"
+            center={[-34.61, -58.37]}
+            zoom={12}
+            minZoom={4}
+            scrollWheelZoom={true}
+          />
         </div>
       </div>
     </Algolia>
