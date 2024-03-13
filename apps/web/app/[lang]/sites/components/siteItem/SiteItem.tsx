@@ -6,7 +6,7 @@ import { Card, H4, Tag, P2, Button } from 'ui/core';
 import { ImageWithFallback } from '@components/utils/ImageWithFallback';
 import { useTranslations } from 'intl';
 import { SiteItemHitProps, SiteItemProps } from './SiteItem.types';
-import { AlgoliaSite, Site, SiteHit } from '@models/site.types';
+import { AlgoliaSite, SiteHit } from '@models/site.types';
 import { SitesBrowserContext } from '../browser/context/provider';
 import { sitesBrowserActions } from '../browser/context/reducer';
 
@@ -26,7 +26,7 @@ export const SiteItem: React.FC<SiteItemProps & SiteItemHitProps> = ({
 
   const isSelected = selectedSite?.id === siteItem?.id;
 
-  const handleClick = (site: Site) => {
+  const handleClick = (site: AlgoliaSite) => {
     browserDispatch({
       type: sitesBrowserActions.SET_SELECTED_SITE,
       selectedSite: site,
@@ -42,7 +42,7 @@ export const SiteItem: React.FC<SiteItemProps & SiteItemHitProps> = ({
         }`,
       )}
       disabled={false}
-      onClick={handleClick}
+      onClick={() => handleClick(siteItem)}
     >
       <div className="flex-col justify-start items-start gap-4 inline-flex w-full">
         <div className="grow shrink basis-0 flex-col justify-start items-start gap-3 inline-flex w-full">

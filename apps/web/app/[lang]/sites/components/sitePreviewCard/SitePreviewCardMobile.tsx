@@ -20,7 +20,7 @@ export const SitePreviewCardMobile: React.FC<
 > = ({ site, onClose = () => {} }) => {
   const t = useTranslations('sites.site');
 
-  const principalInvestigator = site.physicians.find(
+  const principalInvestigator = site.physicians?.find(
     (p) => p.affiliation.role === 'principal_investigator',
   );
   const principalInvestigatorName = principalInvestigator

@@ -50,11 +50,12 @@ export const SitePreviewCard: React.FC<SitePreviewProps & LocaleProps> = ({
         <P2 className="!leading-relaxed !p-0 !m-0">{site.description}</P2>
       )}
 
-      <SiteSpecializations
-        specializations={site.keywords}
-        title={t('specializations')}
-      />
-
+      {site.keywords?.length > 0 && (
+        <SiteSpecializations
+          specializations={site.keywords}
+          title={t('specializations')}
+        />
+      )}
       {site.perks?.length > 0 && (
         <SitePerks perks={site.perks} title={t('benefits')} />
       )}
