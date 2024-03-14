@@ -1,6 +1,6 @@
 'use client';
 
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 import { SitesBrowserProps } from './SitesBrowser.types';
 import { useTranslations, LocaleProps } from 'intl';
 import { SitesBrowserContext } from './context/provider';
@@ -29,8 +29,6 @@ export const SitesBrowser = ({
 }: SitesBrowserProps & LocaleProps) => {
   const t = useTranslations('sites.browser');
 
-  const [modalOpen, setModalOpen] = useState(false);
-
   const {
     browserState: { sites, selectedSite, showSitePreview },
     browserDispatch,
@@ -39,14 +37,6 @@ export const SitesBrowser = ({
   const handleHits = (hits: any[]) => {
     if (JSON.stringify(hits) === JSON.stringify(sites)) return;
     browserDispatch({ type: sitesBrowserActions.SET_SITES, sites: hits });
-  };
-
-  const handleOnCloseModal = () => {
-    setModalOpen(false);
-  };
-
-  const handleOnClick = () => {
-    setModalOpen(true);
   };
 
   const handleOnClosePreview = () => {
@@ -60,16 +50,16 @@ export const SitesBrowser = ({
       indexName={indexName}
       className="sm:h-screen"
     >
-      <span onClick={handleOnClick} className="pb-10">
-        CLICK TO OPEN MODAL{' '}
-      </span>
-
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
-        {selectedSite && (
-          <Modal open={modalOpen} onClose={handleOnCloseModal} className="z-20">
+        {selectedSite && showSitePreview && (
+          <Modal
+            open={showSitePreview}
+            onClose={handleOnClosePreview}
+            className="z-20"
+          >
             <SitePreviewCardMobile
               site={selectedSite}
-              onClose={handleOnCloseModal}
+              onClose={handleOnClosePreview}
             />
           </Modal>
         )}
@@ -100,7 +90,6 @@ export const SitesBrowser = ({
                     }}
                   />
                 </AlgoliaFacetDropdown>
-
                 <AlgoliaSearchStats className="hidden sm:block text-dark text-base text-end font-normal font-['DMSans'] leading-normal me-5 mb-2" />
               </div>
             </AlgoliaSearch>
