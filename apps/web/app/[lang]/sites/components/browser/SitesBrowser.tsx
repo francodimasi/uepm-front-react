@@ -32,7 +32,7 @@ export const SitesBrowser = ({
   const [modalOpen, setModalOpen] = useState(false);
 
   const {
-    browserState: { sites, selectedSite },
+    browserState: { sites, selectedSite, showSitePreview },
     browserDispatch,
   } = useContext(SitesBrowserContext);
 
@@ -50,10 +50,7 @@ export const SitesBrowser = ({
   };
 
   const handleOnClosePreview = () => {
-    browserDispatch({
-      type: sitesBrowserActions.SET_SELECTED_SITE,
-      selectedSite: undefined,
-    });
+    browserDispatch({ type: sitesBrowserActions.CLOSE_SITE_PREVIEW });
   };
 
   return (
@@ -63,7 +60,10 @@ export const SitesBrowser = ({
       indexName={indexName}
       className="sm:h-screen"
     >
-      <span onClick={handleOnClick}>CLICK TO OPEN MODAL </span>
+      <span onClick={handleOnClick} className="pb-10">
+        CLICK TO OPEN MODAL{' '}
+      </span>
+
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
         {selectedSite && (
           <Modal open={modalOpen} onClose={handleOnCloseModal} className="z-20">
@@ -127,8 +127,8 @@ export const SitesBrowser = ({
             />
           </div>
         </div>
-        {selectedSite && (
-          <div className="hidden sm:h-[80vh] sm:block m-4 sm:row-start-1 sm:col-start-2 sm:col-span-1 z-20">
+        {selectedSite && showSitePreview && (
+          <div className="hidden h-4/5 sm:block m-4 sm:row-start-1 sm:col-start-2 sm:col-span-1 z-20">
             <SitePreviewCard
               site={selectedSite}
               onClose={handleOnClosePreview}
