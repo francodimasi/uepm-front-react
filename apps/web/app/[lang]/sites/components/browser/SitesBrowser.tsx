@@ -136,7 +136,7 @@ export const SitesBrowser = ({
           </div>
         </div>
         {selectedSite && showSitePreview && (
-          <div className="hidden h-3/4 sm:block m-4 sm:row-start-1 sm:col-start-2 sm:col-span-1 z-20 overflow-y-scroll">
+          <div className="hidden sm:h-[80vh] sm:block m-4 sm:row-start-1 sm:col-start-2 sm:col-span-1 z-20 overflow-y-scroll">
             <SitePreviewCard
               site={selectedSite}
               onClose={handleOnClosePreview}
