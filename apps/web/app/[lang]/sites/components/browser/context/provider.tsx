@@ -16,6 +16,7 @@ export const SitesBrowserContext: Context<BrowserContextModel> = createContext(
 
 export const SitesBrowserProvider = (props: any) => {
   const initialState: SitesBrowserState = {
+    showSitePreviewModal: false,
     showSitePreview: false,
     selectedSite: undefined,
     sites: [],

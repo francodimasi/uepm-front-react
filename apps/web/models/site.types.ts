@@ -53,6 +53,7 @@ export type AlgoliaSite = {
     lng: number;
   };
   site_image: string;
+  logo_url: string;
 };
 
 export type SiteHit = Hit & AlgoliaSite;

@@ -58,16 +58,16 @@ export const Modal: React.FC<ModalProps> = ({
                 className,
               )}
             >
-              <div className="text-center">
-                {title && (
+              {title && (
+                <div className="text-center">
                   <Dialog.Title
                     as="h3"
                     className="text-lg font-semibold leading-6 text-dark"
                   >
                     {title}
                   </Dialog.Title>
-                )}
-              </div>
+                </div>
+              )}
               {children}
             </Dialog.Panel>
           </Transition.Child>

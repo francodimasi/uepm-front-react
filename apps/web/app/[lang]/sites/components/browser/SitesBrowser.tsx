@@ -26,11 +26,17 @@ export const SitesBrowser = ({
   apiKey,
   appId,
   indexName,
+  locale,
 }: SitesBrowserProps & LocaleProps) => {
   const t = useTranslations('sites.browser');
 
   const {
-    browserState: { sites, selectedSite, showSitePreview },
+    browserState: {
+      sites,
+      selectedSite,
+      showSitePreview,
+      showSitePreviewModal,
+    },
     browserDispatch,
   } = useContext(SitesBrowserContext);
 
@@ -50,20 +56,21 @@ export const SitesBrowser = ({
       indexName={indexName}
       className="sm:h-screen"
     >
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
-        {selectedSite && showSitePreview && (
-          <Modal
-            open={showSitePreview}
+      {selectedSite && showSitePreviewModal && (
+        <Modal
+          open={showSitePreviewModal}
+          onClose={handleOnClosePreview}
+          className="z-20 rounded-xl mx-2 text-left"
+        >
+          <SitePreviewCardMobile
+            site={selectedSite}
             onClose={handleOnClosePreview}
-            className="z-20"
-          >
-            <SitePreviewCardMobile
-              site={selectedSite}
-              onClose={handleOnClosePreview}
-            />
-          </Modal>
-        )}
+            locale={locale}
+          />
+        </Modal>
+      )}
 
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
         <div className="w-full sm:h-[80vh] col-span-1 lg:col-span-1 xl:col-span-1">
           <div className="w-full col-span-1 lg:col-span-1 xl:col-span-1 grid gap-1 mb-2">
             <AlgoliaSearch
@@ -108,16 +115,28 @@ export const SitesBrowser = ({
             />
           </div>
 
-          <div className="w-full sm:h-5/6 relative col-span-1 lg:col-span-1 xl:col-span-1 sm:overflow-y-scroll sm:overflow-auto">
+          <div className="block sm:hidden w-full sm:h-5/6 relative col-span-1 sm:overflow-y-scroll sm:overflow-auto">
             <AlgoliaInfiniteHits
               className="relative"
               hit={SiteItem}
+              browserDispatchAction={
+                sitesBrowserActions.SET_SELECTED_SITE_MODAL
+              }
+              onChange={handleHits}
+            />
+          </div>
+
+          <div className="hidden sm:block w-full sm:h-5/6 relative col-span-1 sm:overflow-y-scroll sm:overflow-auto">
+            <AlgoliaInfiniteHits
+              className="relative"
+              hit={SiteItem}
+              browserDispatchAction={sitesBrowserActions.SET_SELECTED_SITE}
               onChange={handleHits}
             />
           </div>
         </div>
         {selectedSite && showSitePreview && (
-          <div className="hidden h-4/5 sm:block m-4 sm:row-start-1 sm:col-start-2 sm:col-span-1 z-20">
+          <div className="hidden h-3/4 sm:block m-4 sm:row-start-1 sm:col-start-2 sm:col-span-1 z-20 overflow-y-scroll">
             <SitePreviewCard
               site={selectedSite}
               onClose={handleOnClosePreview}

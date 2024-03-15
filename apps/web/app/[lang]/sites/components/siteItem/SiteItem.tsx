@@ -8,11 +8,11 @@ import { useTranslations } from 'intl';
 import { SiteItemHitProps, SiteItemProps } from './SiteItem.types';
 import { AlgoliaSite, SiteHit } from '@models/site.types';
 import { SitesBrowserContext } from '../browser/context/provider';
-import { sitesBrowserActions } from '../browser/context/reducer';
 
 export const SiteItem: React.FC<SiteItemProps & SiteItemHitProps> = ({
   site,
   hit,
+  selectedSiteAction,
 }) => {
   const t = useTranslations('sites.siteItem');
   const {
@@ -28,7 +28,7 @@ export const SiteItem: React.FC<SiteItemProps & SiteItemHitProps> = ({
 
   const handleClick = (site: AlgoliaSite) => {
     browserDispatch({
-      type: sitesBrowserActions.SET_SELECTED_SITE,
+      type: selectedSiteAction,
       selectedSite: site,
     });
   };

@@ -6,6 +6,7 @@ import { AlgoliaHitsProps } from './Hits.types';
 
 export const AlgoliaInfiniteHits = ({
   hit: HitComponent,
+  browserDispatchAction,
   onChange,
 }: AlgoliaHitsProps) => {
   const { hits, isLastPage, showMore } = useInfiniteHits();
@@ -38,7 +39,10 @@ export const AlgoliaInfiniteHits = ({
       <ul className="ais-InfiniteHits-list">
         {hits.map((hit) => (
           <li key={hit.objectID} className="ais-InfiniteHits-item">
-            <HitComponent hit={hit} />
+            <HitComponent
+              hit={hit}
+              selectedSiteAction={browserDispatchAction}
+            />
           </li>
         ))}
         <li className="ais-InfiniteHits-sentinel h-20" ref={sentinelRef} />
