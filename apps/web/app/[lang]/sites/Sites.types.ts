@@ -18,6 +18,6 @@ export type SiteSpecializationsProps = {
 export type SiteConditionsProps = {
   title: string;
   conditions: string[];
-  locale?: string;
-  seeMore?: string;
+  locale: string;
+  seeMore: string;
 };

@@ -38,7 +38,7 @@ const ReCenter = ({
 
 export default function AlgoliaMap({
   className,
-  center = [-34.61, -58.37],
+  center,
   zoom,
   minZoom,
   scrollWheelZoom,

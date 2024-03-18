@@ -21,6 +21,7 @@ const Page = async ({ params: { lang = defaultLocale, id } }: SiteProps) => {
   const site = await getSiteById(id);
   if (!site) notFound();
   const t = await getTranslations({ lang, namespace: 'sites.site' });
+  const tActions = await getTranslations({ lang, namespace: 'actions' });
   const conditionsList = getSiteConditions(site, lang);
   return (
     <Layout locale={lang}>
@@ -83,9 +84,9 @@ const Page = async ({ params: { lang = defaultLocale, id } }: SiteProps) => {
           {conditionsList.length > 0 && (
             <SiteConditions
               conditions={conditionsList}
-              title={'Estudios Abiertos'}
+              title={t('openStudies')}
               locale={lang}
-              seeMore={`${t('seeMore')}`}
+              seeMore={`${tActions('seeMore')}`}
             />
           )}
         </div>

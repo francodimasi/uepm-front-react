@@ -12,7 +12,7 @@ export type Hit = AlgoliaHit<{
 export type AlgoliaHitsProps = PropsWithClassName & {
   hit: AlgoliaHit<any>;
   onChange: (_hits: AlgoliaHit<any>[]) => void;
-  browserDispatchAction: string;
+  onClick: Function;
 };
 
 export type HitProps = {

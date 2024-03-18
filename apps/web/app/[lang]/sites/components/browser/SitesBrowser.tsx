@@ -15,8 +15,8 @@ import {
   AlgoliaSearchStats,
 } from 'ui/components';
 import dynamic from 'next/dynamic';
-import { SitePreviewCard, SitePreviewCardMobile } from '../sitePreviewCard';
-import { Modal } from 'ui/core';
+import { SitePreviewCard } from '../sitePreviewCard';
+import { Card, Modal } from 'ui/core';
 
 const AlgoliaMap = dynamic(() => import('ui/components/algolia/map/Map'), {
   ssr: false,
@@ -62,7 +62,7 @@ export const SitesBrowser = ({
           onClose={handleOnClosePreview}
           className="z-20 rounded-xl mx-2 text-left"
         >
-          <SitePreviewCardMobile
+          <SitePreviewCard
             site={selectedSite}
             onClose={handleOnClosePreview}
             locale={locale}
@@ -119,8 +119,11 @@ export const SitesBrowser = ({
             <AlgoliaInfiniteHits
               className="relative"
               hit={SiteItem}
-              browserDispatchAction={
-                sitesBrowserActions.SET_SELECTED_SITE_MODAL
+              onClick={(site) =>
+                browserDispatch({
+                  type: sitesBrowserActions.SET_SELECTED_SITE_MODAL,
+                  selectedSite: site,
+                })
               }
               onChange={handleHits}
             />
@@ -130,17 +133,24 @@ export const SitesBrowser = ({
             <AlgoliaInfiniteHits
               className="relative"
               hit={SiteItem}
-              browserDispatchAction={sitesBrowserActions.SET_SELECTED_SITE}
+              onClick={(site) =>
+                browserDispatch({
+                  type: sitesBrowserActions.SET_SELECTED_SITE,
+                  selectedSite: site,
+                })
+              }
               onChange={handleHits}
             />
           </div>
         </div>
         {selectedSite && showSitePreview && (
           <div className="hidden sm:h-[80vh] sm:block m-4 sm:row-start-1 sm:col-start-2 sm:col-span-1 z-20 overflow-y-auto">
-            <SitePreviewCard
-              site={selectedSite}
-              onClose={handleOnClosePreview}
-            ></SitePreviewCard>
+            <Card className="flex flex-col gap-4 items-start justify-normal bg-white !m-0 !p-4">
+              <SitePreviewCard
+                site={selectedSite}
+                onClose={handleOnClosePreview}
+              />
+            </Card>
           </div>
         )}
         <div className="hidden sm:block sm:row-start-1 sm:col-start-2 sm:col-end-4 z-10">

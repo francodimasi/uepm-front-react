@@ -12,12 +12,11 @@ import { SitesBrowserContext } from '../browser/context/provider';
 export const SiteItem: React.FC<SiteItemProps & SiteItemHitProps> = ({
   site,
   hit,
-  selectedSiteAction,
+  onClick,
 }) => {
   const t = useTranslations('sites.siteItem');
   const {
     browserState: { selectedSite },
-    browserDispatch,
   } = useContext(SitesBrowserContext);
 
   const siteItem: AlgoliaSite = site ?? (hit as SiteHit);
@@ -25,13 +24,6 @@ export const SiteItem: React.FC<SiteItemProps & SiteItemHitProps> = ({
   if (!siteItem) return null;
 
   const isSelected = selectedSite?.id === siteItem?.id;
-
-  const handleClick = (site: AlgoliaSite) => {
-    browserDispatch({
-      type: selectedSiteAction,
-      selectedSite: site,
-    });
-  };
 
   return (
     <Card
@@ -42,7 +34,7 @@ export const SiteItem: React.FC<SiteItemProps & SiteItemHitProps> = ({
         }`,
       )}
       disabled={false}
-      onClick={() => handleClick(siteItem)}
+      onClick={() => onClick(siteItem)}
     >
       <div className="flex-col justify-start items-start gap-4 inline-flex w-full">
         <div className="grow shrink basis-0 flex-col justify-start items-start gap-3 inline-flex w-full">

@@ -1,49 +1,100 @@
-import { P2, OfficeBuildingIcon, Card, CloseIcon, P1 } from 'ui/core';
+import {
+  P2,
+  OfficeBuildingIcon,
+  CloseIcon,
+  P1,
+  Button,
+  ShareOutlineIcon,
+  L1,
+} from 'ui/core';
 import { ImageWithFallback } from '@components/utils/ImageWithFallback';
 import { SitePreviewProps } from './SitePreviewCard.types';
 import { SiteSpecializations } from '../SiteSpecializations';
 import { SitePerks } from '../SitePerks';
-import { useTranslations } from 'intl';
+import { LocaleProps, defaultLocale, useTranslations } from 'intl';
+import Link from 'next/link';
 
-export const SitePreviewCard: React.FC<SitePreviewProps> = ({
+export const SitePreviewCard: React.FC<SitePreviewProps & LocaleProps> = ({
   site,
   onClose,
+  locale = defaultLocale,
 }) => {
   const t = useTranslations('sites.site');
 
   return (
-    <Card className="flex flex-col gap-4 items-start justify-normal bg-white !m-0 !p-4">
-      <div className="w-full flex gap-4 items-center justify-start">
+    <>
+      <div className="hidden sm:flex w-full sm:items-center sm:justify-start">
         <ImageWithFallback
           src={site.logo_url}
           width={48}
           height={48}
           alt={'logo'}
         />
-
-        <P1 className="text-base !p-0 !m-0" label={site.name}></P1>
-        <span onClick={onClose} className="self-start ml-auto">
+        <P1
+          className="block font-bold sm:font-normal text-base !p-0  !my-3  sm:!m-0"
+          label={site.name}
+        />
+        <span onClick={onClose} className="hidden sm:block self-start ml-auto">
           <CloseIcon />
         </span>
+      </div>
+      <div className="w-full flex-col sm:gap-4 sm:hidden">
+        <div className="w-full flex justify-between">
+          <ImageWithFallback
+            src={site.logo_url}
+            width={64}
+            height={64}
+            alt={'logo'}
+          />
+          <span onClick={onClose}>
+            <CloseIcon height={19} width={19} />
+          </span>
+        </div>
+        <P1 className="font-bold text-base !p-0 !my-3" label={site.name} />
       </div>
 
       <div className="flex items-baseline gap-2">
         <OfficeBuildingIcon width={16} height={11} />
         <P2 className="text-normal !p-0 !m-0" label={site.address} />
       </div>
-      {site.description && (
-        <P2 className="!leading-relaxed !p-0 !m-0">{site.description}</P2>
-      )}
 
-      {site.keywords?.length > 0 && (
-        <SiteSpecializations
-          specializations={site.keywords}
-          title={t('specializations')}
-        />
-      )}
-      {site.perks?.length > 0 && (
-        <SitePerks perks={site.perks} title={t('benefits')} />
-      )}
-    </Card>
+      <div className="block sm:hidden">
+        {site.url && (
+          <>
+            <P2 className="block text-base font-bold">{t('website')}</P2>
+            <Link href={site.url} target="_blank">
+              <L1 className="font-normal underline" label={site.url} />
+            </Link>{' '}
+          </>
+        )}
+
+        <div className="flex w-full items-center justify-evenly mt-4">
+          <Link href={`/${locale}/sites/${site.id}`} className="w-5/6">
+            <Button size="xs" color="dark" expand="none" className="w-full">
+              <P2 className="!text-sm !font-bold text-white leading-normal !pb-0">
+                {t('seeFullSite')}
+              </P2>
+            </Button>
+          </Link>
+          <ShareOutlineIcon />
+        </div>
+      </div>
+
+      <div className="hidden sm:block">
+        {site.description && (
+          <P2 className="!leading-relaxed !p-0 !m-0">{site.description}</P2>
+        )}
+
+        {site.keywords?.length > 0 && (
+          <SiteSpecializations
+            specializations={site.keywords}
+            title={t('specializations')}
+          />
+        )}
+        {site.perks?.length > 0 && (
+          <SitePerks perks={site.perks} title={t('benefits')} />
+        )}
+      </div>
+    </>
   );
 };

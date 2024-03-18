@@ -1,13 +1,12 @@
 import Link from 'next/link';
 import { H4, L1, P2 } from 'ui/core';
 import { SiteConditionsProps } from '../Sites.types';
-import { defaultLocale } from 'intl';
 
 export const SiteConditions: React.FC<SiteConditionsProps> = ({
   title,
   conditions,
-  locale = defaultLocale,
-  seeMore = 'See More',
+  locale,
+  seeMore,
 }) => {
   return (
     <div className="w-full flex-col justify-start items-start gap-4 inline-flex">

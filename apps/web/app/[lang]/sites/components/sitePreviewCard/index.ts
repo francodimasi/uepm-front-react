@@ -1,2 +1,1 @@
-export { SitePreviewCard } from './SitePreviewCard';
-export { SitePreviewCardMobile } from './SitePreviewCardMobile';
+export { SitePreviewCard } from './SitePreviewCard'
