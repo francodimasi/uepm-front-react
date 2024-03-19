@@ -43,7 +43,7 @@ export const SitesBrowser = ({
       className="sm:h-screen"
     >
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
-        <div className="w-full sm:h-[80vh] col-span-1">
+        <div className="w-full lg:h-[80vh] col-span-1">
           <div className="w-full col-span-1 grid gap-1 mb-2">
             <AlgoliaSearch
               placeholder={t('placeholder')}
@@ -69,7 +69,7 @@ export const SitesBrowser = ({
                     }}
                   />
                 </AlgoliaFacetDropdown>
-                <AlgoliaSearchStats className="hidden sm:block text-dark text-base text-end font-normal font-['DMSans'] leading-normal me-5 mb-2" />
+                <AlgoliaSearchStats className="block text-dark text-base text-end font-normal font-['DMSans'] leading-normal me-5 mb-2" />
               </div>
             </AlgoliaSearch>
           </div>
@@ -90,7 +90,7 @@ export const SitesBrowser = ({
             />
           </div>
 
-          <div className="block w-full lg:h-5/6 relative col-span-1 sm:overflow-y-scroll sm:overflow-auto">
+          <div className="block w-full lg:h-5/6 relative col-span-1 lg:overflow-y-scroll">
             <AlgoliaInfiniteHits
               className="relative"
               hit={SiteItem}
