@@ -3,7 +3,6 @@ import { SitesBrowserState } from './types';
 export const sitesBrowserActions = {
   CLOSE_SITE_PREVIEW: 'closeSitePreview',
   SET_SELECTED_SITE: 'setSelectedSite',
-  SET_SELECTED_SITE_MODAL: 'setSelectedSiteModal',
   SET_SITES: 'setSites',
 };
 
@@ -25,13 +24,6 @@ export const SitesBrowserReducer = (
         showSitePreview: true,
       };
     }
-    case sitesBrowserActions.SET_SELECTED_SITE_MODAL: {
-      return {
-        ...state,
-        selectedSite: action.selectedSite,
-        showSitePreviewModal: true,
-      };
-    }
     case sitesBrowserActions.SET_SITES: {
       return {
         ...state,
@@ -42,7 +34,6 @@ export const SitesBrowserReducer = (
       return {
         ...state,
         showSitePreview: false,
-        showSitePreviewModal: false,
       };
     }
   }

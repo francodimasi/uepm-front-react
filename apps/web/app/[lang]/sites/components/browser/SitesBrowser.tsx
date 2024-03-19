@@ -15,8 +15,7 @@ import {
   AlgoliaSearchStats,
 } from 'ui/components';
 import dynamic from 'next/dynamic';
-import { SitePreviewCard } from '../sitePreviewCard';
-import { Card, Modal } from 'ui/core';
+import { SitePreview } from './SitePreview';
 
 const AlgoliaMap = dynamic(() => import('ui/components/algolia/map/Map'), {
   ssr: false,
@@ -26,27 +25,14 @@ export const SitesBrowser = ({
   apiKey,
   appId,
   indexName,
-  locale,
 }: SitesBrowserProps & LocaleProps) => {
   const t = useTranslations('sites.browser');
 
-  const {
-    browserState: {
-      sites,
-      selectedSite,
-      showSitePreview,
-      showSitePreviewModal,
-    },
-    browserDispatch,
-  } = useContext(SitesBrowserContext);
+  const { browserState, browserDispatch } = useContext(SitesBrowserContext);
 
   const handleHits = (hits: any[]) => {
-    if (JSON.stringify(hits) === JSON.stringify(sites)) return;
+    if (JSON.stringify(hits) === JSON.stringify(browserState.sites)) return;
     browserDispatch({ type: sitesBrowserActions.SET_SITES, sites: hits });
-  };
-
-  const handleOnClosePreview = () => {
-    browserDispatch({ type: sitesBrowserActions.CLOSE_SITE_PREVIEW });
   };
 
   return (
@@ -56,23 +42,9 @@ export const SitesBrowser = ({
       indexName={indexName}
       className="sm:h-screen"
     >
-      {selectedSite && showSitePreviewModal && (
-        <Modal
-          open={showSitePreviewModal}
-          onClose={handleOnClosePreview}
-          className="z-20 rounded-xl mx-2 text-left"
-        >
-          <SitePreviewCard
-            site={selectedSite}
-            onClose={handleOnClosePreview}
-            locale={locale}
-          />
-        </Modal>
-      )}
-
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
-        <div className="w-full sm:h-[80vh] col-span-1 lg:col-span-1 xl:col-span-1">
-          <div className="w-full col-span-1 lg:col-span-1 xl:col-span-1 grid gap-1 mb-2">
+        <div className="w-full sm:h-[80vh] col-span-1">
+          <div className="w-full col-span-1 grid gap-1 mb-2">
             <AlgoliaSearch
               placeholder={t('placeholder')}
               className="sm:h-auto searchbox"
@@ -101,12 +73,15 @@ export const SitesBrowser = ({
               </div>
             </AlgoliaSearch>
           </div>
-          <div className="block sm:hidden col-span-1 lg:col-span-2">
+          <div className="block lg:hidden col-span-1 lg:col-span-2">
             <AlgoliaMap
-              className="h-[400px] sm:h-full w-full relative"
+              className="h-[400px] sm:h-[500px] md:h-[600px] lg:h-full w-full relative"
               center={
-                selectedSite
-                  ? [selectedSite._geoloc.lat, selectedSite._geoloc.lng]
+                browserState.selectedSite
+                  ? [
+                      browserState.selectedSite._geoloc.lat,
+                      browserState.selectedSite._geoloc.lng,
+                    ]
                   : undefined
               }
               zoom={12}
@@ -115,21 +90,7 @@ export const SitesBrowser = ({
             />
           </div>
 
-          <div className="block sm:hidden w-full sm:h-5/6 relative col-span-1 sm:overflow-y-scroll sm:overflow-auto">
-            <AlgoliaInfiniteHits
-              className="relative"
-              hit={SiteItem}
-              onClick={(site) =>
-                browserDispatch({
-                  type: sitesBrowserActions.SET_SELECTED_SITE_MODAL,
-                  selectedSite: site,
-                })
-              }
-              onChange={handleHits}
-            />
-          </div>
-
-          <div className="hidden sm:block w-full sm:h-5/6 relative col-span-1 sm:overflow-y-scroll sm:overflow-auto">
+          <div className="block w-full lg:h-5/6 relative col-span-1 sm:overflow-y-scroll sm:overflow-auto">
             <AlgoliaInfiniteHits
               className="relative"
               hit={SiteItem}
@@ -143,22 +104,17 @@ export const SitesBrowser = ({
             />
           </div>
         </div>
-        {selectedSite && showSitePreview && (
-          <div className="hidden sm:h-[80vh] sm:block m-4 sm:row-start-1 sm:col-start-2 sm:col-span-1 z-20 overflow-y-auto">
-            <Card className="flex flex-col gap-4 items-start justify-normal bg-white !m-0 !p-4">
-              <SitePreviewCard
-                site={selectedSite}
-                onClose={handleOnClosePreview}
-              />
-            </Card>
-          </div>
-        )}
-        <div className="hidden sm:block sm:row-start-1 sm:col-start-2 sm:col-end-4 z-10">
+        <SitePreview />
+
+        <div className="hidden lg:block lg:row-start-1 lg:col-start-2 lg:col-end-4 z-10">
           <AlgoliaMap
             className="h-full z-10 w-full relative"
             center={
-              selectedSite
-                ? [selectedSite._geoloc.lat, selectedSite._geoloc.lng]
+              browserState.selectedSite
+                ? [
+                    browserState.selectedSite._geoloc.lat,
+                    browserState.selectedSite._geoloc.lng,
+                  ]
                 : undefined
             }
             zoom={12}

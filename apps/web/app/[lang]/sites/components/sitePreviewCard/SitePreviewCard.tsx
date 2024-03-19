@@ -23,7 +23,7 @@ export const SitePreviewCard: React.FC<SitePreviewProps & LocaleProps> = ({
 
   return (
     <>
-      <div className="hidden sm:flex w-full sm:items-center sm:justify-start">
+      <div className="hidden lg:flex lg:gap-4 w-full lg:items-center lg:justify-start">
         <ImageWithFallback
           src={site.logo_url}
           width={48}
@@ -31,14 +31,14 @@ export const SitePreviewCard: React.FC<SitePreviewProps & LocaleProps> = ({
           alt={'logo'}
         />
         <P1
-          className="block font-bold sm:font-normal text-base !p-0  !my-3  sm:!m-0"
+          className="block font-bold lg:font-normal text-base !p-0  !my-3  lg:!m-0"
           label={site.name}
         />
-        <span onClick={onClose} className="hidden sm:block self-start ml-auto">
+        <span onClick={onClose} className="hidden lg:block self-start ml-auto">
           <CloseIcon />
         </span>
       </div>
-      <div className="w-full flex-col sm:gap-4 sm:hidden">
+      <div className="w-full flex-col lg:gap-4 lg:hidden">
         <div className="w-full flex justify-between">
           <ImageWithFallback
             src={site.logo_url}
@@ -50,7 +50,7 @@ export const SitePreviewCard: React.FC<SitePreviewProps & LocaleProps> = ({
             <CloseIcon height={19} width={19} />
           </span>
         </div>
-        <P1 className="font-bold text-base !p-0 !my-3" label={site.name} />
+        <P1 className="block font-bold" label={site.name} />
       </div>
 
       <div className="flex items-baseline gap-2">
@@ -58,7 +58,7 @@ export const SitePreviewCard: React.FC<SitePreviewProps & LocaleProps> = ({
         <P2 className="text-normal !p-0 !m-0" label={site.address} />
       </div>
 
-      <div className="block sm:hidden">
+      <div className="block lg:hidden">
         {site.url && (
           <>
             <P2 className="block text-base font-bold">{t('website')}</P2>
@@ -80,10 +80,8 @@ export const SitePreviewCard: React.FC<SitePreviewProps & LocaleProps> = ({
         </div>
       </div>
 
-      <div className="hidden sm:block">
-        {site.description && (
-          <P2 className="!leading-relaxed !p-0 !m-0">{site.description}</P2>
-        )}
+      <div className="hidden lg:block">
+        {site.description && <P2>{site.description}</P2>}
 
         {site.keywords?.length > 0 && (
           <SiteSpecializations
