@@ -7,7 +7,7 @@ import { Layout } from '@components/core/layout/Layout';
 import { getTranslations, defaultLocale } from 'intl';
 import { SiteProps } from './Site.types';
 import { getSiteById } from '@api/sites/requests';
-import { H3, Tag, H4, L1, P2, Avatar} from 'ui/core';
+import { H3, Tag, H4, L1, P2, Avatar } from 'ui/core';
 import { ImageWithFallback } from '@components/utils/ImageWithFallback';
 import { setMetadata } from './helpers';
 import { SiteCard } from './components/SiteCard';
@@ -89,13 +89,16 @@ const Page = async ({ params: { lang = defaultLocale, id } }: SiteProps) => {
           )}
 
           {site.physicians?.some(
-            (p) => p.role === 'principal_investigator' && p.description
+            (p) => p.role === 'principal_investigator' && p.description,
           ) && (
             <div className="w-full pt-14 flex-col justify-start items-start gap-4 inline-flex">
               <div className="self-stretch flex-col justify-start items-start gap-4 flex">
                 <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-14">
                   {site.physicians
-                    .filter((p) => p.role === 'principal_investigator' && p.description)
+                    .filter(
+                      (p) =>
+                        p.role === 'principal_investigator' && p.description,
+                    )
                     .map((py) => (
                       <div
                         key={py.id}
@@ -115,7 +118,9 @@ const Page = async ({ params: { lang = defaultLocale, id } }: SiteProps) => {
                           </div>
                         </div>
                         <div className="self-stretch flex-col justify-start items-start gap-3 flex">
-                          <div className=" w-full text-dark text-sm md:text-base font-normal font-['DMSans'] leading-normal">{py.description}</div>
+                          <div className=" w-full text-dark text-sm md:text-base font-normal font-['DMSans'] leading-normal">
+                            {py.description}
+                          </div>
                         </div>
                       </div>
                     ))}

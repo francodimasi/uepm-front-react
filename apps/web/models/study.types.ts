@@ -1,6 +1,5 @@
 import { Hit } from 'ui/components/algolia/hits/Hits.types';
 
-
 export type StudyHit = Hit & {
   id: string;
   brief_title: string;

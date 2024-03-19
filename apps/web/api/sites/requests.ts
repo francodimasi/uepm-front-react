@@ -7,7 +7,7 @@ export const getSiteById = async (id: string, lang: string): Promise<Site> => {
     const data = await res.json();
     return data ? data : null;
   } catch (error) {
-    console.log(error); 
+    console.log(error);
     return null;
   }
 };

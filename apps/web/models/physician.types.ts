@@ -7,7 +7,7 @@ export type Physician = {
   description: string;
   role: string;
   avatar: string;
-  affiliation: PhysicianAffiliation; 
+  affiliation: PhysicianAffiliation;
 };
 
 type PhysicianAffiliation = {
