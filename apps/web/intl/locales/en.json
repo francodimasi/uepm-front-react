@@ -186,6 +186,7 @@
     "site": {
       "specializations": "Specializations",
       "benefits": "Patients Benefits",
+      "principalInvestigator": "Principal Investigator",
       "physicians": "Investigadores",
       "openStudies": "Estudios abiertos",
       "recruiting": "Recruiting",

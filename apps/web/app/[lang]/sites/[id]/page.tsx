@@ -7,17 +7,15 @@ import { Layout } from '@components/core/layout/Layout';
 import { getTranslations, defaultLocale } from 'intl';
 import { SiteProps } from './Site.types';
 import { getSiteById } from '@api/sites/requests';
-import { H3, Tag, H4, L1, P2 } from 'ui/core';
+import { H3, Tag, H4, L1, P2, Avatar} from 'ui/core';
 import { ImageWithFallback } from '@components/utils/ImageWithFallback';
-import { studyStatus } from './constants';
-import { setMetadata, getSiteConditions } from './helpers';
+import { setMetadata } from './helpers';
 import { SiteCard } from './components/SiteCard';
 
 const Page = async ({ params: { lang = defaultLocale, id } }: SiteProps) => {
-  const site = await getSiteById(id);
+  const site = await getSiteById(id, lang);
   if (!site) notFound();
   const t = await getTranslations({ lang, namespace: 'sites.site' });
-  const conditionsList = getSiteConditions(site, lang);
   return (
     <Layout locale={lang}>
       <div className="grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-4 gap-14">
@@ -33,9 +31,7 @@ const Page = async ({ params: { lang = defaultLocale, id } }: SiteProps) => {
               label={site.name}
               className="my-0 sm:my-0 lg:my-0 xl:my-0 !pb-0"
             />
-            {site.studies.some(
-              (study) => study.status === studyStatus.RECRUITING,
-            ) && (
+            {site.recruiting && (
               <div className="justify-start items-start gap-2 inline-flex">
                 <Tag
                   text={t('recruiting')}
@@ -92,6 +88,42 @@ const Page = async ({ params: { lang = defaultLocale, id } }: SiteProps) => {
             </div>
           )}
 
+          {site.physicians?.some(
+            (p) => p.role === 'principal_investigator' && p.description
+          ) && (
+            <div className="w-full pt-14 flex-col justify-start items-start gap-4 inline-flex">
+              <div className="self-stretch flex-col justify-start items-start gap-4 flex">
+                <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-14">
+                  {site.physicians
+                    .filter((p) => p.role === 'principal_investigator' && p.description)
+                    .map((py) => (
+                      <div
+                        key={py.id}
+                        className="flex-col justify-start items-start gap-6 inline-flex"
+                      >
+                        <div className="self-stretch justify-start items-center gap-4 inline-flex">
+                          <Avatar
+                            size="lg"
+                            imageUrl={py.avatar}
+                            alt={`${py.last_name} ${py.first_name}`}
+                          />
+                          <div className="flex-col justify-start items-start gap-1 inline-flex">
+                            <p className="text-primary-dark text-sm md:text-base font-normal font-['DMSans'] uppercase leading-tight">
+                              {t('principalInvestigator')}
+                            </p>
+                            <p className="text-primary text-xl md:text-2xl font-semibold font-['Lexend'] leading-7">{`${py.first_name} ${py.last_name}`}</p>
+                          </div>
+                        </div>
+                        <div className="self-stretch flex-col justify-start items-start gap-3 flex">
+                          <div className=" w-full text-dark text-sm md:text-base font-normal font-['DMSans'] leading-normal">{py.description}</div>
+                        </div>
+                      </div>
+                    ))}
+                </div>
+              </div>
+            </div>
+          )}
+
           {site.physicians?.length > 0 && (
             <div className="w-full pt-14 flex-col justify-start items-start gap-4 inline-flex">
               <H4
@@ -109,21 +141,24 @@ const Page = async ({ params: { lang = defaultLocale, id } }: SiteProps) => {
             </div>
           )}
 
-          {conditionsList.length > 0 && (
+          {site.study_conditions.length > 0 && (
             <div className="w-full pt-14 flex-col justify-start items-start gap-4 inline-flex">
               <H4
-                label="Estudios Abiertos"
+                label={t('openStudies')}
                 className="text-primary my-0 lg:my-0"
               />
               <div className="w-full grid sm:grid-cols-2 gap-x-16 gap-y-2 pb-3">
-                {conditionsList.map((condition, index) => (
-                  <div
-                    key={index}
-                    className=" self-stretch justify-start items-center gap-2 inline-flex"
-                  >
-                    <P2 className="!leading-relaxed !m-0">{`${condition}`}</P2>
-                  </div>
-                ))}
+                {site.study_conditions.map(
+                  (condition, index) =>
+                    condition !== '' && (
+                      <div
+                        key={index}
+                        className=" self-stretch justify-start items-center gap-2 inline-flex"
+                      >
+                        <P2 className="!leading-relaxed !m-0">{`${condition}`}</P2>
+                      </div>
+                    ),
+                )}
               </div>
               <div className="justify-center items-center inline-flex">
                 <Link href="/" locale={lang}>
@@ -161,9 +196,9 @@ export default Page;
 
 // TODO : Define and generate metadata
 export async function generateMetadata({
-  params: { id },
+  params: { id, lang },
 }: SiteProps): Promise<Metadata> {
-  const site = await getSiteById(id);
+  const site = await getSiteById(id, lang);
 
   if (!site) notFound();
 
