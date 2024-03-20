@@ -15,7 +15,8 @@ const MarkerClusterGroup = dynamic(
 const createClusterCustomIcon = function (cluster: any) {
   return L.divIcon({
     html: `<span><b>${cluster.getChildCount()}</b></span>`,
-    className: '!flex justify-center items-center text-light rounded bg-primary-dark',
+    className:
+      '!flex justify-center items-center text-light rounded bg-primary-dark',
     iconSize: L.point(40, 40, true),
   });
 };
