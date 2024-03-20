@@ -1,1 +1,1 @@
-export { default as AlgoliaMap } from './Map';
+export { AlgoliaMap } from './Map';

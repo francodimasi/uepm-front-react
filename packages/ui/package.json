@@ -36,6 +36,7 @@
     "react-instantsearch-core": "^7.5.3",
     "react-instantsearch-hooks-web": "^6.47.3",
     "react-leaflet": "^4.2.1",
+    "react-leaflet-cluster": "^2.1.0",
     "react-paginate": "8.1.3",
     "tailwind-merge": "^2.2.1"
   }
