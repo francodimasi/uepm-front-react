@@ -1,6 +1,6 @@
 import { Layout } from '@components/core/layout/Layout';
 import { SitesBrowserProvider } from './components/browser/context/provider';
-import { SitesBrowser } from './components/browser/SitesBrowser';
+import { SitesBrowser } from './components/browser';
 import { defaultLocale } from 'intl';
 
 export default function Page({ params: { lang = defaultLocale } }) {

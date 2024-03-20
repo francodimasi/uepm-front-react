@@ -5,8 +5,32 @@
   }
 
   /* Autocomplete */
+  .aa-Form {
+    border: none;
+    border-bottom: 1px solid #d9d9d9;
+    border-radius: 0;
+    box-shadow: none;
+    --aa-panel-border-color-alpha: 0;
+    --aa-input-border-color-alpha: 0;
+  }
+
+  .aa-SubmitIcon {
+    color: #020001 !important;
+  }
 
   /* Serachbox */
+  .ais-SearchBox-form,
+  .ais-SearchBox-input {
+    width: 100%;
+  }
+
+  .ais-SearchBox-input {
+  }
+
+  .ais-SearchBox-submitIcon {
+    color: #020001 !important;
+  }
+
   .ais-SearchBox-input::-webkit-search-cancel-button,
   .ais-SearchBox-input::-webkit-search-decoration {
     -webkit-appearance: none;
@@ -21,21 +45,22 @@
   }
 
   .marker-pin {
-    width: 30px;
-    height: 30px;
+    width: 28px;
+    height: 28px;
     border-radius: 50% 50% 50% 0;
     position: absolute;
     transform: rotate(-45deg);
     left: 50%;
     top: 50%;
     margin: -10px 0 0 -10px;
+    background-color: var(--color-primary-dark);
   }
 
   .marker-pin::after {
     content: '';
     width: 20px;
     height: 20px;
-    margin: 5px 0 0 5px;
+    margin: 4px 0 0 4px;
     background: #fff;
     position: absolute;
     border-radius: 50%;

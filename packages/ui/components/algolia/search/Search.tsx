@@ -13,7 +13,7 @@ export const AlgoliaSearch = ({
     <>
       <SearchBox
         placeholder={placeholder}
-        className="searchbox "
+        className="searchbox"
         classNames={{
           root: 'w-full h-9 border-b border-dark border-opacity-30 mb-3',
           submit: 'appearence-none absolute',

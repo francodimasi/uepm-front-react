@@ -14,7 +14,7 @@ export function AlgoliaSearchStats({ className }: AlgoliaSearchStatsProps) {
           return nbHits > 0
             ? nbHits > 1
               ? `${t('found')} ${nbHits!.toLocaleString()} ${t('sites')}`
-              : `${t('found')}  ${nbHits!.toLocaleString()} ${t('site')} `
+              : `${t('found')} ${nbHits!.toLocaleString()} ${t('site')} `
             : t('notFound');
         },
       }}

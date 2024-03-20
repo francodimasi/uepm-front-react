@@ -1,6 +1,7 @@
 'use client';
 
 import { useContext } from 'react';
+import dynamic from 'next/dynamic';
 import { SitesBrowserProps } from './SitesBrowser.types';
 import { useTranslations, LocaleProps } from 'intl';
 import { SitesBrowserContext } from './context/provider';
@@ -14,11 +15,13 @@ import {
   AlgoliaRefinementList,
   AlgoliaSearchStats,
 } from 'ui/components';
-import dynamic from 'next/dynamic';
 
-const AlgoliaMap = dynamic(() => import('ui/components/algolia/map/Map'), {
-  ssr: false,
-});
+const AlgoliaMap = dynamic(
+  () => import('ui/components/algolia/map').then((module) => module.AlgoliaMap),
+  {
+    ssr: false,
+  },
+);
 
 export const SitesBrowser = ({
   apiKey,
@@ -51,7 +54,7 @@ export const SitesBrowser = ({
               placeholder={t('placeholder')}
               className="sm:h-auto searchbox"
             >
-              <div className="inline-flex justify-between w-full">
+              <div className="flex items-center justify-between w-full">
                 <AlgoliaFacetDropdown
                   facetAttribute="country"
                   facetText={t('selectCountry')}
@@ -65,14 +68,13 @@ export const SitesBrowser = ({
                       label:
                         'relative flex h-6 flex items-center w-full cursor-pointer',
                       checkbox:
-                        'h-4 w-4 cursor-pointer rounded border-gray-300 text-indigo-600 focus:ring-indigo-600',
+                        'h-4 w-4 cursor-pointer rounded border-gray-300 text-primary focus:ring-0 focus:ring-offset-0',
                       labelText: 'ml-2 text-sm leading-6 font-medium text-dark',
                       count: 'font-normal text-xs ms-1 text-gray-dark',
                     }}
                   />
                 </AlgoliaFacetDropdown>
-
-                <AlgoliaSearchStats className="hidden sm:block text-dark text-base text-end font-normal font-['DMSans'] leading-normal me-5 mb-2" />
+                <AlgoliaSearchStats className="hidden sm:flex text-dark text-sm text-end font-normal font-['DMSans'] leading-normal me-5" />
               </div>
             </AlgoliaSearch>
           </div>
@@ -81,11 +83,12 @@ export const SitesBrowser = ({
               className="h-[400px] sm:h-full w-full relative"
               center={[-34.61, -58.37]}
               zoom={12}
-              minZoom={4}
+              minZoom={2}
+              maxZoom={16}
               scrollWheelZoom={true}
+              clusters
             />
           </div>
-
           <div className="w-full sm:h-5/6 relative col-span-1 lg:col-span-1 xl:col-span-1 sm:overflow-y-scroll sm:overflow-auto">
             <AlgoliaInfiniteHits
               className="relative"
@@ -99,8 +102,10 @@ export const SitesBrowser = ({
             className="h-full z-10 w-full relative"
             center={[-34.61, -58.37]}
             zoom={12}
-            minZoom={4}
+            minZoom={2}
+            maxZoom={16}
             scrollWheelZoom={true}
+            clusters
           />
         </div>
       </div>
