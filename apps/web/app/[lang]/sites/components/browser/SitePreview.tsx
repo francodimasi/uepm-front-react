@@ -27,7 +27,6 @@ export const SitePreview = () => {
               >
                 <SitePreviewContent
                   site={browserState.selectedSite}
-                  onClose={handleOnClose}
                   locale={locale}
                 />
               </Modal>

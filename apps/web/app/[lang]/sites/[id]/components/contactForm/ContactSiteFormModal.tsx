@@ -83,7 +83,7 @@ export const ContactSiteFormModal: React.FC<ContactSiteFormModalProps> = ({
           <H4>{t('thanks')}</H4>
         </div>
       ) : (
-        <div className={'w-full'}>
+        <div className="w-full">
           <form className="flex flex-col" onSubmit={handleSubmit(onSubmit)}>
             <div className="flex flex-col">
               <Controller

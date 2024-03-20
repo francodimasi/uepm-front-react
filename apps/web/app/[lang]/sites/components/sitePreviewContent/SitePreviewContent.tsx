@@ -37,17 +37,12 @@ export const SitePreviewContent: React.FC<
         </span>
       </div>
       <div className="w-full flex-col lg:gap-4 lg:hidden">
-        <div className="w-full flex justify-between">
-          <ImageWithFallback
-            src={site.logo_url}
-            width={64}
-            height={64}
-            alt={'logo'}
-          />
-          <span onClick={onClose}>
-            <CloseIcon height={19} width={19} />
-          </span>
-        </div>
+        <ImageWithFallback
+          src={site.logo_url}
+          width={64}
+          height={64}
+          alt={'logo'}
+        />
         <P1 className="block font-bold" label={site.name} />
       </div>
 

@@ -5,5 +5,5 @@ export type ModalProps = PropsWithChildren &
   PropsWithClassName & {
     title?: string;
     open: boolean;
-    onClose: () => void;
+    onClose: Function;
   };
