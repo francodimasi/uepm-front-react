@@ -7,10 +7,9 @@ import { Layout } from '@components/core/layout/Layout';
 import { getTranslations, defaultLocale } from 'intl';
 import { SiteProps } from './Site.types';
 import { getSiteById } from '@api/sites/requests';
-import { H3, Tag, P2 } from 'ui/core';
+import { H3, Tag, H4, P2, Avatar } from 'ui/core';
 import { ImageWithFallback } from '@components/utils/ImageWithFallback';
-import { studyStatus } from './constants';
-import { setMetadata, getSiteConditions } from './helpers';
+import { setMetadata } from './helpers';
 import { SiteCard } from './components/SiteCard';
 import { SiteSpecializations } from '../components/SiteSpecializations';
 import { SitePerks } from '../components/SitePerks';
@@ -18,11 +17,10 @@ import { SitePhysicians } from '../components/SitePhysicians';
 import { SiteConditions } from '../components/SiteConditions';
 
 const Page = async ({ params: { lang = defaultLocale, id } }: SiteProps) => {
-  const site = await getSiteById(id);
+  const site = await getSiteById(id, lang);
   if (!site) notFound();
   const t = await getTranslations({ lang, namespace: 'sites.site' });
   const tActions = await getTranslations({ lang, namespace: 'actions' });
-  const conditionsList = getSiteConditions(site, lang);
   return (
     <Layout locale={lang}>
       <div className="grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-4 gap-14">
@@ -38,9 +36,7 @@ const Page = async ({ params: { lang = defaultLocale, id } }: SiteProps) => {
               label={site.name}
               className="my-0 sm:my-0 lg:my-0 xl:my-0 !pb-0"
             />
-            {site.studies?.some(
-              (study) => study.status === studyStatus.RECRUITING,
-            ) && (
+            {site.recruiting && (
               <div className="justify-start items-start gap-2 inline-flex">
                 <Tag
                   text={t('recruiting')}
@@ -74,16 +70,56 @@ const Page = async ({ params: { lang = defaultLocale, id } }: SiteProps) => {
             <SitePerks perks={site.perks} title={t('benefits')} />
           )}
 
+          {site.physicians?.some(
+            (p) => p.role === 'principal_investigator' && p.description,
+          ) && (
+            <div className="w-full pt-14 flex-col justify-start items-start gap-4 inline-flex">
+              <div className="self-stretch flex-col justify-start items-start gap-4 flex">
+                <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-14">
+                  {site.physicians
+                    .filter(
+                      (p) =>
+                        p.role === 'principal_investigator' && p.description,
+                    )
+                    .map((py) => (
+                      <div
+                        key={py.id}
+                        className="flex-col justify-start items-start gap-6 inline-flex"
+                      >
+                        <div className="self-stretch justify-start items-center gap-4 inline-flex">
+                          <Avatar
+                            size="lg"
+                            imageUrl={py.avatar}
+                            alt={`${py.last_name} ${py.first_name}`}
+                          />
+                          <div className="flex-col justify-start items-start gap-1 inline-flex">
+                            <P2 className="text-primary-dark uppercase leading-tight m-0 p-0 sm:m-0 sm:p-0 lg:m-0 lg:p-0">
+                              {t('principalInvestigator')}
+                            </P2>
+                            <H4 className="text-primary leading-7 m-0 p-0 lg:p-0 lg:m-0">{`${py.first_name} ${py.last_name}`}</H4>
+                          </div>
+                        </div>
+                        <div className="self-stretch flex-col justify-start items-start gap-3 flex w-full">
+                          <P2 className="leading-normal m-0 p-0 lg:p-0 lg:m-0">
+                            {py.description}
+                          </P2>
+                        </div>
+                      </div>
+                    ))}
+                </div>
+              </div>
+            </div>
+          )}
+
           {site.physicians?.length > 0 && (
             <SitePhysicians
               physicians={site.physicians}
               title={t('physicians')}
             />
           )}
-
-          {conditionsList.length > 0 && (
+          {site.study_conditions.length > 0 && (
             <SiteConditions
-              conditions={conditionsList}
+              conditions={site.study_conditions}
               title={t('openStudies')}
               locale={lang}
               seeMore={`${tActions('seeMore')}`}
@@ -118,9 +154,9 @@ export default Page;
 
 // TODO : Define and generate metadata
 export async function generateMetadata({
-  params: { id },
+  params: { id, lang },
 }: SiteProps): Promise<Metadata> {
-  const site = await getSiteById(id);
+  const site = await getSiteById(id, lang);
 
   if (!site) notFound();
 

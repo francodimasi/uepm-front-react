@@ -40,16 +40,14 @@ export const SiteItem: React.FC<SiteItemProps & SiteItemHitProps> = ({
         <div className="grow shrink basis-0 flex-col justify-start items-start gap-3 inline-flex w-full">
           <div className="self-stretch flex-col justify-start items-start flex ">
             <div className="flex justify-between align-middle flex-row w-full">
-              {siteItem.username ? (
-                <P2 className="!p-0 self-stretch text-primary-dark text-sm lg:text-base font-light font-['DMSans'] uppercase leading-none">
+              {siteItem.username && (
+                <P2 className="!p-0 self-stretch text-primary-dark !text-sm 2xl:text-base uppercase leading-none">
                   {siteItem.username}
                 </P2>
-              ) : (
-                <div></div>
               )}
               {siteItem.country_flag && (
                 <ImageWithFallback
-                  className="h-5 w-5 rounded-full my-auto object-cover "
+                  className="h-5 w-5 rounded-full my-auto object-cover"
                   src={siteItem.country_flag}
                   alt={siteItem.country}
                   width={16}
@@ -57,7 +55,7 @@ export const SiteItem: React.FC<SiteItemProps & SiteItemHitProps> = ({
                 />
               )}
             </div>
-            <H4 className="font-['DMSans'] line-clamp-4 lg:line-clamp-2 !my-0 !py-0 !text-xl !leading-tight lg:!text-2xl 2xl:!text-2xl lg:!leading-8'">
+            <H4 className="line-clamp-4 lg:line-clamp-2 !my-0 !py-0 !text-sm !leading-tight xl:!text-lg 2xl:!text-xl lg:!leading-8'">
               {siteItem.name}
             </H4>
           </div>

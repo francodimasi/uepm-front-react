@@ -1,6 +1,7 @@
 'use client';
 
 import { useContext } from 'react';
+import dynamic from 'next/dynamic';
 import { SitesBrowserProps } from './SitesBrowser.types';
 import { useTranslations, LocaleProps } from 'intl';
 import { SitesBrowserContext } from './context/provider';
@@ -14,12 +15,14 @@ import {
   AlgoliaRefinementList,
   AlgoliaSearchStats,
 } from 'ui/components';
-import dynamic from 'next/dynamic';
 import { SitePreview } from './SitePreview';
 
-const AlgoliaMap = dynamic(() => import('ui/components/algolia/map/Map'), {
-  ssr: false,
-});
+const AlgoliaMap = dynamic(
+  () => import('ui/components/algolia/map').then((module) => module.AlgoliaMap),
+  {
+    ssr: false,
+  },
+);
 
 export const SitesBrowser = ({
   apiKey,
@@ -49,7 +52,7 @@ export const SitesBrowser = ({
               placeholder={t('placeholder')}
               className="sm:h-auto searchbox"
             >
-              <div className="inline-flex justify-between w-full">
+              <div className="flex items-center justify-between w-full">
                 <AlgoliaFacetDropdown
                   facetAttribute="country"
                   facetText={t('selectCountry')}
@@ -63,7 +66,7 @@ export const SitesBrowser = ({
                       label:
                         'relative flex h-6 flex items-center w-full cursor-pointer',
                       checkbox:
-                        'h-4 w-4 cursor-pointer rounded border-gray-300 text-indigo-600 focus:ring-indigo-600',
+                        'h-4 w-4 cursor-pointer rounded border-gray-300 text-primary focus:ring-0 focus:ring-offset-0',
                       labelText: 'ml-2 text-sm leading-6 font-medium text-dark',
                       count: 'font-normal text-xs ms-1 text-gray-dark',
                     }}
@@ -85,8 +88,10 @@ export const SitesBrowser = ({
                   : undefined
               }
               zoom={12}
-              minZoom={4}
+              minZoom={2}
+              maxZoom={16}
               scrollWheelZoom={true}
+              clusters
             />
           </div>
 
@@ -118,8 +123,10 @@ export const SitesBrowser = ({
                 : undefined
             }
             zoom={12}
-            minZoom={4}
+            minZoom={2}
+            maxZoom={16}
             scrollWheelZoom={true}
+            clusters
           />
         </div>
       </div>
