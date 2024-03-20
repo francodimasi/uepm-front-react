@@ -1,5 +1,5 @@
 import { Card, Modal } from 'ui/core';
-import { SitePreviewCard } from '../sitePreviewCard';
+import { SitePreviewContent } from '../sitePreviewContent';
 import { SitesBrowserContext } from './context/provider';
 import { useContext } from 'react';
 import { sitesBrowserActions } from './context/reducer';
@@ -9,7 +9,7 @@ export const SitePreview = () => {
   const { browserState, browserDispatch } = useContext(SitesBrowserContext);
   const { currentBreakpoint, isMobile } = useTailwindBreakpoints();
 
-  const handleOnClosePreview = () => {
+  const handleOnClose = () => {
     browserDispatch({ type: sitesBrowserActions.CLOSE_SITE_PREVIEW });
   };
 
@@ -22,12 +22,12 @@ export const SitePreview = () => {
             <div className="block lg:hidden">
               <Modal
                 open={browserState.showSitePreview}
-                onClose={handleOnClosePreview}
+                onClose={handleOnClose}
                 className="z-20 rounded-xl mx-2 text-left"
               >
-                <SitePreviewCard
+                <SitePreviewContent
                   site={browserState.selectedSite}
-                  onClose={handleOnClosePreview}
+                  onClose={handleOnClose}
                   locale={locale}
                 />
               </Modal>
@@ -35,9 +35,9 @@ export const SitePreview = () => {
           )}
           <div className="hidden lg:h-[80vh] lg:block m-4 lg:row-start-1 lg:col-start-2 lg:col-span-1 z-20 overflow-y-auto">
             <Card className="flex flex-col gap-4 items-start justify-normal bg-white !m-0 !p-4">
-              <SitePreviewCard
+              <SitePreviewContent
                 site={browserState.selectedSite}
-                onClose={handleOnClosePreview}
+                onClose={handleOnClose}
               />
             </Card>
           </div>

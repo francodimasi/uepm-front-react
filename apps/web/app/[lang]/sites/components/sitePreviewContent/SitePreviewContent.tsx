@@ -8,17 +8,15 @@ import {
   L1,
 } from 'ui/core';
 import { ImageWithFallback } from '@components/utils/ImageWithFallback';
-import { SitePreviewProps } from './SitePreviewCard.types';
+import { SitePreviewContentProps } from './SitePreviewContent.types';
 import { SiteSpecializations } from '../SiteSpecializations';
 import { SitePerks } from '../SitePerks';
 import { LocaleProps, defaultLocale, useTranslations } from 'intl';
 import Link from 'next/link';
 
-export const SitePreviewCard: React.FC<SitePreviewProps & LocaleProps> = ({
-  site,
-  onClose,
-  locale = defaultLocale,
-}) => {
+export const SitePreviewContent: React.FC<
+  SitePreviewContentProps & LocaleProps
+> = ({ site, onClose, locale = defaultLocale }) => {
   const t = useTranslations('sites.site');
 
   return (

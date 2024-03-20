@@ -1,6 +1,6 @@
 import { AlgoliaSite } from '@models/site.types';
 
-export type SitePreviewProps = {
+export type SitePreviewContentProps = {
   site: AlgoliaSite;
-  onClose: () => void;
+  onClose: Function;
 };

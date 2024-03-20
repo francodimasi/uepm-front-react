@@ -31,10 +31,13 @@ export const SitesBrowser = ({
 }: SitesBrowserProps & LocaleProps) => {
   const t = useTranslations('sites.browser');
 
-  const { browserState, browserDispatch } = useContext(SitesBrowserContext);
+  const {
+    browserState: { sites, selectedSite },
+    browserDispatch,
+  } = useContext(SitesBrowserContext);
 
   const handleHits = (hits: any[]) => {
-    if (JSON.stringify(hits) === JSON.stringify(browserState.sites)) return;
+    if (JSON.stringify(hits) === JSON.stringify(sites)) return;
     browserDispatch({ type: sitesBrowserActions.SET_SITES, sites: hits });
   };
 
@@ -80,11 +83,8 @@ export const SitesBrowser = ({
             <AlgoliaMap
               className="h-[400px] sm:h-[500px] md:h-[600px] lg:h-full w-full relative"
               center={
-                browserState.selectedSite
-                  ? [
-                      browserState.selectedSite._geoloc.lat,
-                      browserState.selectedSite._geoloc.lng,
-                    ]
+                selectedSite
+                  ? [selectedSite._geoloc.lat, selectedSite._geoloc.lng]
                   : undefined
               }
               zoom={12}
@@ -115,11 +115,8 @@ export const SitesBrowser = ({
           <AlgoliaMap
             className="h-full z-10 w-full relative"
             center={
-              browserState.selectedSite
-                ? [
-                    browserState.selectedSite._geoloc.lat,
-                    browserState.selectedSite._geoloc.lng,
-                  ]
+              selectedSite
+                ? [selectedSite._geoloc.lat, selectedSite._geoloc.lng]
                 : undefined
             }
             zoom={12}
