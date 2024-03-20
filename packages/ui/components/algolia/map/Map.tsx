@@ -3,7 +3,6 @@
 import dynamic from 'next/dynamic';
 import { AlgoliaMapProps } from './Map.types';
 import 'leaflet/dist/leaflet.css';
-import { LatLngExpression } from 'leaflet';
 
 const MapContainer = dynamic(
   () => import('react-leaflet').then((module) => module.MapContainer),
@@ -26,22 +25,20 @@ const TileLayer = dynamic(
   },
 );
 
-const Markers = dynamic(() => import('./Markers'), { ssr: false });
+// //https://stackoverflow.com/questions/64665827/react-leaflet-center-attribute-does-not-change-when-the-center-state-changes
+// const ReCenter = ({
+//   center = [-34.61, -58.37],
+//   zoom,
+// }: {
+//   center?: LatLngExpression;
+//   zoom?: number;
+// }) => {
+//   const map = useMap();
+//   map.setView(center, zoom);
+//   return null;
+// };
 
-//https://stackoverflow.com/questions/64665827/react-leaflet-center-attribute-does-not-change-when-the-center-state-changes
-const ReCenter = ({
-  center = [-34.61, -58.37],
-  zoom,
-}: {
-  center?: LatLngExpression;
-  zoom?: number;
-}) => {
-  const map = useMap();
-  map.setView(center, zoom);
-  return null;
-};
-
-export default function AlgoliaMap({
+export const AlgoliaMap = ({
   className,
   center,
   zoom,
@@ -49,19 +46,21 @@ export default function AlgoliaMap({
   maxZoom,
   scrollWheelZoom,
   clusters = false,
-}: AlgoliaMapProps) => (
-  <MapContainer
-    className={className}
-    center={center}
-    zoom={zoom}
-    minZoom={minZoom}
-    maxZoom={maxZoom}
-    scrollWheelZoom={scrollWheelZoom}
-  >
-    <MapContent clusters={clusters} />
-    <TileLayer
-      attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-      url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-    />
-  </MapContainer>
-);
+}: AlgoliaMapProps) => {
+  return (
+    <MapContainer
+      className={className}
+      center={center}
+      zoom={zoom}
+      minZoom={minZoom}
+      maxZoom={maxZoom}
+      scrollWheelZoom={scrollWheelZoom}
+    >
+      <MapContent clusters={clusters} />
+      <TileLayer
+        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+      />
+    </MapContainer>
+  );
+};
