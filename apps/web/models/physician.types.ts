@@ -1,11 +1,13 @@
 export type Physician = {
-  affiliation: PhysicianAffiliation;
-  email: string;
-  first_name: string;
   id: number;
+  first_name: string;
   last_name: string;
-  specializations: string[];
-  verified: boolean;
+  email: string;
+  phone: string;
+  description: string;
+  role: string;
+  avatar: string;
+  affiliation: PhysicianAffiliation;
 };
 
 type PhysicianAffiliation = {
