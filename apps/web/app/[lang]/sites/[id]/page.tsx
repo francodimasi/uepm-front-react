@@ -111,16 +111,16 @@ const Page = async ({ params: { lang = defaultLocale, id } }: SiteProps) => {
                             alt={`${py.last_name} ${py.first_name}`}
                           />
                           <div className="flex-col justify-start items-start gap-1 inline-flex">
-                            <p className="text-primary-dark text-sm md:text-base font-normal font-['DMSans'] uppercase leading-tight">
+                            <P2 className="text-primary-dark uppercase leading-tight m-0 p-0 sm:m-0 sm:p-0 lg:m-0 lg:p-0">
                               {t('principalInvestigator')}
-                            </p>
-                            <p className="text-primary text-xl md:text-2xl font-semibold font-['Lexend'] leading-7">{`${py.first_name} ${py.last_name}`}</p>
+                            </P2>
+                            <H4 className="text-primary leading-7 m-0 p-0 lg:p-0 lg:m-0">{`${py.first_name} ${py.last_name}`}</H4>
                           </div>
                         </div>
-                        <div className="self-stretch flex-col justify-start items-start gap-3 flex">
-                          <div className=" w-full text-dark text-sm md:text-base font-normal font-['DMSans'] leading-normal">
+                        <div className="self-stretch flex-col justify-start items-start gap-3 flex w-full">
+                          <P2 className="leading-normal m-0 p-0 lg:p-0 lg:m-0">
                             {py.description}
-                          </div>
+                          </P2>
                         </div>
                       </div>
                     ))}
