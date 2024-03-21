@@ -20,16 +20,16 @@ export const SitePreviewContent: React.FC<
   const t = useTranslations('sites.site');
 
   return (
-    <>
+    <div className="flex flex-col gap-4">
       <div className="hidden lg:flex lg:gap-4 w-full lg:items-center lg:justify-start">
         <ImageWithFallback
           src={site.logo_url}
-          width={48}
-          height={48}
+          width={80}
+          height={80}
           alt={'logo'}
         />
         <P1
-          className="block font-bold lg:font-normal text-base !p-0  !my-3  lg:!m-0"
+          className="block font-bold text-base !p-0  !my-3  lg:!m-0"
           label={site.name}
         />
         <span onClick={onClose} className="hidden lg:block self-start ml-auto">
@@ -48,7 +48,7 @@ export const SitePreviewContent: React.FC<
 
       <div className="flex items-baseline gap-2">
         <OfficeBuildingIcon width={16} height={11} />
-        <P2 className="text-normal !p-0 !m-0" label={site.address} />
+        <P2 className="!p-0 !m-0" label={site.address} />
       </div>
 
       <div className="block lg:hidden">
@@ -73,8 +73,8 @@ export const SitePreviewContent: React.FC<
         </div>
       </div>
 
-      <div className="hidden lg:block">
-        {site.description && <P2>{site.description}</P2>}
+      <div className="hidden lg:flex lg:flex-col lg:gap-4">
+        {site.description && <P2 className="!p-0 !m-0">{site.description}</P2>}
 
         {site.keywords?.length > 0 && (
           <SiteSpecializations
@@ -86,6 +86,6 @@ export const SitePreviewContent: React.FC<
           <SitePerks perks={site.perks} title={t('benefits')} />
         )}
       </div>
-    </>
+    </div>
   );
 };
