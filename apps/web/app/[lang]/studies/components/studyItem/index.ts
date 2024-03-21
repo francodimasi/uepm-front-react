@@ -1,0 +1,1 @@
+export { StudyItem } from './StudyItem';
