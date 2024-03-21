@@ -16,7 +16,10 @@ import SearchArea from './SearchArea';
 
 const Markers = dynamic(() => import('./Markers'), { ssr: false });
 
-export const MapContent = ({ clusters = false }: Partial<AlgoliaMapProps>) => {
+export const MapContent = ({
+  clusters = false,
+  center,
+}: Partial<AlgoliaMapProps>) => {
   const map = useMapEvents({
     zoomend: onViewChange,
     dragend: onViewChange,
@@ -44,9 +47,9 @@ export const MapContent = ({ clusters = false }: Partial<AlgoliaMapProps>) => {
       clearMapRefinement();
       setShowSearchArea(false);
       setPreviousQuery(query);
-    }
-    if (items?.length > 0) {
-      map.setView(items[0]?._geoloc);
+      if (items?.length > 0) {
+        map.setView(items[0]?._geoloc);
+      }
     }
   }, [query, items, map, previousQuery, clearMapRefinement]);
 
@@ -62,6 +65,12 @@ export const MapContent = ({ clusters = false }: Partial<AlgoliaMapProps>) => {
       map.fitBounds(L.latLngBounds(layers));
     }
   }, [map, hits]);
+
+  useEffect(() => {
+    if (center) {
+      map.setView(center, 6);
+    }
+  }, [map, center]);
 
   /**
    * When the user interacts with the map, we let him search in the visible area

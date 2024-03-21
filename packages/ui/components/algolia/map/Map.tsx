@@ -25,19 +25,6 @@ const TileLayer = dynamic(
   },
 );
 
-// //https://stackoverflow.com/questions/64665827/react-leaflet-center-attribute-does-not-change-when-the-center-state-changes
-// const ReCenter = ({
-//   center = [-34.61, -58.37],
-//   zoom,
-// }: {
-//   center?: LatLngExpression;
-//   zoom?: number;
-// }) => {
-//   const map = useMap();
-//   map.setView(center, zoom);
-//   return null;
-// };
-
 export const AlgoliaMap = ({
   className,
   center,
@@ -56,7 +43,7 @@ export const AlgoliaMap = ({
       maxZoom={maxZoom}
       scrollWheelZoom={scrollWheelZoom}
     >
-      <MapContent clusters={clusters} />
+      <MapContent clusters={clusters} center={center} />
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
