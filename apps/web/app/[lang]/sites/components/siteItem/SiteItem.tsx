@@ -33,7 +33,6 @@ export const SiteItem: React.FC<SiteItemProps & SiteItemHitProps> = ({
           isSelected && 'border-2 border-primary'
         }`,
       )}
-      disabled={false}
       onClick={() => onClick(siteItem)}
     >
       <div className="flex-col justify-start items-start gap-4 inline-flex w-full">
@@ -88,6 +87,7 @@ export const SiteItem: React.FC<SiteItemProps & SiteItemHitProps> = ({
               color="dark"
               expand="none"
               className="!px-4 !py-1"
+              size="sm"
             >
               <P2 className="!text-sm !font-medium !font-['DMSans]' text-white leading-normal !pb-0">
                 {t('viewSite')}
