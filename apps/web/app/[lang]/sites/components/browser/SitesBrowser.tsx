@@ -47,9 +47,9 @@ export const SitesBrowser = ({
       indexName={indexName}
       className="sm:h-screen"
     >
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
-        <div className="w-full sm:h-[80vh] col-span-1 lg:col-span-1 xl:col-span-1">
-          <div className="w-full col-span-1 lg:col-span-1 xl:col-span-1 grid gap-1 mb-2">
+      <div className="w-full grid grid-cols-1 lg:grid-cols-3 gap-5">
+        <div className="sm:h-[80vh] col-span-1 lg:col-span-1">
+          <div className="col-span-1 lg:col-span-1 grid gap-1 mb-2">
             <AlgoliaSearch
               placeholder={t('placeholder')}
               className="sm:h-auto searchbox"
@@ -89,7 +89,7 @@ export const SitesBrowser = ({
               clusters
             />
           </div>
-          <div className="w-full sm:h-5/6 relative col-span-1 lg:col-span-1 xl:col-span-1 sm:overflow-y-scroll sm:overflow-auto">
+          <div className="w-full sm:h-5/6 relative col-span-1 lg:col-span-1 sm:overflow-y-scroll sm:overflow-auto">
             <AlgoliaInfiniteHits
               className="relative"
               hit={SiteItem}

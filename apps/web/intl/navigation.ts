@@ -34,6 +34,26 @@ export const pathnames = {
     es: '/nosotros',
     pt: '/sobre-nos',
   },
+  '/sites': {
+    en: '/sites',
+    es: '/sitios',
+    pt: '/sitios',
+  },
+  '/sites/[id]': {
+    en: '/sites/[id]',
+    es: '/sitios/[id]',
+    pt: '/sitios/[id]',
+  },
+  '/studies': {
+    en: '/studies',
+    es: '/ensayos',
+    pt: '/ensaios',
+  },
+  '/studies/[id]': {
+    en: '/studies/[id]',
+    es: '/ensayos/[id]',
+    pt: '/ensaios/[id]',
+  },
   '/docs/terms': {
     en: '/docs/terms',
     es: '/documentos/terminos',
