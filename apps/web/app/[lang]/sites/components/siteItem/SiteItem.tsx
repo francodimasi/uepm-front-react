@@ -88,6 +88,7 @@ export const SiteItem: React.FC<SiteItemProps & SiteItemHitProps> = ({
               color="dark"
               expand="none"
               className="!px-4 !py-1"
+              size="sm"
             >
               <P2 className="!text-sm !font-medium !font-['DMSans]' text-white leading-normal !pb-0">
                 {t('viewSite')}

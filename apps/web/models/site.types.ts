@@ -2,12 +2,6 @@ import { Country } from '@models/country.types';
 import { Physician } from '@models/physician.types';
 import { Hit } from 'ui/components/algolia/hits/Hits.types';
 
-export type SitesParams = {
-  verified?: boolean;
-  page?: number;
-  query?: string;
-};
-
 export type Site = {
   id: string;
   name: string;
