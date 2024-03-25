@@ -3,6 +3,7 @@ import { StudiesBrowserState } from './types';
 export const studiesBrowserActions = {
   SET_SELECTED_STUDY: 'setSelectedStudy',
   SET_STUDIES: 'setStudies',
+  CLOSE_STUDY_PREVIEW: 'closeStudyPreview',
 };
 
 /**
@@ -20,12 +21,19 @@ export const StudiesBrowserReducer = (
       return {
         ...state,
         selectedStudy: action.selectedStudy,
+        showStudyPreview: true,
       };
     }
     case studiesBrowserActions.SET_STUDIES: {
       return {
         ...state,
         studies: action.studies,
+      };
+    }
+    case studiesBrowserActions.CLOSE_STUDY_PREVIEW: {
+      return {
+        ...state,
+        showStudyPreview: false,
       };
     }
   }

@@ -16,6 +16,7 @@ export const StudiesBrowserContext: Context<BrowserContextModel> =
 export const StudiesBrowserProvider = (props: any) => {
   const initialState: StudiesBrowserState = {
     selectedStudy: undefined,
+    showStudyPreview: false,
     studies: [],
   };
 

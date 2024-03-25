@@ -7,3 +7,5 @@ export type StudiesBrowserProps = PropsWithClassName &
     apiKey: string;
     indexName: string;
   };
+
+export type StudyPreviewProps = {};

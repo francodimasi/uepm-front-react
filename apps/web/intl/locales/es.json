@@ -222,5 +222,14 @@
       "selectCountry": "Seleccione país",
       "searchInThisArea": "Buscar en esta área"
     }
+  },
+  "studies": {
+    "study": {
+      "sponsor": "Patrocinador",
+      "type": "Tipo de estudio",
+      "conditions": "Patologías",
+      "requirements": "Requerimientos"
+    }
   }
+
 }
