@@ -7,6 +7,15 @@
     "es": "Spanish",
     "pt": "Portuguese"
   },
+  "timeUnits": {
+    "years": "years",
+    "months": "months",
+    "days": "days",
+    "hours": "hours",
+    "minutes": "minutes",
+    "seconds": "seconds",
+    "ago": "ago"
+  },
   "menu": {
     "links": {
       "patients": "Patients",
@@ -221,6 +230,13 @@
       "notFound": "No sites found",
       "selectCountry": "Select country",
       "searchInThisArea": "Sites in this area"
+    }
+  },
+  "studies": {
+    "studyItem": {
+      "available": "Available in",
+      "sites": "sites",
+      "lastUpdate": "Last updated"
     }
   }
 }
