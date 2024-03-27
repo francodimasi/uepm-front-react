@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { H4, L1, P2 } from 'ui/core';
-import { SiteConditionsProps } from '../Sites.types';
+import { SiteConditionsProps } from '../../Sites.types';
 
 export const SiteConditions: React.FC<SiteConditionsProps> = ({
   title,

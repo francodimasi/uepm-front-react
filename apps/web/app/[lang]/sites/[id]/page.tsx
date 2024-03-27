@@ -11,10 +11,10 @@ import { H3, Tag, H4, P2, Avatar } from 'ui/core';
 import { ImageWithFallback } from '@components/utils/ImageWithFallback';
 import { setMetadata } from './helpers';
 import { SiteCard } from './components/SiteCard';
-import { SiteSpecializations } from '../components/SiteSpecializations';
-import { SitePerks } from '../components/SitePerks';
-import { SitePhysicians } from '../components/SitePhysicians';
-import { SiteConditions } from '../components/SiteConditions';
+import { SiteSpecializations } from '../components/shared/SiteSpecializations';
+import { SitePerks } from '../components/shared/SitePerks';
+import { SitePhysicians } from '../components/shared/SitePhysicians';
+import { SiteConditions } from '../components/shared/SiteConditions';
 
 const Page = async ({ params: { lang = defaultLocale, id } }: SiteProps) => {
   const site = await getSiteById(id, lang);

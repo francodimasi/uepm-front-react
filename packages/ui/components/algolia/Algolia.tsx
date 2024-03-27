@@ -1,5 +1,6 @@
 'use client';
 
+import { useMemo } from 'react';
 import { InstantSearch } from 'react-instantsearch';
 import algoliasearch from 'algoliasearch/lite';
 import { AlgoliaProps } from './Algolia.types';
@@ -11,7 +12,10 @@ export const Algolia = ({
   indexName,
   children,
 }: AlgoliaProps) => {
-  const searchClient = algoliasearch(appId, apiKey);
+  const searchClient = useMemo(
+    () => algoliasearch(appId, apiKey),
+    [appId, apiKey],
+  );
 
   return (
     <InstantSearch

@@ -13,6 +13,7 @@ export const AlgoliaInfiniteHits = ({
   const sentinelRef = useRef(null);
 
   useEffect(() => {
+    if (!onChange) return;
     onChange(hits);
   }, [hits, onChange]);
 

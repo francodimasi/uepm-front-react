@@ -1,13 +1,24 @@
 import { H4, Tag } from 'ui/core';
-import { SiteSpecializationsProps } from '../Sites.types';
+import { SiteSpecializationsProps } from '../../Sites.types';
+import { twMerge } from 'tailwind-merge';
 
 export const SiteSpecializations: React.FC<SiteSpecializationsProps> = ({
   specializations,
   title,
+  className,
+  titleClassName,
 }) => {
   return (
-    <div className="w-full flex-col justify-start items-start gap-4 inline-flex">
-      <H4 label={title} className="text-primary my-0 lg:my-0" />
+    <div
+      className={twMerge(
+        'w-full flex-col justify-start items-start inline-flex',
+        className,
+      )}
+    >
+      <H4
+        label={title}
+        className={twMerge('text-primary my-0 lg:my-0', titleClassName)}
+      />
       <div className="flex-col sm:flex-row justify-start items-start gap-2 flex flex-wrap">
         {specializations?.map((keyword, index) => (
           <Tag

@@ -43,7 +43,7 @@ export const MapContent = ({
    * After we have new results, we set the view again
    */
   useEffect(() => {
-    if (previousQuery !== query) {
+    if (previousQuery !== query && query !== '') {
       clearMapRefinement();
       setShowSearchArea(false);
       setPreviousQuery(query);
@@ -89,9 +89,13 @@ export const MapContent = ({
   };
 
   return (
-    <>
+    <div className="relative mb-8 lg:mb-0">
       <Markers clusters={clusters} />
-      <SearchArea onClick={handleMapSearch} disabled={!showSearchArea} />
-    </>
+      <SearchArea
+        className="absolute z-[1000] top-2 end-2"
+        onClick={handleMapSearch}
+        disabled={!showSearchArea}
+      />
+    </div>
   );
 };

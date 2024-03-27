@@ -11,7 +11,7 @@ export type Hit = AlgoliaHit<{
 
 export type AlgoliaHitsProps = PropsWithClassName & {
   hit: AlgoliaHit<any>;
-  onChange: (_hits: AlgoliaHit<any>[]) => void;
+  onChange?: (_hits: AlgoliaHit<any>[]) => void;
   onClick: Function;
 };
 

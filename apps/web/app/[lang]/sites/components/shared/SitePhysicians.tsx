@@ -1,5 +1,5 @@
 import { H4, P2 } from 'ui/core';
-import { SitePhysiciansProps } from '../Sites.types';
+import { SitePhysiciansProps } from '../../Sites.types';
 
 export const SitePhysicians: React.FC<SitePhysiciansProps> = ({
   physicians,

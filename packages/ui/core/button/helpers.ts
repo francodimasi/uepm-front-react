@@ -71,7 +71,7 @@ export const getClasses = ({
       'bg-tertiary text-light': color === 'tertiary' && fill === 'solid',
       'bg-light text-dark': color === 'light' && fill === 'solid',
       'bg-dark text-light': color === 'dark' && fill === 'solid',
-      border: fill === 'outline',
+      'border border-2': fill === 'outline',
       'border-primary text-primary': fill === 'outline' && color === 'primary',
       'border-secondary text-secondary':
         fill === 'outline' && color === 'secondary',
@@ -94,7 +94,6 @@ export const getClasses = ({
     `px-${getSizeX(size)}`,
     `py-${getSizeY(size)}`,
     'font-medium',
-    'border-2',
     classes,
   );
 

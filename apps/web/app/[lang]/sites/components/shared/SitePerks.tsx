@@ -1,5 +1,5 @@
 import { CheckIcon, H4, P2 } from 'ui/core';
-import { SitePerksProps } from '../Sites.types';
+import { SitePerksProps } from '../../Sites.types';
 
 export const SitePerks: React.FC<SitePerksProps> = ({ perks, title }) => {
   return (

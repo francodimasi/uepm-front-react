@@ -1,4 +1,5 @@
 import { Physician } from '@models/physician.types';
+import { PropsWithClassName } from 'ui/types/core';
 
 export type SitePerksProps = {
   title: string;
@@ -10,9 +11,10 @@ export type SitePhysiciansProps = {
   physicians: Physician[];
 };
 
-export type SiteSpecializationsProps = {
+export type SiteSpecializationsProps = PropsWithClassName & {
   title: string;
   specializations: string[];
+  titleClassName?: string;
 };
 
 export type SiteConditionsProps = {
