@@ -63,6 +63,7 @@ export type AlgoliaStudy = {
   minimum_age_years: number;
   maximum_age_years: number;
   gender: string;
+  last_update_posted_date: string;
 };
 
 export type StudyHit = Hit & AlgoliaStudy;

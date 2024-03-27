@@ -7,6 +7,15 @@
     "es": "Español",
     "pt": "Portugués"
   },
+  "timeUnits": {
+    "years": "años",
+    "months": "meses",
+    "days": "días",
+    "hours": "horas",
+    "minutes": "minutos",
+    "seconds": "segundos",
+    "ago": ""
+  },
   "menu": {
     "links": {
       "patients": "Pacientes",
@@ -222,6 +231,13 @@
       "notFound": "No encontramos sitios",
       "selectCountry": "Seleccione país",
       "searchInThisArea": "Buscar en esta área"
+    }
+  },
+  "studies": {
+    "studyItem": {
+      "available": "Disponible en",
+      "sites": "sitios",
+      "lastUpdate": "Ultima actualización hace"
     }
   }
 }
