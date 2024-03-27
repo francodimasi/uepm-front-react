@@ -1,7 +1,7 @@
 export const updatedSince = (
   nowEpochMs: number,
   dateEpochMs: number,
-  tTimeUnits,
+  tTimeUnits: Function,
 ) => {
   const ago = tTimeUnits('ago');
 
