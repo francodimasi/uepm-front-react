@@ -54,6 +54,7 @@ const usePlugins = ({
           ...source,
           sourceId: 'querySuggestionsPlugin',
           onSelect({ item }) {
+            console.log(item);
             setInstantSearchUiState({
               query: item.query,
               category: item.__autocomplete_qsCategory || '',

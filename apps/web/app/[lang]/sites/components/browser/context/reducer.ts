@@ -1,6 +1,7 @@
 import { SitesBrowserState } from './types';
 
 export const sitesBrowserActions = {
+  CLOSE_SITE_PREVIEW: 'closeSitePreview',
   SET_SELECTED_SITE: 'setSelectedSite',
   SET_SITES: 'setSites',
 };
@@ -20,12 +21,19 @@ export const SitesBrowserReducer = (
       return {
         ...state,
         selectedSite: action.selectedSite,
+        showSitePreview: true,
       };
     }
     case sitesBrowserActions.SET_SITES: {
       return {
         ...state,
         sites: action.sites,
+      };
+    }
+    case sitesBrowserActions.CLOSE_SITE_PREVIEW: {
+      return {
+        ...state,
+        showSitePreview: false,
       };
     }
   }

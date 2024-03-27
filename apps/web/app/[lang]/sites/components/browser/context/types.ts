@@ -1,6 +1,7 @@
-import { Site } from '@models/site.types';
+import { AlgoliaSite, Site } from '@models/site.types';
 
 export type SitesBrowserState = {
-  selectedSite: Site;
+  showSitePreview: boolean;
+  selectedSite: AlgoliaSite;
   sites: Site[];
 };

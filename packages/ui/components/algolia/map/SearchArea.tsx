@@ -6,16 +6,18 @@ import { useTranslations, LocaleProps } from 'intl';
 
 export default function SearchArea({
   disabled,
+  className,
   onClick,
 }: MapSearchAreaProps & LocaleProps) {
   const t = useTranslations('sites.browser');
 
   return (
-    <div className="absolute z-[1000] justify-end flex mt-3 w-full">
+    <div className={className}>
       <Button
         fill="solid"
-        size="sm"
-        className="!py-2 me-5"
+        size="xs"
+        color="dark"
+        className="!py-2"
         disabled={disabled}
         onClick={onClick}
       >

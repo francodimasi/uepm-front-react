@@ -21,7 +21,7 @@ export const CloseIcon = ({
         y2="18"
         strokeWidth={2}
         strokeLinecap="round"
-        fill={fill || IconColor[color]}
+        stroke={fill || IconColor[color]}
       />
       <line
         x1="6"
@@ -30,7 +30,7 @@ export const CloseIcon = ({
         y2="18"
         strokeWidth={2}
         strokeLinecap="round"
-        fill={fill || IconColor[color]}
+        stroke={fill || IconColor[color]}
       />
     </svg>
   );

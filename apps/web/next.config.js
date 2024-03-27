@@ -27,6 +27,13 @@ module.exports = withNextIntl({
       },
       {
         protocol: 'https',
+        hostname: 'trialtech-production.ams3.digitaloceanspaces.com',
+        port: '',
+        pathname: '**',
+      },
+
+      {
+        protocol: 'https',
         hostname: 'media.licdn.com',
         port: '',
         pathname: '/dms/image/**',
