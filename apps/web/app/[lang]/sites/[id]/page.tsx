@@ -1,21 +1,26 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { Link } from '@intl/navigation';
-import { ArrowBackIcon, CheckIcon } from 'ui/core/icons';
+import { ArrowBackIcon } from 'ui/core/icons';
 import { headers } from 'next/headers';
 import { Layout } from '@components/core/layout/Layout';
 import { getTranslations, defaultLocale } from 'intl';
 import { SiteProps } from './Site.types';
 import { getSiteById } from '@api/sites/requests';
-import { H3, Tag, H4, L1, P2, Avatar } from 'ui/core';
+import { H3, Tag, H4, P2, Avatar } from 'ui/core';
 import { ImageWithFallback } from '@components/utils/ImageWithFallback';
 import { setMetadata } from './helpers';
 import { SiteCard } from './components/SiteCard';
+import { SiteSpecializations } from '../components/shared/SiteSpecializations';
+import { SitePerks } from '../components/shared/SitePerks';
+import { SitePhysicians } from '../components/shared/SitePhysicians';
+import { SiteConditions } from '../components/shared/SiteConditions';
 
 const Page = async ({ params: { lang = defaultLocale, id } }: SiteProps) => {
   const site = await getSiteById(id, lang);
   if (!site) notFound();
   const t = await getTranslations({ lang, namespace: 'sites.site' });
+  const tActions = await getTranslations({ lang, namespace: 'actions' });
   return (
     <Layout locale={lang}>
       <div className="grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-4 gap-14">
@@ -55,37 +60,14 @@ const Page = async ({ params: { lang = defaultLocale, id } }: SiteProps) => {
         </div>
 
         <div className="w-full col-span-1 lg:col-span-2 xl:col-span-3 pr-0 flex-col justify-start items-start gap-14 inline-flex divide-y divide-gray-medium">
-          <div className="w-full flex-col justify-start items-start gap-4 inline-flex">
-            <H4
-              label={t('specializations')}
-              className="text-primary my-0 lg:my-0"
+          {site.keywords?.length > 0 && (
+            <SiteSpecializations
+              specializations={site.keywords}
+              title={t('specializations')}
             />
-            <div className="flex-col sm:flex-row justify-start items-start gap-2 flex flex-wrap">
-              {site.keywords?.map((keyword, index) => (
-                <Tag
-                  text={keyword}
-                  key={index}
-                  className="p-4 bg-stone-200 rounded-full justify-end items-center inline-flex text-base text-dark font-normal font-['DMSans'] leading-none whitespace-nowrap mt-2"
-                />
-              ))}
-            </div>
-          </div>
-
+          )}
           {site.perks?.length > 0 && (
-            <div className="w-full pt-14 flex-col justify-start items-start gap-4 inline-flex">
-              <H4 label={t('benefits')} className="text-primary my-0 lg:my-0" />
-              <div className="self-stretch flex-col justify-start items-start gap-4 flex">
-                {site.perks?.map((perk, index) => (
-                  <div
-                    key={index}
-                    className="self-stretch justify-start items-center gap-2 inline-flex"
-                  >
-                    <CheckIcon color="dark" />
-                    <P2 className="!leading-relaxed !m-0 !p-0">{perk}</P2>
-                  </div>
-                ))}
-              </div>
-            </div>
+            <SitePerks perks={site.perks} title={t('benefits')} />
           )}
 
           {site.physicians?.some(
@@ -130,47 +112,18 @@ const Page = async ({ params: { lang = defaultLocale, id } }: SiteProps) => {
           )}
 
           {site.physicians?.length > 0 && (
-            <div className="w-full pt-14 flex-col justify-start items-start gap-4 inline-flex">
-              <H4
-                label={t('physicians')}
-                className="text-primary my-0 lg:my-0"
-              />
-              <div className="w-full grid sm:grid-cols-3 gap-x-36 gap-2">
-                {site.physicians.map((physician) => (
-                  <P2
-                    className="!leading-relaxed !m-0"
-                    key={physician.id}
-                  >{`${physician.first_name} ${physician.last_name}`}</P2>
-                ))}
-              </div>
-            </div>
+            <SitePhysicians
+              physicians={site.physicians}
+              title={t('physicians')}
+            />
           )}
-
           {site.study_conditions.length > 0 && (
-            <div className="w-full pt-14 flex-col justify-start items-start gap-4 inline-flex">
-              <H4
-                label={t('openStudies')}
-                className="text-primary my-0 lg:my-0"
-              />
-              <div className="w-full grid sm:grid-cols-2 gap-x-16 gap-y-2 pb-3">
-                {site.study_conditions.map(
-                  (condition, index) =>
-                    condition !== '' && (
-                      <div
-                        key={index}
-                        className=" self-stretch justify-start items-center gap-2 inline-flex"
-                      >
-                        <P2 className="!leading-relaxed !m-0">{`${condition}`}</P2>
-                      </div>
-                    ),
-                )}
-              </div>
-              <div className="justify-center items-center inline-flex">
-                <Link href="/" locale={lang}>
-                  <L1 label={`${t('seeMore')}`} className="hover:underline" />
-                </Link>
-              </div>
-            </div>
+            <SiteConditions
+              conditions={site.study_conditions}
+              title={t('openStudies')}
+              locale={lang}
+              seeMore={`${tActions('seeMore')}`}
+            />
           )}
         </div>
 

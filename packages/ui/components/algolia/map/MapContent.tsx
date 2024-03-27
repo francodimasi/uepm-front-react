@@ -16,7 +16,10 @@ import SearchArea from './SearchArea';
 
 const Markers = dynamic(() => import('./Markers'), { ssr: false });
 
-export const MapContent = ({ clusters = false }: Partial<AlgoliaMapProps>) => {
+export const MapContent = ({
+  clusters = false,
+  center,
+}: Partial<AlgoliaMapProps>) => {
   const map = useMapEvents({
     zoomend: onViewChange,
     dragend: onViewChange,
@@ -40,13 +43,13 @@ export const MapContent = ({ clusters = false }: Partial<AlgoliaMapProps>) => {
    * After we have new results, we set the view again
    */
   useEffect(() => {
-    if (previousQuery !== query) {
+    if (previousQuery !== query && query !== '') {
       clearMapRefinement();
       setShowSearchArea(false);
       setPreviousQuery(query);
-    }
-    if (items?.length > 0) {
-      map.setView(items[0]?._geoloc);
+      if (items?.length > 0) {
+        map.setView(items[0]?._geoloc);
+      }
     }
   }, [query, items, map, previousQuery, clearMapRefinement]);
 
@@ -62,6 +65,12 @@ export const MapContent = ({ clusters = false }: Partial<AlgoliaMapProps>) => {
       map.fitBounds(L.latLngBounds(layers));
     }
   }, [map, hits]);
+
+  useEffect(() => {
+    if (center) {
+      map.setView(center, 6);
+    }
+  }, [map, center]);
 
   /**
    * When the user interacts with the map, we let him search in the visible area
@@ -80,9 +89,13 @@ export const MapContent = ({ clusters = false }: Partial<AlgoliaMapProps>) => {
   };
 
   return (
-    <>
+    <div className="relative mb-8 lg:mb-0">
       <Markers clusters={clusters} />
-      <SearchArea onClick={handleMapSearch} disabled={!showSearchArea} />
-    </>
+      <SearchArea
+        className="absolute z-[1000] top-2 end-2"
+        onClick={handleMapSearch}
+        disabled={!showSearchArea}
+      />
+    </div>
   );
 };

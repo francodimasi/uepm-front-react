@@ -2,7 +2,11 @@
 
 import { createElement, Fragment, useEffect, useRef, useState } from 'react';
 import { render } from 'react-dom';
-import { autocomplete, Render } from '@algolia/autocomplete-js';
+import {
+  autocomplete,
+  // getAlgoliaResults,
+  Render,
+} from '@algolia/autocomplete-js';
 import { useSearchBox } from 'react-instantsearch-core';
 import { debounce } from '@algolia/autocomplete-shared';
 import '@algolia/autocomplete-theme-classic';
@@ -12,6 +16,7 @@ import {
   SetInstantSearchUiStateOptions,
 } from './Autocomplete.types';
 import usePlugins from './usePlugins';
+// import { debouncePromise } from './helpers';
 
 export const Autocomplete = ({
   searchClient,
@@ -44,6 +49,11 @@ export const Autocomplete = ({
     onQuery,
   });
 
+  // const debounced = debouncePromise(
+  //   (items: any) => Promise.resolve(items),
+  //   1000,
+  // );
+
   useEffect(() => {
     if (!autocompleteContainer.current) {
       return;
@@ -69,6 +79,32 @@ export const Autocomplete = ({
         Fragment,
         render: render as unknown as Render,
       },
+      // getSources({ query }) {
+      //   return debounced([
+      //     {
+      //       sourceId: 'querySuggestionsPlugin',
+      //       getItems() {
+      //         return getAlgoliaResults({
+      //           searchClient,
+      //           queries: [
+      //             {
+      //               indexName,
+      //               query,
+      //             },
+      //           ],
+      //         });
+      //       },
+      //       templates: {
+      //         item({ item }: { item: any }) {
+      //           return item.conditions_ct[0];
+      //         },
+      //         noResults() {
+      //           return 'No results';
+      //         },
+      //       },
+      //     },
+      //   ]);
+      // },
     });
 
     return () => autocompleteInstance.destroy();
@@ -80,6 +116,9 @@ export const Autocomplete = ({
     plugins,
     query,
     initialValue,
+    // debounced,
+    searchClient,
+    indexName,
   ]);
 
   return <div className={className} ref={autocompleteContainer} />;

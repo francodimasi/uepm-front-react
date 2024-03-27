@@ -10,7 +10,11 @@ const useTailwindBreakpoints = (): {
   const [currentBreakpoint, setCurrentBreakpoint] = useState<string>('sm');
 
   const isMobile = useMemo(() => {
-    return currentBreakpoint === 'xs' || currentBreakpoint === 'sm';
+    return (
+      currentBreakpoint === 'xxs' ||
+      currentBreakpoint === 'xs' ||
+      currentBreakpoint === 'sm'
+    );
   }, [currentBreakpoint]);
 
   useEffect(() => {

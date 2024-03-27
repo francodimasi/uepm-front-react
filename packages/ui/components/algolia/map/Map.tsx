@@ -33,19 +33,21 @@ export const AlgoliaMap = ({
   maxZoom,
   scrollWheelZoom,
   clusters = false,
-}: AlgoliaMapProps) => (
-  <MapContainer
-    className={className}
-    center={center}
-    zoom={zoom}
-    minZoom={minZoom}
-    maxZoom={maxZoom}
-    scrollWheelZoom={scrollWheelZoom}
-  >
-    <MapContent clusters={clusters} />
-    <TileLayer
-      attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-      url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-    />
-  </MapContainer>
-);
+}: AlgoliaMapProps) => {
+  return (
+    <MapContainer
+      className={className}
+      center={center}
+      zoom={zoom}
+      minZoom={minZoom}
+      maxZoom={maxZoom}
+      scrollWheelZoom={scrollWheelZoom}
+    >
+      <MapContent clusters={clusters} center={center} />
+      <TileLayer
+        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+      />
+    </MapContainer>
+  );
+};

@@ -15,7 +15,7 @@ export type MapMarkerProps = {
   clusters?: boolean;
 };
 
-export type MapSearchAreaProps = {
+export type MapSearchAreaProps = PropsWithClassName & {
   disabled: boolean;
   onClick: () => void;
 };

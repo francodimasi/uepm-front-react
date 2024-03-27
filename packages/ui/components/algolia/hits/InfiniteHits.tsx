@@ -7,11 +7,13 @@ import { AlgoliaHitsProps } from './Hits.types';
 export const AlgoliaInfiniteHits = ({
   hit: HitComponent,
   onChange,
+  onClick,
 }: AlgoliaHitsProps) => {
   const { hits, isLastPage, showMore } = useInfiniteHits();
   const sentinelRef = useRef(null);
 
   useEffect(() => {
+    if (!onChange) return;
     onChange(hits);
   }, [hits, onChange]);
 
@@ -38,7 +40,7 @@ export const AlgoliaInfiniteHits = ({
       <ul className="ais-InfiniteHits-list">
         {hits.map((hit) => (
           <li key={hit.objectID} className="ais-InfiniteHits-item">
-            <HitComponent hit={hit} />
+            <HitComponent hit={hit} onClick={onClick} />
           </li>
         ))}
         <li className="ais-InfiniteHits-sentinel h-20" ref={sentinelRef} />
