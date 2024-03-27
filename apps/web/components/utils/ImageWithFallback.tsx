@@ -1,5 +1,8 @@
+'use client';
+
 import NextImage, { ImageProps } from 'next/image';
 import fallbackImage from 'public/images/fallback.svg';
+import { useState } from 'react';
 
 interface ImageWithFallbackProps extends ImageProps {
   fallbackSrc?: string;
@@ -11,10 +14,15 @@ export const ImageWithFallback = ({
   fallbackSrc,
   ...rest
 }: ImageWithFallbackProps) => {
+  const [imgSrc, setImgSrc] = useState(src);
+
   return (
     <NextImage
-      src={src || (fallbackSrc ?? fallbackImage)}
+      src={imgSrc || (fallbackSrc ?? fallbackImage)}
       alt={alt}
+      onError={() => {
+        setImgSrc(fallbackSrc);
+      }}
       {...rest}
     />
   );
