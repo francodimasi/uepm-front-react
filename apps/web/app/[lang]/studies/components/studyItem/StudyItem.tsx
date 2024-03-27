@@ -8,8 +8,9 @@ import { AlgoliaStudy, StudyHit } from '@models/study.types';
 import { StudiesBrowserContext } from '../browser/context/provider';
 import { studiesBrowserActions } from '../browser/context/reducer';
 import { ImageWithFallback } from '@components/utils/ImageWithFallback';
-import { getUniqueSiteCountries, updatedSince } from './helpers';
+import { getUniqueSiteCountries } from './helpers';
 import { useTranslations } from 'intl';
+import { updatedSince } from 'utils';
 
 export const StudyItem: React.FC<StudyItemProps & StudyItemHitProps> = ({
   study,
