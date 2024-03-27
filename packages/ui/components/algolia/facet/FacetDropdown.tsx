@@ -67,7 +67,7 @@ export function AlgoliaFacetDropdown({
         'ais-Panel ',
         'ais-Dropdown',
         isOpened && 'ais-Dropdown--opened',
-        'mb-2'
+        'mb-2',
       )}
       ref={panelRef}
     >
